@@ -2,6 +2,8 @@
 
 Date: 2026-04-10
 
+[2026-10-21: April 10 record, pre-repair (Revisions). The main case now charges schools by measured public enrollment at full average cost per pupil ([complete annual account](immigration-complete-annual-account-2026-09-20.md)); the household child-burden tables below are not current inputs, and several of their files are no longer on disk. [INFERENCE]]
+
 ## What was wrong
 
 The earlier child-burden measures in the origin `PUMA` layer were adult-linked:
@@ -34,10 +36,10 @@ Official sources:
 
 ## New assets
 
-1. [extend_immigration_context_with_households.sql](sources/immigration-fiscal/data/derived/extend_immigration_context_with_households.sql)
-2. [psam_husa.csv](/Volumes/SSK1TB/corpus/census_acs/psam_husa.csv)
-3. [psam_husb.csv](/Volumes/SSK1TB/corpus/census_acs/psam_husb.csv)
-4. `acs_origin_puma_household_2023` in [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb)
+1. `sources/immigration-fiscal/data/derived/extend_immigration_context_with_households.sql` (no longer on disk)
+2. `/Volumes/SSK1TB/corpus/census_acs/psam_husa.csv` (on a volume no longer attached; current ACS holdings: [dataset register](immigration-dataset-register.md))
+3. `/Volumes/SSK1TB/corpus/census_acs/psam_husb.csv` (on a volume no longer attached; current ACS holdings: [dataset register](immigration-dataset-register.md))
+4. `acs_origin_puma_household_2023` in [immigration_context.duckdb](../sources/immigration-fiscal/data/derived/immigration_context.duckdb)
 5. `acs_origin_household_national_2023` in the same warehouse
 6. `origin_puma_household_context_2023` in the same warehouse
 

@@ -31,7 +31,7 @@ district-differential costs change; the school-lunch reversal remains fixed.
 The two rows are attribution conventions, not confidence bounds. No national
 tax or medical-spending residual is inserted as an ethnic correction.
 
-The [September 19 finance version](immigration-macro-reconciliation-2026-09-19.md)
+The [September 19 finance version](../infra/immigration-fiscal/macro_closure_2026_09_19/README.md)
 remains the preceding annual release. Existing [lifetime profiles](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 retain their earlier component and age-profile vintage: multiplying this annual
 change by a lifespan would not update them correctly.

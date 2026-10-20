@@ -3,7 +3,7 @@
 Date:2026-09-19. Calculation index, not essay text. [FRAMING-SENSITIVE]
 
 **Account version:** Credit and threshold tables use the pinned $217–239bn
-release. The later [observed2024 finance refresh](immigration-macro-reconciliation-2026-09-19.md)
+release. The later [observed2024 finance refresh](../infra/immigration-fiscal/macro_closure_2026_09_19/README.md)
 gives $234–256bn and raises credited C from $34.550bn to $35.188bn. Production
 gains are unchanged; C-replacement increments fall by $0.638bn against that
 refresh. The old thresholds remain versioned, not current welfare break-evens.

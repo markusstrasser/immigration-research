@@ -6,6 +6,8 @@
 **Tier:** Deep | **Date:** 2026-04-22  
 **Instrument caveat:** Immigration is politically charged and the LLM instrument has known asymmetry risk here. This memo leans on repo-built artifacts, official sources, and named claim audits rather than generic training-data impressions. [SOURCE: notes/llm-bias-caveat.md]
 
+[2026-10-21: Memos this record cites by `research/…` path were mostly deleted on 2026-09-05 or 2026-09-29; the INDEX tombstone tables give each one's last commit.]
+
 **Status update (2026-06-16):** Later conclusion audits narrowed the capacity/surge evidence. Treat load/capacity and receiver-city panels as descriptive screens, receiver-cost rows as gross-load evidence, and election rows as correlational political-response signals. They do not identify a fiscal-load-to-vote mechanism, a native-exit mechanism, or a globally ranked worker-incidence channel. [SOURCE: research/immigration-conclusion-audit-running-fixes.md]
 
 ## Bottom line
@@ -71,7 +73,7 @@ The rhetoric often slides between:
 4. `destination GDP per capita`
 5. `incumbent local welfare`
 
-Those are not the same object. The repo's own current claim ladder already depends on separating them. [SOURCE: research/immigration-claims-matrix-2026-04-11.md] [SOURCE: research/immigration-reasoning-evolution-2026-04-21.md]
+Those are not the same object. The repo's own current claim ladder already depends on separating them. [SOURCE: research/immigration-claims-matrix-2026-04-11.md] [SOURCE: research/immigration-material-repair-report-2026-09-05.md]
 
 This is why slogans such as:
 
@@ -247,6 +249,6 @@ A reasoning error or incomplete model does not establish intentional dishonesty.
 
 | Date | Change | Trigger |
 |---|---|---|
-| 2026-06-16 | Scoped capacity, wage, receiver-load, and political-response language to descriptive/gross/correlational evidence. | `research/immigration-conclusion-audit-running-fixes.md` capacity/surge corrections. |
+| 2026-06-16 | Scoped capacity, wage, receiver-load, and political-response language to descriptive/gross/correlational evidence. | `research/immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`) capacity/surge corrections. |
 
 - **2026-09-05 — Corrected welfare, comparator and model-scope reasoning.** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Earlier dated revision entries describe the historical state, including superseded conclusions.

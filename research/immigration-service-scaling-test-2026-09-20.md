@@ -146,7 +146,10 @@ explicit. CBO's existing school response and these scaling coefficients may capt
 the same adjustment; multiplying them would assume independent savings without
 evidence. [SOURCE: `theory_fiscal_scenarios.csv`; MODEL / FRAMING-SENSITIVE]
 
-**Integration:** retain the [annual account's](immigration-complete-annual-account-2026-09-20.md)
+[2026-10-21: superseded instruction. The main case has charged schools at a response of 1 on this memo's
+cross-sectional estimates since 2026-09-26, with the within-district 0.836 beside, and general government
+responds as a finite removal; the figures in this paragraph are the September 20 account (see Revisions).]
+**Integration (2026-09-20):** retain the [annual account's](immigration-complete-annual-account-2026-09-20.md)
 $165–197bn CBO-informed conditional comparison and $121–160bn additional
 fixed-non-school-education sensitivity, alongside the $270–289bn proportional
 benchmark. This test neither independently verifies those totals nor supplies an

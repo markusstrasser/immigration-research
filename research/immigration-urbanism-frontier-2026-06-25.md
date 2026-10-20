@@ -22,7 +22,7 @@ ACS B25064 is **median gross rent**, including the relevant utility costs, not c
 
 Public LODES describes commuting/job geography and selected demographic categories; it has **no nativity/status dimension**. It cannot by itself show where immigrants work versus live. Geographic allocation also does not create individual linkage: assigning a metro elasticity to PUMAs does not measure within-metro capacity or resolve multi-area overlap automatically. [SOURCE: [Census LODES technical schema](https://lehd.ces.census.gov/doc/help/onthemap/LODESTechDoc.pdf); INFERENCE]
 
-The actual repository MSA builders calculate correlations using ACS 2023 foreign-born **stock share**, not the study's worker-flow treatment. A second ACS year plus an instrument is not guaranteed to replicate a paper; the treatment denominator, assignment/exclusion assumptions, timing, outcome, weights, and geography must match. The [repaired MSA panel review](immigration-msa-rent-elasticity-panel-2026-06-25.md) states the limits. [SOURCE: tracked builders linked there; INFERENCE]
+The actual repository MSA builders calculate correlations using ACS 2023 foreign-born **stock share**, not the study's worker-flow treatment. A second ACS year plus an instrument is not guaranteed to replicate a paper; the treatment denominator, assignment/exclusion assumptions, timing, outcome, weights, and geography must match. The repaired MSA panel review (`immigration-msa-rent-elasticity-panel-2026-06-25.md`, deleted; last version at `970f44f` (2026-09-05), INDEX tombstones) states the limits. [SOURCE: tracked builders linked there; INFERENCE]
 
 ## Causal synthesis and welfare
 

@@ -10,7 +10,6 @@
 This correction governs conflicting claims in the retained assessment below. Evidence and scope: [five-day cross-check](immigration-five-day-cross-check-2026-09-19.md).
 
 ## Retained assessment and evidence
-claude-opus-5[1m]
 
 # Homicide: the victim–offender joint distribution, and what one homicide costs the treasury
 

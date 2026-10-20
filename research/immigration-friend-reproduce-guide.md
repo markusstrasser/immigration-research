@@ -4,7 +4,7 @@
 
 **Reader inputs (2026-09-19):** [Acquisition, joins and normalization](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md) supplies official-download, cleared-mirror and browser/manual routes, plus the current lane recipes. The core warehouse build does not reproduce every September analysis, and no AWS mirror URL is registered in that guide yet.
 
-**Updated:** 2026-10-20. The current result heads the [topic index](immigration-INDEX.md) and the root README: [main case v9](../decisions/2026-10-16-main-case-v9.md) puts the net cost of the Mexican-immigrant lineage to other US residents at $368–437bn a year (income year 2024 under 2024 tax and benefit rules, with Social Security and Part A promises at what current law can pay, 2026 Trustees), counting pension promises members earn as they work. It counts whole people in the completed union, nonreporting descendants, native-minor calibration and constructed Census coverage correction: 44.90M members. Counting benefits when paid gives $284–353bn. [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`.] Other residents' social costs and benefits bring it to $478–573bn, including re-spending of the budget saving and the pollution of public purchases the same budget response removes ([real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md)). The [objections FAQ](immigration-objections-faq-2026-09-21.md) routes the standard objections to their executed tables. The September 5 [repair report](immigration-material-repair-report-2026-09-05.md) records the errors found in earlier analyses; the household-donor fiscal schema and its figures are invalid. The claim tables in §5 cover the warehouse layer; the account's figures live in the memos of §4.
+**Updated:** 2026-10-21. The current result heads the [topic index](immigration-INDEX.md) and the root README: [main case v9](../decisions/2026-10-16-main-case-v9.md) puts the net cost of the Mexican-immigrant lineage to other US residents at $368–437bn a year (income year 2024 under 2024 tax and benefit rules, with Social Security and Part A promises at what current law can pay, 2026 Trustees), counting pension promises members earn as they work. It counts whole people in the completed union, nonreporting descendants, native-minor calibration and constructed Census coverage correction: 44.90M members. Counting benefits when paid gives $284–353bn. [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`.] Other residents' social costs and benefits bring it to $480–554bn on the same case, including re-spending of the budget saving and the pollution of public purchases the same budget response removes ([real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md); [CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv`, `pairing_on_priced_count`]). The [objections FAQ](immigration-objections-faq-2026-09-21.md) routes the standard objections to their executed tables. The September 5 [repair report](immigration-material-repair-report-2026-09-05.md) records the errors found in earlier analyses; the household-donor fiscal schema and its figures are invalid. The claim tables in §5 cover the warehouse layer; the account's figures live in the memos of §4.
 
 ---
 
@@ -59,7 +59,7 @@ invokes `build all`; it is not a core-only build.
 
 Paths are in `infra/immigration-fiscal/acquire/config.local.env` (gitignored).
 
-On the inspected machine, raw inputs are at `/Volumes/2TBPNY/research-data/immigration-fiscal/data` and corrected generated files at `/Volumes/2TBPNY/research-data/immigration-fiscal/derived`. The old `sources` and `data/derived` symlinks point to missing offload locations; use the explicit configuration. A local warehouse has been repaired; no new public release is implied.
+On the inspected machine, raw inputs live under the repository's `sources/` directory (a real, gitignored directory; `~/research-data` links to it): `config.local.env` sets `PNY_DATA_ROOT` to `sources/immigration-fiscal/data` and `DERIVED_ROOT` to `sources/immigration-fiscal/derived`. A local warehouse has been repaired; no new public release is implied.
 
 **Smoke test:**
 
@@ -71,7 +71,7 @@ On the inspected machine, raw inputs are at `/Volumes/2TBPNY/research-data/immig
 
 ## 3. Rerun the headline and the warehouse queries
 
-The headline is one engine run of the main-case lane; [REPRODUCTION_INPUTS](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline) gives the inputs it needs and the commands. The checked-in SQL checks the warehouses:
+The headline is one engine run of the main-case lane, main case v9 (`infra/immigration-fiscal/main_case_2026_10_16/`); [REPRODUCTION_INPUTS](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md#the-adopted-main-case-the-headline) gives the inputs it needs and the commands. The checked-in SQL checks the warehouses:
 
 ```bash
 ./scripts/reproduce-immigration-data.sh query        # all checked-in SQL
@@ -120,7 +120,7 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 | Claim surface | Status | Use instead |
 |---------------|--------|-------------|
 | April Texas/CPS federal prototype | Superseded | SIPP-style `acs_*_federal_microsim_2023` tables |
-| Origin `school_per_adult` / `net_crude` in `v_three_layer_annual` | **Withheld** for Mexico/EU origins (June 2026 guard) | `nh_white_usborn` school row only; see school-burden memo |
+| Origin `school_per_adult` / `net_crude` in `v_three_layer_annual` | **Withheld** for Mexico/EU origins (June 2026 guard) | `nh_white_usborn` school row only; the school-burden memo was deleted on 2026-09-29 (INDEX tombstone table; successors [school peer checks](immigration-school-peer-checks-2026-09-20.md) and [four fiscal checks](immigration-four-fiscal-checks-2026-09-20.md)) |
 | Sweep cycles 13–22 origin fiscal rows | Superseded | `v_three_layer_annual` + audit memo |
 | “Low-skill” in warehouse | Operational = `SCHL < 16` + `YOEP >= 2014` + ages 25–64 | Not “all non-college” |
 | NAS 2017 full PDF | Partial excerpt mined | `life.npv_education_benchmarks` — treat as benchmark not verdict |
@@ -206,6 +206,8 @@ Lists after download: `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANU
 | SQL query pack | `queries/immigration/` |
 
 ## Revisions
+
+- 2026-10-21 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md); consumer pairing c7b99ac7): the fiscal-plus-social total is v9's own, $480–554bn, replacing v8's $478–573bn, which had sat beside the v9 headline. §2 now names the live data root (`sources/`, a real directory) in place of the retired offload paths, §3 names the v9 lane, and §5's school row points to the deleted memo's tombstone and successors. Concept affected: the fiscal-plus-social total quoted with the headline.
 
 - 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 

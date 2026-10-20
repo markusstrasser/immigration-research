@@ -2,6 +2,8 @@
 
 Date: 2026-04-10
 
+[2026-10-21: April 10 planning record. The lifetime model it scopes was later built as the generation ledger ([repaired lifetime index](immigration-yearly-lifetime-cost-repair-2026-09-19.md)), and the annual result is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) (main case v9). Data locations below may no longer resolve; see the [dataset register](immigration-dataset-register.md). [INFERENCE]]
+
 ## Question
 
 What data do we need to replace coarse benchmark lifetime fiscal estimates with our own model for immigration, especially low-education cases?
@@ -93,7 +95,7 @@ What it does **not** give us:
 4. undocumented status
 
 Current local file:
-1. [csv_pus.csv](/Volumes/SSK1TB/corpus/census_acs/csv_pus.csv)
+1. `/Volumes/SSK1TB/corpus/census_acs/csv_pus.csv` (on a volume no longer attached; current ACS holdings: [dataset register](immigration-dataset-register.md))
 
 Judgment:
 1. necessary but not sufficient

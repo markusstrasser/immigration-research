@@ -1,5 +1,3 @@
-claude-opus-5[1m]
-
 # Mexico-born arrival cohorts: did selection fall across cohorts? (2026-09-18)
 
 **Verdict:** Measured skill rose sharply; selection relative to Mexico did not move. Mexico-born

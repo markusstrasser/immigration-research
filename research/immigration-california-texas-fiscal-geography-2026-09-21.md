@@ -2,7 +2,7 @@
 
 Date: 2026-09-21. [ROUTING] Pair the two large settlement states. Numbers are 2024 dollars
 per standardized person per year unless noted. This is the older **shared all-age partial
-ledger**, not the $340–424bn complete account and not the generation-ledger −$7k to −$9k.
+ledger**, not the $368–437bn complete account (main case v9) and not the generation-ledger −$7k to −$9k.
 Do not scale one onto the other. [FRAMING-SENSITIVE]
 
 ## Verdict

@@ -1,5 +1,3 @@
-claude-opus-5[1m]
-
 ## Audit correction — September 19, 2026
 
 **Keep the measured survey contrasts; their interpretation is narrower.** The response-style checks use substantive attitudes themselves and do not identify what share of convergence is survey competence. Economic selection among ethnic nonidentifiers does not bound every norm outcome. The political-violence item gap is a survey finding; the memo's requirement for behaviorally validated replication governs any substantive use. Multiple testing alone does not disprove the contrast, but neither its size nor statistical significance establishes behavior. [SOURCE: item definitions, response-style construction and limitations below; mechanisms audit]

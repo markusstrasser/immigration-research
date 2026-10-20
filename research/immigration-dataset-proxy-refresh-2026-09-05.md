@@ -6,7 +6,7 @@
 
 ## Existing inventory and actual gaps
 
-The current [dataset register](immigration-dataset-register.md) already covers ACS PUMS, QWI/QCEW, PIT/HIC/BPS threshold assets, CHAS, SAFMR, Zillow, historical SNAP, DHS annual/budget reports and Texas crime replication. The [current receiver-node correction](immigration-receiver-node-kill-test-2026-04-23.md) states that QWI has no nativity, court venue is not residence, and the area-weighted PUMA bridge is not a validated county estimate. The acquisitions target these measurement gaps rather than rescore that nine-node screen. [SOURCE]
+The current [dataset register](immigration-dataset-register.md) already covers ACS PUMS, QWI/QCEW, PIT/HIC/BPS threshold assets, CHAS, SAFMR, Zillow, historical SNAP, DHS annual/budget reports and Texas crime replication. The current receiver-node correction (`immigration-receiver-node-kill-test-2026-04-23.md`, deleted; last version at `970f44f` (2026-09-05), INDEX tombstones) states that QWI has no nativity, court venue is not residence, and the area-weighted PUMA bridge is not a validated county estimate. The acquisitions target these measurement gaps rather than rescore that nine-node screen. [SOURCE]
 
 Read-only inventory used `/Volumes/2TBPNY/research-data/immigration-fiscal/data` because the repository source links are broken. A broader SSD filename search located `/Volumes/2TBPNY/corpus/bea_data/SAINC/SAINC35__ALL_AREAS_1929_2024.csv`, with its neighboring definition XML and footnotes. The project register's HIC/BPS entries were recognized before acquisition; the exact mounted legacy causal path remains unresolved. BPS files acquired here are specified new vintages, while no HIC/PIT duplicate was pulled. [DATA; GAP]
 

@@ -1,5 +1,3 @@
-claude-opus-5[1m]
-
 ## Audit correction — September 19, 2026
 
 **“Tax-driven” overstates the design.** Retain the descriptive association and the tax-rate comparison; the data do not identify moving motives. Native population change includes natural increase and IRS filer movement does not isolate natives. The index should say more strongly associated with taxes, with causal motives unresolved. [SOURCE: the memo's own scope limitations; mechanisms audit]

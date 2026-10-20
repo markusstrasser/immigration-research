@@ -1,5 +1,3 @@
-claude-opus-5[1m]
-
 # Neighborhood maintenance and storefront formality in immigrant enclaves
 
 **Verdict:** **H1 NOT SUPPORTED AS A GROUP EFFECT. H2 FALSIFIED.**

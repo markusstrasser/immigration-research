@@ -6,7 +6,7 @@ Follow-up: [aggregate later-generation estimates](immigration-later-generation-e
 now execute the age-adjusted GSS model, historical checks and PSID access audit.
 The observed classification counts below are unchanged.
 
-**Finding:** The current 40.896574m Mexican-origin annual-account population already includes identifying fourth and later generations within G3+. Parent linkage separates 2.870m as observed G3 and 2.073m as observed G4+, leaving 9.399m unresolved within G3+. These are identified portions, not complete generation totals. Exact G4 versus G5+ remains unmeasured. Adding G4+ again would double-count residents already in the account.
+**Finding:** The September 20 union of 40.896574m Mexican-origin identifiers already includes identifying fourth and later generations within G3+. Parent linkage separates 2.870m as observed G3 and 2.073m as observed G4+, leaving 9.399m unresolved within G3+. These are identified portions, not complete generation totals. Exact G4 versus G5+ remains unmeasured. Adding identifying G4+ again would double-count residents already in the account; the descendants who no longer report Mexican origin, whom the main case has counted as whole people since v5 (FAQ entry 19), are a separate group.
 
 ## Current executable definition
 

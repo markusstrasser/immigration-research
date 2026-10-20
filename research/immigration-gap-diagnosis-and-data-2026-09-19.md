@@ -167,7 +167,7 @@ lists TAF through 2023 and preliminary 2024, with state/year availability
 qualifications and restricted access. These improve health-cost measurement,
 not complete Mexican genealogies.
 
-[CALCULATION / PRIORITY] The [current national bridge](immigration-macro-reconciliation-2026-09-19.md)
+[CALCULATION / PRIORITY] The [September 19 national bridge](../infra/immigration-fiscal/macro_closure_2026_09_19/README.md)
 still has roughly $2.07–2.14tn fewer modeled receipts and $3.36–3.37tn fewer
 modeled expenditures than BEA current accounts. These are mixed-scope residuals,
 not all errors or missing costs attributable to immigrants. In the shared

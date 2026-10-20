@@ -88,7 +88,7 @@ was absent. State budget balances cannot substitute: they mix federal grants,
 local taxes, debt and other residents' tax bases. Likewise, the historical backcast
 transports a current anchor backward; matching its own anchor is not a successful
 forecast. [INFERENCE; [backcast scope](immigration-historical-backcast-2026-09-20.md),
-[reality-check boundaries](immigration-fiscal-reality-checks-2026-09-19.md)]
+[administrative checks](immigration-administrative-checks-2026-09-19.md)]
 
 We do already have two informative prediction exercises:
 

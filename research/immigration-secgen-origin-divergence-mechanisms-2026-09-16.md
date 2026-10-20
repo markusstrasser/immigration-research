@@ -1,5 +1,3 @@
-claude-opus-5[1m]
-
 # Second-Generation Divergence by National Origin — Mechanism Evaluation
 
 **Verdict:** The divergence is not one mechanism. The two with real identification are parental

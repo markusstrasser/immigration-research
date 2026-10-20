@@ -1,8 +1,10 @@
 **Verdict:** The expanded evidence supports a higher annual partial fiscal balance for the all-native population than for Mexico-born adults, and substantial differences between racial/nativity wage groups. It also documents real institutional recording failures. It does **not** identify a complete fiscal sign or current true-offending rate for unauthorized immigrants. The useful conclusions are the measured comparisons and the assumptions required to overturn them. [SOURCE: linked analyses; INFERENCE]
 
-# Current findings after the fiscal, conduct and measurement audit
+# Findings as of September 5, 2026 (before the complete account)
 
-September5,2026. This is the current entry point for the operator's requests to finish the audit, acquire recent evidence, model missing residents and enforcement, and separate Black people in wage/crime statistics. Older reports remain available with dated corrections. [PROVENANCE]
+[2026-10-21: superseded as an entry point. The current account is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) (main case v9) and the [topic index](immigration-INDEX.md); the fiscal row's "no complete fiscal conclusion" predates it. [INFERENCE]]
+
+September5,2026. This was the entry point on September 5 for the operator's requests to finish the audit, acquire recent evidence, model missing residents and enforcement, and separate Black people in wage/crime statistics. Older reports remain available with dated corrections. [PROVENANCE]
 
 | Question | Finding | Evidence and remaining limit |
 |---|---|---|

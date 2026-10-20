@@ -2,6 +2,8 @@
 
 Date: 2026-04-11
 
+[2026-10-21: the National totals and State concentration figures below are withdrawn. The 2023 ACS mirror read on April 11 was incomplete (its top states omit Texas and New York, and California alone held 41%) [INFERENCE]; the rebuilt file it cites now gives 7,686,859 foreign-born adults 25–64 below high school, 7,408,789 with HS/GED and 6,120,808 with some college, 21,216,456 in the three buckets. Current state: the [2024 fiscal account](immigration-fiscal-account-2024-2026-09-05.md) and the [complete annual account](immigration-complete-annual-account-2026-09-20.md). [DATA: `sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv`] [INFERENCE]]
+
 ## Question
 
 What can the repo now say about the size and state distribution of low-skill immigrant stocks by education bucket, and what does it **not** yet support on bucket-specific lifetime fiscal cost?
@@ -16,7 +18,7 @@ The repo now has a clean weighted `ACS` stock cut for foreign-born adults ages `
 
 It does **not** yet have a defensible bucket-specific `lifetime NPV` for those three groups from the current public stack.
 
-That is the correct state of the project. Anything more precise right now would be fake precision. [SOURCE: research/immigration-lifetime-fiscal-data-stack-2026-04-10.md] [SOURCE: research/immigration-public-mvp-readiness-2026-04-11.md] [SOURCE: research/immigration-next-agent-handoff-2026-04-11.md]
+That is the correct state of the project. Anything more precise right now would be fake precision. [SOURCE: research/immigration-lifetime-fiscal-data-stack-2026-04-10.md] [SOURCE: research/immigration-public-mvp-readiness-2026-04-11.md, research/immigration-next-agent-handoff-2026-04-11.md (both deleted; INDEX tombstones)]
 
 ## What this cut is
 
@@ -136,8 +138,8 @@ Do **not** use this memo to claim:
 
 ## Artifacts
 
-1. [acs_foreign_born_education_bucket_totals_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv)
-2. [acs_foreign_born_education_state_shares_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_state_shares_2023.csv)
+1. [acs_foreign_born_education_bucket_totals_2023.csv](../sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv)
+2. [acs_foreign_born_education_state_shares_2023.csv](../sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_state_shares_2023.csv)
 
 ## Revisions
 

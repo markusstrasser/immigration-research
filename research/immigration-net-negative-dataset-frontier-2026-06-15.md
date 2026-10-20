@@ -2,9 +2,9 @@
 
 **Current correction: 2026-09-05.** The earlier 'SIPP donor rebuilt/done' status is superseded: the model had person/household and education-code defects and did not replace a full federal tax-transfer model. The repaired model covers employee payroll less allocated SNAP/TANF/SSI only, including some benefits with state funding. Income taxes, employer payroll, health spending, pensions, refundable credits and wider public services require separate coherent modeling. Adding more context datasets cannot by itself produce an identified marginal fiscal balance.
 
-[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+[SOURCE: the September 5 material audit and its source-code and table checks, recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
 
-The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions. Memos the history cites by `research/…` path were mostly deleted on 2026-09-05 or 2026-09-29; the INDEX tombstone tables give each one's last commit.
 
 ## Revisions
 
@@ -17,7 +17,7 @@ The [repair report](immigration-material-repair-report-2026-09-05.md) is the cur
 # Net-negative immigration: dataset frontier
 
 **Date:** 2026-06-15  
-**Frame:** User asked for datasets to support a net-negative verdict. Per [immigration-adversarial-review.md](immigration-adversarial-review.md), we cannot honestly claim **overall** net negative yet — but we *can* tighten tests on **local cost channels** and build a **federal tax-transfer microsim** that might flip the sign by cell. This note maps acquirable data for both sides. [FRAMING-SENSITIVE]
+**Frame:** User asked for datasets to support a net-negative verdict. Per `immigration-adversarial-review.md` (deleted; last version at `ab84a00`, 2026-09-16; INDEX tombstones), we cannot honestly claim **overall** net negative yet — but we *can* tighten tests on **local cost channels** and build a **federal tax-transfer microsim** that might flip the sign by cell. This note maps acquirable data for both sides. [FRAMING-SENSITIVE]
 
 ## What “net negative” would require
 

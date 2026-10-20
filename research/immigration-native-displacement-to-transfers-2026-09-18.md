@@ -1,5 +1,3 @@
-claude-opus-5[1m]
-
 ## Audit correction — September 19, 2026
 
 **A failed design leaves an unidentified causal effect, not a null.** The baseline-level correlation is a balance/mean-reversion diagnostic, not a direct test of exclusion for an outcome change. In the 2008–2018 Mexico-born SSI arm, independently scaling the single instrument by 1, −1 and 0.001 leaves F=44.0025 and the IV coefficient +0.213008 unchanged. Negative national inflow cannot invalidate an estimate through sign alone. Placebo and dynamic-confounding concerns still prevent a causal conclusion; the probe does not validate displacement. [SOURCE: principal code and independent probe in the mechanisms audit]

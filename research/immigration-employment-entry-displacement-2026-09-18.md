@@ -438,7 +438,7 @@ The build produces `derived/metro_year_panel.csv`, a metro × year panel of fore
 Mexico-born population shares for 2005–2019 and 2021–2023 on fixed 2013 CBSA boundaries. The
 repo's MSA rent-elasticity memo records its causal result as GATED on exactly this series
 ("needs metro foreign-born share over" time, with only 2023 staged). This panel closes that
-input. [SOURCE: `research/immigration-msa-rent-elasticity-panel-2026-06-25.md` §What's built vs
+input. [SOURCE: `research/immigration-msa-rent-elasticity-panel-2026-06-25.md` (deleted; last version at `970f44f`) §What's built vs
 gated]
 
 ## 7. Sources

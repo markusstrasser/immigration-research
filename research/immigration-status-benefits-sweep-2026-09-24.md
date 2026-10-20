@@ -30,8 +30,8 @@ California.
 None of this is missing from our account. Every dollar sits inside BEA's 2024 national totals,
 which the account assigns through its keys. Keys and actual use diverge only for shelters. There
 the account charges the Mexican-origin group 12.9–22.6% of the outlays, while Mexican nationals were
-0.50–0.84% of the people served. Charging by use would lower the main case by about $0.5bn
-($0.45–0.84bn; at most $1.16bn). That is proposed, not adopted.
+0.50–0.84% of the people served. Charging by use lowered the main case by about $0.5bn
+($0.45–0.84bn; at most $1.16bn) when it was adopted on 2026-09-24; the case has charged shelters by use since.
 
 ## The table
 

@@ -1,5 +1,3 @@
-claude-opus-5[1m]
-
 ## Audit correction — September 19, 2026
 
 **Private-school welfare cost remains unpriced.** The later DC voucher trial is not the only randomized US evidence, and a test-score null does not show tuition buys no benefits. The earlier federal DC evaluation found a graduation benefit; the later evaluation also found attendance, perceived-safety and satisfaction benefits. Neither identifies immigration-induced switching or its net welfare value. Preserve the observed revenue associations and test-score findings; withdraw the claim that these experiments settle the defensive-expenditure classification. A weak or invalid migration instrument also does not establish a null, and a nonzero national scalar cannot mechanically weaken a single-window IV. [SOURCE: official IES evaluation records and independent IV probe in the mechanisms audit]
@@ -230,7 +228,7 @@ school-bond threshold from two-thirds to 55%, so a raw pass rate is not comparab
 that date. Districts are matched from the ballot-measure place name to the CCD district
 name; the match rate is reported and unmatched measures are listed.
 
-**What the repo already had.** `school_angle_2026_09_16` found no measured cost to
+**What the repo already had.** The September 16 school-channel review (superseded by the [school capacity memo](immigration-school-capacity-harms-2026-09-20.md)) found no measured cost to
 incumbent students from immigrant or English-learner concentration in US data, and priced
 the classroom channel at $0 per pupil-year. `ledger_absolute_2026_09_17` found that
 Hispanic pupils attend districts spending **$474 per pupil above** their state's mean
@@ -898,7 +896,7 @@ is the subject of the flight estimates.
   Investment," for the treatment of government output.
   [SOURCE: https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-09.pdf]
 
-**Repo lanes reused.** `school_angle_2026_09_16` (incumbent-student effects),
+**Repo lanes reused.** The September 16 school-channel review (incumbent-student effects; superseded by the [school capacity memo](immigration-school-capacity-harms-2026-09-20.md)),
 `ledger_absolute_2026_09_17` (F-33 and CCD loaders, district cost-to-serve differential),
 `employment_entry_2026_09_18` (metro geography, 2000-base shift-share instrument).
 

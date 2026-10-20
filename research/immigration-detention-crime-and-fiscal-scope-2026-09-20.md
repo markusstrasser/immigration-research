@@ -97,7 +97,9 @@ pins the primary records, source definitions and reproducible probes:
 [SOURCE: source manifest and probe receipts in the linked bundle; ICE FY2024
 workbook, BJS Table 12, SCAAP award table/solicitation, USSC Table 9/Appendix A.]
 
-No actual FY2024/25 detention-spending total has been verified in this bundle.
+The bundle itself verified no actual FY2024/25 detention-spending total; the
+follow-up above ([actual spending](../infra/immigration-fiscal/detention_evidence_2026_09_20/ACTUAL_SPENDING_FY2024.md))
+verifies a $2.917bn FY2024 federal custody-outlay subtotal, not a complete consolidated total.
 ICE's FY2025 budget justification reports an estimated **FY2023** direct adult
 bed cost of $187.48/day; it is not an observed FY2024/25 unit cost or marginal
 cost. Appropriations and budget targets are retained with their original labels,

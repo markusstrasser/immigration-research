@@ -5,6 +5,12 @@ narrative authorship remains operator-owned. Follows section 5 of the
 [blog audit](immigration-marginal-revolution-claims-audit-2026-09-18.md), which listed these
 papers from abstracts only.
 
+[2026-10-21: superseded in two places (Revisions 2026-09-23). The elder-care figure to quote is the
+[care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md)'s net Medicaid saving,
+about $1.5bn a year (design range $1.2–7.6bn), now inside the main case; the gross bound below is record.
+The $165–197bn and the $8.8–13.3bn production term are the September 20 account; the live case is main
+case v9 (CLAUDE.md, FAQ entry 14). [SOURCE: this memo's Revisions; care lane RESULT] [INFERENCE]]
+
 **Result:** None of the seven changes the $165–197bn conditional net cost. Two identify benefits
 to other residents that the [complete account](immigration-complete-annual-account-2026-09-20.md)
 omits. The nursing-home channel is real in the literature but transfers weakly to Mexican-origin

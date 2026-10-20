@@ -1,5 +1,7 @@
 # Pre-Registration Ledger — frozen predictions before the gated data lands
 
+[2026-10-21: P1's data have since been pulled and the test run (ladder 178, IPUMS-CPS ASEC 1994–2025, 2026-09-22); no `RESOLVED P1` block has been appended, so the resolution log's "none yet" is out of date. [DATA: ladder 178] [INFERENCE]]
+
 **Purpose.** The deepest open tests (cluster-V V02 2nd-gen transmission; immigrant mobility)
 are blocked on gated data not yet pulled (IPUMS-CPS, openICPSR 120490). That is a rare
 chance for a *genuine out-of-sample test*: register the predicted result + falsifier **now**,

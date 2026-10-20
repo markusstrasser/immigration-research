@@ -2,7 +2,9 @@
 
 Date: 2026-09-20. [MODEL SCOPE / SENSITIVITY] Billions of nominal calendar-2024 dollars per year, for the current observed Mexican-origin population, including descendants. These are neither all-immigrant totals nor estimates of new staff headcounts.
 
-**Finding:** Education and staff within ordinary services already enter the main long-run result. Broad general public services are in the accounting ledger but assumed unresponsive in the main welfare case. No separate federal marginal-hiring model has been estimated.
+[2026-10-21: superseded on the main case's scope. Since 2026-09-23 the main case lets general public services respond, read since 2026-09-26 as a finite removal at 0.60–0.85 of average cost ([decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)); defense and existing interest stay at zero response by assumption. The table below remains the September 20 isolated sensitivity. [SOURCE: decision record] [INFERENCE]]
+
+**Finding:** Education and staff within ordinary services already enter the main long-run result. Broad general public services are in the accounting ledger but were assumed unresponsive in the September 20 welfare case. No separate federal marginal-hiring model has been estimated.
 
 ## Already included
 
@@ -22,7 +24,7 @@ BEA government consumption includes employee compensation, purchased inputs and 
 
 This function includes executive/legislative, tax collection/financial management and other general services. It is broader than payroll, and state/local “other” includes unallocable expenditure. The classification labels come from Table3.15.5; its investment-inclusive dollars are not substituted for Table3.17 current consumption.
 
-The existing code combines this function with defense in `public_goods`. Its common response parameter therefore cannot isolate administration. The main case sets both responses to zero and leaves existing interest fixed. Zero is an assumption, not evidence that additional residents need no administration.
+The existing code combines this function with defense in `public_goods`. Its common response parameter therefore cannot isolate administration. The September 20 main case set both responses to zero and left existing interest fixed; the live case keeps defense and existing interest at zero and lets general public services respond (note above). Zero is an assumption, not evidence that additional residents need no administration.
 
 ## Isolated arithmetic sensitivity
 

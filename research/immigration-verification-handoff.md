@@ -86,7 +86,11 @@ Use first:
 
 What these can support:
 
-1. federal-positive / state-local-negative splits
+1. federal versus state-local splits. For the Mexican-origin lineage neither side is a gain on the live case: the
+   state and local part is the larger cost, and the federal part is a cost too, more so once the pension promises
+   members accrue are counted ([winners lane](../infra/immigration-fiscal/winners_losers_2026_09_24/RESULT.md),
+   `derived/oct16/channels.csv`). A federal gain belongs to young recent inflows over CBO's ten-year federal window
+   (FAQ entry 16)
 2. the child-attribution dispute
 3. the effect of average-cost vs marginal-cost accounting (the account's service-response rules)
 4. local congestion and adaptation costs, priced beside the account
@@ -123,7 +127,7 @@ What they cannot settle cleanly:
 Use first:
 
 1. `research/immigration-economist-effects-matrix.md`
-2. `research/immigration-clark-respondent-audit.md`
+2. `research/immigration-igm-panel-audit-2026-09-17.md`
 3. `research/immigration-evidence-base-audit.md`
 
 What these can support:
@@ -232,7 +236,8 @@ Use:
 
 1. `research/immigration-public-mvp-meps-module-2026-04-11.md`
 2. `MEPS HC-251`
-3. the full-spectrum memo for interpretation
+3. `research/immigration-real-fiscal-and-social-costs-2026-09-23.md` for interpretation (the full-spectrum memo it
+   replaced was deleted on 2026-09-29)
 
 Local assets:
 
@@ -402,6 +407,8 @@ For each commentator claim:
 6. `Notes on category slip or scope inflation`
 
 ## Revisions
+
+- 2026-10-21 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md)): §2 no longer says these memos support a federal-positive split; on the live case the lineage's federal part is a cost (winners lane, `oct16`), and the federal-gain pattern belongs to young recent inflows (FAQ entry 16). §4 routes economist-poll claims to the IGM panel audit, which supersedes the April Clark respondent audit, and the health route names the real-costs memo in place of the deleted full-spectrum memo. Concept affected: what the fiscal memos can support on the federal/state-local split.
 
 - 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 

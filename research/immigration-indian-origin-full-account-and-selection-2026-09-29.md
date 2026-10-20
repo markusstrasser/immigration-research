@@ -5,10 +5,12 @@
 [indian_cohort_selection_2026_09_29](../infra/immigration-fiscal/indian_cohort_selection_2026_09_29/RESULT.md),
 design [percentile_mapping_design_2026_09_29](../infra/immigration-fiscal/percentile_mapping_design_2026_09_29/DESIGN.md).
 
-**Verdict:** On main case v7, with every group's income taxes on the case's own keys, business-capital taxes on
-the group's own industries and the same social rows the Mexican-origin union carries, Indian-origin residents
-benefit other residents by about $14,900–19,500 per member a year ($91–119bn), and by $12,300–16,300 at the
-third-plus white age distribution. These are model outputs, not measured removal effects. The flow the household surveys see is not
+**Verdict:** On main case v9's fiscal account, with every group's income taxes on the case's own keys and
+business-capital taxes on the group's own industries, Indian-origin residents benefit other residents by about
+$16,300–19,800 per member a year ($99–120bn), and by $14,000–17,000 at the third-plus white age distribution.
+The social rows (crime, health, traffic and the other real costs) are not computed for the Indian groups on v9,
+and the household-sharing term (item 11) is unmeasured for them, not zero. These are model outputs, not measured
+removal effects. The flow the household surveys see is not
 becoming less selected: each arrival cohort since 1995 sits at the 75th–78th percentile of US white
 education at arrival. "Indian" is several populations: Telugu-, Tamil-, Kannada- and Hindi-speaking
 professionals sit near the 80th percentile, Punjabi speakers at the 47th. The unmeasured risk is the post-2021
@@ -27,57 +29,59 @@ lost selection; split the group by home region.
 
 ## 2. The full account
 
-Per member a year, low / high end of main case v7; positive costs others, negative benefits them. Each group's
-own ages and measured keys change its taxes and spending; the case's national totals and response rules stay fixed.
-The white-ages arms reweight today's per-age profile while holding those rules fixed. Parts add to
-totals: fiscal and total print their file values and the social rows take the rounding, at most $1
-[CALCULATION: `indian_full_account_2026_09_29/derived/oct14/combined.csv`, 150bb420]:
+Per member a year, low / high end of main case v9's fiscal account; positive costs others, negative benefits
+them. Each group's own ages and measured keys change its taxes and spending; the case's national totals and
+response rules stay fixed. The white-ages arms reweight today's per-age profile while holding those rules fixed
+[CALCULATION: `indian_full_account_2026_09_29/derived/oct16/rekey_summary.csv`, `basis=accrual`,
+`cost_per_member`; 7baea8b0]:
 
-| Group | Fiscal | Social rows | Total |
-|---|---:|---:|---:|
-| Indian-origin, actual ages (6.08M, CPS) | −20,763 / −16,265 | +1,243 / +1,330 | **−19,520 / −14,935** |
-| Indian-origin, white ages | −17,770 / −13,822 | +1,453 / +1,511 | **−16,317 / −12,311** |
-| India-born, actual ages | −27,353 / −21,963 | +887 / +990 | −26,466 / −20,973 |
-| India-born, white ages | −16,717 / −12,726 | +1,256 / +1,327 | −15,461 / −11,399 |
-| Mexican-immigrant lineage, actual ages, corrected v8's 45.23M people | +8,087 / +10,081 | +2,474 / +2,597 | +10,561 / +12,678 |
-| Third-plus whites, a 42.75M slice | −4,594 / −1,961 | +2,238 / +2,277 | −2,356 / +316 |
+| Group | Fiscal |
+|---|---:|
+| Indian-origin, actual ages (6.08M, CPS) | **−19,765 / −16,338** |
+| Indian-origin, white ages | **−17,049 / −14,030** |
+| India-born, actual ages | −26,165 / −22,003 |
+| India-born, white ages | −15,975 / −12,946 |
+| Mexican-immigrant lineage, the main case's 44.90M people | +8,196 / +9,722 |
+| Third-plus whites, a 44.90M slice | −5,742 / −3,610 |
 
-The row labelled corrected v8 reads the current case and social pairing directly; the other comparison rows
-await their committed comparator rerun. The v8 row's social values take controlled rounding so its displayed parts
-add. [CALCULATION: `main_case_2026_10_15/derived/summary.json`, `v8.per_member_usd.set`;
-`sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`, `joint_social_stack.ends`, with the case's
-45.23M-person denominator. No current Indian combined social result is asserted.]
+The lineage row is the case itself [CALCULATION: `main_case_2026_10_16/derived/summary.json`,
+`v9.per_member_usd.set`]; the other rows run the comparator engine on each group's own keys. No social or combined
+column is shown: the lane's social route stops at its source-estimand gate (its restated union does not match the
+case's social pairing), so no Indian or white-age social result exists on v9. The lineage's own social rows
+are in the case's social pairing (`sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`,
+`joint_social_stack`).
 
-- The union carries the 3.04M added descendants at the case lane's amounts and their own social rows from the
-  oct14 pairing; the Indian-origin groups keep their CPS counts [ASSUMPTION]. Every group
-  takes the IPEDS keys for Pell and public colleges, the Indian groups at NH Asian shares [DEGRADED: IPEDS has no
-  Indian split], and item 4's hospital-fee term stays beside (−$81 per Indian-origin member).
+- The Indian-origin groups keep their CPS counts [ASSUMPTION]; the case's calibration of Mexican-origin minors and
+  its Hispanic Census-coverage rates do not transfer to them. Every group takes the IPEDS keys for Pell and public
+  colleges, the Indian groups at NH Asian shares [DEGRADED: IPEDS has no Indian split], and item 4's hospital-fee
+  term stays beside (−$58 per Indian-origin member).
 - Item 6 counts the source taxes on business capital at the group's jobs, using each group's measured industry
-  wage shares. At Indian-origin actual ages, its factors relative to the plain wage share are corporate 1.293,
+  wage shares. At Indian-origin actual ages, its factors relative to the plain wage share are corporate 1.040,
   business property 0.820 and other production taxes 0.552. The corporate response is 1 / 0.37; mining stays at
-  zero. These rules give a larger benefit and a wider band [CALCULATION: `derived/oct14/job_capital_factors.csv`;
-  FRAMING-SENSITIVE: the case's full-adjustment premise].
+  zero [CALCULATION: `derived/oct16/job_capital_factors.csv`; FRAMING-SENSITIVE: the case's full-adjustment
+  premise].
 - Fiscal standard errors for the four Indian age rows are about $1,700–2,800 (160 CPS replicate weights). The
   case's federal key puts the top AGI cells' tax on few records; the job-capital factors are remeasured in each
-  replicate, with national weights held fixed [CALCULATION: `derived/oct14/combined.csv`,
-  `derived/oct14/job_capital_gates.json`].
-- Ageing to white ages removes 17–19% of the group's lead over whites; the India-born alone
-  lose 42–46% of their benefit (−$26.5k → −$15.5k at the low end), because their old age is still ahead of
+  replicate, with national weights held fixed [CALCULATION: `derived/oct16/rekey_summary.csv`,
+  `cost_per_member_se`; `derived/oct16/job_capital_gates.json`].
+- Ageing to white ages removes 18–19% of the group's fiscal lead over whites; the India-born alone
+  lose 39–41% of their benefit (−$26.2k → −$16.0k at the low end), because their old age is still ahead of
   them.
-- The case-only fiscal gate is the corrected lineage account, $365.7919 / 455.9818bn
-  [CALCULATION: `derived/oct15/rekey_summary.csv`, `mexican_origin_engine`, and
-  `main_case_2026_10_15/derived/summary.json`, `v8.band_bn`]. The independent fiscal route runs; the
-  combined Indian/white-age social comparison is withheld pending a declared sender/receiver transport rule.
-- Pooling ASEC 2022–26 for the second generation (941 adults, not 209), holding the social rows and job-capital
-  industry factors fixed, moves the total by $155–156 per
+- The case-only fiscal gate is the lineage account, $368.0297 / 436.5615bn
+  [CALCULATION: `derived/oct16/rekey_summary.csv`, `mexican_origin_engine`, and
+  `main_case_2026_10_16/derived/summary.json`, `v9.band_bn`]. The independent fiscal route reproduces byte for
+  byte (indian_full_account RESULT, "Refresh after White's gate fixes").
+- Pooling ASEC 2022–26 for the second generation (941 adults, not 209), holding the job-capital industry factors
+  fixed, moves the fiscal account by $155–156 per
   member. Self-employed and wage-earning India-born adults do not differ measurably
-  (−$71.2k / −65.8k, fiscal SE 45.4–46.6k, against −$41.9k / −34.1k), on the same case rules with each
+  (−$71.7k / −66.9k, fiscal SE 45.4–46.4k, against −$40.3k / −34.3k), on the same case rules with each
   subgroup's own industry factors. Motel, grocery and gas-station owners are 27
   of 350 sampled self-employed India-born adults pooled: too few to estimate.
 
-What rests on proxies: no Indian offending data exists in the repo's sources, so institutionalization
-in ACS 2023 stands in (about 7% of the union's rate per member); medical shares rest on 317 Asian
-Indians in MEPS; long-term care, driving and school discipline use Asian rates. The white-ages
+What rests on proxies: medical shares rest on 317 Asian Indians in MEPS. The social route, unpublished on v9,
+would rest on more: no Indian offending data exists in the repo's sources, so institutionalization in ACS 2023
+stands in (about 7% of the union's rate per member), and long-term care, driving and school discipline use Asian
+rates. The white-ages
 arm holds today's age profile of the group, whose older members are mostly parents who arrived
 late, so it probably understates the aged group's taxes. CPS weights the India-born at 4.28M
 against 2.94M in ACS 2023: the $bn totals scale with the count, the per-member figures do not.
@@ -176,6 +180,16 @@ points and the projected G2 about 1 point [CALCULATION: §5 of the cohort lane].
 
 ## Revisions
 
+- 2026-10-21 (main case v9, [decision](../decisions/2026-10-16-main-case-v9.md), 7baea8b0): the verdict and §2
+  follow oct16 and report the fiscal account alone. The v7 verdict's $14,900–19,500 per member included social
+  rows; v9 publishes no Indian social or combined result, because the lane's social route stops at its
+  source-estimand gate, and item 11 is unmeasured for the Indian groups. On the fiscal account the Indian-origin
+  benefit is $16,338–19,765 per member ($14,030–17,049 at white ages); the lineage costs $8,196–9,722 on its
+  44.90M people. The corporate job-capital factor is 1.040 (v7: 1.293) since v8 removed the US tax on
+  foreign-source income from item 6. Of v9's items, item 13 (military service costs at zero long-run response)
+  narrows the Indian-minus-white gap most, by $5.58bn a year; the gap changes by $4.99 / 4.86bn in all
+  (`derived/oct16/v9_own_key_changes.json`). Concept affected: the Indian-origin comparison's scope (fiscal only)
+  and the case reference.
 - 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the case-only lineage row and fiscal gate use the completed/covered lineage. Comparator figures await their rerun; the Indian combined social route remains withheld for lack of a declared incidence transport. Concept affected: the case reference and the scope of the cross-origin comparison.
 
 - 2026-10-05, later (main case v5, [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281; 594b67a4): the verdict and §2's table run main case v5. Indian-origin residents benefit others by $9,325–10,782 per member; the union, on the 42.75M lineage with the added descendants' social rows, costs $11,581–13,349, so the gap to it is $22,400–22,700 per member (September 29: $22,500–22,800). The lead over third-plus whites, about $13,500, does not move. Concept affected: the full-account comparison (ladder 276).

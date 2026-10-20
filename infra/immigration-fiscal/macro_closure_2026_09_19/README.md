@@ -3,7 +3,7 @@
 **Verdict:** The expanded account is partial. This lane reconciles explicit
 national accounting boundaries, retains unallocated differences, updates the
 available state/local inputs, and separates attribution from budget response.
-See the [calculation memo](../../../research/immigration-macro-reconciliation-2026-09-19.md).
+The later [four fiscal checks](../../../research/immigration-four-fiscal-checks-2026-09-20.md) carry this lane's balance as their "old uniform factor" row and supersede it; the current account is the [complete annual account](../../../research/immigration-complete-annual-account-2026-09-20.md).
 
 ## Reproduce
 

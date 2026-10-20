@@ -1,110 +1,96 @@
 # The adopted account by generation
 
-**Verdict (2026-10-15, corrected main case v8):** On the main case of $365.8–456.0bn a year
-([decision](../decisions/2026-10-15-main-case-v8.md), ladder 304), all three generations remain net costs to other
-US residents. That holds at every one of its 32 personal specifications, under both ways of counting children,
-and when benefits are counted as paid. The completed union and constructed Census coverage correction enter the
-45.23M-person lineage; nonreporting descendants and the completed reporter/child block count in the third-plus.
-- **Counted with their parents** (NAS): the Mexico-born cost others $154.8–185.9bn a year ($14.1–16.9k per adult),
-  the second generation $99.2–126.0bn ($10.3–13.1k per adult) and the third-plus $111.8–144.1bn ($10.5–13.6k per adult).
-  The lineage has 31.23M adults among its 45.23M members.
-- **Counted in their own generation:** $41.1–65.4bn, $149.5–179.1bn and $175.2–211.5bn, respectively.
-- **Counting benefits when paid** (the cash set, $281.8–371.9bn): with their parents $139.4–170.5bn,
-  $61.3–88.1bn and $81.1–113.3bn; in their own generation $25.6–49.9bn, $111.6–141.2bn and $144.6–180.8bn.
+**Verdict (2026-10-21, main case v9):** On the main case of $368.0–436.6bn a year
+([decision](../decisions/2026-10-16-main-case-v9.md), ladder 311), all three generations remain net costs to other
+US residents. That holds at both ends of the case, under both ways of counting children, and when benefits are
+counted as paid; the v9 split runs only the case's two end specifications. The completed union, the native-minor
+calibration and the constructed Census coverage correction enter the 44.90M-person lineage; nonreporting
+descendants and the completed reporter/child block count in the third-plus.
+- **Counted with their parents** (NAS): the Mexico-born cost others $174.6–198.0bn a year ($15.9–18.0k per adult),
+  the second generation $92.5–113.0bn ($9.6–11.8k per adult) and the third-plus $100.9–125.6bn ($9.5–11.8k per adult).
+  The lineage has 31.23M adults among its 44.90M members.
+- **Counted in their own generation:** $61.2–81.3bn, $142.7–164.5bn and $164.1–190.8bn, respectively.
+- **Counting benefits when paid** (the cash set, $284.4–352.9bn): with their parents $159.4–182.7bn,
+  $54.7–75.3bn and $70.3–94.9bn; in their own generation $45.9–66.0bn, $105.0–126.7bn and $133.5–160.2bn.
 
 The case reads every generation at the personal allocation at both ends. Domestic-source business-capital taxes
 follow the generation's industry key. The non-members who stay in mixed units have their own returns and benefits
 recomputed; their consumption and owner-property response remains assumed [FRAMING-SENSITIVE]. Coverage and mixed-unit
 post-engine amounts retain their declared generation parts; covered people take zero on administrative-use justice
-keys. The third-plus's cost per member under own-generation counting is $9,425 / 11,376.
-The pension switch, set less cash, is $84.0bn overall at both ends.
+keys. Items 16 and 17 take their declared generation parts, item 21 follows item 13's health lines, and the other v9
+items follow each line's existing generation amounts. The third-plus's cost per member under own-generation counting
+is $8,912 / 10,360. The pension switch, set less cash, is $83.6bn overall at both ends.
 
 [ASSUMPTION] The pension and education/user-fee parts retain their source routing. Under (b), nonreporting
 descendants whose parents cannot be observed stay in third-plus; observed completion children follow their source
-records. The alternative placement of unlocated descendants' minors is not separately priced on v8.
+records. The alternative placement of unlocated descendants' minors is not separately priced on v9.
 [CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md),
-`run_generations_v8.cjs` → `derived/generation_results_oct15.csv`, `generation_results_oct15_cash.csv`,
-`generation_summary_oct15.json`, 3aa9b48f. The pension switch is the set's results less the cash set's.] [FRAMING-SENSITIVE]
+`run_generations_v9.cjs` → `derived/generation_results_oct16.csv`, `generation_results_oct16_cash.csv`,
+`generation_summary_oct16.json`, a24d2468. The pension switch is the set's results less the cash set's.] [FRAMING-SENSITIVE]
 
 | $bn a year, low / high end | (a) own generation | (b) minors with parents |
 |---|---|---|
-| G1, born in Mexico | 41.1 / 65.4 | 154.8 / 185.9 |
-| G2, US-born, a parent born in Mexico | 149.5 / 179.1 | 99.2 / 126.0 |
-| G3+, US-born of US-born parents, with the added people | 175.2 / 211.5 | 111.8 / 144.1 |
-| All three (the main case) | 365.8 / 456.0 | 365.8 / 456.0 |
+| G1, born in Mexico | 61.2 / 81.3 | 174.6 / 198.0 |
+| G2, US-born, a parent born in Mexico | 142.7 / 164.5 | 92.5 / 113.0 |
+| G3+, US-born of US-born parents, with the added people | 164.1 / 190.8 | 100.9 / 125.6 |
+| All three (the main case) | 368.0 / 436.6 | 368.0 / 436.6 |
 
-The ends are specifications 16 and 11, both personal, at the lower and higher capital returns and long-run
-readings respectively. Controlled rounding makes every column add: G1's low end under (a) is shown as 41.1
-instead of its nearest 41.0. Per-member figures divide by each generation's completed and covered population
-(18.59M in third-plus under (a)). Constructed coverage counts are an assumption, not observed individual records.
+The ends are specifications 16 and 11, both personal, the case's low and high readings, with public capital at
+the one Trustees rate at both (item 20). Controlled rounding makes every column add: G2's low end under (a) is shown as 142.7
+instead of its nearest 142.8. Per-member figures divide by each generation's completed and covered population
+(18.41M in third-plus under (a)). Constructed coverage counts are an assumption, not observed individual records.
 State pricing applies the union's price indexes to each generation's keys; indexes from each generation's own
 state mix are not computed. The prose generation totals also use controlled rounding to add to their case totals.
 
-Sections 1, 2 and 4 below are the September 24 record; §3 sets the live split beside the ledger. The record is one
-year of the people alive in 2024, and it cannot say what today's children will pay as adults.
+The record is one year of the people alive in 2024, and it cannot say what today's children will pay as adults.
 
 ## 1. The split
 
-Net cost to other US residents, $bn a year, income year 2024, at the two ends of the adopted main
-case. The low end is the shared allocation with GDP normalization, school share 0.865 at response
-0.63, general government 0.59 and low uncompensated care; the high end is the personal allocation
-with cash normalization, school share 0.715 at 0.66, general government 0.84 and high uncompensated
-care. The own range is the generation's lowest and highest cost over all 64 specifications. CPS
-allocations are measured; service responses and the production term are assumed.
+Net cost to other US residents, $bn a year, income year 2024, at the two ends of main case v9 (specifications 16
+and 11, both personal). Members and adults are the completed and covered lineage's, including the constructed
+coverage people. CPS allocations are measured; service responses and the production term are assumed.
 
-| (b) Minors with their parents (NAS 2017) | Members (m) | Adults (m) | Low end | High end | Own range | $ per adult, low / high |
-|---|---:|---:|---:|---:|---|---|
-| G1, born in Mexico | 16.86 | 11.67 | 110.2 | 134.8 | 110.2–134.8 | 9,441 / 11,543 |
-| G2, US-born, a parent born in Mexico | 12.21 | 8.91 | 50.2 | 53.0 | 44.0–59.3 | 5,629 / 5,941 |
-| G3+, US-born of US-born parents | 11.83 | 8.18 | 40.5 | 58.6 | 40.5–58.6 | 4,945 / 7,160 |
+| (b) Minors with their parents (NAS 2017) | Members (m) | Adults (m) | Low end | High end | $ per adult, low / high |
+|---|---:|---:|---:|---:|---|
+| G1, born in Mexico | 16.13 | 11.01 | 174.6 | 198.0 | 15,868 / 17,992 |
+| G2, US-born, a parent born in Mexico | 13.33 | 9.61 | 92.5 | 113.0 | 9,618 / 11,752 |
+| G3+, US-born of US-born parents | 15.44 | 10.61 | 100.9 | 125.6 | 9,509 / 11,830 |
 
-| (a) Children in their own generation | Members (m) | Adults (m) | Low end | High end | Own range | $ per member, low / high |
-|---|---:|---:|---:|---:|---|---|
-| G1 | 12.22 | 11.67 | 63.8 | 53.6 | 44.7–74.8 | 5,220 / 4,383 |
-| G2 | 14.33 | 8.91 | 81.7 | 95.1 | 81.7–95.1 | 5,703 / 6,636 |
-| G3+ | 14.34 | 8.18 | 55.3 | 97.6 | 55.3–97.6 | 3,859 / 6,808 |
-| All three | 40.90 | 28.77 | 200.9 | 246.3 | 200.9–246.3 | 4,912 / 6,023 |
+| (a) Children in their own generation | Members (m) | Adults (m) | Low end | High end | $ per member, low / high |
+|---|---:|---:|---:|---:|---|
+| G1 | 11.48 | 11.01 | 61.2 | 81.3 | 5,329 / 7,083 |
+| G2 | 15.01 | 9.61 | 142.7 | 164.5 | 9,512 / 10,959 |
+| G3+ | 18.41 | 10.61 | 164.1 | 190.8 | 8,912 / 10,360 |
+| All three | 44.90 | 31.23 | 368.0 | 436.6 | 8,196 / 9,722 |
 
-Members and adults are the published CPS counts. The account prices 39.71M people: audit row 4 scales
-down 1.18M Mexico-born residents outside California and Texas, nearly all of them first generation. On
-that count (ladder 274) G1 costs $10,431 / 12,754 per adult under (b) and $5,780 / 4,853 per member under
-(a), and all three $5,058 / 6,203 per member; G2 and G3+ do not move. [CALCULATION:
-`population_basis_2026_09_29/restate.py` → `derived/restated_pairing.csv`, reader rows for this table]
+[CALCULATION: `derived/generation_results_oct16.csv`, `population`, `adults`, `cost_bn`, `per_adult_usd`,
+`per_member_usd`; the all-three row is the case, `main_case_2026_10_16/derived/summary.json` `v9.band_bn`,
+`v9.per_member_usd.set`]
 
-The generations add to the main case at every specification and under both conventions to within
-$1.5e-12bn. Convention (b) follows the brief: minors go to the generation of their co-resident
-parents in the group (split 50/50 across two generations), else to the oldest adult relative in the
-group. NAS also moves some dependents aged 18–23, so (b) leaves slightly more college cost with the
-second generation than NAS would. [SOURCE: NASEM (2017), pp. 377, 387–388, verified in the local
-copy; CALCULATION: lane `mixed_units.py` → `derived/minors_convention_b.csv`]
+The generations add to the main case at both ends and under both conventions (the summary's closure gate).
+Convention (b) follows the brief: minors go to the generation of their co-resident parents in the group (split
+50/50 across two generations), else to the oldest adult relative in the group. NAS also moves some dependents aged
+18–23, so (b) leaves slightly more college cost with the second generation than NAS would. [SOURCE: NASEM (2017),
+pp. 377, 387–388, verified in the local copy; CALCULATION: lane `mixed_units.py` → `derived/minors_convention_b.csv`]
 
-None of these figures is age-standardized: second-generation adults average 34.7 years, the
-third-plus 40.8 and the Mexico-born 48.2. Under (a), per adult is not a per-parent figure, because
-5.4m of the second generation are minors and 4.3m of them count with a Mexico-born parent under (b).
+None of these figures is age-standardized. Under (a), per adult is not a per-parent figure, because 5.4m of the
+second generation are minors.
 
 ## 2. What moves it
 
-- **Where children count.** Moving minors to their parents' generation shifts $46–81bn onto the first
-  generation. Under (b) a second-generation adult with their minor children costs others 51–60% of
-  what a Mexico-born adult does.
-- **The household allocation rule.** The shared rule splits every key equally within the SPM unit,
-  so parents carry part of their children's costs even under (a), and units that include people
-  outside the group pass costs and taxes across its boundary. 36% of third-plus members share a unit
-  with someone outside the group (18% of the second generation, 10% of the first). Swapping the rule
-  at either end moves $19–32bn between the first and third-plus generations under (a).
-  [FRAMING-SENSITIVE]
-- **The 270 corrections of September 24.** Under (a) they raise the first generation's cost by $6.0bn
-  (low end) and $4.3bn (high end) and lower the second's by $4.2bn and $6.1bn and the third-plus's by
-  $4.2bn and $1.6bn. Under (b) the first generation moves only +$0.4bn and −$0.7bn, because its
-  children's shares of the premium-credit re-key and pooled medical offset the tax-records stack. The
-  corrections are split with each source lane's own functions where possible; the seven alternative
-  rules for the rest move no generation by more than $3.7bn and turn none negative.
-- **The production term** ($8.8–13.3bn) has no unique split, since the CES block is not linear. Its
-  first-order attribution gives the first generation two thirds; splitting by total labor income would
-  raise the first generation's cost by $2.7–4.0bn and lower the others' by $1.2–2.2bn each.
+- **Where children count.** Moving minors to their parents' generation shifts $113–117bn onto the first
+  generation. Under (b) a second-generation adult with their minor children costs others 61–65% of what a
+  Mexico-born adult does.
+- **The household allocation rule.** The case reads every generation at the personal allocation, so the swap
+  between shared and personal rules that moved costs between the first and third-plus generations on the
+  September 24 case is not part of the v9 split. The shared allocation is a whole-case companion and is not split
+  by generation. The non-members who stay in mixed units are recomputed (the verdict above). [FRAMING-SENSITIVE]
+- **The production term** has no unique split, since the CES block is not linear. The v9 split carries the case's
+  declared production parts by generation; the alternative attributions measured on the September 24 case (first
+  order, total labor income) are not rerun on v9.
 
-[CALCULATION: lane `generation_summary.json` (`allocation_swap`, `lanes`, `sensitivities`),
-`production.py` → `derived/production_by_generation.json`]
+[CALCULATION: `derived/generation_results_oct16.csv`, (b) minus (a) G1 `cost_bn`; (b) G2 over G1 `per_adult_usd`;
+`generation_summary_oct16.json` `routing`]
 
 ## 3. Beside the September 19 generation ledger
 
@@ -119,14 +105,14 @@ and neither is scaled onto the other. [CALCULATION: lane `compare_ledger.py` →
   (+$3.8k to +$5.6k per person), so there a gap exceeds the group's own balance (−$5,633, −$5,706 and
   −$3,688). Under the personal allocation the own balances are −$3,086, −$6,388 and −$6,600, and at the
   third-plus's ages the whites run −$1.3k, so its gap (−$5,261) is smaller than its balance.
-- The account's personal allocation puts the Mexico-born lowest at both ends: $3,574 / 5,696 per member,
-  against $9,866 / 11,816 for the second generation and $9,425 / 11,376 for the third-plus.
-  [DATA: `derived/generation_results_oct15.csv`, convention (a), `per_member_usd`]
-- The two are not compared balance for balance. The live case prices the completed and covered 45.23M-person
+- The account's personal allocation puts the Mexico-born lowest at both ends: $5,329 / 7,083 per member,
+  against $9,512 / 10,959 for the second generation and $8,912 / 10,360 for the third-plus.
+  [DATA: `derived/generation_results_oct16.csv`, convention (a), `per_member_usd`]
+- The two are not compared balance for balance. The live case prices the completed and covered 44.90M-person
   lineage, and its runner writes no bridge to the ledger's populations.
 
 The FAQ's combining rule still applies: the ledger's generation gaps must not be scaled onto the
-$365.8–456.0bn. This split is computed directly on the account.
+$368.0–436.6bn. This split is computed directly on the account.
 
 ## 4. What it does not answer
 
@@ -142,23 +128,28 @@ report agrees with the parent's own birthplace 96.4% of the time. A disagreement
 likely applies to the unchecked majority and falls on the G2/G3+ boundary. [CALCULATION: lane
 `parents_check.py` → `derived/parent_birthplace_check.csv`]
 
-**Would change it:** measured benefit receipt and justice use by parents' birthplace (each flagged
-rule moves a generation by $2bn or less); a counterfactual production model; a change to the main
-case itself, which moves every generation.
+**Would change it:** measured benefit receipt and justice use by parents' birthplace; a counterfactual
+production model; a change to the main case itself, which moves every generation.
 
 ## Sources
 
 - Lane: [`generation_account_2026_09_24`](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md)
-  (brief, `run_all.sh`, 19 derived files). Inputs: the adopted main case
-  (`main_case_2026_09_24`, `package.cjs`, `derived/corrections.json`), the account's CPS ASEC 2025
-  frame and keys, the September 19 ledger. [DATA]
-- Parent rerun, 2026-09-25: `run_all.sh` passes every gate (masks, keys, models to 5.7e-14bn,
-  production, correction splits, engine per generation) and rewrites all 19 derived files
-  byte-identical; `main_case.cjs` still passes and its lane is unchanged. [CALCULATION]
-- Live v8 split: `run_generations_v8.cjs` → `derived/generation_{results,summary,corrections}_oct15{,_cash}.*`
-  (3aa9b48f); source, generation and post-engine closures match the corrected live case. [CALCULATION]
+  (brief, `run_all.sh`). Inputs: main case v9 (`main_case_2026_10_16`, `package.cjs`, `derived/corrections.json`),
+  the account's CPS ASEC 2025 frame and keys, the September 19 ledger. [DATA]
+- Live v9 split: `run_generations_v9.cjs` → `derived/generation_{results,summary,corrections}_oct16{,_cash}.*`
+  (a24d2468); source, generation and post-engine closures match the live case. The lane's replay of 2026-10-20
+  (`scripts/rerun_lane.py`, `run_all.sh`) is byte-identical. [CALCULATION]
 
 ## Revisions
+
+- 2026-10-21 (main case v9, [decision](../decisions/2026-10-16-main-case-v9.md), a24d2468): the verdict, §1 and §2
+  follow `oct16`. With their parents the generations cost $174.6–198.0bn, $92.5–113.0bn and $100.9–125.6bn (v8:
+  $154.8–185.9bn, $99.2–126.0bn, $111.8–144.1bn), so the first generation's cost rises and the US-born generations'
+  falls. The v9 split runs only the case's two ends, so
+  the claim that every generation is a net cost at all 32 personal specifications is now stated at both ends. §§1–2,
+  which had kept the September 24 record (finding: it read as the adopted split), now give the live split; the
+  September 24 allocation swap, correction split and production attributions are not rerun on v9, so their
+  numbers are dropped and the points kept. Concept affected: the adopted account's split by generation (ladder 224).
 
 - 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the living case figures and source pointers follow the completed reporting union and central Census coverage correction, with domestic-source corporate taxes and the mixed-unit stayers recomputed. Concept affected: the live annual account and its population.
 

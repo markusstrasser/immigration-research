@@ -6,13 +6,13 @@ This memo records the first real `MEPS` health-cost module for the public-use im
 
 It replaces the earlier profiling-only state with a reusable derived table:
 
-- [meps_health_cost_module_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv)
-- [meps_health_cost_module_2023.meta.json](sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.meta.json)
-- builder: [build_public_mvp_meps_module.py](sources/immigration-fiscal/data/derived/build_public_mvp_meps_module.py)
+- [meps_health_cost_module_2023.csv](../sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv)
+- [meps_health_cost_module_2023.meta.json](../sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.meta.json)
+- builder: [build_public_mvp_meps_module.py](../infra/immigration-fiscal/build/build_public_mvp_meps_module.py)
 - bridge input to the downstream scenario engine after the `SIPP` join:
-- [sipp_meps_expected_health_cost_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv)
-- [sipp_meps_bridge_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv)
-- bridge builder: [build_public_mvp_sipp_meps_bridge_2024.py](sources/immigration-fiscal/data/derived/build_public_mvp_sipp_meps_bridge_2024.py)
+- [sipp_meps_expected_health_cost_cells_2024.csv](../sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv)
+- [sipp_meps_bridge_cells_2024.csv](../sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv)
+- bridge builder: [build_public_mvp_sipp_meps_bridge_2024.py](../infra/immigration-fiscal/build/build_public_mvp_sipp_meps_bridge_2024.py)
 
 ## What was built
 
@@ -39,8 +39,8 @@ Each cell includes:
 
 Source files:
 
-1. [h251dat.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip)
-2. [h251su.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)
+1. [h251dat.zip](../sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip)
+2. [h251su.txt](../sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)
 
 Build details:
 
@@ -57,9 +57,9 @@ Engineering choice:
 
 ### 1. The `MEPS` module is now a real derived asset, not just a profiler
 
-1. The CSV exists at [meps_health_cost_module_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv). [SOURCE: local file]
+1. The CSV exists at [meps_health_cost_module_2023.csv](../sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv). [SOURCE: local file]
 2. The metadata file records source paths, parsed value labels, row counts, and module notes. [SOURCE: `sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.meta.json`]
-3. A downstream bridge uses this module as the payer-incidence source: [sipp_meps_bridge_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv) and [sipp_meps_expected_health_cost_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv). [SOURCE: `sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.meta.json`]
+3. A downstream bridge uses this module as the payer-incidence source: [sipp_meps_bridge_cells_2024.csv](../sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv) and [sipp_meps_expected_health_cost_cells_2024.csv](../sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv). [SOURCE: `sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.meta.json`]
 
 Interpretation:
 
@@ -116,7 +116,7 @@ Interpretation:
 
 ## What this module does not do
 
-1. It does not identify undocumented status. [SOURCE: `research/immigration-public-mvp-readiness-2026-04-11.md`]
+1. It does not identify undocumented status. [SOURCE: `research/immigration-public-mvp-readiness-2026-04-11.md` (deleted; last version at `bf5d98d`)]
 2. It does not produce a lifetime fiscal estimate by itself. [SOURCE: same]
 3. It does not replace linked admin data or `NAS`. [SOURCE: same]
 4. It does not convert annual observed medical spending into welfare or net social value. [FRAMING-SENSITIVE]

@@ -26,7 +26,7 @@ Three independent statements of the negation in Clemens's own text [SOURCE: http
 
 **Note — the error cuts in the finding's FAVOR.** A fixed-price PE accounting correction rests on *fewer and weaker* assumptions than a GE estimate (it needs only firm profit-maximization + a capital reservation price, not an endogenous factor-price model). So calling it "GE" understated the result's robustness, not overstated it. The relabel makes the +$128k cell *more* defensible, not less.
 
-**Distinguish from genuinely-GE neighbors in the same repo cell.** Colas & Sachs (2020/2024, "Indirect Fiscal Benefits of Low-Skilled Immigration," AEJ: Policy) — which the repo bundles into the same "M2 GE stack" — *is* a wage-structure/general-equilibrium channel (immigrants shift the native wage distribution → indirect fiscal effect). That one is correctly "GE." Clemens is a separate, fixed-price mechanism and must not be merged with it under one "GE" label. Peri's complementarity work is likewise a different (price-adjusting) channel. The repo's `immigration-lifetime-unified-theory-2026-06-15.md` §M2 currently fuses "Clemens / Colas-Sachs / Peri" into one "General-equilibrium offset" node — that fusion is the source of the mislabel.
+**Distinguish from genuinely-GE neighbors in the same repo cell.** Colas & Sachs (2020/2024, "Indirect Fiscal Benefits of Low-Skilled Immigration," AEJ: Policy) — which the repo bundles into the same "M2 GE stack" — *is* a wage-structure/general-equilibrium channel (immigrants shift the native wage distribution → indirect fiscal effect). That one is correctly "GE." Clemens is a separate, fixed-price mechanism and must not be merged with it under one "GE" label. Peri's complementarity work is likewise a different (price-adjusting) channel. The repo's `immigration-lifetime-unified-theory-2026-06-15.md` (deleted; last version at `bf5d98d`) §M2 currently fuses "Clemens / Colas-Sachs / Peri" into one "General-equilibrium offset" node — that fusion is the source of the mislabel.
 
 ## EXACT RELABEL PHRASE
 
@@ -44,7 +44,7 @@ Compact inline form where space is tight: **"partial-equilibrium capital-tax cor
 
 ## FILES IN REPO TO CORRECT (where the "GE" mislabel appears)
 
-- `research/immigration-fiscal-welfare-ledger-map.md:26` — "flips to +$128k under capital-tax **GE** (Clemens)" → relabel.
-- `research/immigration-lifetime-unified-theory-2026-06-15.md` §M2 (lines ~104–108, 177) — "**General-equilibrium** offset (Clemens / Colas-Sachs / Peri stack)" and "GE inclusion — M1 vs M2"; **split Clemens (PE) out of the GE node** (Colas-Sachs/Peri can stay GE).
+- `research/immigration-fiscal-welfare-ledger-map.md:26` (deleted; last version at `c69ee5a`) — "flips to +$128k under capital-tax **GE** (Clemens)" → relabel.
+- `research/immigration-lifetime-unified-theory-2026-06-15.md` (deleted; last version at `bf5d98d`) §M2 (lines ~104–108, 177) — "**General-equilibrium** offset (Clemens / Colas-Sachs / Peri stack)" and "GE inclusion — M1 vs M2"; **split Clemens (PE) out of the GE node** (Colas-Sachs/Peri can stay GE).
 - `research/immigration-interpreted-insights-2026-06-24.md:55,190` — already flags the mislabel and prescribes the same relabel; this check independently confirms it from primary source.
 - Sweep any other "capital-tax GE" / "GE offset (Clemens)" occurrences (`rg -i "GE|general.equilibrium" research/ | rg -i clemens`).

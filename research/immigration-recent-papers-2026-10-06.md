@@ -6,20 +6,23 @@ at what current law can pay (2026 Trustees). A complete present-law total is unm
 `main_case_2026_10_16/derived/summary.json`, `v9.band_bn`]
 
 If the federal budget is eventually closed and the lineage pays its share of the fix, the closure lane gives
-**$332.0–422.2bn** a year. On that lane's source account this is 7–9% lower on Auerbach &
-Gale's 2026 current-law gap, net of the Social Security and Part A shortfall the account already treats as cut, split
-by household as AEI proposes; it ranges $316–445bn across current-law gaps, sharing rules and the pooled-fund arm
+**$334.4–402.9bn** a year on v9, 8–9% below the headline: Auerbach & Gale's 2026 current-law gap, net of the
+Social Security and Part A shortfall the account already treats as cut, split by household as AEI proposes. It ranges
+$318–426bn across current-law gaps, sharing rules and the pooled-fund arm
 ([lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md)) [FRAMING-SENSITIVE].
 
 Several further items each move a priced line by about $3bn or more, or bear on a qualitative claim:
-- a school-spending response slightly below full cost (−$15–19bn, inside the stated low side);
-- the 2026 public-charge rule and the 2025 budget law, which cut transfers to the lineage by about $5bn and
-  $3–6bn a year from 2026–27 (current law today, not the 2024 account);
+- a school-spending response slightly below full cost (half to two-thirds of the within-district reading's
+  −$26.9–30.1bn, inside the stated low side);
+- the 2026 public-charge rule, and the 2025 budget law with the enhanced premium credit's expiry, which cut
+  transfers to the lineage by about $5bn and $4–7bn a year from 2026–27 (current law today, not the 2024 account;
+  `post2024_law_2026_10_07/derived/oct16/rows.csv`, FY2028);
 - Census's own finding that the 2025 survey overstates Hispanic household income by 3.8% at the median, which
-  flatters the group: +$1.6–4.7bn on the account's keys, +$0.0–2.0bn excluding the income tax that tax records
+  flatters the group: +$1.7–5.1bn on the account's keys, +$0.2–2.3bn excluding the income tax that tax records
   already pin;
-- a US-born count in the 2025 survey 0.44M above the ACS once timing is allowed for, which would make the account
-  $3.6–5.5bn too high if the ACS is right (about 1.5 standard errors).
+- a US-born count in the 2025 survey above the ACS once timing is allowed for. v9 takes its minors' part: item 16
+  calibrates native Mexican-origin minors to ACS counts, 0.33M fewer people and −$4.2 / −4.6bn. The rest of the
+  screen (0.44M in all, about 1.5 standard errors, measured on main case v5) stays beside.
 
 Two face-value hits fail on their own design: the 2021–24 surge's cross-metro native-wage gain, and a
 survey-based Hispanic income-tax ratio that tax records contradict. The police-records paper that the first
@@ -70,29 +73,34 @@ permanent yearly fix and s the lineage's share of it, other residents pay G − 
   post-depletion shortfall over each window (1.19% of GDP over 2027–2056 on current law's separate OASI and DI
   funds, from the 2026 Trustees tables and CBO's 2026 long-term data), Auerbach–Gale's current-law fix is 1.14% of
   GDP, $332.9bn. The pooled-fund alternative assumes a change in law and stays beside.
-- s: the completed and covered lineage is 13.48% of the civilian resident frame but 10.16% of household equivalents
-  (3.31 people per household against 2.49). Completion follows observed household records; coverage people are
-  placed proportionally by generation [ASSUMPTION: `derived/oct15/household_share.json`].
+- s: the 44.90M-person lineage is 13.38% of the civilian resident frame but 10.10% of household equivalents
+  (3.30 people per household against 2.49). Completion follows observed household records; coverage people are
+  placed proportionally by generation [ASSUMPTION: `derived/oct16/household_share.json`].
 
-| Reading | Cost to other residents |
+| Reading, main case v9, low / high end | Cost to other residents |
 |---|---|
 | Headline: others carry the lineage's share of the deficit (2024 tax/benefit rules, payable Social Security/Part A promises) | $368.0–436.6bn |
-| **Central: Auerbach–Gale current law, general fund, per household** | **$332.0–422.2bn** |
-| Current law: two gaps, six sharing rules, both trust-fund readings | $315.9–445.3bn |
-| Current policy: three gaps, six rules | $248.5–445.8bn |
-| AEI's 2013 gap as published, per person | $198.7–288.9bn |
-| Excess over as many average residents, under the case's rules (ladder 269) | $374.0–395.8bn |
+| **Central: Auerbach–Gale current law, general fund, per household** | **$334.4–402.9bn** |
+| Current law: two gaps, six sharing rules, both trust-fund readings | $318.5–426.5bn |
+| Current policy: three gaps, six rules | $251.6–427.0bn |
+| AEI's 2013 gap as published, per person | $202.2–270.7bn |
+| Excess over as many average residents, under the case's rules (ladder 269) | $443.0 / 421.3bn |
+
+The excess over average residents is the limiting case in which every resident shares the account's whole 2024
+deficit per head; its row gives the case's low and high ends in that order, not a range. At both ends the central
+is below the headline and below that limit, so the closure arm sits outside the span between them, not inside it.
 
 The headline leaves the national deficit open: current law schedules no rule that closes the budget. The
 NRC 1997 rule of holding debt at its 2016 share of GDP failed (FAQ 5). The debt lane identifies current-flow
-cash, resource and unclassified parts on v8, but withholds a full federal split and historical stock until the
-unlocated pieces have a financing rule (`debt_legacy_2026_09_23/derived/oct15/current_flow_contract.json`).
+cash, resource and unclassified parts on v9, but withholds a full federal split; historical financing is not yet
+measured on v9 (`debt_legacy_2026_09_23/derived/oct16/current_flow_contract.json`).
 A federal fix does not share state-local gaps. The label "cost to other residents" does assume
 that others carry the lineage's whole share of a deficit it would help close. The INDEX and FAQ 20 now say so, with
 the arm beside the headline. Repo: HAD-PARTS (ladder 269's two slices; FAQ 18; FAQ 5).
 
-[CALCULATION: `closed_budget_2026_10_06/derived/oct15/summary.json`, `sets.main`;
-`derived/oct15/household_share.json`; `debt_legacy_2026_09_23/derived/oct15/current_flow_contract.json`.]
+[CALCULATION: `closed_budget_2026_10_06/derived/oct16/summary.json`, `sets.main` (with `pooled_funds_arm` and
+`ordering_at_actual_ends`); `derived/oct16/household_share.json`;
+`debt_legacy_2026_09_23/derived/oct16/current_flow_contract.json`.]
 
 ## Worth mentioning ($3bn and up, or a qualitative claim)
 
@@ -103,11 +111,12 @@ effects. Per-pupil total spending rises 0.690% per 1% enrollment decline and fal
 spending 0.612 / −0.070; staff per 100 pupils 0.484 / −0.096; all p < .001). [SOURCE: pp. 24–27,
 https://edworkingpapers.com/sites/default/files/ai25-1266.pdf]
 - The account is a stationary comparison (FAQ 11), so the growth side applies: total spending responds about
-  0.91. Over the group's 17.5% pupil share the integrated response is 0.916, −$15–16bn against the centre's
-  response of 1; across the paper's specifications (−0.090 to −0.114) it is −$15–19bn [lane CALCULATION:
-  (1 − 0.825^(1−0.092))/0.175 on the case's school-response component, −$28.8 / −30.5bn at 0.836]. That is inside
-  the stated low side ($338–410bn on v9). The paper's exact response has not been repriced on v9.
-  [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9.companions.school_within_district.band_bn`]
+  0.91. Over the group's 17.5% pupil share the integrated response is 0.916, and 0.895–0.918 across the paper's
+  specifications (−0.090 to −0.114) [lane CALCULATION: (1 − 0.825^(1−0.092))/0.175]. That is half to two-thirds of
+  the way from the centre's response of 1 to the within-district 0.836, which lowers v9 by $26.9–30.1bn to
+  $338–410bn, the stated low side. The paper's exact response has not been repriced on v9; at about proportional
+  scaling its effect sits inside that low side [INFERENCE]. [CALCULATION: `main_case_2026_10_16/derived/summary.json`,
+  `v9.band_bn` less `v9.companions.school_within_district.band_bn`]
 - A lane read the decline side as the account's counterfactual (−$85–119bn). That misreads "finite removal",
   which integrates one cost curve over the group's share in either direction; the account is not a removal path.
 - The decline side sharpens FAQ 11: across districts whose enrollment fell over twenty-year spans, districts kept about 70% of the money and
@@ -153,9 +162,11 @@ first-month CPS reports, February 2025 – August 2026 against 2022–24 is −0
 frame, with power 0.94 against their 5.9 pp. The ASEC 2025 mostly carries origin reports made before the drive, since
 the CPS asks origin once. Its third-generation identification is 89.4%, above 2022–24. At most $0.1–3.5bn. The same
 lane found the 2025 weights lifting third-plus Mexican records by about 0.75M against 2022–24. Against the ACS 2024,
-with timing and frames allowed for, the ASEC 2025 holds 0.44M (1.6%) more US-born Mexican self-identifiers, about
-1.5 SE: if the ACS were right the account would be $3.6–5.5bn too high
-([check](../infra/immigration-fiscal/native_count_check_2026_10_07/RESULT.md)). Not adopted. Repo: NEW.
+with timing and frames allowed for, the ASEC 2025 held 0.44M (1.6%) more US-born Mexican self-identifiers, about
+1.5 SE, on main case v5 ([check](../infra/immigration-fiscal/native_count_check_2026_10_07/RESULT.md)). Main case
+v9 adopts the minors' part as item 16: native Mexican-origin minors calibrated to ACS counts with the CPS Hispanic
+totals kept, 0.33M fewer people and −$4.2 / −4.6bn a year
+([decision](../decisions/2026-10-16-main-case-v9.md), item table). The rest of the screen stays beside. Repo: NEW.
 
 **Survey Hispanic income tax far below the account's: contradicted by tax records.** Gale, Hall & Sabelhaus,
 Brookings/TPC, December 2025 (accepted at the *National Tax Journal*): SCF waves 1998–2022 through TAXSIM at 2018
@@ -174,16 +185,17 @@ and 2025: the median was biased upward by 3.8% in 2025, but the bias in 2024 was
 The 2025 Hispanic curve runs about 1.03–1.07 across percentiles, against about 1.02–1.03 for all households
 [SOURCE: text and Figure 4, figures read by eye]. The 2026 post gives 2–4% for all households and no group
 figures. Census's correction is a reweight toward lower-income respondents. Applied inside each householder group
-to the corrected case's CPS/source keys with coverage and the mixed-unit post-engine construction held fixed,
-it raises the case by $1.6–4.7bn ([lane](../infra/immigration-fiscal/nonresponse_bias_2026_10_07/RESULT.md),
-`derived/v8_summary.csv`). Treasury's tax records already anchor federal income tax, so that part overlaps existing
-corrections. Excluding federal income tax, the sensitivity is +$0.0–2.0bn (unrounded $0.014734–1.990642bn;
-`derived/v8_line_changes.csv`, sum excluding `federal_income_tax`). It is the income side of the 2025 survey exit
+to main case v9's CPS/source keys with coverage, the mixed-unit post-engine construction, capital and production
+held fixed, it raises the case by $1.7–5.1bn across eight curve, denominator and end cells
+([lane](../infra/immigration-fiscal/nonresponse_bias_2026_10_07/RESULT.md), `derived/v9_summary.csv`). Treasury's
+tax records already anchor federal income tax, so that part overlaps existing corrections. Excluding federal income
+tax, the sensitivity is +$0.2–2.3bn (unrounded $0.188066–2.345576bn; `derived/v9_line_changes.csv`, sum excluding
+`federal_income_tax`). It is the income side of the 2025 survey exit
 (ladder 209); with the count pinned the two do not overlap. Not adopted. Repo: NEW.
 
 **Social Security's 2026 payable path is lower than the 2025 one the pension lane uses.** Rerun on the 2026
 Trustees tables ([lane](../infra/immigration-fiscal/pension_tr2026_2026_10_06/RESULT.md), ladder 286), the accrual
-falls from 0.974 to 0.951 per OASDI tax dollar and Part A by 3.4%, so the case would be $385.9–457.1bn (−$4.36 /
+falls from 0.974 to 0.951 per OASDI tax dollar and Part A by 3.4%, so main case v5 would be $385.9–457.1bn (−$4.36 /
 −4.15bn); the cash set does not move. The same reports raise wage growth and HI costs, so taking all six 2026 inputs
 together gives −$1.73 / −1.63bn. Under current law the OASI and DI funds are separate (OASI pays in full to 2032, DI
 through 2100), and the Trustees say the combined reading the case uses "implicitly assumes that the law will have been
@@ -195,24 +207,26 @@ current law today.
 - The public-charge final rule (91 FR 45324, 20 July 2026, effective 18 September 2026). DHS prices it at
   $13.0bn a year less in transfers ($7.7bn federal, of which Medicaid $5.7bn) at a 10.3% disenrollment rate,
   $2.5–12.9bn federal across 3.3–17.3% [SOURCE: RIA Tables IV.13, IV.16]. Its own 59% match applied to Medicaid
-  and CHIP alone gives $11.75bn; DHS grosses up every line. On the account's CPS records the lineage carries 42.6%
-  of those dollars (44% of the Medicaid recipients in households with a noncitizen, 39% of SNAP): **$5.0bn a
-  year**, $3.2bn federal, $1.6–8.4bn across DHS's rates
+  and CHIP alone gives $11.75bn; DHS grosses up every line. On the account's CPS records, weighted to v9's lineage,
+  the lineage carries 42.4% of those dollars: **$5.0bn a year**, $3.2bn federal, $1.6–8.4bn across DHS's rates
   ([lane](../infra/immigration-fiscal/public_charge_share_2026_10_07/RESULT.md)). Part of a Medicaid drop
   reappears as uncompensated care, which the account charges by use.
 - The 2025 budget law (P.L. 119-21). CBO prices its noncitizen eligibility limits at about $19bn a year once in
   force (FY2030): the premium credit $8.8bn and $5.6bn (§§71301–71302), the emergency-Medicaid match $3.5bn
   (§71110), Medicaid and CHIP $0.7bn, SNAP $0.2bn, Medicare $0.3bn [SOURCE: CBO 61570 workbook, Titles I and VII].
   Its child-credit parent-SSN rule is not scored alone; JCT's nearest option implies $1.5–3bn [lane reading]. On
-  the lineage's CPS records its eligibility rows come to $2.1bn a year consolidated ($1.6–3.9bn), most of it the
+  the lineage's CPS records its eligibility rows come to $2.0bn a year consolidated ($1.6–3.9bn), most of it the
   child credit; the noncitizen limits are small because the lineage's noncitizens are mostly LPRs, whom the law
   keeps eligible, or unauthorized, who were never eligible
   ([lane](../infra/immigration-fiscal/post2024_law_2026_10_07/RESULT.md), ladder 291).
-- Together with the enhanced premium credit's expiry after 2025 ($2.5bn), the cuts come to $9.6bn a year in FY2028
+- Together with the enhanced premium credit's expiry after 2025 ($2.5bn), the public-charge rule ($5.0bn) and
+  $0.1bn of overlap terms, the cuts come to $9.6bn a year in FY2028
   ($5.8–15.5bn). The same law cuts the same people's income taxes by $9.9bn (tips, overtime, the $2,200 child
-  credit, the senior deduction, SALT), net of its remittance excise, so current law roughly breaks even for the
-  lineage in FY2028 (−$0.3bn, −$4.2 to +$5.8bn). After six tax items lapse by tax year 2030, $5.75bn a year is taken
-  from it. Beside the 2024 account, never in it.
+  credit, the senior deduction, SALT), net of its remittance excise. On this priced individual-tax and eligibility
+  subset the lineage's FY2028 net is −$0.4bn (−$4.3 to +$5.6bn); after six tax items lapse by tax year 2030 the
+  subset takes $5.7bn a year from it. The subset is not a complete present-law total, which is unmeasured
+  ([lane](../infra/immigration-fiscal/post2024_law_2026_10_07/RESULT.md), `derived/oct16/summary.json`
+  `totals.2028.consolidated_government`, `derived/oct16/tax_summary.json`). Beside the 2024 account, never in it.
 
   [2026-10-20, correction: the −$0.3bn FY2028 net above covers only the priced individual-tax and eligibility
   subset on its legacy v5 frame; the broad “current law roughly breaks even” claim is withdrawn. Outside that
@@ -253,9 +267,9 @@ Mexican families linked from the 1940 census to the CPS and the 2000 census/ACS.
 
 - Kantova, Havranek, Irsova & Schwarz, CEPR DP21326, March 2026: a meta-analysis of 1,091 estimates. Corrected for
   publication bias the native–immigrant substitution elasticity is about 22. The authors' best-practice estimate is
-  16.9 for regional and 8.2 for national designs (95% CI on −1/σ: 4.8–25) [SOURCE: Table 5]. FAQ 14's executed
-  nest uses 5–7 and moves the band by $4–8bn, so the meta-analysis supports it as written and, if anything, makes
-  it generous.
+  16.9 for regional and 8.2 for national designs (95% CI on −1/σ: 4.8–25) [SOURCE: Table 5]. FAQ 14 reads the
+  elasticity as well above 3 on the direct estimates, and the meta-analysis's 8.2–16.9 supports that reading. The
+  nest has no main-case run, so no dollar effect is quoted.
 - Kubrin, Christopher, Hodgen, Luo & Hipp, *Journal of Urban Affairs*, online August 2026: across about 11,500
   tracts, 2010–2018, a rising undocumented share at fixed population leaves violent crime unchanged (−0.038, t −0.30;
   −0.039, t −0.27 with the total immigrant share held) and lowers property crime (−0.26, t −2.59) [SOURCE: Table 2].
@@ -314,12 +328,12 @@ Mexican families linked from the 1940 census to the CPS and the 2000 census/ACS.
 ## Lean of the findings
 
 The surviving items point both ways. The closure arm, the school growth response, the Trustees path and the new
-laws lower the cost, and so would the ACS's lower US-born count. The 2025 survey's Hispanic income bias, the 2025
+laws lower the cost, and so does the ACS's lower count of native minors, which v9 adopts (item 16). The 2025 survey's Hispanic income bias, the 2025
 population controls and Van Hook–Bachmeier's steeper fourth-plus loss raise it, each by less. Hadah–Denteh's identity
 loss, tested on the account's own survey, does not appear. The face-value dismissals were
 two that would lower the cost (the surge wage effect scaled up; the school decline response) and two that would
 raise it (the SCF tax ratio; Van Pelt), each on design or estimand grounds stated above. The largest item,
-the closure arm, lowers the cost by 7–8% at its central. Of the items priced on 2026-10-07, four entered main case
+the closure arm, lowers the cost by 8–9% at its central on v9. Of the items priced on 2026-10-07, four entered main case
 v6. The Trustees path and user fees with the education keys lower the cost; retiree health on accrual and the added
 people's measured ages raise it. The net is −$1.2 / +0.2bn.
 
@@ -398,3 +412,13 @@ Staged under `sources/immigration-fiscal/data/external/stage3/`, each with `ACQU
   affected: the scope and year of the law comparison. The direct headline and school companion now read v9;
   the headline names 2024 tax/benefit rules and payable pension promises. Closure and other consumer figures retain
   their source-frame comparisons pending their separate reruns.
+- 2026-10-21 (main case v9, [decision](../decisions/2026-10-16-main-case-v9.md)): the consumer figures now read the
+  oct16 lane outputs. The closure arm's central is $334.4–402.9bn, 8–9% below the v9 headline (v8's lane figure was
+  $332.0–422.2bn, 7–9% below v8, and the earlier text set it against the v9 headline). At both ends the central lies
+  below the headline and below the excess over average residents ($443.0 / 421.3bn), so it is not between them. The
+  school item is stated against v9's within-district reading; its earlier −$15–19bn was scaled to an earlier case's
+  school component. Nonresponse is +$1.7–5.1bn (+$0.2–2.3bn without federal income tax), the public-charge share
+  42.4%, and P.L. 119-21's priced subset −$0.4bn in FY2028; the 2026-10-20 bracket keeps the v5 subset figure as a
+  record. The US-born count screen is partly in the case: item 16 calibrates native minors to the ACS (−$4.2 /
+  −4.6bn). The Kantova item no longer cites a nest figure that FAQ 14 dropped. Concept affected: the size of the
+  closure arm against the live case and the status of the count screen.

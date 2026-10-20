@@ -12,7 +12,7 @@ GDP measures domestic value added, including output serving newcomers. Governmen
 
 GDP per resident also mixes composition with outcomes. **Illustration, fixed prices and output equal to income:** 100 residents earning $60,000 produce $6m. Ten newcomers earn $30,000 each. If incumbents now earn $60,500, output reaches $6.35m while the population mean falls to $57,727. If incumbents instead earn $59,500, output still rises to $6.25m. Higher total GDP and a lower population mean therefore accommodate either incumbent gains or losses. [CALCULATION; hypothetical, not an immigration estimate]
 
-Our native/Mexico-born fiscal and racial wage comparisons describe resident populations. Birthplace, education, earnings, English proficiency and unauthorized status are distinct; these comparisons do not identify a low-skill admission policy's causal effects. [SOURCE: [current findings](immigration-clarity-update-2026-09-05.md), [glossary](immigration-glossary.md); INFERENCE]
+Our native/Mexico-born fiscal and racial wage comparisons describe resident populations. Birthplace, education, earnings, English proficiency and unauthorized status are distinct; these comparisons do not identify a low-skill admission policy's causal effects. [SOURCE: [September 5 findings](immigration-clarity-update-2026-09-05.md), [glossary](immigration-glossary.md); INFERENCE]
 
 ## Evidence by mechanism
 

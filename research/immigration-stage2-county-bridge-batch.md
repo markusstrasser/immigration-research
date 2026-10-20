@@ -17,19 +17,19 @@ The important methodological correction is that I did **not** force a district o
 ## Data staged or acquired
 
 New staged files under `sources/immigration-fiscal/data/external/stage2`:
-1. NCES CCD fiscal bundle: [ccd_2024_25_universe_2025306_0.zip](sources/immigration-fiscal/data/external/stage2/nces/ccd_2024_25_universe_2025306_0.zip)
-2. Census SIPP 2023 PUF: [pu2023_csv.zip](sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip)
+1. NCES CCD fiscal bundle: `sources/immigration-fiscal/data/external/stage2/nces/ccd_2024_25_universe_2025306_0.zip` (no longer on disk)
+2. Census SIPP 2023 PUF: [pu2023_csv.zip](../sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip)
 3. HUD CHAS county/state/tract bundles and dictionary:
-[2018thru2022-050-csv.zip](sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-050-csv.zip)
-[2018thru2022-040-csv.zip](sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-040-csv.zip)
-[2018thru2022-140-csv.zip](sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-140-csv.zip)
-[CHAS-data-dictionary-18-22.xlsx](sources/immigration-fiscal/data/external/stage2/hud/chas/CHAS-data-dictionary-18-22.xlsx)
+[2018thru2022-050-csv.zip](../sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-050-csv.zip)
+[2018thru2022-040-csv.zip](../sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-040-csv.zip)
+[2018thru2022-140-csv.zip](../sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-140-csv.zip)
+[CHAS-data-dictionary-18-22.xlsx](../sources/immigration-fiscal/data/external/stage2/hud/chas/CHAS-data-dictionary-18-22.xlsx)
 4. IRS county/state migration CSVs:
-[countyinflow2223.csv](sources/immigration-fiscal/data/external/stage2/irs/countyinflow2223.csv)
-[countyoutflow2223.csv](sources/immigration-fiscal/data/external/stage2/irs/countyoutflow2223.csv)
-[stateinflow2223.csv](sources/immigration-fiscal/data/external/stage2/irs/stateinflow2223.csv)
-[stateoutflow2223.csv](sources/immigration-fiscal/data/external/stage2/irs/stateoutflow2223.csv)
-5. TIGER 2023 PUMA ZIPs under [tiger_puma2023](sources/immigration-fiscal/data/external/stage2/census/tiger_puma2023)
+[countyinflow2223.csv](../sources/immigration-fiscal/data/external/stage2/irs/countyinflow2223.csv)
+[countyoutflow2223.csv](../sources/immigration-fiscal/data/external/stage2/irs/countyoutflow2223.csv)
+[stateinflow2223.csv](../sources/immigration-fiscal/data/external/stage2/irs/stateinflow2223.csv)
+[stateoutflow2223.csv](../sources/immigration-fiscal/data/external/stage2/irs/stateoutflow2223.csv)
+5. TIGER 2023 PUMA ZIPs under `sources/immigration-fiscal/data/external/stage2/census/tiger_puma2023` (no longer on disk)
 
 ## SSD corpus check
 
@@ -50,22 +50,22 @@ Judgment:
 ## Derived artifacts
 
 Scripts:
-1. [build_stage2_incidence_context.py](sources/immigration-fiscal/data/derived/build_stage2_incidence_context.py)
-2. [build_puma_county_crosswalk.py](sources/immigration-fiscal/data/derived/build_puma_county_crosswalk.py)
-3. [extend_immigration_context_stage2.sql](sources/immigration-fiscal/data/derived/extend_immigration_context_stage2.sql)
+1. [build_stage2_incidence_context.py](../infra/immigration-fiscal/build/build_stage2_incidence_context.py)
+2. `sources/immigration-fiscal/data/derived/build_puma_county_crosswalk.py` (no longer on disk)
+3. `sources/immigration-fiscal/data/derived/extend_immigration_context_stage2.sql` (no longer on disk)
 
 Derived files:
-1. [school_finance_county_2023.csv](sources/immigration-fiscal/data/derived/stage2/school_finance_county_2023.csv)
-2. [chas_county_housing_stress_2018_2022.csv](sources/immigration-fiscal/data/derived/stage2/chas_county_housing_stress_2018_2022.csv)
-3. [irs_migration_county_2022_2023.csv](sources/immigration-fiscal/data/derived/stage2/irs_migration_county_2022_2023.csv)
-4. [puma_county_area_xwalk_2023.csv](sources/immigration-fiscal/data/derived/stage2/puma_county_area_xwalk_2023.csv)
-5. [puma_county_area_xwalk_2023_summary.json](sources/immigration-fiscal/data/derived/stage2/puma_county_area_xwalk_2023_summary.json)
-6. [nces_ccd_2024_25_bundle_inventory.csv](sources/immigration-fiscal/data/derived/stage2/nces_ccd_2024_25_bundle_inventory.csv)
-7. [stage2_outputs.json](sources/immigration-fiscal/data/derived/stage2/stage2_outputs.json)
+1. [school_finance_county_2023.csv](../sources/immigration-fiscal/data/derived/stage2/school_finance_county_2023.csv)
+2. [chas_county_housing_stress_2018_2022.csv](../sources/immigration-fiscal/data/derived/stage2/chas_county_housing_stress_2018_2022.csv)
+3. [irs_migration_county_2022_2023.csv](../sources/immigration-fiscal/data/derived/stage2/irs_migration_county_2022_2023.csv)
+4. [puma_county_area_xwalk_2023.csv](../sources/immigration-fiscal/data/derived/stage2/puma_county_area_xwalk_2023.csv)
+5. [puma_county_area_xwalk_2023_summary.json](../sources/immigration-fiscal/data/derived/stage2/puma_county_area_xwalk_2023_summary.json)
+6. `sources/immigration-fiscal/data/derived/stage2/nces_ccd_2024_25_bundle_inventory.csv` (no longer on disk)
+7. [stage2_outputs.json](../sources/immigration-fiscal/data/derived/stage2/stage2_outputs.json)
 
 ## Warehouse objects
 
-Loaded into [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb):
+Loaded into [immigration_context.duckdb](../sources/immigration-fiscal/data/derived/immigration_context.duckdb):
 1. `school_finance_county_2023` with `3120` rows
 2. `chas_county_housing_stress_2018_2022` with `3222` rows
 3. `irs_migration_county_2022_2023` with `3143` rows
@@ -79,7 +79,7 @@ Loaded into [immigration_context.duckdb](sources/immigration-fiscal/data/derived
 ## Important implementation details
 
 School finance:
-1. The county layer uses the full Census finance extract already present in the repo: [census_school_finance_2023.txt](sources/immigration-fiscal/data/external/census_school_finance_2023.txt)
+1. The county layer uses the full Census finance extract already present in the repo: [census_school_finance_2023.txt](../sources/immigration-fiscal/data/external/census_school_finance_2023.txt)
 2. `CONUM` is already county FIPS.
 3. The raw file has a trailing blank field, so pandas must use `index_col=False` or columns shift.
 4. County current spending is built from `TCURELSC + TCURINST + TCURSSVC + TCUROTH`, not from a nonexistent `TCURSPND` field.

@@ -4,7 +4,7 @@
 
 **Coverage:** 9/9 papers · 62 main sections · **~220 tagged claims** · 15 generators (S01–S15)
 
-**Prior skim memo:** `immigration-restrictionist-corpus-parse-2026-06-15.md` (abstract/conclusion only — superseded for claims).
+**Prior skim memo:** the June 15 abstract/conclusion-only corpus parse, superseded for claims by this extract.
 
 ---
 

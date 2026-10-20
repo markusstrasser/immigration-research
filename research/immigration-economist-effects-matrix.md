@@ -2,6 +2,8 @@
 
 Date: 2026-04-10
 
+[2026-10-21: April 10 record, not re-audited after the September repair (Revisions). The repo has since built its own complete annual account ([main case v9](immigration-complete-annual-account-2026-09-20.md)) and audited the Clark/IGM panel ([IGM panel audit](immigration-igm-panel-audit-2026-09-17.md)); the NAS framework is no longer the best benchmark available here, and the data-status rows are April's. [INFERENCE]]
+
 ## Core conclusion
 
 The Clark Center poll is not a full-spectrum welfare ledger. It is a panel of economists answering a broad question about whether the average US citizen would be better off from more legal low-skilled immigration. [SOURCE: https://kentclarkcenter.org/surveys/low-skilled-immigrants/]
@@ -21,7 +23,7 @@ Yes, the ACS work used DuckDB. But the distinction matters:
 
 1. We used DuckDB as the query engine over flat files such as `/Volumes/SSK1TB/corpus/census_acs/csv_pus.csv`. [DATA: /Volumes/SSK1TB/corpus/census_acs/csv_pus.csv]
 2. At the start of this pass, I did not find a preexisting immigration-focused `.duckdb` database file in this repo or in the immigration/census corpus paths I checked. [DATA: local filesystem search on 2026-04-10]
-3. This pass adds a derived warehouse at [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb), built by [build_immigration_context_duckdb.sql](sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql). [DATA]
+3. This pass adds a derived warehouse at [immigration_context.duckdb](../sources/immigration-fiscal/data/derived/immigration_context.duckdb), built by `sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql` (no longer on disk). [DATA]
 4. The preexisting `.duckdb` files I did find on the SSD were FERC energy/regulatory datasets, not immigration datasets. [DATA: /Volumes/SSK1TB/corpus/ferc_eqr/ferc1_raw/ferc1_xbrl.duckdb; /Volumes/SSK1TB/corpus/ferc_regulatory/pudl_release/ferc1_xbrl.duckdb]
 
 So the precise statement is:

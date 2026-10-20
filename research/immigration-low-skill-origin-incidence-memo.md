@@ -2,6 +2,8 @@
 
 Date: 2026-04-10
 
+[2026-10-21: April 10 proxy ranking, pre-repair (Revisions). For the Mexican-origin account the federal versus state-local split is now measured: the federal part is a small cost and the state-local part the large one ([who pays](immigration-fiscal-gap-incidence-who-pays-2026-09-18.md), Current values); the other origins' rankings below were not re-run. [INFERENCE]]
+
 ## Scope
 
 This memo answers two narrower questions than the general political debate:
@@ -13,9 +15,9 @@ This memo answers two narrower questions than the general political debate:
 
 ## Data used
 
-1. `acs_origin_national_2023` in [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb)
+1. `acs_origin_national_2023` in [immigration_context.duckdb](../sources/immigration-fiscal/data/derived/immigration_context.duckdb)
 2. `origin_destination_context_2023` in the same warehouse
-3. ACS PUMS 2023 local extract from [csv_pus.csv](/Volumes/SSK1TB/corpus/census_acs/csv_pus.csv)
+3. ACS PUMS 2023 local extract from `/Volumes/SSK1TB/corpus/census_acs/csv_pus.csv` (on a volume no longer attached; current ACS holdings: [dataset register](immigration-dataset-register.md))
 4. ACS state median gross rent series already joined into the warehouse
 5. Census school finance current spending per pupil already joined into the warehouse
 6. FHFA state house-price index context already joined into the warehouse

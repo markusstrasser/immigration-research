@@ -7,7 +7,7 @@
 Generator and definitions: [projection back-test lane](../infra/immigration-fiscal/projection_backtest_2026_09_19/README.md). Reproduction uses read-only original data and writes 12 derived tables with source/code hashes.
 
 **Account version:** Composition and exit sensitivities hold the original repaired
-age profiles fixed; since 2026-10-08 those profiles carry item T, the income tax the survey misses. The [Census2024 annual refresh](immigration-macro-reconciliation-2026-09-19.md)
+age profiles fixed; since 2026-10-08 those profiles carry item T, the income tax the survey misses. The [Census2024 annual refresh](../infra/immigration-fiscal/macro_closure_2026_09_19/README.md)
 is a separate release, not a flat adjustment to these lifetimes. This isolates
 the education/parentage/exit comparisons.
 

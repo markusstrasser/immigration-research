@@ -45,7 +45,7 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 
 - **Mariel / area studies:** Card null in Miami; Borjas w21850, w23504 dispute with race/experience composition — **contested**, not settled. [CONTESTED EVIDENCE]
 - **GE offsets:** Peri-Ottaviano complementarity, Clemens capital-tax — partial fiscal/labor offsets. [SOURCE: unified theory M2]
-- **Our E-Verify TWFE:** The QWI outcome used is stable/full-quarter average monthly earnings, not native-born hourly wages: the QWI sex-by-education API has no nativity field. A nonsignificant estimate on this outcome does not test a native-wage null. See [the E-Verify memo](immigration-causal-everify-card-vs-borjas.md) and [Census variable definitions](https://api.census.gov/data/timeseries/qwi/se/variables.html).
+- **Our E-Verify TWFE:** The QWI outcome used is stable/full-quarter average monthly earnings, not native-born hourly wages: the QWI sex-by-education API has no nativity field. A nonsignificant estimate on this outcome does not test a native-wage null. See the E-Verify memo (`immigration-causal-everify-card-vs-borjas.md`, deleted; last version at `970f44f` (2026-09-05), INDEX tombstones) and [Census variable definitions](https://api.census.gov/data/timeseries/qwi/se/variables.html).
 
 ### Supported restrictionist insight
 
@@ -129,7 +129,7 @@ National education×experience and local-market designs identify different margi
 ### Hanson composition (w23753) — supporting thread
 
 - Low-skilled immigration **slowed** post-2007; undocumented **declined**; selection from Mexico less negative over time. [SOURCE: Hanson w23753 abstract region]
-- Restrictionist use: Hanson supplies a labor-supply counterfactual, not a direct `2021–2023` wage forecast. His model implies the college/low-skill skill premium would have been about **6–9 percentage points higher in 2015** if low-skill inflows had continued at the earlier pace; applying that to surge-era wage pressure requires a separate cohort, geography, and labor-demand bridge. [SOURCE: research/immigration-restrictionist-corpus-parse-2026-06-15.md] [INFERENCE]
+- Restrictionist use: Hanson supplies a labor-supply counterfactual, not a direct `2021–2023` wage forecast. His model implies the college/low-skill skill premium would have been about **6–9 percentage points higher in 2015** if low-skill inflows had continued at the earlier pace; applying that to surge-era wage pressure requires a separate cohort, geography, and labor-demand bridge. [SOURCE: research/immigration-restrictionist-corpus-full-extract-2026-06-15.md] [INFERENCE]
 
 ---
 
@@ -175,7 +175,7 @@ Cluster J mined budgets; **not allocated** to `mexico_origin` or unauthorized pa
 
 ## How restrictionists argue (rhetorical grammar)
 
-From `immigration-economist-rhetorical-failures.md` — **mirror image**:
+From `immigration-economist-rhetorical-failures-2026-04-22.md` — **mirror image**:
 
 | Move | Restrictionist version |
 |------|------------------------|
@@ -251,15 +251,15 @@ The quoted June formulation is an illustration of compatible signs, not evidence
 
 | Date | Note |
 |------|------|
-| 2026-06-16 | Replaced the Hanson `+24% wage effect` / 2021-23 wage-pressure export with the source's narrower skill-premium counterfactual and an explicit bridge requirement. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced the Hanson `+24% wage effect` / 2021-23 wage-pressure export with the source's narrower skill-premium counterfactual and an explicit bridge requirement. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
 | 2026-06-15 | Initial steel-man map from corpus PDFs + FAIR web |
-| 2026-06-16 | Replaced binary "restrictionists are right/wrong" synthesis with support/weakness language around layer multiplication versus scalar collapse. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Reframed FAIR from "upper-bound political ledger" to advocacy high-cost ledger; its assumptions are not a mathematical upper bound and need reconciliation against ITEP/Pew before warehouse use. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Narrowed receiver-city language from crisis/system-collapse/catastrophic wording to gross-load shelter/budget stress and receiver-capacity ledgers. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Aligned the `+$46k Mexico` all-in row with the Mexico NPV memo: omitted layers make the scalar export unsupported, not a measured all-in negative result. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Scoped the "Mexico +$46k kills Mexican drain" line: the benchmark blocks `<HS`-only exports, not full-ledger all-in drain claims. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Marked the FAIR taxpayer-drain policy implication as FAIR's conditional claim, not the repo's unqualified conclusion. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Scoped the crime-wave disconfirmation row to observed U.S. justice-system-rate evidence rather than true offending or all current-surge subgroups. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Marked the welfare-magnet policy implication as a Razin-style model claim rather than an unqualified repo finding of fiscal unsustainability. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced binary "restrictionists are right/wrong" synthesis with support/weakness language around layer multiplication versus scalar collapse. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
+| 2026-06-16 | Reframed FAIR from "upper-bound political ledger" to advocacy high-cost ledger; its assumptions are not a mathematical upper bound and need reconciliation against ITEP/Pew before warehouse use. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
+| 2026-06-16 | Narrowed receiver-city language from crisis/system-collapse/catastrophic wording to gross-load shelter/budget stress and receiver-capacity ledgers. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
+| 2026-06-16 | Aligned the `+$46k Mexico` all-in row with the Mexico NPV memo: omitted layers make the scalar export unsupported, not a measured all-in negative result. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
+| 2026-06-16 | Scoped the "Mexico +$46k kills Mexican drain" line: the benchmark blocks `<HS`-only exports, not full-ledger all-in drain claims. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
+| 2026-06-16 | Marked the FAIR taxpayer-drain policy implication as FAIR's conditional claim, not the repo's unqualified conclusion. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
+| 2026-06-16 | Scoped the crime-wave disconfirmation row to observed U.S. justice-system-rate evidence rather than true offending or all current-surge subgroups. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
+| 2026-06-16 | Marked the welfare-magnet policy implication as a Razin-style model claim rather than an unqualified repo finding of fiscal unsustainability. See `immigration-conclusion-audit-running-fixes.md` (deleted; last version at `bf5d98d`). |
 
 - **2026-09-05 — Scoped native-wage, fiscal, administrative-cost and cohort comparisons** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Historical revision entries above describe the earlier state, including conclusions superseded here.

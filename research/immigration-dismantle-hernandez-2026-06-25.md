@@ -47,7 +47,7 @@ The book's other entrepreneurship, FDI, STEM and AI-workforce figures are retain
 
 ## E. Housing, wages and policy scope
 
-The repo's metro rent-level correlations are descriptive and sorting-confounded; they do not establish immigration's causal rent contribution or a permanently inelastic supply. The [Dallas Fed study](https://www.dallasfed.org/research/papers/2026/wp2607) supplies separate econometric evidence in a specific setting. A statistically insignificant permit response does not prove that supply cannot respond. [SOURCE: [metro panel](immigration-msa-rent-elasticity-panel-2026-06-25.md); Dallas Fed; INFERENCE]
+The repo's metro rent-level correlations are descriptive and sorting-confounded; they do not establish immigration's causal rent contribution or a permanently inelastic supply. The [Dallas Fed study](https://www.dallasfed.org/research/papers/2026/wp2607) supplies separate econometric evidence in a specific setting. A statistically insignificant permit response does not prove that supply cannot respond. [SOURCE: metro panel (`immigration-msa-rent-elasticity-panel-2026-06-25.md`, deleted; last version at `970f44f` (2026-09-05), INDEX tombstones); Dallas Fed; INFERENCE]
 
 Rent increases harm tenants and benefit landlords before secondary effects. A larger property-tax base does not guarantee a matching rise in revenues under every assessment/tax rule. Net household incidence requires income and other price changes as well. These are important distributional questions, but a local cost cannot alone overturn a positive aggregate result; a positive aggregate result does not automatically compensate the losing tenant. [ACCOUNTING / INFERENCE]
 

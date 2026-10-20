@@ -173,7 +173,7 @@ Three layers, in order of what the data can bear:
 
 The repo's existing warehouse panels say the same thing descriptively: the foreign-born share
 correlates +0.69 with rent levels and −0.17 with 2016–2025 rent growth across the same metros
-([MSA rent panel](immigration-msa-rent-elasticity-panel-2026-06-25.md)), immigrants live in the
+(MSA rent panel (`immigration-msa-rent-elasticity-panel-2026-06-25.md`, deleted; last version at `970f44f` (2026-09-05), INDEX tombstones)), immigrants live in the
 expensive inelastic metros and the recent growth was not where they are.
 
 ## 7. Disconfirmation and limits
@@ -266,8 +266,8 @@ design on ACS PUMS (revealed moves, no reasons) is the next test.
   `q2_regressions.csv`, `irs_ca_tx.csv`, `tax_transfer.csv`, `q4_counts.csv`; reading notes in `lit/`. [CALCULATION]
 - Repo context: [FAQ](immigration-objections-faq-2026-09-21.md) entries 4 and 15;
   [Tiebout memo](immigration-native-sorting-tiebout-2026-09-18.md); [September 16 housing lane](../infra/immigration-fiscal/housing_deport_2026_09_16/RESULT.md);
-  [MSA rent panel](immigration-msa-rent-elasticity-panel-2026-06-25.md);
-  [Saiz elasticity memo](immigration-causal-saiz-elasticity-rent.md); ladder 136, 139, 140.
+  MSA rent panel (`immigration-msa-rent-elasticity-panel-2026-06-25.md`, deleted; last version at `970f44f` (2026-09-05), INDEX tombstones);
+  Saiz elasticity memo (`immigration-causal-saiz-elasticity-rent.md`, deleted; last version at `970f44f` (2026-09-05), INDEX tombstones); ladder 136, 139, 140.
 
 ## Revisions
 

@@ -5,7 +5,10 @@ both directions. We have not verified a credible average U.S. earnings or hours
 effect that can calibrate v9. The useful new result is a concrete data route:
 **existing SIPP records can follow the same remaining adults around household
 separations**. A preliminary record-level probe finds concrete candidate
-transitions to audit; the final valid sample and its precision remain untested.
+transitions to audit. The [SIPP follow-up](immigration-sipp-departure-work-2026-10-16.md)
+has since run that analysis on validated records: small average changes in employment and
+weekly hours over the first three months after an adult co-resident leaves, no stable
+earnings response, and still no deportation effect.
 It does not identify deportations or a causal effect.
 [SOURCE; DATA; INFERENCE: evidence below]
 

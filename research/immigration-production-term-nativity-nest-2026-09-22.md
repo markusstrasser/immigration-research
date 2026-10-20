@@ -4,7 +4,9 @@ Date: 2026-09-22. [CALCULATION on the account's own CPS calibration; MODEL, tran
 elasticities; FRAMING-SENSITIVE in §4] Calculation record; narrative authorship remains
 operator-owned.
 
-**Verdict:** The complete annual account's production term, +$13.3bn (GDP scaling) or
+[2026-10-21, main case v9: every figure below is on the September 20 account (since superseded). The live case credits a production term of $8.2–12.5bn and the nest has not been run on it (FAQ entry 14). [DATA: `distribution_weights_2026_09_23/derived/case_ends_oct16.json` production.ends] [INFERENCE]]
+
+**Verdict:** On the September 20 account, the complete annual account's production term, +$13.3bn (GDP scaling) or
 +$8.8bn (cash scaling) a year to other US residents, assumes that Mexican-origin and other
 workers within the same skill group are perfect substitutes. Relaxing that with a nested CES,
 natives against foreign-born inside each of the two skill cells, on the same CPS file and the
@@ -16,8 +18,8 @@ transfer inside the beneficiary set: at ε = 3 natives gain **+$54.0bn** after t
 foreign-born residents lose **−$45.9bn**, netting to +$8.0bn of private gain, the rest of the
 term being induced tax receipts. The sign never changes. Placing the whole union in a branch
 of its own instead (Option B) gives +$754bn at ε = 3, a number produced by removing an entire
-CES branch and not by the data; it is reported as structurally unverified. Applied to the
-headline, ε = 3 would lower the $165–197bn conditional net cost by $9–14bn; it is **not
+CES branch and not by the data; it is reported as structurally unverified. Applied to that
+account's headline, ε = 3 would lower the $165–197bn conditional net cost by $9–14bn; it is **not
 applied**, because the choice of ε is a convention the account has not adopted. The jobs on
 the same CPS file put the elasticity this two-cell nest has to carry near **6** (sketch
 about **4–9**): low-cell natives and foreign-born share **0.644** of detailed-occupation
@@ -121,7 +123,7 @@ what the removal model's nesting does on this population; they are not a range.
 
 ## 4. What it means for the account
 
-[FRAMING-SENSITIVE] The headline band, $165–197bn a year of conditional net cost to other
+[FRAMING-SENSITIVE] The September 20 account's headline band, $165–197bn a year of conditional net cost to other
 US residents, uses the ε = ∞ term in each of its four cases (shared or personal allocation,
 cash or GDP scaling). Substituting Option A at ε = 3 lowers each case by the Δ in §2, $9.1bn
 in the cash cases and $13.8bn in the GDP cases, so the band would read about **$151–188bn**;

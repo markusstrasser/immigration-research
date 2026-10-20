@@ -3,6 +3,11 @@
 Date: 2026-09-22. [DATA / CALCULATION; FRAMING-SENSITIVE in the ledger translation]
 Calculation record; narrative authorship remains operator-owned.
 
+[2026-10-21: superseded by the [pooled 2016–2024 measurement](../infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/RESULT.md)
+(ladder 206), which the main case has used since 2026-09-24: pooled over nine years the ethnicity dimension adds no public
+medical cost in total (all ages 1.00, SE 0.08; 65+ 0.88, SE 0.07) and moves cost from Medicare to Medicaid. The single-year
+"less" verdict, its 0.76 and the open −40% to +56% range below are record. [DATA: ladder 206] [INFERENCE]]
+
 **Verdict:** In MEPS HC-256, the file the ledger transports medical costs from, people of
 Mexican origin draw **less** public medical money per person than the average of the very
 donor cell the transport assigns them, not more: **0.89 at 65+ (SE 0.15, 95% CI 0.61–1.18)**,
