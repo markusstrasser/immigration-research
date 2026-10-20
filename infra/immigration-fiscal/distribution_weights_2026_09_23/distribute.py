@@ -5,7 +5,7 @@ Other surveys are mapped through 1,000 percentile cells; binned sources retain
 their own bins. Income weights use eta in {0, 1, 1.3, 1.4, 2}, with percentile
 floors as sensitivities. Signs are from other residents' perspective.
 
-Only main case v8 (oct15) is computed, at its 32 personal specifications per
+Only main case v9 (oct16) is computed, at its 32 personal specifications per
 method. case_ends.cjs evaluates the complete case package, including the mixed
 tax-unit credits and job-capital receipt responses. Its gated engine A supplies
 the fiscal band directly; a historical shared-low band delta is not treated as
@@ -14,12 +14,12 @@ personal ends and v7's subsequent change from those personal ends.
 
 Capital return, capped programs and pension accrual retain their existing
 distribution rules. Row-4 production scenarios use September 29's grid, then
-take the lineage delta to oct15. The unlocated added descendants remain in the CPS's
+take the lineage delta to oct16. The unlocated added descendants remain in the CPS's
 other-resident frame because they cannot be individually identified there;
 their wage effects follow the union's skill cells [ASSUMPTION].
 
 The historical published-band comparison is retained as a fixed comparison,
-and earlier derived case files are frozen. Outputs go to derived/oct15/.
+and earlier derived case files are frozen. Outputs go to derived/oct16/.
 Run case_ends.cjs first, then:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \\
     infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py
@@ -44,6 +44,8 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import exposure_bridge
 FISCAL = HERE.parent
 ROOT = HERE.parents[2]
 sys.path.insert(0, str(FISCAL / "scripts"))
@@ -145,8 +147,9 @@ class Case(NamedTuple):
 # The live consumer case. Earlier case outputs are retained as frozen evidence.
 SEPT29_LANE = "main_case_2026_09_29"
 OCT15_LANE = "main_case_2026_10_15"
-LATER_CASES = {"oct15": Case(OCT15_LANE, "long_run_non_school_full", "case_ends_oct15.json", "oct15", SEPT29_LANE)}
-DEFAULT_CASE = "oct15"
+OCT16_LANE = "main_case_2026_10_16"
+LATER_CASES = {"oct16": Case(OCT16_LANE, "long_run_non_school_full", "case_ends_oct16.json", "oct16", SEPT29_LANE)}
+DEFAULT_CASE = "oct16"
 # From September 29 the case's production grid is the account's row-4 weights (production_row4.json): the Mexico-born
 # outside California and Texas raked by citizenship to ACS 2024 totals. Its P and F move the wage and fiscal channels,
 # never A. The lane's own production scenarios are re-solved on those weights (row4_nest_rows).
@@ -226,7 +229,7 @@ def load_cps():
     person = ["PH_SEQ", "PPPOS", "A_AGE", "PRPERTYP", "PRCITSHP", "PENATVTY", "PEFNTVTY",
               "PEMNTVTY", "PRDTHSP", "SPM_ID", "SPM_RESOURCES", "SPM_EQUIVSCALE", "PEARNVAL",
               "WSAL_VAL", "A_HGA", "INT_VAL", "DIV_VAL", "RNT_VAL", "PRIV", "FEDTAX_AC", "FICA",
-              "STATETAX_A", "PRDTRACE", "PEHSPNON"]
+              "STATETAX_A", "PRDTRACE", "PEHSPNON", "NOCOV_CYR"]
     with zipfile.ZipFile(PATHS["cps"]) as z:
         d = pd.read_csv(z.open("pppub25.csv"), usecols=person)
         w = pd.read_csv(z.open("asec_csv_repwgt_2025.csv"), usecols=["h_seq", "PPPOS", "pwwgt0"]
@@ -250,7 +253,7 @@ def load_cps():
     # Original target remains the frozen row-4 production solve's frame. The
     # newly located item-10 members are excluded from every other-resident payer
     # and beneficiary vector; missing coverage people have no observed record.
-    payload = json.loads((FISCAL / OCT15_LANE / "derived/corrections.json").read_text())
+    payload = json.loads((FISCAL / OCT16_LANE / "derived/corrections.json").read_text())
     members = payload["meta"]["union_completion"]["observed_records"]
     keys = pd.MultiIndex.from_frame(d[["PH_SEQ", "PPPOS"]])
     member_keys = pd.MultiIndex.from_tuples([(r["PH_SEQ"], r["PPPOS"]) for r in members])
@@ -277,6 +280,14 @@ def load_cps():
     cps_tax = (d.FEDTAX_AC + 2 * d.FICA + d.STATETAX_A).groupby(d.PH_SEQ).transform("sum")
     d["cps_tax_pc"] = cps_tax / d.H_NUMPER
     d["capital"] = (d.INT_VAL + d.DIV_VAL + d.RNT_VAL).clip(lower=0)
+    d["pw_production"] = d.pw
+    factors = pd.read_parquet(FISCAL / "count_composition_r5_2026_10_15/derived/native_person_factors.parquet",
+                              columns=["PH_SEQ", "PPPOS", "central_member_factor"])
+    d = d.merge(factors, on=["PH_SEQ", "PPPOS"], how="left", validate="one_to_one")
+    if d.central_member_factor.isna().any():
+        raise SystemExit("[BLOCKED] calibrated rank frame has unmatched person factors")
+    d["pw"] *= d.central_member_factor
+    gate("oct16_calibrated_civilian_total_conserved", abs(d.loc[d.civ, "pw"].sum()-CIVILIAN_TOTAL)<1e-3)
     return d
 
 
@@ -352,18 +363,18 @@ def fiscal_totals(case=DEFAULT_CASE):
     responses = payload["meta"]["responses"]
     if responses != s["responses"] or payload["meta"]["allocation"]["group_total"] != "personal":
         raise SystemExit(f"[BLOCKED] {case}: payload responses or personal allocation differ from the case")
-    band = [float(x) for x in s["v8"]["band_bn"]]
+    band = [float(x) for x in s["v9"]["band_bn"]]
     gate(f"{case}_summary_matches_bands", np.allclose(band, s["main_case"], rtol=0, atol=1e-9)
          and np.allclose(band, b.loc["adopted", ["cost_low_bn", "cost_high_bn"]].to_numpy(float), rtol=0, atol=1e-4),
          summary=band)
     ends = case_ends(case, c, band)
     prod = ends.pop("production")
-    previous_grid = json.loads((FISCAL / "main_case_2026_10_14/derived/corrections.json").read_text())["production"]
+    previous_grid = json.loads((FISCAL / OCT15_LANE / "derived/corrections.json").read_text())["production"]
     for end in ("low", "high"):
         x = prod["ends"][end]
         prev = x["previous"]
-        gate(f"{case}_{end}_previous_grid_is_frozen_v7_at_the_personal_cell",
-             prev["lane"] == "main_case_2026_10_14"
+        gate(f"{case}_{end}_previous_grid_is_frozen_v8_at_the_personal_cell",
+             prev["lane"] == OCT15_LANE
              and prev["P_bn"] == previous_grid["private_wtp_bn"][x["cell_index"]]
              and prev["F_bn"] == previous_grid["induced_receipts_bn"][x["cell_index"]], cell=x["cell_index"])
     prod["change_P_plus_F_bn"] = [
@@ -375,15 +386,17 @@ def fiscal_totals(case=DEFAULT_CASE):
          rtol=0, atol=1e-9), A=A, band=band)
     cash_band = b.loc["cash_set", ["cost_low_bn", "cost_high_bn"]].to_numpy(float)
     gate(f"{case}_cash_set_rebuilt_from_A_less_accrual",
-         np.allclose(np.asarray(band) - ends["pension_accrual"], s["v8"]["cash_set_bn"], rtol=0, atol=1e-9)
-         and np.allclose(s["v8"]["cash_set_bn"], cash_band, rtol=0, atol=1e-4), cash=cash_band.tolist())
+         np.allclose(np.asarray(band) - ends["pension_accrual"], s["v9"]["cash_set_bn"], rtol=0, atol=1e-9)
+         and np.allclose(s["v9"]["cash_set_bn"], cash_band, rtol=0, atol=1e-4), cash=cash_band.tolist())
     base_personal = s["v7"]["base"]["personal_band_bn"]
     allocation_move = s["v7"]["change_by_item"]["personal_allocation"]["band_bn"]
     gate(f"{case}_allocation_move_is_v6_personal_less_v6_all", np.allclose(
          np.asarray(base_personal) - s["adopted_2026_10_07"], allocation_move, rtol=0, atol=1e-9), move=allocation_move)
     entry = dict(A_low_cost=A[0], A_high_cost=A[1], A_mid=sum(A) / 2, band=band,
                  responses=responses, allocation="personal", production=prod, **ends,
-                 oct15_change_from_v7=[band[j] - s["v7"]["band_bn"][j] for j in (0, 1)],
+                 oct16_change_from_v8=[band[j] - s["v8"]["band_bn"][j] for j in (0, 1)],
+                 calibrated_lineage_population=payload["meta"]["population_v9"],
+                 effective_capital_rate=payload["meta"]["one_rate"]["flat_real_equivalent"],
                  allocation_move_from_v6_all=allocation_move)
     out.update(adopted=entry, case=case)
     return out
@@ -495,7 +508,7 @@ def row4_nest_rows(d, nest, prod, lane):
     with zipfile.ZipFile(PATHS["cps"]) as z:
         h = pd.read_csv(z.open("hhpub25.csv"), usecols=["H_SEQ", "GESTFIPS"]).set_index("H_SEQ").GESTFIPS
     state = d.PH_SEQ.map(h).to_numpy()
-    pw, civ, target = d.pw.to_numpy(), d.civ.to_numpy(), d.target.to_numpy()
+    pw, civ, target = d.pw_production.to_numpy(), d.civ.to_numpy(), d.target.to_numpy()
     factor = np.ones(len(d))
     for status, label in ROW4_STATUS.items():
         m = (d.PENATVTY.eq(MEXICO_BIRTHPLACE) & d.PRCITSHP.eq(status)).to_numpy() & ~np.isin(state, ROW4_EXCLUDED_STATES)
@@ -692,7 +705,7 @@ def wage_basis(d, split, proxy="PEARNVAL"):
             denominator = float(pw @ e)
             if denominator <= 0:
                 raise SystemExit(f"[BLOCKED] zero remaining wage base {split}/{tag}/{c}")
-            basis[(tag, c)] = e * float(pw @ old) / denominator
+            basis[(tag, c)] = e * float(d.pw_production.to_numpy() @ old) / denominator
     return basis
 
 
@@ -1082,11 +1095,23 @@ def by_bin(delta, d, R, nbin=5):
 
 def main():
     start = time.perf_counter()
+    phase_started = start
+
+    def timed_phase(name):
+        nonlocal phase_started
+        now = time.perf_counter()
+        print(f"[timing] {name}_s={now-phase_started:.3f}", flush=True)
+        phase_started = now
+
     ap = argparse.ArgumentParser(description="Distribution of the account's channels among other residents.")
     ap.add_argument("--case", choices=list(LATER_CASES), default=DEFAULT_CASE,
-                    help="live main case v8 (oct15), written to derived/oct15/; earlier case files stay frozen")
+                    help="live main case v9 (oct16), written to derived/oct16/; earlier case files stay frozen")
     ap.add_argument("--out-dir", type=Path, default=None,
-                    help="override the live case's default derived/oct15/ output directory")
+                    help="override the live case's default derived/oct16/ output directory")
+    ap.add_argument("--exposure-policy", choices=("measured", "source_profile", "require_own"), default="measured",
+                    help="measured CPS care drivers centrally; latent/coverage donor profiles only in switched diagnostic")
+    ap.add_argument("--payer-source", type=Path, default=None,
+                    help="explicit current-flow CSV from the debt exporter; its sibling contract and all source pins remain required")
     args = ap.parse_args()
     sub = LATER_CASES[args.case].out if args.case in LATER_CASES else None
     out_dir = args.out_dir or (DERIVED / sub if sub else DERIVED)
@@ -1094,9 +1119,12 @@ def main():
     verify_published_text()
     ncvs_verified = verify_ncvs_text()
     d = load_cps()
+    timed_phase("source_checks_and_cps")
     pw, other = d.pw.to_numpy(), d.other.to_numpy()
     fiscal = fiscal_totals(args.case)
     adopted = fiscal["adopted"]
+    exposure_rows, exposure_factors, exposure_info = exposure_bridge.build(d, fiscal, HERE, args.exposure_policy)
+    print(exposure_info["status"])
     # The budget's part of A. From the September 27 case the capped programs leave it for their eligible
     # non-recipients (D, a cost at each band end), and the capital return K is also reported alone.
     budget_mid = adopted["A_mid"]
@@ -1170,6 +1198,7 @@ def main():
     P_c = float(central.native_production_gain_bn + central.other_immigrant_production_gain_bn)
     production_extra = {k: sum(adopted["production"]["ends"][end]["reporter"][k]
                               + adopted["production"]["ends"][end]["coverage"][k]
+                              + adopted["production"]["ends"][end]["count"][k]
                               for end in ("low", "high")) / 2 for k in ("P_bn", "F_bn")}
     # Native child production is in the admitted grid. Reporter and coverage
     # production enter once beside the central scenario, at their endpoint mean.
@@ -1177,6 +1206,7 @@ def main():
     P_c += production_extra["P_bn"]
     U_mid = sum(adopted["unclassified_cost"]) / 2
     F_published = float(central_published.induced_current_receipts_bn)   # F_c before September 29
+    timed_phase("fiscal_exposure_and_production")
 
     # ---- housing arms (long run, form A, central ownership, householder rule)
     ha = pd.read_csv(PATHS["housing_arms"]).drop_duplicates(["arm", "level", "form", "geography", "ownership"])
@@ -1184,6 +1214,7 @@ def main():
     arms = {(r.level, r.geography): r._asdict() for r in ha.itertuples()}
     acs = acs_channels(acs_extract(), arms)
     scf, scf_info = scf_cells()
+    timed_phase("housing_acs_and_scf")
 
     # ---- crime victims' harm
     off = pd.read_csv(PATHS["crime_offence"]).set_index("offence")
@@ -1210,6 +1241,8 @@ def main():
     gate("uncompensated_inside_matches_main_case",
          np.isclose(in_lo, fiscal["uncomp_inside"][0], atol=1e-4) and np.isclose(in_hi, fiscal["uncomp_inside"][1], atol=1e-4),
          lane=[in_lo, in_hi], main_case=fiscal["uncomp_inside"])
+    out_lo *= exposure_factors["unreimbursed_care"]
+    out_hi *= exposure_factors["unreimbursed_care"]
     unreimbursed_mid = (out_lo + out_hi) / 2
 
     cex = pd.read_csv(PATHS["cex"])
@@ -1235,6 +1268,35 @@ def main():
     tables = {k: [] for k in ("frame", "quintile", "decile", "weighted", "regress", "weights", "ranges",
                               "percentile")}
     notes = {}
+    migration = []
+    financing_comparison = []
+    level_path = (args.payer_source.resolve() if args.payer_source else
+                  FISCAL / "debt_legacy_2026_09_23/derived/oct16/current_flow_source_parts_2024.csv")
+    if not level_path.exists():
+        raise SystemExit("[BLOCKED] oct16 level-matched financing needs the debt current-flow source table")
+    level_contract_path = level_path.with_name("current_flow_contract.json")
+    if not level_contract_path.exists():
+        raise SystemExit("[BLOCKED] oct16 payer table has no source contract")
+    level_contract = json.loads(level_contract_path.read_text())
+    if level_contract.get("case") != "oct16" or not level_contract.get("source_pins"):
+        raise SystemExit("[BLOCKED] payer source contract is not complete oct16 provenance")
+    for rel, expected in level_contract["source_pins"].items():
+        if sha(FISCAL / rel) != expected:
+            raise SystemExit(f"[BLOCKED] stale payer source contract: {rel}")
+    levels = pd.read_csv(level_path)
+    for basis_name in ("set", "cash"):
+        for j,end_name in enumerate(("low", "high")):
+            for convention in ("low", "central", "high"):
+                selected=levels[(levels.basis==basis_name)&(levels.end==end_name)&(levels.convention==convention)]
+                expected=level_contract["bands_bn"][basis_name][j]
+                gate(f"D5_source_{basis_name}_{end_name}_{convention}_closure",len(selected)>0
+                     and abs(selected.responsive_bn.sum()-expected)<1e-9)
+    levels = levels[(levels.basis=="set") & (levels.convention=="central")
+                    & ~levels.financing.isin(["private_production", "displaced_beneficiaries"])]
+    if set(levels.end) != {"low", "high"}:
+        raise SystemExit("[BLOCKED] payer source lacks both set/central ends")
+    located_by_level = levels.groupby("end")[["federal_bn", "state_local_bn"]].sum().mean()
+    source_unlocated = levels[levels.financing=="unlocated"].groupby("end").responsive_bn.sum().reindex(["low","high"],fill_value=0.).mean()
     for measure in MEASURES:
         R = R_money if measure == "money" else rank_frame(d, measure)
         ranking = "after" if measure == "spm" else "before"
@@ -1242,6 +1304,81 @@ def main():
         notes[f"tax_{measure}"] = tax_info
         keys = {"a": tax, "b": np.ones(len(d))}
         ch = {}
+        # D04: full fiscal incidence with the frozen oct15 recipients/ranks and
+        # normalized key; only then re-rank/re-key on calibrated person weights.
+        frozen = d.copy()
+        frozen["pw"] = frozen.pw_production
+        old_R = rank_frame(frozen, measure)
+        old_tax, _ = tax_key(frozen, old_R, ranking, F_total, S_total)
+        old_inputs = json.loads((DERIVED / "oct15/inputs.json").read_text())
+        old_ends = json.loads((DERIVED / "case_ends_oct15.json").read_text())
+        old_A = old_inputs["fiscal"]["adopted"]
+        for conv, old_key in {"a": old_tax, "b": np.ones(len(d))}.items():
+            old_total = old_A["A_mid"] + sum(sum(v)/2 for v in old_A["capped_programs"].values()) + old_inputs["production"]["central_F"]
+            new_total = budget_mid + F_c
+            old_vector = per_person(frozen, old_key, old_total)
+            full_vector = per_person(frozen, old_key, new_total)
+            share = by_bin(per_person(frozen, old_key, 1.), frozen, old_R)["net"]
+            old_q, full_q = (by_bin(x, frozen, old_R)["net"] for x in (old_vector, full_vector))
+            predicted = old_q + share*(new_total-old_total)
+            gate(f"D04_{measure}_{conv}_old_plus_share_delta_full_frozen", np.max(np.abs(predicted-full_q))<1e-9)
+            saved = pd.read_csv(DERIVED / "oct15/channel_by_quintile.csv")
+            saved = saved[(saved.measure==measure)&(saved.channel==f"fiscal_{conv}")&(saved.quintile>0)].sort_values("quintile")
+            gate(f"D04_{measure}_{conv}_frozen_reproduces_oct15", np.max(np.abs(saved.bn.to_numpy()-old_q))<1e-9)
+            current_q = by_bin(per_person(d, keys[conv], new_total), d, R)["net"]
+            headline_delta = (sum(old_A["band"])-sum(adopted["band"]))/2
+            headline_prediction = old_q+share*headline_delta
+            frozen_counterfactual = by_bin(per_person(frozen,old_key,old_total+headline_delta),frozen,old_R)["net"]
+            gate(f"D04_{measure}_{conv}_headline_delta_fixed_private_displaced",np.max(np.abs(headline_prediction-frozen_counterfactual))<1e-9)
+            for q in range(5):
+                migration.append(dict(measure=measure, convention=conv, quintile=q+1,
+                    basis="set", endpoint="mean_actual",
+                    old_bn=old_q[q], frozen_share=share[q], delta_total_bn=new_total-old_total,
+                    predicted_frozen_bn=predicted[q], full_frozen_bn=full_q[q],
+                    headline_delta_bn=headline_delta,headline_only_prediction_bn=headline_prediction[q],
+                    source_production_displaced_residual_bn=full_q[q]-headline_prediction[q],
+                    calibrated_rank_keys_bn=current_q[q], calibrated_change_bn=current_q[q]-full_q[q]))
+            for basis_name in ("set", "cash"):
+                for j, end_name in enumerate(("low", "high")):
+                    old_cost=old_ends["ends"][end_name]["cost_bn"]-(old_ends["pension_accrual"]["ends"][end_name] if basis_name=="cash" else 0.)
+                    new_cost=adopted["band"][j]-(accrual[j] if basis_name=="cash" else 0.)
+                    old_cost_fiscal=old_cost+old_ends["production"]["ends"][end_name]["case"]["P_bn"]-sum(old_ends["ends"][end_name]["capped_bn"].values())
+                    new_cost_fiscal=new_cost+adopted["production"]["ends"][end_name]["case"]["P_bn"]-D_end[j]
+                    old_end_q=by_bin(per_person(frozen,old_key,-old_cost_fiscal),frozen,old_R)["net"]
+                    new_end_q=by_bin(per_person(frozen,old_key,-new_cost_fiscal),frozen,old_R)["net"]
+                    predicted_end=old_end_q-share*(new_cost_fiscal-old_cost_fiscal)
+                    headline_end=old_end_q+share*(old_cost-new_cost)
+                    fixed_private_end=by_bin(per_person(frozen,old_key,-old_cost_fiscal+old_cost-new_cost),frozen,old_R)["net"]
+                    gate(f"D04_{measure}_{conv}_{basis_name}_{end_name}_fixed_private_displaced",np.max(np.abs(headline_end-fixed_private_end))<1e-9)
+                    gate(f"D04_{measure}_{conv}_{basis_name}_{end_name}",np.max(np.abs(predicted_end-new_end_q))<1e-9)
+                    rank_end=by_bin(per_person(d,keys[conv],-new_cost_fiscal),d,R)["net"]
+                    for q in range(5):
+                        migration.append(dict(measure=measure,convention=conv,quintile=q+1,basis=basis_name,endpoint=end_name,
+                            old_bn=old_end_q[q],frozen_share=share[q],delta_total_bn=old_cost_fiscal-new_cost_fiscal,
+                            predicted_frozen_bn=predicted_end[q],full_frozen_bn=new_end_q[q],calibrated_rank_keys_bn=rank_end[q],
+                            headline_delta_bn=old_cost-new_cost,headline_only_prediction_bn=headline_end[q],
+                            source_production_displaced_residual_bn=new_end_q[q]-headline_end[q],
+                            calibrated_change_bn=rank_end[q]-new_end_q[q]))
+        # D5: locate each government's share on its own tax schedule. Any
+        # unlocated source remainder retains the national mixture explicitly.
+        fed_key,_=tax_key(d,R,ranking,1.,0.)
+        sl_key,_=tax_key(d,R,ranking,0.,1.)
+        national_vector=per_person(d,tax,budget_mid+F_c)
+        residual_cost=-(budget_mid+F_c)-located_by_level.sum()
+        matched_vector=(per_person(d,fed_key,-located_by_level.federal_bn)
+                        +per_person(d,sl_key,-located_by_level.state_local_bn)
+                        +per_person(d,tax,-residual_cost))
+        national_q=by_bin(national_vector,d,R)["net"]
+        matched_q=by_bin(matched_vector,d,R)["net"]
+        gate(f"D5_{measure}_level_matched_total",abs(national_q.sum()-matched_q.sum())<1e-9)
+        for q in range(5):
+            financing_comparison.append(dict(measure=measure,quintile=q+1,national_mix_bn=national_q[q],
+                basis="set",endpoint="mean",
+                level_matched_bn=matched_q[q],difference_bn=matched_q[q]-national_q[q],
+                federal_located_cost_bn=located_by_level.federal_bn,state_local_located_cost_bn=located_by_level.state_local_bn,
+                national_mix_remainder_cost_bn=residual_cost,unlocated_source_cost_bn=source_unlocated,
+                normalization_or_scope_remainder_cost_bn=residual_cost-source_unlocated,
+                remainder_policy="unlocated source plus normalization/scope remainder at national tax mix; conditional level-match"))
 
         def crime_split(k, total, s_share=serious_share):
             return per_person(d, k["serious"], -total * s_share) + per_person(d, k["simple"], -total * (1 - s_share))
@@ -1533,6 +1670,7 @@ def main():
                                              least_costly_equal_split=hi / mean_w[(eta, CENTRAL_FLOOR)]))
 
     fr = pd.DataFrame(tables["frame"])
+    timed_phase("channel_distributions")
     footprint = require_within_budget("distribution weights, no output files published")
     fr.to_csv(out_dir / "income_frame.csv", index=False)
     pd.DataFrame(tables["quintile"]).to_csv(out_dir / "channel_by_quintile.csv", index=False)
@@ -1542,6 +1680,9 @@ def main():
     pd.DataFrame(tables["regress"]).to_csv(out_dir / "regressivity.csv", index=False)
     pd.DataFrame(tables["weights"]).to_csv(out_dir / "weights.csv", index=False)
     pd.DataFrame(tables["ranges"]).to_csv(out_dir / "ranges_weighted.csv", index=False)
+    pd.DataFrame(migration).to_csv(out_dir / "migration_bridge.csv", index=False, lineterminator="\n")
+    pd.DataFrame(financing_comparison).to_csv(out_dir / "financing_comparison.csv", index=False, lineterminator="\n")
+    exposure_bridge.price(exposure_rows, tables).to_csv(out_dir / "channel_exposure_bridge.csv", index=False, lineterminator="\n")
     rq = []
     for (level, geo) in arms:
         a = acs[(level, geo)]
@@ -1563,6 +1704,10 @@ def main():
     pd.DataFrame(wages).to_csv(out_dir / "wage_scenarios.csv", index=False)
 
     inputs = dict(
+        level_matched_source=dict(file=str(level_path.relative_to(FISCAL)) if level_path.is_relative_to(FISCAL) else str(level_path),sha256=sha(level_path),
+                                  selection="explicit --payer-source" if args.payer_source else "canonical debt lane",
+                                  contract_sha256=sha(level_contract_path)),
+        channel_exposure=exposure_info,
         fiscal=fiscal, federal_taxes_2024_bn=F_total, state_local_taxes_2024_bn=S_total,
         production=dict(central_P=P_c, central_F=F_c, account_P_plus_F=float(account.private_plus_receipts_bn)),
         crime=dict(equal_footing=crime_equal, custody_footing=crime_custody, tangible_equal=crime_tangible_equal,

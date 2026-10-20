@@ -1143,3 +1143,181 @@ band above is unchanged. SPM quintile-0 central totals: fiscal −$402.521002594
 −$446.4058245484939bn (a) (were −405.731 and −449.616: the coverage correction, averaged over the ends). All
 endpoint and distribution gates pass; reproduction IDENTICAL 89/89, exit 0. [CALCULATION: `derived/case_ends_oct15.json`
 `ends`; `derived/oct15/channel_by_quintile.csv`, `measure=spm`, `quintile=0`]
+
+## Oct16 migration (2026-10-15; execution waits for adoption)
+
+The live producer is now `oct16` only. Earlier case files, including oct15,
+are frozen. The endpoint adapter searches all personal specifications in both
+methods and both accounting sets. It consumes every selected source item;
+item19/W09 remain beside. Military service rows retain their original source
+lines; administration is the retirement-only partial bridge; college operating
+and capital parts stay separate. Native calibration and tenure use the typed
+source rows with joint-minus16. Item21's typed health consumption and capital
+parts retain their separate economic classes; a `side=capital` health_sl part
+is a resource cost even when the item's label refers to the residual health key.
+The actual capital return includes the typed rate, college and count changes,
+at the Trustees equivalent rate; it never becomes a financing/debt flow.
+[CALCULATION: `case_ends.cjs`; DATA: oct16 case Consumers]
+
+The CPS roster and production solve retain their original denominator. Income
+ranks, tax keys and welfare normalizations use the source's calibrated
+`central_member_factor`. The case denominator is `meta.population_v9`; the
+constructed missing count is `with_coverage - without_coverage`, not the
+historical pre-calibration `coverage` field. Reporter and count production use
+their declared generation endpoint P/F ratios, an explicit source-share
+transport assumption. Unlocated descendants remain unidentifiable in the
+recipient roster. [CALCULATION: `distribute.py`, `case_ends.cjs`]
+
+`migration_bridge.csv` reports D04's old-plus-share-times-delta calculation,
+the full frozen-key result and then the calibrated rank/key result separately,
+for both measures, conventions and accounting sets at both ends, plus the
+central mean-end incidence. All fiscal subcolumns have the same incidence key
+within a convention. Source classification changes cash/resource/accrual
+interpretation even when a fixed-key total is linear. `financing_comparison.csv`
+compares the national mixture with located federal/state source amounts on
+their separate tax schedules; its unlocated remainder explicitly retains the
+national mixture, with normalization/scope differences recorded separately
+from the source's unlocated costs. That comparison is conditional on this residual rule, and
+does not identify unlocated Treasury borrowing. [CALCULATION: `distribute.py`;
+DATA: debt oct16 `current_flow_source_parts_2024.csv`]
+
+The migration bridge also applies just the case's headline delta while holding
+private production and displaced beneficiaries fixed, as D04 specifies. Its
+separate source-production/displaced residual records the additional full-source
+update; calibrated rank/key movement is a third column, never folded into the
+headline-only identity control.
+[CALCULATION: `distribute.py`, `derived/oct16/migration_bridge.csv`]
+
+**D05 is only partly measured.** `channel_exposure_bridge.csv` prices each
+addition/completion/calibration/coverage component at the same eta and
+equal-split normalization. Care uses actual CPS uninsured person-years for
+row-4 frame, completion and calibration. `--exposure-policy measured` admits
+those measured changes. `source_profile` also admits the latent/coverage donor-profile
+care diagnostic. The latter is conditional on source donor profiles, held
+AHA national spending/private offset fraction, and unmeasured tenure
+correlation. Housing's ACS reporter-or-Mexico-birth universe already contains
+some reporting completion; a CPS lineage count addition would overlap those
+people. Own metro/tenure/ownership and crime custody/victim-overlap keys for
+unlocated people remain unidentified. Their priced population/age12+ screens
+are not estimates or bounds and do not change the central source totals.
+`require_own` fails loudly. The producer prints `[DEGRADED]` for this partial
+outside-budget migration. Wage production already carries its source grid,
+reporter, coverage and typed count pieces; no extra count multiplier is applied.
+Military replacement private surplus remains unidentified. [CALCULATION:
+`exposure_bridge.py`; DATA: source care, crime and housing RESULTs]
+
+Care reprices both numerator and denominator of the source uninsured share.
+Completion and latent ancestry already exist in the national CPS roster;
+row-4 reweighting and calibration change the all-civilian uninsured denominator. Only the conditional
+constructed-coverage arm adds unobserved people to that denominator. Separate
+denominator rows retain the resulting numerator/denominator interactions.
+[CALCULATION: `exposure_bridge.py`]
+
+Income-year 2024 tax/benefit rules apply, with Social Security and Part A
+promises at what current law can pay. These distribution-weighted removal
+scenarios are modeled effects and normative weights, not observed causal
+effects or current cash bills. The LLM instrument's political dispositions
+remain a limitation. [FRAMING-SENSITIVE; DATA: `notes/llm-bias-caveat.md`]
+
+Current reproduction commands (run only after the case and the debt source
+table are final):
+
+```sh
+node infra/immigration-fiscal/distribution_weights_2026_09_23/case_ends.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/distribution_weights_2026_09_23 \
+  "node {lane}/case_ends.cjs" \
+  "uv run --no-project python3 {lane}/distribute.py" \
+  "uv run --no-project python3 -m pytest {lane}/test_distribute.py -q --import-mode=importlib -p no:cacheprovider"
+```
+
+## Adopted oct16 execution — 2026-10-20
+
+2026-10-20 20:31:36 JST (`date`): adoption commit 7dfb4c66 is verified.
+The live case is oct16 only; historical outputs remain frozen. Endpoint
+pins were regenerated from the adopted payloads. Items 13–18, 20 and 21 route
+through their declared source parts, including 21's health capital at the
+actual item 20 rate; 19/W09 remain beside. The calibrated lineage contains
+44,903,074.086245 people and the real capital rate is 0.0208106987642378.
+[CALCULATION: `derived/case_ends_oct16.json` population/effective_capital_rate/
+selected_source_classification/ends.source_post_parts_by_method]
+
+Set endpoints are 368.02973917888073 / 436.56152715403437bn; cash endpoints
+are 284.39704345864834 / 352.92883143380107bn. Found personal specifications
+are 16 / 11 in both methods and both sets. All 18 endpoint gates pass at 1e-9
+native and 1e-4 printed-band tolerances. The 347 distribution gates and all
+nine tests pass. Four-command whole-lane replay, including the scoped debt
+source regeneration, exits 0 with **IDENTICAL: 107/107**. Earlier cases are
+included in that byte check. Replay wrapper elapsed 356.854s; its peak-child
+RSS 799,391,744 bytes is diagnostic. First direct producer physical footprint
+was 1,544,046,704 bytes, below 2.5GB, with 208.208s internal elapsed time.
+[CALCULATION: `derived/case_ends_oct16.json` ends/pension_accrual;
+`derived/oct16/gates.json`; `test_distribute.py`; four-command replay below]
+
+Companion claims, from this lane's central distribution scenario (which is
+not the case endpoint average):
+
+- **U1D1:** under SPM ranking, Q1's fiscal change is −11.930965bn under
+  tax-proportional (a) and −78.680843bn under equal-person (b): its charge
+  rises 66.749878bn. Aggregate fiscal change is −393.401817bn and all-channel
+  change −437.609363bn under either convention. A quintile claim must name
+  its financing convention. [CALCULATION: `derived/oct16/channel_by_quintile.csv`,
+  measure=spm,quintile=1/0,channel=fiscal_a/fiscal_b/TOTAL_a/TOTAL_b,bn]
+- **U1D2:** capital resource return, pension accrual and unclassified cost
+  total 124.713923 / 128.791990bn at the two ends. The fiscal row is not a
+  current cash bill; capital return is not borrowing. [CALCULATION:
+  `derived/oct16/inputs.json` financing_columns.low_cost_end/high_cost_end]
+- **U1D5:** Q5's SPM fiscal allocation is −244.410895bn under the national
+  tax mixture and −218.984906bn under conditional level-matching, a
+  +25.425989bn difference. Located federal/S&L costs are 122.346155 /
+  265.217726bn. The 5.837936bn remainder retains the national mixture:
+  4.647853bn unlocated source plus 1.190083bn normalization/scope remainder.
+  This does not identify complete own payers or historical borrowing.
+  [CALCULATION: `derived/oct16/financing_comparison.csv`,measure=spm,quintile=5]
+- **D04:** old + frozen share × fiscal delta closes within 2.103207e-12bn.
+  Calibrated ranking/keys separately move a quintile by up to 0.049815bn.
+  A headline-only delta misses production/displaced terms by up to 0.333800bn.
+  [CALCULATION: `derived/oct16/migration_bridge.csv` predicted_frozen_bn,
+  full_frozen_bn,calibrated_change_bn,source_production_displaced_residual_bn]
+- **U1D7/D05:** measured own care drivers, including the row-4 source frame
+  and national uninsured-denominator correction, reduce cost 0.205238bn
+  (care multiplier 0.953364). Housing/crime remain unmeasured centrally on
+  their own missing keys. Separate conditional care/crime/housing screens
+  are −0.327933 / −2.641259 / +0.343626bn welfare, not estimates or bounds.
+  No identified cross-channel sum or universal lineage multiplier is used.
+  Production retains its admitted source-grid denominator/P/F. [CALCULATION:
+  `derived/oct16/channel_exposure_bridge.csv`,measure=spm,eta=0,
+  grouped by channel/central_admitted; `derived/oct16/inputs.json` channel_exposure]
+
+**Explicit dependency branch:** canonical
+`debt_legacy_2026_09_23/derived/oct16/current_flow_source_parts_2024.csv`
+and its contract were absent. The parent authorized the existing exporter
+into this lane's `_cache/oct16/debt_source/` and explicit `--payer-source`.
+The canonical default remains; there is no automatic fallback. The override
+requires the sibling contract, all live source pins and 12 native corner
+closures at 1e-9. CSV sha256 is
+`170155ac331f1fb37b8bf34dff4bf3d9c5723e5b03162981001daf1365d4efdb`;
+contract sha256 is
+`0762607469bcf93a660a9eb01e868f27d93766768b2413428b2442c32bd8cd1f`.
+No debt-lane source or historical stock was edited. Parent integration must
+retain this explicit regeneration route or supply the canonical dependency.
+[DATA: `derived/oct16/inputs.json` level_matched_source]
+
+Current complete reproduction, from repo root:
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/distribution_weights_2026_09_23 \
+  "uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py --case oct16 --current-flow-only --out-dir {lane}/_cache/oct16/debt_source" \
+  "node {lane}/case_ends.cjs" \
+  "uv run --no-project python3 -m cProfile -o {lane}/_cache/oct16/distribute-profile.pstats {lane}/distribute.py --payer-source {lane}/_cache/oct16/debt_source/current_flow_source_parts_2024.csv" \
+  "uv run --no-project python3 -m pytest {lane}/test_distribute.py -q --import-mode=importlib -p no:cacheprovider"
+```
+
+The first producer exceeded two minutes. The required replay's 142.591s
+profile locates repeated rank-weight/bin-denominator work; measured details
+and exact-parity/memory criteria for a separately scoped optimization are
+filed in `failure-catalog.md`. These timings do not establish a CPU speedup.
+Remaining scientific gaps are the own housing/crime exposure bridge,
+conditional latent/coverage care profiles and military-replacement private
+surplus. `require_own` remains blocked. [DATA: `failure-catalog.md`;
+`derived/oct16/inputs.json` channel_exposure]
