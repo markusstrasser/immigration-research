@@ -177,8 +177,8 @@ substituting a web summary or declaring a measurement unavailable:
   or covers the union and says so (ladder 281); it takes item 10's people from
   `union_completion_2026_10_14`'s flags.
 - The evidence map (`overview_2026_09_28/`) and figures page (`figures_2026_09_22/`) move to a new
-  main case only when the operator asks. Both are on main case v6, at his request: the map since
-  2026-10-07, the figures page since 2026-10-08. The figures page's unlinked prototypes stay on the
+  main case only when the operator asks. The map is on main case v9 since 2026-10-21; the figures page
+  is on v6 since 2026-10-08; both moves were at his request. The figures page's unlinked prototypes stay on the
   September 24 account. The assumption explorer's page was deleted on 2026-10-15 at his word; its
   directory (`assumption_explorer_2026_09_21/`) keeps the engine, the model builder and the scaling
   check, which the case lanes import by that path.
