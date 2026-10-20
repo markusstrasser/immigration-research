@@ -328,7 +328,7 @@ def span_lines(path, spans):
 INDEX_SPANS = [
     ("**Adopted main case (", "Treat an Astra accusation as a lead to verify"),
     ("**Earlier cases.** Each main case replaced the one before.",
-     "[decision](../decisions/2026-10-15-main-case-v8.md), ladder 304 |"),
+     "[decision](../decisions/2026-10-16-main-case-v9.md), ladder 311–318 |"),
     ("[By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224,",
      "([scope memo](immigration-education-administration-scope-2026-09-20.md))."),
     ("[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) (ladder 188–193)",
@@ -337,7 +337,7 @@ INDEX_SPANS = [
     ("The [world ledger]", "premium over being raised in Mexico. [FRAMING-SENSITIVE]"),
     ("Benefits are priced to the same standard as the costs", "so both figures stand (ladder 199)."),
     # the dataset audit's fill-in correction, sized on the main case (the list's other sizes sit in the ladder)
-    ("leaving them in would lower the main case by", "Federal tax the CPS misses at the top was"),
+    ("the fill-in-off companion has not been repriced on the current case.", "Federal tax the CPS misses at the top was"),
     ("The [debt legacy lane]", "resource costs and pension accrual must not be compounded as borrowing or added as legacy debt."),
     ("**Legacy comparisons, stated separately (September 30).**",
      "[decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]"),
@@ -354,6 +354,7 @@ FAQ_SPANS = [
     ("Anchors: the [complete annual account]", "[SOURCE: [CA–TX geography]"),
     ("- **Roads, parks and economic administration** take their long-run responses.",
      "−0.72 to 1.66, which cannot tell zero from one"),
+    ("A held-fixed screen adds the source production/defense bound", "removal-and-replacement rerun on the adopted case."),
     ("Steel-man: cheaper services, complementary labour and capital returns never appear in a",
      "The 1970–2000 college-share studies"),
     ("Finding: only income-year 2024 is a complete account.", "of other programmes before 2024 is unmeasured."),
@@ -375,7 +376,7 @@ FAQ_SPANS = [
     ("Steel-man: grandchildren of Mexican immigrants who marry out",
      "the third generation measured with grandparent detail."),
     # entry 20, the closed budget (ladder 282): the finding and its ranges, not the steel-man's OMB totals
-    ("Finding: the headline is current law, and current law schedules no rule that closes the budget",
+    ("Finding: the headline uses income-year 2024 tax and benefit rules, with Social Security and Part A promises",
      "is never combined with other entries' ranges."),
     # entry 16, the main case and its first-year response beside CBO's projection (since v6); not CBO's own figures
     ("all ages and generations in income-year 2024, state and local services included",
@@ -386,6 +387,8 @@ FAQ_SPANS = [
     ("Beyond the victims, fear and avoidance", "fiscal-plus-social total (entry 4)."),
     ("substitutes; the main case credits", "Three limits keep it from being added as it stands."),
     ("Leaving the survey's", "And the income tax key was too flat"),
+    ("The surveys' count discrepancy runs the other way from the objection.",
+     "linked tax and benefit records for the group (IRS, SSA and Census), evidence that its"),
 ]
 CLAUDE_SPANS = [
     ("Since\n  2026-09-23 the main case lets general public services", "business subsidies stay at **zero response by assumption**"),

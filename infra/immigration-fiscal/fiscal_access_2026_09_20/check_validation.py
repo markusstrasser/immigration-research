@@ -17,7 +17,7 @@ def stage(root):
 
 
 def reject(label, change, expected):
-    with tempfile.TemporaryDirectory(prefix='fiscal-integrity-', dir='/private/tmp') as directory:
+    with tempfile.TemporaryDirectory(prefix='fiscal-integrity-') as directory:
         root = Path(directory)
         stage(root)
         change(root)

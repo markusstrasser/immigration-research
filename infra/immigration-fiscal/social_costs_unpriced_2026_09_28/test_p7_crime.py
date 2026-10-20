@@ -81,6 +81,14 @@ def test_missing_baseline_is_rejected_before_any_outputs(tmp_path, monkeypatch):
     assert before == {p.name: p.read_bytes() for p in (HERE / "derived").glob("p7_*")}
 
 
+def test_renderer_rejects_missing_captured_receipt_before_outputs(tmp_path, monkeypatch):
+    renderer = p7.load("tested_p7_renderer", HERE / "render_p7.py")
+    monkeypatch.setattr(renderer, "HERE", tmp_path)
+    with pytest.raises(SystemExit, match="BLOCKED.*captured validation receipt"):
+        renderer.main()
+    assert not (tmp_path / "RESULT.md").exists()
+
+
 def test_noncrime_source_rows_and_benefit_sign_are_preserved():
     payload = json.loads((HERE / "derived/p7_payload.json").read_text())
     assert all(0 <= s < 1 for s in payload["recipient_shares"].values())

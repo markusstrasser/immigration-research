@@ -6,16 +6,19 @@
 # with cmp. Exits non-zero and lists the differing files if anything moved.
 set -uo pipefail
 
-LANE="/Users/alien/Projects/immigration-research/infra/immigration-fiscal/cultural_output_2026_09_19"
-SNAP="${1:-/private/tmp/claude-501/-Users-alien-Projects-immigration-research/45fdf7bc-6c76-4a97-953b-e9d9ea0bf7a5/scratchpad/derived_verify}"
+LANE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)" || exit "$?"
+SNAP="${1:-$LANE/_cache/derived_verify}"
 cd "$LANE" || exit 1
-set -a; . ../acquire/config.local.env; set +a
+set -a
+. ../acquire/config.local.env || exit "$?"
+set +a
 
 UVBASE=(uv run --no-project --with "pandas>=2" --with "numpy>=2" --with duckdb
         --with pyarrow --with requests --with statsmodels --with shapely
         --with pyshp --with pypdf --with fonttools)
 
-rm -rf "$SNAP"; cp -R derived "$SNAP"
+rm -rf "$SNAP" || exit "$?"
+cp -R derived "$SNAP" || exit "$?"
 
 # Script 03 is the network fetch. Point it at exactly the states already in the
 # cache so the verification re-validates every cached file by content and exits,
@@ -33,7 +36,9 @@ for s in 01_build_pums_parquet 02_arm_a_creative_labour 03_fetch_osm_restaurants
   if PYTHONUNBUFFERED=1 "${UVBASE[@]}" python3 "scripts/$s.py" > "logs/verify_$s.log" 2>&1; then
     echo "  ok   $s"
   else
+    rc=$?
     echo "  FAIL $s (see logs/verify_$s.log)"
+    exit "$rc"
   fi
 done
 

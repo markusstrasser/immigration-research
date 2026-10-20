@@ -1,6 +1,6 @@
 """Recalculate primary-report school counts; no causal attribution.
 
-Run: UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run --no-project python3 tabulate_growth.py
+Run: uv run --no-project python3 tabulate_growth.py
 Inputs below are manually transcribed official tables, with URLs/locators.
 Recent immigrant = age 3-21, born outside states/DC/PR, <=3 school years
 in the United States. Category entries/exits are not a new-arrivals series.

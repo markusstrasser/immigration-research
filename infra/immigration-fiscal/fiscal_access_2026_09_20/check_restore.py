@@ -21,7 +21,7 @@ def stage(root):
 
 results = []
 for case in ['valid missing restore', 'bad download', 'corrupt existing']:
-    with tempfile.TemporaryDirectory(prefix='fiscal-restore-', dir='/private/tmp') as directory:
+    with tempfile.TemporaryDirectory(prefix='fiscal-restore-') as directory:
         root = Path(directory)
         stage(root)
         manifests_before = [(root / name).read_bytes() for name in restorer.MANIFESTS]

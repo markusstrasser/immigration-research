@@ -90,9 +90,9 @@ The final validation receipts and every changed path are appended in the parent 
 
 ## Completed validation log
 
-2026-10-14 21:58:31 JST (date): 18 targeted social/consumer tests and 8 victim/population tests pass. Social producer IDENTICAL: 65/65; eight commands rc=0; no allow-unrun; totals IDENTICAL: 42/42; two commands rc=0; no allow-unrun; victims IDENTICAL: 38/38; rc=0; no allow-unrun; population IDENTICAL: 27/27; rc=0; no allow-unrun. Warm P7 computation 1.275s / 107.9MB peak RSS; largest victim producer 1.720GB, below the lane limit. Python time.perf_counter and resource.getrusage, Darwin ru_maxrss bytes. Source/consumer regressions and independent review pass. [CALCULATION: `inputs/validation_receipt.json`; rerun logs in /private/tmp.]
+2026-10-14 21:58:31 JST (date): 18 targeted social/consumer tests and 8 victim/population tests pass. Social producer IDENTICAL: 65/65; eight commands rc=0; no allow-unrun; totals IDENTICAL: 42/42; two commands rc=0; no allow-unrun; victims IDENTICAL: 38/38; rc=0; no allow-unrun; population IDENTICAL: 27/27; rc=0; no allow-unrun. Warm P7 computation 1.275s / 107.9MB peak RSS; largest victim producer 1.720GB, below the lane limit. Python time.perf_counter and resource.getrusage, Darwin ru_maxrss bytes. Source/consumer regressions and independent review pass. [CALCULATION: `inputs/validation_receipt.json`.]
 
-Every changed path is listed in `social-crime-changed-paths.txt` beside the parent result file. Raw inputs/caches are listed separately from git-visible source/output changes; runtime caches are not commit paths.
+The captured lane validation receipt is the authority for this completed validation log.
 
 ## Historical September 28 result (superseded for the live crime rows)
 

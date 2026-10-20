@@ -94,7 +94,7 @@ def main():
              'omitted_output_entry': 'derived output artifact set mismatch',
              'omitted_output_hash': 'missing hash/size',
              'empty_output_hashes': 'empty output hashes'}
-    with tempfile.TemporaryDirectory(prefix='county-verifier-regression-', dir='/private/tmp') as directory:
+    with tempfile.TemporaryDirectory(prefix='county-verifier-regression-') as directory:
         work = Path(directory)
         # Even valid runs write their verification receipt only inside fixtures.
         for name, optimize in [('valid', False), ('valid_optimized', True), *[(n, True) for n in cases]]:

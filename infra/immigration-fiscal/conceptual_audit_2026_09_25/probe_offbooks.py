@@ -2,7 +2,7 @@
 """Read-only population diagnostic; does not re-estimate slopes or welfare costs.
 
 Run from the project root:
-UV_CACHE_DIR=/private/tmp/immigration-audit-uv-cache uv run --no-project python3 infra/immigration-fiscal/conceptual_audit_2026_09_25/probe_offbooks.py
+uv run --no-project python3 infra/immigration-fiscal/conceptual_audit_2026_09_25/probe_offbooks.py
 
 Uses the exact lane PERSON SQL, then narrows its existing unauthorized flag to
 Mexico-born persons. This is not an all-generation Mexican-origin classifier.

@@ -7,6 +7,7 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
+import tempfile
 import numpy as np
 import pandas as pd
 
@@ -185,6 +186,7 @@ if __name__ == '__main__':
     parser.add_argument('--output-dir', type=Path, default=HERE/'derived')
     args = parser.parse_args()
     resolved = args.output_dir.resolve()
-    if not (resolved.is_relative_to(HERE/'derived') or resolved.is_relative_to(Path('/private/tmp'))):
-        raise ValueError('Outputs must remain in this lane derived directory or /private/tmp')
+    temp_roots = {Path(tempfile.gettempdir()).resolve(), Path('/tmp').resolve()}
+    if not (resolved.is_relative_to(HERE/'derived') or any(resolved.is_relative_to(root) for root in temp_roots)):
+        raise ValueError('Outputs must remain in this lane derived directory or the system temporary directory')
     analyze(args.source, args.output_dir)

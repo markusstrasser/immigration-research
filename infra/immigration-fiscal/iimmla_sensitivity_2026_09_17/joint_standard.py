@@ -169,7 +169,7 @@ def run(source, output):
         lines.append(f'| {age} | {sex} | {pooled[age, sex]} / {100*pooled[age, sex]/total:.3f}% | ' + ' | '.join(entries) + ' |')
     lines += ['', 'Counts/BA numerators describe the observed selected sample; standardized percentages use fixed cell shares. Education-endpoint rows retain everyone with valid education; common rows additionally require interpretable raw respondent arrest and incarceration answers. Neither sample definition establishes representative national generations.', '',
               'Detailed six-cell counts and BA numerators are in `cell_counts.csv`; target counts/shares in `standard.csv`; provenance and exact credential counts in `audit.json`. Generic migration generation and Mexican self-ID remain separate constructs: G4+ cannot be symmetrically verified through Mexican-born great-grandparents in this release.', '',
-              'Reproduce: `UV_CACHE_DIR=/private/tmp/immigration-uv-cache uv run --no-project python3 infra/immigration-fiscal/iimmla_sensitivity_2026_09_17/joint_standard.py`', '',
+              'Reproduce: `uv run --no-project python3 infra/immigration-fiscal/iimmla_sensitivity_2026_09_17/joint_standard.py`', '',
               'Primary codebook: GENDER values 0 = female / 1 = male; EDUCRED5 values 4 = bachelor, 5 = advanced degree; Q152A/B/C raw-grandparent questions. Existing strict definitions are traced by the hashed rules file. Raw inputs are read-only.']
     (output/'REPORT.md').write_text('\n'.join(lines)+'\n')
     print(result.to_string(index=False))

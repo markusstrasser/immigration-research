@@ -4,7 +4,7 @@ derived/branch_composition.csv alone. Shares no code with nest_model.py or build
 written by the parent session as the pre-commit check of the lane's core numbers.
 
 Run from the repository root:
-  UV_CACHE_DIR=/private/tmp/immigration-uv-cache uv run --offline --no-project --with numpy --with pandas \
+  uv run --offline --no-project --with numpy --with pandas \
     python3 infra/immigration-fiscal/production_nativity_nest_2026_09_22/independent_check.py
 """
 from pathlib import Path

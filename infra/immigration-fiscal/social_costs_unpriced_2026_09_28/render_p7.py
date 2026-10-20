@@ -4,12 +4,10 @@ Native-First: text and CSV rendering only. No recomputation or source acquisitio
 """
 import csv
 import json
-import subprocess
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FISCAL = HERE.parent
-SCRATCH = Path("/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/p7/lanes")
 MARKER = "## Historical September 28 result (superseded for the live crime rows)"
 
 
@@ -19,6 +17,10 @@ def read(name):
 
 
 def main():
+    receipt_path = HERE / "inputs/validation_receipt.json"
+    if not receipt_path.is_file():
+        raise SystemExit("[BLOCKED] missing captured validation receipt: inputs/validation_receipt.json")
+    receipt = json.loads(receipt_path.read_text())
     changes = read("p7_changes.csv")
     final = next(r for r in changes if r["scenario"] == "stacked_dot")
     standards = json.loads((FISCAL / "crime_victim_cost_2026_09_23/derived/vsl_standard.json").read_text())
@@ -103,45 +105,19 @@ def main():
              "```", "", "The final validation receipts and every changed path are appended in the parent result file. Historical source outputs remain records; no frozen-case, research-document or independent producer edits. "
              "`social_spans_priced_count_2026_09_29` is read-only: it contains PM/crash grids, no crime-driven security producer; its original priced grid is pinned here. "
              "No git metadata writes. This result is ready for the parent's adoption/integration decision."]
-    receipt = json.loads((HERE / "inputs/validation_receipt.json").read_text())
     body += ["", "## Completed validation log", "", f"{receipt['closed_at']}: {receipt['tests']}. "
              f"Social producer {receipt['social_rerun']}; totals {receipt['totals_rerun']}; "
              f"victims {receipt['victim_rerun']}; population {receipt['population_rerun']}. "
              f"Warm P7 computation {receipt['p7_warm_seconds']:.3f}s / {receipt['p7_peak_rss_bytes']/1e6:.1f}MB peak RSS; "
              f"largest victim producer {receipt['victim_peak_rss_bytes']/1e9:.3f}GB, below the lane limit. "
              f"{receipt['measurement']}. Source/consumer regressions and independent review pass. "
-             "[CALCULATION: `inputs/validation_receipt.json`; rerun logs in /private/tmp.]",
-             "", "Every changed path is listed in `social-crime-changed-paths.txt` beside the parent result file. Raw inputs/caches are listed separately from git-visible source/output changes; runtime caches are not commit paths."]
+             "[CALCULATION: `inputs/validation_receipt.json`.]",
+             "", "The captured lane validation receipt is the authority for this completed validation log."]
     text = "\n".join(body) + "\n"
     old = (HERE / "RESULT.md").read_text()
     if MARKER in old:
         old = old.split(MARKER, 1)[1].lstrip("\n")
     (HERE / "RESULT.md").write_text(text + "\n" + MARKER + "\n\n" + old)
-    (SCRATCH / "social-crime-result.md").write_text(text)
-    root = FISCAL.parent.parent
-    scopes = [FISCAL / n for n in ("social_costs_unpriced_2026_09_28", "crime_victim_cost_2026_09_23",
-                                  "population_basis_2026_09_29", "sept24_propagation_2026_09_24")]
-    status = subprocess.run(["git", "-C", str(root), "status", "--porcelain", "--untracked-files=all", "--", *map(str,scopes)],
-                            check=True, capture_output=True, text=True).stdout
-    changed = {root / line[3:] for line in status.splitlines()}
-    changed |= set((HERE / "inputs").glob("security*")) | set((HERE / "_cache").glob("security*"))
-    changed |= set((HERE / "inputs").glob("baseline*"))
-    changed |= set((FISCAL / "crime_victim_cost_2026_09_23/inputs").glob("*"))
-    manifest = SCRATCH / "social-crime-changed-paths.txt"
-    changed |= {manifest, SCRATCH / "social-crime-result.md"}
-    # Interpreter cache changes are incidental to verification. Identify their
-    # actual write window from the parent's dated brief, rather than listing old
-    # caches as new work. Temporary rerun backup trees are tool-owned snapshots.
-    after = (SCRATCH / "brief_social_crime.md").stat().st_mtime
-    runtime = {p for scope in scopes for p in (scope / "__pycache__").glob("*") if p.stat().st_mtime >= after}
-    runtime |= {p for p in (root / ".pytest_cache").rglob("*") if p.is_file() and p.stat().st_mtime >= after}
-    logs = {Path("/private/tmp") / n for n in ("p7-social-baseline.log", "p7-social-live.log", "p7-crime-final.log",
-            "p7-social-rerun.log", "p7-totals-rerun.log", "p7-victim-arms.log")}
-    manifest.write_text("Every source, input, output and result path changed (absolute paths):\n" +
-                        "\n".join(str(p) for p in sorted(changed) if p.is_file()) +
-                        "\n\nIncidental interpreter caches and diagnostic logs (not commit paths):\n" +
-                        "\n".join(str(p) for p in sorted(runtime | logs) if p.is_file()) +
-                        "\n\nTool-owned rerun backup trees are verification snapshots, excluded from source/output inventory.\n")
 
 
 if __name__ == "__main__":

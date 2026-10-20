@@ -1,4 +1,4 @@
-"""List every created path, including ignored diagnostics and the handoff.
+"""List every created path, including ignored diagnostics and the lane result.
 
 Run: uv run --no-project python3 {lane}/final_paths.py
 """
@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True
 HERE = Path(__file__).resolve().parent
-HANDOFF = Path("/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/p7/lanes/mortality-result.md")
+HANDOFF = HERE / "RESULT.md"
 
 
 def main():

@@ -32,13 +32,46 @@ def test_faq_complete_account_boundary_survives_number_change(tmp_path):
     assert raws(scanned) == ['$366–456bn']
 
 
-def test_index_history_and_social_boundaries_read_the_v8_rows(tmp_path):
-    for span, label in [(A.INDEX_SPANS[1], '$365.8–456.0bn'), (A.INDEX_SPANS[3], '$477.7–573.4bn')]:
+def test_index_history_and_social_boundaries_read_the_v9_and_pending_consumer_rows(tmp_path):
+    assert '2026-10-16-main-case-v9.md' in A.INDEX_SPANS[1][1]
+    for span, label in [(A.INDEX_SPANS[1], '$368.0–436.6bn'), (A.INDEX_SPANS[3], '$477.7–573.4bn')]:
         path = tmp_path / 'index.md'
         path.write_text(f'{span[0]}\n{label}\n{span[1]}\nOutside $1bn\n')
         scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [span]))
         assert label in raws(scanned)
         assert '$1bn' not in raws(scanned)
+
+
+def test_closed_budget_span_reads_the_qualified_current_law_text(tmp_path):
+    span = next(s for s in A.FAQ_SPANS if s[0].startswith('Finding: the headline uses income-year'))
+    path = tmp_path / 'faq.md'
+    path.write_text(f'Outside $1bn\n{span[0]}\n$368–437bn\n{span[1]}\nOutside $2bn\n')
+    scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [span]))
+    assert raws(scanned) == ['2024', '$368–437bn']
+
+
+def test_fill_in_boundary_does_not_require_the_removed_historical_price(tmp_path):
+    span = next(s for s in A.INDEX_SPANS if s[0].startswith('the fill-in-off companion'))
+    path = tmp_path / 'index.md'
+    path.write_text(f'Outside $9.6–9.9bn\n{span[0]}\n{span[1]} outside $422bn\n')
+    scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [span]))
+    assert raws(scanned) == []
+
+
+def test_faq_coverage_prices_and_da_constructions_are_in_scope(tmp_path):
+    span = next(s for s in A.FAQ_SPANS if s[0].startswith("The surveys' count discrepancy"))
+    path = tmp_path / 'faq.md'
+    path.write_text(f'Outside $1bn\n{span[0]}\n+$12.7 / $15.6bn and $365.4–433.8bn\n{span[1]} outside $2bn\n')
+    scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [span]))
+    assert raws(scanned) == ['+$12.7', '$15.6bn', '$365.4–433.8bn']
+
+
+def test_faq_defense_screen_has_its_own_scan_boundary(tmp_path):
+    span = next(s for s in A.FAQ_SPANS if s[0].startswith('A held-fixed screen'))
+    path = tmp_path / 'faq.md'
+    path.write_text(f'Outside $1bn\n{span[0]} of $47.5–72.0bn and $18.9bn\n$66.4–90.9bn\n{span[1]} outside $2bn\n')
+    scanned = '\n'.join(text for _, text, _ in A.span_lines(path, [span]))
+    assert raws(scanned) == ['$47.5–72.0bn', '$18.9bn', '$66.4–90.9bn']
 
 
 def test_revised_generation_crime_and_incidence_spans_read_the_live_text(tmp_path):
