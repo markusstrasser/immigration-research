@@ -128,8 +128,11 @@ const CASES = {
   oct15: { lane: "main_case_2026_10_15", suffix: "_oct15", lineage: true, items: true, ages: "g3plus_ages_oct07.csv", v8: true },
   oct15_cash: { lane: "main_case_2026_10_15", suffix: "_oct15_cash", lineage: true, items: true, ages: "g3plus_ages_oct07.csv", v8: true,
     cash: "main_case_2026_10_15/derived/corrections_cash.json" },
+  oct16: {lane:"main_case_2026_10_16", suffix:"_oct16", lineage:true,items:true,ages:"g3plus_ages_oct07.csv",v8:true,v9:true},
+  oct16_cash: {lane:"main_case_2026_10_16",suffix:"_oct16_cash",lineage:true,items:true,ages:"g3plus_ages_oct07.csv",v8:true,v9:true,
+    cash:"main_case_2026_10_16/derived/corrections_cash.json"},
 };
-const CASE_KEY = argOf("--case", "oct15");
+const CASE_KEY = argOf("--case", "oct16");
 const CASE_DEF = CASES[CASE_KEY];
 if (!CASE_DEF) throw new Error(`[BLOCKED] unknown case ${CASE_KEY}: ${Object.keys(CASES).join(", ")}`);
 // The added people's ages: the case's measured mix (v6) or the identified G3+'s (v5's rule, the only one v5 has).
@@ -140,7 +143,7 @@ if (!["measured", "identified"].includes(PLACEMENT) || (PLACEMENT === "measured"
 const V8_ATTRIBUTION = argOf("--v8-attribution", "sequential");
 if (CASE_DEF.v8 && V8_ATTRIBUTION !== "sequential") throw new Error("[BLOCKED] v8 attribution requires the explicit sequential convention");
 const V8 = CASE_DEF.v8 ? require(path.join(FISCAL, CASE_DEF.lane, "package.cjs")) : null;
-const P0 = V8 ? V8.OCT14 : require(path.join(FISCAL, CASE_DEF.lane, "package.cjs"));
+const P0 = V8 ? (CASE_DEF.v9 ? V8.OCT15.OCT14 : V8.OCT14) : require(path.join(FISCAL, CASE_DEF.lane, "package.cjs"));
 const P = CASE_DEF.payload ? P0.forPayload(P0.readJson(CASE_DEF.payload)) : CASE_DEF.cash ? P0.CASH : P0;
 const { Engine, MODEL, readJson } = P;
 const IN = path.join(HERE, "derived");
@@ -171,6 +174,8 @@ const CORR_FILE = CASE_DEF.payload || CASE_DEF.cash || `${CASE_DEF.lane}/derived
 const LIVE_CORR = readJson(CORR_FILE);
 const CORR = V8 ? P.correctionsPayload() : LIVE_CORR;
 const CASE_SUMMARY = readJson(`${CASE_DEF.lane}/derived/summary.json`);
+if(CASE_DEF.v9&&!argv.includes('--probe-only')&&CASE_SUMMARY.v9.status!=='adopted')
+  throw Error('[BLOCKED] oct16 production decomposition requires the adopted case; --probe-only writes nothing');
 const CASE = CASE_KEY.endsWith("_cash") ? CASE_SUMMARY.cash_set.band_bn : CASE_SUMMARY.main_case;
 console.log(CASE_KEY === "sept27" ? "[case]" : `[case ${CASE_KEY}]`);
 gate(CASE_KEY === "sept27" ? "corrections.json is main_case_long_run_2026_09_27's payload" : `${CORR_FILE} is the package's payload`,
@@ -189,11 +194,12 @@ if (CASE_SUMMARY.v7) {
     && Math.abs(unionCost[LO] - Number(oracle[0].cost_low_bn)) < 5e-5
     && Math.abs(unionCost[HI] - Number(oracle[0].cost_high_bn)) < 5e-5);
 }
-const EXPECTED_ENDS = V8 ? CASE_SUMMARY.v8.end_specifications[CASE_DEF.cash ? "cash" : "set"][0]
+const EXPECTED_ENDS = V8 ? CASE_SUMMARY[CASE_DEF.v9 ? "v9" : "v8"].end_specifications[CASE_DEF.cash ? "cash" : "set"][0]
   : CASE_SUMMARY.v7 ? CASE_SUMMARY.v7.end_specifications[CASE_DEF.cash ? "cash" : "set"] : [48, 11];
 gate("the ends are the case's end specifications", LO === EXPECTED_ENDS[0] && HI === EXPECTED_ENDS[1], `${LO} / ${HI}`);
 const ENDS = [["low", LO], ["high", HI]];
-const V8_CHAIN = V8 ? require("./v8_attribution.cjs").build(V8, !!CASE_DEF.cash, ENDS, gate) : null;
+const V8_CHAIN = V8 ? require("./v8_attribution.cjs").build(CASE_DEF.v9 ? V8.OCT15 : V8, !!CASE_DEF.cash, ENDS, gate) : null;
+const V9_CHAIN = CASE_DEF.v9 ? require("./v9_attribution.cjs").build(V8,!!CASE_DEF.cash,ENDS,V8_CHAIN,CASE_SUMMARY,gate) : null;
 if (argv.includes("--probe-only")) {
   console.log("[probe] payload, external band, ends and native item transitions checked; no outputs written");
   process.exit(fails.length ? 1 : 0);
@@ -868,6 +874,18 @@ if ((CORR.meta.items || []).some((it) => it.id === "job_capital_taxes" && it.app
   for (const id of GROUPS.job_capital_taxes) GROUP_OF[id] = "job_capital_taxes";
 }
 if (V8_CHAIN) GROUP_NAMES.push(...V8_CHAIN.ids);
+if (V9_CHAIN) GROUP_NAMES.push(...V9_CHAIN.ids);
+const V9_PROFILES = CASE_DEF.v9 && V8.SPEND.IDS[21] && V9_CHAIN.bridge.selected_items.includes(V8.SPEND.IDS[21]) ? (()=>{
+  const file=path.join(IN,'health_national_profiles_oct16.json');
+  if(!fs.existsSync(file))throw Error('[BLOCKED] run profiles_oct16.py before oct16 decomposition');
+  const h=JSON.parse(fs.readFileSync(file,'utf8'));
+  const digest=require('crypto');
+  for(const [file,expected]of Object.entries(h.source_hashes))if(digest.createHash('sha256').update(fs.readFileSync(path.join(FISCAL,file))).digest('hex')!==expected)
+    throw Error('[BLOCKED] stale source21 national profiles: '+file);
+  if(JSON.stringify(h.edges)!==JSON.stringify(EDGES))throw Error('[BLOCKED] source21 national age bins changed');
+  const numerator=kind=>sum(h.national_keys[kind].map((x,i)=>x/h.national_population_by_age[i]*POP.row4.union[i]))/sum(h.national_keys[kind]);
+  return {health21:{...h,ratio_at_group_ages:numerator('new')/numerator('old')}};
+})() : null;
 
 function evaluateState(plan, st) {
   const m = stateModel(plan, st);
@@ -924,6 +942,11 @@ function evaluateState(plan, st) {
       add(id, value);
       full.cost_bn += value;
     }
+  }
+  if (V9_CHAIN) {
+    if (!V9_CHAIN.anchors[plan.spec.reading]) V9_CHAIN.anchors[plan.spec.reading] = P.evaluateFull(stateModel(plan,"GGG"),plan.spec);
+    const parts = V9_CHAIN.at(plan,st,full,P.evaluateFull(stateModel(plan,"NNN"),plan.spec),V9_PROFILES);
+    for (const [id,value] of Object.entries(parts)) { add(id,value); full.cost_bn += value; }
   }
   const zeroResponse = { receipts: sum(ev.receipts.filter((x) => x.response === 0).map((x) => x.amount_bn)),
     spending: sum(ev.spending.filter((x) => x.response === 0).map((x) => x.amount_bn)) };
@@ -1002,6 +1025,7 @@ for (const [end, i] of ENDS) {
 }
 
 // Parts.
+const V9_MAIN_SOURCES = V9_CHAIN ? JSON.parse(JSON.stringify({baskets:V9_CHAIN.sourceBaskets,states:V9_CHAIN.stateSources})) : null;
 const costs = Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(STATES.map((st) => [st, main[end].states[st].cost]))]));
 const groupVals = Object.fromEntries(ENDS.map(([end]) => [end, Object.fromEntries(STATES.map((st) => [st, main[end].states[st].groups]))]));
 const D = Object.fromEntries(ENDS.map(([end]) => [end, decompose(costs[end])]));
@@ -1049,7 +1073,8 @@ for (const [end, i] of ENDS) {
     else m.spending.lines[si.get(row.id)].keys[row.key][plan.a].target_bn *= 2;
   }
   const extra = V8_CHAIN ? (V8_CHAIN.population / V8_CHAIN.base_population - 1) * P.evaluateFull(stateModel(plan, "NNN"), spec).cost_bn : 0;
-  const c2 = P.evaluateFull(m, spec).cost_bn + 2 * extra;
+  const v9Extra = V9_CHAIN ? evaluateState(plan,"NNN").cost - P.evaluateFull(stateModel(plan,"NNN"),spec).cost_bn - extra : 0;
+  const c2 = P.evaluateFull(m, spec).cost_bn + 2 * extra + 2*v9Extra;
   gate(`(c) ${end} end: twice the average residents cost twice part 1`, Math.abs(c2 - 2 * D[end].shared) < 1e-9,
     `${c2.toFixed(6)} vs 2 x ${D[end].shared.toFixed(6)}`);
   linearity[end] = { part1_bn: D[end].shared, twice_bn: c2 };
@@ -1137,7 +1162,7 @@ const f6 = (x) => (Math.abs(x) < 5e-13 ? 0 : x).toFixed(6);
 // Per member: the September 27 outputs divide by the record's 40,896,574, as they were written; v4's divide by the
 // 39,712,493 people the account prices (the row-4 union, this lane's finding, which the decision of 2026-09-29 adopts).
 // v5's divide by the lineage's 42,752,213, the row-4 union plus the added people.
-const PER_MEMBER = V8_CHAIN ? V8_CHAIN.population : SUFFIX ? FRAME.row4.NG : MEMBERS;
+const PER_MEMBER = V9_CHAIN ? V9_CHAIN.bridge.population : V8_CHAIN ? V8_CHAIN.population : SUFFIX ? FRAME.row4.NG : MEMBERS;
 if (SUFFIX && !LINEAGE) gate("v4's per-member count is the account's 39,712,493 (the row-4 union)", Math.round(PER_MEMBER) === 39712493, PER_MEMBER.toFixed(2));
 if (LINEAGE && !V8_CHAIN) gate("v5's per-member count is the lineage's 42,752,213 (the row-4 union plus the added people)",
   Math.round(PER_MEMBER) === 42752213 && Math.abs(PER_MEMBER - LINEAGE.L.counts.lineage_population) < 1e-3, PER_MEMBER.toFixed(2));
@@ -1182,7 +1207,7 @@ const summary = {
   lane: "main_case_decomposition_2026_09_29",
   case: Object.assign({ lane: CASE_DEF.lane, bn: CASE, ends: { low: LO, high: HI } }, SUFFIX ? { key: CASE_KEY, payload: CORR_FILE } : {}),
   members: PER_MEMBER,
-  frame: { published: FRAME.published, row4: V8_CHAIN ? {...FRAME.row4, NG: V8_CHAIN.population} : FRAME.row4,
+  frame: { published: FRAME.published, row4: V8_CHAIN ? {...FRAME.row4, NG: PER_MEMBER} : FRAME.row4,
     ...(V8_CHAIN ? {profile_row4: FRAME.row4} : {}), household_fraction: HF,
     note: "row4: the stack's audit row 4 weights; the case's per-head lines are charged at this union count" },
   parts: Object.fromEntries(ENDS.map(([end]) => [end, { shared: D[end].shared, shapley: Object.fromEntries(FACTORS.map((f) => [PART_OF[f], D[end].shapley[f]])),
@@ -1371,10 +1396,33 @@ console.log("\nParts ($bn, Shapley mean; low / high):");
 if (V8_CHAIN) summary.v8 = {...V8_CHAIN, source_line_groups: {...GROUP_OF,
   education_services: "education", [P.SYN.school]: "schools", [P.SYN.college]: "colleges_other_education",
   education_benefits: "colleges_other_education"}};
+if (V9_CHAIN) summary.v8.source_line_groups.consumption_receipts_composite='consumption_taxes';
+if (V9_CHAIN) {
+  summary.v9 = {...V9_CHAIN.bridge, source_baskets:V9_MAIN_SOURCES.baskets, state_source_rows:V9_MAIN_SOURCES.states, national_states:Object.fromEntries(ENDS.map(([end])=>[end,
+    Object.fromEntries(STATES.map(st=>[st,Object.fromEntries(V9_CHAIN.ids.map(id=>[id,main[end].states[st].groups[id]]))]))])),
+    excess_pair_at_case_ends_bn:ENDS.map(([end])=>costs[end].GGG-D[end].shared),
+    profile_base_use_before_v8_v9_groups_bn:Object.fromEntries(ENDS.map(([end])=>[end,DG[end].shapley.U ?
+      sum(Object.entries(DG[end].shapley.U).filter(([g])=>!V8_CHAIN.ids.includes(g)&&!V9_CHAIN.ids.includes(g)).map(([,v])=>v)) : 0])),
+    profile_base_use_scope:'Held measured v7 profile use factor before the separately attributed v8/v9 source, count and post groups; it includes the original v5 descendants. This is a defined base contribution, not a regrouped true-use amount or a new universal-v9 counterfactual.'};
+  summary.v9.national_profile_inputs=V9_PROFILES;
+  gate("F08: matched shared plus excess closes at both actual case ends (1e-9)", ENDS.every(([end],j)=>
+    Math.abs(D[end].shared+summary.v9.excess_pair_at_case_ends_bn[j]-CASE[j])<1e-9));
+  console.log("  excess over average residents at case ends (not extrema): "+summary.v9.excess_pair_at_case_ends_bn.join(" / "));
+}
 console.log(`  shared ${D.low.shared.toFixed(2)} / ${D.high.shared.toFixed(2)}`);
-for (const f of FACTORS) console.log(`  ${PART_OF[f]} ${D.low.shapley[f].toFixed(2)} / ${D.high.shapley[f].toFixed(2)}`);
+for (const f of FACTORS) {
+  const label=summary.v9?.labels[PART_OF[f]]||PART_OF[f];
+  console.log(`  ${label} ${D.low.shapley[f].toFixed(2)} / ${D.high.shapley[f].toFixed(2)}`);
+}
 console.log(`  total ${costs.low.GGG.toFixed(4)} / ${costs.high.GGG.toFixed(4)}`);
 if (fails.length) { console.log(`FAIL: ${fails.length} gate(s)`); process.exit(1); }
+if (CASE_DEF.v9) {
+  const raw = require('child_process').execFileSync('uv',['run','--no-project','python3',
+    path.join(FISCAL,'main_case_2026_10_16/memory_for_pid.py'),String(process.pid),String(process.resourceUsage().maxRSS)],{encoding:'utf8'});
+  const memory = JSON.parse(raw);
+  if (!memory.pass) throw Error('[BLOCKED] decomposition physical footprint exceeds shared budget');
+  console.log('physical footprint bytes '+memory.peak_bytes);
+}
 fs.writeFileSync(path.join(OUT, `decomposition${SUFFIX}.csv`), lines.join("\n") + "\n");
 fs.writeFileSync(path.join(OUT, `decomposition_lines${SUFFIX}.csv`), gl.join("\n") + "\n");
 fs.writeFileSync(path.join(OUT, `states${SUFFIX}.csv`), sl.join("\n") + "\n");

@@ -1282,3 +1282,29 @@ cash 281.752564 / 371.942418bn; the figures above are the pre-correction run. Th
 (−29.963273 / 81.974958bn); the excess at the ends is 395.755203 / 374.006827bn: age 89.605687 / 81.067159 and
 taxes 297.823869 / 288.401224 unchanged, use 8.325647 / 4.538444 (−3.199004 / −3.221092). Reproduction IDENTICAL
 85/85, exit 0. [DATA: `derived/summary_oct15.json` `parts`]
+## 2026-10-20: adopted live case oct16 (v9)
+
+The computed case is oct16 only. The complete calibrated denominator is 44,903,074.086245224 people. All selected source13–18/20/21 changes, the16×17 and15×20 interactions and coverage repricing remain separately inspectable in `summary_oct16*.json` `v9.changes`, `v9.interactions`, and `v9.state_source_rows`. Universal military, college, capital-rate and restricted-payer health rules apply to each of the eight states; national source21 donor age keys are independently normalized, without the Mexican ethnic or calibration factor. Group-specific count and post terms remain separate. [CALCULATION: `decompose.cjs`, `v9_attribution.cjs`, `profiles_oct16.py`]
+
+| $bn/year, case low / high | Set | Cash set |
+|---|---:|---:|
+| Shared national cost | -74.959268 / 15.241524 | -52.417889 / 37.782903 |
+| Age structure | 97.258478 / 87.125292 | 3.225652 / -6.907535 |
+| Lower taxes at the same ages, including earned pensions and mixed-household effects | 298.075042 / 288.652397 | 346.682490 / 337.259845 |
+| Use of services at given ages, including the added people's excess | 47.655486 / 45.542313 | -13.093209 / -15.206382 |
+| Display rounding | 0.000001 / 0.000001 | -0.000001 / 0.000000 |
+| Full cost | 368.029739 / 436.561527 | 284.397043 / 352.928831 |
+| Excess over matched average residents, at the case's ends | 442.989007 / 421.320003 | 336.814932 / 315.145928 |
+
+The final excess row is the endpoint-ordered pair, not its extrema. Exact `parts.*.shared + sum(parts.*.shapley)` and `shared + v9.excess_pair_at_case_ends_bn` close at1e-9 in both sets. The display-rounding row balances the last printed digit; full precision governs closure. [DATA: `derived/summary_oct16.json`, `derived/summary_oct16_cash.json` `parts`, `case.bn`, `v9.excess_pair_at_case_ends_bn`]
+
+Per-item values differ from the case's `v9.change_by_item` because their coverage pieces are assigned to `coverage_repricing` and the 16×17 and 15×20 interactions are shown separately; the complete attribution still closes to the case. The doubling-linearity gate recomputes the inherited engine at twice the group share, but doubles the fixed v9 national additions algebraically, so it does not independently test those additions' response to a doubled population. [CALCULATION: `v9_attribution.cjs` `build`; `decompose.cjs` `linearity`]
+
+The narrower held-profile use diagnostic is -5.041108/-7.374925bn set and -56.203818/-58.537634bn cash. It is the measured v7 profile before separately attributed v8/v9 source/count/post groups, and includes original v5 descendants; it is neither a regrouped true-use amount nor a universal-v9 counterfactual. Full live use is the table's use row. Source11 known programme categories are routed where identified; M6 and D-added retain their explicit combined tax/refund residuals. [ASSUMPTION; DATA: `v9.profile_base_use_before_v8_v9_groups_bn`, `v9.profile_base_use_scope`, `v9.mixed_source_baskets`]
+
+Reproduce the live four variants and regressions with `sh infra/immigration-fiscal/main_case_decomposition_2026_09_29/run_all.sh`; older reproduction commands above record historical runs and are not recomputed. Validation and deterministic-replay receipt follow in the dated log.
+
+Log: 2026-10-20 20:21 JST (`date`) — adopted7dfb4c66 consumed; set/cash measured-age outputs exported and source, external-band, actual-end and matched closure gates pass. Identified-age variants, regressions and official rerun still executing at this log entry.
+Log: 2026-10-20 20:33 JST (`date`) — official profiled replay finishes **IDENTICAL: 106/106, exit 0**, 184.920 s; no uncovered changed scripts or EOL failures. The optional profiler leaves every lane byte unchanged. Four source cloning profiles and the upstream scope decision are recorded in `performance.md`. Item19/W09 remain beside; selected central item19 contribution is zero. Later receipt appends change prose only.
+
+Official oct16 replay, 2026-10-20: 2026-10-20 20:36:22 JST (`date`) — `scripts/rerun_lane.py` with `sh {lane}/run_all.sh`: **IDENTICAL: 106/106, exit 0**, 184.920 s. No uncovered changed scripts or EOL conversion failures. Full route gates and regressions pass; historical keyed files remain preserved. Receipt text and Python timing/resource JSON are in the parent's `prop9/chain-decomposition-rerun.log` pair. This final append records verification only.

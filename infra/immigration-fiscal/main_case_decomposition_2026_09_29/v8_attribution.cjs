@@ -107,4 +107,4 @@ function build(api, cash, ends, gate) {
     coverage_production_rule: meta.coverage.production_split,
     rule: "sequential [ASSUMPTION]: measured base profiles held; item9 and item11 on receipt factor, item10 and item12 on use factor; no new age transport. At national profile completion and coverage counts cost the base's NNN per person, so the shared comparator includes every counted member. At group profile each own line group equals the exact item change." };
 }
-module.exports = { build, coverageParts };
+module.exports = { build, coverageParts, sourceParts };
