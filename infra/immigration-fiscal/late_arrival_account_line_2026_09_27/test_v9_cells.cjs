@@ -1,0 +1,42 @@
+/* Source placement must be signed, line-specific and fail loud on absent keys. */
+"use strict";
+const assert=require("node:assert/strict"),C=require("./v9_cells.cjs");
+assert.deepEqual(C.routeShares({earlier:3,late:1},-8,"military"),{earlier:.75,late:.25});
+assert.deepEqual(C.routeShares({earlier:-3,late:1},4,"signed"),{earlier:1.5,late:-.5});
+assert.deepEqual(C.routeShares({earlier:0,late:0},0,"unused"),{earlier:0,late:0});
+assert.throws(()=>C.routeShares({earlier:0,late:0},1,"bad"),/zero source exposure/);
+assert.throws(()=>C.routeShares({earlier:NaN,late:1},0,"bad"),/nonfinite fine exposure/);
+const full={capital:{components:[{id:"college",return_bn:7}]},evaluation:{spending:[{id:"health_consumption",amount_bn:12,response:.5},{id:"reporter_capital",amount_bn:3,response:1}]}};
+assert.equal(C.cellExposure(full,{line:"health_consumption"}),6);
+assert.equal(C.cellExposure(full,{line:"college",component:"capital_engine"}),7);
+assert.equal(C.cellExposure(full,{line:"college",side:"capital"}),7,"new21 typed capital uses its actual capital component");
+assert.equal(C.cellExposure(full,{line:"education_services:college_only",capital_source_line:"college",kind:"college_operating"}),7);
+assert.equal(C.cellExposure(full,{line:"reporter_capital",component:"capital_reporter"}),3);
+assert.throws(()=>C.cellExposure(full,{line:"undeclared"}),/source line not in fine model/);
+assert.deepEqual(C.fineRoute({line:"conceptual_native_child"},{},["G3plus"],2,"declared singleton"),{exposures:{G3plus:null},shares:{G3plus:1}});
+assert.throws(()=>C.fineRoute({line:"conceptual_native_child"},{earlier:full,late:full},["earlier","late"],2,"unidentified split"),/source line not in fine model/);
+assert.equal(C.isUnlocated({generation:"G1",population:"engine",line:"health_consumption"}),false,"generation ownership alone never invents missing membership");
+assert.equal(C.isUnlocated({generation:"G1",population:"coverage"}),true);
+assert.equal(C.isUnlocated({component:"capital_own_coverage_rate_interaction"}),true);
+assert.equal(C.isUnlocated({id:"coverage_repricing"}),true);
+assert.equal(C.isUnlocated({component:"unrecognized_count_label",population:"engine"}),false,"substring matches do not invent a population rule");
+const specs=[{reading:"low",normalization:"gdp"},{reading:"high",normalization:"cash"}],summary={specifications:{low_index:0,high_index:1}};
+C.requireEndSpecs(specs,[0,1],summary,[{normalization:"gdp",reading:"low"},{normalization:"cash",reading:"high"}]);
+assert.throws(()=>C.requireEndSpecs(specs,[1,0],summary,specs),/found end differs/);
+assert.throws(()=>C.requireEndSpecs(specs,[0,1],summary,[{reading:"low",normalization:"cash"},specs[1]]),/found end differs/);
+const gens=["G1_A","G1_B","G2","G3plus"],top={G1_A:"G1",G1_B:"G1",G2:"G2",G3plus:"G3plus"};
+const production=v=>({production:{private_wtp_bn:[v],induced_receipts_bn:[v]}}),series=v=>({P:[v],F:[v]});
+const source={closure_residual_max:1e-8,series:{a:{G1:series(1),G2:series(2),G3plus:series(3)}}};
+const fine={closure_residual_max:1e-8,series:{a:{G1_A:series(.7),G1_B:series(.3000000001),G2:series(2),G3plus:series(3)}}};
+const fixture=()=>({models:{G1_A:production(.7),G1_B:production(.3000000001),G2:production(2),G3plus:production(3)},canonical:{G1:production(1),G2:production(2),G3plus:production(3)},gens,top,wageShares:{G1_A:.6,G1_B:.4},row4Source:source,row4Fine:fine,convention:"a"});
+const accepted=fixture(),audit=C.reconcileProduction(accepted);
+assert.ok(Math.abs(accepted.models.G1_A.production.private_wtp_bn[0]+accepted.models.G1_B.production.private_wtp_bn[0]-1)<1e-12);
+assert.ok(audit.generations.G1.fields.private_wtp_bn.raw_gap_bn[0]>0);
+// This perturbation is inside the empirical numerical budget but absent from
+// the immutable source gap, so it must still stop.
+const changed=fixture();changed.models.G1_A.production.private_wtp_bn[0]+=1e-10;
+assert.throws(()=>C.reconcileProduction(changed),/not the immutable row4 allocation gap/);
+const tooLarge=fixture();tooLarge.row4Source={...source,closure_residual_max:0};tooLarge.row4Fine={...fine,closure_residual_max:0};
+assert.throws(()=>C.reconcileProduction(tooLarge),/exceeds recorded empirical numerical budget/);
+require("../main_case_2026_10_16/memory_guard.cjs").requireWithinBudget("late-arrival source-routing regression");
+console.log("PASS oct16 signed original-line routing and missing-source guards");

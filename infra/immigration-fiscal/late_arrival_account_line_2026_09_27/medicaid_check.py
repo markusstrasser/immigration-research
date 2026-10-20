@@ -77,12 +77,13 @@ SETS = {"default": (("sept27", "sept26_schools"), "medicaid_check.csv"),
         "oct05": (("oct05", "oct05_cash"), "medicaid_check_oct05.csv"),
         "oct07": (("oct07", "oct07_cash"), "medicaid_check_oct07.csv"),
         "oct14": (("oct14", "oct14_cash"), "medicaid_check_oct14.csv"),
-        "oct15": (("oct15", "oct15_cash"), "medicaid_check_oct15.csv")}
+        "oct15": (("oct15", "oct15_cash"), "medicaid_check_oct15.csv"),
+        "oct16": (("oct16", "oct16_cash"), "medicaid_check_oct16.csv")}
 # The v4, v5 and v6 sets' cash cases (the set's Medicare is keyed on the cash set's charge), and the case each v5 or v6
 # case builds on.
-CASH = {"sept29": "sept29_cash", "oct05": "oct05_cash", "oct07": "oct07_cash", "oct14": "oct14_cash", "oct15": "oct15_cash"}
+CASH = {"sept29": "sept29_cash", "oct05": "oct05_cash", "oct07": "oct07_cash", "oct14": "oct14_cash", "oct15": "oct15_cash", "oct16": "oct16_cash"}
 BUILDS_ON = {"oct05": "sept29", "oct05_cash": "sept29_cash", "oct07": "oct05", "oct07_cash": "oct05_cash",
-             "oct14": "oct05", "oct14_cash": "oct05_cash", "oct15": "oct05", "oct15_cash": "oct05_cash"}
+             "oct14": "oct05", "oct14_cash": "oct05_cash", "oct15": "oct05", "oct15_cash": "oct05_cash", "oct16": "oct05", "oct16_cash": "oct05_cash"}
 FAILS = []
 
 
@@ -109,9 +110,9 @@ def publish_rows(rows, out_name):
 def main():
     if F.LATE_DEF != "central":
         sys.exit("[BLOCKED] the check runs on the central reading")
-    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct15"
-    if which != "oct15":
-        sys.exit(f"[BLOCKED] live case is oct15; {which} outputs are frozen")
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct16"
+    if which != "oct16":
+        sys.exit(f"[BLOCKED] live case is oct16; {which} outputs are frozen")
     if which not in SETS:
         sys.exit(f"--set must be one of {', '.join(SETS)}")
     cases, out_name = SETS[which]

@@ -43,9 +43,10 @@ SETS = {"default": (CASES, "late_arrival_line.csv"), "sept29": (["sept29", "sept
         "oct05": (["oct05", "oct05_cash"], "late_arrival_line_oct05.csv"),
         "oct07": (["oct07", "oct07_cash"], "late_arrival_line_oct07.csv"),
         "oct14": (["oct14", "oct14_cash"], "late_arrival_line_oct14.csv"),
-        "oct15": (["oct15", "oct15_cash"], "late_arrival_line_oct15.csv")}
+        "oct15": (["oct15", "oct15_cash"], "late_arrival_line_oct15.csv"),
+        "oct16": (["oct16", "oct16_cash"], "late_arrival_line_oct16.csv")}
 # The case each set's rows beside the total compare with.
-PREVIOUS = {"sept29": "sept27", "oct05": "sept29", "oct07": "oct05", "oct14": "oct07", "oct15": "oct14"}
+PREVIOUS = {"sept29": "sept27", "oct05": "sept29", "oct07": "oct05", "oct14": "oct07", "oct15": "oct14", "oct16": "oct15"}
 # oct07: each cell's cost with the items' parts split by their edited lines rather than their split_basis (run_cells.cjs,
 # when a part's basis is another model line).
 ALT = "split_basis_edited_line_cost_bn"
@@ -70,9 +71,9 @@ SERVICES = ["education", "services_other"]
 
 
 def main():
-    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct15"
-    if which != "oct15":
-        sys.exit(f"[BLOCKED] live case is oct15; {which} outputs are frozen")
+    which = sys.argv[sys.argv.index("--set") + 1] if "--set" in sys.argv else "oct16"
+    if which != "oct16":
+        sys.exit(f"[BLOCKED] live case is oct16; {which} outputs are frozen")
     if which not in SETS:
         sys.exit(f"--set must be one of {', '.join(SETS)}")
     cases, out_name = SETS[which]
@@ -87,7 +88,13 @@ def main():
                 sys.exit(f"[BLOCKED] {f.name} holds {c['case']} / {c['def']}")
             programs = c["programs"]
             for conv, cells in c["conventions"].items():
+                located = [g for g in cells if g != "union" and not g.startswith("unlocated_")]
                 groups = {**SUBGROUPS, "union": [g for g in cells if g != "union"]}
+                for generation, subgroup in (("G1", "mexico_born_with_unlocated"), ("G2", "second_generation"), ("G3plus", "third_plus")):
+                    groups[subgroup] = ([g for g in located if g.startswith("G1_")] if generation == "G1" else [generation]) + [
+                        f"unlocated_coverage_{generation}", f"unlocated_calibration_{generation}"]
+                groups["unlocated_coverage"] = [g for g in cells if g.startswith("unlocated_coverage_")]
+                groups["unlocated_calibration"] = [g for g in cells if g.startswith("unlocated_calibration_")]
                 for end in ("low", "high"):
                     spec = c["low_spec"] if end == "low" else c["high_spec"]
                     for name, members in groups.items():
@@ -102,19 +109,19 @@ def main():
                                "services_total": sum(parts[k] for k in SERVICES), "total": total}
                         if which in PREVIOUS:
                             k, prev = 0 if end == "low" else 1, PREVIOUS[which]
-                            out[f"{prev}_total"] = sum(cells[g][f"{prev}_cost_bn"][k] for g in members)
+                            out[f"{prev}_total"] = sum(cells[g].get(f"{prev}_cost_bn", [0, 0])[k] for g in members)
                             out[f"change_from_{prev}"] = total - out[f"{prev}_total"]
                         if all(ALT in cells[g] for g in members):
                             # Beside the total: the move if the items' parts were split by their edited lines.
                             k = 0 if end == "low" else 1
                             out["split_basis_edited_line_move"] = sum(cells[g][ALT][k] for g in members) - total
-                        if which in ("oct14", "oct15"):
+                        if which in ("oct14", "oct15", "oct16") and all("job_capital_t1_cost_bn" in cells[g] for g in members):
                             k = 0 if end == "low" else 1
                             out["job_capital_t1_move"] = sum(cells[g]["job_capital_t1_cost_bn"][k] for g in members) - total
                         for k, v in out.items():
                             rows.append(dict(case=case, reading=reading, convention=conv, spec=end,
                                              allocation=spec["allocation"], subgroup=name, program=k,
-                                             bn=f"{v:.6f}", per_person_usd=f"{v * 1e9 / pop:.2f}",
+                                             bn=f"{v:.6f}", per_person_usd=f"{v * 1e9 / pop:.2f}" if pop and name != "unlocated_calibration" else "",
                                              population=f"{pop:.1f}"))
     sys.path.insert(0, str(HERE.parent / "scripts"))
     from memory_budget import require_within_budget

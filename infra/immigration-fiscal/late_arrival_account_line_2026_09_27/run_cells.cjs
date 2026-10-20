@@ -70,10 +70,16 @@ const CASES = { sept27: "main_case_long_run_2026_09_27", sept26_schools: "main_c
   oct07: "main_case_long_run_2026_09_27", oct07_cash: "main_case_long_run_2026_09_27",
   oct14: "main_case_long_run_2026_09_27", oct14_cash: "main_case_long_run_2026_09_27",
   oct15: "main_case_long_run_2026_09_27", oct15_cash: "main_case_long_run_2026_09_27" };
-const CASE = arg("--case", "oct15");
+// Oct16 inherits the exact fine-cell v8 construction in memory. It publishes
+// only the new case; no historical cells or tracked outputs are regenerated.
+const REQUESTED_CASE = arg("--case", "oct16");
+const ON16 = ["oct16", "oct16_cash"].includes(REQUESTED_CASE);
+if (!ON16) throw Error(`[BLOCKED] live case is oct16; ${REQUESTED_CASE} outputs are frozen`);
+const CASE = REQUESTED_CASE.replace("oct16", "oct15");
 if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
 if (!["oct15", "oct15_cash"].includes(CASE)) throw new Error(`[BLOCKED] live case is oct15; ${CASE} outputs are frozen`);
 const ON15 = CASE === "oct15" || CASE === "oct15_cash";
+require("./v9_cells.cjs").preflight(REQUESTED_CASE,argv.includes("--probe"));
 const ON26 = CASE !== "sept24";
 const ON14 = CASE === "oct14" || CASE === "oct14_cash" || ON15;
 const V4SET = { sept29: "set", sept29_cash: "cash", oct05: "set", oct05_cash: "cash", oct07: "set", oct07_cash: "cash", oct14: "set", oct14_cash: "cash", oct15: "set", oct15_cash: "cash" }[CASE];
@@ -881,7 +887,7 @@ function evaluateCase(m, spec) {
   return { evaluation, capital: { components: [], total_bn: 0 }, cost_bn: -evaluation.welfare_bn };
 }
 let partsWorst = 0;
-function partsOf(m, spec) {
+function partsOf(m, spec, keepFull = false) {
   const full = CE.full(m, spec);
   const ev = full.evaluation;
   const fw = CE.fw(full, m, spec);
@@ -895,7 +901,7 @@ function partsOf(m, spec) {
   partsWorst = Math.max(partsWorst, Math.abs(total - full.cost_bn), Math.abs(full.cost_bn - CE.cost(m, spec)));
   // Programme inputs beside the parts: the Medicaid line's amount and response (for the pricing check).
   const mcd = ev.spending.find((r) => r.id === MEDICAID);
-  return { cost_bn: full.cost_bn, parts: out, medicaid_amount_bn: mcd.amount_bn, medicaid_response: mcd.response,
+  return { ...(keepFull ? {_full:full} : {}), cost_bn: full.cost_bn, parts: out, medicaid_amount_bn: mcd.amount_bn, medicaid_response: mcd.response,
     medicaid_key: mcd.key };
 }
 console.log("[programme parts]");
@@ -1051,11 +1057,14 @@ if (ON05 && !ON07) {
       + "production on the G3plus cell; audit row 8's change at each cell's lane_constants k share; the case's responses. cells.v4 is "
       + "the September 29 part this case builds on" };
 }
-const outFile = path.join(OUT, `cells_${CASE}_${DEF}.json`);
+const outFile = path.join(OUT, `cells_${REQUESTED_CASE}_${DEF}.json`);
 if (fails.length) {
   console.log(`✗ ${fails.length} gate(s) failed: ${fails.join("; ")}`);
   process.exit(1);
 }
-fs.writeFileSync(outFile, JSON.stringify(cells, null, 1) + "\n");
+const published = require("./v9_cells.cjs").build({cells,res,GENS,G1_CELLS,TOP,DEF,Engine,partsOf});
+const publishedBody = JSON.stringify(published, null, 1) + "\n";
+require("../main_case_2026_10_16/memory_guard.cjs").requireWithinBudget(`late arrival ${REQUESTED_CASE}/${DEF}`);
+fs.writeFileSync(outFile, publishedBody);
 console.log(`  wrote ${path.relative(process.cwd(), outFile)}`);
 console.log("  ✓ all gates passed");

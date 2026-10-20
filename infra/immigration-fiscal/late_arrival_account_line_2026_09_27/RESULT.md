@@ -802,3 +802,80 @@ committed with this lane, which requires it. Only the coverage piece moves: cent
 (a) **3.102350–3.722458bn**, set (b) 4.381517–5.074607, cash (a) 4.541114–5.162138, cash (b) 5.829419–6.523414 (was
 3.120980–3.741215, 4.396669–5.089862, 4.559743–5.180895, 5.844571–6.538669). Reproduction IDENTICAL 40/40, exit 0.
 [DATA: `derived/late_arrival_line_oct15.csv`]
+
+## Oct16 propagation — 2026-10-15
+
+- 18:53 JST (`date`) — Prepared the live-only oct16 route. Initial candidate probe rejected the unknown case; the inherited fine-cell reconstruction then cleared all v8 source/scientific gates. The evolving case currently withholds the new coverage integration while item21 is being added. The lane now checks this source-readiness condition before its expensive reconstruction and stops explicitly on absent folded coverage counts or saved/API disagreement. Final numbers, gates and byte replay remain pending `CASE_FINAL`.
+- The seven G1 masks inherit their exact original source-line models and both assignment conventions. New engine edits use those line targets; military13, retirement-administration14, college15, health21 and capital20 use each original spending/capital source amount. The route exports the current military response and VA fraction in `item13_original_lines_oct16.csv`; a generation tag alone never classifies an observed source amount as missing population. It requires all32 personal specifications to close at1e-9bn, every engine cell/allocation at1e-9bn and production at1e-12; the final receipt below will state execution status.
+- Constructed coverage is removed from the inherited oct15 fine cells and retained in three unlocated coverage blocks. Item16's observed-weight calibration is a separate signed unlocated block; its coverage piece and17's joint-minus16 tenure adjustment enter the coverage blocks once. They never become identified arrivals. Identified arrival denominators exclude the previously allocated coverage people. The generation source's adult totals are also separated, preserving each aggregate adult denominator. Therefore an oct15 comparison restates its old coverage as unlocated under the same presentation rule; original oct15 files remain unchanged.
+- `items17_20_oct16.csv` separates tenure from capital revaluation; `senior_ordering_oct16.csv` will state late-minus-earlier senior costs on each basis, convention and arrival reading. All programme amounts and located-plus-unlocated generation totals must close. The capital return remains an imputed resource cost. This is an annual modeled line, not per-admission lifetime value. Source14's partial-key limit, college-use transport, medical allocation, inherited mixed-unit FIT placement and the LLM instrument limitation remain.
+- `[APPROX]` Item21 supplies its own generation/population/line amounts, including explicit health capital. Its within-G1 remainder uses the inherited original health-line and capital amounts of the seven masks. The source does not identify a new arrival-specific donor-payer key here; no such measurement is claimed. This transport is separate from item13's exact application of each declared military fraction and response to the original fine-cell source amounts.
+- Item13's `original_line_bn` is the amount responsive under the inherited budget rule, before applying its military fraction and response. The export also carries the assigned `original_target_bn` and `inherited_response`; their product must equal `original_line_bn` at1e-9bn. Thus an inherited response below1 remains explicit rather than being mislabeled as an assigned target.
+
+After the repository's live declaration and package agree on adoption, capture the exact current source graph once; ordinary replay only verifies it. The captured authority is the adoption date and decision path, with exact generation/coverage source hashes:
+
+```sh
+node infra/immigration-fiscal/late_arrival_account_line_2026_09_27/v9_cells.cjs --capture
+bash infra/immigration-fiscal/late_arrival_account_line_2026_09_27/run_oct16.sh
+node infra/immigration-fiscal/late_arrival_account_line_2026_09_27/test_v8_cells.cjs
+node infra/immigration-fiscal/late_arrival_account_line_2026_09_27/test_v9_cells.cjs
+OPENBLAS_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 uv run --no-project python3 -m pytest -p no:cacheprovider infra/immigration-fiscal/late_arrival_account_line_2026_09_27/test_validation_output.py infra/immigration-fiscal/late_arrival_account_line_2026_09_27/test_production_order.py -q
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/late_arrival_account_line_2026_09_27 "bash {lane}/run_oct16.sh" "node {lane}/test_v8_cells.cjs" "node {lane}/test_v9_cells.cjs" "uv run --no-project python3 -m pytest -p no:cacheprovider {lane}/test_validation_output.py {lane}/test_production_order.py -q"
+```
+
+### Adopted Oct16 receipt — 2026-10-20 20:51 JST
+
+- `CASE_FINAL` names adoption commit `7dfb4c66`; the owned capture builder verified its four adopted case files byte-for-byte and captured236 source hashes in `inputs/oct16_source_hashes.json`. Generation and coverage producers were read, not rebuilt. Historical outputs remain unchanged. The live consumer computes only oct16.
+- Complete six-context wrapper **PASS exit0**,1214.563s. All32 personal specifications, both assignment conventions, source engine cells/allocations and programme/cost closure pass1e-9bn; production passes1e-12. Located plus unlocated generation population/adult totals close at1e-6 persons. Exact found ends/specifications match the generation source,16/11. Independent verifier:24 case/reading/convention/end contexts, full precision1e-9bn, CSV1e-5bn, rounded case-band oracle5.01e-5bn. Source-routing/immutable-gap fixtures and all three publication/order regressions pass. No gate or tolerance was weakened.
+- The documented four-command replay **IDENTICAL51/51, exit0**,644.966s. Python perf_counter/getrusage diagnostic peak child RSS1,646,034,944bytes; the successful replay's producer footprint guards passed. The complete build's six Node lifetime peak physical footprints were1,625,499,376;1,775,217,160;1,525,539,840;1,466,295,496;1,664,772,304;1,661,315,496bytes, all below2.5GB. The inherited fixture's command-only principal guard also passed at348,326,304bytes. Timings are observed command receipts, not a normalized speedup claim. Logs: `_cache/oct16_final_run.log`, `oct16_final_rerun.log`, `oct16_test_v8.log`, `oct16_test_v9.log`, `oct16_test_v8_physical.log`.
+
+Identified arrived-at50+ annual line, central reading, bn low/high; population excludes constructed coverage and unlocated calibration. [CALCULATION: `derived/late_arrival_line_oct16.csv`, keys `case`, `reading=central`, `convention`, `spec`, `subgroup=late50`, `program=total`; full precision `_cache/cells_oct16{,_cash}_central.json` `conventions.<a|b>.<G1_L50_50_64|G1_L50_65p|G1_L55_55_64|G1_L55_65p>.<low|high>.cost_bn`, summed]
+
+| Basis/convention | Low bn | High bn | Members |
+|---|---:|---:|---:|
+| Set a |3.826400|4.290674|362,245.4|
+| Set b |5.040763|5.544608|418,376.6|
+| Cash a |5.311308|5.776499|362,245.4|
+| Cash b |6.526196|7.030945|418,376.6|
+
+Against oct15 the set-a low line rises from $3.10bn to $3.83bn. Item 21's health-residual key adds $0.81bn of that
+(`program=health_residual_key`, 0.812390 at both ends), partly offset by item 13's military service costs (−$0.06bn).
+That is this lane's least-identified piece: item 21 reaches the late arrivals through the original health line's
+transport, with no arrival-specific payer key [APPROX]. [CALCULATION: `derived/late_arrival_line_oct16.csv`]
+
+The whole case closes to set368.029739/436.561527bn and cash284.397043/352.928831bn over44,903,074.086245persons, using `subgroup=union, program=total`; the underlying `union_band_bn` values match the source at1e-9bn. Items19/W09 remain beside.
+
+**A2, senior ordering:** late65+ minus earlier65+ dollars per member, central low/high. [CALCULATION: `derived/senior_ordering_oct16.csv`, `reading=central`, `subgroup=late50_65p`, `late_minus_earlier_usd`]
+
+| Basis/convention | Low USD | High USD |
+|---|---:|---:|
+| Set a |+3274.74|+3151.39|
+| Set b |+1956.18|+1843.16|
+| Cash a |−832.67|−959.59|
+| Cash b |−1766.13|−1882.36|
+
+Set ranks the late senior group higher; cash ranks it lower, in every lower/central/upper reading, both conventions and both ends. Convention b denominators include linked members assigned to each senior group. Holding all other oct16 terms fixed, military13 changes the central a difference by only+81.616661USD at both ends: it removes188.948268USD per earlier senior and107.331607USD per late senior. Without that rule the cash differences are−914.284528/−1041.208445USD, so military removal does not flip cash ordering. `item13_original_lines_oct16.csv` exports3360 G1 original-line rows with assigned targets, inherited responses, responsive amounts, military fractions/responses and signed deltas; original target×inherited response and responsive amount×fraction×(response−1) close before publication.
+
+Items17 and20 stay separate in `items17_20_oct16.csv` (39024rows). Joint-minus16 tenure is wholly unlocated: central a `late_arrival_line_oct16.csv` `subgroup=unlocated_coverage, program=coverage_tenure` gives set+3.839978/+3.686001bn, cash+4.263127/+4.109151bn; identified senior tenure terms are0. The capital-rate term for earlier seniors is+0.033191009/−0.430734862bn and late seniors+0.005250363/−0.067735033bn, both sets (`senior_ordering_oct16.csv`, `item20_delta_bn`). Capital return is an imputed resource cost, never a debt flow.
+
+**A5 and sensitivities:** convention b−a adds1.214363/1.253934bn set and1.214888/1.254447bn cash to the central annual late50 line. Under a, lower/upper arrival readings give set3.528664/3.882082bn and4.876609/5.469788bn; cash5.003894/5.358332bn and6.826405/7.420876bn. Both conventions/all readings are in the same CSV, with `reading`, `spec` and `program=total` keys. These are cross-sectional annual subsets already inside G1/the case; they are never added again or interpreted as per-admission lifetime costs. Grouping and assignment readings are separate sensitivities, not confidence limits. [FRAMING-SENSITIVE]
+
+Remaining limits: constructed coverage/calibration have no identified arrival placement and stay unlocated; item21 retains its stated within-G1 original-health-line transport and provisional upstream program/exposure bridge. Fixed-share uncertainty, inherited mixed-unit FIT placement and the empirical immutable row4 numerical reconciliation remain explicit. Protected-source clone optimization stays filed in `failure-catalog.md`; no source work was broadened. Exact changed paths, including ignored execution receipts, are in `changed-paths.txt`. The final receipt is a prose append after byte replay; generated outputs were not changed afterward.
+
+### Repository adoption authority — 2026-10-20 22:17 JST
+
+Temporary-session marker parsing and the adoption-commit requirement are removed. Capture and replay require the
+shared live/package adoption gate and record the adoption date and decision. Capture verifies both saved correction
+payloads against the package APIs and pins exact source hashes, including the live declaration and both captured
+readiness receipts. The explicit final capture contains242 hashes. The full six-context build passes, exit0,664.663s,
+with diagnostic child maxRSS1,396,228,096bytes; all principal footprint guards pass. Comparison with the pre-edit
+baseline finds every late-arrival derived output byte-identical. Required final byte replay follows.
+[CALCULATION: `v9_cells.cjs --capture`, `/private/tmp/scratchfix-late-build-receipt.json`,
+`/private/tmp/scratchfix-consumer-parity.json`]
+
+- 2026-10-20 22:30 JST — Final documented four-command byte replay PASS, `IDENTICAL: 51/51`, exit0,
+  722.386s; diagnostic child maxRSS1,440,350,208bytes. The six-context producer, both Node source fixtures and
+  all three Python publication/order tests return0. All principal footprint guards pass. The finalized242-source
+  snapshot remains unchanged throughout replay. This receipt is appended after comparison; generated outputs
+  and source code are unchanged afterward. [CALCULATION: `/private/tmp/scratchfix-late-replay.log`,
+  `/private/tmp/scratchfix-late-replay-receipt.json`]
