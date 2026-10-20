@@ -30,3 +30,9 @@
   those channels are carried. `V9_ARM_TRANSPORT=require_own` blocks unsupported
   own kernels; G2 probes both labeling and the fail-loud switch. Default cases
   gain no empty carry metadata.
+
+- The source-algorithm regression depended on a machine-local ignored cache and
+  the current upstream pins. A peer's legitimate upstream change made its
+  positive control fail before the intended algorithm mutation. The regression
+  now builds an isolated declared contract and checks both source-pin drift and
+  algorithm mutation; it never refreshes frozen historical scientific outputs.

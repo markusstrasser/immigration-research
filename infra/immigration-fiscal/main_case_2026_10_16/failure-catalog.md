@@ -1,5 +1,32 @@
 # Candidate v9 failure patterns
 
+2026-10-20: worker-session files were runtime readiness/adoption authorities; absent item13 prose
+silently weakened the completion marker. Captured `inputs/item13_ready.json` and
+`inputs/item21_ready.json` now fail closed on missing/stale custody; the package and coverage
+snapshot share the item13 check. Consumer adoption uses `live_case.json` plus package adopted
+status/date/decision. `test_readiness.cjs`, `scripts/test_adoption_gate.py` and the replay source
+scan in `scripts/rerun_lane.py` cover missing/weak/stale receipts, stale live keys and candidate
+packages, and prevent source/data from reintroducing session-only paths.
+The initial adoption CLI eagerly built the entire v9 package for each Python caller (a failed
+preflight alone took 8.95s, with successful full loads substantially slower under concurrent
+replays). The package now exports its same declaration through `FISCAL_ADOPTION_ONLY=1` before
+scientific construction, in a separate child process to avoid contaminating a consumer's module
+cache. G4 compares this projection to the full package's `V9` exports; normal consumers still
+validate source custody and build the unchanged scientific account.
+The independent review also proved that a mismatched package could pass when a stale live
+declaration paired another lane with the requested key. The shared gate now checks exported
+`CASE_KEY` and `LANE` as well as status/date/decision; dedicated wrong-case and wrong-lane
+controls reject both configurations.
+
+2026-10-20 replay timing: the G1 builder took 664.62s under the concurrent lane workload;
+the isolated original v8 `main_case.cjs` G3 producer took 173.953s and passed all 1,776 gates.
+The existing phase log locates repeated source-arm/companion pricing, while the retained
+G3 bounded-runtime repair above preserves clone isolation and source-byte parity. These
+are stage timings, not a sampled new hotspot or a measured speedup. Further scientific
+runtime changes are deferred from this portability repair; the full required replay remains
+mandatory. Exact command receipts are in the scratchfix handoff, using Python timing/RSS
+and the in-process physical-footprint guards.
+
 | Failure | Root cause / repair | Regression |
 |---|---|---|
 | Inherited viaCandidate rejects new spec fields | v5 checks exact specification identity. Preserve its source-price coordinates; carry effective economic rate in item20 metadata and post-engine revaluation. | api_check retained viaCandidate patterns and raw payload closure |

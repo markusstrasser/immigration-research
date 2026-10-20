@@ -1739,3 +1739,32 @@ child RSS is diagnostic. Final replay receipts are appended after comparison.
   diagnostic. Required protected fullwrapper replay again **exit0,
   IDENTICAL126/126**,282.289s, all producers/30variants/17Node/28Python tests
   executed. Numerical bytes unchanged. Ruff/compile and final diff checks pass.
+
+## 2026-10-20 adoption authority and record relocation
+
+`run_all.sh` now propagates only the adopted oct16 case in both accounting
+sets. It validates the repo's live declaration/package metadata before either
+writer. It reads frozen oct15 scientific inputs and never refreshes their
+credit, age, routing or gradient producers. Fresh execution of the old oct15
+native-gradient command separately requires oct15 to be adopted and stops under
+oct16 before numerical work. Adoption metadata records a date and decision path.
+
+`inputs/case_final_oct15.txt` was relocated byte for byte to
+`inputs/adoption_receipt_oct15.md`. The original digest remains unchanged.
+`scripts/historical_record_paths.json` declares the relocation once; Python and
+Node readers resolve old recorded paths to those same bytes without altering
+frozen hash graphs. This is a provenance-file relocation, with no scientific
+amount or historical output recomputation.
+
+Current replay from the repository root:
+
+```sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/generation_account_2026_09_24 \
+  "bash {lane}/run_all.sh"
+```
+
+The 2026-10-20 current replay passed **IDENTICAL 132/132**, exit 0, in
+107.525 s, with diagnostic child maxRSS 1,703,428,096 bytes. Both oct16 sets and
+every retained Node/Python control completed successfully; no uncovered-script
+exemptions were needed. All frozen oct15 files stayed unchanged. Receipt prose
+is appended after comparison. [CALCULATION: `/private/tmp/scratchfix-generation-replay.log`]

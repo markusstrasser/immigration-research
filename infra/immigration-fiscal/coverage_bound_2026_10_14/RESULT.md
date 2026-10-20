@@ -358,3 +358,27 @@ Replay receipts are appended after the final stable-code harness. The original v
 All seven specified live commands exit 0; **IDENTICAL 88/88, exit 0**, **79.797s** wall. All four person-price producers pass their own 2.5GB physical-footprint gates; the wrapper's diagnostic child RSS peaks at **2,894,954,496 bytes**, a macOS RSS over-read that is not the physical-footprint gate. The focused suite has **85 tests**. Final routing remains within 0.5bn of BASE: **+0.016270768 / +0.016390852bn** in both sets. Existing frozen input bytes and earlier-case outputs are separately checked against the worker's entry hashes. No source pin was changed, and no historical writer was run. [CALCULATION: _cache/r3fix_stable_replay.log; pricing_audit_oct15_*.json.gates; coverage_final_routing_check.json]
 
 Preparation replay records are also retained: the first compared changed adapter/audit bytes; the next differed on two old adapter-hash audit receipts; the final stable-code replay above is authoritative. Prose receipts and changed-path manifests are appended after comparison; scientific outputs stay unchanged. [CALCULATION: _cache/r3fix_prepare_replay.log, r3fix_final_replay.log, r3fix_stable_replay.log]
+
+### 2026-10-20 captured adoption records and current replay
+
+Fresh oct15 final-input capture now requires `live_case.json` to declare oct15
+and its package to export matching adopted metadata. It therefore stops under
+the adopted oct16 case. Historical snapshot validation checks its captured
+receipt's exact bytes without consulting a temporary session directory. The
+original final-routing manifest and adoption narrative were relocated byte for
+byte to `inputs/oct15_final_routing/manifest.md` and `adoption_receipt.md`.
+The old source-directory text remains provenance inside those records.
+
+The oct16 source custody now also includes the readiness validator and its
+captured item13 receipt. Current replay preserves all historical outputs:
+
+```sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/coverage_bound_2026_10_14 \
+  "uv run --no-project python3 {lane}/coverage_oct16.py" \
+  "uv run --no-project python3 -m pytest {lane}/test_coverage.py {lane}/test_national_keys.py {lane}/test_dependencies.py {lane}/test_oct15.py -q -p no:cacheprovider"
+```
+
+The 2026-10-20 replay above passed with **IDENTICAL 113/113**, exit0,
+22.862s wall; diagnostic child maxRSS1,757,904,896bytes. Every source producer
+and test command returned0, with no uncovered-script exemptions. Receipt prose
+is appended after comparison. [CALCULATION: `/private/tmp/scratchfix-coverage-replay.log`]

@@ -1,6 +1,14 @@
 /* Candidate v9: immutable v8 base, source-owned builders, explicit post-engine routing. */
 "use strict";
 const fs=require("fs"),path=require("path");
+const HERE=__dirname,LANE="main_case_2026_10_16",CASE_KEY="oct16";
+const DECISION="decisions/2026-10-16-main-case-v9.md",STATUS="adopted",ADOPTED="2026-10-20";
+if(STATUS==="adopted"&&!fs.existsSync(path.resolve(HERE,"../../..",DECISION)))throw Error("[BLOCKED] v9: adoption requires decision file");
+// The adoption gate uses a separate child, so this projection cannot poison a consumer's module cache.
+if(process.env.FISCAL_ADOPTION_ONLY==="1"){
+ module.exports={V9:{HERE,LANE,CASE_KEY,DECISION,STATUS,ADOPTED}};
+ return;
+}
 const V8=require("../main_case_2026_10_15/package.cjs");
 const USE_CASE_CACHE=process.env.V9_CASE_CACHE!=="0",v8CaseOf=USE_CASE_CACHE?V8.caseOf:require("./v8_uncached.cjs").caseOf;
 const V8_RUNTIME_BASE=USE_CASE_CACHE?V8:require("./v8_bounded_runtime.cjs").packageFor();
@@ -9,8 +17,6 @@ const COUNT_ITEMS=require("../count_composition_r5_2026_10_15/items.cjs");
 const BASKET=require("../consumption_tax_bases_r5_2026_10_15/item.cjs");
 const PASS=require("../passthrough_source_tax_r5_2026_10_15/item.cjs");
 const RATE=require("./item_rate.cjs");
-const HERE=__dirname,LANE="main_case_2026_10_16",CASE_KEY="oct16";
-const DECISION="decisions/2026-10-16-main-case-v9.md",STATUS="adopted",ADOPTED="2026-10-20";
 const COVERAGE_MODE=process.env.V9_COVERAGE||"repriced";
 const clone=x=>JSON.parse(JSON.stringify(x)),sum=a=>a.reduce((x,y)=>x+y,0);
 const PRINCIPAL_LINEAGE=V8.correctionsPayload().meta.lineage;
@@ -18,7 +24,6 @@ const meanNumbers=a=>sum(a)/a.length;
 const fail=s=>{throw Error("[BLOCKED] v9: "+s);};
 if(!["base","repriced"].includes(COVERAGE_MODE))fail("unknown V9_COVERAGE");
 if(!["candidate","adopted"].includes(STATUS))fail("unknown V9_STATUS");
-if(STATUS==="adopted"&&!fs.existsSync(path.resolve(HERE,"../../..",DECISION)))fail("adoption requires decision file");
 const NEW=SPEND.REGISTRY.filter(x=>x.number!==21).concat(COUNT_ITEMS.REGISTRY,[BASKET.registry(),{id:PASS.id,kind:PASS.kind,label:"pass-through source taxes",arms:PASS.arms(),build:PASS.build},RATE.registry],SPEND.REGISTRY.filter(x=>x.number===21));
 const NEW_IDS=NEW.map(x=>x.id),REGISTRY=V8.REGISTRY.concat(NEW);
 if(NEW_IDS.includes("health_residual_key")){
@@ -31,19 +36,8 @@ if(NEW_IDS.includes("health_residual_key")){
 const ITEM19=process.env.ITEM19||"0";
 if(!["0","1"].includes(ITEM19))fail("ITEM19 must be 0 (beside) or 1 (conditional central)");
 const CANDIDATE=V8.CANDIDATE.concat(NEW_IDS.filter(id=>ITEM19==="1"||id!==PASS.id));
-const L1=path.resolve(HERE,"/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/p7/v9/L1-result.md");
-const L1_TEXT=fs.existsSync(L1)?fs.readFileSync(L1,"utf8"):"";
-const L1_REQUIRED=L1_TEXT.includes("L1 STEP 3 DONE")||L1_TEXT.includes("item 13 changes again (step 3)")?"L1 STEP 3 DONE":"L1 STEP 2 DONE";
-const READY_PATH=path.join(HERE,"inputs/item13_ready.json");
-let capturedReady=false;
-if(fs.existsSync(READY_PATH)){
- const q=JSON.parse(fs.readFileSync(READY_PATH,"utf8")),source=path.join(HERE,"../spending_keys_r5_2026_10_15/derived/item13.json");
- capturedReady=q.completion_marker==="L1 STEP 3 DONE"&&q.item13_sha256===require("crypto").createHash("sha256").update(fs.readFileSync(source)).digest("hex");
- if(!capturedReady)fail("captured item13 readiness is stale; source custody changed");
-}
-const markerReady=L1_TEXT.split("\n").some(line=>line.trim()===L1_REQUIRED);
-if(process.env.ITEM13_PHASE==="final"&&!capturedReady&&!markerReady)fail("final item13 requested before source completion");
-const STUB13=process.env.ITEM13_PHASE==="step1"||(!capturedReady&&!markerReady);
+require("./readiness.cjs").requireItem13();
+const STUB13=process.env.ITEM13_PHASE==="step1";
 const ITEM19_ARM=process.env.ITEM19_ARM||"foreign_full_ftc_individual_tangible_normal";
 const ITEM18_CARRIER_MODE=process.env.ITEM18_CARRIER_MODE||"source_evaluator";
 if(!["source_evaluator","declared_carriers"].includes(ITEM18_CARRIER_MODE))fail("unknown ITEM18_CARRIER_MODE");

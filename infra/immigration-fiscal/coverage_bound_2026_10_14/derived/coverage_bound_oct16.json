@@ -816387,7 +816387,9 @@
     "count_composition_r5_2026_10_15/measure.py": "d0a8100484fd73a4eb20185a653105fb1ba33b7e20c337098300b2366b23b746",
     "count_composition_r5_2026_10_15/tenure.py": "879eba408d337522ba4b04dd0be1c1161a7d559a86dd631543b67c9b4f393b99",
     "count_composition_r5_2026_10_15/derived/native_person_factors.parquet": "712efac2bb35ea19ad1b9950998b5a0fa425f33fccd0c662669646f65cebff45",
-    "main_case_2026_10_16/coverage_snapshot.cjs": "846ff969773a8476f0ec2e0f88889cfc9a8e848ccca4b8346ad8459933a9b70f",
-    "coverage_bound_2026_10_14/coverage_oct16.py": "578bfb2bdf619f1e54401321484602cadcf5aec588ae6ec59f04ed31c44630e7"
+    "main_case_2026_10_16/coverage_snapshot.cjs": "792ec12a9782bf111cbe4a3e0edfe3a0d6bc8ccfcef528c4a22acd5b3956e300",
+    "main_case_2026_10_16/readiness.cjs": "1422124b6863457adad0a31265a502f5e7a9f13ef042b15a4d40ad4c986c5945",
+    "main_case_2026_10_16/inputs/item13_ready.json": "cc8e0b49844f6cef10de155093915657b3fc99433a3443b06628621e19416ed4",
+    "coverage_bound_2026_10_14/coverage_oct16.py": "0892c15c1fe5469834f0859a88f550e2a313c38635f098acd8b6b28cbb1851bf"
   }
 }

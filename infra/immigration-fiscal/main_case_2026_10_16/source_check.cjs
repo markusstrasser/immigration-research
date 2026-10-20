@@ -6,18 +6,12 @@ const read=p=>fs.readFileSync(path.join(F,p));
 const readyFile=path.join(HERE,"inputs/item13_ready.json");
 const source="spending_keys_r5_2026_10_15/derived/item13.json";
 const ready={completion_marker:"L1 STEP 3 DONE",item13_source:source,item13_sha256:sha(read(source)),scope:"final source bridge accepted for candidate build; adoption remains null"};
-if(!fs.existsSync(readyFile)){
- const marker=process.env.L1_RESULT||"/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/p7/v9/L1-result.md";
- if(!fs.existsSync(marker)||!fs.readFileSync(marker,"utf8").split(/\r?\n/).some(l=>l.trim()===ready.completion_marker))throw Error("[BLOCKED] final standalone item13 completion marker absent");
- fs.mkdirSync(path.dirname(readyFile),{recursive:true});fs.writeFileSync(readyFile,JSON.stringify(ready,null,1)+"\n");
-}else if(JSON.stringify(JSON.parse(fs.readFileSync(readyFile,"utf8")))!==JSON.stringify(ready))throw Error("[BLOCKED] final item13 source changed after captured readiness");
+require("./readiness.cjs").requireItem13();
+if(JSON.stringify(JSON.parse(fs.readFileSync(readyFile,"utf8")))!==JSON.stringify(ready))throw Error("[BLOCKED] final item13 source changed after captured readiness");
 const healthFiles=["health_item.cjs","derived/item21.json","derived/item21_coverage.json","derived/item21_v9_coverage.json","derived/item21_v9_count_parts.csv","derived/item21_case_changes.json"].map(p=>"spending_keys_r5_2026_10_15/"+p);
 const healthReadyFile=path.join(HERE,"inputs/item21_ready.json"),healthReady={completion_marker:"ITEM21_READY",hashes:Object.fromEntries(healthFiles.map(p=>[p,sha(read(p))]))};
-if(!fs.existsSync(healthReadyFile)){
- const marker="/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/p7/v9/ITEM21_READY";
- if(!fs.existsSync(marker)||!/^READY /.test(fs.readFileSync(marker,"utf8")))throw Error("[BLOCKED] item21 completion marker absent");
- fs.writeFileSync(healthReadyFile,JSON.stringify(healthReady,null,1)+"\n");
-}else if(JSON.stringify(JSON.parse(fs.readFileSync(healthReadyFile,"utf8")))!==JSON.stringify(healthReady))throw Error("[BLOCKED] item21 source changed after captured readiness");
+if(!fs.existsSync(healthReadyFile))throw Error("[BLOCKED] item21 captured readiness receipt absent");
+if(JSON.stringify(JSON.parse(fs.readFileSync(healthReadyFile,"utf8")))!==JSON.stringify(healthReady))throw Error("[BLOCKED] item21 source changed after captured readiness");
 const files=[
  "main_case_2026_10_15/package.cjs","main_case_2026_10_15/derived/summary.json","main_case_2026_10_15/derived/corrections.json","main_case_2026_10_15/derived/corrections_cash.json",
  "spending_keys_r5_2026_10_15/items.cjs","spending_keys_r5_2026_10_15/item13_generations.cjs",source,"spending_keys_r5_2026_10_15/derived/item14.json","spending_keys_r5_2026_10_15/derived/item15.json","spending_keys_r5_2026_10_15/derived/case_changes.json",

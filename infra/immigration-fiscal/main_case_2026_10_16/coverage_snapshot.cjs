@@ -6,10 +6,8 @@ const read=p=>JSON.parse(fs.readFileSync(path.join(__dirname,"..",p),"utf8"));
 function build(){
  const sets={};
  const military=read("spending_keys_r5_2026_10_15/derived/item13.json");
- const marker=process.env.L1_RESULT||"/private/tmp/claude-501/-Users-alien-Projects-immigration-research/75b08f57-63cc-4e3d-96dc-60050327b5c1/scratchpad/p7/v9/L1-result.md";
- const text=fs.existsSync(marker)?fs.readFileSync(marker,"utf8"):"";
- const required=text.includes("item 13 changes again (step 3)")?"L1 STEP 3 DONE":"L1 STEP 2 DONE";
- const stub13=process.env.ITEM13_PHASE==="step1"||(process.env.ITEM13_PHASE!=="final"&&!text.split(/\r?\n/).some(line=>line.trim()===required));
+ require("./readiness.cjs").requireItem13();
+ const stub13=process.env.ITEM13_PHASE==="step1";
  for(const which of ["set","cash"]){
   const api=which==="set"?B:B.CASH,posts={};
   for(const n of [14,15])Object.assign(posts,S.buildItem(n,{B},null,which).meta);

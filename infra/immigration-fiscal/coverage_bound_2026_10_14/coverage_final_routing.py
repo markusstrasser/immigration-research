@@ -1,23 +1,21 @@
 """Separate final-routing price replay and the required <=0.5bn coverage check."""
 import argparse
 import copy
-import hashlib
 import json
-import re
-import subprocess
 import sys
 import time
 from pathlib import Path
 
 sys.dont_write_bytecode = True
-import numpy as np
 import coverage_bound as C
+import numpy as np
 from coverage_oct15 import BASE, digest, validate_frozen
 from dependency_manifest import validate_manifest
-from source_tables import load
 from export_pricing import constructed_prices
+from source_tables import load
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from adoption_gate import require_adopted
 from memory_budget import require_within_budget
 
 LANE, ROOT = C.LANE, C.ROOT
@@ -25,16 +23,15 @@ FINAL = LANE / "inputs/oct15_final_routing"
 HOUSE = ROOT / "infra/immigration-fiscal/within_group_distribution_2026_09_29/_cache/oct15"
 
 
-def adoption_receipt(marker):
-    C.require(marker is not None and marker.is_file(), "phase2 requires actual CASE_FINAL adoption marker")
-    text = marker.read_text()
-    match = re.match(r"CASE_FINAL: main case v8 \(key oct15\) adopted at commit ([0-9a-f]{7,40})\b", text)
-    C.require(match is not None, "CASE_FINAL is absent, a template, or not an oct15 adoption")
-    resolved = subprocess.run(["git", "--no-optional-locks", "-C", str(ROOT), "rev-parse", "--verify",
-                               match.group(1)+"^{commit}"], capture_output=True, text=True, check=False)
-    C.require(resolved.returncode == 0, "CASE_FINAL adoption commit does not resolve")
-    return {"source": str(marker.resolve()), "commit": resolved.stdout.strip(),
-            "bytes": marker.stat().st_size, "sha256": digest(marker)}
+def adoption_receipt(live_path=None):
+    """Fresh oct15 capture requires the repository's current adoption declaration."""
+    return require_adopted("oct15", live_path=live_path)
+
+
+def final_manifest():
+    """The archived JSON receipt retains its original bytes as a prose record."""
+    current = FINAL / "manifest.json"
+    return current if current.is_file() else FINAL / "manifest.md"
 
 
 def validate_observed_target_revision(previous, current, basis, coverage):
@@ -60,9 +57,9 @@ def validate_observed_target_revision(previous, current, basis, coverage):
     C.require(normalized == previous, "final refresh changed amounts or unrelated declarations")
 
 
-def freeze_final_inputs(marker, refresh=False):
-    adoption = adoption_receipt(marker)
-    receipt_path = FINAL / "manifest.json"
+def freeze_final_inputs(refresh=False):
+    adoption = adoption_receipt()
+    receipt_path = final_manifest()
     if refresh:
         validate_final_inputs()
     else:
@@ -91,26 +88,31 @@ def freeze_final_inputs(marker, refresh=False):
         archived = FINAL / ("superseded_" + digest(receipt_path)[:16])
         C.require(not archived.exists(), "final-routing superseded receipt already archived")
         archived.mkdir()
-        for name in ("manifest.json", "CASE_FINAL", "lines.json", "lines_cash.json"):
-            (archived / name).write_bytes((FINAL / name).read_bytes())
+        for source in (receipt_path, FINAL / "adoption_receipt.md", FINAL / "lines.json", FINAL / "lines_cash.json"):
+            if source.is_file():
+                (archived / source.name).write_bytes(source.read_bytes())
     FINAL.mkdir(parents=True, exist_ok=True)
     for name in files:
         (FINAL / name).write_bytes(blocks[name])
-    (FINAL / "CASE_FINAL").write_bytes(marker.read_bytes())
     (FINAL / "manifest.json").write_text(json.dumps({"vintage": "oct15_final_routing", "files": files,
                                                     "adoption": adoption}, indent=2)+"\n")
     print("final routing household snapshots frozen; actual coverage receipt PASS")
 
 
 def validate_final_inputs():
-    path = FINAL / "manifest.json"
+    path = final_manifest()
     C.require(path.exists(), "missing final routing inputs; explicit --freeze-final required")
     receipt = json.loads(path.read_text())
     C.require(receipt.get("vintage") == "oct15_final_routing"
               and set(receipt["files"]) == {"lines.json", "lines_cash.json"}, "final routing receipt shape")
-    marker = FINAL / "CASE_FINAL"
-    C.require(marker.is_file() and marker.stat().st_size == receipt["adoption"]["bytes"]
-              and digest(marker) == receipt["adoption"]["sha256"], "frozen final adoption marker changed")
+    adoption = receipt["adoption"]
+    if "sha256" in adoption:
+        marker = FINAL / "adoption_receipt.md"
+        C.require(marker.is_file() and marker.stat().st_size == adoption["bytes"]
+                  and digest(marker) == adoption["sha256"], "frozen final adoption receipt changed")
+    else:
+        C.require(adoption.get("key") == "oct15" and adoption.get("adopted") and adoption.get("decision"),
+                  "frozen final adoption receipt shape")
     for name, row in receipt["files"].items():
         file = FINAL / name
         C.require(file.is_file() and file.stat().st_size == row["bytes"] and digest(file) == row["sha256"],
@@ -204,11 +206,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--freeze-final", action="store_true")
     parser.add_argument("--refresh-final-observed-target", action="store_true")
-    parser.add_argument("--case-final", type=Path)
     args = parser.parse_args()
     C.require(not (args.freeze_final and args.refresh_final_observed_target), "choose one final source operation")
     if args.freeze_final or args.refresh_final_observed_target:
-        freeze_final_inputs(args.case_final, refresh=args.refresh_final_observed_target)
+        freeze_final_inputs(refresh=args.refresh_final_observed_target)
     else:
-        C.require(args.case_final is None, "--case-final is the explicit freeze-only input")
         compare_final_prices()

@@ -1,6 +1,10 @@
 /* G4: v8 consumer calls plus explicit v9 population, generation and line routing. */
 "use strict";
 const fs=require("fs"),path=require("path"),P=require("./package.cjs"),V=P.V8_PACKAGE;
+const adoptionProjection=JSON.parse(require("child_process").execFileSync(process.execPath,["-e",
+ 'process.stdout.write(JSON.stringify(require(process.argv[1]).V9));',path.join(__dirname,"package.cjs")],
+ {env:{...process.env,FISCAL_ADOPTION_ONLY:"1"},encoding:"utf8"}));
+if(JSON.stringify(adoptionProjection)!==JSON.stringify(P.V9))throw Error("[BLOCKED] adoption projection differs from full package exports");
 const records=[],sum=a=>a.reduce((x,y)=>x+y,0),clone=x=>JSON.parse(JSON.stringify(x));
 process.on("uncaughtExceptionMonitor",error=>{fs.mkdirSync(path.join(__dirname,"derived"),{recursive:true});fs.writeFileSync(path.join(__dirname,"derived/api_check.json"),JSON.stringify({gate:"G4",pass:false,error:String(error),checks:records.length,records},null,1)+"\n");});
 const near=(a,b,t=1e-9)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=t;

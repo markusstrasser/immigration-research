@@ -7,6 +7,7 @@
  * Module only; no outputs. */
 "use strict";
 const path = require("path"), fs = require("fs"), crypto = require("crypto");
+const {relocatedRecord}=require("../scripts/historical_paths.cjs");
 const V6 = require("./v6_split.cjs");
 const AGE = require("./age_routing.cjs");
 const { X } = V6;
@@ -21,7 +22,7 @@ const readLocal = p => JSON.parse(fs.readFileSync(path.join(__dirname,p),"utf8")
 const ROUTES = readLocal("inputs/routing.json");
 function verifyPins() {
   for (const [rel,sha] of Object.entries(readLocal("inputs/pins.json"))) {
-    const got=crypto.createHash("sha256").update(fs.readFileSync(path.join(__dirname,"..",rel))).digest("hex");
+    const got=crypto.createHash("sha256").update(fs.readFileSync(relocatedRecord(path.join(__dirname,"..",rel)))).digest("hex");
     if (got!==sha) blocked(`stale routing source ${rel}`);
   }
 }

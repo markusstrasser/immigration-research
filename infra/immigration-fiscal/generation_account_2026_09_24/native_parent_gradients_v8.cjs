@@ -1,11 +1,13 @@
 /* Exact full-case native-parent cost gradients; canonical generation files are read-only.
- * node native_parent_gradients_v8.cjs --case-final FILE [--out FILE]
- * Run only after the parent's CASE_FINAL and refreshed final input pins. */
+ * node native_parent_gradients_v8.cjs [--out FILE]
+ * Fresh execution requires oct15 to be the adopted live case. */
 "use strict";
 const fs=require("fs"),path=require("path"),crypto=require("crypto");
+const {requireAdopted}=require("../scripts/adoption_gate.cjs");
+const {relocatedRecord}=require("../scripts/historical_paths.cjs");
 const HERE=__dirname,FISCAL=path.dirname(HERE),ROOT=path.resolve(HERE,"../../..");
 const GENS=["G1","G2","G3plus"],KINDS=["g3_rate","later"],ENDS={low:16,high:11};
-const clone=x=>JSON.parse(JSON.stringify(x)),sha=f=>crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
+const clone=x=>JSON.parse(JSON.stringify(x)),sha=f=>crypto.createHash("sha256").update(fs.readFileSync(relocatedRecord(f))).digest("hex");
 const blocked=s=>{throw Error(`[BLOCKED] native parent gradients: ${s}`);};
 function direction(total,count) {
  if(!Number.isFinite(total)||!Number.isFinite(count)||total<=0||count<0||count>total+1e-9)blocked("invalid source band count");
@@ -23,8 +25,8 @@ function requireConservation(values,tolerance=1e-9) {
  if(!GENS.every(g=>Number.isFinite(values[g]))||Math.abs(values.G1)>=tolerance
     ||Math.abs(values.G2+values.G3plus)>=tolerance)blocked(`nonconserving derivative ${JSON.stringify(values)}`);
 }
-function run({caseFinal,out=path.join(HERE,"derived/native_parent_gradients_oct15.json")}) {
- if(!caseFinal||!fs.existsSync(caseFinal))blocked("CASE_FINAL marker required before evaluating final case");
+function run({out=path.join(HERE,"derived/native_parent_gradients_oct15.json"),adoptionOptions}={}) {
+ const adoption=requireAdopted("oct15",adoptionOptions);
  const V8=require("./v8_split.cjs"),{Engine,MODEL}=V8.X;
  const load=rel=>JSON.parse(fs.readFileSync(path.join(HERE,rel),"utf8"));
  const measurement=load("inputs/minor_parent_measurement_oct15.json");
@@ -35,7 +37,7 @@ function run({caseFinal,out=path.join(HERE,"derived/native_parent_gradients_oct1
  if(KINDS.some(k=>counts[k].length!==17))blocked("expected 17 source age bands per rate class");
  const gates=[];
  const gate=(name,ok,detail)=>{if(!ok)blocked(`${name}: ${JSON.stringify(detail)}`);gates.push({name,passed:true,detail});};
- const known=new Set([__filename,path.resolve(caseFinal),path.join(HERE,"inputs/minor_parent_measurement_oct15.json"),
+ const known=new Set([__filename,path.join(FISCAL,"live_case.json"),path.join(HERE,"inputs/minor_parent_measurement_oct15.json"),
    path.join(HERE,"inputs/pins.json"),path.join(HERE,"inputs/routing.json"),path.join(HERE,"derived/generation_state_indexes.json")]);
  for(const rel of Object.keys(load("inputs/pins.json")))known.add(path.join(FISCAL,rel));
  for(const g of GENS)known.add(path.join(HERE,`derived/model_b_${g}.json`));
@@ -102,7 +104,7 @@ function run({caseFinal,out=path.join(HERE,"derived/native_parent_gradients_oct1
    const f=path.isAbsolute(rel)?rel:path.join(ROOT,rel);return sha(f)===h;
  }));
  const output={contract:"oct15 native parent full-case gradients v1",provenance:"[WORKTREE INPUT] exact final input hashes",
-   convention:"b",historical_minor_share:minorScale,fixes,production_rule:"aumann_shapley",source_sha256:hashes(),sets,gates,
+   convention:"b",adoption,historical_minor_share:minorScale,fixes,production_rule:"aumann_shapley",source_sha256:hashes(),sets,gates,
    uncertainty_rule:"For each source band: fixed central total people multiplied by replicate G2-equivalents / replicate persons; these full-case gradients price the resulting parent-fraction variation jointly with the other actual SDR stacks. This tool does not reconstruct SE or use convention-a household unit prices."};
  fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(output,null,1)+"\n");
  console.log(`native parent gradients: ${Object.values(sets).reduce((n,s)=>n+s.gradients.length,0)} band/set rows; ${gates.length} gates; ${out}`);
@@ -111,8 +113,8 @@ function run({caseFinal,out=path.join(HERE,"derived/native_parent_gradients_oct1
 if(require.main===module) {
  const args=process.argv.slice(2),options={};
  for(let i=0;i<args.length;i+=2) {
-   if(!["--case-final","--out"].includes(args[i])||!args[i+1])blocked("usage: --case-final FILE [--out FILE]");
-   options[args[i]==="--case-final"?"caseFinal":"out"]=path.resolve(args[i+1]);
+   if(args[i]!=="--out"||!args[i+1])blocked("usage: [--out FILE]");
+   options.out=path.resolve(args[i+1]);
  }run(options);
 }
 module.exports={direction,perturb,slope,requireConservation,run};

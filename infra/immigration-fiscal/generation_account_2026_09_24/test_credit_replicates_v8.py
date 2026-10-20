@@ -4,11 +4,12 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import json
+
+import credit_routing as C
 import numpy as np
 import pandas as pd
 import pytest
-import json
-import credit_routing as C
 
 
 def test_actual_age_ownership_keeps_adult_student_and_minor_distinct():
@@ -86,11 +87,19 @@ def test_cache_rejects_old_schema_corruption_and_missing_real_replicates(tmp_pat
     assert not C.export_cache_valid(saved,{})  # Even a fresh SHA cannot admit 160-only data.
 
 
-def test_source_contract_rejects_changed_source_algorithm(monkeypatch):
-    directory = C.CACHE/"source_replay"
-    metadata = json.loads((directory/"statistics.json").read_text())
-    pins = C.pins()
+def test_source_contract_rejects_changed_source_algorithm(tmp_path, monkeypatch):
+    directory = tmp_path
+    pins = {"generation_account_2026_09_24/credit_routing.py": "recorded-producer", "source.py": "source-bytes"}
+    metadata = {"pins": pins, "data_sha256": "recorded-statistics"}
+    source = C.ast.parse(Path(C.__file__).read_text())
+    route = next(n for n in source.body if isinstance(n, C.ast.FunctionDef) and n.name == "route_r6")
+    contract = {"producer_sha256": pins["generation_account_2026_09_24/credit_routing.py"],
+                "data_sha256": metadata["data_sha256"], "source_functions": ["route_r6"],
+                "source_constants": {"GENS": list(C.GENS), "AGE_CELLS": list(C.AGE_CELLS), "REPLICATE_VERSION": C.REPLICATE_VERSION},
+                "source_algorithms_sha256": C.hashlib.sha256(C.ast.dump(route, include_attributes=False).encode()).hexdigest()}
+    (directory / "algorithm_contract.json").write_text(json.dumps(contract))
     assert C.source_algorithm_cache_valid(metadata,pins,directory)
+    assert not C.source_algorithm_cache_valid(metadata, {**pins, "source.py": "changed-source"}, directory)
     parse = C.ast.parse
     def changed(text):
         tree = parse(text)

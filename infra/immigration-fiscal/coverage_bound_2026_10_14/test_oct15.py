@@ -261,13 +261,40 @@ def test_final_calibration_cannot_erase_nonzero_added_state_amount(tmp_path, mon
         observed_snapshot(s)
 
 
-def test_final_freeze_cannot_use_missing_or_template_adoption_marker(tmp_path):
-    with pytest.raises(SystemExit, match="actual CASE_FINAL"):
-        R.adoption_receipt(tmp_path / "CASE_FINAL")
-    marker = tmp_path / "CASE_FINAL"
-    marker.write_text("CASE_FINAL: main case v8 (key oct15) adopted at commit FILL_COMMIT (FILL_TIME JST).")
-    with pytest.raises(SystemExit, match="template"):
-        R.adoption_receipt(marker)
+def test_final_freeze_requires_matching_live_key_and_adopted_package(tmp_path):
+    lane = tmp_path / "case"
+    lane.mkdir()
+    live = tmp_path / "live_case.json"
+    declaration = dict(key="oct16", lane="case", adopted="2026-10-20", decision="decisions/test.md")
+    live.write_text(json.dumps(declaration))
+    with pytest.raises(SystemExit, match="live key oct16 does not match consumed case oct15"):
+        R.adoption_receipt(live)
+    declaration["key"] = "oct15"
+    live.write_text(json.dumps(declaration))
+    (lane / "package.cjs").write_text('module.exports={STATUS:"candidate"};')
+    with pytest.raises(SystemExit, match="STATUS is not adopted"):
+        R.adoption_receipt(live)
+    (lane / "package.cjs").write_text('module.exports={STATUS:"adopted",ADOPTED:"2026-10-20",DECISION:"decisions/test.md",CASE_KEY:"oct15",LANE:"case"};')
+    assert R.adoption_receipt(live) == dict(key="oct15", adopted="2026-10-20", decision="decisions/test.md")
+
+
+def test_frozen_final_record_preserves_captured_authority_without_live_gate(tmp_path, monkeypatch):
+    monkeypatch.setattr(R, "FINAL", tmp_path)
+    def no_fresh_adoption(*args, **kwargs):
+        raise AssertionError("frozen history must not consult current adoption")
+    monkeypatch.setattr(R, "require_adopted", no_fresh_adoption)
+    files = {}
+    for name in ("lines.json", "lines_cash.json", "adoption_receipt.md"):
+        file = tmp_path / name
+        file.write_text("captured historical bytes\n")
+        files[name] = dict(bytes=file.stat().st_size, sha256=R.digest(file))
+    receipt = dict(vintage="oct15_final_routing", files={k: files[k] for k in ("lines.json", "lines_cash.json")},
+                   adoption=files["adoption_receipt.md"])
+    (tmp_path / "manifest.md").write_text(json.dumps(receipt))
+    R.validate_final_inputs()
+    (tmp_path / "adoption_receipt.md").write_text("changed captured bytes\n")
+    with pytest.raises(SystemExit, match="frozen final adoption receipt changed"):
+        R.validate_final_inputs()
 
 
 def test_signed_age_bands_close_and_added_stays_separate():

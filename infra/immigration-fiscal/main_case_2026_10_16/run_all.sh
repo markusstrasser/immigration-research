@@ -6,6 +6,7 @@ export NODE_OPTIONS="--max-old-space-size=1536"
 # Runtime dependencies invoked by producers below (also the rerun inventory):
 # memory_for_pid.py via memory_guard.cjs; coverage_snapshot.cjs via coverage_oct16.py.
 mkdir -p "$LANE/_cache"
+node "$LANE/test_readiness.cjs"
 node "$LANE/source_check.cjs"
 uv run --no-project python3 "$LANE/market_check.py"
 uv run --no-project python3 infra/immigration-fiscal/coverage_bound_2026_10_14/coverage_oct16.py

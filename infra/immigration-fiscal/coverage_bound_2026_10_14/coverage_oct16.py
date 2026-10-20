@@ -347,7 +347,8 @@ def main():
         "passthrough_source_tax_r5_2026_10_15/derived/item.json", "one_rate_2026_10_15/derived/rates.json",
         "spending_keys_r5_2026_10_15/items.cjs", "count_composition_r5_2026_10_15/measure.py",
         "count_composition_r5_2026_10_15/tenure.py", "count_composition_r5_2026_10_15/derived/native_person_factors.parquet",
-        "main_case_2026_10_16/coverage_snapshot.cjs", "coverage_bound_2026_10_14/coverage_oct16.py")]
+        "main_case_2026_10_16/coverage_snapshot.cjs", "main_case_2026_10_16/readiness.cjs",
+        "main_case_2026_10_16/inputs/item13_ready.json", "coverage_bound_2026_10_14/coverage_oct16.py")]
     result["source_sha256"] = {str(p.relative_to(FISCAL)): digest(p) for p in dependencies}
     target = LANE / "derived/coverage_bound_oct16.json"
     temporary = target.with_suffix(".json.tmp")
