@@ -3,7 +3,7 @@
 # Usage, from the repository root: bash infra/immigration-fiscal/validation_verify_2026_09_28/rerun_lanes.sh <key>
 # Keys: audit schools medical fiscal mariel. Commands are the lanes' documented ones (README or RESULT),
 # with `-p no:cacheprovider` added to pytest so a test run writes nothing into the lane. uv uses its
-# default cache (the /private/tmp cache pins were dropped 2026-09-28).
+# default cache (the old temporary cache pins were dropped 2026-09-28).
 set -uo pipefail
 L=infra/immigration-fiscal
 R="uv run --no-project python3 scripts/rerun_lane.py"
