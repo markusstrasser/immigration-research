@@ -26,7 +26,7 @@ its appropriation sits inside OMB function 750, which item R charges per capita.
 expanded partial account, not a marginal effect of immigration and not a lifetime value.
 [SOURCE: [repaired calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md)]
 
-It is not the main case ($366–456bn to other residents), not the
+It is not the main case ($368–437bn to other residents), not the
 generation-vs-white gaps, and not the later annual vintages (−$234bn finance refresh,
 −$259bn enrollment correction). The FAQ's
 [combining rules](immigration-objections-faq-2026-09-21.md#before-combining-numbers-from-different-entries)
@@ -110,8 +110,9 @@ settings are admitted, and it has three layers, each its own object:
 
 1. **Conventions.** The practitioner hull, each arm tagged with the class of modeler that
    runs it; the design hull disclosed beside it; dropped cells listed with the reason.
-   The main case already reports this way ($366–456bn on long-run budget responses,
-   beside $294–352bn on CBO's first-year response, with its other horizon rules held fixed).
+   The main case already reports this way ($368–437bn on long-run budget responses,
+   beside $314–371bn with year-one response coefficients applied to the account, holding its other rules fixed
+   except the declared horizon rules; this is not next year's cash saving).
 2. **Parameters inside a convention.** One-at-a-time moves at source-given alternatives,
    which is what the table in §2 is, with the replicate SE beside each so the reader
    sees that conventions dominate sampling by an order of magnitude.
@@ -178,6 +179,8 @@ state/estimates.csv, school_estimates.csv] [DATA: 2022 Census of Governments Tab
 `derived/audit.json`, `test_recut.py`]
 
 ## Revisions
+
+- 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 
 - 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md)): the living case figures and source pointers follow the completed reporting union and central Census coverage correction, with domestic-source corporate taxes and the mixed-unit stayers recomputed. Concept affected: the live annual account and its population.
 

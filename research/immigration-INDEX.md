@@ -60,34 +60,44 @@ No exact national total is identified by the examined files; this is not a claim
 that such a total is impossible in principle.
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
-**Adopted main case (October 15): $366–456bn/year conditional net cost to other US residents**
-($365.8–456.0bn, $8.1–10.1k per member of the 45.23M-person lineage; [lane](../infra/immigration-fiscal/main_case_2026_10_15/RESULT.md),
-[decision](../decisions/2026-10-15-main-case-v8.md), ladder 304). Both ends use the personal allocation. Its newest items:
-- remove US tax on foreign-source corporate income from the taxes on capital serving US jobs (item 9);
-- complete the reporting union and count its observed nonreporting children, adding 0.52M people (item 10);
-- recompute the taxes, benefits and spending of non-members who remain in mixed units (item 11), replacing the
-  separate child-credit and residual-tax corrections;
-- include 1.96M people the Census misses (item 12), with zero additional use-keyed justice charges because the
-  administrative numerators already include them.
+**Adopted main case (October 20): $368–437bn/year conditional net cost to other US residents**
+($368.0–436.6bn, $8,196–9,722 per member of the 44.90M-person lineage; [lane](../infra/immigration-fiscal/main_case_2026_10_16/RESULT.md),
+[decision](../decisions/2026-10-16-main-case-v9.md), ladder 311). Both ends use the personal allocation. It prices
+income-year 2024 under 2024 tax and benefit rules, with Social Security and Part A promises at what current law
+can pay (2026 Trustees). A complete present-law total is unmeasured. Its newest items:
 
-[CALCULATION: `main_case_2026_10_15/derived/summary.json`, `v8`; the case retains current-law payable pensions,
-retiree health on accrual, measured descendant ages, and education and user-fee keys.]
+- hold military service costs at zero long-run response under equal-cost replacement, retaining the means-tested
+  veterans' pension and restoring military costs in the first-year reading (item 13);
+- key retirement administration by Social Security caseloads, retaining the unmeasured remainder's proxy (item 14);
+- split public colleges' response by budget block, with tuition and Pell on their own keys (item 15);
+- calibrate native Mexican-origin minors to ACS counts while preserving CPS Hispanic totals, and price the missed
+  people's PES tenure at fixed counts, jointly (items 16–17);
+- exclude food-at-home and SNAP purchases under the household taxable-basket proxy (item 18);
+- charge public capital at the Trustees' flat-equivalent rate, the path pricing the Social Security and Part A
+  promises; imported employee pension and retiree-health normal costs retain their booked valuations (item 20);
+- key the non-VA health residual by other-federal and state/local payments, with pooled ethnic translation; its
+  program/exposure bridge remains unresolved and its alternative keys stay beside (item 21).
+
+[CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`; the case retains the completed reporting union,
+mixed-unit stayers, Census coverage, domestic-source corporate taxes, measured descendant ages and use keys.]
 Item 6's low end assumes mobile capital leaves the US tax base while its owners earn the same worldwide after-tax
 return elsewhere; its high end moves only the normal return. Pure rents' share and removal response are unmeasured
 ([lane](../infra/immigration-fiscal/corporate_rents_2026_10_14/RESULT.md)).
-Counting benefits when paid, the cash set is $281.8–371.9bn ($6.2–8.2k per member); public employees' pensions and
+Counting benefits when paid, the cash set is $284.4–352.9bn ($6,334–7,860 per member of the 44.90M-person lineage); public employees' pensions and
 retiree health stay at their accrual cost in both sets, and the capital return stays in.
 
 The 3.10M descendants who no longer report Mexican origin are counted as whole people. At the case's responses,
-their accounting part is $24.0 / $30.0bn, or $7,737 / 9,667 per descendant, against $8,113 / 10,112 per reporting
+their accounting part is $22.3 / $26.6bn, or $7,187 / 8,569 per descendant, against $8,271 / 9,808 per reporting
 member (coverage included). This split holds the mixed-unit construction and coverage fixed; it is not a separate
 completed-union removal. Of the original modelled descendants, the 1.09M lost after the third generation cost
-$12,414 / 14,147 each, and the 1.94M lost at the third-generation rate cost $4,821 / 6,885 each. The latter blend
+$11,996 / 13,151 each, and the 1.94M lost at the third-generation rate cost $4,190 / 5,723 each. The latter blend
 identifiers' and third-plus whites' prices at the same ages with C3 = 0.557 (SE 0.246); item 10 adds observed
-nonreporting children at their own ages [ASSUMPTION]. [CALCULATION: `main_case_2026_10_15/derived/lineage_addition.json`, `v8`]
-How identity loss continues past the third generation is modelled: count arms a and c give $351.7–439.7bn and
-$379.9–472.3bn; C3 ± 1 SE gives $361.6–460.1bn. Counted by each person's share of Mexican-immigrant ancestry
-instead of whole, the lineage costs $238.3–366.2bn [FRAMING-SENSITIVE]; that reading stays beside the headline
+nonreporting children at their own ages [ASSUMPTION]. [CALCULATION: `main_case_2026_10_16/derived/lineage_addition.json`, `v9`]
+How identity loss continues past the third generation is modelled: count arms a and c give $354.4–421.5bn and
+$381.6–451.6bn; C3 ± 1 SE gives $363.8–440.7bn. Counted by each person's share of Mexican-immigrant ancestry
+instead of whole, the lineage costs $248.7–297.4bn with G4+ at nothing, or $298.8–355.7bn with G4+ at its bound
+[FRAMING-SENSITIVE]. These are two structural readings; item 11 is weighted by each reading's generation shares.
+They stay beside the headline
 ([FAQ entry 19](immigration-objections-faq-2026-09-21.md)). Each companion carries coverage under its declared price rule.
 
 The label "cost to other residents" assumes that other residents carry the lineage's whole share of the federal
@@ -102,26 +112,38 @@ state and local budgets, which balance each year, so no federal fix shares it.
 Census coverage is inside the headline. The Vintage 2024 controls preserve the Census Hispanic total, while
 redistributing ages; they do not absorb the all-age undercount. The correction covers the Mexico-born too.
 It uses PES age-sex rates from age 5 and the Demographic Analysis middle residual under 5 for members alive in
-April 2020; later births, arrivals and nonreporting descendants take zero. It adds $8.8 / $12.6bn on accrual,
-$0.8 / $4.6bn counting benefits when paid. Those are constructed prices and people, not observed missing-person
-records ([lane](../infra/immigration-fiscal/coverage_bound_2026_10_14/RESULT.md), ladder 306).
+April 2020; later births, arrivals and nonreporting descendants take zero. At the calibrated count and joint tenure
+prices it adds $12.7 / $15.6bn on accrual, $5.1 / $7.9bn counting benefits when paid. Those are constructed prices and
+people, not observed missing-person records. The calibrated coverage count is 1.95M.
+[CALCULATION: `main_case_2026_10_16/derived/corrections{,_cash}.json`, `meta.coverage.by_end`, plus
+`coverage_bound_2026_10_14/derived/line_parts_oct16_{set,cash}.csv`, `joint.coverage_change_bn`;
+[lane](../infra/immigration-fiscal/coverage_bound_2026_10_14/RESULT.md), ladder 306.]
 Out of scope: the cost of removing a person, and an account of all unauthorized immigrants of every origin.
 
-Beside the headline, the school low side at the within-district 0.836 is $335–428bn. The shared allocation,
-excluding the stayers' removal consequences, is $323.2–412.3bn for distribution inside the group. A typical budget
+Beside the headline, the school low side at the within-district 0.836 is $338–410bn. The household-sharing allocation
+across members and nonmembers, excluding item 11, is $322.8–390.5bn; it is a distribution reading, not the removal total. A typical budget
 year instead of 2024 (the average of 2015–2019 and 2022–2023, replayed on the back-cast) is 2–13% less per member,
-$318–434bn at today's size ([FAQ entry 18](immigration-objections-faq-2026-09-21.md)). The outer range is $287–511bn
-($329–479bn in quadrature). With services fixed, the personal readings span a $64.0bn gain to a $72.0bn cost;
-if enterprises and their capital move with services too, an $80.9bn gain to a $49.1bn cost. The least favourable
-reading remains a cost at every nonnegative service response. The favourable reading breaks even at 10.0% of
-assigned service costs, or 13.4% with enterprises moving with services.
+$318–434bn at today's size ([FAQ entry 18](immigration-objections-faq-2026-09-21.md)). The outer range is $288–490bn
+($329–479bn in quadrature). With services fixed, the personal readings span a $52.8bn gain to a $74.3bn cost;
+if enterprises and their capital move with services too, a $70.1bn gain to a $56.9bn cost. The least favourable
+reading remains a cost at every nonnegative service response. The favourable reading breaks even at 7.6% of
+assigned service costs, or 11.2% with enterprises moving with services.
 The capital return is an imputed resource cost and never enters a debt flow, and rental assistance moves who
 loses, not the budget ([audit](immigration-conceptual-audit-2026-09-27.md) §1).
-[CALCULATION: `main_case_2026_10_15/derived/summary.json`, `v8.companions`, `range`; `derived/sign_reversal.csv`, `oct15_low/high`]
-Other whole-case variants, holding the remaining rules fixed: public capital at 7%, $461.2–539.7bn; enterprises
-out, $348.6–432.6bn. Land remains a pricing gap, with no current v8 land total claimed.
-[CALCULATION: `main_case_2026_10_15/derived/main_case_bands.csv`, `long_run_non_school_full`, variants `capital_return_at_7pct`, `enterprises_out_option_a`]
-The consumer lanes re-run on this case under the key `oct15`.
+[CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9.companions`, `range`; `derived/sign_reversal.csv`, `oct16_low/high`]
+Holding the remaining case rules fixed, public capital at 7% gives $464.2–542.0bn. The enterprises-out variant has
+not been repriced on this case; land remains a pricing gap.
+[CALCULATION: `main_case_2026_10_16/derived/main_case_bands.csv`, `long_run_non_school_full`, variant `one_rate_capital_7pct`; `summary.json`, `v9.historical_rows`]
+The consumer lanes are being moved to this case under the key `oct16`.
+
+Applying year-one response coefficients to this account gives $313.8–370.8bn, or $230.2–287.2bn counting benefits
+when paid. Military costs retain response 1 before replacement veterans exist; this is not next year's cash saving.
+The health-residual population, no-translation and plain-pooled keys give $361.7–430.2bn, $361.9–430.4bn and
+$375.2–443.7bn respectively, holding the rest of the case fixed. These are construction sensitivities, not error bounds.
+Item 19's pass-through source taxes and W09's corporate compliance/legal-form arm stay beside together; their
+naive frozen pair gives $368.0–437.1bn and is not jointly solved.
+[CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9.companions.first_year`, `v9.beside.item6_legal_form_pair`;
+`derived/main_case_bands.csv`, `health_residual_key_population/no_ethnicity/plain_pooled`]
 
 Inside the group, roughly one in five to one in six of the 43.27M members located or placed in observed households lives in a household that pays more than it costs: 19.3% / 16.1% with every line allocated, 26.2% / 25.1% counting only services a household uses itself and its own pension accrual. The 1.96M coverage people remain unlocated and enter no household classification. The modelled descendants, whom the survey cannot see, are placed in the households of identified third-plus members of their own ages, band by band. Each worker carries the accrual that the case's pension model gives their on-books payroll taxes, and the payroll taxes follow on-books pay; spread per payroll-tax dollar instead, the shares are 18.7% / 15.0% and 26.5% / 25.2%. The accrual no longer charges retirees their current benefits, so working households cross zero and retiree households get cheaper. At the low end the share rises with the head's education (9% below high school, 40% with a BA or more) and generation (15% Mexico-born, 25% third-plus). The costliest tenth of households carries 52–61% of the net cost. Households headed by an unauthorized immigrant pay their way a little more often than those headed by a legal immigrant, 15.9% against 14.0%, only because the case credits the unauthorized with a tenth of the pension their taxes earn; with full claims the order reverses, 12.1% against 15.8% (ladder 268, [lane](../infra/immigration-fiscal/within_group_distribution_2026_09_29/RESULT.md)).
 
@@ -150,7 +172,8 @@ when paid ([lane](../infra/immigration-fiscal/break_conditions_2026_09_29/RESULT
 | October 5 | $390.3–461.2bn | the 3.04M descendants who no longer report Mexican origin, counted as whole people (a 42.75M lineage); cash set $307.4–383.4bn | [decision](../decisions/2026-10-05-main-case-v5.md), ladder 281 |
 | October 7 | $389.1–461.5bn | the 2026 Trustees on separate funds, retiree health on accrual, the added people at their measured ages, user fees and the education keys; cash set $307.4–385.4bn | [decision](../decisions/2026-10-07-main-case-v6.md), ladder 295 |
 | October 14 | $339.6–423.6bn | personal allocation at both ends, mixed-unit child credits, taxes on job capital, the added whites' income-tax keys and the row-4 frame; cash set $264.4–348.5bn | [decision](../decisions/2026-10-14-main-case-v7.md), ladder 299 |
-| October 15 (current; corrected the same day) | $365.8–456.0bn | foreign-source corporate tax removed, union completed, non-member stayers recomputed, Census coverage central; the correction removes duplicated use-keyed justice charges; cash set $281.8–371.9bn | [decision](../decisions/2026-10-15-main-case-v8.md), ladder 304 |
+| October 15 (corrected the same day) | $365.8–456.0bn | foreign-source corporate tax removed, union completed, non-member stayers recomputed, Census coverage central; the correction removes duplicated use-keyed justice charges; cash set $281.8–371.9bn | [decision](../decisions/2026-10-15-main-case-v8.md), ladder 304 |
+| October 20 (current) | $368.0–436.6bn | military service costs fixed under equal-cost replacement, retirement administration and college responses split, native minors calibrated and coverage tenure priced jointly, household taxable basket, one Trustees capital rate, non-VA health residual keyed by its payers; cash set $284.4–352.9bn; item 19 and W09 beside | [decision](../decisions/2026-10-16-main-case-v9.md), ladder 311–318 |
 
 [By generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224,
 [lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md)), all three Mexican-origin generations are
@@ -297,7 +320,7 @@ figure. The defects are real and run both ways; the main case carries every corr
   12.25%). The education key over-weighted K–12.
 - **Tax records that overstate the group's taxes.** The Census tax model assumes every respondent is
   a legal, fully compliant filer. The CPS fill-ins give the group too much income (ladder 208);
-  leaving them in would lower the main case by $9.6–9.9bn. Federal tax the CPS misses at the top was
+  the fill-in-off companion has not been repriced on the current case. Federal tax the CPS misses at the top was
   spread by CPS liability. Recounting the Mexico-born at the ACS level offsets part of this: ASEC 2025
   counts about 1.2M too many (ladder 209).
 
@@ -770,7 +793,7 @@ If the question is:
 2. `Is low-skill immigration good or bad for natives?` The [complete account](immigration-complete-annual-account-2026-09-20.md) and its [generation split](immigration-adopted-account-by-generation-2026-09-25.md), [who wins and who loses](immigration-winners-and-losers-2026-09-25.md), and the mechanisms in `immigration-second-order-effects-2026-09-05.md`. `immigration-economist-effects-matrix.md` (April) is for how economists frame the question, not for numbers.
 3. `Crime?` Start with the [custody and crime measurement rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md); then `immigration-conduct-denominators-2026-09-05.md` and `immigration-crime-race-ethnicity-2026-09-05.md` for the corrected rates, `immigration-crime-statistics-bias-mechanisms-2026-09-16.md` for how the statistics mislead, `immigration-generational-crime-mechanisms-2026-09-16.md` for first versus second generation, and FAQ entry 12 for the priced costs. `immigration-crime-frontier-2026-06-25.md` and `immigration-crime-rates-unauthorized-vs-native-born.md` carry dated revisions.
 4. `What data do we have locally?` Start with `immigration-dataset-register.md`, then `immigration-recent-cohort-data-availability-2026-09-05.md`, then `../sources/immigration-fiscal/data/MANIFEST.md`.
-5. `Can we model this ourselves?` Start with `../infra/immigration-fiscal/REPRODUCTION_INPUTS.md`, `immigration-friend-reproduce-guide.md` and `../infra/immigration-fiscal/reproduce.sh`; the current model is the main-case lane, `../infra/immigration-fiscal/main_case_2026_10_15/` (`main_case.cjs`, `package.cjs`). `immigration-lifetime-fiscal-data-stack-2026-04-10.md` is the April design note.
+5. `Can we model this ourselves?` Start with `../infra/immigration-fiscal/REPRODUCTION_INPUTS.md`, `immigration-friend-reproduce-guide.md` and `../infra/immigration-fiscal/reproduce.sh`; the current model is the main-case lane, `../infra/immigration-fiscal/main_case_2026_10_16/` (`main_case.cjs`, `package.cjs`). `immigration-lifetime-fiscal-data-stack-2026-04-10.md` is the April design note.
 6. `What is the current `<HS` / `HS` / `some college` stock split?` Start with `immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md` (April ACS cut; the fiscal account carries the current education definitions).
 
 ## Builder specs kept, and deleted files
@@ -909,6 +932,8 @@ for an old case, that the evidence map or figures page read, or that sit in lane
 propagation stay. The live case reran IDENTICAL 46/46 and the drift audits were byte-identical after the deletion.
 
 ## Revisions
+
+- 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 
 - 2026-10-15 (main case v8, [decision](../decisions/2026-10-15-main-case-v8.md), including its same-day correction): the case and committed phase-1 consumers use `oct15`, including Census coverage, the completed union and mixed-unit stayers. The social pairing follows round 3 with both budget sides central and the fiscal low end on the case. WAVE2 comparator, winners and world-ledger figures remain pending. Concept affected: the live fiscal account, population and fiscal-plus-social pairing.
 

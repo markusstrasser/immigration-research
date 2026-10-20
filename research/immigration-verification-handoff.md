@@ -72,8 +72,8 @@ What they cannot settle cleanly:
 Use first:
 
 1. `research/immigration-complete-annual-account-2026-09-20.md`: every tax and spending line, federal and
-   state-local, with the adopted main case at the top ($366–456bn a year in 2024;
-   [main-case lane](../infra/immigration-fiscal/main_case_2026_10_15/RESULT.md))
+   state-local, with the adopted main case at the top ($368–437bn a year in 2024;
+   [main-case lane](../infra/immigration-fiscal/main_case_2026_10_16/RESULT.md))
 2. `research/immigration-objections-faq-2026-09-21.md`: the standard objections, each routed to its executed
    table
 3. `research/immigration-yearly-lifetime-cost-repair-2026-09-19.md`: the generation ledger against third-plus
@@ -402,6 +402,8 @@ For each commentator claim:
 6. `Notes on category slip or scope inflation`
 
 ## Revisions
+
+- 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 
 - 2026-10-16 ([SIPP work-response analysis](immigration-sipp-departure-work-2026-10-16.md), `e1c8221f`): the household-transition route now leads to the executed same-person departure analysis and distinguishes completed measurement from unresolved causal transport.
 

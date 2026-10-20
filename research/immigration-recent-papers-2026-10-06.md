@@ -1,8 +1,12 @@
 # Recent papers and essays, July 2025 – October 2026: what could show the account wrong
 
-**Verdict:** No new paper overturns a measured number. One argument changes what the headline means. If the
-federal budget is eventually closed and the lineage pays its share of the fix, the cost to other residents is
-**$332.0–422.2bn** a year instead of $366–456bn under current law (corrected main case v8). That is 7–9% lower on Auerbach &
+**Verdict:** No new paper overturns a measured number. One argument changes what the headline means. Main case v9
+is **$368–437bn** a year: income-year 2024 under 2024 tax and benefit rules, with Social Security and Part A promises
+at what current law can pay (2026 Trustees). A complete present-law total is unmeasured. [CALCULATION:
+`main_case_2026_10_16/derived/summary.json`, `v9.band_bn`]
+
+If the federal budget is eventually closed and the lineage pays its share of the fix, the closure lane gives
+**$332.0–422.2bn** a year. On that lane's source account this is 7–9% lower on Auerbach &
 Gale's 2026 current-law gap, net of the Social Security and Part A shortfall the account already treats as cut, split
 by household as AEI proposes; it ranges $316–445bn across current-law gaps, sharing rules and the pooled-fund arm
 ([lane](../infra/immigration-fiscal/closed_budget_2026_10_06/RESULT.md)) [FRAMING-SENSITIVE].
@@ -72,14 +76,14 @@ permanent yearly fix and s the lineage's share of it, other residents pay G − 
 
 | Reading | Cost to other residents |
 |---|---|
-| Headline: others carry the lineage's share of the deficit (current law) | $365.8–456.0bn |
+| Headline: others carry the lineage's share of the deficit (2024 tax/benefit rules, payable Social Security/Part A promises) | $368.0–436.6bn |
 | **Central: Auerbach–Gale current law, general fund, per household** | **$332.0–422.2bn** |
 | Current law: two gaps, six sharing rules, both trust-fund readings | $315.9–445.3bn |
 | Current policy: three gaps, six rules | $248.5–445.8bn |
 | AEI's 2013 gap as published, per person | $198.7–288.9bn |
 | Excess over as many average residents, under the case's rules (ladder 269) | $374.0–395.8bn |
 
-The current-law headline stands as the statement about current law: current law schedules no closure, the
+The headline leaves the national deficit open: current law schedules no rule that closes the budget. The
 NRC 1997 rule of holding debt at its 2016 share of GDP failed (FAQ 5). The debt lane identifies current-flow
 cash, resource and unclassified parts on v8, but withholds a full federal split and historical stock until the
 unlocated pieces have a financing rule (`debt_legacy_2026_09_23/derived/oct15/current_flow_contract.json`).
@@ -102,7 +106,8 @@ https://edworkingpapers.com/sites/default/files/ai25-1266.pdf]
   0.91. Over the group's 17.5% pupil share the integrated response is 0.916, −$15–16bn against the centre's
   response of 1; across the paper's specifications (−0.090 to −0.114) it is −$15–19bn [lane CALCULATION:
   (1 − 0.825^(1−0.092))/0.175 on the case's school-response component, −$28.8 / −30.5bn at 0.836]. That is inside
-  the stated low side ($335–428bn on corrected v8). The paper's exact response has not been repriced on v8.
+  the stated low side ($338–410bn on v9). The paper's exact response has not been repriced on v9.
+  [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9.companions.school_within_district.band_bn`]
 - A lane read the decline side as the account's counterfactual (−$85–119bn). That misreads "finite removal",
   which integrates one cost curve over the group's share in either direction; the account is not a removal path.
 - The decline side sharpens FAQ 11: across districts whose enrollment fell over twenty-year spans, districts kept about 70% of the money and
@@ -208,6 +213,16 @@ current law today.
   credit, the senior deduction, SALT), net of its remittance excise, so current law roughly breaks even for the
   lineage in FY2028 (−$0.3bn, −$4.2 to +$5.8bn). After six tax items lapse by tax year 2030, $5.75bn a year is taken
   from it. Beside the 2024 account, never in it.
+
+  [2026-10-20, correction: the −$0.3bn FY2028 net above covers only the priced individual-tax and eligibility
+  subset on its legacy v5 frame; the broad “current law roughly breaks even” claim is withdrawn. Outside that
+  subtotal, FY2028 JCT bonus-depreciation and domestic-research expensing scores allocated conditionally to item
+  6's source-v8 job capital raise the account's cost +$4.23 / +$1.57bn. Separately, the CY2025 historical-customs
+  sensitivity on the unchanged source-v8 household key lowers it $16.9bn at each end. These are different-year
+  objects, never summed. JCT compares January 2025 law and includes pass-through effects; the customs observation
+  does not establish FY2028 tariff policy. A complete v9 present-law total remains unmeasured. [DATA:
+  `consumption_tax_bases_r5_2026_10_15/derived/companion_summary.json`, `legacy_companion_net_taken_bn`, `rows`;
+  SOURCE: [v9 decision](../decisions/2026-10-16-main-case-v9.md#scope)]]
 
 **The stall after the second generation is not vintage, and the steeper fourth-generation loss is mostly an older
 era's.** Van Hook & Bachmeier, *Texas-Style Exclusion*, Russell Sage, November 2024 (before the window, never cited):
@@ -377,3 +392,9 @@ Staged under `sources/immigration-fiscal/data/external/stage3/`, each with `ACQU
 - 2026-10-08 (outside red team): Lee and Scafidi's decline figures are described as 20-year long differences across
   districts, not as an adjustment path after a decline; the claim that budgets shrink slowly stands, its timing does
   not. Concept affected: how fast school budgets fall with enrollment (FAQ 11).
+- 2026-10-20 ([v9 decision](../decisions/2026-10-16-main-case-v9.md#scope)): appended the correction to the post-2024-law
+  paragraph. The approximate individual-side balance does not identify the complete present-law balance;
+  conditional FY2028 business expensing and CY2025 historical customs remain separate beside objects. Concept
+  affected: the scope and year of the law comparison. The direct headline and school companion now read v9;
+  the headline names 2024 tax/benefit rules and payable pension promises. Closure and other consumer figures retain
+  their source-frame comparisons pending their separate reruns.

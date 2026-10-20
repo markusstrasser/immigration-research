@@ -25,13 +25,15 @@ RETIRED = {
     138: "replaced by 194", 155: "rating withdrawn", 164: "replaced by 198", 231: "replaced by 238",
     193: "earlier version", 219: "earlier version", 229: "earlier version", 204: "earlier version",
     239: "earlier main estimate, replaced by 275 and 281", 275: "earlier main estimate, replaced by 281",
-    281: "earlier main estimate, replaced by 295",
+    281: "earlier main estimate, replaced by 295", 299: "earlier main estimate, replaced by 304",
+    304: "earlier main estimate, replaced by 311", 301: "replaced by 305", 303: "replaced by 306",
 }
 
 # How the work was done, not what it found: never shown to readers (operator 2026-09-29: the reader
 # should not know about AI reviewers). Not counted as superseded either.
 INTERNAL_ENTRIES = {
     271: "reviewer calibration",
+    302: "tax-calculator code defect, under $1m",
 }
 
 # Most insightful first (operator 2026-10-06): the answer and its cause, then generations, who pays and the
@@ -77,7 +79,7 @@ GROUPS = [
                  why="CBO counts the federal budget only, new arrivals of all origins, and projected growth "
                      "effects. Two results can conflict only when population, period and outcome match."),
         ],
-        minor=[],
+        minor=[305, 311],
     ),
     dict(
         id="why", part="answer",
@@ -119,7 +121,7 @@ GROUPS = [
                      "each household for its children's schools. Counting only the services that a household uses "
                      "itself, the share is about {{q:household.share_convention_b|mid}}."),
         ],
-        minor=[282],
+        minor=[282, 310],
     ),
     dict(
         id="selection", part="answer",
@@ -243,7 +245,7 @@ GROUPS = [
                  text="With measured assimilation rates, a leading pro-migration model loses its Mexico result.",
                  why="Clemens and Pritchett assume faster convergence than the data show."),
         ],
-        minor=[103, 107, 109, 111, 112, 287],
+        minor=[103, 107, 109, 111, 112, 287, 307],
     ),
     dict(
         id="whopays", part="whopays",
@@ -316,7 +318,7 @@ GROUPS = [
                  text="The wage and automation designs tested here cannot find a native wage effect.",
                  why="The usual instruments lose their power after {{q:instrument.power_lost_year|value}}."),
         ],
-        minor=[],
+        minor=[300, 308, 318],
     ),
     dict(
         id="social", part="beyond",
@@ -385,7 +387,7 @@ GROUPS = [
                  text="Three effects have no price and no bound: native births, city productivity and politics.",
                  why="The designs tried here cannot separate these effects from their causes."),
         ],
-        minor=[274],
+        minor=[274, 309],
     ),
     dict(
         id="crime", part="beyond",
@@ -462,7 +464,7 @@ GROUPS = [
                       "costs add 18–27% to a prisoner-year.",
                  why="Prisons are full in 8 states and not in 22."),
         ],
-        minor=[],
+        minor=[312, 315],
     ),
     dict(
         id="conventions", part="build",
@@ -496,7 +498,7 @@ GROUPS = [
                      "not grow with the group. The sign rests on one ratio: state plans' cost of promises earned in "
                      "a year is {{q:retiree_health.cost_ratio|value}} times what they pay."),
         ],
-        minor=[],
+        minor=[313],
     ),
     dict(
         id="data", part="build",
@@ -565,7 +567,7 @@ GROUPS = [
                  text="A second survey gives the same earnings and income-tax gaps within 4%.",
                  why="ACS against CPS, with one tax calculator on both."),
         ],
-        minor=[284, 285, 298],
+        minor=[284, 285, 298, 306, 314, 316, 317],
     ),
     dict(
         id="time", part="build",

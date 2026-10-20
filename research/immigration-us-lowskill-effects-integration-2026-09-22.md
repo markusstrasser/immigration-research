@@ -151,8 +151,8 @@ smaller size (ladder 182, [lane](../infra/immigration-fiscal/ancestry_instrument
 
 **Legalization.** Borjas–Cassidy's adjusted male penalty of 4–6% is the wage change a
 legalization scenario would carry for the union's unauthorized members. The account does
-not split the union by legal status, so the number goes to the assumption explorer as a
-sensitivity, not to a term; at any plausible unauthorized earnings base it is a few billion
+not split the union by legal status, so the number remains a beside sensitivity rather than an
+adopted term; at any plausible unauthorized earnings base it is a few billion
 of taxable earnings, not tens.
 
 **School response.** Dee–Murphy find that when Hispanic enrollment falls 7–10% under local

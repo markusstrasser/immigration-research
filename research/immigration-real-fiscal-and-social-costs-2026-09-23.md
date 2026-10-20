@@ -1,9 +1,11 @@
 # Real fiscal and social costs of the Mexican-origin population to other residents
 
-**Verdict:** The complete account's corrected main case is a net cost to other residents of
-**$365.8–456.0bn a year** ([decision](../decisions/2026-10-15-main-case-v8.md), ladder 304), counting the pension
-promises members earn as they work. It covers the completed and Census-corrected 45.23M-person lineage as whole
-people. Counting benefits when paid gives $281.8–371.9bn. Justice is charged by measured custody and arrests;
+**Verdict:** The complete account's main case is a net cost to other residents of
+**$368.0–436.6bn a year** ([decision](../decisions/2026-10-16-main-case-v9.md), ladder 311), counting the pension
+promises members earn as they work. It covers the completed, calibrated and Census-corrected 44.90M-person lineage as whole
+people. Counting benefits when paid gives $284.4–352.9bn. This is income-year 2024 under 2024 tax and benefit rules,
+with Social Security and Part A promises at what current law can pay (2026 Trustees); a complete present-law total
+is unmeasured. [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`.] Justice is charged by measured custody and arrests;
 the constructed people the Census misses take zero on administrative-use justice keys already counting them.
 The raw-coded justice alternative lowers the case by $4.7bn at both ends, beside the central.
 
@@ -34,11 +36,11 @@ social costs?"
 Every number below uses the frame of the
 [complete annual account](immigration-complete-annual-account-2026-09-20.md). It measures the
 effect of the Mexican-origin residents, all generations and all schooling levels, on **all other US
-residents** in 2024: the completed and covered 45.23M-person lineage. The original reporting frame is
+residents** in 2024: the completed, calibrated and covered 44.90M-person lineage. The original reporting frame is
 39,712,493 people after audit row 4, with the nonreporting descendants, completed reporter/child block and
 constructed Census coverage added under their stated rules (ladders 304–307). The comparison is stationary,
 with and without the group, in 2024 dollars a year. The main
-case ($365.8–456.0bn; [decision](../decisions/2026-10-15-main-case-v8.md)) takes CBO's tax-incidence rules and
+case ($368.0–436.6bn; [decision](../decisions/2026-10-16-main-case-v9.md)) takes CBO's tax-incidence rules and
 budget-category rule and sets:
 
 - school spending at the full average cost per pupil (response 1); the first-year budget response
@@ -47,23 +49,28 @@ budget-category rule and sets:
   corrected for saving and remittances;
 - justice charged by use and uncompensated care keyed to uninsured use (this memo, §6);
 - long-run road, park and economic-administration responses, rental assistance at 1, every
-  government enterprise and a 2–3% real return on public capital;
+  government enterprise and the Trustees' 2.0811% flat-equivalent real return on public capital;
 - Social Security and Medicare Part A as the promises members earn as they work, at the benefits current
   law can pay on the 2026 Trustees Reports' separate OASI and DI funds (charged when paid instead, the case is
-  $281.8–371.9bn); long-run property taxes; the income-tax key matched to IRS totals; state and local prices
+  $284.4–352.9bn); long-run property taxes; the income-tax key matched to IRS totals; state and local prices
   where the group lives; roads keyed by miles driven;
 - retiree health on accrual, as pensions; user fees and education keys with source-carrier/native-cell routing
   for the completed union [ASSUMPTION]: public colleges keyed by measured use, tuition and hospital charges credited to who pays
   them, Pell keyed by the group's share and BEA's K-12 weight;
 - the 3.04M descendants who no longer report Mexican origin, counted as whole people (a
-  completed and covered 45.23M-person lineage), at their measured ages; source-key social transport
+  completed, calibrated and covered 44.90M-person lineage), at their measured ages; source-key social transport
   is stated in §7;
 - personal allocation at both ends, child credits crossing mixed units, source taxes on the capital serving
   the group's jobs (domestic-source corporate income, mining fixed, mobile capital at the same
   after-tax return elsewhere at the low end); the reporting union is completed, the stayers in mixed units
   are recomputed and Census coverage is central;
-- defense, existing interest and business subsidies at zero response by assumption; other services
-  respond proportionally.
+- defense, existing interest, business subsidies and military service costs at zero long-run response by
+  assumption, the military costs under equal-cost replacement with the means-tested pension responsive;
+- retirement administration by Social Security caseloads; colleges' response by budget block; native-minor ACS
+  calibration and coverage tenure priced jointly; food/SNAP excluded from the household taxable-basket proxy;
+- non-VA health residual by other-federal and state/local payers, with an unresolved program/exposure bridge.
+  Other services respond proportionally. Imported employee pension and retiree-health normal costs keep their
+  booked valuations. [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`.]
 
 Its per-case sampling standard error is $11.1–11.4bn, a partial approximation rather than a floor (ladder 184; [CALCULATION:
 `uncertainty_propagation_2026_09_22/derived/oct15/summary.json`, `oct15.se_independent_bn`, b5132efe]). This is not the generation ledger.
@@ -378,11 +385,11 @@ wealth-equivalent promises, life-year values, CO2 and alternate re-spending/gove
 readings, never added together. [CALCULATION: `sept24_propagation_2026_09_24/derived/oct15/real_costs_totals.json`,
 `joint_social_stack.ends`, `v8_social_environment.current_social_rows`, `variants`; 7342b331.]
 
-With enterprises and their capital moving with services, fiscal sign break-evens span −1.1% to 13.4% across the
+With enterprises and their capital moving with services, fiscal sign break-evens span −2.9% to 11.2% across the
 admitted personal readings. The least favorable remains a cost at every nonnegative common response; the most
-favorable becomes a gain below 13.4%. Holding enterprises at full response gives thresholds from −6.3% to 10.0%.
+favorable becomes a gain below 11.2%. Holding enterprises at full response gives thresholds from −7.2% to 7.6%.
 These are fiscal thresholds, not a fresh sign search for the social pairing.
-[CALCULATION: `main_case_2026_10_15/derived/sign_reversal.csv`, personal `oct15` rows.]
+[CALCULATION: `main_case_2026_10_16/derived/sign_reversal.csv`, personal `oct16` rows.]
 
 ## 7b. Benefits priced to the same standard
 
@@ -451,13 +458,15 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 | [Housing transfer](../infra/immigration-fiscal/housing_transfer_2026_09_23/RESULT.md) | 073a79d | renters +$34bn; net +$0.7–3.5bn |
 | [Uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md) | 06a42b7, corrected 575e2ee | +$7.3–10.6bn ($3.7–5.7bn inside the account) |
 | [Wage split](../infra/immigration-fiscal/wage_distribution_2026_09_23/RESULT.md) | 3afdb25 | −$66 to −$166bn / +$71 to +$163bn |
-| [Main case, corrected v8](../infra/immigration-fiscal/main_case_2026_10_15/RESULT.md) | d1a24d47 | $365.8–456.0bn; $281.8–371.9bn counting benefits when paid; completed union, stayers recomputed, domestic-source corporate taxes and central Census coverage |
+| [Main case v9](../infra/immigration-fiscal/main_case_2026_10_16/RESULT.md) | 7dfb4c66 | $368.0–436.6bn; $284.4–352.9bn counting benefits when paid; calibrated lineage, fixed military service costs, one Trustees capital rate and payer-keyed health residual |
 | [Congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md) | dd3c45a | $19.2bn ($8.0–35.3bn); $14.0 / 12.0bn once roads respond (`service_response_long_run_2026_09_27`) |
 | Totals: `sept24_propagation_2026_09_24/real_costs_totals.py` | 7342b331 | the corrected v8 joint social pairing, including both sides of the budget response |
 | [Population basis](../infra/immigration-fiscal/population_basis_2026_09_29/RESULT.md) | b7f14e7 | every row on the account's 39.7M |
 | [Income weights](../infra/immigration-fiscal/distribution_weights_2026_09_23/RESULT.md) | 60a228cc | four-channel incidence view on corrected v8: bottom four fifths −$80.3bn, top fifth +$45.4bn |
 
 ## Revisions
+
+- 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 
 - 2026-10-15 (corrected main case v8, [decision](../decisions/2026-10-15-main-case-v8.md), social round 3, 7342b331): the central coverage and completed union use the corrected fiscal case. The joint social account removes within-group harm and prices receiver boundaries, mortality, re-spending and the public-consumption counterflow together. The raw-coded fiscal low end is a beside variant. Concept affected: the fiscal-plus-social estimand and common budget response.
 
