@@ -273,3 +273,5 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/busin
 - 2026-10-21 01:27:15 JST (`date`): rerun with `_cache/stage` deleted first (cold staging), then
   `rerun_lane.py` gave IDENTICAL 12/12, exit 0. The warm rerun before it was also IDENTICAL
   12/12, exit 0.
+- 2026-10-21 01:30:26 JST (`date`): added the shared under-12 table for within_group_harm. The lines
+  and totals are unchanged. `rerun_lane.py` gave IDENTICAL 14/14, exit 0.
