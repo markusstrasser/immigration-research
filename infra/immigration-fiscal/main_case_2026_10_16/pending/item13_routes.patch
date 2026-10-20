@@ -1,0 +1,98 @@
+diff --git a/infra/immigration-fiscal/main_case_2026_10_16/package.cjs b/infra/immigration-fiscal/main_case_2026_10_16/package.cjs
+index 2030cb59..428dec33 100644
+--- a/infra/immigration-fiscal/main_case_2026_10_16/package.cjs
++++ b/infra/immigration-fiscal/main_case_2026_10_16/package.cjs
+@@ -179,7 +179,9 @@ function caseOn9(base,next,selection={},stamp,lineage){
+   const k=JSON.stringify([id,arm,which,id==="coverage_tenure"&&ids.includes("native_minor_calibration")]);
+   if(!memo.has(k)){
+    let x;
+-   if(id==="veterans_compensation"&&base!==V8){
++   // The uncached route's canonical base is v8 rebuilt from the same source bytes
++   // in a bounded runtime: canonical by construction, not a variant.
++   if(id==="veterans_compensation"&&base!==V8&&base!==V8_RUNTIME_BASE){
+     // The producer's generation builder is pinned to canonical v8 generation
+     // models. Reprice its own delivered line bridge on the variant's model;
+     // retain the canonical generation split as an explicit transport only.
+@@ -189,9 +191,19 @@ function caseOn9(base,next,selection={},stamp,lineage){
+      const runs=SPEND.endpointRuns(api)[end],rows=runs.map(({r,s})=>SPEND.deltaParts(13,x.detail,api,r,s,arm));
+      const total=meanNumbers(rows.map(a=>sum(a.map(q=>q.delta_bn)))),prior=block.by_end[end].total_bn;
+      block.by_end[end].total_bn=total;
+-     block.by_end[end].parts=rows[0].map((q,j)=>({...q,delta_bn:meanNumbers(rows.map(a=>a[j].delta_bn))}));
++     // Method means of every numeric field, as the source builder averages them.
++     block.by_end[end].parts=rows[0].map((q,j)=>{
++      if(!rows.every(a=>a[j]?.line===q.line&&a[j]?.population===q.population))fail("item13 method part schemas differ");
++      const out={...q};
++      for(const f of ["amount_bn","before_bn","after_bn","delta_bn","use_share"])if(Number.isFinite(q[f]))out[f]=meanNumbers(rows.map(a=>a[j][f]));
++      return out;
++     });
+      block.by_end[end].by_method=Object.fromEntries(runs.map((q,j)=>[q.method,{total_bn:sum(rows[j].map(p=>p.delta_bn)),parts:rows[j]}]));
++     if(block.by_end[end].by_part)block.by_end[end].by_part=Object.fromEntries(Object.keys(block.by_end[end].by_part).map(part=>[part,sum(block.by_end[end].parts.filter(p=>p.part===part).map(p=>p.delta_bn))]));
+      if(block.by_end[end].by_generation_bn)for(const g of Object.keys(block.by_end[end].by_generation_bn))block.by_end[end].by_generation_bn[g]*=prior?total/prior:0;
++     block[end]=total;
++     if(x.record?.total_bn)x.record.total_bn[end]=total;
++     if(x.record?.parts_by_line)x.record.parts_by_line[end]=clone(block.by_end[end].parts);
+     }
+     block.generation_transport="canonical source generation proportions scaled to variant totals; v9 generation evaluator supplies its own line routing";
+    }else x=item.build(ctx,arm,which);
+diff --git a/infra/immigration-fiscal/main_case_2026_10_16/run_all.sh b/infra/immigration-fiscal/main_case_2026_10_16/run_all.sh
+index 50b81d8b..7539e1e0 100644
+--- a/infra/immigration-fiscal/main_case_2026_10_16/run_all.sh
++++ b/infra/immigration-fiscal/main_case_2026_10_16/run_all.sh
+@@ -13,6 +13,7 @@ uv run --no-project python3 infra/immigration-fiscal/coverage_bound_2026_10_14/c
+ node "$LANE/coverage_check.cjs"
+ node "$LANE/rate_check.cjs"
+ node "$LANE/main_case.cjs"
++node "$LANE/test_routes.cjs"
+ node "$LANE/sign_reversal.cjs"
+ node "$LANE/lineage_addition.cjs"
+ node infra/immigration-fiscal/generation_account_2026_09_24/run_generations_v9.cjs --case oct16
+diff --git a/infra/immigration-fiscal/main_case_2026_10_16/test_routes.cjs b/infra/immigration-fiscal/main_case_2026_10_16/test_routes.cjs
+new file mode 100644
+index 00000000..c0e5052a
+--- /dev/null
++++ b/infra/immigration-fiscal/main_case_2026_10_16/test_routes.cjs
+@@ -0,0 +1,44 @@
++/* Both case routes build the committed payloads byte for byte, and a variant's item13
++ * block reports method means. 2026-10-21: the uncached route treated its canonical
++ * bounded-runtime base as a variant and printed first-method item13 parts (failure-catalog). */
++"use strict";
++const assert=require("assert"),fs=require("fs"),path=require("path"),crypto=require("crypto"),{spawnSync}=require("child_process");
++const sha=s=>crypto.createHash("sha256").update(s).digest("hex"),sum=a=>a.reduce((x,y)=>x+y,0),mean=a=>sum(a)/a.length;
++const mode=process.argv[2];
++if(mode==="--payload"){
++ const P=require("./package.cjs"),text=x=>JSON.stringify(x,null,1)+"\n";
++ const out={set:sha(text(P.correctionsPayload())),cash:sha(text(P.CASH.correctionsPayload()))};
++ require("./memory_guard.cjs").requireWithinBudget("test_routes payload "+(process.env.V9_CASE_CACHE==="0"?"uncached":"cached"));
++ console.log("ROUTE "+JSON.stringify(out));return;
++}
++if(mode==="--variant"){
++ const P=require("./package.cjs"),V=P.V8_PACKAGE,id="veterans_compensation";
++ const Q=P.caseOf(P.OCT05,V.CANDIDATE.slice(0,-1).concat(id));
++ for(const X of [Q,Q.CASH]){
++  const b=X.POST_ENGINE[id],rec=X.V9_ITEMS.find(r=>r.id===id);
++  assert.ok(b.generation_transport,"variant must take the repricing branch");
++  for(const end of ["low","high"]){
++   const e=b.by_end[end],ms=Object.values(e.by_method);
++   assert.strictEqual(b[end],e.total_bn);assert.strictEqual(rec.total_bn[end],e.total_bn);
++   assert.ok(Math.abs(e.total_bn-sum(e.parts.map(p=>p.delta_bn)))<1e-9);
++   for(const [part,v]of Object.entries(e.by_part||{}))assert.ok(Math.abs(v-sum(e.parts.filter(p=>p.part===part).map(p=>p.delta_bn)))<1e-9,part);
++   e.parts.forEach((p,j)=>{for(const f of ["amount_bn","before_bn","after_bn","delta_bn"])if(Number.isFinite(p[f]))assert.ok(Math.abs(p[f]-mean(ms.map(m=>m.parts[j][f])))<1e-9,end+"/"+p.line+"/"+f);});
++  }
++ }
++ require("./memory_guard.cjs").requireWithinBudget("test_routes variant");
++ console.log("VARIANT ok");return;
++}
++const child=(arg,env)=>{
++ const r=spawnSync(process.execPath,[__filename,arg],{env:{...process.env,...env},encoding:"utf8",maxBuffer:1<<24});
++ if(r.status!==0)throw Error("[BLOCKED] test_routes child "+arg+" "+JSON.stringify(env)+": "+(r.stderr||r.signal));
++ return r.stdout;
++};
++const derived=Object.fromEntries([["set","corrections.json"],["cash","corrections_cash.json"]].map(([k,f])=>[k,sha(fs.readFileSync(path.join(__dirname,"derived",f)))]));
++const routes={};
++for(const [name,env]of [["cached",{}],["uncached",{V9_CASE_CACHE:"0"}]]){
++ const line=child("--payload",env).split("\n").find(l=>l.startsWith("ROUTE "));
++ routes[name]=JSON.parse(line.slice(6));
++ assert.deepStrictEqual(routes[name],derived,name+" route payload differs from derived/");
++}
++assert.ok(child("--variant",{V9_CASE_CACHE:"0"}).includes("VARIANT ok"));
++console.log("PASS routes: cached and uncached payloads equal derived/ (set "+derived.set.slice(0,12)+", cash "+derived.cash.slice(0,12)+"); variant item13 parts are method means");
