@@ -12,6 +12,9 @@ import pytest
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "derived"
 FA = HERE.parent / "full_account_2026_09_20/derived"
+# These tests retain the frozen v8 implementation contract. They read its
+# historical outputs; test_oct16.py covers the live v9 signed-driver contract.
+HISTORICAL_CASES = {"oct15": "main_case_2026_10_15"}
 
 
 def _load(name):
@@ -117,7 +120,7 @@ def test_epsilon_rows_are_sensitivity_only():
         "cbo_category_lag_non_school_full"]["max_welfare_bn"] == pytest.approx(-165.12, abs=0.01)
 
 
-@pytest.mark.parametrize("name, lane", json.loads((HERE / "later_cases.json").read_text()).items())
+@pytest.mark.parametrize("name, lane", HISTORICAL_CASES.items())
 def test_later_cases_span_the_adopted_bands_at_the_payload_responses(name, lane):
     u = pd.read_csv(OUT / name / "case_uncertainty.csv")
     main = json.loads((HERE.parent / lane / "derived/summary.json").read_text())
@@ -140,7 +143,7 @@ def test_capital_case_carries_the_return_on_public_capital():
     """sept27: each specification's capital return is the case lane's (per_spec.csv, the methods' mean), the
     education derivatives give the K-12 and college returns, and the return's CPS part is positive."""
     found = 0
-    for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
+    for name, lane in HISTORICAL_CASES.items():
         u = pd.read_csv(OUT / name / "case_uncertainty.csv")
         if "capital_return_bn" not in u.columns:
             continue
@@ -162,7 +165,7 @@ def test_joint_case_carries_the_benefit_keys_in_the_cps_block():
     replicates. The primary CPS error is the joint one and the combined error uses it; the published append
     (package_se.csv beside the account's combined error) stays beside it; the uncorrected frame has no benefit term."""
     found = 0
-    for name in json.loads((HERE / "later_cases.json").read_text()):
+    for name in HISTORICAL_CASES:
         u = pd.read_csv(OUT / name / "case_uncertainty.csv")
         if "se_cps_account_keys_bn" not in u.columns:
             continue
@@ -194,7 +197,7 @@ def test_payload_production_grid_and_pension_switch():
     pf = pd.read_csv(HERE.parent / "full_account_benefits_2026_09_20/derived/benefit_scenarios.csv").query(
         "scenario_id in ['ces_0086_owner000', 'ces_0248_owner000']").set_index("normalization")
     found = 0
-    for name in json.loads((HERE / "later_cases.json").read_text()):
+    for name in HISTORICAL_CASES:
         s = pd.read_csv(OUT / name / "spec_costs.csv")
         if "production_se_uncorrected_bn" not in s.columns:
             continue
@@ -225,7 +228,7 @@ def test_lineage_component_beside_the_propagation():
     g3_b times the lineage item's slope change, whites / C3 - (g3plus_members - later) / (1 - C3), from the item's parts
     at the ends (change_at_fixed_specifications); each arm's band is its C3 line at C3."""
     found = 0
-    for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
+    for name, lane in HISTORICAL_CASES.items():
         s = json.loads((OUT / name / "summary.json").read_text())[name]
         if "lineage" not in s:
             continue
@@ -298,7 +301,7 @@ def test_item_payload_routes_every_edit_and_holds_the_pension_identities():
               "producer paired own-record replicate stack; never account key ratio",
               "producer K2 replicate stack; never account key ratio"}
     found = 0
-    for name, lane in json.loads((HERE / "later_cases.json").read_text()).items():
+    for name, lane in HISTORICAL_CASES.items():
         payload = json.loads((HERE.parent / lane / "derived/corrections.json").read_text())
         items = payload["meta"].get("items")
         s = json.loads((OUT / name / "summary.json").read_text())[name]

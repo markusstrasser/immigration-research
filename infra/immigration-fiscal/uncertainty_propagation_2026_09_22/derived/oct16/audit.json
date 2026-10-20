@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "source_hashes": true,
+  "all_specs_both_sets": true,
+  "shared_vector_sdr_1e_9": true,
+  "assembled_account_covariance_1e_8": true,
+  "unconditional_total_bound_withheld": true
+}

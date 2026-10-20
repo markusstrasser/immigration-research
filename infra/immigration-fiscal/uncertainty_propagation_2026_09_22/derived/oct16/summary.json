@@ -1,0 +1,358 @@
+{
+  "case": "oct16",
+  "sets": {
+    "set": {
+      "point_low": {
+        "value_bn": 368.0297391788806,
+        "specifications": [
+          16,
+          20
+        ]
+      },
+      "point_high": {
+        "value_bn": 436.5615271540343,
+        "specifications": [
+          11,
+          15
+        ]
+      },
+      "independent_low": {
+        "value_bn": 339.63126750978154,
+        "specifications": [
+          16,
+          20
+        ]
+      },
+      "independent_high": {
+        "value_bn": 464.31809918301474,
+        "specifications": [
+          11,
+          15
+        ]
+      },
+      "pes_correlated_low": {
+        "value_bn": 339.38549609877606,
+        "specifications": [
+          16,
+          20
+        ]
+      },
+      "pes_correlated_high": {
+        "value_bn": 464.6020327918193,
+        "specifications": [
+          11,
+          15
+        ]
+      },
+      "positive_correlation_low": {
+        "value_bn": 310.856383982713,
+        "specifications": [
+          16,
+          20
+        ]
+      },
+      "positive_correlation_high": {
+        "value_bn": 492.6705435689003,
+        "specifications": [
+          11,
+          15
+        ]
+      },
+      "specifications": 32,
+      "scope": "Measured account/benefit/job/K2/completion/mixed-unit CPS source stacks retained and joined before SDR; 13/14/15/18/20 source repricing,16/17 native161,80 joint ACS target fiscal changes;19 excluded by central meta.items, 21 own raw-driver fiscal blocks and pooled OFD/STL ratio covariance. MEPS2024 cross-payer covariance retained. Different surveys/production/school blocks combined as if independent; pooled ratios include2024 MEPS, so donor-ratio covariance is unidentified. The school correction also overlaps CPS inputs; its covariance with the joint account block is not identified here. Other payers' pooled ethnic-translation ratios remain fixed; their translator sampling is not fully measured by this item21 calculation. Item21 keeps its source white unit-band payer amounts and fee offsets fixed. PES axes have no published covariance; feasible-correlated alternative holds other block independences. Interior changed-key shapes and source10/11 endpoint stacks are disclosed conditional transports; not own-key U06. Fixed original descendant count/rules, national source masses, unlocated residuals and source policy parameters. No unconditional total bound, complete count-model uncertainty, or causal confidence interval.",
+      "pes_covariance_search": {
+        "searched": [
+          "pinned Census PES report Table C/D",
+          "count lane tenure_rates",
+          "coverage source_tables"
+        ],
+        "result": "No joint covariance matrix published in these inputs. Independent diagonal and PSD-feasible marginal-SE-only envelopes are conditional alternatives. Age/sex shape covariance is unidentified."
+      },
+      "range_se_cps_bn": [
+        10.118772187828343,
+        10.592394715790862
+      ],
+      "range_se_acs_bn": [
+        0.7516388482880384,
+        0.7751004319515454
+      ],
+      "range_se_meps_bn": [
+        9.033003246922572,
+        9.033003246922572
+      ],
+      "specification_span_bn": 68.53178797515369,
+      "within_spec_conditional_95_width_bn": [
+        55.48626751829208,
+        56.80207404127155
+      ]
+    },
+    "cash": {
+      "point_low": {
+        "value_bn": 284.39704345864885,
+        "specifications": [
+          16,
+          20
+        ]
+      },
+      "point_high": {
+        "value_bn": 352.92883143380107,
+        "specifications": [
+          11,
+          15
+        ]
+      },
+      "independent_low": {
+        "value_bn": 254.08089104601552,
+        "specifications": [
+          16,
+          20
+        ]
+      },
+      "independent_high": {
+        "value_bn": 382.51824158469555,
+        "specifications": [
+          11,
+          15
+        ]
+      },
+      "pes_correlated_low": {
+        "value_bn": 253.88411243209129,
+        "specifications": [
+          16,
+          20
+        ]
+      },
+      "pes_correlated_high": {
+        "value_bn": 382.7572749384089,
+        "specifications": [
+          11,
+          15
+        ]
+      },
+      "positive_correlation_low": {
+        "value_bn": 224.93067035554668,
+        "specifications": [
+          16,
+          20
+        ]
+      },
+      "positive_correlation_high": {
+        "value_bn": 411.2554195438484,
+        "specifications": [
+          11,
+          15
+        ]
+      },
+      "specifications": 32,
+      "scope": "Measured account/benefit/job/K2/completion/mixed-unit CPS source stacks retained and joined before SDR; 13/14/15/18/20 source repricing,16/17 native161,80 joint ACS target fiscal changes;19 excluded by central meta.items, 21 own raw-driver fiscal blocks and pooled OFD/STL ratio covariance. MEPS2024 cross-payer covariance retained. Different surveys/production/school blocks combined as if independent; pooled ratios include2024 MEPS, so donor-ratio covariance is unidentified. The school correction also overlaps CPS inputs; its covariance with the joint account block is not identified here. Other payers' pooled ethnic-translation ratios remain fixed; their translator sampling is not fully measured by this item21 calculation. Item21 keeps its source white unit-band payer amounts and fee offsets fixed. PES axes have no published covariance; feasible-correlated alternative holds other block independences. Interior changed-key shapes and source10/11 endpoint stacks are disclosed conditional transports; not own-key U06. Fixed original descendant count/rules, national source masses, unlocated residuals and source policy parameters. No unconditional total bound, complete count-model uncertainty, or causal confidence interval.",
+      "pes_covariance_search": {
+        "searched": [
+          "pinned Census PES report Table C/D",
+          "count lane tenure_rates",
+          "coverage source_tables"
+        ],
+        "result": "No joint covariance matrix published in these inputs. Independent diagonal and PSD-feasible marginal-SE-only envelopes are conditional alternatives. Age/sex shape covariance is unidentified."
+      },
+      "range_se_cps_bn": [
+        10.991636728064037,
+        11.503311915754736
+      ],
+      "range_se_acs_bn": [
+        0.752457170250435,
+        0.7759178756329645
+      ],
+      "range_se_meps_bn": [
+        9.569381186429014,
+        9.569381186429014
+      ],
+      "specification_span_bn": 68.53178797515221,
+      "within_spec_conditional_95_width_bn": [
+        59.15534942442294,
+        60.637047160277525
+      ]
+    }
+  },
+  "status": "[CONDITIONAL APPROXIMATION] assembled account estimator; not an unconditional total uncertainty bound",
+  "source_sha256": {
+    "infra/immigration-fiscal/live_case.json": "38984550688e14ed2b7b6186e05bf35a847790b155f228cc1e255227f8c2bf2b",
+    "infra/immigration-fiscal/main_case_2026_10_16/package.cjs": "594ca2830ddc2f338664eb69709fc460b2b8fee5656d2891b7e8906b7c6a44ad",
+    "infra/immigration-fiscal/main_case_2026_10_16/derived/summary.json": "0d48ffa601855c68722e1c1524c22615745ff36ef4789969923934aa6f0fc45a",
+    "infra/immigration-fiscal/main_case_2026_10_16/derived/corrections.json": "4300b06c5db6c9ddca86e59538be66a7aa6cea71bdf4ca9c13625756a711f530",
+    "infra/immigration-fiscal/main_case_2026_10_16/derived/corrections_cash.json": "bb99e06673cb09daead29be13ed81dd44eabbf74bae56c06845461e2834648f7",
+    "infra/immigration-fiscal/generation_account_2026_09_24/v9_split.cjs": "2a8f02b474fe46f0ecc634a791f93a754c959a1267600fa0bf0223a247832c46"
+  },
+  "claims": {
+    "U1_U2": "Conditional intervals, PES covariance envelopes and lineage arms are different objects.",
+    "U4": "Item21 own pooled OFD/STL ratio influences and full10-cell covariance enter monetary gradients. Other payer translators remain fixed, and same-source donor-ratio covariance is unidentified; U4 is only partly resolved.",
+    "U6": "All32 point/independent/PES-feasible/global-correlation interval owners searched in both sets. Own-key U06 remains unresolved for disclosed transported source shapes.",
+    "U7": "Common NCE plus owner/renter gradients evaluated through fixed-count tenure; full PES age/sex covariance unidentified.",
+    "U8": "Cash has a separately repriced assembled conditional interval with all32 owner search; not a complete unconditional cash uncertainty bound."
+  },
+  "lineage_companions": {
+    "lineage_arm_a": {
+      "band_bn": [
+        354.4463894448642,
+        421.50982754443135
+      ],
+      "cash_set_bn": [
+        272.82200146859566,
+        339.88543956816295
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "cash_ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "population": {
+        "without_coverage": 41718553.0723695,
+        "with_coverage": 43670313.15443158,
+        "completion": 517435.75719317,
+        "coverage": 1951760.0820620805,
+        "native_minor_calibration": -326988.2145133476,
+        "tenure": 5.820766091346741e-11
+      },
+      "coverage": "oct16 item12 central construction at its own source-kernel prices; those prices are carried at lineage/shared variants (arm_a)",
+      "count_items_16_17": "own oct16 central count/tenure kernel carried at lineage options and DA constructions; own lineage-specific or DA-specific16/17 recalibration is not claimed",
+      "item15_coverage": "central item15 response in the own oct16 coverage/count kernel"
+    },
+    "lineage_arm_c": {
+      "band_bn": [
+        381.60581060904985,
+        451.6054864971467
+      ],
+      "cash_set_bn": [
+        295.9648073268728,
+        365.9644832149696
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "cash_ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "population": {
+        "without_coverage": 44184074.935996786,
+        "with_coverage": 46135835.018058866,
+        "completion": 517435.75719317,
+        "coverage": 1951760.0820620805,
+        "native_minor_calibration": -326988.2145133476,
+        "tenure": 5.820766091346741e-11
+      },
+      "coverage": "oct16 item12 central construction at its own source-kernel prices; those prices are carried at lineage/shared variants (arm_c)",
+      "count_items_16_17": "own oct16 central count/tenure kernel carried at lineage options and DA constructions; own lineage-specific or DA-specific16/17 recalibration is not claimed",
+      "item15_coverage": "central item15 response in the own oct16 coverage/count kernel"
+    },
+    "lineage_c3_minus_se": {
+      "band_bn": [
+        372.26519321330767,
+        440.6595306520975
+      ],
+      "cash_set_bn": [
+        288.6920536987585,
+        357.08639113754737
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "cash_ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "population": {
+        "without_coverage": 42951314.00418314,
+        "with_coverage": 44903074.086245224,
+        "completion": 517435.75719317,
+        "coverage": 1951760.0820620805,
+        "native_minor_calibration": -326988.2145133476,
+        "tenure": 5.820766091346741e-11
+      },
+      "coverage": "oct16 item12 central construction at its own source-kernel prices; those prices are carried at lineage/shared variants (c3_minus_se)",
+      "count_items_16_17": "own oct16 central count/tenure kernel carried at lineage options and DA constructions; own lineage-specific or DA-specific16/17 recalibration is not claimed",
+      "item15_coverage": "central item15 response in the own oct16 coverage/count kernel"
+    },
+    "lineage_c3_plus_se": {
+      "band_bn": [
+        363.7942828108133,
+        432.4635227925246
+      ],
+      "cash_set_bn": [
+        280.10203088489743,
+        348.7712708666078
+      ],
+      "ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "cash_ends": [
+        [
+          16,
+          11
+        ],
+        [
+          16,
+          11
+        ]
+      ],
+      "population": {
+        "without_coverage": 42951314.00418314,
+        "with_coverage": 44903074.086245224,
+        "completion": 517435.75719317,
+        "coverage": 1951760.0820620805,
+        "native_minor_calibration": -326988.2145133476,
+        "tenure": 5.820766091346741e-11
+      },
+      "coverage": "oct16 item12 central construction at its own source-kernel prices; those prices are carried at lineage/shared variants (c3_plus_se)",
+      "count_items_16_17": "own oct16 central count/tenure kernel carried at lineage options and DA constructions; own lineage-specific or DA-specific16/17 recalibration is not claimed",
+      "item15_coverage": "central item15 response in the own oct16 coverage/count kernel"
+    }
+  },
+  "lineage_rule": "Authoritative whole-case count/C3 alternatives beside conditional sampling; neither 95% intervals nor covariance envelopes and not added as independent generation SEs."
+}

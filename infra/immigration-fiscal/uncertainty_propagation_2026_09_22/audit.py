@@ -348,6 +348,41 @@ def general_services():
 def main():
     global OUT
     cases = json.loads((HERE / "later_cases.json").read_text())
+    if "oct16" in cases:
+        from oct16_sampling import ROOT, digest, sdr, require
+        from source_cache import load_sources
+        live = HERE/"derived/oct16"
+        sources = load_sources()
+        targets = json.loads((live/"acs_targets.json").read_text())
+        coverage = [json.loads((live/f"coverage_replicates_{basis}.json").read_text()) for basis in ("set", "cash")]
+        pooled = json.loads((live/"item21_pooled_covariance.json").read_text())
+        for record in (sources, targets, pooled, *coverage):
+            for relative, expected in record["source_sha256"].items():
+                require(digest(ROOT/relative) == expected, "source changed after sampling: "+relative)
+        for basis in ("set", "cash"):
+            data = json.loads((live/f"sampling_{basis}.json").read_text())
+            for relative, expected in data["source_sha256"].items():
+                require(digest(ROOT/relative) == expected, "source changed after sampling: "+relative)
+            require(len(data["rows"]) == 32, "all specifications not covered")
+            for r in data["rows"]:
+                for name, field in (("cps_deviations_bn", "se_conditional_cps_bn"), ("acs_target_changes_bn", "se_acs_targets_bn")):
+                    require(abs(sdr(data[name][str(r["spec"])])-r[field]) < 1e-9, "stored monetary vector SDR differs")
+            assembled = json.loads((live/f"assembled_vectors_{basis}.json").read_text())
+            rows = pd.read_csv(live/f"case_uncertainty_{basis}.csv")
+            require(len(rows) == 32, "assembled all-spec coverage")
+            for r in rows.itertuples():
+                raw = assembled[str(r.spec)]
+                require(abs(sdr(raw["complete_cps_deviation_bn"])-r.se_cps_fiscal_keys_bn) < 1e-9,
+                        "assembled shared-vector SDR differs")
+                lhs = r.se_cps_retained_source_stacks_bn**2+r.se_cps_v9_delta_bn**2+2*r.retained_delta_covariance_bn2
+                require(abs(lhs-r.se_cps_fiscal_keys_bn**2) < 1e-8, "retained/new CPS covariance closure")
+        summary = json.loads((live/"summary.json").read_text())
+        require(summary["status"].startswith("[CONDITIONAL APPROXIMATION]"), "conditional estimator mislabeled as total error bound")
+        (live/"audit.json").write_text(json.dumps({"passed": True, "source_hashes": True,
+            "all_specs_both_sets": True, "shared_vector_sdr_1e_9": True,
+            "assembled_account_covariance_1e_8": True, "unconditional_total_bound_withheld": True}, indent=2)+"\n")
+        print("PASS oct16 assembled conditional vector/source audit")
+        return
     if len(cases) != 1:
         raise ValueError("[BLOCKED] audit needs exactly one declared live case")
     ap = argparse.ArgumentParser(description=__doc__)

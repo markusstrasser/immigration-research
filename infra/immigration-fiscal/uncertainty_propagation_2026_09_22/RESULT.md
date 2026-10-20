@@ -820,3 +820,87 @@ Corrected: band $365.791930–455.981785bn; combined independent SE $11.140832�
 **$343.367012–477.821668bn** (was $346.518129–481.110607bn); positive-correlation envelope $326.778021–494.499189bn;
 with benefit keys $342.592639–478.601779bn. Coverage CPS SDR (set) $0.425171 / 0.406972bn. The figures in the round-2
 sections above are on the uncorrected v8. Parent rerun IDENTICAL 85/85, exit 0.
+
+## 2026-10-15 19:37 JST — v9 migration preparation
+
+The computed case is now `oct16`; all earlier keyed files remain historical. Final adopted-source execution is pending the parent's CASE_FINAL marker. The source export requires the declared adopted live case, non-STUB payloads, all32 full-precision point costs in both sets at1e-9, and adopted/cash CSV bands at5e-5. No candidate failure qualifies as a final result. [CALCULATION: later_cases.json; oct16_specs.cjs]
+
+The new route retains the measured account, benefit, jobs, K2, completion and mixed-unit CPS stacks, then joins selected v9 changes on the same161 columns before computing SDR. Item15's original engine education and college fee-share inputs are fixed in this conditional model, so their161 deviations are zero; actual per-specification operating/capital dollar parts and source key declarations are exported and gated. Completion, coverage, native-count and school translator changes remain active. Items16/17 use actual native calibration factors and the source fixed-count tenure formula. The80 joint ACS target columns are priced together, preserving their cross-cell covariance. [CALCULATION: account_core.py; propagate.py; oct16_sampling.py]
+
+Coverage and native-count producers use different dollar kernels: `_cache/oct15/{basis}/pricing.npz` for original coverage and `_cache/oct15_final_routing/{basis}/pricing.npz` for16/17. Separate bounded phases preserve those vintages, prove identical ordered person/weight support, and gate final coverage monetary endpoints in both sets at1e-9. Item21 reuses its producer's distinct own-record, G3/white age-profile, state-price and health-capital callbacks through a unique read-only AST boundary before writes. Every actual capital piece must use item20's live rate; the consumer refuses to repair a mismatched case silently. Its ten pooled OFD/STL ratio influences retain full stratified-PSU covariance. The new residual donor gradient joins retained payer gradients in the60×60 MEPS2024 covariance. [CALCULATION: health21_sampling.py; pooled21.py; oct16_sampling.py]
+
+The assembled estimator is conditional. Other payer ethnic translators remain fixed; donor/pooled-ratio overlap covariance and full PES age/sex covariance remain unidentified. Endpoint source10/11 stacks and changed interior key shapes retain explicit transports. `--require-own` fails on the all-specification U06 request; the own-point and conditional interval-owner search does not establish own-key U06. Independent, marginal-SE PSD-feasible PES and global positive-correlation intervals are different calculations; lineage count/C3 alternatives stay beside them. The account uses income-year2024 under2024 tax/benefit rules, with pension promises at what current law can pay. [CALCULATION: derived/oct16/summary.json after final build; oct16_sampling.py]
+
+Reproduce the live case only, from the repository root, after adoption:
+
+```sh
+node infra/immigration-fiscal/uncertainty_propagation_2026_09_22/sept24_specs.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/propagate.py --case oct16 --coverage-pes-rule common_nce_source
+uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/audit.py
+uv run --no-project python3 -m pytest infra/immigration-fiscal/uncertainty_propagation_2026_09_22/test_uncertainty.py infra/immigration-fiscal/uncertainty_propagation_2026_09_22/test_oct16.py -q
+```
+
+Final tables are `derived/oct16/case_uncertainty.csv` (both accounting bases), `case_uncertainty_set.csv`, `case_uncertainty_cash.csv`, and `summary.json` with all-specification interval owners. `kernel_diagnostics_*` and `sampling_*` are component diagnostics. Each heavy process enforces the canonical2.5GB physical-footprint budget; timing/RSS are diagnostics. The four commands above form the `scripts/rerun_lane.py` reproduction list. Final numerical receipts and the changed-path inventory will be appended after the marker.
+
+### 2026-10-20 20:57 JST — adopted v9 execution
+
+CASE_FINAL names adoption7dfb4c66. The live route computes oct16 only. All76 tracked earlier derived files remain byte-identical to HEAD. The final principal32 values/basis and exact bands pass1e-9; printed adopted/cash CSV bands pass5e-5. Coverage, native16/joint-minus16 tenure17, direct21 dollar blocks and live20 capital valuation pass1e-9. Actual shared161 CPS columns and80 joint ACS target columns are retained. The pooled ten-cell OFD/STL ratio covariance reproduces source SEs/diagonal1e-12 and is PSD; item21 donor gradients enter the full60×60 MEPS2024 payer covariance. [CALCULATION: oct16_specs.cjs; oct16_sampling.py; pooled21.py; derived/oct16 source/vector files]
+
+| Conditional result, $bn/year | Set | Cash |
+|---|---:|---:|
+| Principal band |368.029739–436.561527|284.397043–352.928831|
+| Combined independent-block SE range |14.154660–14.490325|15.090650–15.468634|
+| Independent-block95% union |339.631268–464.318099|254.080891–382.518242|
+| Marginal-SE PSD-feasible PES upper-correlation union |339.385496–464.602033|253.884112–382.757275|
+| Positive-correlation envelope of included blocks |310.856384–492.670544|224.930670–411.255420|
+
+All32 personal specifications are searched separately in each set. Lower owners are16/20 and upper owners11/15 for points and all three interval/envelope calculations. Stable IDs now distinguish numerically coincident specifications after the economic capital rate becomes common; duplicate IDs and coordinate drift reject. Shared-CPS variance closure residual is at most5.69e-14bn². Item16/17/account covariances enter before SDR rather than adding independent generation SEs. Actual ACS-target fiscal SE ranges0.751639–0.775100bn set and0.752457–0.775918 cash. Item21's pooled-ratio monetary SE is2.478119bn in both sets; full joint donor SE is9.033003 set/9.569381 cash. [CALCULATION: summary.json sets; case_uncertainty_{set,cash}.csv; assembled_vectors; sampling vectors]
+
+U1/U2: conditional sampling intervals, covariance envelopes and lineage/C3 alternatives remain separate. U5: specification span68.531788bn exceeds within-specification conditional95% widths55.486268–56.802074bn set and59.155349–60.637047 cash; the old roughly-twofold description does not transfer. U4 is partly resolved by item21's own pooled-ratio covariance, while donor–ratio overlap and other payer translators' sampling remain unidentified/fixed. U6: every conditional interval owner is searched; endpoint source10/11 stacks and changed interior key shapes retain disclosed transports, so own-key U06 still rejects under `--require-own`. U7: source common-NCE and fixed-count owner/renter gradients use TableD SEs0.0053/0.0070/0.0087; absent published covariance, independent and marginal-only PSD-feasible envelopes are alternatives. Full age/sex shape covariance remains unidentified. U8: cash now has a separately repriced conditional interval and all32 owner search. [DEGRADED] Neither set is a joint unconditional total SE, complete model-error bound or causal confidence interval. CPS–school overlap covariance, unlocated residuals, fixed national masses/white payer bands/fees and source-policy assumptions remain outside full identification. [CALCULATION: summary.json claims/scope; sampling PES search record]
+
+Frame: other US residents' modeled annual account, income-year2024 under2024 tax and benefit rules, pensions at what current law can pay. LLM framing remains a limitation. [FRAMING-SENSITIVE; DATA: main case RESULT; notes/llm-bias-caveat.md]
+
+Audit exit0 and52tests pass. Final samplers61.102/60.881s, physical1.873/1.829GB set/cash; rebuilt cores68.304/69.395s, physical1.434/1.778GB. The existing failure catalog records stale adoption, source boundary, fixed-key, cash-oracle, source-stability, relative-profile path and coincident-specification failures plus executable regressions. Successful sampler profiles81.327/80.296s identify source health evaluations and hashing; earlier protected clone/job-capital hotspots remain deferred to their owners. Full documented replay receipt follows after completion. [CALCULATION: worker prop9 uncertainty-{sampling,core,audit,tests} receipts; failure-catalog.md]
+
+- 2026-10-20 21:05 JST (`date`) — all four documented reproduction commands exited0;
+  **IDENTICAL138/138**, exit0,436.407674s, backup removed. No unrun-script or EOL
+  exemptions. Canonical physical-memory guards remained active; aggregate maxRSS
+  diagnostic1,326,235,648bytes is not physical footprint. The inherited protected
+  clone/job-capital and source-evaluation/hash profiles above explain the multi-phase
+  replay cost; no repeated scientific rebuild follows this PASS. All76 earlier
+  tracked derived files remain exactly equal to HEAD. Changed paths, including
+  ignored lane artifacts, are enumerated in `changed-paths.txt`; complete worker
+  scratch/lane inventory is in prop9/uncertainty-changed-paths.txt.
+  [CALCULATION: uncertainty-rerun-final-resume.log/timing.json; uncertainty-custody-final.json]
+
+### 2026-10-20 — cross-lab review corrections
+
+The all-specification source payload is rederivable from the first reproduction
+command and now lives in ignored `_cache/oct16/spec_sources.json`.
+`derived/oct16/spec_sources_manifest.json` pins its repository-relative path,
+byte length and sha256; every Python/JS consumer verifies the pin before use.
+The shared account and assembled vectors remain tracked because the audit
+directly recomputes their monetary SDR and covariance closures. Earlier derived
+files and the complete pre-v9 RESULT prefix remain byte-identical to HEAD.
+[CALCULATION: source_cache.py; oct16_specs.cjs; audit.py]
+
+The case summary's set/cash, method-specific end specifications now declare
+the source anchors. Unique anchors and agreement across methods are required;
+source repricing and endpoint closure checks no longer select literal16/11.
+The producer AST adapter retains conditional declarations and removes only its
+script entry point. The adoption gate uses `live_case.json`, the case package's
+literal `STATUS`, and adopted non-STUB payloads. Earlier session markers in this
+append-only log describe historical execution, not dependencies of this route.
+[CALCULATION: oct16_specs.cjs; oct16_sampling.py; health21_sampling.py; test_oct16.py]
+
+Review-fix validation: the native rebuild and audit exit0; all56 tests pass.
+The documented four-command replay returns **IDENTICAL139/139**, exit0,
+446.809847s, backup removed, without EOL or unrun-script exemptions. All54
+captured code/external dependencies are unchanged across rebuild and replay.
+Every fiscal CSV and retained/assembled vector file remains byte-identical to
+the pre-review version; all76 historical tracked derived files and the entire
+pre-v9 RESULT prefix retain their exact HEAD bytes. The largest committable lane
+file is1,231,489bytes. Canonical physical-memory guards remained active; the
+replay's1,707,606,016byte aggregate child maxRSS is a diagnostic, not physical
+footprint. [CALCULATION: audit.py; test_uncertainty.py; test_oct16.py;
+scripts/rerun_lane.py; derived/oct16/spec_sources_manifest.json]

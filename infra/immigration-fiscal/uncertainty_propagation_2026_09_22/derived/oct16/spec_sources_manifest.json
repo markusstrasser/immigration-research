@@ -1,0 +1,6 @@
+{
+  "path": "infra/immigration-fiscal/uncertainty_propagation_2026_09_22/_cache/oct16/spec_sources.json",
+  "bytes": 12214485,
+  "sha256": "449133abd47d9ed2ae6c76aa73878d477388b5380409df93c0b63455f1eed201",
+  "rebuild": "node infra/immigration-fiscal/uncertainty_propagation_2026_09_22/sept24_specs.cjs"
+}

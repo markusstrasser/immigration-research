@@ -59,6 +59,13 @@
  * Run from anywhere: node sept24_specs.cjs
  */
 "use strict";
+// The v9 signed-driver route has its own typed source contract. Historical
+// exporters remain available as source code, but are not recomputed live.
+if (require("./later_cases.json").oct16 && process.env.UNCERTAINTY_ACCOUNT_CORE !== "1") {
+  require("./oct16_specs.cjs").writeSources();
+  console.log("PASS oct16 all-spec principal/source export; both sets");
+  process.exit(0);
+}
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
@@ -325,8 +332,8 @@ function capitalCase(name, lane, PC, payload, sum) {
     gate(`${name}: the cash payload's specifications span the case lane's cash set (1e-9)`,
       [0, 1].every((e) => Math.abs(cashBand[e] - sum.cash_set.band_bn[e]) < 1e-9), `${cashBand[0].toFixed(4)}–${cashBand[1].toFixed(4)}`);
   }
-  if (sum.v8 || sum.v7) {
-    const live = sum.v8 || sum.v7;
+  if ((sum.v9 || sum.v8 || sum.v7) && !(process.env.UNCERTAINTY_ACCOUNT_CORE === "1" && process.env.UNCERTAINTY_BASIS === "cash")) {
+    const live = sum.v9 || sum.v8 || sum.v7;
     const setBand = span(bandRows.map((s) => s[name]));
     gate(`${name}: set and cash match summary.json ${sum.v8 ? "v8" : "v7"} (1e-9)`, cashBand !== null &&
       [[setBand, live.band_bn], [cashBand, live.cash_set_bn]].every(([b, w]) =>
@@ -345,16 +352,27 @@ function capitalCase(name, lane, PC, payload, sum) {
       && [[setBand, pin.set], [cashBand, pin.cash]].every(([b, w]) => [0, 1].every((e) => Math.abs(b[e] - w[e]) < 1e-6)),
       `set ${f6(setBand)}, cash ${cashBand ? f6(cashBand) : "none"}`);
   }
-  const per = csvRows(`${lane}/derived/per_spec.csv`);
+  const cashCore = process.env.UNCERTAINTY_ACCOUNT_CORE === "1" && process.env.UNCERTAINTY_BASIS === "cash";
+  const per = cashCore ? null : csvRows(`${lane}/derived/per_spec.csv`);
+  const cashSourceRows = cashCore ? require("./oct16_specs.cjs").loadSources().sets.cash.rows : null;
+  if(cashCore && (cashSourceRows.length!==32 || cashSourceRows.some((r,i)=>r.spec!==i)))throw Error("[BLOCKED] cash source oracle must cover all32 personal specifications");
   const methodMean = (i, col) => {
+    if (cashCore) {
+      const q = cashSourceRows[i];
+      if(!q)throw Error("[BLOCKED] no personal cash source oracle for specification "+i);
+      return col === "cost_bn" ? q.cost_bn : q.capital_bn;
+    }
     const xs = per.filter((r) => Number(r.spec) === i).map((r) => Number(r[col]));
     if (xs.length !== 2) throw new Error(`[BLOCKED] per_spec.csv has ${xs.length} rows for specification ${i}`);
     return (xs[0] + xs[1]) / 2;
   };
-  const gap = Math.max(...rows.flatMap((s, i) => [Math.abs(s[name] - methodMean(i, "cost_bn")),
-    Math.abs(s[`capital_${name}`] - methodMean(i, "capital_total_bn"))]));
-  gate(`${name}: the payload model gives the methods' mean of per_spec.csv at every specification, cost and capital return (1e-9)`,
-    gap < 1e-9, `max |diff| ${gap.toExponential(1)}`);
+  // Cash uncertainty exports only MAIN_PROFILE. Its source contract supplies
+  // all32 personal specifications; shared rows are historical control scaffolding.
+  const differences = cashCore ? require("./oct16_specs.cjs").cashOracleDifferences(rows,cashSourceRows,name,allocation)
+    : rows.flatMap((s,i)=>[Math.abs(s[name]-methodMean(i,"cost_bn")),Math.abs(s[`capital_${name}`]-methodMean(i,"capital_total_bn"))]);
+  const gap = Math.max(...differences);
+  gate(`${name}: the payload model matches ${cashCore ? "the all32 personal cash source oracles" : "the methods' mean of per_spec.csv at every specification"}, cost and capital return (1e-9)`,
+    Number.isFinite(gap) && gap < 1e-9, `max |diff| ${gap.toExponential(1)}`);
   const dims = Object.keys(MAIN_SPECS[0]).concat(["school_sept24", "gg_sept24", "reading", "rate", "enterprises"],
     RESP.map(responseColumn));
   const kcols = (prefix) => KLINES.concat(["enterprise_share"], CARRIERS.map((id) => `share_${id}`)).map((id) => [`${prefix}${id}`, `${prefix}${id}`]);
@@ -362,7 +380,7 @@ function capitalCase(name, lane, PC, payload, sum) {
     ["capital_uncorrected_bn", "capital_uncorrected"], [`capital_${name}_bn`, `capital_${name}`]]
     .concat(scaled ? kcols("kcoef_uncorrected_").concat(kcols(`kcoef_${name}_`)) : kcols("kcoef_"))
     .concat(grid ? [["production_se_uncorrected_bn", "production_se_uncorrected"], [`production_se_${name}_bn`, `production_se_${name}`]] : []);
-  const row4PensionInputs = payload.meta.row4_frame ? PC.ITEM_DETAIL.row4_frame.set.lineage_inputs : null;
+  const row4PensionInputs = payload.meta.row4_frame ? PC.ITEM_DETAIL.row4_frame[cashCore ? "cash" : "set"].lineage_inputs : null;
   if (payload.meta.row4_frame) gate(`${name}: row4 pension inputs come from the applied item's part models`,
     row4PensionInputs && ["G_part_a", "G_ss", "lineage_ss"].every((key) => ALLOCS.every((a) => Number.isFinite(row4PensionInputs[key][a]))));
   return { name, rows: bandRows, targets: lineTargets(models[name]), dims, costCols, benefits: benefitFactors(name, PC, payload), row4PensionInputs };
@@ -398,12 +416,13 @@ function blocksOf(payload) {
       if (it.applied && JSON.stringify(it.lineage_edits) !== JSON.stringify(e)) throw new Error(`[BLOCKED] item ${it.id}'s lineage edits are not meta.lineage.edits`);
       continue;
     }
-    if (it.kind === "allocation" || it.kind === "post_engine") {
+    if (["allocation", "post_engine"].includes(it.kind) && !it.edits?.count) {
       if (!it.edits || it.edits.first !== at || it.edits.count !== 0) throw new Error(`[BLOCKED] allocation item ${it.id} must have zero edits at the next block`);
       if (it.kind === "post_engine" && !payload.meta[it.id]?.by_end) throw new Error(`[BLOCKED] post-engine item ${it.id} lacks declared end values`);
       continue;
     }
-    if (it.kind !== "edit_set") throw new Error(`[BLOCKED] item ${it.id} is of kind ${it.kind}, neither an edit set, allocation nor the lineage`);
+    if (!["edit_set", "allocation", "post_engine"].includes(it.kind)) throw new Error(`[BLOCKED] item ${it.id} is of kind ${it.kind}, neither an edit set, allocation nor the lineage`);
+    if (it.kind === "post_engine" && !payload.meta[it.id]?.by_end) throw new Error(`[BLOCKED] post-engine item ${it.id} lacks declared end values`);
     if (!it.applied) {
       if (it.edits) throw new Error(`[BLOCKED] item ${it.id} is not applied but locates edits`);
       continue;
@@ -472,9 +491,18 @@ function benefitFactors(name, PC, payload) {
 }
 const later = Object.entries(JSON.parse(fs.readFileSync(path.join(__dirname, "later_cases.json"), "utf8")))
   .map(([name, lane]) => {
-    const PC = require(path.join(__dirname, "..", lane, "package.cjs"));
-    const payload = readJson(`${lane}/derived/corrections.json`);
+    const cashCore = process.env.UNCERTAINTY_ACCOUNT_CORE === "1" && process.env.UNCERTAINTY_BASIS === "cash";
+    const packageAPI = require(path.join(__dirname, "..", lane, "package.cjs"));
+    // Cash's evaluator exports its own numeric API; the enclosing package owns
+    // shared source metadata (methods, stack bridge, row4 details and profile).
+    const PC = cashCore ? { ...packageAPI, ...packageAPI.CASH } : packageAPI;
+    const payload = readJson(`${lane}/derived/corrections${cashCore?"_cash":""}.json`);
     const sum = readJson(`${lane}/derived/summary.json`);
+    if (cashCore) {
+      sum.main_case = sum.v9.cash_set_bn;
+      sum.v9.band_bn = sum.main_case;
+      sum.cash_set = null;
+    }
     const R = payload.meta.responses;
     gate(`${name}: payload responses equal summary.json responses`, JSON.stringify(R) === JSON.stringify(sum.responses));
     if (PC.evaluateFull) return capitalCase(name, lane, PC, payload, sum);
@@ -498,8 +526,10 @@ const later = Object.entries(JSON.parse(fs.readFileSync(path.join(__dirname, "la
   });
 
 if (failures) { console.error(`${failures} gate(s) failed; nothing written`); process.exit(1); }
+if(process.env.UNCERTAINTY_ACCOUNT_CORE === "1")require("../main_case_2026_10_16/memory_guard.cjs").requireWithinBudget("uncertainty retained account exporter");
 const num = (x) => (typeof x === "number" ? x.toPrecision(15) : x);
 function write(dir, dims, costCols, rows, targetCols, targetRows) {
+  if (process.env.UNCERTAINTY_ACCOUNT_CORE === "1") dir += "/core_"+(process.env.UNCERTAINTY_BASIS || "set");
   const out = path.join(__dirname, "derived", dir);
   fs.mkdirSync(out, { recursive: true });
   fs.writeFileSync(path.join(out, "spec_costs.csv"), [dims.concat(costCols.map(([name]) => name)).join(",")]
@@ -517,10 +547,12 @@ for (const c of later) {
     ["target_uncorrected_bn", `target_${c.name}_bn`], c.targets);
   if (c.benefits) {
     const cols = ["line", "allocation", "delta_bn", "stack_factor", "shift_bn"].concat("national_scale" in c.benefits[0] ? ["national_scale"] : []);
-    fs.writeFileSync(path.join(__dirname, "derived", c.name, "benefit_factors.csv"),
+    const suffix = process.env.UNCERTAINTY_ACCOUNT_CORE === "1" ? "/core_"+(process.env.UNCERTAINTY_BASIS || "set") : "";
+    fs.writeFileSync(path.join(__dirname, "derived", c.name+suffix, "benefit_factors.csv"),
       [cols.join(",")].concat(c.benefits.map((r) => cols.map((k) => num(r[k])).join(","))).join("\n") + "\n");
   }
-  if (c.row4PensionInputs) fs.writeFileSync(path.join(__dirname, "derived", c.name, "row4_pension_inputs.json"),
+  const suffix = process.env.UNCERTAINTY_ACCOUNT_CORE === "1" ? "/core_"+(process.env.UNCERTAINTY_BASIS || "set") : "";
+  if (c.row4PensionInputs) fs.writeFileSync(path.join(__dirname, "derived", c.name+suffix, "row4_pension_inputs.json"),
     JSON.stringify(c.row4PensionInputs, null, 2) + "\n");
 }
 console.log("all gates passed");
