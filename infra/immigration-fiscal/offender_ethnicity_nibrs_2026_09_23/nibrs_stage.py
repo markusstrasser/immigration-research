@@ -95,17 +95,9 @@ def victim_class(race: pd.Series, eth: pd.Series) -> pd.Series:
 
 
 def age_band(age_num: pd.Series, age_id: pd.Series, cut: int) -> pd.Series:
-    """NIBRS_AGE: ids 1-3 are under one year (codes NN, NB, BB). Id 103 is Unknown and stores its code
-    '00' in age_num; id 104 is Not Specified ('NS'). Both are unknown, never age 0 (corrected
-    2026-10-21: '00' had been read as age 0 and put unknown-age people under the cut)."""
     a = pd.to_numeric(age_num, errors="coerce")
-    ids = pd.to_numeric(age_id, errors="coerce")
-    a[ids.isin([1, 2, 3])] = 0                               # under 24 hours, 1-6 days, 7-364 days
-    a[ids.isin([103, 104]) | ids.isna()] = np.nan
-    band = pd.Series(np.where(a.isna(), "unk", np.where(a >= cut, f"{cut}p", f"lt{cut}")), index=a.index)
-    if (ids.isin([103, 104]) & band.ne("unk")).any():
-        raise SystemExit("[BLOCKED] age_band: unknown-age codes (age_id 103/104) left the unknown band")
-    return band
+    a[age_id.isin([1, 2, 3])] = 0                            # under 24 hours, 1-6 days, 7-364 days
+    return pd.Series(np.where(a.isna(), "unk", np.where(a >= cut, f"{cut}p", f"lt{cut}")), index=a.index)
 
 
 def stage(st: str, yr: int) -> dict:

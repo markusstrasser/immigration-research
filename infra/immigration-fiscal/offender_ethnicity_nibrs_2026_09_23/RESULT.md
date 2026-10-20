@@ -745,29 +745,3 @@ Scripts:
 
 Raw files stay in `_cache/`, which is ignored. `derived/` holds aggregates only, plus
 `rates_log.txt` and `cost_log.txt`.
-
-## 2026-10-21 correction: unknown victim age
-
-[CALCULATION: rerun of `nibrs_stage.py`, `nibrs_rates.py`, `shr_benchmark_check.py` and
-`victim_cost_rerun.py`]
-
-The bug: NIBRS stores an unknown age as age_id 103 with age_num '00', and `age_band` read that as
-age 0. Unknown-age victims (2,205–2,919 per TX/CA state-year, 456–477 in AZ) therefore fell into
-"lt12" and dropped out of the central 12+ universe (ages 12p plus unk). Unknown-age arrestees fell
-into "lt18" in the same way. Found by `within_group_harm_2026_10_21`. `age_band` now maps ids 103
-and 104 to unknown and ids 1–3 to age 0, and it stops if an unknown code leaves the unknown band.
-
-Central figures, old → new:
-- Victimisations: murder 3,810 → 3,841; rape/sexual assault 36,730 → 37,421; robbery
-  49,966 → 50,247; aggravated assault 170,185 → 171,752; simple assault 533,367 → 535,883.
-- Hispanic vs non-Hispanic white offending ratio: murder 2.303 → 2.311 (bounds 1.53–3.93
-  unchanged at two decimals); rape 1.746 → 1.741; robbery 4.219 → 4.212; aggravated assault
-  2.235 → 2.237; simple assault 1.742 → 1.741.
-- National Hispanic shares move by at most 0.0006 in the central (0.0025 in any specification).
-- Preferred arm (victim-conditional, SHR-calibrated): $28.591bn → $28.675bn full, $4.369bn →
-  $4.377bn tangible. The offender-share-only arm: $40.036bn → $40.025bn. The two reference rows
-  reproduce unchanged.
-
-The headline text above still quotes the pre-correction values, which round the same except
-murder 2.30 → 2.31 and the preferred arm $28.6bn → $28.7bn. Two-run check: `rerun_lane.py` with the
-four commands gave IDENTICAL 34/34, exit 0, at 2026-10-21 02:15:30 JST.
