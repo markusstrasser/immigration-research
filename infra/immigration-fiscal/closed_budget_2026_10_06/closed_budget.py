@@ -120,6 +120,11 @@ CASES = {
                   # the corrected case's bands to 6 decimals (d1a24d47; adopted b35ac8fb: 368.990934 / 459.202877,
                   # cash 284.951568 / 375.163510), gated at 1e-6
                   bands={"main": (365.791930, 455.981785), "cash": (281.752564, 371.942418)}),
+    "oct16": dict(case=ROOT / "infra/immigration-fiscal/main_case_2026_10_16/derived/summary.json", decomp="oct16",
+                  sets={"main": ("oct16", "main_case"), "cash": ("oct16_cash", "cash_set")},
+                  excess={"low": None, "high": None},
+                  trust_funds=OUT / "trust_funds_separate.json", households=OUT / "oct16/household_share.json",
+                  out=OUT / "oct16", pooled=TRUST_FUNDS),
 }
 
 
@@ -206,16 +211,30 @@ def span(rows: list[dict], key: str) -> list[float]:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="The closed-budget arm on a main case.")
-    ap.add_argument("--case", choices=tuple(CASES), default="oct15",
-                    help="live case oct15 (default), or a historical case explicitly")
+    ap.add_argument("--case", choices=tuple(CASES), default="oct16",
+                    help="live case oct16 (default), or a historical case explicitly")
     ap.add_argument("--v8-sharing", choices=("source-baskets", "legacy-baskets"), default="source-baskets",
                     help="v8 source-baskets adds source-side completion/coverage lines; legacy-baskets keeps the pre-completion baskets beside")
     ap.add_argument("--out-dir", type=Path, help="write an alternate sharing arm beside the central files")
+    ap.add_argument('--v9-mixed-baskets',choices=('known-source-parts','net-unlocated'),default='known-source-parts',
+                    help='known-source-parts adds identified item11 tax/benefit categories; net-unlocated preserves the historical convention beside')
     args = ap.parse_args()
+    if args.case=='oct16' and args.v8_sharing!='source-baskets':
+        blocked('oct16 requires matched universal source baskets; use --v9-mixed-baskets net-unlocated for its declared beside arm')
     conf = dict(CASES[args.case])
+    if args.case == 'oct16':
+        pins_path = LANE/'inputs/pins_oct16.json'
+        if not pins_path.exists():
+            blocked('run pin_oct16.py on the adopted case and matched decomposition first')
+        pins = json.loads(pins_path.read_text())
+        for file,expected in pins['source_hashes'].items():
+            if sha(ROOT/'infra/immigration-fiscal'/file) != expected:
+                blocked(f'stale oct16 pin: {file}')
+        conf['bands'] = pins['bands']
+        conf['excess'] = dict(zip(('low','high'),map(lambda x:round(x,1),pins['excess']['main'])))
     if args.out_dir is not None:
         conf["out"] = args.out_dir
-    if conf["excess"] is None:
+    if conf["excess"] is None or any(x is None for x in conf['excess'].values()):
         blocked("the case's excess over average residents is not pinned (CASES excess)")
     sets, excess_printed, out_dir = conf["sets"], conf["excess"], conf["out"]
     summary = json.loads(conf["case"].read_text())
@@ -244,6 +263,11 @@ def main() -> None:
             gates.append({"gate": f"{s} {end}: exact decomposition parts add to the case (1e-9)",
                           "pass": abs(exact_parts - G[s][end]) < 1e-9,
                           "detail": f"parts {exact_parts:.12f}, case {G[s][end]:.12f}"})
+            if args.case == 'oct16':
+                j = 0 if end=='low' else 1
+                gates.append({'gate':f'{s} {end}: matched excess pin and shared close (1e-9)',
+                    'pass':abs(exact['shared']+pins['excess'][s][j]-G[s][end])<1e-9,
+                    'detail':pins['excess'][s][j]})
             p = lines[s][end]
             total = sum(p["total"].values())
             parts = sum(sum(p[k].values()) for k in PARTS)
@@ -272,14 +296,34 @@ def main() -> None:
             for end in ("low", "high"):
                 v8 = decomposition[s].get("v8")
                 source = None
-                if v8 and args.v8_sharing == "source-baskets":
+                if v8 and args.case != 'oct16' and args.v8_sharing == "source-baskets":
                     source = {f"{side}_by_line": {} for side in ("receipts", "spending")}
                     for item in ("union_completion", "coverage"):
                         for side in ("receipts", "spending"):
                             basket = source[f"{side}_by_line"]
                             for line, amount in v8["source_parts"][end][item][f"{side}_by_line"].items():
                                 basket[line] = basket.get(line, 0) + amount
-                rat = ratios(lines[s][end], hh["share"] / share, source, v8["source_line_groups"] if source else None)
+                baskets = lines[s][end]
+                if args.case == 'oct16':
+                    # Own signed fiscal lines from the matched v9 comparator;
+                    # every universal rule changes numerator and denominator.
+                    baskets = {'shared':{},'total':{}}
+                    mapping = v8['source_line_groups']
+                    own=decomposition[s]['v9']['source_baskets'][end]
+                    for part, components in {'shared':own['shared'],'total':own['total' if args.v9_mixed_baskets=='known-source-parts' else 'total_without_mixed']}.items():
+                        for side in ('receipts','spending'):
+                            for line,amount in components[side+'_by_line'].items():
+                                group = mapping.get(line)
+                                if group == 'education':
+                                    group = 'colleges_other_education'
+                                if group is None and abs(amount)>1e-12:
+                                    blocked(f'v9 source line has no category rule: {side}/{line}')
+                                if group is not None:
+                                    baskets[part][group] = baskets[part].get(group,0)+amount
+                    for part in baskets:
+                        for group in lines[s][end]['total']:
+                            baskets[part].setdefault(group,0.)
+                rat = ratios(baskets, hh["share"] / share, source, v8["source_line_groups"] if source else None)
                 if args.case == "oct15":
                     # The sequential decomposition keeps category baskets on the
                     # measured base profile frame. Correct their denominator so
@@ -311,6 +355,15 @@ def main() -> None:
         return share_rows, out_rows
 
     share_rows, out_rows = evaluate(fix_rows)
+    ordering_rows = []
+    for row in out_rows:
+        basis,end = row['set'],row['end']
+        limit = G[basis][end]-decomposition[basis]['parts'][end]['shared']
+        central = float(row['cost_to_others_bn'])
+        ordering_rows.append({key:row[key] for key in ('set','end','fix','basis','rule')} | {
+            'headline_bn':G[basis][end], 'closed_bn':central, 'whole_deficit_limit_bn':limit,
+            'limit_minus_closed_bn':limit-central,
+            'between_headline_and_limit':min(G[basis][end],limit)<=central<=max(G[basis][end],limit)})
     pooled_rows = None
     if conf.get("pooled"):       # main case v6: the pooled-funds arm beside (the convention through v5)
         pooled_fix = fixes(src, json.loads(conf["pooled"].read_text()))
@@ -328,6 +381,10 @@ def main() -> None:
 
     general = lambda r: r["basis"].startswith("general fund")
     summ = {"lane": "closed_budget_2026_10_06", "gdp_2024_bn": GDP_2024_BN, "sets": {}}
+    if args.case=='oct16':
+        summ['v9_sharing']={'mixed_baskets':args.v9_mixed_baskets,
+            'rule':'Matched own universal rules and source-calibrated observed/completion/coverage fiscal baskets. Item11 known programme/category pieces included; M6 federal/refund/state and D_added federal/refund composites remain unlocated. Consumption composite enters its consumption-tax category without an invented individual-line split. Capital and production never become tax/benefit cuts.',
+            'mixed_source_baskets':{basis:decomposition[basis]['v9']['mixed_source_baskets'] for basis in sets}}
     if args.case == "oct15":
         summ["v8_sharing"] = {"switch": args.v8_sharing,
                               "rule": "Completion and coverage enter per-person and own-record household rules. Category-specific fixes use base baskets plus item9 corporate receipts and, under source-baskets, item10 source-side native/parent lines and item12 classified source fiscal lines. Production and public-capital parts never become taxes/benefits. [ASSUMPTION] Mixed-unit net amounts and coverage's explicit unclassified remainder retain no invented category split; their counted frame is still complete."}
@@ -346,6 +403,19 @@ def main() -> None:
         aei = {e: pick(s, end=e, fix="aei_auerbach_gale_2013_low", basis="as published", rule="per_person")[0]
                for e in ("low", "high")}
         block["aei_as_published_per_person"] = {"cost_bn": [float(aei[e]["cost_to_others_bn"]) for e in ("low", "high")]}
+        block['ordering_at_actual_ends'] = {}
+        for end in ('low','high'):
+            own_shared = decomposition[s]['parts'][end]['shared']
+            own_excess = G[s][end]-own_shared
+            central_cost = float(central[end]['cost_to_others_bn'])
+            block['ordering_at_actual_ends'][end] = {
+                'headline_bn':G[s][end], 'central_closed_bn':central_cost,
+                'whole_deficit_limit_bn':own_excess,
+                'limit_minus_central_bn':own_excess-central_cost,
+                'central_between_headline_and_limit':min(G[s][end],own_excess)<=central_cost<=max(G[s][end],own_excess),
+                'ordered_low_to_high':sorted(['headline','central','whole_deficit_limit'],key=lambda k:
+                    {'headline':G[s][end],'central':central_cost,'whole_deficit_limit':own_excess}[k])}
+        block['cash_group_future_cuts'] = '[UNMEASURED] National scheduled-minus-payable shortfall is netted from the fix; no group future-benefit cut schedule is identified. Cash timing remains a conditional companion, not a matched group-cut solve.'
         if pooled_rows is not None:
             pc = {e: pick(s, pooled_rows, end=e, **CENTRAL)[0] for e in ("low", "high")}
             cl = [r for r in pick(s, pooled_rows, law="current law") if general(r)]
@@ -366,7 +436,7 @@ def main() -> None:
     peak = require_within_budget("closed-budget arm")
     print(f"peak physical footprint {peak / 1e9:.3f} GB")
     out_dir.mkdir(exist_ok=True)
-    for name, rows in (("closed_budget.csv", out_rows), ("shares.csv", share_rows)):
+    for name, rows in (("closed_budget.csv", out_rows), ("shares.csv", share_rows), ('ordering.csv',ordering_rows)):
         with open(out_dir / name, "w", newline="") as f:
             w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
             w.writeheader()

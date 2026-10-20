@@ -1,0 +1,33 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "rule": "per_household: each household an equal part, split equally over its civilian members",
+ "share": 0.1010413504057096,
+ "share_householder": 0.09554805912208694,
+ "per_person_share": 0.1338218274347901,
+ "ratio_to_per_person": 0.7550438694684987,
+ "household_share_below_per_person": true,
+ "households_row4": 134568002.6959918,
+ "households_cps_weights": 134963892.8,
+ "households_person_weight_split": 138022323.94312373,
+ "lineage_household_equivalents": 13596932.713802183,
+ "persons_per_household_lineage": 3.3024414425947852,
+ "persons_per_household_all": 2.493488165510568,
+ "frame": {
+  "NG": 44903074.08623311,
+  "NC": 335543722.1788498
+ },
+ "oct16_frame": {
+  "located_people": 42951314.00417103,
+  "coverage_people": {
+   "G1": 446105.1075376299,
+   "G2": 818805.7202215843,
+   "G3plus": 686849.2543028654
+  },
+  "coverage_in_weights": true,
+  "complete_people": 44903074.086245224,
+  "calibration": "own central_member_factor on observed member weight; latent addition held fixed",
+  "coverage_rule": "[ASSUMPTION] proportional within generation; unlocated people, no new identified applicants"
+ },
+ "case_key": "oct16",
+ "placement": "the added people on the identified G3+ records at the measured age mix (meta.lineage.age_mix), by five-year band"
+}

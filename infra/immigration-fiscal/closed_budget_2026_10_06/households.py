@@ -60,7 +60,9 @@ CASES = {"oct05": dict(decomp=DECOMP, out=OUT),
          "oct14": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct14.json", out=OUT / "oct14",
                        payload=FISCAL / "main_case_2026_10_14/derived/corrections.json"),
          "oct15": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct15.json", out=OUT / "oct15",
-                       payload=FISCAL / "main_case_2026_10_15/derived/corrections.json")}
+                       payload=FISCAL / "main_case_2026_10_15/derived/corrections.json"),
+         "oct16": dict(decomp=FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct16.json", out=OUT / "oct16",
+                       payload=FISCAL / "main_case_2026_10_16/derived/corrections.json")}
 sys.path.insert(0, str(FISCAL / "world_ledger_2026_09_27"))
 from population_basis import g3plus, reweight  # noqa: E402
 
@@ -97,12 +99,14 @@ def age_tilted(d, payload_file: Path) -> np.ndarray:
     return lw
 
 
-def main(case: str = "oct15") -> None:
+def main(case: str = "oct16") -> None:
     conf = CASES[case]
     spec = importlib.util.spec_from_file_location("dist_base", FISCAL / "distribution_weights_2026_09_23/distribute.py")
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
     d = B.load_cps()
+    # reweight verifies the declared display calibration, then restores the
+    # production weights before row4 and our explicit member calibration.
     with zipfile.ZipFile(B.PATHS["cps"]) as z:
         rel = pd.read_csv(z.open("pppub25.csv"), usecols=["PH_SEQ", "PPPOS", "A_EXPRRP"])
     d = d.merge(rel, on=["PH_SEQ", "PPPOS"], validate="one_to_one", how="left")
@@ -114,6 +118,11 @@ def main(case: str = "oct15") -> None:
     lw, r4 = d.pw.to_numpy(float, copy=True), d.pw_row4.to_numpy(float)
     if "payload" in conf:
         lw = age_tilted(d, conf["payload"])
+    calibrated = None
+    if case == "oct16":
+        from calibrated_frame import complete_calibrated, calibration_factors
+        lw,tgt,calibrated = complete_calibrated(d,lw,tgt,json.loads(conf['payload'].read_text()),gate,coverage=True)
+        r4 = r4*calibration_factors(d)
     if case == "oct15":
         meta = json.loads(conf["payload"].read_text())["meta"]
         people = json.loads((FISCAL / "main_case_2026_10_15/derived/union_people.json").read_text())["records"]
@@ -171,6 +180,7 @@ def main(case: str = "oct15") -> None:
         "share_householder": share_head,
         "per_person_share": per_person,
         "ratio_to_per_person": share / per_person,
+        "household_share_below_per_person": share < per_person,
         "households_row4": households,
         "households_cps_weights": weighted,
         "households_person_weight_split": person_split,
@@ -179,6 +189,9 @@ def main(case: str = "oct15") -> None:
         "persons_per_household_all": size_all,
         "frame": {"NG": float(lw[tgt].sum()), "NC": float(r4[civ].sum())},
     }
+    if calibrated is not None:
+        out['oct16_frame'] = calibrated
+        out['case_key'] = case
     if "payload" in conf:
         out["placement"] = ("the added people on the identified G3+ records at the measured age mix "
                             "(meta.lineage.age_mix), by five-year band")
@@ -196,6 +209,6 @@ def main(case: str = "oct15") -> None:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct15", choices=list(CASES),
-                    help="live case oct15 (default), or a historical case explicitly")
+    ap.add_argument("--case", default="oct16", choices=list(CASES),
+                    help="live case oct16 (default), or a historical case explicitly")
     main(ap.parse_args().case)

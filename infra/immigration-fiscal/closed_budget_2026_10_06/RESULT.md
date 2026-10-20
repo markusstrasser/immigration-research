@@ -234,3 +234,28 @@ Central closed-budget cost is set **331.984329 / 422.174183bn**, cash 247.944962
 320.92376 / 445.286277bn (the figures above are the pre-correction run). The household share and the 0.10157 complete
 share are unchanged. 13 gates per arm and 6 tests pass; reproduction IDENTICAL 34/34, exit 0. [DATA:
 `derived/oct15/summary.json` `sets.main.central.cost_bn`, `sets.cash.central.cost_bn`]
+## 2026-10-20: adopted live case oct16 (v9)
+
+Central closed-budget cost is **$334.397218/402.929006bn set**, **$250.764522/319.296310bn cash**. The calibrated household share is0.1010413504057096 (person share0.1338218274347901), on the complete44,903,074.086245224-person denominator. Household coverage placement remains proportional within generation, an assumption for constructed people; original added descendants retain their measured-age placement. Both lineage and national household weights take the source calibration once. [DATA: `derived/oct16/summary.json` `sets.{main,cash}.central.cost_bn`; `derived/oct16/household_share.json` `share`, `per_person_share`, `oct16_frame`]
+
+**C1 — the central cost is not generally between the headline and the whole-deficit limit.** The ordering is recomputed per basis and case end:
+
+| Basis/end | Increasing cost to others, $bn/year |
+|---|---|
+| Set low | Central334.397218 < headline368.029739 < limit442.989007 |
+| Set high | Central402.929006 < limit421.320003 < headline436.561527 |
+| Cash low | Central250.764522 < headline284.397043 < limit336.814932 |
+| Cash high | Limit315.145928 < central319.296310 < headline352.928831 |
+
+Central is between only at the cash high end. `ordering.csv` additionally records every published fix, sharing rule, basis and end; no old ranking is imposed as a gate. [DATA: `derived/oct16/summary.json` `sets.*.ordering_at_actual_ends`; `derived/oct16/ordering.csv`]
+
+**C2 — future group cash-benefit cuts remain unmeasured.** The national scheduled-minus-payable shortfall is netted from the national fix; this lane has no identified group future-benefit-cut schedule. Its cash companion is conditional, not a matched group-cut solve. Capital-return resource charges and production remain outside the tax/benefit sharing baskets and never become borrowing. Identified source11 categories enter their own source-side baskets; the M6 federal/refund/state and D-added federal/refund composites remain explicitly unlocated. The `--v9-mixed-baskets net-unlocated` arm preserves the older category convention beside the live known-source-parts default. [UNMEASURED; ASSUMPTION; DATA: `derived/oct16/summary.json` `sets.*.cash_group_future_cuts`, `v9_sharing`; `derived/oct16_net_unlocated/summary.json`]
+
+Current-law general-fund range is323.485941–426.472580bn set and239.853245–342.998603bn cash. This is a scenario envelope, not a confidence interval. Pins are regenerated only by this lane's `pin_oct16.py` from the adopted source and exact matched decomposition exports. [DATA: `derived/oct16/summary.json` `sets.*.current law.cost_bn`; `inputs/pins_oct16.json`]
+
+Reproduce live oct16 only after decomposition: `sh infra/immigration-fiscal/closed_budget_2026_10_06/run_all.sh`. The wrapper also replays the unchanged trust-fund source tables.
+
+Log: 2026-10-20 20:26 JST (`date`) — initial full route stopped after production on the zero-mass/empty-generation placement regression (1failed,7passed). Exact-zero coverage is now a no-op; positive mass without placement still fails loudly, and both branches are tested in the existing regression. Compile check and full corrected route pass:17 gates per mixed-basket arm,8 tests, exit0,16.240s; physical peaks0.383GB household and0.144GB closed-budget. Official deterministic-replay receipt follows. Earlier keyed records remain unchanged.
+Log: 2026-10-20 20:30 JST (`date`) — removed the caller pre-reset after `population_basis.reweight` acquired its own validated restore of declared display-rank weights. Final full production route passes the new source guard, both 17-gate basket arms and all 8 tests, exit 0 in 25.656 s; household peak physical footprint 0.338 GB, closed-budget 0.143–0.144 GB. Quoted oct16 numbers are unchanged. The source-contract correction supersedes the earlier reset workaround; protected source files were not edited.
+
+Official oct16 replay, 2026-10-20: 2026-10-20 20:36:22 JST (`date`) — `scripts/rerun_lane.py` with `sh {lane}/run_all.sh`: **IDENTICAL: 51/51, exit 0**, 18.363 s. No uncovered changed scripts or EOL conversion failures. Full route gates and regressions pass; historical keyed files remain preserved. Receipt text and Python timing/resource JSON are in the parent's `prop9/chain-closed-budget-rerun.log` pair. This final append records verification only.

@@ -1,0 +1,110 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "inputs": {
+  "infra/immigration-fiscal/main_case_2026_10_16/derived/summary.json": "0d48ffa601855c68722e1c1524c22615745ff36ef4789969923934aa6f0fc45a",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/summary_oct16.json": "7868c85db770f743704a709d4c958ed04bfc15a1280f719fed0e2dcfb7be88a2",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/decomposition_lines_oct16.csv": "62b87a4e1d81cba67a4bb9a3125f294f599f02b831b73fe8a588cecc83c7f207",
+  "infra/immigration-fiscal/main_case_decomposition_2026_09_29/derived/decomposition_lines_oct16_cash.csv": "f71566326114480a28556bc44d00f12463c138e2c9e15444a638910624da618b",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/sources.json": "dc12fb3113b72f1096a44a6d0c3768215df22a4d5229abdfa20a7ead48813ac6",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/derived/oct16/household_share.json": "4d5b5bb8094ebe1aa9d3da7a90639cb7c8a82d6f4037fdc549101934024b5b85",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds_separate.json": "b7132b6dda79de229f4f541c557c26cfeb0f54bd68ed7e735156c65a29f23828",
+  "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json": "4b9700b4fc62f97fde8d6739068e36a5f1b3dec2a47040d9554ad822c5156858"
+ },
+ "frame": {
+  "NG": 44903074.086245224,
+  "NC": 335543722.17885005,
+  "share": 0.1338218274347901
+ },
+ "gdp_2024_bn": 29300.0,
+ "federal_mix_bn": {
+  "income_taxes": 2426.067,
+  "payroll_taxes": 1708.926
+ },
+ "gates": [
+  {
+   "gate": "main: the case's ends are the adopted band (1e-6)",
+   "pass": true,
+   "detail": "368.029739 / 436.561527 vs 368.02973917888073 / 436.56152715403437"
+  },
+  {
+   "gate": "cash: the case's ends are the adopted band (1e-6)",
+   "pass": true,
+   "detail": "284.397043 / 352.928831 vs 284.39704345864834 / 352.92883143380107"
+  },
+  {
+   "gate": "main low: exact decomposition parts add to the case (1e-9)",
+   "pass": true,
+   "detail": "parts 368.029739178881, case 368.029739178881"
+  },
+  {
+   "gate": "main low: matched excess pin and shared close (1e-9)",
+   "pass": true,
+   "detail": 442.98900683164226
+  },
+  {
+   "gate": "main low: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 368.029738, parts 368.029739, case 368.029739"
+  },
+  {
+   "gate": "main high: exact decomposition parts add to the case (1e-9)",
+   "pass": true,
+   "detail": "parts 436.561527154034, case 436.561527154034"
+  },
+  {
+   "gate": "main high: matched excess pin and shared close (1e-9)",
+   "pass": true,
+   "detail": 421.3200031511093
+  },
+  {
+   "gate": "main high: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 436.561525, parts 436.561526, case 436.561527"
+  },
+  {
+   "gate": "cash low: exact decomposition parts add to the case (1e-9)",
+   "pass": true,
+   "detail": "parts 284.397043458649, case 284.397043458648"
+  },
+  {
+   "gate": "cash low: matched excess pin and shared close (1e-9)",
+   "pass": true,
+   "detail": 336.814932138295
+  },
+  {
+   "gate": "cash low: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 284.397042, parts 284.397045, case 284.397043"
+  },
+  {
+   "gate": "cash high: exact decomposition parts add to the case (1e-9)",
+   "pass": true,
+   "detail": "parts 352.928831433801, case 352.928831433801"
+  },
+  {
+   "gate": "cash high: matched excess pin and shared close (1e-9)",
+   "pass": true,
+   "detail": 315.1459284577611
+  },
+  {
+   "gate": "cash high: decomposition parts add to the case",
+   "pass": true,
+   "detail": "total 352.928830, parts 352.928834, case 352.928831"
+  },
+  {
+   "gate": "main low: per_person at the case's own gap reproduces the printed excess",
+   "pass": true,
+   "detail": "442.9890 vs 443.0"
+  },
+  {
+   "gate": "main high: per_person at the case's own gap reproduces the printed excess",
+   "pass": true,
+   "detail": "421.3200 vs 421.3"
+  },
+  {
+   "gate": "household share computed on the decomposition's frame",
+   "pass": true,
+   "detail": "{'NG': 44903074.08623311, 'NC': 335543722.1788498} vs NG 44903074.086245224, NC 335543722.17885005"
+  }
+ ]
+}

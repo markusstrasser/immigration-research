@@ -1,0 +1,28 @@
+{
+ "case_key": "oct16",
+ "bands": {
+  "main": [
+   368.02973917888073,
+   436.56152715403437
+  ],
+  "cash": [
+   284.39704345864834,
+   352.92883143380107
+  ]
+ },
+ "excess": {
+  "main": [
+   442.98900683164226,
+   421.3200031511093
+  ],
+  "cash": [
+   336.814932138295,
+   315.1459284577611
+  ]
+ },
+ "source_hashes": {
+  "main_case_decomposition_2026_09_29/derived/summary_oct16.json": "7868c85db770f743704a709d4c958ed04bfc15a1280f719fed0e2dcfb7be88a2",
+  "main_case_decomposition_2026_09_29/derived/summary_oct16_cash.json": "1314830d12ba98068a96b551f58ba84eef3ad64e1d5eb055769f5ebe2ab01840",
+  "main_case_2026_10_16/derived/summary.json": "0d48ffa601855c68722e1c1524c22615745ff36ef4789969923934aa6f0fc45a"
+ }
+}

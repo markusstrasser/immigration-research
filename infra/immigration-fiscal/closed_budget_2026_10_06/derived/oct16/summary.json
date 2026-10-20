@@ -1,0 +1,536 @@
+{
+ "lane": "closed_budget_2026_10_06",
+ "gdp_2024_bn": 29300.0,
+ "sets": {
+  "main": {
+   "case_bn": [
+    368.02973917888073,
+    436.56152715403437
+   ],
+   "central": {
+    "definition": {
+     "fix": "ag2026_cl",
+     "basis": "general fund (cbo reading)",
+     "rule": "per_household"
+    },
+    "fix_bn": 332.859,
+    "offset_bn": [
+     33.632522,
+     33.632522
+    ],
+    "cost_bn": [
+     334.397218,
+     402.929006
+    ],
+    "change_pct": [
+     -9.139,
+     -7.704
+    ]
+   },
+   "current law": {
+    "fixes": [
+     "ag2026_cl",
+     "cbo2026_debt_stable"
+    ],
+    "fix_bn": [
+     205.838,
+     332.859
+    ],
+    "offset_bn": [
+     10.088947,
+     44.543798
+    ],
+    "cost_bn": [
+     323.485941,
+     426.47258
+    ],
+    "change_pct": [
+     -12.103,
+     -2.311
+    ]
+   },
+   "current policy": {
+    "fixes": [
+     "ag2026_cp",
+     "treasury_fy2025_75yr",
+     "treasury_fy2025_75yr_real_discretionary"
+    ],
+    "fix_bn": [
+     195.903,
+     869.803
+    ],
+    "offset_bn": [
+     9.602007,
+     116.39863
+    ],
+    "cost_bn": [
+     251.631109,
+     426.95952
+    ],
+    "change_pct": [
+     -31.628,
+     -2.199
+    ]
+   },
+   "aei_as_published_per_person": {
+    "cost_bn": [
+     202.172304,
+     270.704092
+    ]
+   },
+   "ordering_at_actual_ends": {
+    "low": {
+     "headline_bn": 368.02973917888073,
+     "central_closed_bn": 334.397218,
+     "whole_deficit_limit_bn": 442.98900683164226,
+     "limit_minus_central_bn": 108.59178883164225,
+     "central_between_headline_and_limit": false,
+     "ordered_low_to_high": [
+      "central",
+      "headline",
+      "whole_deficit_limit"
+     ]
+    },
+    "high": {
+     "headline_bn": 436.56152715403437,
+     "central_closed_bn": 402.929006,
+     "whole_deficit_limit_bn": 421.3200031511093,
+     "limit_minus_central_bn": 18.390997151109275,
+     "central_between_headline_and_limit": false,
+     "ordered_low_to_high": [
+      "central",
+      "whole_deficit_limit",
+      "headline"
+     ]
+    }
+   },
+   "cash_group_future_cuts": "[UNMEASURED] National scheduled-minus-payable shortfall is netted from the fix; no group future-benefit cut schedule is identified. Cash timing remains a conditional companion, not a matched group-cut solve.",
+   "pooled_funds_arm": {
+    "trust_funds": "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json",
+    "central": {
+     "fix_bn": 370.137,
+     "cost_bn": [
+      330.630583,
+      399.162371
+     ]
+    },
+    "current law": {
+     "cost_bn": [
+      318.497312,
+      424.955049
+     ]
+    },
+    "switch_bn": {
+     "central_fix_bn": -37.27800000000002,
+     "central_cost_bn": [
+      3.766635000000008,
+      3.766635000000008
+     ],
+     "rule": "separate funds less pooled: the general-fund fix nets OASI's post-depletion shortfall from 2032 Q4 instead of the pooled fund's from 2034 Q3"
+    }
+   }
+  },
+  "cash": {
+   "case_bn": [
+    284.39704345864834,
+    352.92883143380107
+   ],
+   "central": {
+    "definition": {
+     "fix": "ag2026_cl",
+     "basis": "general fund (cbo reading)",
+     "rule": "per_household"
+    },
+    "fix_bn": 332.859,
+    "offset_bn": [
+     33.632522,
+     33.632522
+    ],
+    "cost_bn": [
+     250.764522,
+     319.29631
+    ],
+    "change_pct": [
+     -11.826,
+     -9.53
+    ]
+   },
+   "current law": {
+    "fixes": [
+     "ag2026_cl",
+     "cbo2026_debt_stable"
+    ],
+    "fix_bn": [
+     205.838,
+     332.859
+    ],
+    "offset_bn": [
+     9.930229,
+     44.543798
+    ],
+    "cost_bn": [
+     239.853245,
+     342.998603
+    ],
+    "change_pct": [
+     -15.663,
+     -2.814
+    ]
+   },
+   "current policy": {
+    "fixes": [
+     "ag2026_cp",
+     "treasury_fy2025_75yr",
+     "treasury_fy2025_75yr_real_discretionary"
+    ],
+    "fix_bn": [
+     195.903,
+     869.803
+    ],
+    "offset_bn": [
+     9.450948,
+     116.39863
+    ],
+    "cost_bn": [
+     167.998413,
+     343.477883
+    ],
+    "change_pct": [
+     -40.928,
+     -2.678
+    ]
+   },
+   "aei_as_published_per_person": {
+    "cost_bn": [
+     118.539609,
+     187.071397
+    ]
+   },
+   "ordering_at_actual_ends": {
+    "low": {
+     "headline_bn": 284.39704345864834,
+     "central_closed_bn": 250.764522,
+     "whole_deficit_limit_bn": 336.814932138295,
+     "limit_minus_central_bn": 86.05041013829498,
+     "central_between_headline_and_limit": false,
+     "ordered_low_to_high": [
+      "central",
+      "headline",
+      "whole_deficit_limit"
+     ]
+    },
+    "high": {
+     "headline_bn": 352.92883143380107,
+     "central_closed_bn": 319.29631,
+     "whole_deficit_limit_bn": 315.1459284577611,
+     "limit_minus_central_bn": -4.150381542238904,
+     "central_between_headline_and_limit": true,
+     "ordered_low_to_high": [
+      "whole_deficit_limit",
+      "central",
+      "headline"
+     ]
+    }
+   },
+   "cash_group_future_cuts": "[UNMEASURED] National scheduled-minus-payable shortfall is netted from the fix; no group future-benefit cut schedule is identified. Cash timing remains a conditional companion, not a matched group-cut solve.",
+   "pooled_funds_arm": {
+    "trust_funds": "infra/immigration-fiscal/closed_budget_2026_10_06/derived/trust_funds.json",
+    "central": {
+     "fix_bn": 370.137,
+     "cost_bn": [
+      246.997888,
+      315.529676
+     ]
+    },
+    "current law": {
+     "cost_bn": [
+      234.864616,
+      341.504946
+     ]
+    },
+    "switch_bn": {
+     "central_fix_bn": -37.27800000000002,
+     "central_cost_bn": [
+      3.7666340000000105,
+      3.7666340000000105
+     ],
+     "rule": "separate funds less pooled: the general-fund fix nets OASI's post-depletion shortfall from 2032 Q4 instead of the pooled fund's from 2034 Q3"
+    }
+   }
+  }
+ },
+ "v9_sharing": {
+  "mixed_baskets": "known-source-parts",
+  "rule": "Matched own universal rules and source-calibrated observed/completion/coverage fiscal baskets. Item11 known programme/category pieces included; M6 federal/refund/state and D_added federal/refund composites remain unlocated. Consumption composite enters its consumption-tax category without an invented individual-line split. Capital and production never become tax/benefit cuts.",
+  "mixed_source_baskets": {
+   "main": {
+    "low": {
+     "components": [
+      {
+       "component": "M1_federal",
+       "side": "receipts",
+       "line": "federal_income_tax",
+       "value_bn": 6.723962369023522
+      },
+      {
+       "component": "M2_state",
+       "side": "receipts",
+       "line": "state_local_income_tax",
+       "value_bn": 0.8508170595471931
+      },
+      {
+       "component": "M3_refunds",
+       "side": "spending",
+       "line": "refundable_tax_credits",
+       "value_bn": -0.800464477461564
+      },
+      {
+       "component": "M5_owner_property",
+       "side": "receipts",
+       "line": "modeled_owner_property",
+       "value_bn": 1.133425900550463
+      },
+      {
+       "component": "M5_housing_key",
+       "side": "spending",
+       "line": "housing_subsidies",
+       "value_bn": -0.02578939457088819
+      },
+      {
+       "component": "M5_consumption",
+       "side": "receipts",
+       "line": "consumption_receipts_composite",
+       "value_bn": 4.372536263959048
+      },
+      {
+       "component": "health_latent_Medicaid_low",
+       "side": "spending",
+       "line": "medicaid_and_chip_other_medical",
+       "value_bn": -1.071476488343144
+      },
+      {
+       "component": "health_latent_ACA_low",
+       "side": "spending",
+       "line": "medicaid_and_chip_other_medical",
+       "value_bn": -0.4938276459658343
+      },
+      {
+       "component": "SNAP_latent_SNAP_zero_observed_high_takeup",
+       "side": "spending",
+       "line": "snap",
+       "value_bn": -2.342106387610258
+      }
+     ],
+     "classified_bn": 8.347077199128536,
+     "unlocated_bn": 2.3929390735732543,
+     "total_bn": 10.74001627270179,
+     "unlocated_components": {
+      "M6_biological_children": 1.847528364300416,
+      "D_added_residual": 0.545410709272824
+     },
+     "unlocated_rule": "M6 is a federal-income/refund/state-tax composite (round2.py54\u201358), and D_added transports Df+Dc federal-income/refund composite (removal.py381\u2013390, round2.py71\u201373); neither identifies a single tax or benefit category. Consumption composite is assigned only to its known consumption-tax category, never split across individual lines."
+    },
+    "high": {
+     "components": [
+      {
+       "component": "M1_federal",
+       "side": "receipts",
+       "line": "federal_income_tax",
+       "value_bn": 6.723962369023522
+      },
+      {
+       "component": "M2_state",
+       "side": "receipts",
+       "line": "state_local_income_tax",
+       "value_bn": 0.8508170595471931
+      },
+      {
+       "component": "M3_refunds",
+       "side": "spending",
+       "line": "refundable_tax_credits",
+       "value_bn": -0.800464477461564
+      },
+      {
+       "component": "M5_owner_property",
+       "side": "receipts",
+       "line": "modeled_owner_property",
+       "value_bn": 1.133425900550463
+      },
+      {
+       "component": "M5_housing_key",
+       "side": "spending",
+       "line": "housing_subsidies",
+       "value_bn": -0.02578939457088819
+      },
+      {
+       "component": "M5_consumption",
+       "side": "receipts",
+       "line": "consumption_receipts_composite",
+       "value_bn": 4.372536263959048
+      },
+      {
+       "component": "health_latent_Medicaid_high",
+       "side": "spending",
+       "line": "medicaid_and_chip_other_medical",
+       "value_bn": -0.08704821962930351
+      },
+      {
+       "component": "health_latent_ACA_high",
+       "side": "spending",
+       "line": "medicaid_and_chip_other_medical",
+       "value_bn": 0.448671724413576
+      },
+      {
+       "component": "SNAP_latent_SNAP_cap_observed_low_takeup",
+       "side": "spending",
+       "line": "snap",
+       "value_bn": -0.4773601014317594
+      }
+     ],
+     "classified_bn": 12.138751124400285,
+     "unlocated_bn": 2.392939073573187,
+     "total_bn": 14.531690197973472,
+     "unlocated_components": {
+      "M6_biological_children": 1.847528364300416,
+      "D_added_residual": 0.545410709272824
+     },
+     "unlocated_rule": "M6 is a federal-income/refund/state-tax composite (round2.py54\u201358), and D_added transports Df+Dc federal-income/refund composite (removal.py381\u2013390, round2.py71\u201373); neither identifies a single tax or benefit category. Consumption composite is assigned only to its known consumption-tax category, never split across individual lines."
+    }
+   },
+   "cash": {
+    "low": {
+     "components": [
+      {
+       "component": "M1_federal",
+       "side": "receipts",
+       "line": "federal_income_tax",
+       "value_bn": 6.723962369023522
+      },
+      {
+       "component": "M2_state",
+       "side": "receipts",
+       "line": "state_local_income_tax",
+       "value_bn": 0.8508170595471931
+      },
+      {
+       "component": "M3_refunds",
+       "side": "spending",
+       "line": "refundable_tax_credits",
+       "value_bn": -0.800464477461564
+      },
+      {
+       "component": "M5_owner_property",
+       "side": "receipts",
+       "line": "modeled_owner_property",
+       "value_bn": 1.133425900550463
+      },
+      {
+       "component": "M5_housing_key",
+       "side": "spending",
+       "line": "housing_subsidies",
+       "value_bn": -0.02578939457088819
+      },
+      {
+       "component": "M5_consumption",
+       "side": "receipts",
+       "line": "consumption_receipts_composite",
+       "value_bn": 4.372536263959048
+      },
+      {
+       "component": "health_latent_Medicaid_low",
+       "side": "spending",
+       "line": "medicaid_and_chip_other_medical",
+       "value_bn": -1.071476488343144
+      },
+      {
+       "component": "health_latent_ACA_low",
+       "side": "spending",
+       "line": "medicaid_and_chip_other_medical",
+       "value_bn": -0.4938276459658343
+      },
+      {
+       "component": "SNAP_latent_SNAP_zero_observed_high_takeup",
+       "side": "spending",
+       "line": "snap",
+       "value_bn": -2.342106387610258
+      }
+     ],
+     "classified_bn": 8.347077199128536,
+     "unlocated_bn": 2.3929390735732543,
+     "total_bn": 10.74001627270179,
+     "unlocated_components": {
+      "M6_biological_children": 1.847528364300416,
+      "D_added_residual": 0.545410709272824
+     },
+     "unlocated_rule": "M6 is a federal-income/refund/state-tax composite (round2.py54\u201358), and D_added transports Df+Dc federal-income/refund composite (removal.py381\u2013390, round2.py71\u201373); neither identifies a single tax or benefit category. Consumption composite is assigned only to its known consumption-tax category, never split across individual lines."
+    },
+    "high": {
+     "components": [
+      {
+       "component": "M1_federal",
+       "side": "receipts",
+       "line": "federal_income_tax",
+       "value_bn": 6.723962369023522
+      },
+      {
+       "component": "M2_state",
+       "side": "receipts",
+       "line": "state_local_income_tax",
+       "value_bn": 0.8508170595471931
+      },
+      {
+       "component": "M3_refunds",
+       "side": "spending",
+       "line": "refundable_tax_credits",
+       "value_bn": -0.800464477461564
+      },
+      {
+       "component": "M5_owner_property",
+       "side": "receipts",
+       "line": "modeled_owner_property",
+       "value_bn": 1.133425900550463
+      },
+      {
+       "component": "M5_housing_key",
+       "side": "spending",
+       "line": "housing_subsidies",
+       "value_bn": -0.02578939457088819
+      },
+      {
+       "component": "M5_consumption",
+       "side": "receipts",
+       "line": "consumption_receipts_composite",
+       "value_bn": 4.372536263959048
+      },
+      {
+       "component": "health_latent_Medicaid_high",
+       "side": "spending",
+       "line": "medicaid_and_chip_other_medical",
+       "value_bn": -0.08704821962930351
+      },
+      {
+       "component": "health_latent_ACA_high",
+       "side": "spending",
+       "line": "medicaid_and_chip_other_medical",
+       "value_bn": 0.448671724413576
+      },
+      {
+       "component": "SNAP_latent_SNAP_cap_observed_low_takeup",
+       "side": "spending",
+       "line": "snap",
+       "value_bn": -0.4773601014317594
+      }
+     ],
+     "classified_bn": 12.138751124400285,
+     "unlocated_bn": 2.392939073573187,
+     "total_bn": 14.531690197973472,
+     "unlocated_components": {
+      "M6_biological_children": 1.847528364300416,
+      "D_added_residual": 0.545410709272824
+     },
+     "unlocated_rule": "M6 is a federal-income/refund/state-tax composite (round2.py54\u201358), and D_added transports Df+Dc federal-income/refund composite (removal.py381\u2013390, round2.py71\u201373); neither identifies a single tax or benefit category. Consumption composite is assigned only to its known consumption-tax category, never split across individual lines."
+    }
+   }
+  }
+ }
+}

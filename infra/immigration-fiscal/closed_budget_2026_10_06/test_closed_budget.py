@@ -1,6 +1,6 @@
 """Consistency of the closed-budget arm's committed outputs: every row is G - s * F, the cost falls as the fix grows,
 the household rule carries less than per head, the general-fund gaps net the trust-fund shortfall from the published
-gaps, and the summary's central row is the one the docs quote. Each check runs on the live oct15 outputs.
+gaps, and the summary's central row is the one the docs quote. Each check runs on the live oct16 outputs.
 Historical outputs are retained without regeneration."""
 import csv
 import json
@@ -10,7 +10,7 @@ import pytest
 
 LANE = Path(__file__).resolve().parent
 D = LANE / "derived"
-CASE_DIRS = pytest.mark.parametrize("d", [D / "oct15"], ids=["oct15"])
+CASE_DIRS = pytest.mark.parametrize("d", [D / "oct16"], ids=["oct16"])
 
 
 def rows(d):
@@ -68,3 +68,22 @@ def test_summary_central_matches_csv(d):
     got = sorted(float(r["cost_to_others_bn"]) for r in rows(d)
                  if (r["fix"], r["basis"], r["rule"], r["set"]) == (dfn["fix"], dfn["basis"], dfn["rule"], "main"))
     assert [round(x, 3) for x in got] == [round(x, 3) for x in sorted(c["cost_bn"])]
+
+
+@CASE_DIRS
+def test_every_ordering_claim_is_computed_on_its_own_basis(d):
+    summary=json.loads((d/'summary.json').read_text())
+    with open(d/'ordering.csv',newline='') as f:
+        orders=list(csv.DictReader(f))
+    assert len(orders)==len(rows(d))
+    for row in orders:
+        h,c,l=map(float,(row['headline_bn'],row['closed_bn'],row['whole_deficit_limit_bn']))
+        assert (row['between_headline_and_limit']=='True') == (min(h,l)<=c<=max(h,l))
+        assert abs(float(row['limit_minus_closed_bn'])-(l-c))<1e-9
+    for basis in ('main','cash'):
+        for end in ('low','high'):
+            actual=summary['sets'][basis]['ordering_at_actual_ends'][end]
+            assert actual['ordered_low_to_high']==sorted(['headline','central','whole_deficit_limit'],
+                key=lambda k:{'headline':actual['headline_bn'],'central':actual['central_closed_bn'],
+                              'whole_deficit_limit':actual['whole_deficit_limit_bn']}[k])
+        assert '[UNMEASURED]' in summary['sets'][basis]['cash_group_future_cuts']
