@@ -417,21 +417,22 @@ def drivers(scen, res):
 
 # Each case's accrual ratios (accrual_indian.py): the 2025 reports' serve sept29 and oct05, oct07 is on the 2026 path.
 ACCRUAL = {"sept29": DER / "accrual_ratios.csv", "oct05": DER / "accrual_ratios.csv", "oct07": DER / "oct07/accrual_ratios.csv",
-           "oct14": DER / "oct14/accrual_ratios.csv", "oct15": DER / "oct15/accrual_ratios.csv"}
+           "oct14": DER / "oct14/accrual_ratios.csv", "oct15": DER / "oct15/accrual_ratios.csv",
+           "oct16": DER / "oct16/accrual_ratios.csv"}
 
 
-def main(case="oct15"):
+def main(case="oct16"):
     global JOB_CALCULATOR, JOB_ORIGINAL_CALCULATOR, JOB_CONTROL
     W.use_case(case)
     out = DER if case == "sept29" else DER / case
-    if case in ("oct14", "oct15"):
+    if case in ("oct14", "oct15", "oct16"):
         from job_capital_factors import Factors, run_positive_control
-        JOB_CONTROL = run_positive_control(foreign_source_removed=case == "oct15")
+        JOB_CONTROL = run_positive_control(foreign_source_removed=case in ("oct15", "oct16"))
     W.setup()
-    if case in ("oct14", "oct15"):
+    if case in ("oct14", "oct15", "oct16"):
         frame = d.assign(INDUSTRY=_x.INDUSTRY.to_numpy(), LJCW=_x.LJCW.to_numpy())
-        JOB_CALCULATOR = Factors(frame, R.w, foreign_source_removed=case == "oct15")
-        JOB_ORIGINAL_CALCULATOR = Factors(frame, R.w) if case == "oct15" else None
+        JOB_CALCULATOR = Factors(frame, R.w, foreign_source_removed=case in ("oct15", "oct16"))
+        JOB_ORIGINAL_CALCULATOR = Factors(frame, R.w) if case in ("oct15", "oct16") else None
         W.gate("Indian industry codes use the same CPS 2025 crosswalk; wage denominator matches (1e-9 relative)",
                abs(JOB_CALCULATOR.national_wages / R.KTOT["wage_job"] - 1) < 1e-9)
         W.run29 = run_with_job_factors
@@ -479,7 +480,7 @@ def main(case="oct15"):
                        abs(got - W.DUMP[b][end]["cost_bn"]) < 1e-9, f"{got:.6f}")
     wl = pd.read_csv(FISCAL / f"white_replacement_2026_09_28/derived/rekey_summary_{case}.csv")
     bl = pd.read_csv(FISCAL / f"black_comparator_rough_2026_09_28/derived/rekey_summary_{case}.csv")
-    if case == "oct15":
+    if case in ("oct15", "oct16"):
         for label, table in (("white", wl), ("Black", bl)):
             if "mortality_convention" not in table or set(table.mortality_convention) != {MORTALITY.GENERAL}:
                 raise SystemExit(f"[BLOCKED] Indian base {label} reference lacks its general-mortality label")
@@ -491,7 +492,7 @@ def main(case="oct15"):
             for lab, ref in (("A1_third_plus_nh_white", wl), ("nh_black_rough", bl), ("mexican_origin_rough", wl),
                              ("mexican_origin_engine", wl)):
                 reference = ref.query("basis == @b and group == @lab and end == @end").iloc[0]
-                want = float(reference.cost_evaluator_bn if case == 'oct15' else reference.cost)
+                want = float(reference.cost_evaluator_bn if case in ('oct15', 'oct16') else reference.cost)
                 got = res[(b, lab, end)][0]["cost"]
                 W.gate(f"{b} {end} {lab} reproduces its lane's rekey_summary_{case}.csv (5e-5)", abs(got - want) < 5e-5,
                        f"{got:.4f} vs {want:.4f}")
@@ -603,7 +604,10 @@ def main(case="oct15"):
                      "india_born_sample": int((G1 & R.civ & (R.cage == bnd)).sum())})
     drv = drivers(scen, res)
     out.mkdir(exist_ok=True)
-    if case == "oct15":
+    if case == "oct16":
+        import v9_exports
+        v9_exports.write(out, res)
+    if case in ("oct15", "oct16"):
         from job_capital_factors import source_tax_line_changes
         item9 = []
         for lab, sc in scen.items():
@@ -620,7 +624,7 @@ def main(case="oct15"):
                            abs(total - (after[0]["cost"] - before[0]["cost"])) < 1e-9)
                     item9.extend({"case": case, "group": lab, "basis": basis, "end": end,
                                   "mortality_convention": "whole_population_tables",
-                                  "scope": "item 9 on same oct15 scenario; other policies held fixed",
+                                  "scope": f"item 9 on same {case} scenario; other policies held fixed",
                                   **row} for row in changes)
         W.stop_if_failed()
         with (out / "item9_own_job_lines.csv").open("w", newline="") as stream:
@@ -631,7 +635,7 @@ def main(case="oct15"):
         factors = [{"group": lab, "alias": sc["name"], "ages": sc["ages"], "line": k, "factor": v,
                     "plain_wage_share": sc["share"]["wage_job"], "replicates": "160; group factor remeasured, national fixed"}
                    for lab, sc in scen.items() if sc != "eng" for k, v in sc.get("job_capital_factor", {}).items()]
-        if case == "oct15":
+        if case in ("oct15", "oct16"):
             for row in factors:
                 row.update(case=case, mortality_convention="not_applicable_job_keys")
         with (out / "job_capital_factors.csv").open("w", newline="") as stream:
@@ -644,9 +648,9 @@ def main(case="oct15"):
                        "sampling": "160 own group replicates; factor sampling propagated; national held fixed"},
                       stream, indent=2)
             stream.write("\n")
-    if case == 'oct15':
+    if case in ('oct15', 'oct16'):
         import comparison_contract as C
-        mixed = C.load_mixed_unit()
+        mixed = C.load_mixed_unit(case=case)
         for row in summary:
             population = res[row['basis'], row['group'], row['end']][0]['population']
             correction = C.comparator_removal(mixed, row['group'], row['basis'], row['end'], population)
@@ -664,7 +668,7 @@ def main(case="oct15"):
                                                                         for k, v in r.items()} for r in drv]),
                        *((("ipeds_terms.csv", ipeds),) if ipeds else ()),
                        *((("income_tax_keys.csv", W.tax_key_rows(scen)),) if W.TAX_ON else ())):
-        if case == "oct15":
+        if case in ("oct15", "oct16"):
             for row in data:
                 row.update(case=case, mortality_convention=MORTALITY.GENERAL,
                            indian_mortality="whole_population_tables")
@@ -674,7 +678,7 @@ def main(case="oct15"):
             wr = csv.DictWriter(f, fieldnames=list(data[0]), lineterminator="\n")
             wr.writeheader()
             wr.writerows(data)
-    if case == "oct15":
+    if case in ("oct15", "oct16"):
         rp["case"] = case
         rp["mortality_convention"] = MORTALITY.GENERAL
     rp.to_csv(out / "rekey_replicates.csv", index=False, lineterminator="\n", float_format="%.6f")
@@ -686,8 +690,8 @@ def main(case="oct15"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct15", choices=list(W.CASES),
-                    help="oct15 (default, live v8); prior cases are archived library routes")
+    ap.add_argument("--case", default="oct16", choices=list(W.CASES),
+                    help="oct16 (default, live v9); prior cases are archived library routes")
     main(ap.parse_args().case)
     sys.path.insert(0, str(FISCAL / "scripts"))
     from memory_budget import require_within_budget

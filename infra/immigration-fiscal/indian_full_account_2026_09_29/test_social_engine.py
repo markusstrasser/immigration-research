@@ -15,4 +15,7 @@ def test_live_levels_preserve_principal_and_remove_only_age_calibration():
     assert level("oct15", "mexican_origin_rough_white_ages", 75., 100., 80.) == 75.
     assert level("oct15", "mexican_origin_engine", 100., 100., 80.) == 100.
     assert level("oct15", "indian_origin", -10., 100., 80.) == -10.
+    assert level("oct16", "mexican_origin_rough_white_ages", 75., 100., 80.) == 75.
+    assert level("oct16", "mexican_origin_engine", 100., 100., 80.) == 100.
+    assert level("oct16", "indian_origin", -10., 100., 80.) == -10.
     assert level("oct14", "mexican_origin_rough_white_ages", 75., 100., 80.) == 95.

@@ -603,3 +603,109 @@ Log: 2026-10-15 08:40:26 JST (`date`, parent): rerun on round 3's comparator cod
 ### R4C4 downstream receipt — 2026-10-15 10:38:53 JST (`date`)
 
 Independent job-factor/accrual/fiscal producer and seven source fixtures reproduce **IDENTICAL 71/71, exit 0**, 136.056s. `social_rows.py` is explicitly allow-unrun in that receipt; its direct probe still exits 1 on the existing v8 pairing/restated-social estimand mismatch (maximum about 7.1bn). No consumer code change or gate relaxation was needed. Indian-origin accrual remains −118.7802 / −95.1202bn, India-born −111.1243 / −91.4982bn under their declared general mortality; item11 on the Indian masks remains unmeasured. Independent fiscal PASS does not authorize social/combined publication. [CALCULATION: derived/oct15/rekey_summary.csv; scratch prop8/c4fix-indian-{social-probe,rerun}.log]
+
+## Live v9 propagation (oct16), preparation 2026-10-15
+
+The default fiscal, accrual and guarded social routes select oct16. The social denominator reads
+`meta.population_v9.with_coverage`; older count blocks remain historical. Indian-origin and India-born
+groups retain their own source keys and counts. Mexican minor calibration and Hispanic PES omission
+rates do not transfer to Indian groups. Item 11 on Indian masks is **unmeasured**, with unknown sign
+and size; the arithmetic placeholder is not evidence for zero. [DATA: rekey_indian.py; social_rows.py;
+../main_case_2026_10_16/RESULT.md Consumers; ../white_replacement_2026_09_28/comparison_contract.py]
+
+The independent fiscal route is `sh infra/immigration-fiscal/indian_full_account_2026_09_29/run_oct16.sh`.
+It runs the job source control, accrual, fiscal rekey and source fixtures. Its reproducibility command is:
+
+```sh
+uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/indian_full_account_2026_09_29 \
+  'sh {lane}/run_oct16.sh' \
+  --allow-unrun infra/immigration-fiscal/indian_full_account_2026_09_29/social_rows.py
+```
+
+The explicitly excluded social consumer is probed separately with
+`uv run --no-project python3 infra/immigration-fiscal/indian_full_account_2026_09_29/social_rows.py --case oct16`.
+Its existing source-estimand and fiscal-engine gates must pass before social or combined files can
+be published. All oct15 outputs remain historical and are not regenerated. Final oct16 numbers and
+receipts follow after CASE_FINAL. [SCOPE; CALCULATION: run_oct16.sh]
+
+### Timing probe — 2026-10-20 20:33 JST
+
+The adopted oct16 accrual producer passes its union source oracles and canonical memory
+guard (0.450GB physical), but takes 260.968s under concurrent migration work. The prior
+preparation receipt was 80.837s; these are unmatched runs, so no slowdown factor is inferred.
+Before repeating it, the required byte replay will use the runner's optional
+`INDIAN_ACCRUAL_PROFILE=<scratch .prof>` to profile the actual accrual process. The default
+command and outputs are unchanged. This uses Python's built-in cProfile, with no added
+dependency or profile artifact in the lane. [CALCULATION: `prop9/d9-indian-accrual.json`;
+`run_oct16.sh`]
+
+### Adopted v9 independent fiscal receipt — 2026-10-20 20:43 JST
+
+The job-factor, own accrual and fiscal producers all exit 0 on adopted `7dfb4c66`.
+Fiscal rekey takes 447.230s with a 1.724GB canonical physical peak, after all eleven
+160-replicate group runs. The fiscal replay will also profile this process through
+`INDIAN_FISCAL_PROFILE=<scratch .prof>`. Both profiling hooks are optional and write
+outside the lane. Exact canonical set/cash parity stays 1e-9; saved four-decimal rows
+stay 5e-5; IPEDS operating/capital decompositions and typed own-item/gap closure stay
+1e-9. The existing India-born subgroup-additivity convention stays 0.05bn, reflecting
+separately averaged state-price indices. [CALCULATION: `prop9/d9-indian-job.json`,
+`d9-indian-accrual.json`, `d9-indian-fiscal.json`; `rekey_indian.py`]
+
+`derived/oct16/rekey_summary.csv`, rows `group=indian_origin`, gives set
+**−120.1671 / −99.3307bn/year**, cash **−149.7321 / −128.8956bn/year**. India-born
+rows give set −112.0332 / −94.2122 and cash −137.1406 / −119.3196bn/year. Negative
+is a modeled contribution to other residents under the stated account. These rows
+retain whole-population mortality and explicitly unmeasured Indian item11; they are
+not identified complete mixed-unit removal effects. Source rows carry the case and
+engine labels. [DATA: `derived/oct16/rekey_summary.csv`, `cost_bn`, `item11_scope`]
+
+On the same current own keys/counts, Indian-origin minus White evaluator gaps change
+by **+4.986346564 / +4.860725809bn/year** from v8 policies to v9. By item, low/high:
+13 +5.582030773 / +5.582030773; 14 −0.019447105 / −0.019447105;
+15 −0.480220794 / −0.502627462; 18 −0.107004261 / −0.107004261;
+20 +0.010987951 / −0.092226136; 21 exactly 0. Comparator item11 remains separate.
+Item21 is explicit zero because these rough own keys already use OFD+STL and carry
+no pooled ethnic translation; Mexican calibration and PES rates are not transferred.
+The displayed item parts are rounded independently; exact JSON closure is 1e-9.
+[CALCULATION: `derived/oct16/v9_own_key_changes.json`, `indian_minus_white_gap`,
+`group=indian_origin,basis=accrual`, `change_by_item_bn`]
+
+### Final v9 byte replay — 2026-10-20 21:38 JST
+
+The independent `run_oct16.sh` route, with both optional cProfile hooks, exits 0:
+**IDENTICAL 88/88 files unchanged**, 319.680288s (Python perf_counter/resource).
+The route includes the own-job positive control, own accrual and fiscal producers,
+and eleven social-engine/job-source/v9-export fixtures. The canonical physical
+memory guards pass; the runner's 1,246,330,880-byte child maxRSS is diagnostic only.
+All 61 historical derived files in the preparation hash snapshot remain identical.
+Python parsing (11 sources) and whitespace checks pass. The numerical sources stay
+frozen after this replay. [CALCULATION: scratch `prop9/d9-indian-repro-final.json`,
+`.log`, `d9-indian-evidence.json`; `run_oct16.sh`]
+
+Full-precision typed items and Indian-minus-white changes retain 1e-9bn closure,
+canonical set/cash parity 1e-9bn, saved comparator rows 5e-5bn, and the documented
+India-born parts convention 0.05bn. The previously logged Indian-origin figures
+and per-item gap changes are unchanged. Item 11 remains unmeasured, sign and size
+unidentified; its numeric placeholder is not evidence for zero. The social route
+is explicitly allow-unrun in this independent receipt. Its fresh direct probe
+exits 1 in 0.653850s at the existing restated-union/pairing source-estimand gate
+(maximum difference about 7.1bn; tolerance 1e-6bn), after denominator and
+added-person item checks pass. No oct16 social/combined output is published.
+[CALCULATION: scratch `d9-indian-social-final.json`, `.log`; DATA:
+`derived/oct16/rekey_summary.csv` `item11_scope`]
+
+The accrual profile totals 102.607s (benefit-tax proxy 77.889s, chiefly per-group
+clipping); the fiscal profile totals 207.175s (shared run29 161.741s, including
+state-index and taxable-basket work). These profiles identify performance work,
+not a numerical defect. The measured owner-scoped follow-up and required parity
+checks are in `performance-followup-2026-10-20.md`; no shared comparator source was
+changed and no additional full producer replay is needed. [CALCULATION: scratch
+`d9-indian-{accrual,fiscal}-final.prof`, `d9-indian-{accrual,fiscal}-profile.txt`]
+
+### Refresh after White's gate fixes — 2026-10-21 00:16 JST (`date`)
+
+`sh run_oct16.sh` rerun after the case's custody-only rebuild and White's comparator-contract gate fixes, then
+`rerun_lane.py` (social_rows.py allowed unrun, as before): **IDENTICAL 89/89, exit 0** (00:06:05 JST, 257.2s). The
+oct16 Indian figures in `derived/oct16/rekey_summary.csv` and `v9_own_key_changes.json` are unchanged. Item 11 stays
+unmeasured for the Indian account; the social route still stops on its estimand mismatch.
+[CALCULATION: rerun_lane.py]

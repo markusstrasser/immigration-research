@@ -1,0 +1,21 @@
+case,basis,group,end,cost_rough_keys_bn,pell_bn,higher_ed_use_bn,college_capital_bn,tuition_bn,cost_bn,move_bn,hospital_beside_bn,cost_with_hospital_bn,mortality_convention,indian_mortality
+oct16,accrual,mexican_origin_rough,low,344.7894,4.0191,-3.6354,-0.3561,1.8446,346.6616,1.8722,0.0000,346.6616,whole-population mortality,whole_population_tables
+oct16,accrual,indian_origin,low,-120.1708,0.4548,-0.6678,-0.0680,0.2848,-120.1671,0.0037,-0.3496,-120.5167,whole-population mortality,whole_population_tables
+oct16,accrual,indian_origin_white_ages,low,-103.3424,0.0693,-0.5605,-0.0571,0.2390,-103.6518,-0.3094,-0.1144,-103.7662,whole-population mortality,whole_population_tables
+oct16,accrual,india_born,low,-112.0322,0.2695,-0.4005,-0.0408,0.1708,-112.0332,-0.0011,-0.0352,-112.0684,whole-population mortality,whole_population_tables
+oct16,accrual,india_born_white_ages,low,-68.2182,0.0927,-0.4062,-0.0414,0.1732,-68.3998,-0.1817,-0.0806,-68.4804,whole-population mortality,whole_population_tables
+oct16,accrual,mexican_origin_rough,high,411.4996,4.0191,-3.6354,-0.5342,1.8446,413.1937,1.6941,0.0000,413.1937,whole-population mortality,whole_population_tables
+oct16,accrual,indian_origin,high,-99.3344,0.4548,-0.6678,-0.0680,0.2848,-99.3307,0.0037,-0.3496,-99.6803,whole-population mortality,whole_population_tables
+oct16,accrual,indian_origin_white_ages,high,-84.9878,0.0693,-0.5605,-0.0571,0.2390,-85.2972,-0.3094,-0.1144,-85.4115,whole-population mortality,whole_population_tables
+oct16,accrual,india_born,high,-94.2112,0.2695,-0.4005,-0.0408,0.1708,-94.2122,-0.0011,-0.0352,-94.2474,whole-population mortality,whole_population_tables
+oct16,accrual,india_born_white_ages,high,-55.2480,0.0927,-0.4062,-0.0414,0.1732,-55.4297,-0.1817,-0.0806,-55.5102,whole-population mortality,whole_population_tables
+oct16,cash,mexican_origin_rough,low,267.1944,4.0191,-3.6354,-0.3561,1.8446,269.0666,1.8722,0.0000,269.0666,whole-population mortality,whole_population_tables
+oct16,cash,indian_origin,low,-149.7357,0.4548,-0.6678,-0.0680,0.2848,-149.7321,0.0037,-0.3496,-150.0816,whole-population mortality,whole_population_tables
+oct16,cash,indian_origin_white_ages,low,-112.2417,0.0693,-0.5605,-0.0571,0.2390,-112.5511,-0.3094,-0.1144,-112.6654,whole-population mortality,whole_population_tables
+oct16,cash,india_born,low,-137.1396,0.2695,-0.4005,-0.0408,0.1708,-137.1406,-0.0011,-0.0352,-137.1758,whole-population mortality,whole_population_tables
+oct16,cash,india_born_white_ages,low,-74.3248,0.0927,-0.4062,-0.0414,0.1732,-74.5065,-0.1817,-0.0806,-74.5870,whole-population mortality,whole_population_tables
+oct16,cash,mexican_origin_rough,high,333.9046,4.0191,-3.6354,-0.5342,1.8446,335.5988,1.6941,0.0000,335.5988,whole-population mortality,whole_population_tables
+oct16,cash,indian_origin,high,-128.8993,0.4548,-0.6678,-0.0680,0.2848,-128.8956,0.0037,-0.3496,-129.2452,whole-population mortality,whole_population_tables
+oct16,cash,indian_origin_white_ages,high,-93.8871,0.0693,-0.5605,-0.0571,0.2390,-94.1964,-0.3094,-0.1144,-94.3108,whole-population mortality,whole_population_tables
+oct16,cash,india_born,high,-119.3186,0.2695,-0.4005,-0.0408,0.1708,-119.3196,-0.0011,-0.0352,-119.3548,whole-population mortality,whole_population_tables
+oct16,cash,india_born_white_ages,high,-61.3546,0.0927,-0.4062,-0.0414,0.1732,-61.5363,-0.1817,-0.0806,-61.6168,whole-population mortality,whole_population_tables

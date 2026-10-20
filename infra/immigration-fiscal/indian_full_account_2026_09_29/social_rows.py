@@ -95,7 +95,7 @@ def gate(label, ok, detail=""):
 
 def comparison_fiscal_level(case, group, fiscal, case_level, rough_level):
     """Preserve absolute live amounts; retain the historical age-row calibration."""
-    if case != "oct15" and group == "mexican_origin_rough_white_ages":
+    if case not in ("oct15", "oct16") and group == "mexican_origin_rough_white_ages":
         return case_level + fiscal - rough_level
     return fiscal
 
@@ -113,22 +113,23 @@ PAIRING = ""     # the pairing the added people's rows come from (oct05: v5's; o
 # A lineage case's lane, and the name of the pairing that prices its added people's social rows.
 LINEAGE_CASES = {"oct05": ("main_case_2026_10_05", "v5 pairing"), "oct07": ("main_case_2026_10_07", "v6 pairing"),
                  "oct14": ("main_case_2026_10_14", "v7 pairing"),
-                 "oct15": ("main_case_2026_10_15", "v8 pairing")}
+                 "oct15": ("main_case_2026_10_15", "v8 pairing"),
+                 "oct16": ("main_case_2026_10_16", "v9 pairing")}
 
 
 def load(case):
     global OUT, DRV, KEYS, FIS, LIN_SOC, N_LINEAGE, SUFFIX, PAIRING, FISCAL_MORTALITY
     OUT = DER if case == "sept29" else DER / case
-    if case in ("oct14", "oct15") and any(not (OUT / name).exists() for name in ("drivers.csv", "keys.csv", "rekey_summary.csv")):
+    if case in ("oct14", "oct15", "oct16") and any(not (OUT / name).exists() for name in ("drivers.csv", "keys.csv", "rekey_summary.csv")):
         raise SystemExit(f"[BLOCKED] {case} Indian fiscal inputs absent: complete the R7 policy and re-key before social rows")
     DRV = pd.read_csv(OUT / "drivers.csv").set_index("group")
     KEYS = pd.read_csv(OUT / "keys.csv").set_index(["group", "key"]).value
     FIS = pd.read_csv(OUT / "rekey_summary.csv")
-    if case == "oct15":
+    if case in ("oct15", "oct16"):
         if "mortality_convention" not in FIS or set(FIS.mortality_convention) != {MORTALITY.GENERAL}:
             raise SystemExit("[BLOCKED] Indian base fiscal inputs have missing/wrong mortality labels")
         FISCAL_MORTALITY = FIS.mortality_convention.iloc[0]
-    if case == "oct15" and ("engine" not in FIS or any(r.engine != COMPARISON.engine_for(r.group.replace("_identified", ""))
+    if case in ("oct15", "oct16") and ("engine" not in FIS or any(r.engine != COMPARISON.engine_for(r.group.replace("_identified", ""))
                                                         for r in FIS.itertuples())):
         raise SystemExit("[BLOCKED] Indian social fiscal inputs have missing or incorrect engine tags")
     if case in LINEAGE_CASES:
@@ -139,20 +140,21 @@ def load(case):
         lin = json.loads(src.read_text())
         LIN_SOC = {r["item"]: r for r in lin["lineage_social_rows"]["rows"]}
         meta = json.loads((FISCAL / lane / "derived/corrections.json").read_text())["meta"]
-        N_LINEAGE = (meta["population_v8"]["with_coverage"] if case == "oct15"
-                     else meta["lineage"]["counts"]["lineage_population"])
+        N_LINEAGE = (meta["population_v9"]["with_coverage"] if case == "oct16" else
+                     meta["population_v8"]["with_coverage"] if case == "oct15" else
+                     meta["lineage"]["counts"]["lineage_population"])
         SUFFIX = "_identified"
-        if case == "oct15":
+        if case in ("oct15", "oct16"):
             paired_count = float(lin["per_member_population_m"][case]) * 1e6
             fiscal_counts = FIS[FIS.group.isin(["mexican_origin_engine", "mexican_origin_rough"])].population
             ok = (math.isfinite(N_LINEAGE) and N_LINEAGE > 0
                   and abs(paired_count - N_LINEAGE) <= 0.01
                   and len(fiscal_counts) == 8 and fiscal_counts.notna().all()
                   and (fiscal_counts - N_LINEAGE).abs().max() <= 0.500001)
-            gate("oct15 pairing/fiscal use the complete lineage denominator (0.01 / 0.500001 people: printed fiscal count)",
+            gate(f"{case} pairing/fiscal use the complete lineage denominator (0.01 / 0.500001 people: printed fiscal count)",
                  ok, f"payload {N_LINEAGE}; pairing {paired_count}")
             if not ok:
-                raise SystemExit("[BLOCKED] oct15 social denominator differs from its pairing or fiscal rows")
+                raise SystemExit(f"[BLOCKED] {case} social denominator differs from its pairing or fiscal rows")
 
 ITEMS = ["victims", "property_crime", "unreimbursed_care", "congestion", "housing_gain", "fear_avoidance",
          "private_security", "school_disruption", "pm25_consumption", "road_crash_externality", "scale_net_earnings",
@@ -239,7 +241,7 @@ def pm25(g, n, cons_ratio):
     return float(cen.others * cen.morb * AIR.VSL_DOT_2024 / 1e9), float(vals.min()), float(vals.max())
 
 
-def main(case="oct15"):
+def main(case="oct16"):
     load(case)
     u = DRV.loc["mexican_origin_rough"]
     uni = {it: {e: pair_value(it, e) for e in ("low", "high")} for it in ITEMS}
@@ -376,7 +378,7 @@ def main(case="oct15"):
                              "social_per_member": f"{social * 1e9 / n:.0f}",
                              "total_per_member": f"{(fis_cal + social) * 1e9 / n:.0f}",
                              "fiscal_top_tail_proportional_per_member": f"{float(f.cost_top_tail_proportional_bn) * 1e9 / n:.0f}"})
-                if case == "oct15":
+                if case in ("oct15", "oct16"):
                     engine = COMPARISON.engine_for(g.replace("_identified", ""))
                     if g == "mexican_origin_rough_white_ages":
                         COMPARISON.require_same_engine({"engine": engine}, {"engine": COMPARISON.engine_for("mexican_origin_rough")})
@@ -388,7 +390,7 @@ def main(case="oct15"):
     for name, data in (("social_rows.csv", soc.assign(low_bn=soc.low_bn.map("{:.4f}".format),
                                                         high_bn=soc.high_bn.map("{:.4f}".format)).to_dict("records")),
                        ("combined.csv", comb)):
-        if case == "oct15":
+        if case in ("oct15", "oct16"):
             for row in data:
                 row.update(case=case, mortality_convention=FISCAL_MORTALITY if name == "combined.csv" else "not_applicable_social_terms",
                            indian_mortality="whole_population_tables")
@@ -405,8 +407,8 @@ def main(case="oct15"):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--case", default="oct15", choices=["sept29", "oct05", "oct07", "oct14", "oct15"],
-                    help="oct15 (default, live v8); prior cases are archived routes")
+    ap.add_argument("--case", default="oct16", choices=["sept29", "oct05", "oct07", "oct14", "oct15", "oct16"],
+                    help="oct16 (default, live v9); prior cases are archived routes")
     main(ap.parse_args().case)
     sys.path.insert(0, str(FISCAL / "scripts"))
     from memory_budget import require_within_budget
