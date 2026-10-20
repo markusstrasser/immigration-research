@@ -208,13 +208,17 @@ const caseCells = (r) => [r.cells[1].inner[0], r.cells[2].inner[1]];
   };
   check("main-case row at the case's general administration = the adopted band (1e-4)", rowOf(1, 1, "long_run"), MAIN, 1e-4);
   {
-    // Before item 15 follows the colleges choice (account.cjs SCALED_ITEMS), as the package's profile holds it.
+    // Before item 15 and the college capital carriers follow the colleges choice, as the package's profile holds them.
     const c = choiceOf(rowOf(1, 0, "long_run"), "case"), u = span(SPECS.map((s, i) => costAt(i, c, true))), want = profileBand("long_run_non_school_fixed");
     gate("colleges-fixed row before item 15 follows the colleges = the package's long_run_non_school_fixed profile (1e-9)",
       near(u[0], want[0], 1e-9) && near(u[1], want[1], 1e-9), `${u.map((x) => x.toFixed(4)).join(" to ")}`);
   }
-  check("roads-and-parks-fixed row = the package's cbo_category_lag_non_school_full profile (1e-4)", rowOf(1, 1, "fixed"),
-    profileBand("cbo_category_lag_non_school_full"), 1e-4);
+  {
+    // Before the roads, transport and parks capital carriers follow the roads choice, as the package's profile holds them.
+    const c = choiceOf(rowOf(1, 1, "fixed"), "case"), u = span(SPECS.map((s, i) => costAt(i, c, true))), want = profileBand("cbo_category_lag_non_school_full");
+    gate("roads-and-parks-fixed row before its capital carriers follow the roads = the package's cbo_category_lag_non_school_full profile (1e-9)",
+      near(u[0], want[0], 1e-9) && near(u[1], want[1], 1e-9), `${u.map((x) => x.toFixed(4)).join(" to ")}`);
+  }
   check("all-full row = the package's proportional reference (1e-4)", rowOf(1, 1, "full"), profileBand("proportional_reference"), 1e-4);
   const g0 = rowOf(1, 1, "long_run").cells[0].inner, gWant = profileBand(PROFILE, (s) => ({ ...s, gg: 0 }));
   gate("main-case row with general administration fixed = the package at gg 0 (1e-4)",
@@ -251,17 +255,19 @@ const breakEven = {
     }
     const f = S24.frozen(model, PAIRS), want = one(signRows, { measure: `frozen_services_capital_fixed_welfare_bn_cbo_preferred${suffix}` }, "sign");
     ok = ok && fx(f[0]) === want.oct16_low && fx(f[1]) === want.oct16_high;
+    // The staircase aside says every personal reading comes out ahead at s = 0 with private capital adjusting.
+    if (suffix) for (const pair of PAIRS) for (const prod of S24.productions(1)) for (const share of S24.SHARES)
+      breakEven.frozenAdjustedMin = Math.min(breakEven.frozenAdjustedMin ?? Infinity, S24.welfare(model, "personal", 0, pair, prod, share));
   });
   gate("the sign-reversal definition inside the case reproduces sign_reversal.csv's oct16 columns (four decimals)", ok, got.join("; "));
-  // The frozen row at the case's general administration, before items 21 and 15 follow the health and college
-  // choices (account.cjs SCALED_ITEMS), is that definition at s = 0 with the specification's production (private
-  // capital adjusted), at every specification. The definition holds both items at the case's response with every
-  // service frozen; the row freezes them with the services they price.
+  gate("break-even: with private capital adjusting and every service frozen (enterprises too), every personal reading is better off",
+    breakEven.frozenAdjustedMin > 0, `least ${round(breakEven.frozenAdjustedMin, 2)}bn`);
+  // The frozen row at the case's general administration is that definition at s = 0 with the specification's
+  // production (private capital adjusted), at every specification: both freeze items 21 and 15 and the service
+  // capital carriers with the services (since 2026-10-21).
   // The row's costs come first: withCase wraps the engine, so nothing else may evaluate inside it.
   const frozenRow = matrix.find((r) => r.frozen);
-  const c0 = choiceOf(frozenRow, "case");
-  const own = SPECS.map((s, i) => costAt(i, c0, true));
-  const scaled = SPECS.map((s, i) => costAt(i, c0, true) - costAt(i, c0));
+  const own = SPECS.map((s, i) => costAt(i, choiceOf(frozenRow, "case")));
   let worst = 0;
   withCase("enterprises_at_1", () => SPECS.forEach((s, i) => {
     const pair = { end: s.gg === GG[0] ? "least" : "most", g: s.gg, uc: s.uc };
@@ -269,10 +275,7 @@ const breakEven = {
     const w = S24.welfare(model, s.allocation, 0, pair, production, s.share);
     worst = Math.max(worst, Math.abs(-w - own[i]));
   }));
-  gate("the frozen row before items 21 and 15 follow their choices = the sign-reversal definition at s = 0, every specification (1e-9)",
-    worst < 1e-9, worst.toExponential(1));
-  breakEven.frozenScaledItems = span(scaled).map((x) => round(x, 4));
-  console.log(`    items 21 and 15 held at the case's response with every service frozen: $${span(scaled).map((x) => x.toFixed(2)).join("–")}bn`);
+  gate("the frozen row = the sign-reversal definition at s = 0, every specification (1e-9)", worst < 1e-9, worst.toExponential(1));
   console.log(`    break-even, enterprises with services: personal ${breakEven.personal.map((x) => (100 * x).toFixed(2)).join(" / ")}%, shared ${breakEven.shared.map((x) => (100 * x).toFixed(2)).join(" / ")}%`);
 }
 
@@ -763,8 +766,8 @@ console.log("\n[claims in the text]");
     frozen.map((c) => c.inner.map((x) => x.toFixed(1)).join(" to ")).join("; "));
   gate("matrix: FAQ 2's frozen services leave everyone else from better off to worse off (enterprises with services, capital fixed)",
     breakEven.frozenCapitalFixed[0] < 0 && breakEven.frozenCapitalFixed[1] > 0);
-  gate("break-even: the most adverse end is worse off at every service response, the least adverse better off only below a small share",
-    breakEven.personal[0] < 0 && breakEven.personal[1] > 0 && breakEven.personal[1] < 0.15);
+  gate("break-even: both ends are better off only below a small service share, the most adverse below the least adverse",
+    breakEven.personal[0] > 0 && breakEven.personal[1] > breakEven.personal[0] && breakEven.personal[1] < 0.2);
   gate("ages: at every working age (18–64) the group's net falls short of the white one",
     [1, 2, 3, 4, 5].every((i) => mexicanAges.rate[i] < whiteAges.rate[i]));
   gate("generations: the second generation's tax gap is over $3,000 smaller than the first's, its benefit-use advantage under a quarter of it, "

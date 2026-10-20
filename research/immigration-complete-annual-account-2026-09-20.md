@@ -35,9 +35,9 @@ generation weights; the remaining case rules and central coverage/count prices a
 Counting benefits when paid, the cash set is $284.4–352.9bn ($6,334–7,860 per member of the 44.90M-person lineage). Only the members' Social
 Security and Part A switch; public employees' pensions and retiree health remain on accrual in both sets.
 The low side with schools at the within-district response is $337.9–409.7bn, the outer range $287.6–490.5bn.
-With enterprises and their capital moving with services, sign break-evens span −2.9% to 11.2% across the admitted
-personal readings: the least favorable remains a cost at every nonnegative common service response, while the most
-favorable becomes a gain below 11.2%. Holding other case rules
+With enterprises and their capital moving with services and private capital adjusting, sign break-evens span 2.3%
+to 15.7% across the admitted personal readings: every reading becomes a gain below 2.3% of common service response,
+the most favorable below 15.7%. Holding other case rules
 fixed, capital at 7% ($464.2–542.0bn) sits beside the account. Enterprises out has not been repriced on this case;
 land remains a pricing gap.
 [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`, `range`; `derived/main_case_bands.csv`,
@@ -382,6 +382,11 @@ Method decision: [complete account and fiscal response](../decisions/2026-09-20-
 
 ## Revisions
 
+- 2026-10-21 (sign reversal; FAQ entry 2's revision of the same date): the case's sign-reversal script now freezes
+  item 21's health-residual charge, item 15's college remainder and the union completion's service capital with
+  their services; the break-evens above moved from −2.9–11.2% to 2.3–15.7%, and the least favorable reading
+  with enterprises moving with services now becomes a gain at a small response. Concept affected: the
+  service-response sign break-even.
 - 2026-10-21 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md)): the first-year paragraph now lists
   every rule the year-one reading changes (schools on the one-year rule, no long-run road, park, rental-assistance,
   enterprise or property-tax response, no capital return, item 6's first-year part, military at response 1) and its

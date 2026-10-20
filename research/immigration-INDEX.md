@@ -124,10 +124,12 @@ Beside the headline, the school low side at the within-district 0.836 is $338–
 across members and nonmembers, excluding item 11, is $322.8–390.5bn; it is a distribution reading, not the removal total. A typical budget
 year instead of 2024 (the average of 2015–2019 and 2022–2023, replayed on the back-cast) is 1–13% less per member,
 $322–419bn at today's size ([FAQ entry 18](immigration-objections-faq-2026-09-21.md)). The outer range is $288–490bn
-($329–479bn in quadrature). With services fixed, the personal readings span a $52.8bn gain to a $74.3bn cost;
-if enterprises and their capital move with services too, a $70.1bn gain to a $56.9bn cost. The least favourable
-reading remains a cost at every nonnegative service response. The favourable reading breaks even at 7.6% of
-assigned service costs, or 11.2% with enterprises moving with services.
+($329–479bn in quadrature). With services fixed and private capital held fixed, the personal readings span a $76.1bn
+gain to a $50.9bn cost; if enterprises and their capital move with services too, a $93.6bn gain to a $33.4bn cost.
+With private capital adjusting, the least favourable reading remains a cost at every nonnegative service response
+while enterprises keep full response (break-even −1.5%); with enterprises moving with services it breaks even at
+2.3%. The favourable reading breaks even at 12.4% of assigned service costs, or 15.7% with enterprises moving with
+services.
 The capital return is an imputed resource cost and never enters a debt flow, and rental assistance moves who
 loses, not the budget ([audit](immigration-conceptual-audit-2026-09-27.md) §1).
 [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9.companions`, `range`; `derived/sign_reversal.csv`, `oct16_low/high`]
@@ -918,6 +920,7 @@ its successor, the reason and its last commit are in [`notes/2026-10-20-deleted-
 
 ## Revisions
 
+- 2026-10-21 (sign reversal): the case's sign-reversal script now freezes item 21's health-residual charge, item 15's college remainder and the union completion's service capital with the services they belong to; it had kept them at the case's response, up to $23bn charged at zero response. The frozen ranges and break-evens above moved; with enterprises moving with services the least favourable reading now breaks even at a small positive response. Concept affected: the service-response sign break-even.
 - 2026-10-21, consumer pass ([decision](../decisions/2026-10-16-main-case-v9.md)): the consumer lanes follow `oct16`: closed budget, back-cast, household split, decomposition, reference group, break conditions, generation split, uncertainty, the paired social stack, Black and Indian-origin comparisons, distribution, winners, world ledger, debt and legacy comparisons. Direct taxes again exceed household transfers at both ends; C3's correction split now nets about −$2–4bn rather than cancelling to about $11bn; the white gap rises and C8 breaks upward; the share of other residents ahead falls to 3–8% under the paired social stack; the world ledger moves to the matched-cash account, where the world still gains in every equal-weight reading and the R2/R3 readings turn negative at λ 1.5. The federal legacy row, the Indian-origin social rows and several world-ledger readings are not computed on v9 and are named without numbers. The production-model wage transfer is labelled as modelled, September dates replace "Latest" labels, and rows routing to cruft documents point to their successors. Concept affected: claims and comparisons computed from the adopted account.
 - 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
 

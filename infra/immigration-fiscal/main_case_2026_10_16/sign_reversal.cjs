@@ -1,7 +1,9 @@
 /* v9 sign-reversal readings. Keep every v8 CSV cell unchanged; append oct16_low and oct16_high.
  * Definition: S24's welfare/breakEven/frozen, with v7's rental, receipt and capital rules. Union-completion
- * real-line carriers follow the evaluated parent key and response; endpoint carriers select their reading.
- * Item 11 and coverage are fixed costs after the engine and enter welfare with the opposite sign.
+ * real-line carriers follow the evaluated parent key and response; endpoint carriers select their reading, and
+ * since 2026-10-21 those of service capital take the service response (withCase). Items 21 and 15 follow the
+ * service response too. Item 11 and coverage are fixed costs after the engine and enter welfare with the
+ * opposite sign.
  * Run: node sign_reversal.cjs [--out-dir DIR]. No old lane is written. */
 "use strict";
 const fs = require("fs"), path = require("path");
@@ -44,20 +46,42 @@ function removeObservedChildren(pkg, model, suppliedPayload) {
 }
 module.exports = { removeObservedChildren };
 let last = null;
-function withCase(pkg, variant, f) {
+/* Service-tied amounts follow the service response s (fix of 2026-10-21; before it, two post-engine items and the
+ * union-completion service capital stayed at the case's response with every service frozen):
+ * - endpoint capital carriers of service capital (schools, colleges, police, health, roads, transport, parks and
+ *   their fee offsets) are priced at the case's response 1 or long-run response, and take s; the enterprises'
+ *   carriers take s when the enterprises move with services; general government's keep its reading;
+ * - item 21 (the health-residual key) and item 15 (the colleges) are post-engine amounts the package prices at the
+ *   case's response whatever the run (item 21 is constant in s; item 15 is affine with a remainder at s = 0). Each
+ *   becomes raw(s) - (1 - s) raw(0): zero at s = 0, the case's amount at s = 1, linear between.
+ * scale = false keeps the adopted definition, for the v8 reproduction and the old-definition gate. */
+const SERVICE_CAPITAL = new Set(["k12", "k12_user_fees", "college", "college_user_fees", "pos_sl", "pos_fed", "health_sl", "health_fed",
+  "health_sl_user_fees", "health_fed_user_fees", "hwy_sl", "hwy_fed", "air_fed", "rec_sl", "rec_fed"]);
+const GG_CAPITAL = new Set(["gps_sl", "gps_fed"]);
+const SCALED_ITEMS = ["health_residual_key", "public_college_response"];
+function carrierFactor(src, reading, s, atS, scale) {
+  if (src.end !== reading) return 0;
+  if (!scale || src.kind !== "capital") return 1;
+  if (SERVICE_CAPITAL.has(src.parent_line)) return s;
+  if (src.parent_line.startsWith("ent_")) return atS ? s : 1;
+  if (GG_CAPITAL.has(src.parent_line)) return 1;
+  throw Error(`[BLOCKED] sign_reversal: capital carrier parent ${src.parent_line} unclassified`);
+}
+function withCase(pkg, variant, f, scale = pkg === P) {
   const gg = pkg.RESPONSES.general_government;
   const carriers = pkg.correctionsPayload().meta.union_completion?.carriers || {};
   const carrierEntries = Object.entries(carriers);
   const enterprise = [P.ENTERPRISE_RECEIPT, ...pkg.ENTERPRISE_SPLITS.map(id => `receipt:${id}`)];
   const fixedReceipts = Object.entries(pkg.LINE_RESPONSES).filter(([k]) => k.startsWith("receipt:") && !enterprise.includes(k));
   const evaluate = Engine.evaluate;
-  Engine.evaluate = (m, st) => {
+  const atS = variant === "enterprises_at_s";
+  function run(m, st) {
     const s = st.service_response, reading = st.general_government_response === gg.low ? "low" : st.general_government_response === gg.high ? "high" : null;
     if (!reading) throw Error("[BLOCKED] sign_reversal general-government response has no case reading");
-    const atS = variant === "enterprises_at_s", extra = { [P.RENTAL]: 1 };
+    const extra = { [P.RENTAL]: 1 };
     for (const id of enterprise) extra[id] = atS ? s : 1;
     for (const [id, response] of fixedReceipts) extra[id] = response[reading];
-    for (const [id, src] of carrierEntries) if (src.kind !== "line") extra[id] = src.end === reading ? 1 : 0;
+    for (const [id, src] of carrierEntries) if (src.kind !== "line") extra[id] = carrierFactor(src, reading, s, atS, scale);
     let state = { ...st, response_override: { ...st.response_override, ...extra } };
     let ev = evaluate(m, state);
     const receiptRows = new Map(ev.receipts.map(row => [row.id, row]));
@@ -80,9 +104,20 @@ function withCase(pkg, variant, f) {
     const spec={allocation:st.allocation,reading,share:st.school_share,school:st.service_response,gg:st.general_government_response,uc:st.uncompensated_care_response,rate:pkg.RATES[reading],enterprises:pkg.ENTERPRISES,long_run:true};
     const basePost=pkg.OCT15?pkg.OCT15.postEngine(spec):(pkg.postEngine?pkg.postEngine(spec):0);
     const adjustedCapital=atS?{...cap,total_bn:capital,components:cap.components.map(c=>c.group==="enterprise"?{...c,return_bn:c.return_bn*s}:c)}:cap;
-    const added=pkg.postFor?pkg.postFor(m,spec,undefined,{evaluation:ev,capital:adjustedCapital}):{total_bn:0};
-    const post=basePost+added.total_bn;
-    last = { ...ev, welfare_bn: ev.welfare_bn - capital - post, engine_welfare_bn: ev.welfare_bn, capital_return_bn: capital, post_engine_bn: post };
+    const added=pkg.postFor?pkg.postFor(m,spec,undefined,{evaluation:ev,capital:adjustedCapital}):{total_bn:0,amounts:{},parts:{}};
+    return { ev, s, capital, basePost, added };
+  }
+  Engine.evaluate = (m, st) => {
+    const r = run(m, st), s = r.s;
+    const amounts = { ...r.added.amounts };
+    let correction = 0;
+    if (scale && s !== 0 && s !== 1) {
+      const z = run(m, { ...st, service_response: 0, response_override: { ...st.response_override, [P.SYN.school]: 0, [P.SYN.college]: 0 } });
+      for (const id of SCALED_ITEMS) { const c = -(1 - s) * (z.added.amounts[id] || 0); amounts[id] = (amounts[id] || 0) + c; correction += c; }
+    } else if (scale && s === 0) for (const id of SCALED_ITEMS) { correction -= amounts[id] || 0; amounts[id] = 0; }
+    const post = r.basePost + r.added.total_bn + correction;
+    last = { ...r.ev, welfare_bn: r.ev.welfare_bn - r.capital - post, engine_welfare_bn: r.ev.welfare_bn, capital_return_bn: r.capital, post_engine_bn: post,
+      post_amounts: amounts, post_parts: r.added.parts || {}, scaled_correction_bn: correction };
     return last;
   };
   try { return f(); } finally { Engine.evaluate = evaluate; }
@@ -92,13 +127,13 @@ function frozenPersonal(model, pairs) {
   for (const pair of pairs) for (const prod of S24.productions(0)) for (const share of S24.SHARES) w[pair.end].push(S24.welfare(model, "personal", 0, pair, prod, share));
   return [Math.min(...w.most), Math.max(...w.least)];
 }
-function readings(pkg) {
+function readings(pkg, scale = pkg === P) {
   const model = pkg.payloadModel(), pairs = pairsOf(pkg), out = new Map();
   for (const [variant, suffix] of [["enterprises_at_1", ""], ["enterprises_at_s", "__enterprises_at_s"]]) withCase(pkg, variant, () => {
     for (const allocation of ["personal", "shared"]) out.set(`service_break_even_${allocation}${suffix}`, S24.breakEven(model, allocation, pairs));
     out.set(`frozen_services_capital_fixed_welfare_bn_cbo_preferred${suffix}`, S24.frozen(model, pairs));
     out.set(`frozen_services_capital_fixed_welfare_bn_cbo_preferred_personal${suffix}`, frozenPersonal(model, pairs));
-  });
+  }, scale);
   return out;
 }
 if (require.main === module) {
@@ -132,6 +167,36 @@ for (const variant of ["enterprises_at_1", "enterprises_at_s"]) withCase(P, vari
   }
 });
 gate("service response remains linear with mapped carriers and fixed item11/coverage", linearGap < 1e-9, `${points} points; ${linearGap.toExponential(2)}`);
+// Nothing tied to a service line stays charged with every service frozen: the v9 post-engine parts on service lines,
+// service capital and their union-completion carriers, and the service capital carriers themselves, are zero at s = 0.
+// Item 11 and coverage are the case's declared fixed costs (no line split) and stay.
+{
+  const CARRIERS = payload.meta.union_completion.carriers;
+  const tied = (row, spending) => {
+    if (!row) return false;
+    const src = CARRIERS[row.id];
+    if (src) return src.kind === "capital" ? SERVICE_CAPITAL.has(src.parent_line) : src.side === "spending" && spending.get(src.parent_line)?.response_class === "service";
+    return row.response_class === "service" || SERVICE_CAPITAL.has(row.id);
+  };
+  let worst = 0, n = 0, worstAt = "";
+  for (const variant of ["enterprises_at_1", "enterprises_at_s"]) withCase(P, variant, () => {
+    for (const allocation of ["personal", "shared"]) for (const pair of pairsOf(P)) for (const share of S24.SHARES) {
+      S24.welfare(model, allocation, 0, pair, S24.productions(1)[0], share);
+      const spending = new Map(last.spending.map(row => [row.id, row]));
+      const line = id => spending.get(id) || spending.get(String(id).split(":")[0]) || { id, response_class: SERVICE_CAPITAL.has(id) ? "service" : null };
+      for (const [id, parts] of Object.entries(last.post_parts)) {
+        const charged = SCALED_ITEMS.includes(id) ? last.post_amounts[id] : parts.filter(q => tied(line(q.line), spending) || tied(line(q.source_line), spending)).reduce((t, q) => t + q.delta_bn, 0);
+        if (Math.abs(charged) > worst) { worst = Math.abs(charged); worstAt = id; }
+      }
+      for (const row of last.spending) if (CARRIERS[row.id]?.kind === "capital" && tied(row, spending)) {
+        const charged = row.amount_bn * row.response;
+        if (Math.abs(charged) > worst) { worst = Math.abs(charged); worstAt = row.id; }
+      }
+      n++;
+    }
+  });
+  gate("at s = 0 no post-engine part or carrier tied to a service line stays charged", worst < 1e-9, `${n} states; largest ${worst.toExponential(2)}bn ${worstAt}`);
+}
 const removed = removeObservedChildren(P, model, payload);
 gate("observed children are native cell parts and production, without endpoint child carriers", removed.parts.length > 0 && !Object.values(payload.meta.union_completion.carriers).some(source => source.kind === "nonreporters"), `${removed.parts.length} native cell parts`);
 let childGap = 0, childSlope = 0, childPoints = 0;
@@ -162,6 +227,8 @@ for (const variant of ["enterprises_at_1", "enterprises_at_s"]) withCase(P, vari
 gate("at services=0 and0.37 removing children equals native fiscal plus P/F minus public capital", childGap < 1e-9, `${childPoints} comparisons; max gap ${childGap.toExponential(2)}`);
 gate("observed-child sign contribution changes with service response, rather than a fixed endpoint charge", childSlope > 1e-6, `largest change ${childSlope.toExponential(2)}bn`);
 for (const [key, value] of readings(P)) values.set(key, value);
+// The adopted definition (before 2026-10-21) beside the corrected one, printed for the record.
+for (const [key, value] of readings(P, false)) console.log(`  [old -> new] ${key}: ${value.map(v => v.toFixed(4)).join(" / ")} -> ${values.get(key).map(v => v.toFixed(4)).join(" / ")}`);
 gate("all eight v7 row names have finite v8 readings", oldRows.length === 9 && oldRows.slice(1).every(row => values.get(row[0])?.every(Number.isFinite)));
 const lines = [oldLines[0] + ",oct16_low,oct16_high", ...oldLines.slice(1).map(line => line + "," + values.get(line.split(",")[0]).map(v => v.toFixed(4)).join(","))];
 gate("every v7 column and cell is unchanged, in order", lines.every((line, i) => line.startsWith(oldLines[i] + ",")));

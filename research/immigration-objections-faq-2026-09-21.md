@@ -172,12 +172,13 @@ stay outside the current headline. [CALCULATION: [federal comparison](../infra/i
 SOURCE: [BEA pension accounting](https://www.bea.gov/index.php/news/blog/2013-06-17/bea-move-accrual-accounting-defined-benefit-pension-plans);
 [decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]
 
-The sign turns on ordinary service budgets. With enterprises and their capital moving with their lines,
-break-even thresholds across the personal specifications span −2.9% to 11.2%. The least favorable reading stays
-a cost at every nonnegative service response; the most favorable turns into a gain below 11.2%.
-With enterprises held at full response while other services fall, the thresholds span −7.2% to 7.6%.
-With every service budget frozen, enterprises included, other residents' net position runs from
-−$56.9bn (a cost) to +$70.1bn (a gain)
+The sign turns on ordinary service budgets. With enterprises and their capital moving with their lines and
+private capital adjusting, break-even thresholds across the personal specifications span 2.3% to 15.7%. Every
+reading turns into a gain below 2.3% of service costs responding; the most favorable turns into a gain below 15.7%.
+With enterprises held at full response while other services fall, the thresholds span −1.5% to 12.4%, and the
+least favorable reading stays a cost at every nonnegative service response.
+With every service budget frozen, enterprises included, and private capital held fixed, other residents' net
+position runs from −$33.4bn (a cost) to +$93.6bn (a gain)
 ([sign reversal](../infra/immigration-fiscal/main_case_2026_10_16/RESULT.md), `derived/sign_reversal.csv`, `oct16`,
 the personal rows). [SOURCE: complete account;
 [administration scope](immigration-education-administration-scope-2026-09-20.md);
@@ -217,8 +218,8 @@ which is assumed and unmeasured.
 - Applying year-one response coefficients to this account gives $314–371bn ($230–287bn counting
   benefits when paid); it is not next year's cash saving. Holding non-school education budgets fixed
   has not been repriced on the adopted case.
-- With enterprises and their capital moving with services, the least favorable reading stays a cost at zero
-  service response; the most favorable reaches zero at 11.2% (entry 2).
+- With enterprises and their capital moving with services and private capital adjusting, every reading is a gain
+  at zero service response; the least favorable reaches zero at 2.3%, the most favorable at 15.7% (entry 2).
 
 So the response share moves the result more than any offset listed here.
 - **Household services.** Cheaper household services are worth $21.8bn a year to consumers, or
@@ -1103,3 +1104,11 @@ they get more prominence.
   for a group total. It now leads with the personal allocation, v7's rule for group totals (−$224bn to
   −$322bn; cash +$92bn, schools −$57bn, taxes +$20bn), with the shared figures beside. Concept affected:
   the allocation behind the ageing composition exercise.
+- 2026-10-21 (sign reversal): the sign-reversal script held item 21's health-residual charge, item 15's college
+  remainder and the union completion's service capital at the case's response while it froze services, so up to
+  $23bn stayed charged at zero response. They now move with their lines' response. Entry 2's break-evens move
+  from −2.9–11.2% to 2.3–15.7% (enterprises with services) and from −7.2–7.6% to −1.5–12.4% (enterprises at full
+  response); the frozen range moves from −$56.9bn to +$70.1bn to −$33.4bn to +$93.6bn. With enterprises moving
+  with services the least favorable reading now turns into a gain at a small response, so the claim that it stays
+  a cost at every nonnegative response is withdrawn for that reading. Concept affected: the service-response sign
+  break-even.

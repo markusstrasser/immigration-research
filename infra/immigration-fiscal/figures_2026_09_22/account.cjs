@@ -181,6 +181,22 @@ const isCarrier = (id) => Object.hasOwn(CARRIERS, id);
 // The union-completion capital and production carriers: the completed reporters' return on public capital and
 // production term, set by the capital and production choices at the case's endpoint responses.
 const CAPITAL_CARRIERS = Object.keys(CARRIERS).filter((id) => CARRIERS[id].kind === "capital");
+/* A service capital carrier is priced at the case's response of its service and follows that service's choice, as
+ * main_case_2026_10_16/sign_reversal.cjs has it since 2026-10-21: schools, colleges, police, health (with their fee
+ * offsets) by their choice; roads, transport and parks fixed at 0 and otherwise at the case's; the enterprises' by
+ * the enterprise choice; general government's as the case has it. */
+function carrierChoice(id, c, i) {
+  const parent = CARRIERS[id].parent_line;
+  if (/^k12/.test(parent)) return c.schools === "cbo" ? CBO_SCHOOL[i] : c.schools;
+  if (/^college/.test(parent)) return c.colleges;
+  if (/^pos_/.test(parent)) return c.police;
+  if (/^health_/.test(parent)) return c.health;
+  if (/^(hwy|air)_/.test(parent)) return c.roads === "fixed" ? 0 : 1;
+  if (/^rec_/.test(parent)) return c.parks === "fixed" ? 0 : 1;
+  if (/^ent_/.test(parent)) return c.enterprise ? 1 : 0;
+  if (/^gps_/.test(parent)) return 1;
+  throw new Error("capital carrier parent unclassified: " + parent);
+}
 const PRODUCTION_CARRIERS = Object.keys(CARRIERS).filter((id) => CARRIERS[id].kind === "production");
 {
   const serviceLines = model.spending.lines.filter((l) => l.response_class === "service" && !isCarrier(l.id)).map((l) => l.id).sort();
@@ -220,7 +236,7 @@ const NONE = { schools: 0, colleges: 0, police: 0, health: 0, welfare: 0, roads:
   property: false, constants: false, rental: false, enterprise: false, capital: false, production: false, jobcap: false, fixed: false };
 const CASE_CHOICE = { schools: 1, colleges: 1, police: 1, health: 1, welfare: 1, roads: "long_run", parks: "long_run",
   gg: "case", property: true, constants: true, rental: true, enterprise: true, capital: "D", production: true, jobcap: true, fixed: true };
-function specAt(i, c) {
+function specAt(i, c, raw = false) {
   const s = SPECS[i];
   const longRun = [c.roads, c.parks].map((x) => x === "long_run");
   // The long-run variant charges the capital of roads and parks at their subfunctions' long-run responses, on
@@ -239,7 +255,7 @@ function specAt(i, c) {
   for (const id of PROPERTY) lr[id] = c.property ? s.line_responses[id] : 0;
   for (const id of ENTERPRISE) lr[id] = c.enterprise ? s.line_responses[id] : 0;
   for (const id of JOBCAP) lr[id] = c.jobcap ? s.line_responses[id] : 0;
-  for (const id of CAPITAL_CARRIERS) lr[id] = c.capital ? s.line_responses[id] : 0;
+  for (const id of CAPITAL_CARRIERS) lr[id] = c.capital ? s.line_responses[id] * (raw ? 1 : carrierChoice(id, c, i)) : 0;
   for (const id of PRODUCTION_CARRIERS) lr[id] = c.production ? s.line_responses[id] : 0;
   return Object.assign({}, s, {
     line_responses: lr,
@@ -262,7 +278,7 @@ function specAt(i, c) {
  * fixed. A choice that freezes public health or the colleges freezes its item with it. */
 const SCALED_ITEMS = { health_residual_key: "health", public_college_response: "colleges" };
 function evaluate(i, c, raw = false) {
-  const spec = specAt(i, c);
+  const spec = specAt(i, c, raw);
   let r;
   if (spec.long_run === SPECS[i].long_run) r = P.evaluateFull(model, spec, PROFILE);
   else {
@@ -362,26 +378,37 @@ const UC_KEYS = Object.keys(model.spending.lines.find((l) => l.id === "medicaid_
 /* The sign-reversal definition (main_case_2026_09_24/sign_reversal.cjs) inside the case, as
  * main_case_2026_10_16/sign_reversal.cjs runs it (its withCase, copied): rental assistance at 1, the
  * enterprise receipts at option D's 1 or at s, every other receipt response at the case's, the union-completion
- * carriers mapped to their parents, the return on public capital from the same evaluation, and the case's
- * post-engine costs, item 11 and coverage fixed, the rest priced on the run. */
+ * carriers mapped to their parents, the service capital carriers and items 21 and 15 following the service
+ * response (since 2026-10-21), the return on public capital from the same evaluation, and the case's post-engine
+ * costs, item 11 and coverage fixed, the rest priced on the run. */
 const S24 = require(path.join(FISCAL, "main_case_2026_09_24", "sign_reversal.cjs"));
 const GG9 = P.RESPONSES.general_government;
 const PAIRS = S24.PAIRS.map((p) => ({ ...p, g: p.end === "least" ? GG9.low : GG9.high }));
 let lastSign = null;
+const SERVICE_CAPITAL = new Set(["k12", "k12_user_fees", "college", "college_user_fees", "pos_sl", "pos_fed", "health_sl", "health_fed",
+  "health_sl_user_fees", "health_fed_user_fees", "hwy_sl", "hwy_fed", "air_fed", "rec_sl", "rec_fed"]);
+function carrierFactor(src, reading, s, atS) {
+  if (src.end !== reading) return 0;
+  if (src.kind !== "capital") return 1;
+  if (SERVICE_CAPITAL.has(src.parent_line)) return s;
+  if (src.parent_line.startsWith("ent_")) return atS ? s : 1;
+  if (/^gps_/.test(src.parent_line)) return 1;
+  throw new Error("capital carrier parent unclassified: " + src.parent_line);
+}
 function withCase(variant, f) {
   if (!["enterprises_at_1", "enterprises_at_s"].includes(variant)) throw new Error("unknown variant " + variant);
   const carrierEntries = Object.entries(CARRIERS);
   const fixed = Object.entries(P.LINE_RESPONSES).filter(([k]) => k.startsWith("receipt:") && !ENTERPRISE.includes(k));
   const evaluate0 = Engine.evaluate;
-  Engine.evaluate = (m, st) => {
+  const atS = variant === "enterprises_at_s";
+  function run(m, st) {
     const s = st.service_response;
     const reading = st.general_government_response === GG9.low ? "low" : st.general_government_response === GG9.high ? "high" : null;
     if (!reading) throw new Error(`general government at ${st.general_government_response}, neither of the case's responses`);
-    const atS = variant === "enterprises_at_s";
     const extra = { [RENTAL]: 1 };
     for (const k of ENTERPRISE) extra[k] = atS ? s : 1;
     for (const [k, e] of fixed) extra[k] = e[reading];
-    for (const [id, src] of carrierEntries) if (src.kind !== "line") extra[id] = src.end === reading ? 1 : 0;
+    for (const [id, src] of carrierEntries) if (src.kind !== "line") extra[id] = carrierFactor(src, reading, s, atS);
     let state = Object.assign({}, st, { response_override: Object.assign({}, st.response_override, extra) });
     let ev = evaluate0(m, state);
     const receiptRows = new Map(ev.receipts.map((row) => [row.id, row]));
@@ -402,8 +429,19 @@ function withCase(variant, f) {
     const spec = { allocation: st.allocation, reading, share: st.school_share, school: st.service_response, gg: st.general_government_response,
       uc: st.uncompensated_care_response, rate: P.RATES[reading], enterprises: P.ENTERPRISES, long_run: true };
     const adjusted = atS ? { ...cap, total_bn: capital, components: cap.components.map((c) => (c.group === "enterprise" ? { ...c, return_bn: c.return_bn * s } : c)) } : cap;
-    const post = P.OCT15.postEngine(spec) + P.postFor(m, spec, undefined, { evaluation: ev, capital: adjusted }).total_bn;
-    lastSign = Object.assign({}, ev, { welfare_bn: ev.welfare_bn - capital - post, capital_return_bn: capital, post_engine_bn: post });
+    return { ev, s, capital, post: P.OCT15.postEngine(spec), added: P.postFor(m, spec, undefined, { evaluation: ev, capital: adjusted }) };
+  }
+  Engine.evaluate = (m, st) => {
+    const r = run(m, st), s = r.s;
+    // Items 21 and 15 follow the service response: raw(s) - (1 - s) raw(0).
+    let correction = 0;
+    if (s === 0) for (const k of Object.keys(SCALED_ITEMS)) correction -= r.added.amounts[k] || 0;
+    else if (s !== 1) {
+      const z = run(m, { ...st, service_response: 0, response_override: { ...st.response_override, [SYN.school]: 0, [SYN.college]: 0 } });
+      for (const k of Object.keys(SCALED_ITEMS)) correction -= (1 - s) * (z.added.amounts[k] || 0);
+    }
+    const post = r.post + r.added.total_bn + correction;
+    lastSign = Object.assign({}, r.ev, { welfare_bn: r.ev.welfare_bn - r.capital - post, capital_return_bn: r.capital, post_engine_bn: post });
     return lastSign;
   };
   try { return f(); } finally { Engine.evaluate = evaluate0; }

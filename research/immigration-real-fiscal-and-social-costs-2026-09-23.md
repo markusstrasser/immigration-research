@@ -401,9 +401,10 @@ valuation choice beside the central, which keeps the transport departments' one 
 [FRAMING-SENSITIVE; CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv`,
 `pairing_social_env_life_years_r0_beside`, `pairing_social_env_life_years_r003_beside`.]
 
-With enterprises and their capital moving with services, fiscal sign break-evens span −2.9% to 11.2% across the
-admitted personal readings. The least favorable remains a cost at every nonnegative common response; the most
-favorable becomes a gain below 11.2%. Holding enterprises at full response gives thresholds from −7.2% to 7.6%.
+With enterprises and their capital moving with services and private capital adjusting, fiscal sign break-evens
+span 2.3% to 15.7% across the admitted personal readings: every reading becomes a gain below 2.3% of common
+response, the most favorable below 15.7%. Holding enterprises at full response gives thresholds from −1.5% to 12.4%,
+and the least favorable then remains a cost at every nonnegative common response.
 These are fiscal thresholds, not a fresh sign search for the social pairing.
 [CALCULATION: `main_case_2026_10_16/derived/sign_reversal.csv`, personal `oct16` rows.]
 
@@ -482,6 +483,11 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 
 ## Revisions
 
+- 2026-10-21 (sign reversal; FAQ entry 2's revision of the same date): the case's sign-reversal script now freezes
+  item 21's health-residual charge, item 15's college remainder and the union completion's service capital with
+  their services; the break-evens above moved from −2.9–11.2% to 2.3–15.7% (enterprises at full response: −7.2–7.6% to −1.5–12.4%), and the least favorable reading
+  with enterprises moving with services now becomes a gain at a small response. Concept affected: the
+  service-response sign break-even.
 - 2026-10-21 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md); consumer lanes: pairing c7b99ac7, distribution 65b6e01c, uncertainty 034db791): the verdict, §1, §3, §4 and §7 state v9's own consumer figures. The pairing is $479.6–553.7bn ($10.7–12.3k per member of the 44.90M lineage), $396.0–470.1bn counting benefits when paid; v8's $477.7–573.4bn had sat beside the v9 headline although its fiscal row was v8's. The social rows are $111.6 / 117.1bn. Outside the budget the bottom four fifths lose $80.1bn and the top fifth gains $45.4bn; §4's fiscal channel is $393.4bn. The sampling standard error is $14.2–14.5bn, wider because item 21's health residual rests on the MEPS donor model. The raw-coded justice alternative and the matched justice-footing pairing are not computed on v9 and their numbers are withdrawn. §7 gains a life-year footnote at the operator's request (2026-10-21): $433.0–508.8bn undiscounted, $438.4–513.8bn at 3%. Wording: the wage transfer is labelled the calibrated model's, not a measured effect; §3's justice row names the September 23 lane; §4's opening no longer calls the split "measured"; §5's displaced-natives line says not identified (ladder 182's withdrawal); §7b states its scale rows on §7's basis; the winners comparison is on the same case. Concept affected: the fiscal-plus-social total, its distribution by income and the stated status of the wage and displaced-natives channels.
 
 - 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.

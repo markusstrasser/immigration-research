@@ -4,14 +4,13 @@
   const steps = fig.staircase
   const acc = fig.account
   const pct = (v) => (100 * v).toFixed(1)
-  // Least adverse end of the break-even share, the case's personal allocation (enterprises with services).
-  const breakEven = pct(acc.breakEven.personal[1])
+  // Both ends of the break-even share, the case's personal allocation (enterprises with services), most adverse first.
+  const breakEven = acc.breakEven.personal.map(pct)
   const cashTally = acc.tally.cash.map((v) => Math.round(-v)).sort((a, b) => a - b)
   const cash = acc.cash.map(Math.round)
   const gg = acc.gg.map((g) => g.toFixed(2))
   const shares = acc.shares.map((s) => Math.round(100 * s))
   const rate = (100 * acc.rate).toFixed(2)
-  const held = Math.round(acc.breakEven.frozenScaledItems[0])
 
   // Columns: label | step size | plot | running total. Worse off for everyone else runs right.
   // Wider than the plot needs: a range that crosses zero spells out both directions in the total column.
@@ -168,11 +167,10 @@
       the main case ${cash[0]}–{cash[1]}bn worse off.
     </p>
     <p>
-      With every service budget frozen, and the public enterprises with them, the most adverse choices still
-      leave everyone else worse off. At the least adverse, everyone else comes out ahead only while fewer than
-      {breakEven}% of the service costs charged to the group grow with the population. That reading, the
-      case’s own, keeps the re-keyed public-health residual (${held}bn) at the case’s response while the
-      services are frozen; the matrix below freezes it with public health.
+      With private capital adjusting and every service budget frozen, the public enterprises included,
+      everyone else comes out ahead. That lasts only while few of the service costs charged to the group grow
+      with the population: fewer than
+      {breakEven[0]}% at the most adverse choices, {breakEven[1]}% at the least adverse.
     </p>
     <p>
       Defense, interest on existing debt and business subsidies stay at zero throughout. Charging them
