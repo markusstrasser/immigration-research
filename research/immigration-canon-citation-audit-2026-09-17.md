@@ -11,6 +11,12 @@ Model self-report: `claude-opus-5[1m]` (verbatim from environment-info block).
 ## Status log
 
 - 2026-09-17 — citation pull complete (S2 keyed + OpenAlex cross-check), 26 papers audited, full text read for 3. Memo COMPLETE; open gaps listed in §5.
+- 2026-10-20 — §4's over-citation verdicts were tested against 385 sampled academic citing sentences (scite Smart
+  Citations, 17 papers, one rater): 8% overstate, 28 of 32 in the pro direction; pro canon 26/182 (14%), con canon
+  6/165 (4%, four of them Storesletten cited without its skill condition). Card 2001 confirmed (10/31 overstated as a
+  zero effect); Clemens 2011, Card 2009 and Ottaviano–Peri partly; Borjas 2003 (0/26), Borjas–Freeman–Katz (1/25),
+  Cortes (0/35) and Dustmann–Frattini–Preston (2/26) not confirmed in academic text, where policy and media use, the
+  memo's main ground, are outside scite. [DATA: `notes/immigration-citance-audit-2026-10-20.md`]
 
 ---
 
