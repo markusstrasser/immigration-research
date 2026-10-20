@@ -1,0 +1,40 @@
+{
+  "case": "oct16",
+  "status": "partial; complete present-law total unmeasured",
+  "replacement_lead": "The legacy individual-tax and eligibility subset approximately balanced on the old v5 frame. It was never a complete current-law estimate.",
+  "calibrated_located_subset": {
+    "central": -0.35439999999999827,
+    "benefit_low_tax_high": -4.289300000000001,
+    "benefit_high_tax_low": 5.6495000000000015
+  },
+  "calibrated_scope": "located calibrated records, original latent descendants and completion; constructed coverage has no identified eligible applicant/tax-unit cells",
+  "legacy_subset": {
+    "central": -0.2798999999999996,
+    "benefit_low_tax_high": -4.2328,
+    "benefit_high_tax_low": 5.759600000000001
+  },
+  "account_law": "income-year2024 tax and benefit rules, pensions at what current law can pay (2026 Trustees)",
+  "fy2028_expensing": {
+    "delta_cost_bn": {
+      "low": 4.232590296300337,
+      "high": 1.566058409631125
+    },
+    "source_population": "source companion v8 item6 keys",
+    "year": "FY2028",
+    "price_year": 2024,
+    "conditional": true
+  },
+  "cy2025_customs": {
+    "delta_cost_bn": -16.9341171511101,
+    "year": "CY2025",
+    "price_year": 2024,
+    "source_part": "customs_historical_current_bea",
+    "bea_vintage": "Data published September 30, 2026",
+    "scope": "historical customs sensitivity, not a certified FY2028 tariff-policy projection"
+  },
+  "combined_total": null,
+  "no_sum_rule": "FY2028 expensing and CY2025 customs are different-year objects; never sum",
+  "source_sha256": {
+    "consumption_tax_bases_r5_2026_10_15/derived/companion_summary.json": "259b6e7b889bc304aa9ee96b9807e55fc617003885ca571e53e95997dbaaf778"
+  }
+}

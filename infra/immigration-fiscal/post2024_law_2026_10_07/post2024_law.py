@@ -52,7 +52,7 @@ import openpyxl
 LANE = Path(__file__).resolve().parent
 FISCAL = LANE.parent
 ROOT = FISCAL.parents[1]
-OUT = LANE / "derived"
+OUT = LANE / "derived/oct16"
 STAGE = ROOT / "sources/immigration-fiscal/data/external/stage3/cbo"
 CBO_LAW = STAGE / "pl119_21_estimate/61570-pl119-21-2025Recon-CLB.xlsx"
 CBO_LAW_SHA = "b6f7a7ae822633a70d4abaec1e26e4b4ac428e7ed09fc3aee9dbd5d83c7bc552"
@@ -61,8 +61,9 @@ CBO_EXT_SHA = "2e92669f00f2bf7bca55d9f57a1098967e7609154e7e085ea90d8cca03db5e54"
 LTBO = STAGE / "ltbo_2026/62044-2026-LTBO.xlsx"
 LTBO_SHA = "5e1dd450cebd869dd3066d3d965351f3778808ce17f261f7a0571e6c21d93e4b"
 CURVE = FISCAL / "ir5_adjusters_2026_09_27/_cache/ptc/cms_state_age_curves_2017.txt"
-PUBLIC_CHARGE = FISCAL / "public_charge_share_2026_10_07/derived/summary.json"
-DECOMP = FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct05.json"
+PUBLIC_CHARGE = FISCAL / "public_charge_share_2026_10_07/derived/oct16/summary.json"
+PAYLOAD = FISCAL / "main_case_2026_10_16/derived/corrections.json"
+DECOMP = FISCAL / "main_case_decomposition_2026_09_29/derived/summary_oct16.json"
 MTS = FISCAL / "dataset_integrity_2026_09_23/derived/spending_mts_credits.json"
 
 sys.path.insert(0, str(FISCAL / "world_ledger_2026_09_27"))
@@ -214,6 +215,8 @@ def build_frame(extra_p=(), extra_h=()):
     B = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(B)
     d = B.load_cps()
+    # reweight validates the shared loader's display calibration and restores
+    # its declared production weights before this caller constructs row4.
     extra_p = [c for c in extra_p if c not in EXTRA_P and c not in d.columns]
     with zipfile.ZipFile(B.PATHS["cps"]) as z:
         p = pd.read_csv(z.open("pppub25.csv"), usecols=EXTRA_P + extra_p)
@@ -227,7 +230,19 @@ def build_frame(extra_p=(), extra_h=()):
     flag = pd.DataFrame({"PH_SEQ": s.PH_SEQ, "PPPOS": s.PPPOS, "unauth": st["unauthorized"]})
     d = d.merge(flag, on=["PH_SEQ", "PPPOS"], validate="one_to_one", how="left")
     gate("status_aligned", not d.unauth.isna().any())
-    return reweight(d, B.PATHS["cps"], gate, "lineage")
+    d = reweight(d, B.PATHS["cps"], gate, "lineage")
+    sys.path.insert(0, str(FISCAL / "closed_budget_2026_10_06"))
+    from households import age_tilted
+    from calibrated_frame import complete_calibrated, calibration_factors
+
+    payload = json.loads(PAYLOAD.read_text())
+    weights = age_tilted(d, PAYLOAD)
+    weights, target, construction = complete_calibrated(
+        d, weights, d.target.to_numpy(copy=True), payload, gate, coverage=False)
+    d["pw"], d["target"] = weights, target
+    d["pw_row4"] = d.pw_row4.to_numpy(float)*calibration_factors(d)
+    d.attrs["oct16_construction"] = construction
+    return d
 
 
 def main() -> None:
@@ -236,7 +251,8 @@ def main() -> None:
     frame = json.loads(DECOMP.read_text())["frame"]["row4"]
     civ, tgt = d.civ.to_numpy(), d.target.to_numpy()
     lw, r4 = d.pw.to_numpy(float), d.pw_row4.to_numpy(float)
-    gate("lineage_is_the_decompositions_NG", abs(lw[tgt].sum() - frame["NG"]) < 1e-2)
+    payload = json.loads(PAYLOAD.read_text())
+    gate("located_lineage_is_the_payload_without_coverage", abs(lw[tgt].sum() - payload["meta"]["population_v9"]["without_coverage"]) < 1e-2)
     gate("row4_civilians_are_the_decompositions_NC", abs(r4[civ].sum() - frame["NC"]) < 1.0)
     noncit = d.PRCITSHP.eq(5).to_numpy() & civ
     unauth = d.unauth.to_numpy(bool) & civ
@@ -407,7 +423,10 @@ def main() -> None:
                      "lineage_low_bn": round(-0.173 * a_pc, 4), "lineage_high_bn": round(-0.033 * a_pc, 4),
                      "consolidated_government": True, "note": "DHS rate x (a)'s lineage SNAP + Medicaid cut"})
 
-    summary = {"lane": "post2024_law_2026_10_07", "deflator_cy2024_per_fy_dollar": defl, "cpi_u_growth": cpi,
+    summary = {"lane": "post2024_law_2026_10_07", "case": "oct16", "population_construction": d.attrs["oct16_construction"],
+               "scope": "priced individual-tax and eligibility subset; constructed coverage is unlocated, not new identified applicants; full present-law total unmeasured",
+               "account_law": "income-year 2024 tax and benefit rules; pension promises at what current law can pay (2026 Trustees)",
+               "deflator_cy2024_per_fy_dollar": defl, "cpi_u_growth": cpi,
                "lineage_m": float(lw[tgt].sum()) / 1e6, "added_descendants_m": added_m,
                "ctc_rule_measured": ctc, "ptc_model": ptc, "shares": shares, "totals": {}}
     for fy in FYS:
@@ -429,7 +448,10 @@ def main() -> None:
                          "scale_2024usd_bn": round(-v["2028"] / 1e3 * lin_share_ctx[k] * defl["2028"], 3)})
     summary["context_not_in_arm"] = ctx_rows
 
-    OUT.mkdir(exist_ok=True)
+    sys.path.insert(0,str(FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    require_within_budget("oct16 post2024 eligible subset")
+    OUT.mkdir(parents=True, exist_ok=True)
     for name, data in (("rows.csv", rows), ("shares.csv", share_rows), ("context_not_in_arm.csv", ctx_rows)):
         with open(OUT / name, "w", newline="") as fh:
             w = csv.DictWriter(fh, fieldnames=list(data[0]), lineterminator="\n")

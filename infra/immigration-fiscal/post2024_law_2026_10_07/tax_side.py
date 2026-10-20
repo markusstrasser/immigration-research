@@ -58,7 +58,7 @@ import post2024_law as P  # noqa: E402
 
 import taxcalc as tc  # noqa: E402
 
-OUT = LANE / "derived"
+OUT = LANE / "derived/oct16"
 TAXCALC_VERSION = "6.8.4"
 INCOME_P = ["SEMP_VAL", "FRSE_VAL", "PNSN_VAL", "ANN_VAL", "DIV_VAL", "RNT_VAL", "UC_VAL", "SS_VAL", "INT_VAL",
             "STATETAX_B", "OCCUP", "HRSWK", "WKSWORK", "A_HRLYWK", "PRERELG", "A_CLSWKR", "A_LINENO", "FILESTAT"]
@@ -94,6 +94,15 @@ def calc(df: pd.DataFrame, year: int, ref: dict | None, records=None):
     c = tc.Calculator(policy=pol, records=rec, verbose=False)
     c.calc_all()
     return c.array("iitax"), c
+
+
+def filer_has_ssn(d: pd.DataFrame, ids) -> np.ndarray:
+    """A tax unit qualifies when any nondependent filer is not unauthorized."""
+    nd = d.loc[~d.DEP_STAT.gt(0)]
+    all_unauthorized = nd.unauth.astype(bool).groupby(nd.TAX_ID).all().reindex(ids)
+    if all_unauthorized.isna().any():
+        raise ValueError('[BLOCKED] tax-unit SSN status missing a nondependent filer')
+    return (~all_unauthorized).to_numpy(bool)
 
 
 def units(d: pd.DataFrame) -> tuple[pd.DataFrame, np.ndarray]:
@@ -157,8 +166,7 @@ def units(d: pd.DataFrame) -> tuple[pd.DataFrame, np.ndarray]:
     rec["n21"] = rec.nu18
     rec["nu13"] = rec.nu06
     rec["ot_unit"] = by.ot_rec.any().reindex(ids).to_numpy(bool)
-    rec["filer_ssn"] = (~by.apply(lambda g: g.loc[~g.DEP_STAT.gt(0), "unauth"].astype(bool).all())).reindex(ids
-                                                                                                            ).to_numpy()
+    rec["filer_ssn"] = filer_has_ssn(d, ids)
     idx = pd.Series(np.arange(len(ids)), index=ids)
     return rec, d.TAX_ID.map(idx).fillna(-1).astype(int).to_numpy()
 
@@ -304,7 +312,10 @@ def main() -> None:
                "benefit_cuts_consolidated_bn": benefit,
                "net_benefit_cuts_minus_tax_cuts_bn": net,
                "net_after_temporary_provisions_lapse_bn": benefit["lineage_2024usd_bn"] - perm["lineage_2024usd_bn"]}
-    OUT.mkdir(exist_ok=True)
+    sys.path.insert(0,str(P.FISCAL / "scripts"))
+    from memory_budget import require_within_budget
+    require_within_budget("oct16 post2024 individual tax subset")
+    OUT.mkdir(parents=True,exist_ok=True)
     with open(OUT / "tax_rows.csv", "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()

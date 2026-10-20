@@ -1,5 +1,7 @@
 claude-opus-5-5
 
+**Current scope correction, updated 2026-10-20:** The broad "current law roughly breaks even" lead below is withdrawn. It describes only the legacy v5 individual-tax/eligibility subset. A complete present-law total is unmeasured. The oct16 located-record subset is built on calibrated weights; see the "Adopted oct16 execution — 2026-10-20" section below. The preserved verdict below is historical. [DATA: `../consumption_tax_bases_r5_2026_10_15/derived/companion_summary.json`; CALCULATION: `policy_scope.py`]
+
 **Verdict:** In FY2028, the first fiscal year with every piece in full effect, current law roughly breaks even for main case v5's 42.75M lineage (2024 dollars, consolidated government). The net taken from the lineage is **−$0.3bn a year**, so the lineage comes out $0.3bn ahead. The ends run from −$4.2bn to +$5.8bn. The benefit cuts come to $9.6bn ($5.8–15.5bn). The 2025 budget law's individual tax cuts for the same people come to $9.9bn ($9.8–10.0bn), net of its remittance excise; that is the tax side, below. Six of the tax items lapse by tax year 2030: tips, overtime, car-loan interest, the senior deduction, the Trump-account deposit and the higher SALT cap. Once they do, the net is **$5.75bn** a year taken from the lineage, and the cuts outlast the tax relief. Counting the federal books alone adds the $0.9bn that the emergency-Medicaid match shifts to states. The figures sit beside the 2024 account, which is income-year 2024 under 2024 law. They are no headline change. [CALCULATION: `derived/rows.csv`, `derived/summary.json`, `derived/tax_rows.csv`, `derived/tax_summary.json`]
 
 | Part (FY2028, 2024 $bn) | Lineage | Range | Lineage share |
@@ -173,3 +175,49 @@ Inputs staged for this lane: `sources/immigration-fiscal/data/external/stage3/cb
 - 2026-10-07 11:10 JST: Tax-Calculator's random EITC/ACTC take-up draw gave spurious tax increases (one six-child family −$7,725). Fixed by setting full take-up in every run.
 - 2026-10-07 11:13 JST: first full tax-side run. Peak memory 2.9 GB, over the 2.5 GB limit, so the national runs were moved ahead of the CPS frame with explicit frees: 1.6 GB.
 - 2026-10-07 11:15 JST: rerun IDENTICAL 9/9, exit 0. Tax side $9.87bn; net −$0.28bn (−4.23 to +5.76); $5.75bn once the lapsing items are gone.
+
+## Dated scope correction and oct16 preparation — 2026-10-15 19:02 JST
+
+The roughly−$0.3bn net above covered the individual-tax/eligibility subset on the legacy v5 frame. It did not price a complete present-law account. The source companion's FY2028 conditional expensing allocation on item6 is **+$4.232590296 / +$1.566058410bn**; its separate CY2025 historical-customs sensitivity is **−$16.934117151bn**. These are different-year objects and are never summed. The expensing allocation uses the source's v8 job-capital keys; it is neither a re-estimated v9 own-key policy effect nor the complete JCT corporate/pass-through incidence. [DATA: `../consumption_tax_bases_r5_2026_10_15/derived/companion_summary.json` rows; `policy_scope.py`]
+
+The account itself is income-year2024 under2024 tax and benefit rules, with Social Security and PartA promises at what current law can pay (2026 Trustees). The new oct16 branch rebuilds this lane's eligible/tax-unit subset on own calibrated person weights and actual completion records. Original latent descendants retain their source age profile. Constructed coverage remains unlocated, not newly identified applicants. Outputs go to `derived/oct16/`; historical unkeyed files remain unchanged. [CALCULATION: `post2024_law.py` build_frame]
+
+After prop9/CASE_FINAL and the upstream oct16 public-charge/decomposition outputs, run the three scripts in order: `post2024_law.py`, `tax_side.py` with `--with taxcalc==6.8.4`, then `policy_scope.py`. Reproduce those same commands through `scripts/rerun_lane.py`. Final numerical results and byte replay are pending that marker; preparation is not a final pass.
+
+## Adopted oct16 execution — 2026-10-20 21:03 JST (`date`)
+
+The live individual-tax/eligibility subset now uses the calibrated located frame
+of **42,951,314.004171 people**, plus the separately declared **1,951,760.082062**
+unlocated coverage people to close the case's **44,903,074.086245** denominator.
+Coverage is excluded from applicant and tax-unit cells. FY2028 consolidated
+benefit cuts are **$9.5575bn** and the tax side **$9.9119bn**; benefit cuts minus
+tax cuts are **−$0.3544bn**, with the two named corners **−$4.2893 / +$5.6495bn**.
+After the temporary tax provisions lapse the priced subset is **+$5.6913bn**.
+This updates the individual/eligibility subset; a complete present-law total
+remains unmeasured. [CALCULATION: `derived/oct16/summary.json`
+`population_construction`, `totals.2028.consolidated_government`;
+`tax_summary.json` `tax_side_lineage_bn`,
+`net_benefit_cuts_minus_tax_cuts_bn`, `net_after_temporary_provisions_lapse_bn`]
+
+Separately, FY2028 expensing on the source v8 item6 keys is **+$4.232590296 /
++$1.566058410bn**. The CY2025 historical customs sensitivity is
+**−$16.934117151bn**, from the September30 BEA vintage, at both ends and in both
+sets. The export now names `customs_historical_current_bea` and its vintage;
+the prepared selector had wrongly used the older August vintage's
+−$16.603798220bn. These different-year quantities are never summed. The account
+is income-year2024 under2024 tax and benefit rules, with pension promises at what
+current law can pay. [CALCULATION: `derived/oct16/policy_scope.json`;
+DATA: `../consumption_tax_bases_r5_2026_10_15/derived/companion_summary.json`]
+
+All own frame, eligibility, source-score and monetary gates pass. The source-rank
+calibration transition is fixed at its caller. The profiler located86.206s in
+per-unit filer-status apply; grouped nondependent status preserves the same
+any-authorized-filer rule. Both complete tax files are byte-identical to the
+pre-optimization run. Two targeted regressions pass. Full live wrapper exit0,
+159.296s; official replay **IDENTICAL:20/20, exit0**,182.427s. The earlier311.939s
+run was CPU-profiled, so no matched speedup ratio is claimed. Canonical memory
+guards pass; timing/RSS use Python. Historical unkeyed derived files remain
+unchanged. [CALCULATION: `prop9/policy-optimized-timing.json`,
+`policy-rerun-final.log`, `policy-rerun-final-timing.json`,
+`policy-tax-vectorization-parity.json`; REVIEW: `policy-recovery-review.md`,
+all in handoff scratch]
