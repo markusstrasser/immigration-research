@@ -1,0 +1,62 @@
+do_file,line,reference,mapped_name,status
+master.do,10,data/county_level_crash_clean.dta,county_crash_data_clean.dta,present
+master.do,216,data/placebo sample clean.dta,placebo sample clean.dta,absent_source
+master.do,233,data/Placebo estimate 3.dta,Placebo estimate 3.dta,generated_intermediate
+master.do,247,data/Final sample clean.dta,Final sample clean.dta,absent_source
+master.do,250,data/Placebo estimate 3.dta,Placebo estimate 3.dta,generated_intermediate
+master.do,272,data/Placebo test.dta,Placebo test.dta,absent_source
+master.do,276,data/coefficient.dta,coefficient.dta,generated_intermediate
+master.do,326,data/full_sample_clean.dta,full_sample_clean.dta,present
+master.do,352,data/state_vmt.dta,state_vmt.dta,present
+master.do,353,data/licensed_driver_clean.dta,licensed_driver_clean.dta,present
+master.do,377,data/state_characteristics_baseyear.dta,state_characteristics_baseyear.dta,absent_source
+master.do,390,data/state_characteristics.dta,state_characteristics.dta,absent_source
+master.do,465,data/state_crash_data_clean.dta,state_crash_data_clean.dta,present
+master.do,468,data/control_variables_clean.dta,control_variables_clean.dta,present
+master.do,525,data/interstate_and_noninterstate_clean.dta,interstate_and_noninterstate_clean.dta,present
+master.do,550,data/county_crash_data_clean.dta,county_crash_data_clean.dta,present
+master.do,590,/Users/ruinan/Desktop/Data Replication/county_crash_data_clean.dta,county_crash_data_clean.dta,present
+master.do,599,/Users/ruinan/Desktop/Data Replication/county_crash_data_clean.dta,county_crash_data_clean.dta,present
+master.do,643,coeff_`outcome'.dta,coeff_`outcome'.dta,absent_source
+master.do,654,data/state_crash_data_clean.dta,state_crash_data_clean.dta,present
+master.do,658,data/control_variables_clean.dta,control_variables_clean.dta,present
+master.do,705,data/usa_00008.dta,usa_00008.dta,absent_source
+master.do,741,data/addtional_estimates_clean.dta,additional_estimates_clean.dta,present
+master.do,769,data/vehicles_involved_clean.dta,vehicles_involved_clean.dta,present
+master.do,770,data/addtional_estimates_clean.dta,additional_estimates_clean.dta,present
+master.do,799,data/usa_00008.dta,usa_00008.dta,absent_source
+master.do,841,data/mediation_analysis.dta,mediation_analysis.dta,absent_source
+master.do,847,data/mediation_clean.dta,mediation_clean.dta,absent_source
+master.do,938,data/county_crash_data_clean.dta,county_crash_data_clean.dta,present
+master.do,1011,data/county_level_crash_clean.dta,county_crash_data_clean.dta,present
+main_results.do,10,data/county_level_crash_clean.dta,county_crash_data_clean.dta,present
+main_results.do,203,data/full_sample_clean.dta,full_sample_clean.dta,present
+main_results.do,229,data/state_vmt.dta,state_vmt.dta,present
+main_results.do,230,data/licensed_driver_clean.dta,licensed_driver_clean.dta,present
+appendix.do,5,data/state_characteristics_baseyear.dta,state_characteristics_baseyear.dta,absent_source
+appendix.do,18,data/control_variables_clean.dta,control_variables_clean.dta,present
+appendix.do,93,data/state_crash_data_clean.dta,state_crash_data_clean.dta,present
+appendix.do,96,data/control_variables_clean.dta,control_variables_clean.dta,present
+appendix.do,153,data/interstate_and_noninterstate_clean.dta,interstate_and_noninterstate_clean.dta,present
+appendix.do,178,data/county_crash_data_clean.dta,county_crash_data_clean.dta,present
+appendix.do,218,/Users/ruinan/Desktop/Data Replication/county_crash_data_clean.dta,county_crash_data_clean.dta,present
+appendix.do,227,/Users/ruinan/Desktop/Data Replication/county_crash_data_clean.dta,county_crash_data_clean.dta,present
+appendix.do,271,coeff_`outcome'.dta,coeff_`outcome'.dta,absent_source
+appendix.do,282,data/state_crash_data_clean.dta,state_crash_data_clean.dta,present
+appendix.do,286,data/control_variables_clean.dta,control_variables_clean.dta,present
+appendix.do,332,data/usa_00008.dta,usa_00008.dta,absent_source
+appendix.do,367,data/addtional_estimates_clean.dta,additional_estimates_clean.dta,present
+appendix.do,395,data/vehicles_involved_clean.dta,vehicles_involved_clean.dta,present
+appendix.do,396,data/addtional_estimates_clean.dta,additional_estimates_clean.dta,present
+appendix.do,425,data/usa_00008.dta,usa_00008.dta,absent_source
+appendix.do,463,data/mediation_analysis.dta,mediation_analysis.dta,absent_source
+appendix.do,469,data/mediation_clean.dta,mediation_clean.dta,absent_source
+appendix.do,560,data/county_crash_data_clean.dta,county_crash_data_clean.dta,present
+appendix.do,633,data/county_level_crash_clean.dta,county_crash_data_clean.dta,present
+figures.do,7,data/county_level_crash_clean.dta,county_crash_data_clean.dta,present
+figures.do,166,data/placebo sample clean.dta,placebo sample clean.dta,absent_source
+figures.do,183,data/Placebo estimate 3.dta,Placebo estimate 3.dta,generated_intermediate
+figures.do,197,data/Final sample clean.dta,Final sample clean.dta,absent_source
+figures.do,200,data/Placebo estimate 3.dta,Placebo estimate 3.dta,generated_intermediate
+figures.do,222,data/Placebo test.dta,Placebo test.dta,absent_source
+figures.do,226,data/coefficient.dta,coefficient.dta,generated_intermediate

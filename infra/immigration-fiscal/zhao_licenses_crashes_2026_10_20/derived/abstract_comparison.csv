@@ -1,0 +1,9 @@
+quantity,value,unit,interpretation
+abstract_percent,5.0,percent,Reported in supplied brief; paper unavailable
+abstract_level,0.46,crashes/county-year,Reported in supplied brief; paper unavailable
+beta_times_100,4.921938368320836,percent approximation,Effect on log(1+total)
+expm1_beta_times_100,5.045077722373503,percent of 1+total,Not literal percent of total
+gap_beta_vs_abstract,-0.07806163167916402,percentage points,Approximation versus abstract
+beta_times_mean,0.5587709892084535,crashes/county-year,Descriptive plug-in; not a level ATT
+gap_beta_mean_vs_abstract,0.09877098920845345,crashes/county-year,Descriptive plug-in gap
+expm1_times_mean_plus_one,0.6232013601461937,crashes/county-year,Alternative plug-in respecting +1; not a retransformed causal level ATT

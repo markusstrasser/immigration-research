@@ -211,6 +211,17 @@ of them in 2015, changed neither crashes nor fatal crashes but cut hit-and-runs.
 therefore moves compensation, not crash frequency. The model accordingly leaves licensing out of
 m. [SOURCE: PNAS abstract and introduction; the effect's size was not read, GAP]
 
+[2026-10-20] Correction: Lueders et al. found no detected change in total or fatal crashes in California in
+2015, with fewer hit-and-runs; their effect size remains a GAP here. That does not show that licensing never changes
+crash frequency. Zhao (2025, JPAM) uses a county panel of the licensing states, 2007–2018, and reports more fatal
+crashes. Our port of the public replication package recovers 0.0492 on log(1 + fatal crashes), state-clustered SE
+0.0242 (95% interval 0.0006–0.0978). With Vermont included it is 0.0425 (−0.0055 to 0.0904). The package does not
+reproduce the abstract's 0.46 crashes per county-year or the SSRN version's "nearly 60%" risky-driving share. The two
+studies differ in geography, follow-up and outcome, and remain unreconciled. Licensing still stays out of m, now for
+a different reason: the FARS and CCRS involvement this model uses already measures driving under the licensing
+policies in force, and Zhao's estimate is not matched to the lineage's per-mile involvement. No number here moves.
+[CALCULATION: `../zhao_licenses_crashes_2026_10_20/derived/regressions.csv`] [INFERENCE]
+
 ## Disconfirmation
 
 - **The volume response could be zero or negative.** Under Parry's assumption the total is $4.3bn.

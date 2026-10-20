@@ -1,0 +1,15 @@
+file,sha256,bytes,osf_project_url
+additional_estimates_clean.dta,6a4dc8bf67c0a580345f9d21b9407f30fd608587d3161f56e9152791ed567740,2669494,https://osf.io/x3u7y/
+appendix.do,25ce9b9028e5c89b73499d2c47b6bb568336cd365114f143c5366d5748e68a48,31248,https://osf.io/x3u7y/
+control_variables_clean.dta,5fc8dcb3816a77ff2f45d3fcd2241324239448341f213bf2bc3bcb9d6c710ab4,35539,https://osf.io/x3u7y/
+county_crash_data_clean.dta,308f1a9e7754a45a00038a07bef1c52b76093681ec93b5abb8dc0d3a14cd06d4,4026484,https://osf.io/x3u7y/
+figures.do,29497074dd644824988c91aec76748320dd76ccfa5d7186cdc6aa2c0b11fa5d4,10319,https://osf.io/x3u7y/
+full_sample_clean.dta,9f37bd5f8a7a0e752e2bf3fb4404115e0ab58f620c17a69add4daa52c488bcc8,3151922,https://osf.io/x3u7y/
+interstate_and_noninterstate_clean.dta,f10d9675e9408009baf0a6215e77b579e5c9e9e514ac3b3b1705338e3bc1066c,2634532,https://osf.io/x3u7y/
+licensed_driver_clean.dta,88d64552763dabb98a2bfcd45a68aec3edc04e02833aad3c2f7c73efd90c2b74,32969,https://osf.io/x3u7y/
+main_results.do,6946255f8988e67a99f86d4a26826e4633d67548283b9bfe7b34af30525ce4ef,10025,https://osf.io/x3u7y/
+master.do,da5ffff8e0b393a6e00c746cb8b0d0947049dda6d1c49b3457e6365a408485a8,47455,https://osf.io/x3u7y/
+README.pdf,6d0a7cbe63389086e56e70e91559fefac2b97b7774d063176dc5bb8332d9de66,68382,https://osf.io/x3u7y/
+state_crash_data_clean.dta,c194f6f3db227d7998d233488f7e7bf73a33cf5fc984920245ee78f9a20e93ff,25175,https://osf.io/x3u7y/
+state_vmt.dta,bb3b1f9483da3d88b4b0ada245e56d1bba6506c43b0f344b61bf17c74bb6ef4a,21811,https://osf.io/x3u7y/
+vehicles_involved_clean.dta,6e785fb8d7ed77a637dd7572965404b8dbcb85f21254df17a1f5bd7325922c5f,1708133,https://osf.io/x3u7y/
