@@ -1,0 +1,44 @@
+key,source,pick,quote
+ncands_hispanic_victims,cm2024_txt,3,National 7256 4830 119511 125306 1300 32879 214752 21117 526951
+ncands_victims_age_lt1_to_9,cm2024_txt,sum:0-9,National 73087 33099 32275 31553 31076 30479 29367 28413 27509 26431
+ncands_victims_age_10_11,cm2024_txt,sum:0-1,National 24967 24647 24815 25260 25658 24931 21925 14951 1785 532228
+ncands_victims_total,cm2024_txt,9,National 24967 24647 24815 25260 25658 24931 21925 14951 1785 532228
+ncands_first_time_pct,cm2024_txt,0,70.8 percent are first-time victims
+ncands_parents_pct,cm2024_txt,0,89.1 percent of victims are maltreated by one or both parents
+ncands_hispanic_child_population,cm2024_txt,5,National 37650227 35963222 547124 4269721 10138247 19688847
+ncands_hispanic_fatality_rate_per_100k,cm2024_txt,3,Hispanic 13918796 194 13.2 1.39
+ncands_fatal_physical_abuse_pct,cm2024_txt,1,Physical Abuse - 591 39.9
+ncands_fatal_parents_pct,cm2024_txt,1,Total Parents 1169 81.4
+ncands_fatalities_age_known,cm2024_txt,1,National 58551040 1480 100.0
+ncands_fatal_age_0,cm2024_txt,2,<1 2931922 659 44.5 22.65
+ncands_fatal_age_1,cm2024_txt,2,1 2965796 184 12.4 6.17
+ncands_fatal_age_2,cm2024_txt,2,2 2907619 129 8.7 4.26
+ncands_fatal_age_3,cm2024_txt,2,3 3016930 106 7.2 3.57
+ncands_fatal_age_4,cm2024_txt,2,4 3068368 66 4.5 2.14
+ncands_fatal_age_5,cm2024_txt,2,5 3136172 58 3.9 1.85
+ncands_fatal_age_6,cm2024_txt,2,6 3191082 43 2.9 1.35
+ncands_fatal_age_7,cm2024_txt,2,7 3276201 22 1.5 0.68
+ncands_fatal_age_8,cm2024_txt,2,8 3302555 23 1.6 0.69
+ncands_fatal_age_9,cm2024_txt,2,9 3293024 21 1.4 0.63
+ncands_fatal_age_10,cm2024_txt,2,10 3279763 23 1.6 0.69
+ncands_fatal_age_11,cm2024_txt,2,11 3285878 18 1.2 0.54
+peterson_short_health_2015,peterson_tables,2,Short-term health care costs | $32648 | $14100 | $35162 | $15186
+peterson_long_health_2015,peterson_tables,2,Long-term health care costs | $10530 | $0 | $11341 | $0
+peterson_child_welfare_2015,peterson_tables,2,Child welfare costs | $7728 | $0 | $8399 | $0
+peterson_criminal_justice_2015,peterson_tables,2,Criminal justice costs | $6747 | $0 | $7333 | $0
+peterson_special_education_2015,peterson_tables,2,Special education costs | $7999 | $0 | $8693 | $0
+peterson_qaly_value_2015,peterson_tables,1,QALY reduction | $0 | NA | $760000 | $0
+peterson_qaly_decrement,peterson_tables,0,Lifetime discounted QALY decrement | 1.02 |
+peterson_total_nonfatal_2015,peterson_tables,2,Total cost | $210012 | $1272900 | $830928 | $16615186
+peterson_substantiated_incident,peterson_tables,1,CPS substantiated | 579000 | 482000
+peterson_investigated_incident,peterson_tables,1,CPS investigated | 2775000 | 2368000
+peterson_hhs_qaly_2014,peterson_body,1,$9.6 million VSL and $490000 QALY as 2014
+nobles2013_children_father_in_us_m,nobles2013_body,2,at least 4 % of children under 15 in Mexico—1.3 million children—have fathers living in the United States
+mckenzie_rapoport_males_16_18_years,mckenzie_rapoport_txt,1,Panel B: males 0.151 −1.366 0.041
+mckenzie_rapoport_females_16_18_years,mckenzie_rapoport_txt,1,Panel D: females 0.338 −1.443 0.098
+hanson_woodruff_girls_10_12_years,hanson_woodruff_txt,0,U.S. Migrant 0.891** 0.731* 0.827** 0.053
+hanson_woodruff_girls_13_15_years,hanson_woodruff_txt,1,U.S. Migrant 0.891** 0.731* 0.827** 0.053
+antman2012_girls_years,antman2012_txt,2,Father migrated to US 0.258 0.229 0.729
+nobles2015_fe_log_depression,nobles2015_body,2,Spouse is in the United States | 0.041**[0.013] | 0.031+[0.017]
+nobles2015_log_per_sixth_sd,nobles2015_body,0,a 0.041 change in the log scale is approximately one-sixth of a standard deviation
+hildebrandt_birthweight_grams,hildebrandt_txt,0,raise birth weight by 364 grams

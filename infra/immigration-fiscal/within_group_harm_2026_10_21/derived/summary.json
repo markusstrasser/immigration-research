@@ -1,0 +1,191 @@
+{
+ "A_plus_B_bn": {
+  "high": 95.9878749313091,
+  "low": 93.31922336679433
+ },
+ "A_plus_B_per_member_usd": {
+  "high": 2137.668230619254,
+  "low": 2078.23685272764
+ },
+ "block_A_total_bn": {
+  "high": 66.25471689455564,
+  "low": 63.633511044474744
+ },
+ "block_B_total_bn": {
+  "high": 29.73315803675345,
+  "low": 29.68571232231959
+ },
+ "case": "oct16",
+ "children": {
+  "child_scale": 1.1457989388775396,
+  "deaths": 96.77150890235023,
+  "fatal_bn": 1.3257696719621983,
+  "fatal_share_0_11": 0.9135135135135135,
+  "first_time": 0.708,
+  "government_services_excluded_usd": 32326.178396486328,
+  "health_usd": 61546.131994751435,
+  "incident_victims_0_11": 42180.88921476947,
+  "mean_fatal_age": 2,
+  "mex_share_hispanic_0_11": 0.5916855445923574,
+  "nonfatal_bn": 27.942440354807573,
+  "price_central_usd": 662443.1318300335,
+  "share_0_11": 0.7382230923589138,
+  "victims_0_11": 59577.527139504906
+ },
+ "congestion": {
+  "rho": 0.4922501086253185,
+  "rho_peak": 0.45635085622861427
+ },
+ "crash": {
+  "h": 0.15787018619716395,
+  "q": 0.298793802817135,
+  "single_vehicle_inside_per_external": 3.090896431866237
+ },
+ "domestic_violence_inside_A": {
+  "high": {
+   "family_intimate_bn": 5.86727125441008,
+   "family_intimate_rel_known_bn": 6.594014945975255,
+   "nonfatal_ingroup_bn": 11.205247339895205
+  },
+  "low": {
+   "family_intimate_bn": 5.268544363520633,
+   "family_intimate_rel_known_bn": 5.921127346971746,
+   "nonfatal_ingroup_bn": 10.061805591498105
+  }
+ },
+ "factor": 0.9856348324247741,
+ "frame_note": "beside rows; never added to the cost-to-other-residents pairing",
+ "isolation": {
+  "isolation": 0.4062400494175,
+  "mexican_share": 0.1132451852636737,
+  "outsider_exposure": 0.07582756190149177
+ },
+ "mexico": {
+  "children_father_in_us": 1300000.0,
+  "depression": {
+   "mothers": 590909.0909090908,
+   "sd": 0.12601626016260162,
+   "vsly_mx_usd": 100124.93996539045
+  },
+  "homicide_G1": {
+   "deaths_avoided": 2360.7096651910338,
+   "value_dot_bn": -32.34172241311716
+  },
+  "homicide_G1+G2": {
+   "deaths_avoided": 5129.482222835418,
+   "value_dot_bn": -70.27390645284522
+  },
+  "income_ratio": 0.2996455080598066,
+  "mexico_homicide_rate": 0.000248589948436701,
+  "schooling": {
+   "e_mx_usd": 11092.483005720136,
+   "gain_bound_bn": -1.2759842830912955,
+   "harm_bound_bn": 1.9562228178481593,
+   "pv_earnings_usd": 206550.16237556585,
+   "value_per_year_usd": 16524.012990045267
+  },
+  "us_hispanic_homicide_rate": 5.5418211594639044e-05,
+  "vsl_mx": {
+   "0.8": 5224043.498387955,
+   "1.0": 4105143.460419351,
+   "1.2": 3225892.517132379
+  }
+ },
+ "per_member_population_m": 44.903074086245226,
+ "pm": {
+  "rho": 0.13159324521759244,
+  "sigma": 0.116290235713
+ },
+ "property_rho": 0.4653592775883291,
+ "rho_nonfatal_nibrs": 0.9802259050128668,
+ "school_rho": 0.684182301313795,
+ "security_fear": {
+  "high": {
+   "fear_bn": 5.71843504294913,
+   "in_share": 0.345184891352169,
+   "offending_share": 0.12367188462953942,
+   "security_bn": 1.3011597748725703
+  },
+  "low": {
+   "fear_bn": 5.084179794878426,
+   "in_share": 0.34352943836858096,
+   "offending_share": 0.12099485669534106,
+   "security_bn": 1.2698154178975476
+  }
+ },
+ "transcribed": {
+  "antman2012_girls_years": 0.729,
+  "hanson_woodruff_girls_10_12_years": 0.891,
+  "hanson_woodruff_girls_13_15_years": 0.731,
+  "hildebrandt_birthweight_grams": 364.0,
+  "mckenzie_rapoport_females_16_18_years": -1.443,
+  "mckenzie_rapoport_males_16_18_years": -1.366,
+  "ncands_fatal_age_0": 659.0,
+  "ncands_fatal_age_1": 184.0,
+  "ncands_fatal_age_10": 23.0,
+  "ncands_fatal_age_11": 18.0,
+  "ncands_fatal_age_2": 129.0,
+  "ncands_fatal_age_3": 106.0,
+  "ncands_fatal_age_4": 66.0,
+  "ncands_fatal_age_5": 58.0,
+  "ncands_fatal_age_6": 43.0,
+  "ncands_fatal_age_7": 22.0,
+  "ncands_fatal_age_8": 23.0,
+  "ncands_fatal_age_9": 21.0,
+  "ncands_fatal_parents_pct": 81.4,
+  "ncands_fatal_physical_abuse_pct": 39.9,
+  "ncands_fatalities_age_known": 1480.0,
+  "ncands_first_time_pct": 70.8,
+  "ncands_hispanic_child_population": 19688847.0,
+  "ncands_hispanic_fatality_rate_per_100k": 1.39,
+  "ncands_hispanic_victims": 125306.0,
+  "ncands_parents_pct": 89.1,
+  "ncands_victims_age_10_11": 49614.0,
+  "ncands_victims_age_lt1_to_9": 343289.0,
+  "ncands_victims_total": 532228.0,
+  "nobles2013_children_father_in_us_m": 1.3,
+  "nobles2015_fe_log_depression": 0.031,
+  "nobles2015_log_per_sixth_sd": 0.041,
+  "peterson_child_welfare_2015": 8399.0,
+  "peterson_criminal_justice_2015": 7333.0,
+  "peterson_hhs_qaly_2014": 490000.0,
+  "peterson_investigated_incident": 2368000.0,
+  "peterson_long_health_2015": 11341.0,
+  "peterson_qaly_decrement": 1.02,
+  "peterson_qaly_value_2015": 760000.0,
+  "peterson_short_health_2015": 35162.0,
+  "peterson_special_education_2015": 8693.0,
+  "peterson_substantiated_incident": 482000.0,
+  "peterson_total_nonfatal_2015": 830928.0
+ },
+ "victims": {
+  "high": {
+   "boundary_bn": 0.45972213430656694,
+   "deaths": 1517.2322755588993,
+   "fear_wtp": 12.73802986077083,
+   "final_outside_bn": 41.5574614038241,
+   "full": 31.991329515052126,
+   "m_central": 0.7861749999999996,
+   "ncvs_nonfatal_bn": 11.205247339895205,
+   "nf_out": 25.57839584309082,
+   "nibrs_nonfatal_bn": 25.352466826776144,
+   "nonfatal": 242282.63608575272,
+   "sender_key": 0.06606175123321623,
+   "tangible": 4.862271006669962
+  },
+  "low": {
+   "boundary_bn": 0.4128096954211884,
+   "deaths": 1362.4059987919086,
+   "fear_wtp": 11.438175007654399,
+   "final_outside_bn": 37.3167217855786,
+   "full": 28.72676777494725,
+   "m_central": 0.7861750000000094,
+   "ncvs_nonfatal_bn": 10.0618055914981,
+   "nf_out": 22.968243226478368,
+   "nibrs_nonfatal_bn": 22.76536918267721,
+   "nonfatal": 217558.85510987084,
+   "sender_key": 0.07031058462501538,
+   "tangible": 4.366099570877423
+  }
+ }
+}

@@ -1,0 +1,92 @@
+item,arm,end,value_bn
+victims,"central (NCVS victim mix, tract m 0.786, DOT $13.7M)",low,28.7267677749
+victims,"tangible only (medical, earnings, property)",low,4.36609957088
+victims,NIBRS police-recorded victim mix (non-fatal in/out 0.980),low,41.4303313661
+victims,m at county exposure 0.744,low,27.2078423677
+victims,m at national share 0.586,low,21.5174994078
+victims,m at every Hispanic victim in-group,low,36.4276385561
+victims,"life-years, 0% real (beside)",low,32.2712085827
+victims,"life-years, 3% real (beside)",low,29.9015846415
+victims,"central (NCVS victim mix, tract m 0.786, DOT $13.7M)",high,31.9913295151
+victims,"tangible only (medical, earnings, property)",high,4.86227100667
+victims,NIBRS police-recorded victim mix (non-fatal in/out 0.980),high,46.1385490019
+victims,m at county exposure 0.744,high,30.299790683
+victims,m at national share 0.586,high,23.9627868783
+victims,m at every Hispanic victim in-group,high,40.5673411514
+victims,"life-years, 0% real (beside)",high,35.9385669737
+victims,"life-years, 3% real (beside)",high,33.2996546907
+fear_avoidance,phi low 0.25,low,2.54208989744
+fear_avoidance,phi central 0.5,low,5.08417979488
+fear_avoidance,phi high 1.0,low,10.1683595898
+private_security,central (members' residential + members' purchases),low,1.2698154179
+private_security,residential only,low,0.659722995415
+fear_avoidance,phi low 0.25,high,2.85921752147
+fear_avoidance,phi central 0.5,high,5.71843504295
+fear_avoidance,phi high 1.0,high,11.4368700859
+private_security,central (members' residential + members' purchases),high,1.30115977487
+private_security,residential only,high,0.677568973186
+pm25_consumption,central (mortality-weighted self-share 0.1163),low,11.6369267095
+pm25_consumption,CRF grid low,low,5.4289180621
+pm25_consumption,CRF grid high,low,20.3285079794
+pm25_consumption,"life-years, 0% real (beside; outsiders' age ratio)",low,4.51383533262
+pm25_consumption,"life-years, 3% real (beside; outsiders' age ratio)",low,5.5282204283
+pm25_consumption,exposure self-share 0.193 (pre mortality weighting),low,20.4187695181
+pm25_consumption,central (mortality-weighted self-share 0.1163),high,11.6369267095
+pm25_consumption,CRF grid low,high,5.4289180621
+pm25_consumption,CRF grid high,high,20.3285079794
+pm25_consumption,"life-years, 0% real (beside; outsiders' age ratio)",high,4.51383533262
+pm25_consumption,"life-years, 3% real (beside; outsiders' age ratio)",high,5.5282204283
+pm25_consumption,exposure self-share 0.193 (pre mortality weighting),high,20.4187695181
+road_crash_externality,"central (q 0.299, h 0.158, own passengers x m 0.786)",low,9.30027464036
+road_crash_externality,q x1.3 (segregation within metros),low,9.71568051048
+road_crash_externality,q at uniform mixing (s 0.108),low,8.69406339013
+road_crash_externality,every Hispanic passenger in-group,low,11.131255699
+road_crash_externality,no own-driver passengers (household-internal),low,2.56826699976
+road_crash_externality,"central (q 0.299, h 0.158, own passengers x m 0.786)",high,9.40348346487
+road_crash_externality,q x1.3 (segregation within metros),high,9.86853160358
+road_crash_externality,q at uniform mixing (s 0.108),high,8.72482812113
+road_crash_externality,every Hispanic passenger in-group,high,11.2343367502
+road_crash_externality,no own-driver passengers (household-internal),high,2.67194561116
+congestion,"central (vehicle-minute ratio, B1-weighted 0.492)",low,6.97608251446
+congestion,peak vehicle minutes,low,6.47838690943
+congestion,"central (vehicle-minute ratio, B1-weighted 0.492)",high,5.51462344647
+congestion,peak vehicle minutes,high,5.12119291478
+child_maltreatment_0_11,"perpetrator in-group share low (parents only, 0.891)",both,26.2070677433
+child_maltreatment_0_11,perpetrator in-group share central (0.95),both,27.9424403548
+child_maltreatment_0_11,perpetrator in-group share high (1.0),both,29.4130951103
+child_maltreatment_0_11,price: DOT VSL per discounted life-year (3%),both,27.9424403548
+child_maltreatment_0_11,"price: HHS guidance QALY ($490k, 2014)",both,30.5309606733
+child_maltreatment_0_11,price: Peterson native (Corso VSL),both,45.0237341067
+child_maltreatment_0_11,"incidence: CPS-investigated base (Peterson's alternative, beside)",both,137.27738332
+child_maltreatment_0_11,tangible only (health care),both,2.59607057527
+child_maltreatment_deaths_0_11,central (deaths without physical abuse; DOT $13.7M),both,1.32576967196
+child_maltreatment_deaths_0_11,every maltreatment death (overlaps the homicide row),both,2.20593955401
+child_maltreatment_deaths_0_11,perpetrators parents only (0.814),both,1.13597527682
+child_maltreatment_deaths_0_11,"life-years at mean age 2, 0% real (beside)",both,2.50410163137
+child_maltreatment_deaths_0_11,"life-years at mean age 2, 3% real (beside)",both,1.73069427492
+police_recorded_nonfamily_violence_lt12,TX+AZ ratios,low,0.41750229555
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ ratios,low,1.49005521515
+police_recorded_nonfamily_violence_lt12,CA ratios,low,0.459485174803
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",CA ratios,low,1.44418212697
+police_recorded_nonfamily_violence_lt12,TX+AZ+CA ratios,low,0.429514224011
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ+CA ratios,low,1.47179165052
+police_recorded_nonfamily_violence_lt12,TX+AZ ratios on the NIBRS victim mix,low,0.944621102681
+police_recorded_nonfamily_violence_lt12,TX+AZ ratios,high,0.464948009984
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ ratios,high,1.65938777927
+police_recorded_nonfamily_violence_lt12,CA ratios,high,0.511701899412
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",CA ratios,high,1.60830159055
+police_recorded_nonfamily_violence_lt12,TX+AZ+CA ratios,high,0.478324995676
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ+CA ratios,high,1.63904871018
+police_recorded_nonfamily_violence_lt12,TX+AZ ratios on the NIBRS victim mix,high,1.05196954978
+C1 left-behind schooling,"every child at McKenzie-Rapoport -1.37 yr, return 6%",both,1.46716711339
+C1 left-behind schooling,"every child at Hanson-Woodruff +0.89 yr, return 6%",both,-0.956988212318
+C1 left-behind schooling,"every child at McKenzie-Rapoport -1.37 yr, return 8%",both,1.95622281785
+C1 left-behind schooling,"every child at Hanson-Woodruff +0.89 yr, return 8%",both,-1.27598428309
+C1 left-behind schooling,"every child at McKenzie-Rapoport -1.37 yr, return 10%",both,2.44527852231
+C1 left-behind schooling,"every child at Hanson-Woodruff +0.89 yr, return 10%",both,-1.59498035386
+C3 left-behind mothers' depression,"0.01 QALY a year per SD, VSL income-scaled (e=1)",both,0.0745571892203
+C3 left-behind mothers' depression,"0.05 QALY a year per SD, VSL income-scaled (e=1)",both,0.372785946102
+"C0 homicide risk avoided by US residence (world frame, sign: benefit)","G1, DOT $13.7M",both,-32.3417224131
+"C0 homicide risk avoided by US residence (world frame, sign: benefit)","G1, income-scaled VSL (e=1)",both,-9.69105184401
+"C0 homicide risk avoided by US residence (world frame, sign: benefit)","G1+G2, DOT $13.7M",both,-70.2739064528
+"C0 homicide risk avoided by US residence (world frame, sign: benefit)","G1+G2, income-scaled VSL (e=1)",both,-21.0572604024

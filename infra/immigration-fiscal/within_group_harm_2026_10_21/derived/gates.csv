@@ -1,0 +1,120 @@
+gate,result,detail
+pin cm2024_pdf,PASS,_cache/lit/cm2024/cm2024.pdf
+pin cm2024_txt,PASS,_cache/lit/cm2024/cm2024.txt
+pin peterson_xml,PASS,_cache/lit/peterson2018/pmc6289633_efetch.xml
+pin peterson_tables,PASS,_cache/lit/peterson2018/pmc6289633_tables.txt
+pin peterson_body,PASS,_cache/lit/peterson2018/pmc6289633_body.txt
+pin nobles2013_xml,PASS,_cache/lit/nobles2013/pmc3766732_efetch.xml
+pin nobles2013_body,PASS,_cache/lit/nobles2013/body.txt
+pin nobles2015_xml,PASS,_cache/lit/nobles2015/pmc4562970_efetch.xml
+pin nobles2015_body,PASS,_cache/lit/nobles2015/body.txt
+pin mckenzie_rapoport_pdf,PASS,_cache/lit/mckenzie_rapoport2011/paper.pdf
+pin mckenzie_rapoport_txt,PASS,_cache/lit/mckenzie_rapoport2011/paper.txt
+pin hanson_woodruff_pdf,PASS,_cache/lit/hanson_woodruff2003/03-05-04Gordon-Hanson.pdf
+pin hanson_woodruff_txt,PASS,_cache/lit/hanson_woodruff2003/hw.txt
+pin antman2012_pdf,PASS,_cache/lit/antman2012/paper.pdf
+pin antman2012_txt,PASS,_cache/lit/antman2012/paper.txt
+pin hildebrandt_pdf,PASS,_cache/lit/hildebrandt_mckenzie2005/paper.pdf
+pin hildebrandt_txt,PASS,_cache/lit/hildebrandt_mckenzie2005/paper.txt
+quote ncands_hispanic_victims,PASS,National 7256 4830 119511 125306 1300 32879 214752 21117 526
+quote ncands_victims_age_lt1_to_9,PASS,National 73087 33099 32275 31553 31076 30479 29367 28413 275
+quote ncands_victims_age_10_11,PASS,National 24967 24647 24815 25260 25658 24931 21925 14951 178
+quote ncands_victims_total,PASS,National 24967 24647 24815 25260 25658 24931 21925 14951 178
+quote ncands_first_time_pct,PASS,70.8 percent are first-time victims
+quote ncands_parents_pct,PASS,89.1 percent of victims are maltreated by one or both parent
+quote ncands_hispanic_child_population,PASS,National 37650227 35963222 547124 4269721 10138247 19688847
+quote ncands_hispanic_fatality_rate_per_100k,PASS,Hispanic 13918796 194 13.2 1.39
+quote ncands_fatal_physical_abuse_pct,PASS,Physical Abuse - 591 39.9
+quote ncands_fatal_parents_pct,PASS,Total Parents 1169 81.4
+quote ncands_fatalities_age_known,PASS,National 58551040 1480 100.0
+quote ncands_fatal_age_0,PASS,<1 2931922 659 44.5 22.65
+quote ncands_fatal_age_1,PASS,1 2965796 184 12.4 6.17
+quote ncands_fatal_age_2,PASS,2 2907619 129 8.7 4.26
+quote ncands_fatal_age_3,PASS,3 3016930 106 7.2 3.57
+quote ncands_fatal_age_4,PASS,4 3068368 66 4.5 2.14
+quote ncands_fatal_age_5,PASS,5 3136172 58 3.9 1.85
+quote ncands_fatal_age_6,PASS,6 3191082 43 2.9 1.35
+quote ncands_fatal_age_7,PASS,7 3276201 22 1.5 0.68
+quote ncands_fatal_age_8,PASS,8 3302555 23 1.6 0.69
+quote ncands_fatal_age_9,PASS,9 3293024 21 1.4 0.63
+quote ncands_fatal_age_10,PASS,10 3279763 23 1.6 0.69
+quote ncands_fatal_age_11,PASS,11 3285878 18 1.2 0.54
+quote peterson_short_health_2015,PASS,Short-term health care costs | $32648 | $14100 | $35162 | $1
+quote peterson_long_health_2015,PASS,Long-term health care costs | $10530 | $0 | $11341 | $0
+quote peterson_child_welfare_2015,PASS,Child welfare costs | $7728 | $0 | $8399 | $0
+quote peterson_criminal_justice_2015,PASS,Criminal justice costs | $6747 | $0 | $7333 | $0
+quote peterson_special_education_2015,PASS,Special education costs | $7999 | $0 | $8693 | $0
+quote peterson_qaly_value_2015,PASS,QALY reduction | $0 | NA | $760000 | $0
+quote peterson_qaly_decrement,PASS,Lifetime discounted QALY decrement | 1.02 |
+quote peterson_total_nonfatal_2015,PASS,Total cost | $210012 | $1272900 | $830928 | $16615186
+quote peterson_substantiated_incident,PASS,CPS substantiated | 579000 | 482000
+quote peterson_investigated_incident,PASS,CPS investigated | 2775000 | 2368000
+quote peterson_hhs_qaly_2014,PASS,$9.6 million VSL and $490000 QALY as 2014
+quote nobles2013_children_father_in_us_m,PASS,at least 4 % of children under 15 in Mexico—1.3 million chil
+quote mckenzie_rapoport_males_16_18_years,PASS,Panel B: males 0.151 −1.366 0.041
+quote mckenzie_rapoport_females_16_18_years,PASS,Panel D: females 0.338 −1.443 0.098
+quote hanson_woodruff_girls_10_12_years,PASS,U.S. Migrant 0.891** 0.731* 0.827** 0.053
+quote hanson_woodruff_girls_13_15_years,PASS,U.S. Migrant 0.891** 0.731* 0.827** 0.053
+quote antman2012_girls_years,PASS,Father migrated to US 0.258 0.229 0.729
+quote nobles2015_fe_log_depression,PASS,Spouse is in the United States | 0.041**[0.013] | 0.031+[0.0
+quote nobles2015_log_per_sixth_sd,PASS,a 0.041 change in the log scale is approximately one-sixth o
+quote hildebrandt_birthweight_grams,PASS,raise birth weight by 364 grams
+pairing totals are the live case,PASS,
+P7 payload is DOT uniform,PASS,
+live_case.json names oct16,PASS,"{""key"": ""oct16"", ""lane"": ""main_case_2026_10_16"", ""adopted"": ""2026-10-20"", ""decision"": ""decisions/2026-10-16-main-case-v9"
+"own-conduct level + re-spending = current row (victims, low)",PASS,37.316721786 + 0.000000000 / 37.316721786
+"own-conduct level + re-spending = current row (property_crime, low)",PASS,1.327875033 + 0.000000000 / 1.327875033
+"own-conduct level + re-spending = current row (congestion, low)",PASS,13.711989551 + 0.000000000 / 13.711989551
+"own-conduct level + re-spending = current row (fear_avoidance, low)",PASS,6.606074572 + 0.000000000 / 6.606074572
+"own-conduct level + re-spending = current row (private_security, low)",PASS,0.458198824 + 0.000000000 / 0.458198824
+"own-conduct level + re-spending = current row (school_disruption, low)",PASS,-2.162266419 + 0.000000000 / -2.162266419
+"own-conduct level + re-spending = current row (pm25_consumption, low)",PASS,80.749579916 + -12.416400786 / 68.333179130
+"own-conduct level + re-spending = current row (road_crash_externality, low)",PASS,12.473957706 + 0.000000000 / 12.473957706
+"own-conduct level + re-spending = current row (victims, high)",PASS,41.557461404 + 0.000000000 / 41.557461404
+"own-conduct level + re-spending = current row (property_crime, high)",PASS,1.430237708 + 0.000000000 / 1.430237708
+"own-conduct level + re-spending = current row (congestion, high)",PASS,10.839387137 + 0.000000000 / 10.839387137
+"own-conduct level + re-spending = current row (fear_avoidance, high)",PASS,7.586739951 + 0.000000000 / 7.586739951
+"own-conduct level + re-spending = current row (private_security, high)",PASS,0.567225510 + 0.000000000 / 0.567225510
+"own-conduct level + re-spending = current row (school_disruption, high)",PASS,-2.162266419 + 0.000000000 / -2.162266419
+"own-conduct level + re-spending = current row (pm25_consumption, high)",PASS,80.749579916 + -15.729703400 / 65.019876516
+"own-conduct level + re-spending = current row (road_crash_externality, high)",PASS,12.708118101 + 0.000000000 / 12.708118101
+NIBRS preferred arm has four non-fatal offences,PASS,
+sender key low matches P7,PASS,
+victim cells mixed/dot_uniform/0.0,PASS,20
+union outside victims reproduce P7 (low),PASS,35.251012204
+lineage senders' outside victims reproduce P7 (low),PASS,37.729531481
+v9 victims row = senders x (1-r)(1-c) (low),PASS,37.316721786 / 37.316721786
+in-group victims = all-victim harm - outside row (low),PASS,
+victim cells mixed/dot_life_years/0.0,PASS,20
+victim cells mixed/dot_life_years/0.03,PASS,20
+sender key high matches P7,PASS,
+victim cells custody/dot_uniform/0.0,PASS,20
+union outside victims reproduce P7 (high),PASS,39.413461265
+lineage senders' outside victims reproduce P7 (high),PASS,42.017183538
+v9 victims row = senders x (1-r)(1-c) (high),PASS,41.557461404 / 41.557461404
+in-group victims = all-victim harm - outside row (high),PASS,
+victim cells custody/dot_life_years/0.0,PASS,20
+victim cells custody/dot_life_years/0.03,PASS,20
+P7 lineage security reproduced (low),PASS,0.458507410
+victim cells mixed/dot_uniform/0.0,PASS,20
+P7 lineage fear reproduced (low),PASS,6.610523604
+P7 lineage security reproduced (high),PASS,0.567607522
+victim cells custody/dot_uniform/0.0,PASS,20
+P7 lineage fear reproduced (high),PASS,7.591849437
+one row4 uniform PM row,PASS,
+v9 PM union part = row4 uniform central x (1 - r),PASS,73.900460 / 73.141119
+self-exposure q reproduces the crash lane's 0.299,PASS,0.29879
+one crash component row (low),PASS,
+crash components add to the union central (low),PASS,11.081962
+one crash component row (high),PASS,
+crash components add to the union central (high),PASS,11.290780
+congestion areas cover the B1 total,PASS,19.1627 / 19.1627
+B03001 tract files for 51 states,PASS,51
+NCANDS victims 0-11 = 73.8% (worker's sum),PASS,0.7382
+"Peterson nonfatal components add to $830,928",PASS,
+WDI NY.GDP.MKTP.PP.CD MEX 2024,PASS,
+WDI SP.POP.TOTL MEX 2024,PASS,
+WDI NY.GDP.MKTP.PP.CD USA 2024,PASS,
+WDI SP.POP.TOTL USA 2024,PASS,
+one central G1 premium row,PASS,
+WDI VC.IHR.PSRC.P5 MEX 2023,PASS,
