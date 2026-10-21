@@ -205,3 +205,43 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/atten
   "uv run --no-project python3 {lane}/count_bills.py" "uv run --no-project python3 {lane}/displacement.py" \
   "uv run --no-project python3 {lane}/attention_cost.py" --allow-unrun infra/immigration-fiscal/attention_cost_2026_10_21/fetch_gdelt_tv.py
 ```
+
+## Blind replication — 2026-10-21 15:35 JST
+
+The operator flagged that this lane's A, B and E were fixed in a first pass that scaled every figure against a GDP
+benchmark, so they may be anchored on it (see "Order of work" above). A second agent re-estimated A, B and E without opening this lane, the world
+ledger, the FAQ, the INDEX, the ladder or decisions, with methods pre-registered at 15:08 JST before any magnitude was
+looked up: [`blind_replication.md`](blind_replication.md). The text above is unchanged. 2024 $bn per year.
+
+| Figure | Anchored (this lane) | Blind |
+|---|---|---|
+| A total, private | 11.1 gross: paperwork 1.53, legal ≈9.3 (IBISWorld), advocacy ≈0.30 | 10–17, central 12.7: compliance 1.5–1.95, casework 8–14 (central 10: private bar ≈7 [4.5–11] + applicant paperwork 1.3–3.1), fight 0.6–1.1 allocated; USCIS fees 6.22 beside, as a transfer |
+| A fight-specific, gross | ≈1.8 (I-9/E-Verify paperwork + advocacy) | 1.2–2.6 (TV ads mentioning immigration 0.9–1.3, whole lobbying filings ≤0.94, advocacy 0.15–0.4) |
+| A fight-specific, allocated | — | 0.6–1.1 (ads ÷ issues carried, lobbying ÷ issue codes) |
+| A fight-specific, net of substitution | not identified (donors' alternative causes) | 0.15–0.4 (advocacy only; ads and lobbying would go to other issues) |
+| B hours, gross | 1.50 / 3.18 / 5.29bn | 1.62 / 5.20 / 12.99bn |
+| B dollars, gross | 31.7–111.6 at $21.10/h; 52.7–185.4 at $35.06/h (wage) | 32–259 at $19.96/h; 46–364 at $28.05/h (after-tax wage); central 104–146 |
+| B dollars, net | not identified | ≈0; bounded 0–30, point unidentified, most likely near 0 |
+| E rules | 6% (share of the 2021–23 unauthorized increase), 30% (Pew 2023 unauthorized stock), 44% (DHS 2022) | stock 23% (Mexican-born share of the foreign-born); unauthorized 37–45%; caseload 13–15% (LPR, naturalization), 4.4% for I-9 (labour-force share); on-air co-mention 2–4%; border crossers 29% |
+
+They agree on what dominates A: legal casework for running admissions, with employer paperwork about $1.5–2bn (the
+same ICR hours; the blind run reprices them to 2024 wages and adds the I-9 burden moved to E-Verify NextGen). A's
+totals differ by about $1.6bn at the centrals because the blind run builds legal services bottom-up (≈$7bn against
+IBISWorld's ≈$9.3bn) and adds applicant paperwork ($1.3–3.1bn), which this lane left out. The fight-specific line
+differs in definition: this lane put employer paperwork in it, while the blind run classes paperwork as the legal
+regime's cost and adds campaign ads and lobbying, which this lane did not count; both come to about $1–3bn gross. B's
+low ends agree (1.5–1.6bn hours, GDELT clip shares, Allen et al.'s news minutes). The blind high end is 2.5 times this
+lane's because it multiplies clip shares by an assumed clip-to-topic factor of 1.5–3 (one keyword hit marks only some
+clips of a segment) and takes news time up to 80 minutes a day; that factor is assumed, not measured. Both find the net
+of substitution unidentified; the blind run sets it at about zero, from stable total news time and a fixed news hole
+(Eisensee & Strömberg 2007), with a rough upper bound of about $30bn that is itself unidentified. On E the two share the
+unauthorized rule (30–45%); the blind run adds rules this lane did not pre-register (caseload 13–15%, labour-force
+4.4%, on-air co-mention 2–4%) and shows Mexico mentioned less than Venezuela or Haiti in 2024 immigration coverage.
+
+The docs (FAQ entry 21, ladder 321, the INDEX row) now print ranges that cover both estimates where they differ:
+private resources about $11–13bn (the two centrals; blind range $10–17bn); the part tied to the fight $1.2–2.6bn gross
+(this lane's $1.8bn inside it), $0.6–1.1bn allocated across issues and $0.15–0.4bn net; news time 1.5–13bn hours gross,
+net about zero with an unidentified upper bound; and the Mexican-origin share as rule-dependent, 2–45% across the
+rules both runs report. The reason: neither run is blind on every input (this one saw its magnitudes before
+pre-registering; the blind one assumes its clip factor), so a range spanning both is the honest print. Agenda shares and
+the displacement test (C) and the policy channel (D) were not replicated and stand as above.
