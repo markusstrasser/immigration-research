@@ -167,153 +167,153 @@ infra/immigration-fiscal/overview_2026_09_28/groups.py,386,social/f195/why,0,0.1
 infra/immigration-fiscal/overview_2026_09_28/groups.py,386,social/f195/why,1,1%,%,Speed falls 0.12% per 1% more people when road space stays fixed.,mapped,skip
 infra/immigration-fiscal/overview_2026_09_28/groups.py,390,social/f258/text,0,$5–6bn,$bn,"Fear, private security and school discipline cost about $5–6bn a year.",bound: q:social.fear_security_school|range_unit,dp
 infra/immigration-fiscal/overview_2026_09_28/groups.py,391,social/f258/why,0,$51bn,$bn,"On the earlier survey count, the same method gave $51bn for non-Hispanic Black residents.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,393,social/f190/text,0,0.25–0.60%,%,In the long run rents rise 0.25–0.60% per 1% more people.,bound: q:housing.rent_elasticity_long_run|range,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,393,social/f190/text,1,1%,%,In the long run rents rise 0.25–0.60% per 1% more people.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,394,social/f190/text,2,$34bn,$bn,"Other renters pay about $34bn more, and landlords receive it.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,396,social/f190/why,0,$0.8–3.8bn,$bn,"Most landlords are other residents, so the net for others is a small gain of about $0.8–3.8bn.",bound: q:social.housing_gain|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,399,social/f265/text,0,$7bn,$bn,"rs count against these costs: restaurant variety about $7bn, volunteering about $4bn, consumer scale about $2bn an",bound: q:social.restaurants|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,399,social/f265/text,1,$4bn,$bn,"sts: restaurant variety about $7bn, volunteering about $4bn, consumer scale about $2bn and trade ties with Mexico",bound: q:social.volunteering|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,400,social/f265/text,2,$2bn,$bn,"ut $7bn, volunteering about $4bn, consumer scale about $2bn and trade ties with Mexico about $7bn.",bound: q:social.consumer_scale|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,401,social/f265/text,3,$7bn,$bn,umer scale about $2bn and trade ties with Mexico about $7bn.,bound: q:social.trade|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,403,social/f265/why,0,$271bn,$bn,"A share per head of them would be about $271bn a year, a convention the account does not use.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,406,social/f261/text,0,$0.3bn,$bn,Infectious disease and food safety cost others about $0.3bn a year.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,407,social/f261/why,0,56,,About 56 cases a year among others trace to the group.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,411,social/f248/why,0,2003–2019,,"State NAEP scores, 2003–2019.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,428,crime/claim,w0,about twice,word,"Immigrants offend less, and their US-born sons are held at about twice the white rate",mapped,rel10
-infra/immigration-fiscal/overview_2026_09_28/groups.py,429,crime/range,0,$40bn,$bn,feeds the $40bn victim cost,bound: q:victims.harm|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,435,crime/f144/text,0,0.40–0.43,,"Undocumented Texans are charged with felonies, weighted by cost, at 0.40–0.43 of the US-born rate.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,439,crime/f65/text,0,1.7–1.9,,"US-born Mexican-origin men are held at 1.7–1.9 times the white rate, or 2.1–2.3 times after a fix for prison coding.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,439,crime/f65/text,1,2.1–2.3,,"US-born Mexican-origin men are held at 1.7–1.9 times the white rate, or 2.1–2.3 times after a fix for prison coding.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,440,crime/f65/text,2,3.5,,The often-quoted 3.5 times is from 2000.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,440,crime/f65/text,3,2000,,The often-quoted 3.5 times is from 2000.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,441,crime/f65/why,0,2010–2024,,"Census counts of people in institutions, 2010–2024.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,443,crime/f82/text,0,73%,%,Parental income explains about 73% of the Hispanic–white gap in male custody.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,444,crime/f82/why,0,1.22,,At equal parental income the ratio is 1.22.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,446,crime/f202/text,0,2.30,,"In police records, Hispanic offenders commit murder at 2.30 times the white rate and 0.92–1.18 times the rate of a",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,447,crime/f202/text,1,0.92–1.18,,fenders commit murder at 2.30 times the white rate and 0.92–1.18 times the rate of all residents.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,449,crime/f202/why,0,1.25–9.75,,"With every offender of unknown ethnicity put on one side, the white ratios run 1.25–9.75.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,456,crime/f143/text,0,$1.5–1.8M,$M,"One cleared homicide costs the treasury $1.5–1.8M, mostly for prison.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,457,crime/f143/text,1,$13.1M,$M,Its social cost is $13.1M.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,458,crime/f143/why,0,2019–2023,,Homicide records 2019–2023 with the ethnicity of both sides known.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,460,crime/f214/text,0,1.8–2.0,,"Noncitizens commit fraud at the same ratio as other federal crime, 1.8–2.0 times citizens.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,475,services/term:response (elasticity),0,1%,%,response (elasticity): the % rise in a budget for each 1% rise in users,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,479,services/f230/text,0,1%,%,School spending rises about 1% per 1% more pupils.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,479,services/f230/text,1,1%,%,School spending rises about 1% per 1% more pupils.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,481,services/f230/why,0,0.97–1.00,,Across districts and states the slope is 0.97–1.00.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,482,services/f230/why,1,0.84,,Inside one district over a few years it is 0.84.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,483,services/f230/why,2,$338–410bn,$bn,At the within-district response the main estimate is $338–410bn.,bound: q:case.school_within_district|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,484,services/f230/why,3,2022–24,,"In the 2022–24 surge, money followed new pupils about half, and late.",mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,486,services/f230/why,4,$52bn,$bn,"Without the return on school capital, the short-run response would lower the total by about $52bn (46–58).",bound: q:schools.first_year_effect|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,486,services/f230/why,5,46–58,,"Without the return on school capital, the short-run response would lower the total by about $52bn (46–58).",bound: q:schools.first_year_effect|range,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,488,services/f237/text,0,0.73%,%,Road spending rises 0.73% and park spending 0.95% per 1% more residents.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,488,services/f237/text,1,0.95%,%,Road spending rises 0.73% and park spending 0.95% per 1% more residents.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,488,services/f237/text,2,1%,%,Road spending rises 0.73% and park spending 0.95% per 1% more residents.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,492,services/f211/text,0,0.7%,%,General administration grows about 0.7% per 1% more residents (0.59–0.84).,bound: q:gg.growth_elasticity|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,492,services/f211/text,1,1%,%,General administration grows about 0.7% per 1% more residents (0.59–0.84).,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,493,services/f211/text,2,0.59–0.84,,General administration grows about 0.7% per 1% more residents (0.59–0.84).,bound: q:gg.growth_elasticity|range,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,495,services/f211/why,0,0,,Designs inside states are too noisy to tell it from 0 or 1.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,495,services/f211/why,1,1,,Designs inside states are too noisy to tell it from 0 or 1.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,499,services/f141/why,0,2007–2023,,"District and county panels, 2007–2023.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,503,services/f80/text,0,18–27%,%,"Where prisons are full, building costs add 18–27% to a prisoner-year.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,504,services/f80/why,0,8,,Prisons are full in 8 states and not in 22.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,504,services/f80/why,1,22,,Prisons are full in 8 states and not in 22.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,508,services/f312/text,0,$19bn,$bn,Holding the veterans' benefits fixed lowers the main estimate by about $19bn.,bound: q:items.veterans|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,518,conventions/range,0,$43bn,$bn,"return on public capital, enterprises included: $43bn (41–45)",bound: q:capital_return.total|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,518,conventions/range,1,41–45,,"return on public capital, enterprises included: $43bn (41–45)",bound: q:capital_return.total|range,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,525,conventions/f238/text,0,2.1%,%,"The main estimate charges 2.1% a year real, the rate that also prices the pension promises.",bound: q:capital.rate|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,527,conventions/f238/text,1,$43bn,$bn,"With government enterprises' capital, this adds about $43bn (41–45).",bound: q:capital_return.total|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,527,conventions/f238/text,2,41–45,,"With government enterprises' capital, this adds about $43bn (41–45).",bound: q:capital_return.total|range,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,529,conventions/f238/why,0,2026,,The rate is the flat equivalent of the Trustees' 2026 path.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,530,conventions/f238/why,1,2024,,"Market yields on inflation-protected bonds in 2024 were close, 1.94–2.15%.",mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,530,conventions/f238/why,2,1.94–2.15%,%,"Market yields on inflation-protected bonds in 2024 were close, 1.94–2.15%.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,531,conventions/f238/why,3,7%,%,The assumption table shows the total at a private 7% return.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,534,conventions/f253/text,0,0.72–0.77,,Taxes on owned and rented homes respond at about 0.72–0.77.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,536,conventions/f253/why,0,$60bn,$bn,A bound on defense by share of GDP would add about $60bn (48–72).,bound: q:defense.bound|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,536,conventions/f253/why,1,48–72,,A bound on defense by share of GDP would add about $60bn (48–72).,bound: q:defense.bound|range,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,539,conventions/f161/text,0,"$8,154",$,"Against third-generation whites, the gap per person is $8,154 at a common age mix and $5,276 at the group's own ages.",bound: q:gap_vs_white.per_person_common_age|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,540,conventions/f161/text,1,"$5,276",$,"Against third-generation whites, the gap per person is $8,154 at a common age mix and $5,276 at the group's own ages.",bound: q:gap_vs_white.per_person_own_ages|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,546,conventions/f288/text,0,$1.4–1.5bn,$bn,"led what governments pay in a year, the total would be $1.4–1.5bn lower.",bound: q:retiree_health.rho_one_change|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,551,conventions/f288/why,0,1.20,,The sign rests on one ratio: state plans' cost of promises earned in a year is 1.20 times what they pay.,bound: q:retiree_health.cost_ratio|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,559,data/range,0,$1.7–3.9bn,$bn,net $1.7–3.9bn lower,bound: q:corrections.uncorrected_change|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,562,data/why,0,$52,$,"e account did not use. The tax side raises the cost by $52 / $50bn at the low and high ends, mostly through an as",bound: q:corrections.tax_side|at_low_end,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,562,data/why,1,$50bn,$bn,"unt did not use. The tax side raises the cost by $52 / $50bn at the low and high ends, mostly through an assumed sh",bound: q:corrections.tax_side|at_high_end,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,563,data/why,2,$54,$,The spending side lowers it by $54 / $54bn.,bound: q:corrections.spending_side|at_low_end,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,563,data/why,3,$54bn,$bn,The spending side lowers it by $54 / $54bn.,bound: q:corrections.spending_side|at_high_end,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,564,data/why,4,$1.7–3.9bn,$bn,Together they lower the cost by $1.7–3.9bn.,bound: q:corrections.uncorrected_change|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,572,data/f208/why,0,9%,%,"At equal age, sex and schooling, filled-in wages keep only 9% of the group's wage gap.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,573,data/f208/why,w0,Eight versions,word,Eight versions of the correction all point the same way.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,575,data/f209/text,0,9–13%,%,The CPS counts the Mexico-born 9–13% above the ACS.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,575,data/f209/text,1,11.1M,M,About 11.1M is the right level.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,576,data/f209/why,0,2024,,The excess appears in every monthly file since 2024.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,579,data/f206/text,0,$11.1bn,$bn,Medicaid long-term care was over-charged by $11.1bn.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,581,data/f206/why,0,7.4%,%,"CMS records put the group at 7.4% of long-term-care dollars, not 12.25%.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,581,data/f206/why,1,12.25%,%,"CMS records put the group at 7.4% of long-term-care dollars, not 12.25%.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,580,data/f206/why,w0,Nine pooled,word,"Nine pooled MEPS years move cost from adults to children, not the total.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,588,data/f254/text,0,$65bn,$bn,The account takes off-books pay out of taxes: about $65bn of the imputed unauthorized's $137bn in survey wages.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,589,data/f254/text,1,$137bn,$bn,The account takes off-books pay out of taxes: about $65bn of the imputed unauthorized's $137bn in survey wages.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,591,data/f254/why,0,0.53,,"The account scales payroll and income tax for the imputed unauthorized to an on-books share, 0.53 for the Mexico-born.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,593,data/f255/text,w0,Two tests,word,Two tests fixed before looking pass.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,595,data/f255/why,0,14.36%,%,Birth records put 14.36% of US births with Mexican-origin mothers.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,595,data/f255/why,1,14.43%,%,The frame says 14.43%.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,598,data/f306/text,0,2020,,The 2020 Census missed about 5% of Hispanics.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,598,data/f306/text,1,5%,%,The 2020 Census missed about 5% of Hispanics.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,599,data/f306/text,2,1.95M,M,"The main estimate counts the 1.95M members it missed, which adds about $13–16bn.",bound: q:headcount.coverage|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,600,data/f306/text,3,$13–16bn,$bn,"The main estimate counts the 1.95M members it missed, which adds about $13–16bn.",bound: q:items.coverage|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,601,data/f306/why,0,2020,,"Census population controls keep the 2020 Hispanic total, so the survey does not make up the undercount.",mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,603,data/f306/why,1,5,,Missed people take the Post-Enumeration Survey's rates by age and sex from age 5.,mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,606,data/f314/text,0,$24bn,$bn,"and state and local health payments, which adds about $24bn to its health cost.",bound: q:items.health_residual|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,608,data/f314/why,0,91%,%,VA and TRICARE made up 91% of the survey payments in the old key.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,612,data/f225/why,0,$3.3bn,$bn,"Money sent home lowers sales tax by about $3.3bn, or $0.9bn at surveyed amounts.",bound: q:remittance.sales_tax_effect|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,612,data/f225/why,1,$0.9bn,$bn,"Money sent home lowers sales tax by about $3.3bn, or $0.9bn at surveyed amounts.",bound: q:remittance.sales_tax_effect|min,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,616,data/f267/text,0,$8.6bn,$bn,Prices where the group lives raise its service costs by about $8.6bn and its sales and vehicle taxes by about $6.4bn.,bound: q:state_prices.spending_lane|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,617,data/f267/text,1,$6.4bn,$bn,Prices where the group lives raise its service costs by about $8.6bn and its sales and vehicle taxes by about $6.4bn.,bound: q:state_prices.receipts_lane|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,618,data/f267/text,2,$2.2bn,$bn,"The main estimate charges the net, about $2.2bn.",bound: q:state_prices.net_lane|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,623,data/f273/text,0,$2–4bn,$bn,"When adopted in September, that added about $2–4bn.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,624,data/f273/why,0,8%,%,The group has 8% of household income but drives 10% of the miles.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,624,data/f273/why,1,10%,%,The group has 8% of household income but drives 10% of the miles.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,629,data/f294/text,0,$0.3–0.7bn,$bn,"When adopted in October, with two smaller keys, the college, Pell and fee changes lowered the total by $0.3–0.7bn.",bound: q:fees.change|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,631,data/f294/text,1,$4bn,$bn,"Colleges' teaching grows with the group and their research does not, which lowers it by a further $4bn.",bound: q:items.public_college|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,632,data/f294/why,0,11.6%,%,"IPEDS records give the group 11.6% of public colleges' cost, against 13.9% on a key of state capital spending per head.",bound: q:fees.use_share|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,633,data/f294/why,1,13.9%,%,"IPEDS records give the group 11.6% of public colleges' cost, against 13.9% on a key of state capital spending per head.",bound: q:fees.item_p_share|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,634,data/f294/why,2,$5.5bn,$bn,"At the measured share, colleges cost $5.5bn less.",bound: q:fees.college_key|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,635,data/f294/why,3,16.9%,%,"The group receives 16.9% of Pell grants, which adds $3.9–4.0bn.",bound: q:fees.pell_share|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,635,data/f294/why,4,$3.9–4.0bn,$bn,"The group receives 16.9% of Pell grants, which adds $3.9–4.0bn.",bound: q:fees.pell|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,636,data/f294/why,5,$2.8bn,$bn,Tuition and hospital charges add $2.8bn.,bound: q:fees.charges|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,639,data/f127/text,0,4%,%,A second survey gives the same earnings and income-tax gaps within 4%.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,646,time/claim,0,2024,,"Only 2024 is measured, and past years and old debt are separate numbers",mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,647,time/range,0,$4.0tn,$tn,"about $4.0tn over ten years, before interest",bound: q:backcast.10y|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,647,time/range,w0,ten years,word,"about $4.0tn over ten years, before interest",mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,652,time/term:discount rate,0,3%,%,It is 3% here.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,655,time/f162/text,0,$4.0tn,$tn,"Carried back on each year's national data, the cost is about $4.0tn over 2015–2024 (3.8–4.3), without interest.",bound: q:backcast.10y|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,656,time/f162/text,1,2015–2024,,"Carried back on each year's national data, the cost is about $4.0tn over 2015–2024 (3.8–4.3), without interest.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,656,time/f162/text,2,3.8–4.3,,"Carried back on each year's national data, the cost is about $4.0tn over 2015–2024 (3.8–4.3), without interest.",bound: q:backcast.10y|range,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,663,time/f207/why,0,2024,,"Of the 2024 cash flows, the federal part is $18–57bn.",mapped,skip
-infra/immigration-fiscal/overview_2026_09_28/groups.py,664,time/f207/why,1,$18–57bn,$bn,"Of the 2024 cash flows, the federal part is $18–57bn.",bound: q:cash.federal|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,667,time/f123/text,0,$291bn,$bn,"d-generation whites of the same ages, the gap is about $291bn a year, and $404bn with every item of the ledger price",bound: q:gap_vs_white.age_matched_partial|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,668,time/f123/text,1,$404bn,$bn,"of the same ages, the gap is about $291bn a year, and $404bn with every item of the ledger priced. Matching by stat",bound: q:gap_vs_white.age_matched_complete|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,673,time/f131/text,0,$1.48M,$M,"Over all descendants, a Mexican founder's family line runs $1.48M behind a white family line ($570k at 3%).",bound: q:family_line.gap|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,674,time/f131/text,1,$570k,$k,"Over all descendants, a Mexican founder's family line runs $1.48M behind a white family line ($570k at 3%).",bound: q:family_line.gap_3pct|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,674,time/f131/text,2,3%,%,"Over all descendants, a Mexican founder's family line runs $1.48M behind a white family line ($570k at 3%).",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,675,time/f131/why,0,56%,%,Descendants carry 56% of it.,bound: q:family_line.descendants_share|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,678,time/f240/text,0,50,,Arrivals at 50 or older cost others about $4.1bn (3.8–4.3) a year.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,678,time/f240/text,1,$4.1bn,$bn,Arrivals at 50 or older cost others about $4.1bn (3.8–4.3) a year.,bound: q:late_arrivals.cost|mid,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,678,time/f240/text,2,3.8–4.3,,Arrivals at 50 or older cost others about $4.1bn (3.8–4.3) a year.,bound: q:late_arrivals.cost|range,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,679,time/f240/text,3,55–65,,"A parent sponsored by a US citizen and entering at 55–65 costs $234–286k over the rest of life, at 3%.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,680,time/f240/text,4,$234–286k,$k,"A parent sponsored by a US citizen and entering at 55–65 costs $234–286k over the rest of life, at 3%.",bound: q:ir5.lifetime_cost_55_65|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,680,time/f240/text,5,3%,%,"A parent sponsored by a US citizen and entering at 55–65 costs $234–286k over the rest of life, at 3%.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,689,method/range,0,$314–371bn,$bn,first-year budget responses: $314–371bn,bound: q:case.first_year|range_unit,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,697,method/f270/text,0,15%,%,With first-year budget responses the total falls by about 15%.,bound: q:breaks.first_year_pct|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,699,method/f270/text,1,32%,%,"Counting descendants by share of ancestry, at the lowest share, lowers it by about 32%.",bound: q:breaks.ancestry_low_pct|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,699,method/f270/text,2,7%,%,A private 7% return on public capital raises it by about 25%.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,700,method/f270/text,3,25%,%,A private 7% return on public capital raises it by about 25%.,bound: q:breaks.capital_7pct_pct|value,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,716,civic/f87/text,0,10–12,,Trust stays 10–12 points lower.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,719,civic/f147/text,0,24,,Counting the group moves 24 of 435 House seats.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,719,civic/f147/text,1,435,,Counting the group moves 24 of 435 House seats.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,722,civic/f233/text,0,9–13,,Turnout is 9–13 points lower at equal status.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,722,civic/f233/text,1,0.79,,Military service is 0.79 of the white rate.,mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,735,claims/f244/text,0,80,,"Rochester ""80 of 82 residents on visas"": the list counts medical schools, not visas.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,735,claims/f244/text,1,82,,"Rochester ""80 of 82 residents on visas"": the list counts medical schools, not visas.",mapped,dp
-infra/immigration-fiscal/overview_2026_09_28/groups.py,737,claims/f145/text,0,2003–2026,,Marginal Revolution 2003–2026: mostly agrees with these facts.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,395,social/f190/text,0,0.25–0.60%,%,In the long run rents rise 0.25–0.60% per 1% more people.,bound: q:housing.rent_elasticity_long_run|range,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,395,social/f190/text,1,1%,%,In the long run rents rise 0.25–0.60% per 1% more people.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,396,social/f190/text,2,$34bn,$bn,"Other renters pay about $34bn more, and landlords receive it.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,398,social/f190/why,0,$0.8–3.8bn,$bn,"Most landlords are other residents, so the net for others is a small gain of about $0.8–3.8bn.",bound: q:social.housing_gain|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,401,social/f265/text,0,$7bn,$bn,"rs count against these costs: restaurant variety about $7bn, volunteering about $4bn, consumer scale about $2bn an",bound: q:social.restaurants|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,401,social/f265/text,1,$4bn,$bn,"sts: restaurant variety about $7bn, volunteering about $4bn, consumer scale about $2bn and trade ties with Mexico",bound: q:social.volunteering|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,402,social/f265/text,2,$2bn,$bn,"ut $7bn, volunteering about $4bn, consumer scale about $2bn and trade ties with Mexico about $7bn.",bound: q:social.consumer_scale|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,403,social/f265/text,3,$7bn,$bn,umer scale about $2bn and trade ties with Mexico about $7bn.,bound: q:social.trade|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,405,social/f265/why,0,$271bn,$bn,"A share per head of them would be about $271bn a year, a convention the account does not use.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,408,social/f261/text,0,$0.3bn,$bn,Infectious disease and food safety cost others about $0.3bn a year.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,409,social/f261/why,0,56,,About 56 cases a year among others trace to the group.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,413,social/f248/why,0,2003–2019,,"State NAEP scores, 2003–2019.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,431,crime/claim,w0,about twice,word,"Immigrants offend less, and their US-born sons are held at about twice the white rate",mapped,rel10
+infra/immigration-fiscal/overview_2026_09_28/groups.py,432,crime/range,0,$40bn,$bn,feeds the $40bn victim cost,bound: q:victims.harm|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,438,crime/f144/text,0,0.40–0.43,,"Undocumented Texans are charged with felonies, weighted by cost, at 0.40–0.43 of the US-born rate.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,442,crime/f65/text,0,1.7–1.9,,"US-born Mexican-origin men are held at 1.7–1.9 times the white rate, or 2.1–2.3 times after a fix for prison coding.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,442,crime/f65/text,1,2.1–2.3,,"US-born Mexican-origin men are held at 1.7–1.9 times the white rate, or 2.1–2.3 times after a fix for prison coding.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,443,crime/f65/text,2,3.5,,The often-quoted 3.5 times is from 2000.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,443,crime/f65/text,3,2000,,The often-quoted 3.5 times is from 2000.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,444,crime/f65/why,0,2010–2024,,"Census counts of people in institutions, 2010–2024.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,446,crime/f82/text,0,73%,%,Parental income explains about 73% of the Hispanic–white gap in male custody.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,447,crime/f82/why,0,1.22,,At equal parental income the ratio is 1.22.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,449,crime/f202/text,0,2.30,,"In police records, Hispanic offenders commit murder at 2.30 times the white rate and 0.92–1.18 times the rate of a",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,450,crime/f202/text,1,0.92–1.18,,fenders commit murder at 2.30 times the white rate and 0.92–1.18 times the rate of all residents.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,452,crime/f202/why,0,1.25–9.75,,"With every offender of unknown ethnicity put on one side, the white ratios run 1.25–9.75.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,459,crime/f143/text,0,$1.5–1.8M,$M,"One cleared homicide costs the treasury $1.5–1.8M, mostly for prison.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,460,crime/f143/text,1,$13.1M,$M,Its social cost is $13.1M.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,461,crime/f143/why,0,2019–2023,,Homicide records 2019–2023 with the ethnicity of both sides known.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,463,crime/f214/text,0,1.8–2.0,,"Noncitizens commit fraud at the same ratio as other federal crime, 1.8–2.0 times citizens.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,478,services/term:response (elasticity),0,1%,%,response (elasticity): the % rise in a budget for each 1% rise in users,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,482,services/f230/text,0,1%,%,School spending rises about 1% per 1% more pupils.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,482,services/f230/text,1,1%,%,School spending rises about 1% per 1% more pupils.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,484,services/f230/why,0,0.97–1.00,,Across districts and states the slope is 0.97–1.00.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,485,services/f230/why,1,0.84,,Inside one district over a few years it is 0.84.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,486,services/f230/why,2,$338–410bn,$bn,At the within-district response the main estimate is $338–410bn.,bound: q:case.school_within_district|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,487,services/f230/why,3,2022–24,,"In the 2022–24 surge, money followed new pupils about half, and late.",mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,489,services/f230/why,4,$52bn,$bn,"Without the return on school capital, the short-run response would lower the total by about $52bn (46–58).",bound: q:schools.first_year_effect|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,489,services/f230/why,5,46–58,,"Without the return on school capital, the short-run response would lower the total by about $52bn (46–58).",bound: q:schools.first_year_effect|range,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,491,services/f237/text,0,0.73%,%,Road spending rises 0.73% and park spending 0.95% per 1% more residents.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,491,services/f237/text,1,0.95%,%,Road spending rises 0.73% and park spending 0.95% per 1% more residents.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,491,services/f237/text,2,1%,%,Road spending rises 0.73% and park spending 0.95% per 1% more residents.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,495,services/f211/text,0,0.7%,%,General administration grows about 0.7% per 1% more residents (0.59–0.84).,bound: q:gg.growth_elasticity|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,495,services/f211/text,1,1%,%,General administration grows about 0.7% per 1% more residents (0.59–0.84).,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,496,services/f211/text,2,0.59–0.84,,General administration grows about 0.7% per 1% more residents (0.59–0.84).,bound: q:gg.growth_elasticity|range,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,498,services/f211/why,0,0,,Designs inside states are too noisy to tell it from 0 or 1.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,498,services/f211/why,1,1,,Designs inside states are too noisy to tell it from 0 or 1.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,502,services/f141/why,0,2007–2023,,"District and county panels, 2007–2023.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,506,services/f80/text,0,18–27%,%,"Where prisons are full, building costs add 18–27% to a prisoner-year.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,507,services/f80/why,0,8,,Prisons are full in 8 states and not in 22.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,507,services/f80/why,1,22,,Prisons are full in 8 states and not in 22.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,511,services/f312/text,0,$19bn,$bn,Holding the veterans' benefits fixed lowers the main estimate by about $19bn.,bound: q:items.veterans|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,521,conventions/range,0,$43bn,$bn,"return on public capital, enterprises included: $43bn (41–45)",bound: q:capital_return.total|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,521,conventions/range,1,41–45,,"return on public capital, enterprises included: $43bn (41–45)",bound: q:capital_return.total|range,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,528,conventions/f238/text,0,2.1%,%,"The main estimate charges 2.1% a year real, the rate that also prices the pension promises.",bound: q:capital.rate|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,530,conventions/f238/text,1,$43bn,$bn,"With government enterprises' capital, this adds about $43bn (41–45).",bound: q:capital_return.total|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,530,conventions/f238/text,2,41–45,,"With government enterprises' capital, this adds about $43bn (41–45).",bound: q:capital_return.total|range,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,532,conventions/f238/why,0,2026,,The rate is the flat equivalent of the Trustees' 2026 path.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,533,conventions/f238/why,1,2024,,"Market yields on inflation-protected bonds in 2024 were close, 1.94–2.15%.",mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,533,conventions/f238/why,2,1.94–2.15%,%,"Market yields on inflation-protected bonds in 2024 were close, 1.94–2.15%.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,534,conventions/f238/why,3,7%,%,The assumption table shows the total at a private 7% return.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,537,conventions/f253/text,0,0.72–0.77,,Taxes on owned and rented homes respond at about 0.72–0.77.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,539,conventions/f253/why,0,$60bn,$bn,A bound on defense by share of GDP would add about $60bn (48–72).,bound: q:defense.bound|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,539,conventions/f253/why,1,48–72,,A bound on defense by share of GDP would add about $60bn (48–72).,bound: q:defense.bound|range,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,542,conventions/f161/text,0,"$8,154",$,"Against third-generation whites, the gap per person is $8,154 at a common age mix and $5,276 at the group's own ages.",bound: q:gap_vs_white.per_person_common_age|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,543,conventions/f161/text,1,"$5,276",$,"Against third-generation whites, the gap per person is $8,154 at a common age mix and $5,276 at the group's own ages.",bound: q:gap_vs_white.per_person_own_ages|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,549,conventions/f288/text,0,$1.4–1.5bn,$bn,"led what governments pay in a year, the total would be $1.4–1.5bn lower.",bound: q:retiree_health.rho_one_change|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,554,conventions/f288/why,0,1.20,,The sign rests on one ratio: state plans' cost of promises earned in a year is 1.20 times what they pay.,bound: q:retiree_health.cost_ratio|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,562,data/range,0,$1.7–3.9bn,$bn,net $1.7–3.9bn lower,bound: q:corrections.uncorrected_change|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,565,data/why,0,$52,$,"e account did not use. The tax side raises the cost by $52 / $50bn at the low and high ends, mostly through an as",bound: q:corrections.tax_side|at_low_end,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,565,data/why,1,$50bn,$bn,"unt did not use. The tax side raises the cost by $52 / $50bn at the low and high ends, mostly through an assumed sh",bound: q:corrections.tax_side|at_high_end,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,566,data/why,2,$54,$,The spending side lowers it by $54 / $54bn.,bound: q:corrections.spending_side|at_low_end,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,566,data/why,3,$54bn,$bn,The spending side lowers it by $54 / $54bn.,bound: q:corrections.spending_side|at_high_end,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,567,data/why,4,$1.7–3.9bn,$bn,Together they lower the cost by $1.7–3.9bn.,bound: q:corrections.uncorrected_change|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,575,data/f208/why,0,9%,%,"At equal age, sex and schooling, filled-in wages keep only 9% of the group's wage gap.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,576,data/f208/why,w0,Eight versions,word,Eight versions of the correction all point the same way.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,578,data/f209/text,0,9–13%,%,The CPS counts the Mexico-born 9–13% above the ACS.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,578,data/f209/text,1,11.1M,M,About 11.1M is the right level.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,579,data/f209/why,0,2024,,The excess appears in every monthly file since 2024.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,582,data/f206/text,0,$11.1bn,$bn,Medicaid long-term care was over-charged by $11.1bn.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,584,data/f206/why,0,7.4%,%,"CMS records put the group at 7.4% of long-term-care dollars, not 12.25%.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,584,data/f206/why,1,12.25%,%,"CMS records put the group at 7.4% of long-term-care dollars, not 12.25%.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,583,data/f206/why,w0,Nine pooled,word,"Nine pooled MEPS years move cost from adults to children, not the total.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,591,data/f254/text,0,$65bn,$bn,The account takes off-books pay out of taxes: about $65bn of the imputed unauthorized's $137bn in survey wages.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,592,data/f254/text,1,$137bn,$bn,The account takes off-books pay out of taxes: about $65bn of the imputed unauthorized's $137bn in survey wages.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,594,data/f254/why,0,0.53,,"The account scales payroll and income tax for the imputed unauthorized to an on-books share, 0.53 for the Mexico-born.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,596,data/f255/text,w0,Two tests,word,Two tests fixed before looking pass.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,598,data/f255/why,0,14.36%,%,Birth records put 14.36% of US births with Mexican-origin mothers.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,598,data/f255/why,1,14.43%,%,The frame says 14.43%.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,601,data/f306/text,0,2020,,The 2020 Census missed about 5% of Hispanics.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,601,data/f306/text,1,5%,%,The 2020 Census missed about 5% of Hispanics.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,602,data/f306/text,2,1.95M,M,"The main estimate counts the 1.95M members it missed, which adds about $13–16bn.",bound: q:headcount.coverage|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,603,data/f306/text,3,$13–16bn,$bn,"The main estimate counts the 1.95M members it missed, which adds about $13–16bn.",bound: q:items.coverage|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,604,data/f306/why,0,2020,,"Census population controls keep the 2020 Hispanic total, so the survey does not make up the undercount.",mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,606,data/f306/why,1,5,,Missed people take the Post-Enumeration Survey's rates by age and sex from age 5.,mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,609,data/f314/text,0,$24bn,$bn,"and state and local health payments, which adds about $24bn to its health cost.",bound: q:items.health_residual|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,611,data/f314/why,0,91%,%,VA and TRICARE made up 91% of the survey payments in the old key.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,615,data/f225/why,0,$3.3bn,$bn,"Money sent home lowers sales tax by about $3.3bn, or $0.9bn at surveyed amounts.",bound: q:remittance.sales_tax_effect|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,615,data/f225/why,1,$0.9bn,$bn,"Money sent home lowers sales tax by about $3.3bn, or $0.9bn at surveyed amounts.",bound: q:remittance.sales_tax_effect|min,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,619,data/f267/text,0,$8.6bn,$bn,Prices where the group lives raise its service costs by about $8.6bn and its sales and vehicle taxes by about $6.4bn.,bound: q:state_prices.spending_lane|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,620,data/f267/text,1,$6.4bn,$bn,Prices where the group lives raise its service costs by about $8.6bn and its sales and vehicle taxes by about $6.4bn.,bound: q:state_prices.receipts_lane|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,621,data/f267/text,2,$2.2bn,$bn,"The main estimate charges the net, about $2.2bn.",bound: q:state_prices.net_lane|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,626,data/f273/text,0,$2–4bn,$bn,"When adopted in September, that added about $2–4bn.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,627,data/f273/why,0,8%,%,The group has 8% of household income but drives 10% of the miles.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,627,data/f273/why,1,10%,%,The group has 8% of household income but drives 10% of the miles.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,632,data/f294/text,0,$0.3–0.7bn,$bn,"When adopted in October, with two smaller keys, the college, Pell and fee changes lowered the total by $0.3–0.7bn.",bound: q:fees.change|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,634,data/f294/text,1,$4bn,$bn,"Colleges' teaching grows with the group and their research does not, which lowers it by a further $4bn.",bound: q:items.public_college|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,635,data/f294/why,0,11.6%,%,"IPEDS records give the group 11.6% of public colleges' cost, against 13.9% on a key of state capital spending per head.",bound: q:fees.use_share|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,636,data/f294/why,1,13.9%,%,"IPEDS records give the group 11.6% of public colleges' cost, against 13.9% on a key of state capital spending per head.",bound: q:fees.item_p_share|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,637,data/f294/why,2,$5.5bn,$bn,"At the measured share, colleges cost $5.5bn less.",bound: q:fees.college_key|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,638,data/f294/why,3,16.9%,%,"The group receives 16.9% of Pell grants, which adds $3.9–4.0bn.",bound: q:fees.pell_share|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,638,data/f294/why,4,$3.9–4.0bn,$bn,"The group receives 16.9% of Pell grants, which adds $3.9–4.0bn.",bound: q:fees.pell|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,639,data/f294/why,5,$2.8bn,$bn,Tuition and hospital charges add $2.8bn.,bound: q:fees.charges|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,642,data/f127/text,0,4%,%,A second survey gives the same earnings and income-tax gaps within 4%.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,649,time/claim,0,2024,,"Only 2024 is measured, and past years and old debt are separate numbers",mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,650,time/range,0,$4.0tn,$tn,"about $4.0tn over ten years, before interest",bound: q:backcast.10y|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,650,time/range,w0,ten years,word,"about $4.0tn over ten years, before interest",mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,655,time/term:discount rate,0,3%,%,It is 3% here.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,658,time/f162/text,0,$4.0tn,$tn,"Carried back on each year's national data, the cost is about $4.0tn over 2015–2024 (3.8–4.3), without interest.",bound: q:backcast.10y|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,659,time/f162/text,1,2015–2024,,"Carried back on each year's national data, the cost is about $4.0tn over 2015–2024 (3.8–4.3), without interest.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,659,time/f162/text,2,3.8–4.3,,"Carried back on each year's national data, the cost is about $4.0tn over 2015–2024 (3.8–4.3), without interest.",bound: q:backcast.10y|range,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,666,time/f207/why,0,2024,,"Of the 2024 cash flows, the federal part is $18–57bn.",mapped,skip
+infra/immigration-fiscal/overview_2026_09_28/groups.py,667,time/f207/why,1,$18–57bn,$bn,"Of the 2024 cash flows, the federal part is $18–57bn.",bound: q:cash.federal|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,670,time/f123/text,0,$291bn,$bn,"d-generation whites of the same ages, the gap is about $291bn a year, and $404bn with every item of the ledger price",bound: q:gap_vs_white.age_matched_partial|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,671,time/f123/text,1,$404bn,$bn,"of the same ages, the gap is about $291bn a year, and $404bn with every item of the ledger priced. Matching by stat",bound: q:gap_vs_white.age_matched_complete|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,676,time/f131/text,0,$1.48M,$M,"Over all descendants, a Mexican founder's family line runs $1.48M behind a white family line ($570k at 3%).",bound: q:family_line.gap|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,677,time/f131/text,1,$570k,$k,"Over all descendants, a Mexican founder's family line runs $1.48M behind a white family line ($570k at 3%).",bound: q:family_line.gap_3pct|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,677,time/f131/text,2,3%,%,"Over all descendants, a Mexican founder's family line runs $1.48M behind a white family line ($570k at 3%).",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,678,time/f131/why,0,56%,%,Descendants carry 56% of it.,bound: q:family_line.descendants_share|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,681,time/f240/text,0,50,,Arrivals at 50 or older cost others about $4.1bn (3.8–4.3) a year.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,681,time/f240/text,1,$4.1bn,$bn,Arrivals at 50 or older cost others about $4.1bn (3.8–4.3) a year.,bound: q:late_arrivals.cost|mid,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,681,time/f240/text,2,3.8–4.3,,Arrivals at 50 or older cost others about $4.1bn (3.8–4.3) a year.,bound: q:late_arrivals.cost|range,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,682,time/f240/text,3,55–65,,"A parent sponsored by a US citizen and entering at 55–65 costs $234–286k over the rest of life, at 3%.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,683,time/f240/text,4,$234–286k,$k,"A parent sponsored by a US citizen and entering at 55–65 costs $234–286k over the rest of life, at 3%.",bound: q:ir5.lifetime_cost_55_65|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,683,time/f240/text,5,3%,%,"A parent sponsored by a US citizen and entering at 55–65 costs $234–286k over the rest of life, at 3%.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,692,method/range,0,$314–371bn,$bn,first-year budget responses: $314–371bn,bound: q:case.first_year|range_unit,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,700,method/f270/text,0,15%,%,With first-year budget responses the total falls by about 15%.,bound: q:breaks.first_year_pct|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,702,method/f270/text,1,32%,%,"Counting descendants by share of ancestry, at the lowest share, lowers it by about 32%.",bound: q:breaks.ancestry_low_pct|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,702,method/f270/text,2,7%,%,A private 7% return on public capital raises it by about 25%.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,703,method/f270/text,3,25%,%,A private 7% return on public capital raises it by about 25%.,bound: q:breaks.capital_7pct_pct|value,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,719,civic/f87/text,0,10–12,,Trust stays 10–12 points lower.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,722,civic/f147/text,0,24,,Counting the group moves 24 of 435 House seats.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,722,civic/f147/text,1,435,,Counting the group moves 24 of 435 House seats.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,725,civic/f233/text,0,9–13,,Turnout is 9–13 points lower at equal status.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,725,civic/f233/text,1,0.79,,Military service is 0.79 of the white rate.,mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,738,claims/f244/text,0,80,,"Rochester ""80 of 82 residents on visas"": the list counts medical schools, not visas.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,738,claims/f244/text,1,82,,"Rochester ""80 of 82 residents on visas"": the list counts medical schools, not visas.",mapped,dp
+infra/immigration-fiscal/overview_2026_09_28/groups.py,740,claims/f145/text,0,2003–2026,,Marginal Revolution 2003–2026: mostly agrees with these facts.,mapped,dp
 infra/immigration-fiscal/overview_2026_09_28/build.py,498,"ledger/Schools, first-year budget response/note",0,1%,%,spending rises about 1% per 1% more pupils,mapped,dp
 infra/immigration-fiscal/overview_2026_09_28/build.py,498,"ledger/Schools, first-year budget response/note",1,1%,%,spending rises about 1% per 1% more pupils,mapped,skip
 infra/immigration-fiscal/overview_2026_09_28/build.py,510,ledger/General administration/note,0,0.59–0.84%,%,0.59–0.84% per 1% more residents,bound: q:gg.growth_elasticity|range,dp
@@ -775,11 +775,11 @@ research/immigration-INDEX.md,475,"median household income 0.78→0.91, full-tim
 research/immigration-INDEX.md,475,"median household income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and 2021–2023",4,2016–2019,,"median household income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and 2021–2023","year in a markdown file, not audited",
 research/immigration-INDEX.md,475,"median household income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and 2021–2023",5,2021–2023,,"median household income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and 2021–2023","year in a markdown file, not audited",
 research/immigration-INDEX.md,476,L476,0,2024,,and none in 2024.,"year in a markdown file, not audited",
-research/immigration-INDEX.md,616,"| [Indian-origin: full account, arrival cohorts, home regions]",0,$16.3–19.8k,$k,"26-09-29, ladder 276–277: fiscal net benefit to others $16.3–19.8k per member ($14.0–17.0k at white ages) on main case v",mapped,dp
-research/immigration-INDEX.md,616,"| [Indian-origin: full account, arrival cohorts, home regions]",1,$14.0–17.0k,$k,": fiscal net benefit to others $16.3–19.8k per member ($14.0–17.0k at white ages) on main case v9, every group's income ",mapped,dp
-research/immigration-INDEX.md,616,"| [Indian-origin: full account, arrival cohorts, home regions]",2,1995,,"-origin item 11 are not computed on v9; arrivals since 1995 at the 75th–78th education percentile, no decline in t","year in a markdown file, not audited",
-research/immigration-INDEX.md,616,"| [Indian-origin: full account, arrival cohorts, home regions]",3,47,,", no decline in the surveyed flow; Punjabi speakers at 47, Telugu, Tamil and Kannada near 80; irregular inflow u",mapped,dp
-research/immigration-INDEX.md,616,"| [Indian-origin: full account, arrival cohorts, home regions]",4,80,,"Punjabi speakers at 47, Telugu, Tamil and Kannada near 80; irregular inflow under-counted | Quoting ""Indians are",mapped,rel5
+research/immigration-INDEX.md,619,"| [Indian-origin: full account, arrival cohorts, home regions]",0,$16.3–19.8k,$k,"26-09-29, ladder 276–277: fiscal net benefit to others $16.3–19.8k per member ($14.0–17.0k at white ages) on main case v",mapped,dp
+research/immigration-INDEX.md,619,"| [Indian-origin: full account, arrival cohorts, home regions]",1,$14.0–17.0k,$k,": fiscal net benefit to others $16.3–19.8k per member ($14.0–17.0k at white ages) on main case v9, every group's income ",mapped,dp
+research/immigration-INDEX.md,619,"| [Indian-origin: full account, arrival cohorts, home regions]",2,1995,,"-origin item 11 are not computed on v9; arrivals since 1995 at the 75th–78th education percentile, no decline in t","year in a markdown file, not audited",
+research/immigration-INDEX.md,619,"| [Indian-origin: full account, arrival cohorts, home regions]",3,47,,", no decline in the surveyed flow; Punjabi speakers at 47, Telugu, Tamil and Kannada near 80; irregular inflow u",mapped,dp
+research/immigration-INDEX.md,619,"| [Indian-origin: full account, arrival cohorts, home regions]",4,80,,"Punjabi speakers at 47, Telugu, Tamil and Kannada near 80; irregular inflow under-counted | Quoting ""Indians are",mapped,rel5
 research/immigration-objections-faq-2026-09-21.md,10,conditional net cost to other residents at $368–437bn a year ($368.0–436.6bn). It counts a,0,$368–437bn,$bn,conditional net cost to other residents at $368–437bn a year ($368.0–436.6bn).,mapped,dp
 research/immigration-objections-faq-2026-09-21.md,10,conditional net cost to other residents at $368–437bn a year ($368.0–436.6bn). It counts a,1,$368.0–436.6bn,$bn,conditional net cost to other residents at $368–437bn a year ($368.0–436.6bn).,mapped,dp
 research/immigration-objections-faq-2026-09-21.md,11,"44.90M-person lineage as whole people: the Mexico-born, the US-born with a Mexico-born parent, the",0,44.90M,M,"44.90M-person lineage as whole people: the Mexico-born, the US-born with a Mexico-born parent, the",mapped,dp
