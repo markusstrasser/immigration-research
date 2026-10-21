@@ -29,7 +29,6 @@
   "../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_7_Offense_Analysis_United_States_2020-2024.xlsx": "f4aef2067d980ff15a8700fa6ce2ea9d26f8b29172ed62da22a423a1ef872587",
   "../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_1_Crime_in_the_United_States_by_Volume_and_Rate_per_100000_Inhabitants_2005-2024.xlsx": "f4915ae870feca9ad8dd28e23b52c8ec382c4e389bdc1ddb1be7e423c5efc7b7",
   "../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_5_Crime_in_the_United_States_by_State_2024.xlsx": "0feabb80db5341a882c96a09ed30808a734c78e405ee8bc9869e43e25b9c9552",
-  "../sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json": "3b7d00abeabf786fc140f36ec671c902729ffeed709f5848b00b22cd47a7406c",
   "../social_costs_unpriced_2026_09_28/derived/payment_keys.json": "1c886f0d713fab51a0a15b8c9460fb3b16233dc39b97a7ed9f9ed38eb442d55a",
   "../job_capital_taxes_2026_10_14/derived/wages_by_industry.csv": "3bccaa790e713c2206ccba4a091b42a41b293b58eda41ee4aede4ee806202009",
   "../crime_victim_cost_2026_09_23/derived/mortality_arms.csv": "f5f455e8fef6e2465988ba83789190fc30c7e6c4b680b0f0c6ea46a9eb653f6f",
@@ -40,5 +39,8 @@
   "_cache/nrss2023.txt": "3efa0beee69144a27c9a139bf589c71ea32426160c76eebde68147203ff686d4",
   "_cache/mrtssales92-present.xlsx": "190d718b853613163d3e9c3b5fe4444966ac3a7d908b60f0526df8692ccb6119",
   "_cache/arts2022r_gmper.xlsx": "4710df1aa375585f5fe553709d8f212eb938a02a7dd54df67f89cc217b2b2a68"
+ },
+ "read_values": {
+  "../sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json": "b37e725568831740c9b7870bbf7b19006033895c898b2f138143286c40e2bf66"
  }
 }

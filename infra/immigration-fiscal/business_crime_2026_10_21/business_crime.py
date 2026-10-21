@@ -108,11 +108,30 @@ def fetch() -> None:
     subprocess.run(["pdftotext", "-layout", str(CACHE / "nrss2023.pdf"), str(CACHE / "nrss2023.txt")], check=True)
 
 
+def prop_read(prop: dict) -> dict:
+    """The fields this lane reads from the pairing's oct16 totals. The pairing carries this lane's row, so a
+    file pin would make each lane stale whenever the other is rerun; the pin covers exactly what is read."""
+    keys = prop["lineage_social_rows"]["keys"]
+    p7 = prop["p7_crime"]
+    return dict(case=prop["case"], justice_use_raw_coding_low=keys["low_end"]["justice_use_raw_coding"],
+                justice_use_high=keys["high_end"]["justice_use"], recipient_victims=p7["recipient_shares"]["victims"],
+                lineage_m=prop["per_member_population_m"]["oct16"],
+                victims_lineage={e: p7["lineage_crime_rows"][e]["victims"] for e in ("low", "high")})
+
+
+def value_digest(values: dict) -> str:
+    return hashlib.sha256(json.dumps(values, sort_keys=True).encode()).hexdigest()
+
+
 def verify_pins() -> dict:
     pins = json.loads((HERE / "inputs/pins.json").read_text())
     for rel, digest in pins["files"].items():
         p = (HERE / rel).resolve()
         gate(f"pin {rel}", p.exists() and sha(p) == digest, digest[:12])
+    for rel, digest in pins["read_values"].items():
+        p = (HERE / rel).resolve()
+        gate(f"read-value pin {rel}", p.exists() and value_digest(prop_read(json.loads(p.read_text()))) == digest,
+             digest[:12])
     return pins
 
 
@@ -332,19 +351,17 @@ def main() -> None:
     OUT.mkdir(exist_ok=True)
     pins = verify_pins()
     # case keys
-    prop = json.loads(PROP.read_text())
-    keys = prop["lineage_social_rows"]["keys"]
-    k_end = {"low": keys["low_end"]["justice_use_raw_coding"], "high": keys["high_end"]["justice_use"]}
-    recipient = prop["p7_crime"]["recipient_shares"]["victims"]
-    lineage_m = prop["per_member_population_m"]["oct16"]
+    prop = prop_read(json.loads(PROP.read_text()))
+    k_end = {"low": prop["justice_use_raw_coding_low"], "high": prop["justice_use_high"]}
+    recipient = prop["recipient_victims"]
+    lineage_m = prop["lineage_m"]
     pay = json.loads(SECURITY_KEYS.read_text())
     p_lin, p_union = pay["low"]["lineage_share"], pay["low"]["union_share"]
     gate("payment key equal at both ends", pay["high"]["lineage_share"] == p_lin)
     gate("case keys read (oct16)", prop["case"] == "oct16" and abs(lineage_m - 44.903074) < 1e-5,
          f"k_low {k_end['low']:.6f}, k_high {k_end['high']:.6f}, recipient {recipient:.6f}, lineage {lineage_m:.6f}M, "
          f"payment lineage {p_lin:.6f}")
-    v9 = prop["p7_crime"]["lineage_crime_rows"]
-    victims_v9 = {e: v9[e]["victims"] for e in ("low", "high")}
+    victims_v9 = dict(prop["victims_lineage"])
     sc = {r["item"]: float(r["value"]) for r in csv.DictReader(SCALING.open())}
     s_mex = sc["population share, within CPS (central)"]
     s_lo, s_hi = sc["ACS 2020-24 institutional, men 18-39: ratio_generic_kept"], sc["ACS 2020-24 institutional, men 18-39: ratio_generic_reallocated"]
@@ -677,15 +694,38 @@ def main() -> None:
     say(pd.DataFrame(summary).round(3).to_string(index=False))
     gate("every arm line present at both ends", len(arms) == 2 * (6 + 3 + 3 + 9))
 
+    # The pairing's row (sept24_propagation_2026_09_24 v9_totals.py) at full precision: the central arm's parts on the
+    # union, so the pairing can move each part with the people v9 adds, and the all-offender national volumes its
+    # equal-count average comparator needs.
+    pairing = dict(rule="central arm; net = sum over A-C of L x (S - p) + D-F; S = S_union x (1 + k), p = payment_share_lineage",
+                   payment_share_lineage=p_lin, payment_share_union=p_union, ends={},
+                   national_all_offenders_bn=dict(
+                       D=sum(r["national_victimisations"] * r["unit_full"] for r in kids) / 1e9,
+                       E=sum(r["national_victimisations"] * r["unit_full"] for r in jail) / 1e9, F=L_F))
+    for end in ("low", "high"):
+        k = k_end[end]
+        parts = {"A": (L_ext["central"], lineage_share(S_shop["central"], end) / (1 + k)),
+                 "B": (L_int["central"], worker["central"]),
+                 "C": (L_non, lineage_share(S_non, end) / (1 + k))}
+        direct = {"D": D["full"], "E": E["full"], "F": F_union}
+        net = sum(L * (S * (1 + k) - p_lin) for L, S in parts.values()) + sum(direct.values()) * (1 + k)
+        gross = sum(L * S * (1 + k) * (1 - p_lin) for L, S in parts.values()) + sum(direct.values()) * (1 + k)
+        gate(f"pairing parts reproduce the central totals ({end}, 1e-12)",
+             abs(net - tot("central", end, "net_with_without_bn")) < 1e-12
+             and abs(gross - tot("central", end, "gross_forward_bn")) < 1e-12, f"net {net:.9f}, gross {gross:.9f}")
+        pairing["ends"][end] = dict(crime_key=k, net_bn=net, gross_bn=gross,
+                                    loss_lines={x: dict(L_bn=L, S_union=S) for x, (L, S) in parts.items()},
+                                    direct_union_bn=direct)
+
     # bounds row for A on the total
-    extra = dict(murder_v9_low_bn=murder_v9["low"], murder_v9_high_bn=murder_v9["high"], murder_share_v9=murder_share["low"],
+    extra = dict(pairing=pairing,murder_v9_low_bn=murder_v9["low"], murder_v9_high_bn=murder_v9["high"], murder_share_v9=murder_share["low"],
                  murder_share_source_lane_legacy=legacy_share, victims_v9_low_bn=victims_v9["low"], victims_v9_high_bn=victims_v9["high"],
                  lineage_m=lineage_m, payment_share_lineage=p_lin, payment_share_union=p_union, k_low=k_end["low"],
                  k_high=k_end["high"], recipient_share=recipient, s_mex=s_mex, shoplifting_share=S_shop,
                  national_hispanic_pop_share_all_ages=pop_share_H, L_ext_bn=L_ext, L_int_bn=L_int, L_non_bn=L_non,
                  L_shop_police_bn=L_shop_police, mean_shop_loss_usd=mean_shop, worker_share=worker, sales_base_bn=base,
                  gross_margin=gm, nrss=nr, lines=lines_all, commercial_robbery_employee_intangible_union_bn=rob_beside,
-                 pins=pins["files"])
+                 pins=pins["files"], read_value_pins=pins["read_values"])
     (OUT / "summary.json").write_text(json.dumps(extra, indent=1, sort_keys=True, default=float) + "\n")
     (OUT / "run_log.txt").write_text("\n".join(LOG) + "\n")
 

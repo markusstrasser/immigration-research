@@ -174,6 +174,19 @@ The evidence points to about population parity, not to a high rate.
 The two largest measured spreads, recording quality (0.156–0.190) and loss weighting (0.166), both
 lower the share. The unrecorded-offender share has no sign the data can identify.
 
+## In the pairing (2026-10-21)
+
+The operator put the net into the v9 fiscal-plus-social pairing ("ok net then ..."; decision
+`decisions/2026-10-21-business-crime-in-pairing.md`), with the gross beside. The pairing row
+`business_crime` starts from this lane's net, $1.401759 / 1.379006bn, and applies the same v9 terms as
+the other crime rows: the completion and item 16 senders aged 12+ (δ = 0.006973), item 11's consumption
+shift and the completion receivers. The row is **$1.377 / 1.355bn**; the gross beside is $5.24 / 5.22bn.
+`summary.json` `pairing` exports the parts the row is built from, gated to the central totals at 1e-12;
+the pairing gates them back at 1e-9 and pins this file. This lane now pins only the values it reads from
+the pairing (`inputs/pins.json` `read_values`), so the two lanes do not pin each other's whole files.
+[CALCULATION: `sept24_propagation_2026_09_24/v9_totals.py` `crime_rows`; `derived/oct16/real_costs_totals.json`
+`v9_social_environment.current_social_rows`, item `business_crime`]
+
 ## Open assumptions
 
 - Business losses pass fully to purchasers, at the case's payment key.
@@ -300,3 +313,5 @@ uv run --no-project python3 scripts/rerun_lane.py infra/immigration-fiscal/busin
   stage pickles, `outside_share_by_offence.csv`, and `crime_victim_cost_2026_09_23/derived/mortality_arms.csv`.
   D moves +$0.000017bn and E +$0.000004bn; the totals move by at most $0.000024bn, so every printed
   figure stands. `rerun_lane.py`: IDENTICAL 14/14, exit 0.
+- 2026-10-21 12:30 JST (`date`): added the `pairing` export and the read-value pin for the pairing's
+  totals (see "In the pairing"). No figure changes. `rerun_lane.py`: IDENTICAL 14/14, exit 0.

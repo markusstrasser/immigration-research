@@ -22,7 +22,6 @@
 [gate] pin ../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_7_Offense_Analysis_United_States_2020-2024.xlsx: PASS — f4aef2067d98
 [gate] pin ../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_1_Crime_in_the_United_States_by_Volume_and_Rate_per_100000_Inhabitants_2005-2024.xlsx: PASS — f4915ae870fe
 [gate] pin ../nibrs_arrests_2026_09_16/_cache/x/est2024/CIUS_Table_5_Crime_in_the_United_States_by_State_2024.xlsx: PASS — 0feabb80db53
-[gate] pin ../sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json: PASS — 3b7d00abeabf
 [gate] pin ../social_costs_unpriced_2026_09_28/derived/payment_keys.json: PASS — 1c886f0d713f
 [gate] pin ../job_capital_taxes_2026_10_14/derived/wages_by_industry.csv: PASS — 3bccaa790e71
 [gate] pin ../crime_victim_cost_2026_09_23/derived/mortality_arms.csv: PASS — f5f455e8fef6
@@ -33,6 +32,7 @@
 [gate] pin _cache/nrss2023.txt: PASS — 3efa0beee691
 [gate] pin _cache/mrtssales92-present.xlsx: PASS — 190d718b8536
 [gate] pin _cache/arts2022r_gmper.xlsx: PASS — 4710df1aa375
+[gate] read-value pin ../sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json: PASS — b37e72556883
 [gate] payment key equal at both ends: PASS
 [gate] case keys read (oct16): PASS — k_low 0.070311, k_high 0.066062, recipient 0.010275, lineage 44.903074M, payment lineage 0.099450
 [gate] Hispanic -> Mexican population share is the victim lane's: PASS — 0.597521
@@ -117,3 +117,5 @@ central high             5.220                1.379               116.252       
    high  low            11.987                4.297               266.955              95.701         14.61              0.820            0.294
    high high            11.940                4.245               265.895              94.532         16.27              0.734            0.261
 [gate] every arm line present at both ends: PASS
+[gate] pairing parts reproduce the central totals (low, 1e-12): PASS — net 1.401758880, gross 5.240893854
+[gate] pairing parts reproduce the central totals (high, 1e-12): PASS — net 1.379005914, gross 5.220088973
