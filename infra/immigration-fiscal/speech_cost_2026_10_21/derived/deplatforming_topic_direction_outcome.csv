@@ -1,0 +1,33 @@
+topic_set,direction,n_incidents,n_all_incidents,n_any_penalty,Revoked,Canceled,Removed,Withdrew,Postponed,Substantial Event Disruption,Rejected,Disinvitation Attempt,Cancellation Attempt,Attempted Disruption
+all,(any),2107,2107,,391,90,47,77,33,260,77,699,228,205
+all,From the Left,981,2107,,170,27,14,45,10,206,16,292,16,185
+all,From the Left and From the Right,3,2107,,0,0,0,0,0,1,0,2,0,0
+all,From the Right,1005,2107,,154,63,24,27,21,46,60,387,210,13
+all,Not Applicable,118,2107,,67,0,9,5,2,7,1,18,2,7
+imm_tag,(any),131,2107,,25,0,2,6,0,32,0,52,1,13
+imm_tag,From the Left,122,2107,,25,0,0,6,0,26,0,52,1,12
+imm_tag,From the Left and From the Right,1,2107,,0,0,0,0,0,1,0,0,0,0
+imm_tag,From the Right,7,2107,,0,0,2,0,0,4,0,0,0,1
+imm_tag,Not Applicable,1,2107,,0,0,0,0,0,1,0,0,0,0
+imm_regex,(any),143,2107,,27,0,2,6,0,35,0,57,1,15
+imm_regex,From the Left,131,2107,,25,0,0,6,0,29,0,56,1,14
+imm_regex,From the Left and From the Right,1,2107,,0,0,0,0,0,1,0,0,0,0
+imm_regex,From the Right,10,2107,,2,0,2,0,0,4,0,1,0,1
+imm_regex,Not Applicable,1,2107,,0,0,0,0,0,1,0,0,0,0
+imm_tag_and_race_tag,(any),77,2107,,19,0,1,4,0,11,0,35,1,6
+imm_tag_and_race_tag,From the Left,75,2107,,19,0,0,4,0,10,0,35,1,6
+imm_tag_and_race_tag,From the Right,1,2107,,0,0,1,0,0,0,0,0,0,0
+imm_tag_and_race_tag,Not Applicable,1,2107,,0,0,0,0,0,1,0,0,0,0
+race_tag,(any),438,2107,,98,18,11,23,14,73,3,148,13,37
+race_tag,From the Left,352,2107,,75,14,9,17,6,69,3,111,13,35
+race_tag,From the Left and From the Right,2,2107,,0,0,0,0,0,0,0,2,0,0
+race_tag,From the Right,78,2107,,22,4,2,6,7,3,0,32,0,2
+race_tag,Not Applicable,6,2107,,1,0,0,0,1,1,0,3,0,0
+grp_regex,(any),10,2107,,6,0,0,0,0,0,0,3,0,1
+grp_regex,From the Left,8,2107,,4,0,0,0,0,0,0,3,0,1
+grp_regex,Not Applicable,2,2107,,2,0,0,0,0,0,0,0,0,0
+race_regex,(any),489,2107,,104,23,12,24,14,80,5,165,14,48
+race_regex,From the Left,377,2107,,78,15,9,18,6,72,3,123,13,40
+race_regex,From the Left and From the Right,3,2107,,0,0,0,0,0,1,0,2,0,0
+race_regex,From the Right,95,2107,,24,8,3,6,7,6,2,37,0,2
+race_regex,Not Applicable,14,2107,,2,0,0,0,1,1,0,3,1,6
