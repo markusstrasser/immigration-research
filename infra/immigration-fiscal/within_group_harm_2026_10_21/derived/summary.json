@@ -1,19 +1,19 @@
 {
  "A_plus_B_bn": {
-  "high": 95.9878749313091,
-  "low": 93.31922336679433
+  "high": 96.2550148656067,
+  "low": 93.55898863737094
  },
  "A_plus_B_per_member_usd": {
-  "high": 2137.668230619254,
-  "low": 2078.23685272764
+  "high": 2143.6174877633084,
+  "low": 2083.576470904251
  },
  "block_A_total_bn": {
-  "high": 66.25471689455564,
-  "low": 63.633511044474744
+  "high": 66.51881553427066,
+  "low": 63.87055621108162
  },
  "block_B_total_bn": {
-  "high": 29.73315803675345,
-  "low": 29.68571232231959
+  "high": 29.736199331336035,
+  "low": 29.688432426289324
  },
  "case": "oct16",
  "children": {
@@ -43,14 +43,14 @@
  },
  "domestic_violence_inside_A": {
   "high": {
-   "family_intimate_bn": 5.86727125441008,
-   "family_intimate_rel_known_bn": 6.594014945975255,
-   "nonfatal_ingroup_bn": 11.205247339895205
+   "family_intimate_bn": 5.905649954603247,
+   "family_intimate_rel_known_bn": 6.637147385521258,
+   "nonfatal_ingroup_bn": 11.278542541293108
   },
   "low": {
-   "family_intimate_bn": 5.268544363520633,
-   "family_intimate_rel_known_bn": 5.921127346971746,
-   "nonfatal_ingroup_bn": 10.061805591498105
+   "family_intimate_bn": 5.3028698955972065,
+   "family_intimate_rel_known_bn": 5.959704576782171,
+   "nonfatal_ingroup_bn": 10.127360098919663
   }
  },
  "factor": 0.9856348324247741,
@@ -101,16 +101,16 @@
  "school_rho": 0.684182301313795,
  "security_fear": {
   "high": {
-   "fear_bn": 5.71843504294913,
+   "fear_bn": 5.751423118783862,
    "in_share": 0.345184891352169,
-   "offending_share": 0.12367188462953942,
-   "security_bn": 1.3011597748725703
+   "offending_share": 0.12448084095296717,
+   "security_bn": 1.3185049846810983
   },
   "low": {
-   "fear_bn": 5.084179794878426,
+   "fear_bn": 5.112982817798839,
    "in_share": 0.34352943836858096,
-   "offending_share": 0.12099485669534106,
-   "security_bn": 1.2698154178975476
+   "offending_share": 0.12178316036102776,
+   "security_bn": 1.2867311784670874
   }
  },
  "transcribed": {
@@ -160,32 +160,34 @@
  },
  "victims": {
   "high": {
-   "boundary_bn": 0.45972213430656694,
-   "deaths": 1517.2322755588993,
-   "fear_wtp": 12.73802986077083,
-   "final_outside_bn": 41.5574614038241,
-   "full": 31.991329515052126,
+   "boundary_bn": 0.4627292456534917,
+   "deaths": 1527.1567191549411,
+   "fear_wtp": 12.821351222248822,
+   "final_outside_bn": 41.829294984180166,
+   "full": 32.200589593715804,
    "m_central": 0.7861749999999996,
-   "ncvs_nonfatal_bn": 11.205247339895205,
-   "nf_out": 25.57839584309082,
-   "nibrs_nonfatal_bn": 25.352466826776144,
-   "nonfatal": 242282.63608575272,
+   "ncvs_nonfatal_bn": 11.27854254129311,
+   "nf_out": 25.74570796194781,
+   "nibrs_nonfatal_bn": 25.518301110093223,
+   "nonfatal": 243867.44310236303,
    "sender_key": 0.06606175123321623,
-   "tangible": 4.862271006669962
+   "tangible": 4.89407584969348,
+   "v9_sender_share": 0.006973269611018845
   },
   "low": {
-   "boundary_bn": 0.4128096954211884,
-   "deaths": 1362.4059987919086,
-   "fear_wtp": 11.438175007654399,
-   "final_outside_bn": 37.3167217855786,
-   "full": 28.72676777494725,
+   "boundary_bn": 0.4154992262410886,
+   "deaths": 1371.2823235575593,
+   "fear_wtp": 11.512696814064766,
+   "final_outside_bn": 37.55984706692055,
+   "full": 28.913927931658225,
    "m_central": 0.7861750000000094,
-   "ncvs_nonfatal_bn": 10.0618055914981,
-   "nf_out": 22.968243226478368,
-   "nibrs_nonfatal_bn": 22.76536918267721,
-   "nonfatal": 217558.85510987084,
+   "ncvs_nonfatal_bn": 10.127360098919663,
+   "nf_out": 23.117885540410825,
+   "nibrs_nonfatal_bn": 22.913689735034268,
+   "nonfatal": 218976.2909221844,
    "sender_key": 0.07031058462501538,
-   "tangible": 4.366099570877423
+   "tangible": 4.394545509741933,
+   "v9_sender_share": 0.006973269611018845
   }
  }
 }

@@ -62,19 +62,19 @@ quote hildebrandt_birthweight_grams,PASS,raise birth weight by 364 grams
 pairing totals are the live case,PASS,
 P7 payload is DOT uniform,PASS,
 live_case.json names oct16,PASS,"{""key"": ""oct16"", ""lane"": ""main_case_2026_10_16"", ""adopted"": ""2026-10-20"", ""decision"": ""decisions/2026-10-16-main-case-v9"
-"own-conduct level + re-spending = current row (victims, low)",PASS,37.316721786 + 0.000000000 / 37.316721786
-"own-conduct level + re-spending = current row (property_crime, low)",PASS,1.327875033 + 0.000000000 / 1.327875033
+"own-conduct level + re-spending = current row (victims, low)",PASS,37.559847067 + 0.000000000 / 37.559847067
+"own-conduct level + re-spending = current row (property_crime, low)",PASS,1.336526382 + 0.000000000 / 1.336526382
 "own-conduct level + re-spending = current row (congestion, low)",PASS,13.711989551 + 0.000000000 / 13.711989551
-"own-conduct level + re-spending = current row (fear_avoidance, low)",PASS,6.606074572 + 0.000000000 / 6.606074572
-"own-conduct level + re-spending = current row (private_security, low)",PASS,0.458198824 + 0.000000000 / 0.458198824
+"own-conduct level + re-spending = current row (fear_avoidance, low)",PASS,6.651951192 + 0.000000000 / 6.651951192
+"own-conduct level + re-spending = current row (private_security, low)",PASS,0.426056657 + 0.000000000 / 0.426056657
 "own-conduct level + re-spending = current row (school_disruption, low)",PASS,-2.162266419 + 0.000000000 / -2.162266419
 "own-conduct level + re-spending = current row (pm25_consumption, low)",PASS,80.749579916 + -12.416400786 / 68.333179130
 "own-conduct level + re-spending = current row (road_crash_externality, low)",PASS,12.473957706 + 0.000000000 / 12.473957706
-"own-conduct level + re-spending = current row (victims, high)",PASS,41.557461404 + 0.000000000 / 41.557461404
-"own-conduct level + re-spending = current row (property_crime, high)",PASS,1.430237708 + 0.000000000 / 1.430237708
+"own-conduct level + re-spending = current row (victims, high)",PASS,41.829294984 + 0.000000000 / 41.829294984
+"own-conduct level + re-spending = current row (property_crime, high)",PASS,1.439593108 + 0.000000000 / 1.439593108
 "own-conduct level + re-spending = current row (congestion, high)",PASS,10.839387137 + 0.000000000 / 10.839387137
-"own-conduct level + re-spending = current row (fear_avoidance, high)",PASS,7.586739951 + 0.000000000 / 7.586739951
-"own-conduct level + re-spending = current row (private_security, high)",PASS,0.567225510 + 0.000000000 / 0.567225510
+"own-conduct level + re-spending = current row (fear_avoidance, high)",PASS,7.639258314 + 0.000000000 / 7.639258314
+"own-conduct level + re-spending = current row (private_security, high)",PASS,0.536019508 + 0.000000000 / 0.536019508
 "own-conduct level + re-spending = current row (school_disruption, high)",PASS,-2.162266419 + 0.000000000 / -2.162266419
 "own-conduct level + re-spending = current row (pm25_consumption, high)",PASS,80.749579916 + -15.729703400 / 65.019876516
 "own-conduct level + re-spending = current row (road_crash_externality, high)",PASS,12.708118101 + 0.000000000 / 12.708118101
@@ -83,7 +83,7 @@ sender key low matches P7,PASS,
 victim cells mixed/dot_uniform/0.0,PASS,20
 union outside victims reproduce P7 (low),PASS,35.251012204
 lineage senders' outside victims reproduce P7 (low),PASS,37.729531481
-v9 victims row = senders x (1-r)(1-c) (low),PASS,37.316721786 / 37.316721786
+v9 victims row = senders x (1-r)(1-c) (low),PASS,37.559847067 / 37.559847067
 in-group victims = all-victim harm - outside row (low),PASS,
 victim cells mixed/dot_life_years/0.0,PASS,20
 victim cells mixed/dot_life_years/0.03,PASS,20
@@ -91,7 +91,7 @@ sender key high matches P7,PASS,
 victim cells custody/dot_uniform/0.0,PASS,20
 union outside victims reproduce P7 (high),PASS,39.413461265
 lineage senders' outside victims reproduce P7 (high),PASS,42.017183538
-v9 victims row = senders x (1-r)(1-c) (high),PASS,41.557461404 / 41.557461404
+v9 victims row = senders x (1-r)(1-c) (high),PASS,41.829294984 / 41.829294984
 in-group victims = all-victim harm - outside row (high),PASS,
 victim cells custody/dot_life_years/0.0,PASS,20
 victim cells custody/dot_life_years/0.03,PASS,20

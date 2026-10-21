@@ -1,10 +1,10 @@
-**Verdict:** The pairing leaves out harm that members of the 44.90M Mexican-immigrant lineage do to other members. At the v9 case's two ends that harm is about **$93–96bn a year, or $2,080–2,140 per member** (2024 $, whole-population frame). It sits **beside** the "cost to other residents" pairing and is never added to it. Two pieces make up most of it:
-- **$63.6 / $66.3bn** is the in-group side of pairing rows that have a defined in-group share. Crime victims are $28.7 / $32.0bn: about 1,360–1,520 killings and 218,000–242,000 non-fatal victimisations of members aged 12 and over. PM2.5 is $11.6bn, road crashes $9.3 / $9.4bn, congestion $7.0 / $5.5bn, fear $5.1 / $5.7bn, private security $1.3bn and property crime $0.6 / $0.7bn.
+**Verdict:** The pairing leaves out harm that members of the 44.90M Mexican-immigrant lineage do to other members. At the v9 case's two ends that harm is about **$94–96bn a year, or $2,080–2,140 per member** (2024 $, whole-population frame). It sits **beside** the "cost to other residents" pairing and is never added to it. Two pieces make up most of it:
+- **$63.9 / $66.5bn** is the in-group side of pairing rows that have a defined in-group share. Crime victims are $28.9 / $32.2bn: about 1,370–1,530 killings and 219,000–244,000 non-fatal victimisations of members aged 12 and over. PM2.5 is $11.6bn, road crashes $9.3 / $9.4bn, congestion $7.0 / $5.5bn, fear $5.1 / $5.8bn, private security $1.3bn and property crime $0.6 / $0.7bn.
 - **$29.7bn** is harm to victims under 12, whom the NCVS cannot see. Child maltreatment, priced at Peterson et al. 2018's lifetime cost per victim, is $27.9bn. Maltreatment deaths that death records do not code as assault are $1.3bn, and police-recorded non-family violence against under-12s is $0.4–0.5bn.
 
-The victim row has one large alternative. On police records (NIBRS), Hispanic offenders' victims are far more often Hispanic than NCVS victims report. Taking the in-group-to-outside ratio from police records raises the victim row to **$41.4 / $46.1bn** and leaves the pairing's outside count unchanged. The child-maltreatment row rests on one quality-of-life estimate and runs from $2.6bn (health care only) to $45bn (Peterson's own VSL). On a CPS-investigated base instead of the substantiated one it would be $137bn, an arm kept beside.
+The victim row has one large alternative. On police records (NIBRS), Hispanic offenders' victims are far more often Hispanic than NCVS victims report. Taking the in-group-to-outside ratio from police records raises the victim row to **$41.7 / $46.4bn** and leaves the pairing's outside count unchanged. The child-maltreatment row rests on one quality-of-life estimate and runs from $2.6bn (health care only) to $45bn (Peterson's own VSL). On a CPS-investigated base instead of the substantiated one it would be $137bn, an arm kept beside.
 
-For members' families in Mexico no defensible central exists. Left-behind schooling runs from −$1.6bn to +$2.4bn a year, because the studies disagree on the sign. Child health improves (sign only), and left-behind mothers' depression comes to $0–0.4bn. In a world frame, A's homicides need a counterfactual first. The Mexico-born members alone avoid about **2,360 homicide deaths a year** by living in the US (Mexico 24.9 against 5.5 per 100,000). That is **−$32bn at the DOT VSL**, more than A's whole homicide part ($18.7–20.8bn). [CALCULATION: `within_group_harm.py` → `derived/rows.csv`, `arms.csv`, `summary.json`; 119 gates in `derived/gates.csv`] [FRAMING-SENSITIVE: whole-population and world frames; VSL/QALY valuations are willingness-to-pay conventions, not expenditures]
+For members' families in Mexico no defensible central exists. Left-behind schooling runs from −$1.6bn to +$2.4bn a year, because the studies disagree on the sign. Child health improves (sign only), and left-behind mothers' depression comes to $0–0.4bn. In a world frame, A's homicides need a counterfactual first. The Mexico-born members alone avoid about **2,360 homicide deaths a year** by living in the US (Mexico 24.9 against 5.5 per 100,000). That is **−$32bn at the DOT VSL**, more than A's whole homicide part ($18.8–20.9bn). [CALCULATION: `within_group_harm.py` → `derived/rows.csv`, `arms.csv`, `summary.json`; 119 gates in `derived/gates.csv`] [FRAMING-SENSITIVE: whole-population and world frames; VSL/QALY valuations are willingness-to-pay conventions, not expenditures]
 
 Model: claude-opus-5-5. Lane `infra/immigration-fiscal/within_group_harm_2026_10_21/`, opened 2026-10-21 01:16 JST (`date`). Nothing committed.
 
@@ -20,20 +20,20 @@ The adopted pairing asks what the lineage costs residents outside it. Each socia
 
 | Block | Row | Low end | High end | Arm range | Per member (low / high) |
 |---|---|---:|---:|---:|---:|
-| A | Crime victims, homicide + non-fatal 12+ | 28.73 | 31.99 | 4.37–46.14 | $640 / $712 |
+| A | Crime victims, homicide + non-fatal 12+ | 28.91 | 32.20 | 4.39–46.44 | $644 / $717 |
 | A | Property crime | 0.64 | 0.69 | | $14 / $15 |
-| A | Fear and avoidance | 5.08 | 5.72 | 2.54–11.44 | $113 / $127 |
-| A | Private security | 1.27 | 1.30 | 0.66–1.30 | $28 / $29 |
+| A | Fear and avoidance | 5.11 | 5.75 | 2.56–11.50 | $114 / $128 |
+| A | Private security | 1.29 | 1.32 | 0.66–1.32 | $29 / $29 |
 | A | PM2.5 from consumption | 11.64 | 11.64 | 4.51–20.42 | $259 |
 | A | Road crashes | 9.30 | 9.40 | 2.57–11.23 | $207 / $209 |
 | A | Congestion | 6.98 | 5.51 | 5.12–6.98 | $155 / $123 |
-| **A** | **Total** | **63.63** | **66.25** | | **$1,417 / $1,475** |
+| **A** | **Total** | **63.87** | **66.52** | | **$1,422 / $1,481** |
 | beside | School disruption (outside A's total) | −1.57 | −1.57 | | −$35 |
 | B | Child maltreatment, ages 0–11, non-fatal | 27.94 | 27.94 | 2.60–45.02 (137.28 beside) | $622 |
 | B | Child maltreatment deaths, ages 0–11, not coded as assault | 1.33 | 1.33 | 1.14–2.50 | $30 |
-| B | Police-recorded non-family violence against under-12s | 0.42 | 0.46 | 0.42–1.05 | $9 / $10 |
-| **B** | **Total** | **29.69** | **29.73** | | **$661 / $662** |
-| **A+B** | | **93.32** | **95.99** | | **$2,078 / $2,138** |
+| B | Police-recorded non-family violence against under-12s | 0.42 | 0.47 | 0.42–1.06 | $9 / $10 |
+| **B** | **Total** | **29.69** | **29.74** | | **$661 / $662** |
+| **A+B** | | **93.56** | **96.26** | | **$2,084 / $2,144** |
 | C1 | Left-behind schooling | 0 | 0 | −1.59 to +2.45 | interval only |
 | C2 | Left-behind child health | benefit, unpriced | | | |
 | C3 | Left-behind mothers' depression | 0 | 0 | 0–0.37 | interval only |
@@ -56,31 +56,32 @@ The row is rebuilt from the victim lane's cells (`crime_victim_cost_2026_09_23/d
 
 The lane is gated against the P7 payload and the v9 row:
 - union outside: $35.2510 / $39.4135bn;
-- lineage senders before the boundary: $37.7295 / $42.0172bn;
-- v9 row: $37.3167 / $41.5575bn.
+- lineage senders before the boundary, P7's own: $37.7295 / $42.0172bn;
+- the same with v9's completion and item 16 senders (δ = 0.006973, the pairing's `crime_senders`): $37.9753 / $42.2920bn;
+- v9 row: $37.5598 / $41.8293bn.
 
-All three reproduce to 1e-9, and the in-group total equals the all-victim harm minus the outside row. [DATA: crime lane cells; CALCULATION]
+All four reproduce to 1e-9, and the in-group total equals the all-victim harm minus the outside row. [DATA: crime lane cells; CALCULATION]
 
 | End | In-group homicide deaths | $bn | In-group non-fatal victimisations, 12+ | $bn | Tangible only, $bn |
 |---|---:|---:|---:|---:|---:|
-| low | 1,362 | 18.66 | 217,559 | 10.06 | 4.37 |
-| high | 1,517 | 20.79 | 242,283 | 11.21 | 4.86 |
+| low | 1,371 | 18.79 | 218,976 | 10.13 | 4.39 |
+| high | 1,527 | 20.92 | 243,867 | 11.28 | 4.89 |
 
 Arms at the low and high ends ($bn):
-- NIBRS police-recorded victim mix: **41.43 / 46.14**;
-- every Hispanic victim in-group (*m* = 1): 36.43 / 40.57;
-- *m* at county exposure 0.744: 27.21 / 30.30;
-- *m* at the national share 0.586: 21.52 / 23.96;
-- life-years at 0% real, beside: 32.27 / 35.94; at 3%: 29.90 / 33.30.
+- NIBRS police-recorded victim mix: **41.70 / 46.44**;
+- every Hispanic victim in-group (*m* = 1): 36.66 / 40.83;
+- *m* at county exposure 0.744: 27.39 / 30.50;
+- *m* at the national share 0.586: 21.66 / 24.12;
+- life-years at 0% real, beside: 32.48 / 36.17; at 3%: 30.10 / 33.52.
 
 The NIBRS arm takes the in-group-to-outside cost ratio for non-fatal violence (**0.980**) from the NIBRS lane's preferred structure, "victim-conditional, SHR-calibrated". That structure applies police-recorded offender-given-victim shares to NCVS victim counts. On the NCVS mix the same ratio is about 0.42. The NIBRS lane found that the two corrections nearly cancel for outside victims ($28.6bn against $28.9bn), so this arm moves only the in-group side. [DATA: `offender_ethnicity_nibrs_2026_09_23/derived/cost_by_offence_nibrs_central.csv`]
 
-**Domestic violence is already inside this row.** On TX+AZ police records, family and intimate partners account for 52% of Hispanic-on-Hispanic rape and sexual assault victims aged 12+, 48% of aggravated assault, 69% of simple assault and 8% of robbery. Weighted by the row's cost, that is **$5.3 / $5.9bn of the $10.1 / $11.2bn non-fatal part**, or $5.9 / $6.6bn when the relationship is known. The NCVS undercounts domestic violence against other surveys; that gap is **not priced** [GAP]. [CALCULATION: `derived/nibrs_child_ratios.csv`, `summary.json` `domestic_violence_inside_A`]
+**Domestic violence is already inside this row.** On TX+AZ police records, family and intimate partners account for 52% of Hispanic-on-Hispanic rape and sexual assault victims aged 12+, 48% of aggravated assault, 69% of simple assault and 8% of robbery. Weighted by the row's cost, that is **$5.3 / $5.9bn of the $10.1 / $11.3bn non-fatal part**, or $6.0 / $6.6bn when the relationship is known. The NCVS undercounts domestic violence against other surveys; that gap is **not priced** [GAP]. [CALCULATION: `derived/nibrs_child_ratios.csv`, `summary.json` `domestic_violence_inside_A`]
 
 ### A. Fear, security and property
 
 - **Fear and avoidance.** P7's rule is applied with members as the victims. The willingness-to-pay residual is Cohen 2004's WTP minus the victim price, at the central arm, on in-group victims (≈$11.4 / $12.7bn). Members' own forward security spending is removed from it, and the result is multiplied by φ = 0.5 (0.25–1.0 as arms). As gates, the same code reproduces P7's lineage fear ($6.6105 / $7.5918bn) and security ($0.4585 / $0.5676bn) to 1e-9. [CALCULATION]
-- **Private security.** Members' households guard against in-group offending: residential spending × the offending share (0.121 / 0.124) × the in-group victim share (0.344 / 0.345). Members as purchasers also bear their payment share (0.0995) of commercial security against the lineage's offending. [ASSUMPTION: P7's proportional response]
+- **Private security.** Members' households guard against in-group offending: residential spending × the offending share (0.122 / 0.124) × the in-group victim share (0.344 / 0.345). Members as purchasers also bear their payment share (0.0995) of commercial security against the lineage's offending. [ASSUMPTION: P7's proportional response]
 - **Property crime.** The victim lane's arrest-share proxy gives an in-group-to-outside ratio of 0.465. [DATA: `property_proxy.csv`]
 
 ### A. PM2.5, crashes and congestion
@@ -152,7 +153,7 @@ Every estimate below is the **total migration effect**, including remittances. A
 ## Steel-man and disconfirmation
 
 - **Why the pairing leaves this out.** The pairing answers what the lineage costs other residents. Harm members bear, including from each other, is the group's own welfare, and it belongs in a frame that also counts the group's gains. In the world ledger those gains are the place premium and, as C0 shows, much lower homicide risk than in Mexico. Adding A to the pairing would count the group's losses as others' costs. The rows therefore stay beside.
-- **The in-group victim share could be lower.** If members sort less with co-ethnics than tracts suggest, *m* falls: at county exposure the row is $27.2bn, at the national share $21.5bn, an implausible bound. The evidence runs the other way, though. Police records in TX and AZ put 70–81% of Hispanic offenders' victims as Hispanic, against about 40% in the NCVS, which raises the row to $41.4bn. Family and intimate violence, which is in-group by construction, is about half of the non-fatal cost.
+- **The in-group victim share could be lower.** If members sort less with co-ethnics than tracts suggest, *m* falls: at county exposure the row is $27.4bn, at the national share $21.7bn, an implausible bound. The evidence runs the other way, though. Police records in TX and AZ put 70–81% of Hispanic offenders' victims as Hispanic, against about 40% in the NCVS, which raises the row to $41.7bn. Family and intimate violence, which is in-group by construction, is about half of the non-fatal cost.
 - **The PM self-share** fell from 19.3% on exposure to 11.6% once weighted by mortality, because members are younger than the people PM kills. The row therefore halves from the exposure reading; the arm shows $20.4bn.
 - **The crash row is mostly passengers in members' own cars.** Calling them household-internal is a defensible choice: $2.6bn without them. Shared driving by family members is, however, harm to another member.
 - **The child-maltreatment row** is the largest new item, and it rests on the Hispanic rate (6.4 per 1,000, against 6.2 for white children), a population-share step to Mexican origin, and one QALY study. A tangible-only reading is $2.6bn. The investigated-base reading ($137bn) counts unsubstantiated reports and is not recommended.
@@ -160,10 +161,10 @@ Every estimate below is the **total migration effect**, including remittances. A
 
 ## For the parent: observations outside this lane
 
-1. **The v8 added 2.15M people carry no crime sender share.** `added_terms()` sets the share to 0 on `CRIME_KEYS`, so the completion and coverage people's offending against outsiders is not priced in the pairing's victim, fear and security rows. At the head-count share of 5.4% that would be about +$2.0bn victims and +$0.36bn fear at each end. This may be deliberate; it is not documented in the row contract. [CALCULATION, rough]
-2. **The world ledger's `ingroup_victims_*` rows ($20.11bn)** are on the Miller murder price and the 40.9M frame. On the pairing's DOT uniform standard and the v9 lineage they are $28.7 / $32.0bn (this lane). If the world frame should follow the common mortality standard, those rows need repricing.
+1. **The v8 added 2.15M people carry no crime sender share.** `added_terms()` sets the share to 0 on `CRIME_KEYS`, so the completion and coverage people's offending against outsiders is not priced in the pairing's victim, fear and security rows. At the head-count share of 5.4% that would be about +$2.0bn victims and +$0.36bn fear at each end. This may be deliberate; it is not documented in the row contract. [CALCULATION, rough] [2026-10-21, resolved in the pairing: the coverage people are already inside the national incident counts, but the completion reporters and item 16's minors are CPS Hispanics outside the union mask. Their located change aged 12+ (δ = 0.006973) now sends crime in every crime row: victims +$0.24 / +0.27bn. This lane's victims and fear/security blocks take the same δ.]
+2. **The world ledger's `ingroup_victims_*` rows ($20.11bn)** are on the Miller murder price and the 40.9M frame. On the pairing's DOT uniform standard and the v9 lineage they are $28.9 / $32.2bn (this lane). If the world frame should follow the common mortality standard, those rows need repricing. [2026-10-21: the world ledger's live case now takes this lane's row A victims in their place (`world_ledger.py` `INGROUP_VICTIMS`).]
 3. **The NIBRS lane's `age_band`** reads the NIBRS unknown-age code `'00'` (age_id 103) as age 0. Unknown-age victims therefore fall into "under 12" and drop out of its 12+ universe. The effect is about 0.2% of Hispanic-on-Hispanic victims, so it is immaterial there. This lane's reader handles the code (`nibrs_children.age_band`).
-4. **P7's commercial-security forward term** is charged as offending share × outside-victim share × (1 − payment share). The docstring says outsiders bear their purchase share of group-attributable costs. Read that way, commercial security against offending whose victims are members, paid for by outsiders as purchasers, sits in neither the pairing nor this lane: about 50.7 × 0.121 × 0.34 × 0.90 ≈ $1.9bn. That is below the $5bn bar. It is an ambiguity, not a verified defect.
+4. **P7's commercial-security forward term** is charged as offending share × outside-victim share × (1 − payment share). The docstring says outsiders bear their purchase share of group-attributable costs. Read that way, commercial security against offending whose victims are members, paid for by outsiders as purchasers, sits in neither the pairing nor this lane: about 50.7 × 0.121 × 0.34 × 0.90 ≈ $1.9bn. That is below the $5bn bar. It is an ambiguity, not a verified defect. [2026-10-21: verified against P7's own assumption list and the business lane's pass-through rule; the pairing now carries it as the row `commercial_security_member_victims`, $1.90 / 1.96bn.]
 
 ## Limits
 
@@ -231,3 +232,4 @@ Times are from `date`, or from file modification times where marked (mtime).
 - 02:00:51–02:01:06 (mtime): cells re-staged after I fixed my own reading of NIBRS's unknown-age code `'00'` as age 0; the cache version was bumped.
 - 02:02:36 (mtime): outputs with the PM row on the own-conduct level, without re-spending. Rerun IDENTICAL 11/11 just after.
 - 02:05:09: RESULT written.
+- 12:30 JST, 2026-10-21 (`date`): the victim and fear/security blocks take the pairing's v9 crime senders (completion and item 16, δ = 0.006973) and payers (consumption with item 11). A+B moves from $93.32 / 95.99bn to $93.56 / 96.26bn. Rerun IDENTICAL 12/12.

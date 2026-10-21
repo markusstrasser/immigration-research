@@ -1,30 +1,30 @@
 item,arm,end,value_bn
-victims,"central (NCVS victim mix, tract m 0.786, DOT $13.7M)",low,28.7267677749
-victims,"tangible only (medical, earnings, property)",low,4.36609957088
-victims,NIBRS police-recorded victim mix (non-fatal in/out 0.980),low,41.4303313661
-victims,m at county exposure 0.744,low,27.2078423677
-victims,m at national share 0.586,low,21.5174994078
-victims,m at every Hispanic victim in-group,low,36.4276385561
-victims,"life-years, 0% real (beside)",low,32.2712085827
-victims,"life-years, 3% real (beside)",low,29.9015846415
-victims,"central (NCVS victim mix, tract m 0.786, DOT $13.7M)",high,31.9913295151
-victims,"tangible only (medical, earnings, property)",high,4.86227100667
-victims,NIBRS police-recorded victim mix (non-fatal in/out 0.980),high,46.1385490019
-victims,m at county exposure 0.744,high,30.299790683
-victims,m at national share 0.586,high,23.9627868783
-victims,m at every Hispanic victim in-group,high,40.5673411514
-victims,"life-years, 0% real (beside)",high,35.9385669737
-victims,"life-years, 3% real (beside)",high,33.2996546907
-fear_avoidance,phi low 0.25,low,2.54208989744
-fear_avoidance,phi central 0.5,low,5.08417979488
-fear_avoidance,phi high 1.0,low,10.1683595898
-private_security,central (members' residential + members' purchases),low,1.2698154179
-private_security,residential only,low,0.659722995415
-fear_avoidance,phi low 0.25,high,2.85921752147
-fear_avoidance,phi central 0.5,high,5.71843504295
-fear_avoidance,phi high 1.0,high,11.4368700859
-private_security,central (members' residential + members' purchases),high,1.30115977487
-private_security,residential only,high,0.677568973186
+victims,"central (NCVS victim mix, tract m 0.786, DOT $13.7M)",low,28.9139279317
+victims,"tangible only (medical, earnings, property)",low,4.39454550974
+victims,NIBRS police-recorded victim mix (non-fatal in/out 0.980),low,41.7002575678
+victims,m at county exposure 0.744,low,27.3851064471
+victims,m at national share 0.586,low,21.6576898598
+victims,m at every Hispanic victim in-group,low,36.6649712972
+victims,"life-years, 0% real (beside)",low,32.4814614209
+victims,"life-years, 3% real (beside)",low,30.0963989454
+victims,"central (NCVS victim mix, tract m 0.786, DOT $13.7M)",high,32.2005895937
+victims,"tangible only (medical, earnings, property)",high,4.89407584969
+victims,NIBRS police-recorded victim mix (non-fatal in/out 0.980),high,46.4403481625
+victims,m at county exposure 0.744,high,30.4979861528
+victims,m at national share 0.586,high,24.1195310569
+victims,m at every Hispanic victim in-group,high,40.8326982068
+victims,"life-years, 0% real (beside)",high,36.1736465239
+victims,"life-years, 3% real (beside)",high,33.5174727204
+fear_avoidance,phi low 0.25,low,2.5564914089
+fear_avoidance,phi central 0.5,low,5.1129828178
+fear_avoidance,phi high 1.0,low,10.2259656356
+private_security,central (members' residential + members' purchases),low,1.28673117847
+private_security,residential only,low,0.664021211635
+fear_avoidance,phi low 0.25,high,2.87571155939
+fear_avoidance,phi central 0.5,high,5.75142311878
+fear_avoidance,phi high 1.0,high,11.5028462376
+private_security,central (members' residential + members' purchases),high,1.31850498468
+private_security,residential only,high,0.682001053339
 pm25_consumption,central (mortality-weighted self-share 0.1163),low,11.6369267095
 pm25_consumption,CRF grid low,low,5.4289180621
 pm25_consumption,CRF grid high,low,20.3285079794
@@ -64,20 +64,20 @@ child_maltreatment_deaths_0_11,every maltreatment death (overlaps the homicide r
 child_maltreatment_deaths_0_11,perpetrators parents only (0.814),both,1.13597527682
 child_maltreatment_deaths_0_11,"life-years at mean age 2, 0% real (beside)",both,2.50410163137
 child_maltreatment_deaths_0_11,"life-years at mean age 2, 3% real (beside)",both,1.73069427492
-police_recorded_nonfamily_violence_lt12,TX+AZ ratios,low,0.41750229555
-"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ ratios,low,1.49005521515
-police_recorded_nonfamily_violence_lt12,CA ratios,low,0.459485174803
-"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",CA ratios,low,1.44418212697
-police_recorded_nonfamily_violence_lt12,TX+AZ+CA ratios,low,0.429514224011
-"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ+CA ratios,low,1.47179165052
-police_recorded_nonfamily_violence_lt12,TX+AZ ratios on the NIBRS victim mix,low,0.944621102681
-police_recorded_nonfamily_violence_lt12,TX+AZ ratios,high,0.464948009984
-"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ ratios,high,1.65938777927
-police_recorded_nonfamily_violence_lt12,CA ratios,high,0.511701899412
-"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",CA ratios,high,1.60830159055
-police_recorded_nonfamily_violence_lt12,TX+AZ+CA ratios,high,0.478324995676
-"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ+CA ratios,high,1.63904871018
-police_recorded_nonfamily_violence_lt12,TX+AZ ratios on the NIBRS victim mix,high,1.05196954978
+police_recorded_nonfamily_violence_lt12,TX+AZ ratios,low,0.42022239952
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ ratios,low,1.49976319796
+police_recorded_nonfamily_violence_lt12,CA ratios,low,0.462478804925
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",CA ratios,low,1.4535912382
+police_recorded_nonfamily_violence_lt12,TX+AZ+CA ratios,low,0.432312587896
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ+CA ratios,low,1.48138064285
+police_recorded_nonfamily_violence_lt12,TX+AZ ratios on the NIBRS victim mix,low,0.950775482283
+police_recorded_nonfamily_violence_lt12,TX+AZ ratios,high,0.467989304566
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ ratios,high,1.67024208331
+police_recorded_nonfamily_violence_lt12,CA ratios,high,0.515049018189
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",CA ratios,high,1.61882173217
+police_recorded_nonfamily_violence_lt12,TX+AZ+CA ratios,high,0.481453791126
+"police_recorded_violence_lt12_all_relationships (alternative to NCANDS, beside)",TX+AZ+CA ratios,high,1.64976997333
+police_recorded_nonfamily_violence_lt12,TX+AZ ratios on the NIBRS victim mix,high,1.05885064019
 C1 left-behind schooling,"every child at McKenzie-Rapoport -1.37 yr, return 6%",both,1.46716711339
 C1 left-behind schooling,"every child at Hanson-Woodruff +0.89 yr, return 6%",both,-0.956988212318
 C1 left-behind schooling,"every child at McKenzie-Rapoport -1.37 yr, return 8%",both,1.95622281785

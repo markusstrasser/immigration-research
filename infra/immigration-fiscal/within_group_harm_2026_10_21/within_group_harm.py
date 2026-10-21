@@ -185,9 +185,14 @@ def case_inputs() -> dict:
     frame = {r["count"]: (float(r["published"]), float(r["row4"])) for r in rows(FRAME, "population frame")}
     factor = (frame["union|12_plus"][1] / frame["cps_hispanic_civilian|12_plus"][1]
               / (frame["union|12_plus"][0] / frame["cps_hispanic_civilian|12_plus"][0]))
+    # The people v9 adds as crime senders (completion and item 16, aged 12+) and as payers (consumption key, item 11):
+    # the pairing's crime_senders rule (sept24_propagation_2026_09_24/v9_totals.py crime_rows).
+    senders = env["v8_added_social"]["crime_senders"]
+    payers = {end: env["v8_added_social"]["shares"][end]["consumption"] + env["v8_added_social"]["item11_consumption_factor"]
+              for end in ENDS}
     return dict(doc=doc, p7=p7, level=level, keys=keys, frame=frame, factor=factor,
                 recipient=p7["recipient_shares"], completion=env["v8_added_social"]["completion_receiver_share"],
-                added=env["v8_added_social"]["shares"])
+                added=env["v8_added_social"]["shares"], senders=senders["share_12_plus"], payers=payers)
 
 
 def scope(item: str) -> str:
@@ -238,14 +243,16 @@ def victims_block(case: dict, cpi_items: dict) -> tuple[list[dict], list[dict], 
     for end in ENDS:
         a = keys[f"{end}_end"][("justice_use_raw_coding", "justice_use")[ENDS.index(end)]]
         gate(f"sender key {end} matches P7", abs(a - p7["response_parameters"][end]["added_offending_share"]) < 1e-12)
-        lin = F * (1 + a)
+        d9 = case["senders"][end]
+        lin = F * (1 + a + d9)
         cells = victim_cells("dot_uniform", FOOTING[end])
         out_union = sum(float(r["cost_full"]) for r in cells) / 1e9 * F
         gate(f"union outside victims reproduce P7 ({end})", abs(out_union - p7["union_crime_rows"][end]["victims"]) < 1e-9,
              f"{out_union:.9f}")
-        pre = out_union * (1 + a)
         gate(f"lineage senders' outside victims reproduce P7 ({end})",
-             abs(pre - p7["lineage_crime_rows_before_boundary"][end]["victims"]) < 1e-9, f"{pre:.9f}")
+             abs(out_union * (1 + a) - p7["lineage_crime_rows_before_boundary"][end]["victims"]) < 1e-9,
+             f"{out_union * (1 + a):.9f}")
+        pre = out_union * (1 + a + d9)
         final = case["level"]["victims"][end]
         gate(f"v9 victims row = senders x (1-r)(1-c) ({end})", abs(pre * keep(case, "victims") - final) < 1e-9,
              f"{pre * keep(case, 'victims'):.9f} / {final:.9f}")
@@ -266,7 +273,7 @@ def victims_block(case: dict, cpi_items: dict) -> tuple[list[dict], list[dict], 
                 tot["nf_out"] += o * lin * uf / 1e9
         gate(f"in-group victims = all-victim harm - outside row ({end})",
              abs(tot["full"] - (sum(float(r["group_victimisations"]) * float(r["unit_full"]) for r in cells) / 1e9 * lin - final)) < 1e-9)
-        summary[end] = dict(tot, sender_key=a, final_outside_bn=final, boundary_bn=pre - final)
+        summary[end] = dict(tot, sender_key=a, v9_sender_share=d9, final_outside_bn=final, boundary_bn=pre - final)
         arms.append(dict(item="victims", arm="central (NCVS victim mix, tract m 0.786, DOT $13.7M)", end=end, value_bn=tot["full"]))
         arms.append(dict(item="victims", arm="tangible only (medical, earnings, property)", end=end, value_bn=tot["tangible"]))
         # NIBRS police-recorded victim mix: the pairing's outside count, police records' in/out ratio.
@@ -317,6 +324,9 @@ def security_fear(case: dict, summary: dict) -> tuple[dict, list[dict]]:
         fear = phi["central"] * max(0.0, wtp_out - forward)
         gate(f"P7 lineage fear reproduced ({end})", abs(fear - p7["lineage_crime_rows"][end]["fear_avoidance"]) < 1e-9,
              f"{fear:.9f}")
+        # The members' side on the v9 lineage: its senders and payers include the people v9 adds.
+        off = rp["offending_share_union"] * (1 + a + summary[end]["v9_sender_share"])
+        pay = pay + rp["payment_share_union"] * case["payers"][end]
         in_share = 1 - rp["outside_share_before_boundary"] * keep(case, "fear_avoidance")
         sec_in = res * off * in_share + com * off * pay
         fear_in = {k: v * max(0.0, summary[end]["fear_wtp"] - sec_in) for k, v in phi.items()}
