@@ -99,6 +99,11 @@ RETURN_OVER_DISCOUNT = {tau: (1.0, 1.0 / (1.0 - tau)) for tau in CAPITAL_TAX}
 # the case and its cash set, which the accrual must bridge. CASE_LANES is valuation.py's (one definition).
 
 
+# Cases whose in-group victimization rows take the within-group lane's row A (decision
+# 2026-10-21-business-crime-in-pairing, hole 3); earlier cases keep the winners group frame's figure.
+INGROUP_VICTIMS = dict(oct16="infra/immigration-fiscal/within_group_harm_2026_10_21/derived/rows.csv")
+
+
 def gate(name, ok, **detail):
     if not ok:
         raise SystemExit(f"[BLOCKED] gate {name} failed: {detail}")
@@ -712,13 +717,27 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
             initial="care received in the US", alternative="none (Mexico's care is in the Mexico budget row)",
             window="2024", comparator="measured", weight="group_fiscal",
             tag="[CALCULATION: channel x Medicaid V/G; INFERENCE]")
-    victims = float(I["gf"].set_index("item").filter(like="victims inside", axis=0).bn_central.iloc[0])
+    victims_tag = "[DATA: winners group frame; WDI VC.IHR.PSRC.P5]"
+    if I.get("case") in INGROUP_VICTIMS:
+        # The live case replaces the winners frame's Miller-priced 40.9M figure with the within-group lane's
+        # row A victims on the v9 lineage at DOT's VSL, at the reading's account end (never added to it).
+        rel = INGROUP_VICTIMS[I["case"]]
+        A = pinned_csv("WORKTREE_SHA256_OCT16", rel)
+        A = A[A.block.eq("A") & A["item"].str.startswith("victims")]
+        gate("within_group_victims_row_unique", len(A) == 1, rows=len(A))
+        end = I.get("account_end")
+        gate("within_group_victims_account_end", end in (None, "low", "high"), end=end)
+        # Readings without an account end take the mean of the two ends, as employer compensation does.
+        victims = -float(A[f"{end}_end_bn"].iloc[0] if end else A[["low_end_bn", "high_end_bn"]].iloc[0].mean())
+        victims_tag = "[DATA: within_group_harm_2026_10_21 row A victims, DOT VSL, v9 lineage; WDI VC.IHR.PSRC.P5]"
+    else:
+        victims = float(I["gf"].set_index("item").filter(like="victims inside", axis=0).bn_central.iloc[0])
     for gname in GENS:
         add(f"ingroup_victims_{gname}", f"{gname}: victimization by the group's own offenders in the US", gname,
             "quantity", lh(victims * pop[gname], victims * pop[gname], victims * pop[gname]),
             initial="in the US", alternative="victimization in Mexico: unknown (Mexico's 2023 homicide rate is 24.9 "
             "per 100,000 against 5.8 in the US)", window="2024", comparator="unknown counterpart (not zero)",
-            weight="group_fiscal", tag="[DATA: winners group frame; WDI VC.IHR.PSRC.P5]")
+            weight="group_fiscal", tag=victims_tag)
     # Remittances.
     remit = float(I["gf"].set_index("item").filter(like="remittances received", axis=0).bn_central.iloc[0])
     # The split is held at its central scenario at every end: it moves money between G1 and G2 only.
