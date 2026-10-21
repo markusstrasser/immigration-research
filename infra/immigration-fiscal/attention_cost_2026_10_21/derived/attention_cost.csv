@@ -1,0 +1,49 @@
+component,item,value,unit,note
+B,adult_news_hours_per_year,103.535,bn hours,Allen et al. 2020 minutes x ACS 18+
+B,immigration_share_low_cable_narrow_mean,0.0145225,share,GDELT TV 2024-01-01..10-10 mention-clip share
+B,immigration_share_mid_cable_border_mean,0.0306858,share,GDELT TV 2024-01-01..10-10 mention-clip share
+B,immigration_share_high_fox_border,0.0510864,share,GDELT TV 2024-01-01..10-10 mention-clip share
+B,gallup_mip_jan_apr_2024_mean,0.2575,share of adults,"salience, not airtime; not used for hours"
+B,gross_hours_low_cable_narrow_mean,1.50359,bn hours,news hours x share
+B,gross_value_low_cable_narrow_mean_dot,31.7257,$bn,x $21.1/h
+E,mex_low_surge_increment_B_low_cable_narrow_mean_dot,1.8129,$bn,attribution 0.057
+E,mex_central_pew2023_stock_B_low_cable_narrow_mean_dot,9.51772,$bn,attribution 0.300
+E,mex_high_dhs2022_stock_B_low_cable_narrow_mean_dot,13.8854,$bn,attribution 0.438
+B,gross_value_low_cable_narrow_mean_wage,52.7158,$bn,x $35.06/h
+E,mex_low_surge_increment_B_low_cable_narrow_mean_wage,3.01233,$bn,attribution 0.057
+E,mex_central_pew2023_stock_B_low_cable_narrow_mean_wage,15.8148,$bn,attribution 0.300
+E,mex_high_dhs2022_stock_B_low_cable_narrow_mean_wage,23.0722,$bn,attribution 0.438
+B,gross_hours_mid_cable_border_mean,3.17705,bn hours,news hours x share
+B,gross_value_mid_cable_border_mean_dot,67.0359,$bn,x $21.1/h
+E,mex_low_surge_increment_B_mid_cable_border_mean_dot,3.83062,$bn,attribution 0.057
+E,mex_central_pew2023_stock_B_mid_cable_border_mean_dot,20.1108,$bn,attribution 0.300
+E,mex_high_dhs2022_stock_B_mid_cable_border_mean_dot,29.3396,$bn,attribution 0.438
+B,gross_value_mid_cable_border_mean_wage,111.388,$bn,x $35.06/h
+E,mex_low_surge_increment_B_mid_cable_border_mean_wage,6.365,$bn,attribution 0.057
+E,mex_central_pew2023_stock_B_mid_cable_border_mean_wage,33.4163,$bn,attribution 0.300
+E,mex_high_dhs2022_stock_B_mid_cable_border_mean_wage,48.7511,$bn,attribution 0.438
+B,gross_hours_high_fox_border,5.28924,bn hours,news hours x share
+B,gross_value_high_fox_border_dot,111.603,$bn,x $21.1/h
+E,mex_low_surge_increment_B_high_fox_border_dot,6.37731,$bn,attribution 0.057
+E,mex_central_pew2023_stock_B_high_fox_border_dot,33.4809,$bn,attribution 0.300
+E,mex_high_dhs2022_stock_B_high_fox_border_dot,48.8453,$bn,attribution 0.438
+B,gross_value_high_fox_border_wage,185.441,$bn,x $35.06/h
+E,mex_low_surge_increment_B_high_fox_border_wage,10.5966,$bn,attribution 0.057
+E,mex_central_pew2023_stock_B_high_fox_border_wage,55.6322,$bn,attribution 0.300
+E,mex_high_dhs2022_stock_B_high_fox_border_wage,81.1619,$bn,attribution 0.438
+B,net_of_substitution,nan,$bn,unidentified; see RESULT
+A,i9_hours_value,1.44289,$bn,33.2M h x $43.45 (ICR wage basis)
+A,everify_value,0.0873119,$bn,1.97M h x $43.45 + $1.887M
+A,legal_services_revenue_2024_interp,9.29212,$bn,IBISWorld 2023->2026 geometric; mostly admissions casework
+A,advocacy_pro_foundation_grants,0.28,$bn,NCRP 2016-20 avg
+A,advocacy_restrictionist_big3_exp,0.0185665,$bn,990 TY2023
+A,total_private_dollars,11.1209,$bn,compliance + legal + advocacy (lobbying not separable)
+E,mex_low_surge_increment_A_total,0.635479,$bn,attribution 0.057
+E,mex_central_pew2023_stock_A_total,3.33627,$bn,attribution 0.300
+E,mex_high_dhs2022_stock_A_total,4.86728,$bn,attribution 0.438
+C,bills_118_immigration_share,0.0348486,share,H.R.+S. policy area
+C,laws_118_immigration_share,0.0111524,share,policy area of enacted bills
+E,cbp_fy24_mexico_share,0.306174,share,SW border encounters
+E,attribution_low_surge_increment,0.0571429,share,
+E,attribution_central_pew2023_stock,0.3,share,
+E,attribution_high_dhs2022_stock,0.437671,share,

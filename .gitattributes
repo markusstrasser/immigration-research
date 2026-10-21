@@ -95,3 +95,4 @@ infra/immigration-fiscal/service_by_ses_2026_09_23/derived/neighborhood_quintile
 infra/immigration-fiscal/service_by_ses_2026_09_23/derived/puma_metro_size.csv -text
 infra/immigration-fiscal/us_lowskill_effects_2026_09_22/derived/effect_ledger.csv -text
 notes/igm-immigration-polls-2026-09-17.csv -text
+infra/immigration-fiscal/attention_cost_2026_10_21/inputs/cbp_sbo_encounters_fy23_fy26_aug.csv -text
