@@ -7,6 +7,11 @@ the R2 and R3 totals turn negative (−$97.7 / −78.0bn and −$49.0 / −43.1b
 almost unchanged ($284.2 / 288.2bn), which gives no sign that the recipients' dollars are worth less. That claim
 survives only as a moral weight w on the group: counting Mexico's residents, the world total turns negative when w
 is below 0.56 / 0.56 under R1 (0.66 / 0.66 at λ 1.16, 0.87 / 0.88 at λ 1.5) and 0.78 / 0.74 under R2.
+Every reading holds US institutions and productivity fixed. A persistent fall in US output of about 1%, $293bn a
+year at BEA's 2024 GDP of $29.30tn, would offset R1; no measured channel has been shown to reach that, and the
+channel from immigration politics to policy is unpriced
+([FAQ entry 21](../../../research/immigration-objections-faq-2026-09-21.md#21-a-one-year-account-misses-the-long-run-damage-slower-productivity-divided-communities-weaker-institutions))
+[CALCULATION: `closed_budget_2026_10_06/derived/oct16/summary.json` `gdp_2024_bn` × 0.01].
 Since 2026-10-21 the group's in-group victimization rows take the within-group lane's row A victims on the v9
 lineage at DOT's VSL (−$28.91 / −32.20bn) in place of the winners frame's −$20.11bn, lowering every reading by
 $8.80 / 12.09bn. Other US residents' crime, property-crime, unreimbursed-care and congestion rows take the v9

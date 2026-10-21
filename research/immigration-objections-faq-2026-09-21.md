@@ -857,13 +857,22 @@ carries them at zero and says so:
   the two, so neither gives a dollar figure (ladder 102). This repo's county panel finds no significant effect of the
   Mexican-origin share itself, a different treatment that counts residents of every generation, 2000–2024
   ([county panel](immigration-political-trajectory-county-panel-2026-09-19.md)).
+- **Political attention:** the fight over immigration uses real resources. In 2024 employers' I-9 and E-Verify
+  paperwork, immigration legal services and advocacy came to about $11.1bn, most of it legal casework that any
+  admissions system needs; about $1.8bn (the paperwork and the advocacy) is tied to the fight itself. Adults spent
+  1.5–5.3bn hours on immigration news, by its share of cable airtime. Immigration was 3.5% of the bills the 118th
+  Congress introduced, and years with more immigration hearings or laws show no detectable fall in housing or
+  family policy beyond share arithmetic (1946–2022). Not measured: whether those news hours displace anything of
+  value, since total news time stayed stable while the topic mix shifted, and what the politics does to policy and
+  output (ladder 102). The share attributable to the Mexican-origin group is 6%, 30% or 44%, by the rule used
+  (ladder 321; [attention lane](../infra/immigration-fiscal/attention_cost_2026_10_21/RESULT.md)).
 
 Why these stay at zero: immigrants settle where growth is, and the instruments that predict where they went also
 pick up local booms (ladder 199), so a test across places can mistake local growth for the absence of drag
 [INFERENCE].
 
 [FRAMING-SENSITIVE] A zero here means "not measured", not "no effect". The production gain the group brings is
-priced in the account (entry 14). [SOURCE: ladder 99, 102, 120, 154, 199, 262, 278, 279;
+priced in the account (entry 14). [SOURCE: ladder 99, 102, 120, 154, 199, 262, 278, 279, 321;
 [automation channel](../infra/immigration-fiscal/automation_channel_2026_09_16/);
 [connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md);
 [legacy comparisons](../infra/immigration-fiscal/legacy_comparators_2026_09_30/RESULT.md)] Would change it: a shock
@@ -880,6 +889,7 @@ they get more prominence.
 
 ## Revisions
 
+- 2026-10-21 ([attention lane](../infra/immigration-fiscal/attention_cost_2026_10_21/RESULT.md), eaefe2b1): entry 21 adds political attention: about $11.1bn of private paperwork, legal and advocacy spending ($1.8bn tied to the fight), 1.5–5.3bn news-hours, 3.5% of bills and no detected agenda displacement; the net of the news time and the policy channel stay unmeasured. Concept affected: the long-run channels the account carries at zero.
 - 2026-10-21 ([business crime in the pairing](../decisions/2026-10-21-business-crime-in-pairing.md)): entries 4 and 12 and the anchors add crime against businesses and the crimes the victim survey misses at their net, $1.4bn (gross $5.2bn beside), and businesses' security against offending on members, $1.9–2.0bn; the people added by the reporting rule now send crime. The fiscal-plus-social total moves from $480–554bn to $483–557bn ($400–474bn counting benefits when paid), and the life-year footnote with it. Entry 4 states the harm members do to one another ($94–96bn) as outside the total and the effects on families in Mexico as having no defensible central. Concept affected: the fiscal-plus-social total and the crime answer.
 - 2026-10-21 (main case v9 consumer lanes, [decision](../decisions/2026-10-16-main-case-v9.md); pairing c7b99ac7, distribution 65b6e01c, generation a24d2468, back-cast e85c0766, closed budget 54248e8c, decomposition d133740b, comparators e5c9ab76, pension legacy cb0a5c52, legacy comparators f8c49849): the fiscal-plus-social total (anchors, combining rules, entry 4) is $480–554bn, $396–470bn counting benefits when paid; entry 4 gains a footnote valuing deaths by remaining life-years ($433.0–508.8bn at 0%, $438.4–513.8bn at 3%), at the operator's request. The capital return, rental assistance, production, income split, generation split (now at the two end specifications), average-resident and white gaps, back-cast windows, budget replay and closed budget follow `oct16`; the excess over average residents is printed as a pair at the case's ends. The federal legacy comparison, the raw-coded justice variant, the general-government addition's own size and the capital return's generation split have no v9 run and lose their numbers; the pension legacy comparison is $7.9–8.1bn. Entry 2 replaces its rebuttal of the January 2025 municipal-bond paper with an answer to the July 2026 version; entry 16 says the recent-arrival cut points the same way rather than agrees; entry 21 no longer calls the legacy measured, states the Clemens–Pritchett substitution as a scenario, adds the repo's county panel beside Mayda et al., and marks the bias direction of cross-place tests as inference. Concept affected: the fiscal-plus-social total, the comparators and legacy charges, and four answers' claims.
 

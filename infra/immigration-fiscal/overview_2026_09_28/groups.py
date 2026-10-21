@@ -415,9 +415,11 @@ GROUPS = [
                       "that people live apart.",
                  why="Facebook friendship data by county and ZIP code, one point in time. The payoff to such "
                      "friendships does not grow with county size."),
-            dict(refs=[98, 101, 102],
+            dict(refs=[98, 101, 102, 321],
                  text="Three effects have no price and no bound: native births, city productivity and politics.",
-                 why="The designs tried here cannot separate these effects from their causes."),
+                 why="The designs tried here cannot separate these effects from their causes. For politics, the "
+                     "paperwork, legal and advocacy spending and the news time are counted, but whether that time "
+                     "displaces anything, and what the politics does to policy, are not identified."),
         ],
         minor=[274, 309],
     ),
