@@ -1,0 +1,12 @@
+type,case,country,tenure,pre,balance_tenure,balance_pre,peer_balance_tenure,peer_balance_pre,growth_tenure,growth_pre,peer_growth_tenure,peer_growth_pre,peers,balance_did,growth_did
+immigration-restricting,Meloni (Italy),ITA,2023-2025,2018-2022,-4.53,-6.02,-3.67,-3.87,0.73,1.20,1.33,1.10,DEU FRA ESP,1.29,-0.70
+immigration-restricting,PiS (Poland),POL,2016-2023,2011-2015,-2.75,-3.86,-2.15,-2.89,3.69,3.16,2.76,2.24,CZE SVK ROU BGR HRV SVN LTU LVA EST,0.37,0.01
+immigration-restricting,Fidesz (Hungary),HUN,2011-2025,2006-2010,-4.05,-5.48,-2.53,-2.90,2.35,-0.10,2.48,2.06,CZE SVK ROU BGR HRV SVN LTU LVA EST,1.06,2.03
+immigration-restricting,Trump I (US),USA,2017-2020,2012-2016,-7.50,-4.92,-3.35,-3.10,1.50,2.32,-0.41,1.17,CAN GBR DEU FRA JPN ITA,-2.33,0.76
+immigration-restricting,Trump I pre-COVID (US),USA,2017-2019,2012-2016,-5.30,-4.92,-1.39,-3.10,2.70,2.32,1.67,1.17,CAN GBR DEU FRA JPN ITA,-2.09,-0.12
+economic-populist,Kirchners (Argentina),ARG,2003-2015,1998-2002,-0.83,-3.24,-1.27,-2.73,4.59,-3.12,4.04,1.36,BRA CHL COL PER URY MEX,0.95,5.04
+economic-populist,Chavez/Maduro (Venezuela),VEN,1999-2025,1994-1998,-7.20,-2.22,-2.52,-1.39,-1.64,1.64,2.62,4.32,BRA CHL COL PER URY MEX ARG,-3.85,-1.58
+economic-populist,Syriza (Greece),GRC,2015-2019,2010-2014,-0.18,-7.44,-2.08,-8.12,1.14,-5.08,4.02,0.21,ESP PRT IRL ITA,1.22,2.41
+economic-populist,AMLO (Mexico),MEX,2019-2024,2014-2018,-4.12,-2.82,-4.33,-3.78,0.92,2.18,1.66,1.44,BRA CHL COL PER URY ARG,-0.75,-1.48
+economic-populist,Morales (Bolivia),BOL,2006-2019,2001-2005,-1.49,-5.58,-2.02,-1.41,4.69,2.88,3.14,2.77,BRA CHL COL PER URY MEX ARG,4.70,1.44
+economic-populist,Correa (Ecuador),ECU,2007-2017,2002-2006,-4.00,1.44,-2.01,-0.74,4.06,4.86,3.24,4.00,BRA CHL COL PER URY MEX ARG,-4.17,-0.03

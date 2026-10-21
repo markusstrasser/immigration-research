@@ -1,0 +1,9 @@
+country,index,mean_1995_2011,mean_2015,mean_2016,mean_2024,mean_2025,max_value,max_quarter,last_value,last_quarter
+usa,epu_migrant_index,95.2,134.2,399.8,545.1,1663.1,2067.9,2025Q1,1039.5,2026Q2
+usa,fear_index,98.4,126.6,168.0,201.0,327.9,431.8,2026Q1,260.4,2026Q2
+uk,epu_migrant_index,125.8,524.0,2215.3,1511.1,2347.4,3041.7,2024Q4,1407.6,2026Q2
+uk,fear_index,112.4,332.6,507.8,463.0,463.9,571.9,2024Q3,316.4,2026Q2
+germany,epu_migrant_index,76.6,222.1,576.7,802.0,805.2,1352.8,2025Q1,668.4,2026Q2
+germany,fear_index,108.3,644.5,870.8,621.7,559.6,1277.7,2016Q1,439.4,2026Q2
+france,epu_migrant_index,104.9,304.2,477.9,,,585.1,2016Q4,250.7,2019Q4
+france,fear_index,107.1,230.2,272.0,,,349.6,2016Q4,161.6,2019Q4
