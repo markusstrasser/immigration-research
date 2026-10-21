@@ -1532,7 +1532,10 @@ C1–C9 are published on the adopted v9 case (oct16) from this lane's own output
   parts are stored as row counts, sums and sha256.
 - C2: direct receipts less household transfers are $6.7 / 4.5bn. C3 holds the side magnitudes and
   cancellation but BREAKS net-about-11 (net $-1.72 / -3.85bn).
-- C4 holds, restated: social rows $111.6 / 117.1bn, published pairing $479.6 / 553.7bn. Since v8
+- C4 holds, restated: social rows $115.1 / 120.7bn, published pairing $483.1 / 557.3bn [2026-10-21, later: with
+  business crime at its net, commercial security against offending on members and the completion crime senders
+  (decision `2026-10-21-business-crime-in-pairing`); were $111.6 / 117.1bn and $479.6 / 553.7bn. Tables pins
+  rederived (42), engine pins unchanged (26)]. Since v8
   the pairing's fiscal row is the case at both ends. Pairing minus social rows equals the live band
   (1e-9; closes at 6e-14). Item spans are the oct15 record-basis spans carried in the oct16
   real-costs document.
