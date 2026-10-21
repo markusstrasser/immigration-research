@@ -1,4 +1,4 @@
-**Verdict:** On adopted v9, stationary financing, the paired social stack and household pooling, 2.7939% / 4.7146% / 8.3071% of other residents are ahead under rules a/b/c; their central annual net is $-505.650039bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct16/p7_net_shares.csv]
+**Verdict:** On adopted v9, stationary financing, the paired social stack and household pooling, 2.7044% / 4.5142% / 7.8952% of other residents are ahead under rules a/b/c; their central annual net is $-509.229203bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct16/p7_net_shares.csv]
 
 
 
@@ -2622,7 +2622,7 @@ Would change it: measured recipient keys, a joint completion/removal counterfact
 
 ## v9 case (oct16)
 
-**Verdict:** On adopted v9, stationary financing, the paired social stack and household pooling, 2.7939% / 4.7146% / 8.3071% of other residents are ahead under rules a/b/c; their central annual net is $-505.650039bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct16/p7_net_shares.csv]
+**Verdict:** On adopted v9, stationary financing, the paired social stack and household pooling, 2.7044% / 4.5142% / 7.8952% of other residents are ahead under rules a/b/c; their central annual net is $-509.229203bn. Cohort financing is beside. [MODEL / FRAMING-SENSITIVE; CALCULATION: derived/oct16/p7_net_shares.csv]
 
 The complete calibrated lineage contains 44903074.08624522 people; 42951314.00418314 are placed on observed/proxy records and 1951760.08206208 remain unlocated. Native-minor calibration changes only observed member weights; the original unreported descendants retain their measured age proxy. Coverage is excluded from payer households. [DATA: derived/oct16/p7_inputs.json population; main-case meta.population_v9]
 

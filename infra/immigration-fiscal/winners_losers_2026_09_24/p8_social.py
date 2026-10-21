@@ -15,6 +15,7 @@ import p7_frames as p7
 
 SOURCE_REL = 'sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json'
 PM_ROWS = ("pm25_consumption", "pm25_respending", "pm25_government_side")
+BUSINESS_SUMMARY = Path(__file__).resolve().parent.parent / "business_crime_2026_10_21/derived/summary.csv"
 
 
 def environment(data):
@@ -46,10 +47,17 @@ def source(wl):
     extra = env["v8_added_social"]
     p7.require("item11_social_consumption_shift", abs(extra["item11_consumption_factor"] +
         extra["item11_m5_consumption_bn"] / extra["union_consumption_keyed_receipts_bn"]) < 1e-12)
+    # The crime rows' added senders follow the producer's crime_senders rule (completion and item 16 people aged
+    # 12+; coverage people already in the national incident counts), never the other rows' key shares.
+    senders = extra["crime_senders"]
     for end in ("low", "high"):
-        for item in ("victims", "property_crime", "fear_avoidance", "private_security"):
+        for item in ("victims", "property_crime", "fear_avoidance", "private_security",
+                     "business_crime", "commercial_security_member_victims"):
             row = env["variants"]["central"]["parts"][end]["v8_added_by_item"][item]
-            p7.require(f"no_added_crime_sender_{end}_{item}", row["share"] == 0 and row["added_people_bn"] == 0)
+            exact = senders["rows"].get(item)
+            expected = exact[end]["added_people_bn"] if exact else row["union_part_bn"] * senders["share_12_plus"][end]
+            p7.require(f"added_crime_senders_{end}_{item}", row["share"] == senders["share_12_plus"][end]
+                       and abs(row["added_people_bn"] - expected) < 1e-12)
     return data
 
 
@@ -128,4 +136,13 @@ def uncertainty_ratio(data, item, setting, channels, weights):
     if item == "housing_gain":
         return p7.total(channels["renters"][setting] + channels["landlords"][setting], weights) / p7.total(
             channels["renters"]["central"] + channels["landlords"]["central"], weights)
+    if item == "business_crime":
+        # The lane's stacked low/high arms of the net, pooled over the two case ends.
+        import csv
+        arms = list(csv.DictReader(p7.pin(BUSINESS_SUMMARY).open()))
+        net = lambda arm: sum(float(r["net_with_without_bn"]) for r in arms if r["arm"] == arm)  # noqa: E731
+        return net(setting) / net("central")
+    if item == "commercial_security_member_victims":
+        # A point row on P7's own parameters, which publish no range for it.
+        return 1.
     raise RuntimeError(f"[BLOCKED] live social uncertainty missing: {item}")

@@ -365,6 +365,10 @@ def social_channels(wl, d, I, ch, meta, weights, population, rule, ctx, *, notes
         "formal_volunteering_outside_group": (place_key, "all other residents nationally; beneficiary location unobserved"),
         "total_consumer_scale": (consumer, "national SPM resources, consumption proxy"),
         "total_trade_travel_fdi": (consumer, "national SPM resources, consumption proxy"),
+        # Business losses and commercial security pass to purchasers; the business row's NIBRS direct victims
+        # (under-12, jail, fraud: about $0.8bn) are keyed as purchasers too [ASSUMPTION].
+        "business_crime": (consumer, "national SPM resources, purchasers' pass-through proxy"),
+        "commercial_security_member_victims": (consumer, "national SPM resources, purchasers' pass-through proxy"),
     }
     existing = {"victims": "crime_victims", "property_crime": "property_crime",
                 "unreimbursed_care": "unreimbursed_care", "congestion": "congestion"}
@@ -407,7 +411,8 @@ def social_channels(wl, d, I, ch, meta, weights, population, rule, ctx, *, notes
             for L in wl.LEVELS:
                 if item in ("pm25_consumption", "pm25_respending", "pm25_government_side"):
                     arrs[L] = wl.alloc_states(dd,key,{s:amount[L]*local_fraction*v for s,v in state_share.items()},notes=notes,label=f"{population}/{rule}/{item}/{L}") + wl.alloc(dd,key,amount[L]*(1-local_fraction))
-                elif item in ("formal_volunteering_outside_group","total_consumer_scale","total_trade_travel_fdi"):
+                elif item in ("formal_volunteering_outside_group","total_consumer_scale","total_trade_travel_fdi",
+                              "business_crime","commercial_security_member_victims"):
                     arrs[L] = wl.alloc(dd,key,amount[L])
                 else:
                     shares = drive_state if item == "road_crash_externality" else pupil_state if item == "school_disruption" else state_share

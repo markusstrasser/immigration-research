@@ -66,6 +66,7 @@ def source_paths():
         "debt_legacy_2026_09_23": ['derived/oct16/current_flow_contract.json', 'derived/oct16/current_flow_source_parts_2024.csv'],
         "late_arrival_account_line_2026_09_27": ['derived/late_arrival_line_oct16.csv'],
         "sept24_propagation_2026_09_24": ['derived/oct16/real_costs_totals.json', 'derived/oct16/real_costs_totals.csv', 'derived/oct16/band_variants.json'],
+        "business_crime_2026_10_21": ['derived/summary.csv'],
     }
     for lane, names in principals.items():
         paths.update(str((wl.FISCAL / lane / n).relative_to(ROOT)) for n in names)
