@@ -95,6 +95,8 @@ def capture():
         paths.update((fiscal / lane / "derived/oct16").glob("*"))
     # world_ledger.INGROUP_VICTIMS: the live in-group victimization rows.
     paths.add(fiscal / "within_group_harm_2026_10_21/derived/rows.csv")
+    # world_ledger.SOCIAL_PAIRING: the others-side social channels from the v9 pairing.
+    paths.add(fiscal / "sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json")
     paths.update((fiscal / "coverage_bound_2026_10_14/derived").glob("*oct16*"))
     paths.add(fiscal / "count_composition_r5_2026_10_15/derived/native_person_factors.parquet")
     missing = [str(p.relative_to(ROOT)) for p in paths if not p.is_file()]

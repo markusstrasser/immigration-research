@@ -288,20 +288,21 @@ variant is not computed on v9.
 
 The [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250, 297) sets the main
 case against the group living in Mexico, on the matched-cash account ($284.4–352.9bn a year, benefits counted when
-paid) over the 44.90M-person lineage. Other US residents lose $306.5bn a year at the low end and $424.2bn at the
-high in every reading, the fiscal cost plus the costs outside the budget, and more once raising the taxes is costed.
-Adding everyone's dollars at equal weight, the world gains $318.9bn at the low end and $260.9bn at the high in
+paid) over the 44.90M-person lineage. Other US residents lose $340.6bn a year at the low end and $401.1bn at the
+high in every reading, the fiscal cost plus the costs outside the budget that the world scope carries (crime victims,
+property crime, unreimbursed care and congestion, at the pairing's v9 rows), and more once raising the taxes is costed.
+Adding everyone's dollars at equal weight, the world gains $285.0bn at the low end and $284.3bn at the high in
 reading R1 (urban Mexican pay at the 56th percentile of selection, US pay at state prices, household consumption
-prices, public goods at average cost): the group gains $646.5 / 647.7bn and Mexico's residents −$21.1 / +$37.4bn (printed so the parts add).
+prices, public goods at average cost): the group gains $646.7 / 648.0bn and Mexico's residents −$21.1 / +$37.4bn (printed so the parts add).
 Reading R2, which takes urban Mexican pay at the 70th percentile (CMP's p70), output service prices and public
-goods at the cost of extending them, gives $132.6 / 100.9bn [FRAMING-SENSITIVE]. That says whether the world is
+goods at the cost of extending them, gives $98.6 / 124.2bn [FRAMING-SENSITIVE]. That says whether the world is
 richer, not whether Americans are. Same-person pay is a parameter, not a reading: with MMP's same-person hourly
-gain of 2.0 for the first generation, R1 gives $204.9 / 154.7bn (R3). The transfer leaks in part: raising revenue
-costs payers 1.16–1.5 per dollar; at 1.16 R1 gives $254.6 / 194.9bn, and at 1.5 it gives $118.0 / 54.8bn while R2
-and R3 turn negative (−$63.7 / −101.4bn and −$15.1 / −66.5bn). Hendren's revealed welfare weights leave R1 at
-$318.1 / 265.1bn, so measured weights give no sign that the group's dollar is worth less than the payers'.
+gain of 2.0 for the first generation, R1 gives $170.9 / 178.1bn (R3). The transfer leaks in part: raising revenue
+costs payers 1.16–1.5 per dollar; at 1.16 R1 gives $220.7 / 218.3bn, and at 1.5 it gives $84.1 / 78.2bn while R2
+and R3 turn negative (−$97.7 / −78.0bn and −$49.0 / −43.1bn). Hendren's revealed welfare weights leave R1 at
+$284.2 / 288.2bn, so measured weights give no sign that the group's dollar is worth less than the payers'.
 Counting Mexico's residents, the world comes out behind only if the group's welfare counts for less than
-0.51 / 0.60 of others' under R1 (0.61 / 0.70 at λ 1.16, 0.82 / 0.92 at λ 1.5) and 0.71 / 0.79 under R2. The added
+0.56 / 0.56 of others' under R1 (0.66 / 0.66 at λ 1.16, 0.87 / 0.88 at λ 1.5) and 0.78 / 0.74 under R2. The added
 descendants' schooling is valued at zero, as every generation's is; over generations the sign turns on how fast
 descendants catch up (ladder 154). Mexico's pension funding is an all-public proxy [DEGRADED]. The national-cell,
 common-price, leak-share and second-generation-premium readings are not computed on v9 (lane). [CALCULATION:
@@ -926,6 +927,7 @@ its successor, the reason and its last commit are in [`notes/2026-10-20-deleted-
 
 ## Revisions
 
+- 2026-10-21, later ([decision](../decisions/2026-10-21-business-crime-in-pairing.md)): the world ledger's others-side crime, property-crime, unreimbursed-care and congestion rows now read the v9 pairing's rows at each end instead of the winners lane's September channels. Other US residents' line is −$340.6 / 401.1bn (was −$306.5 / 424.2bn); R1 is +$285.0 / 284.3bn, R2 +$98.6 / 124.2bn, R3 +$170.9 / 178.1bn. Concept affected: the world readings.
 - 2026-10-21 ([decision](../decisions/2026-10-21-business-crime-in-pairing.md)): the fiscal-plus-social total adds business crime at its net ($1.4bn, gross $5.2bn beside), businesses' security against offending on members ($1.9 / 2.0bn) and crime sent by the completion reporters and item 16's minors: $483.1–557.3bn, was $479.6–553.7bn. The winners count (2.7% / 4.5% / 7.9% ahead, −$509.2bn) and the world ledger, whose in-group victims now come from the within-group lane (R1 +$318.9 / 260.9bn), follow. Within-group harm, $93.6 / 96.3bn, is listed beside and never added. Concept affected: the fiscal-plus-social total, who comes out ahead and the world readings.
 - 2026-10-21 (sign reversal): the case's sign-reversal script now freezes item 21's health-residual charge, item 15's college remainder and the union completion's service capital with the services they belong to; it had kept them at the case's response, up to $23bn charged at zero response. The frozen ranges and break-evens above moved; with enterprises moving with services the least favourable reading now breaks even at a small positive response. Concept affected: the service-response sign break-even.
 - 2026-10-21, consumer pass ([decision](../decisions/2026-10-16-main-case-v9.md)): the consumer lanes follow `oct16`: closed budget, back-cast, household split, decomposition, reference group, break conditions, generation split, uncertainty, the paired social stack, Black and Indian-origin comparisons, distribution, winners, world ledger, debt and legacy comparisons. Direct taxes again exceed household transfers at both ends; C3's correction split now nets about −$2–4bn rather than cancelling to about $11bn; the white gap rises and C8 breaks upward; the share of other residents ahead falls to 3–8% under the paired social stack; the world ledger moves to the matched-cash account, where the world still gains in every equal-weight reading and the R2/R3 readings turn negative at λ 1.5. The federal legacy row, the Indian-origin social rows and several world-ledger readings are not computed on v9 and are named without numbers. The production-model wage transfer is labelled as modelled, September dates replace "Latest" labels, and rows routing to cruft documents point to their successors. Concept affected: claims and comparisons computed from the adopted account.

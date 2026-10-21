@@ -12,390 +12,390 @@ R3 holds: R1 with MMP 2.0 hourly same-person G1 parameter (not a causal low boun
 
 | Scope | Reading | s | End | G3+ | Weights | World | Group | Other US | Mexico |
 |---|---|---:|---|---|---|---:|---:|---:|---:|
-| A_completed | R1 | 1 | low | zero | equal | 318.887066 | 646.548525 | -306.536379 | -21.125080 |
-| A_completed | R1 | 1 | low | zero | equal_lambda_1.16 | 254.610425 | 646.548525 | -350.406299 | -41.531801 |
-| A_completed | R1 | 1 | low | zero | equal_lambda_1.5 | 118.022564 | 646.548525 | -443.629879 | -84.896082 |
-| A_completed | R1 | 1 | low | zero | equal_lambda_hendren_a | 203.822734 | 646.548525 | -385.069778 | -57.656013 |
-| A_completed | R1 | 1 | low | zero | hendren_a | 318.141834 | 672.867078 | -330.431402 | -24.293842 |
-| A_completed | R1 | 1 | low | zero | hendren_b | 323.630390 | 672.867078 | -324.942845 | -24.293842 |
-| A_completed | R1 | 1 | low | zero | log_a | 1436.510679 | 1835.300521 | -453.284120 | 54.494279 |
-| A_completed | R1 | 1 | low | zero | log_b | 1059.231517 | 1835.300521 | -830.563283 | 54.494279 |
-| A_completed | R1 | 1 | high | zero | equal | 260.859036 | 647.696008 | -424.168267 | 37.331295 |
-| A_completed | R1 | 1 | high | zero | equal_lambda_1.16 | 194.929963 | 647.696008 | -479.043639 | 26.277594 |
-| A_completed | R1 | 1 | high | zero | equal_lambda_1.5 | 54.830684 | 647.696008 | -595.653805 | 2.788480 |
-| A_completed | R1 | 1 | high | zero | equal_lambda_hendren_a | 142.836616 | 647.696008 | -522.402990 | 17.543598 |
-| A_completed | R1 | 1 | high | zero | hendren_a | 265.114979 | 674.078586 | -451.894595 | 42.930989 |
-| A_completed | R1 | 1 | high | zero | hendren_b | 271.980426 | 674.078586 | -445.029149 | 42.930989 |
-| A_completed | R1 | 1 | high | zero | log_a | 1797.975555 | 1837.206880 | -657.519242 | 618.287916 |
-| A_completed | R1 | 1 | high | zero | log_b | 1326.050042 | 1837.206880 | -1129.444754 | 618.287916 |
-| A_completed | R1 | 1 | low | upper | equal | 704.071256 | 890.543508 | -306.536379 | 120.064127 |
-| A_completed | R1 | 1 | low | upper | equal_lambda_1.16 | 662.384889 | 890.543508 | -350.406299 | 122.247680 |
-| A_completed | R1 | 1 | low | upper | equal_lambda_1.5 | 573.801359 | 890.543508 | -443.629879 | 126.887729 |
-| A_completed | R1 | 1 | low | upper | equal_lambda_hendren_a | 629.446728 | 890.543508 | -385.069778 | 123.972997 |
-| A_completed | R1 | 1 | low | upper | hendren_a | 728.354646 | 920.712302 | -330.431402 | 138.073747 |
-| A_completed | R1 | 1 | low | upper | hendren_b | 733.843203 | 920.712302 | -324.942845 | 138.073747 |
-| A_completed | R1 | 1 | low | upper | log_a | 3714.396256 | 2751.459899 | -453.284120 | 1416.220477 |
-| A_completed | R1 | 1 | low | upper | log_b | 3337.117093 | 2751.459899 | -830.563283 | 1416.220477 |
-| A_completed | R1 | 1 | high | upper | equal | 618.038087 | 891.683085 | -424.168267 | 150.523268 |
-| A_completed | R1 | 1 | high | upper | equal_lambda_1.16 | 570.219730 | 891.683085 | -479.043639 | 157.580284 |
-| A_completed | R1 | 1 | high | upper | equal_lambda_1.5 | 468.605721 | 891.683085 | -595.653805 | 172.576441 |
-| A_completed | R1 | 1 | high | upper | equal_lambda_hendren_a | 532.436424 | 891.683085 | -522.402990 | 163.156330 |
-| A_completed | R1 | 1 | high | upper | hendren_a | 643.122942 | 921.915779 | -451.894595 | 173.101759 |
-| A_completed | R1 | 1 | high | upper | hendren_b | 649.988389 | 921.915779 | -445.029149 | 173.101759 |
-| A_completed | R1 | 1 | high | upper | log_a | 3805.817331 | 2753.347111 | -657.519242 | 1709.989462 |
-| A_completed | R1 | 1 | high | upper | log_b | 3333.891818 | 2753.347111 | -1129.444754 | 1709.989462 |
-| A_completed | R1 | 0.5 | low | zero | equal | 306.159317 | 646.548525 | -306.536379 | -33.852828 |
-| A_completed | R1 | 0.5 | low | zero | equal_lambda_1.16 | 239.846237 | 646.548525 | -350.406299 | -56.295988 |
-| A_completed | R1 | 0.5 | low | zero | equal_lambda_1.5 | 98.930942 | 646.548525 | -443.629879 | -103.987704 |
-| A_completed | R1 | 0.5 | low | zero | equal_lambda_hendren_a | 187.449469 | 646.548525 | -385.069778 | -74.029278 |
-| A_completed | R1 | 0.5 | low | zero | hendren_a | 303.504923 | 672.867078 | -330.431402 | -38.930752 |
-| A_completed | R1 | 0.5 | low | zero | hendren_b | 308.993480 | 672.867078 | -324.942845 | -38.930752 |
-| A_completed | R1 | 0.5 | low | zero | log_a | 1313.755489 | 1835.300521 | -453.284120 | -68.260912 |
-| A_completed | R1 | 0.5 | low | zero | log_b | 936.476326 | 1835.300521 | -830.563283 | -68.260912 |
-| A_completed | R1 | 0.5 | high | zero | equal | 248.131288 | 647.696008 | -424.168267 | 24.603547 |
-| A_completed | R1 | 0.5 | high | zero | equal_lambda_1.16 | 180.165776 | 647.696008 | -479.043639 | 11.513406 |
-| A_completed | R1 | 0.5 | high | zero | equal_lambda_1.5 | 35.739061 | 647.696008 | -595.653805 | -16.303142 |
-| A_completed | R1 | 0.5 | high | zero | equal_lambda_hendren_a | 126.463351 | 647.696008 | -522.402990 | 1.170333 |
-| A_completed | R1 | 0.5 | high | zero | hendren_a | 250.478069 | 674.078586 | -451.894595 | 28.294079 |
-| A_completed | R1 | 0.5 | high | zero | hendren_b | 257.343516 | 674.078586 | -445.029149 | 28.294079 |
-| A_completed | R1 | 0.5 | high | zero | log_a | 1675.220365 | 1837.206880 | -657.519242 | 495.532726 |
-| A_completed | R1 | 0.5 | high | zero | log_b | 1203.294852 | 1837.206880 | -1129.444754 | 495.532726 |
-| A_completed | R1 | 0.5 | low | upper | equal | 691.343508 | 890.543508 | -306.536379 | 107.336379 |
-| A_completed | R1 | 0.5 | low | upper | equal_lambda_1.16 | 647.620701 | 890.543508 | -350.406299 | 107.483492 |
-| A_completed | R1 | 0.5 | low | upper | equal_lambda_1.5 | 554.709736 | 890.543508 | -443.629879 | 107.796107 |
-| A_completed | R1 | 0.5 | low | upper | equal_lambda_hendren_a | 613.073463 | 890.543508 | -385.069778 | 107.599732 |
-| A_completed | R1 | 0.5 | low | upper | hendren_a | 713.717736 | 920.712302 | -330.431402 | 123.436836 |
-| A_completed | R1 | 0.5 | low | upper | hendren_b | 719.206293 | 920.712302 | -324.942845 | 123.436836 |
-| A_completed | R1 | 0.5 | low | upper | log_a | 3591.641065 | 2751.459899 | -453.284120 | 1293.465286 |
-| A_completed | R1 | 0.5 | low | upper | log_b | 3214.361902 | 2751.459899 | -830.563283 | 1293.465286 |
-| A_completed | R1 | 0.5 | high | upper | equal | 605.310339 | 891.683085 | -424.168267 | 137.795520 |
-| A_completed | R1 | 0.5 | high | upper | equal_lambda_1.16 | 555.455542 | 891.683085 | -479.043639 | 142.816096 |
-| A_completed | R1 | 0.5 | high | upper | equal_lambda_1.5 | 449.514099 | 891.683085 | -595.653805 | 153.484819 |
-| A_completed | R1 | 0.5 | high | upper | equal_lambda_hendren_a | 516.063159 | 891.683085 | -522.402990 | 146.783065 |
-| A_completed | R1 | 0.5 | high | upper | hendren_a | 628.486032 | 921.915779 | -451.894595 | 158.464848 |
-| A_completed | R1 | 0.5 | high | upper | hendren_b | 635.351478 | 921.915779 | -445.029149 | 158.464848 |
-| A_completed | R1 | 0.5 | high | upper | log_a | 3683.062140 | 2753.347111 | -657.519242 | 1587.234271 |
-| A_completed | R1 | 0.5 | high | upper | log_b | 3211.136628 | 2753.347111 | -1129.444754 | 1587.234271 |
-| A_completed | R1 | 0 | low | zero | equal | 293.431569 | 646.548525 | -306.536379 | -46.580576 |
-| A_completed | R1 | 0 | low | zero | equal_lambda_1.16 | 225.082049 | 646.548525 | -350.406299 | -71.060176 |
-| A_completed | R1 | 0 | low | zero | equal_lambda_1.5 | 79.839320 | 646.548525 | -443.629879 | -123.079326 |
-| A_completed | R1 | 0 | low | zero | equal_lambda_hendren_a | 171.076204 | 646.548525 | -385.069778 | -90.402543 |
-| A_completed | R1 | 0 | low | zero | hendren_a | 288.868013 | 672.867078 | -330.431402 | -53.567663 |
-| A_completed | R1 | 0 | low | zero | hendren_b | 294.356570 | 672.867078 | -324.942845 | -53.567663 |
-| A_completed | R1 | 0 | low | zero | log_a | 1191.000298 | 1835.300521 | -453.284120 | -191.016102 |
-| A_completed | R1 | 0 | low | zero | log_b | 813.721136 | 1835.300521 | -830.563283 | -191.016102 |
-| A_completed | R1 | 0 | high | zero | equal | 235.403540 | 647.696008 | -424.168267 | 11.875798 |
-| A_completed | R1 | 0 | high | zero | equal_lambda_1.16 | 165.401588 | 647.696008 | -479.043639 | -3.250782 |
-| A_completed | R1 | 0 | high | zero | equal_lambda_1.5 | 16.647439 | 647.696008 | -595.653805 | -35.394764 |
-| A_completed | R1 | 0 | high | zero | equal_lambda_hendren_a | 110.090086 | 647.696008 | -522.402990 | -15.202932 |
-| A_completed | R1 | 0 | high | zero | hendren_a | 235.841159 | 674.078586 | -451.894595 | 13.657168 |
-| A_completed | R1 | 0 | high | zero | hendren_b | 242.706606 | 674.078586 | -445.029149 | 13.657168 |
-| A_completed | R1 | 0 | high | zero | log_a | 1552.465174 | 1837.206880 | -657.519242 | 372.777535 |
-| A_completed | R1 | 0 | high | zero | log_b | 1080.539661 | 1837.206880 | -1129.444754 | 372.777535 |
-| A_completed | R1 | 0 | low | upper | equal | 678.615760 | 890.543508 | -306.536379 | 94.608631 |
-| A_completed | R1 | 0 | low | upper | equal_lambda_1.16 | 632.856513 | 890.543508 | -350.406299 | 92.719304 |
-| A_completed | R1 | 0 | low | upper | equal_lambda_1.5 | 535.618114 | 890.543508 | -443.629879 | 88.704485 |
-| A_completed | R1 | 0 | low | upper | equal_lambda_hendren_a | 596.700198 | 890.543508 | -385.069778 | 91.226467 |
-| A_completed | R1 | 0 | low | upper | hendren_a | 699.080826 | 920.712302 | -330.431402 | 108.799926 |
-| A_completed | R1 | 0 | low | upper | hendren_b | 704.569383 | 920.712302 | -324.942845 | 108.799926 |
-| A_completed | R1 | 0 | low | upper | log_a | 3468.885874 | 2751.459899 | -453.284120 | 1170.710095 |
-| A_completed | R1 | 0 | low | upper | log_b | 3091.606712 | 2751.459899 | -830.563283 | 1170.710095 |
-| A_completed | R1 | 0 | high | upper | equal | 592.582591 | 891.683085 | -424.168267 | 125.067772 |
-| A_completed | R1 | 0 | high | upper | equal_lambda_1.16 | 540.691354 | 891.683085 | -479.043639 | 128.051908 |
-| A_completed | R1 | 0 | high | upper | equal_lambda_1.5 | 430.422477 | 891.683085 | -595.653805 | 134.393196 |
-| A_completed | R1 | 0 | high | upper | equal_lambda_hendren_a | 499.689895 | 891.683085 | -522.402990 | 130.409800 |
-| A_completed | R1 | 0 | high | upper | hendren_a | 613.849121 | 921.915779 | -451.894595 | 143.827938 |
-| A_completed | R1 | 0 | high | upper | hendren_b | 620.714568 | 921.915779 | -445.029149 | 143.827938 |
-| A_completed | R1 | 0 | high | upper | log_a | 3560.306950 | 2753.347111 | -657.519242 | 1464.479081 |
-| A_completed | R1 | 0 | high | upper | log_b | 3088.381437 | 2753.347111 | -1129.444754 | 1464.479081 |
-| A_completed | R2 | 1 | low | zero | equal | 132.582518 | 451.092819 | -306.536379 | -11.973921 |
-| A_completed | R2 | 1 | low | zero | equal_lambda_1.16 | 69.770063 | 451.092819 | -350.406299 | -30.916456 |
-| A_completed | R2 | 1 | low | zero | equal_lambda_1.5 | -63.706404 | 451.092819 | -443.629879 | -71.169343 |
-| A_completed | R2 | 1 | low | zero | equal_lambda_hendren_a | 20.139287 | 451.092819 | -385.069778 | -45.883754 |
-| A_completed | R2 | 1 | low | zero | hendren_a | 126.161937 | 470.363349 | -330.431402 | -13.770009 |
-| A_completed | R2 | 1 | low | zero | hendren_b | 131.650494 | 470.363349 | -324.942845 | -13.770009 |
-| A_completed | R2 | 1 | low | zero | log_a | 1176.317192 | 1393.318300 | -453.284120 | 236.283013 |
-| A_completed | R2 | 1 | low | zero | log_b | 799.038029 | 1393.318300 | -830.563283 | 236.283013 |
-| A_completed | R2 | 1 | high | zero | equal | 100.851303 | 480.175452 | -424.168267 | 44.844117 |
-| A_completed | R2 | 1 | high | zero | equal_lambda_1.16 | 36.124282 | 480.175452 | -479.043639 | 34.992468 |
-| A_completed | R2 | 1 | high | zero | equal_lambda_1.5 | -101.420638 | 480.175452 | -595.653805 | 14.057714 |
-| A_completed | R2 | 1 | high | zero | equal_lambda_hendren_a | -15.019274 | 480.175452 | -522.402990 | 27.208264 |
-| A_completed | R2 | 1 | high | zero | hendren_a | 100.117571 | 500.441431 | -451.894595 | 51.570735 |
-| A_completed | R2 | 1 | high | zero | hendren_b | 106.983017 | 500.441431 | -445.029149 | 51.570735 |
-| A_completed | R2 | 1 | high | zero | log_a | 1535.414000 | 1453.544025 | -657.519242 | 739.389216 |
-| A_completed | R2 | 1 | high | zero | log_b | 1063.488487 | 1453.544025 | -1129.444754 | 739.389216 |
-| A_completed | R2 | 1 | low | upper | equal | 492.531886 | 686.889007 | -306.536379 | 112.179258 |
-| A_completed | R2 | 1 | low | upper | equal_lambda_1.16 | 449.583940 | 686.889007 | -350.406299 | 113.101232 |
-| A_completed | R2 | 1 | low | upper | equal_lambda_1.5 | 358.319553 | 686.889007 | -443.629879 | 115.060426 |
-| A_completed | R2 | 1 | low | upper | equal_lambda_hendren_a | 415.648952 | 686.889007 | -385.069778 | 113.829722 |
-| A_completed | R2 | 1 | low | upper | hendren_a | 508.455146 | 709.880401 | -330.431402 | 129.006147 |
-| A_completed | R2 | 1 | low | upper | hendren_b | 513.943703 | 709.880401 | -324.942845 | 129.006147 |
-| A_completed | R2 | 1 | low | upper | log_a | 3157.301210 | 2274.964213 | -453.284120 | 1335.621117 |
-| A_completed | R2 | 1 | low | upper | log_b | 2780.022048 | 2274.964213 | -830.563283 | 1335.621117 |
-| A_completed | R2 | 1 | high | upper | equal | 436.056187 | 715.963706 | -424.168267 | 144.260747 |
-| A_completed | R2 | 1 | high | upper | equal_lambda_1.16 | 387.235826 | 715.963706 | -479.043639 | 150.315759 |
-| A_completed | R2 | 1 | high | upper | equal_lambda_1.5 | 283.492560 | 715.963706 | -595.653805 | 163.182659 |
-| A_completed | R2 | 1 | high | upper | equal_lambda_hendren_a | 348.660795 | 715.963706 | -522.402990 | 155.100080 |
-| A_completed | R2 | 1 | high | upper | hendren_a | 453.955687 | 739.950423 | -451.894595 | 165.899859 |
-| A_completed | R2 | 1 | high | upper | hendren_b | 460.821134 | 739.950423 | -445.029149 | 165.899859 |
-| A_completed | R2 | 1 | high | upper | log_a | 3297.344075 | 2335.170512 | -657.519242 | 1619.692804 |
-| A_completed | R2 | 1 | high | upper | log_b | 2825.418562 | 2335.170512 | -1129.444754 | 1619.692804 |
-| A_completed | R2 | 0.5 | low | zero | equal | 119.854770 | 451.092819 | -306.536379 | -24.701669 |
-| A_completed | R2 | 0.5 | low | zero | equal_lambda_1.16 | 55.005875 | 451.092819 | -350.406299 | -45.680644 |
-| A_completed | R2 | 0.5 | low | zero | equal_lambda_1.5 | -82.798026 | 451.092819 | -443.629879 | -90.260966 |
-| A_completed | R2 | 0.5 | low | zero | equal_lambda_hendren_a | 3.766022 | 451.092819 | -385.069778 | -62.257019 |
-| A_completed | R2 | 0.5 | low | zero | hendren_a | 111.525027 | 470.363349 | -330.431402 | -28.406920 |
-| A_completed | R2 | 0.5 | low | zero | hendren_b | 117.013584 | 470.363349 | -324.942845 | -28.406920 |
-| A_completed | R2 | 0.5 | low | zero | log_a | 1063.616909 | 1393.318300 | -453.284120 | 123.582729 |
-| A_completed | R2 | 0.5 | low | zero | log_b | 686.337746 | 1393.318300 | -830.563283 | 123.582729 |
-| A_completed | R2 | 0.5 | high | zero | equal | 88.123555 | 480.175452 | -424.168267 | 32.116369 |
-| A_completed | R2 | 0.5 | high | zero | equal_lambda_1.16 | 21.360094 | 480.175452 | -479.043639 | 20.228281 |
-| A_completed | R2 | 0.5 | high | zero | equal_lambda_1.5 | -120.512261 | 480.175452 | -595.653805 | -5.033908 |
-| A_completed | R2 | 0.5 | high | zero | equal_lambda_hendren_a | -31.392539 | 480.175452 | -522.402990 | 10.834999 |
-| A_completed | R2 | 0.5 | high | zero | hendren_a | 85.480660 | 500.441431 | -451.894595 | 36.933825 |
-| A_completed | R2 | 0.5 | high | zero | hendren_b | 92.346107 | 500.441431 | -445.029149 | 36.933825 |
-| A_completed | R2 | 0.5 | high | zero | log_a | 1422.713716 | 1453.544025 | -657.519242 | 626.688932 |
-| A_completed | R2 | 0.5 | high | zero | log_b | 950.788203 | 1453.544025 | -1129.444754 | 626.688932 |
-| A_completed | R2 | 0.5 | low | upper | equal | 479.804138 | 686.889007 | -306.536379 | 99.451510 |
-| A_completed | R2 | 0.5 | low | upper | equal_lambda_1.16 | 434.819752 | 686.889007 | -350.406299 | 98.337044 |
-| A_completed | R2 | 0.5 | low | upper | equal_lambda_1.5 | 339.227931 | 686.889007 | -443.629879 | 95.968804 |
-| A_completed | R2 | 0.5 | low | upper | equal_lambda_hendren_a | 399.275687 | 686.889007 | -385.069778 | 97.456457 |
-| A_completed | R2 | 0.5 | low | upper | hendren_a | 493.818236 | 709.880401 | -330.431402 | 114.369237 |
-| A_completed | R2 | 0.5 | low | upper | hendren_b | 499.306792 | 709.880401 | -324.942845 | 114.369237 |
-| A_completed | R2 | 0.5 | low | upper | log_a | 3044.600927 | 2274.964213 | -453.284120 | 1222.920834 |
-| A_completed | R2 | 0.5 | low | upper | log_b | 2667.321764 | 2274.964213 | -830.563283 | 1222.920834 |
-| A_completed | R2 | 0.5 | high | upper | equal | 423.328438 | 715.963706 | -424.168267 | 131.532999 |
-| A_completed | R2 | 0.5 | high | upper | equal_lambda_1.16 | 372.471638 | 715.963706 | -479.043639 | 135.551571 |
-| A_completed | R2 | 0.5 | high | upper | equal_lambda_1.5 | 264.400938 | 715.963706 | -595.653805 | 144.091037 |
-| A_completed | R2 | 0.5 | high | upper | equal_lambda_hendren_a | 332.287531 | 715.963706 | -522.402990 | 138.726815 |
-| A_completed | R2 | 0.5 | high | upper | hendren_a | 439.318777 | 739.950423 | -451.894595 | 151.262949 |
-| A_completed | R2 | 0.5 | high | upper | hendren_b | 446.184224 | 739.950423 | -445.029149 | 151.262949 |
-| A_completed | R2 | 0.5 | high | upper | log_a | 3184.643791 | 2335.170512 | -657.519242 | 1506.992521 |
-| A_completed | R2 | 0.5 | high | upper | log_b | 2712.718278 | 2335.170512 | -1129.444754 | 1506.992521 |
-| A_completed | R2 | 0 | low | zero | equal | 107.127022 | 451.092819 | -306.536379 | -37.429417 |
-| A_completed | R2 | 0 | low | zero | equal_lambda_1.16 | 40.241687 | 451.092819 | -350.406299 | -60.444832 |
-| A_completed | R2 | 0 | low | zero | equal_lambda_1.5 | -101.889648 | 451.092819 | -443.629879 | -109.352588 |
-| A_completed | R2 | 0 | low | zero | equal_lambda_hendren_a | -12.607243 | 451.092819 | -385.069778 | -78.630284 |
-| A_completed | R2 | 0 | low | zero | hendren_a | 96.888117 | 470.363349 | -330.431402 | -43.043830 |
-| A_completed | R2 | 0 | low | zero | hendren_b | 102.376674 | 470.363349 | -324.942845 | -43.043830 |
-| A_completed | R2 | 0 | low | zero | log_a | 950.916625 | 1393.318300 | -453.284120 | 10.882446 |
-| A_completed | R2 | 0 | low | zero | log_b | 573.637463 | 1393.318300 | -830.563283 | 10.882446 |
-| A_completed | R2 | 0 | high | zero | equal | 75.395807 | 480.175452 | -424.168267 | 19.388621 |
-| A_completed | R2 | 0 | high | zero | equal_lambda_1.16 | 6.595906 | 480.175452 | -479.043639 | 5.464093 |
-| A_completed | R2 | 0 | high | zero | equal_lambda_1.5 | -139.603883 | 480.175452 | -595.653805 | -24.125530 |
-| A_completed | R2 | 0 | high | zero | equal_lambda_hendren_a | -47.765804 | 480.175452 | -522.402990 | -5.538266 |
-| A_completed | R2 | 0 | high | zero | hendren_a | 70.843750 | 500.441431 | -451.894595 | 22.296914 |
-| A_completed | R2 | 0 | high | zero | hendren_b | 77.709197 | 500.441431 | -445.029149 | 22.296914 |
-| A_completed | R2 | 0 | high | zero | log_a | 1310.013433 | 1453.544025 | -657.519242 | 513.988649 |
-| A_completed | R2 | 0 | high | zero | log_b | 838.087920 | 1453.544025 | -1129.444754 | 513.988649 |
-| A_completed | R2 | 0 | low | upper | equal | 467.076390 | 686.889007 | -306.536379 | 86.723762 |
-| A_completed | R2 | 0 | low | upper | equal_lambda_1.16 | 420.055564 | 686.889007 | -350.406299 | 83.572856 |
-| A_completed | R2 | 0 | low | upper | equal_lambda_1.5 | 320.136309 | 686.889007 | -443.629879 | 76.877181 |
-| A_completed | R2 | 0 | low | upper | equal_lambda_hendren_a | 382.902422 | 686.889007 | -385.069778 | 81.083192 |
-| A_completed | R2 | 0 | low | upper | hendren_a | 479.181325 | 709.880401 | -330.431402 | 99.732326 |
-| A_completed | R2 | 0 | low | upper | hendren_b | 484.669882 | 709.880401 | -324.942845 | 99.732326 |
-| A_completed | R2 | 0 | low | upper | log_a | 2931.900643 | 2274.964213 | -453.284120 | 1110.220550 |
-| A_completed | R2 | 0 | low | upper | log_b | 2554.621481 | 2274.964213 | -830.563283 | 1110.220550 |
-| A_completed | R2 | 0 | high | upper | equal | 410.600690 | 715.963706 | -424.168267 | 118.805251 |
-| A_completed | R2 | 0 | high | upper | equal_lambda_1.16 | 357.707450 | 715.963706 | -479.043639 | 120.787383 |
-| A_completed | R2 | 0 | high | upper | equal_lambda_1.5 | 245.309316 | 715.963706 | -595.653805 | 124.999415 |
-| A_completed | R2 | 0 | high | upper | equal_lambda_hendren_a | 315.914266 | 715.963706 | -522.402990 | 122.353550 |
-| A_completed | R2 | 0 | high | upper | hendren_a | 424.681867 | 739.950423 | -451.894595 | 136.626039 |
-| A_completed | R2 | 0 | high | upper | hendren_b | 431.547313 | 739.950423 | -445.029149 | 136.626039 |
-| A_completed | R2 | 0 | high | upper | log_a | 3071.943508 | 2335.170512 | -657.519242 | 1394.292237 |
-| A_completed | R2 | 0 | high | upper | log_b | 2600.017995 | 2335.170512 | -1129.444754 | 1394.292237 |
-| A_completed | R3 | 1 | low | zero | equal | 204.874084 | 570.756442 | -306.536379 | -59.345979 |
-| A_completed | R3 | 1 | low | zero | equal_lambda_1.16 | 134.482099 | 570.756442 | -350.406299 | -85.868044 |
-| A_completed | R3 | 1 | low | zero | equal_lambda_1.5 | -15.100867 | 570.756442 | -443.629879 | -142.227431 |
-| A_completed | R3 | 1 | low | zero | equal_lambda_hendren_a | 78.862417 | 570.756442 | -385.069778 | -106.824248 |
-| A_completed | R3 | 1 | low | zero | hendren_a | 194.428759 | 593.108038 | -330.431402 | -68.247876 |
-| A_completed | R3 | 1 | low | zero | hendren_b | 199.917316 | 593.108038 | -324.942845 | -68.247876 |
-| A_completed | R3 | 1 | low | zero | log_a | 799.568015 | 1566.986597 | -453.284120 | -314.134462 |
-| A_completed | R3 | 1 | low | zero | log_b | 422.288852 | 1566.986597 | -830.563283 | -314.134462 |
-| A_completed | R3 | 1 | high | zero | equal | 154.711805 | 571.903926 | -424.168267 | 6.976146 |
-| A_completed | R3 | 1 | high | zero | equal_lambda_1.16 | 83.925908 | 571.903926 | -479.043639 | -8.934379 |
-| A_completed | R3 | 1 | high | zero | equal_lambda_1.5 | -66.494123 | 571.903926 | -595.653805 | -42.744243 |
-| A_completed | R3 | 1 | high | zero | equal_lambda_hendren_a | 27.994978 | 571.903926 | -522.402990 | -21.505957 |
-| A_completed | R3 | 1 | high | zero | hendren_a | 150.447518 | 594.319546 | -451.894595 | 8.022567 |
-| A_completed | R3 | 1 | high | zero | hendren_b | 157.312964 | 594.319546 | -445.029149 | 8.022567 |
-| A_completed | R3 | 1 | high | zero | log_a | 1236.895615 | 1568.892956 | -657.519242 | 325.521900 |
-| A_completed | R3 | 1 | high | zero | log_b | 764.970102 | 1568.892956 | -1129.444754 | 325.521900 |
-| A_completed | R3 | 1 | low | upper | equal | 590.058275 | 814.751426 | -306.536379 | 81.843228 |
-| A_completed | R3 | 1 | low | upper | equal_lambda_1.16 | 542.256563 | 814.751426 | -350.406299 | 77.911437 |
-| A_completed | R3 | 1 | low | upper | equal_lambda_1.5 | 440.677927 | 814.751426 | -443.629879 | 69.556381 |
-| A_completed | R3 | 1 | low | upper | equal_lambda_hendren_a | 504.486411 | 814.751426 | -385.069778 | 74.804763 |
-| A_completed | R3 | 1 | low | upper | hendren_a | 604.641572 | 840.953262 | -330.431402 | 94.119713 |
-| A_completed | R3 | 1 | low | upper | hendren_b | 610.130129 | 840.953262 | -324.942845 | 94.119713 |
-| A_completed | R3 | 1 | low | upper | log_a | 3077.453591 | 2483.145976 | -453.284120 | 1047.591736 |
-| A_completed | R3 | 1 | low | upper | log_b | 2700.174429 | 2483.145976 | -830.563283 | 1047.591736 |
-| A_completed | R3 | 1 | high | upper | equal | 511.890855 | 815.891002 | -424.168267 | 120.168119 |
-| A_completed | R3 | 1 | high | upper | equal_lambda_1.16 | 459.215674 | 815.891002 | -479.043639 | 122.368311 |
-| A_completed | R3 | 1 | high | upper | equal_lambda_1.5 | 347.280915 | 815.891002 | -595.653805 | 127.043717 |
-| A_completed | R3 | 1 | high | upper | equal_lambda_hendren_a | 417.594787 | 815.891002 | -522.402990 | 124.106775 |
-| A_completed | R3 | 1 | high | upper | hendren_a | 528.455480 | 842.156739 | -451.894595 | 138.193337 |
-| A_completed | R3 | 1 | high | upper | hendren_b | 535.320927 | 842.156739 | -445.029149 | 138.193337 |
-| A_completed | R3 | 1 | high | upper | log_a | 3244.737391 | 2485.033187 | -657.519242 | 1417.223445 |
-| A_completed | R3 | 1 | high | upper | log_b | 2772.811878 | 2485.033187 | -1129.444754 | 1417.223445 |
-| A_completed | R3 | 0.5 | low | zero | equal | 192.146336 | 570.756442 | -306.536379 | -72.073727 |
-| A_completed | R3 | 0.5 | low | zero | equal_lambda_1.16 | 119.717912 | 570.756442 | -350.406299 | -100.632231 |
-| A_completed | R3 | 0.5 | low | zero | equal_lambda_1.5 | -34.192490 | 570.756442 | -443.629879 | -161.319053 |
-| A_completed | R3 | 0.5 | low | zero | equal_lambda_hendren_a | 62.489152 | 570.756442 | -385.069778 | -123.197513 |
-| A_completed | R3 | 0.5 | low | zero | hendren_a | 179.791849 | 593.108038 | -330.431402 | -82.884786 |
-| A_completed | R3 | 0.5 | low | zero | hendren_b | 185.280406 | 593.108038 | -324.942845 | -82.884786 |
-| A_completed | R3 | 0.5 | low | zero | log_a | 676.812824 | 1566.986597 | -453.284120 | -436.889652 |
-| A_completed | R3 | 0.5 | low | zero | log_b | 299.533662 | 1566.986597 | -830.563283 | -436.889652 |
-| A_completed | R3 | 0.5 | high | zero | equal | 141.984056 | 571.903926 | -424.168267 | -5.751603 |
-| A_completed | R3 | 0.5 | high | zero | equal_lambda_1.16 | 69.161720 | 571.903926 | -479.043639 | -23.698567 |
-| A_completed | R3 | 0.5 | high | zero | equal_lambda_1.5 | -85.585745 | 571.903926 | -595.653805 | -61.835866 |
-| A_completed | R3 | 0.5 | high | zero | equal_lambda_hendren_a | 11.621714 | 571.903926 | -522.402990 | -37.879222 |
-| A_completed | R3 | 0.5 | high | zero | hendren_a | 135.810607 | 594.319546 | -451.894595 | -6.614343 |
-| A_completed | R3 | 0.5 | high | zero | hendren_b | 142.676054 | 594.319546 | -445.029149 | -6.614343 |
-| A_completed | R3 | 0.5 | high | zero | log_a | 1114.140424 | 1568.892956 | -657.519242 | 202.766710 |
-| A_completed | R3 | 0.5 | high | zero | log_b | 642.214912 | 1568.892956 | -1129.444754 | 202.766710 |
-| A_completed | R3 | 0.5 | low | upper | equal | 577.330527 | 814.751426 | -306.536379 | 69.115480 |
-| A_completed | R3 | 0.5 | low | upper | equal_lambda_1.16 | 527.492376 | 814.751426 | -350.406299 | 63.147249 |
-| A_completed | R3 | 0.5 | low | upper | equal_lambda_1.5 | 421.586305 | 814.751426 | -443.629879 | 50.464758 |
-| A_completed | R3 | 0.5 | low | upper | equal_lambda_hendren_a | 488.113146 | 814.751426 | -385.069778 | 58.431498 |
-| A_completed | R3 | 0.5 | low | upper | hendren_a | 590.004662 | 840.953262 | -330.431402 | 79.482802 |
-| A_completed | R3 | 0.5 | low | upper | hendren_b | 595.493219 | 840.953262 | -324.942845 | 79.482802 |
-| A_completed | R3 | 0.5 | low | upper | log_a | 2954.698401 | 2483.145976 | -453.284120 | 924.836546 |
-| A_completed | R3 | 0.5 | low | upper | log_b | 2577.419238 | 2483.145976 | -830.563283 | 924.836546 |
-| A_completed | R3 | 0.5 | high | upper | equal | 499.163107 | 815.891002 | -424.168267 | 107.440371 |
-| A_completed | R3 | 0.5 | high | upper | equal_lambda_1.16 | 444.451486 | 815.891002 | -479.043639 | 107.604123 |
-| A_completed | R3 | 0.5 | high | upper | equal_lambda_1.5 | 328.189292 | 815.891002 | -595.653805 | 107.952095 |
-| A_completed | R3 | 0.5 | high | upper | equal_lambda_hendren_a | 401.221522 | 815.891002 | -522.402990 | 107.733510 |
-| A_completed | R3 | 0.5 | high | upper | hendren_a | 513.818570 | 842.156739 | -451.894595 | 123.556427 |
-| A_completed | R3 | 0.5 | high | upper | hendren_b | 520.684017 | 842.156739 | -445.029149 | 123.556427 |
-| A_completed | R3 | 0.5 | high | upper | log_a | 3121.982200 | 2485.033187 | -657.519242 | 1294.468255 |
-| A_completed | R3 | 0.5 | high | upper | log_b | 2650.056687 | 2485.033187 | -1129.444754 | 1294.468255 |
-| A_completed | R3 | 0 | low | zero | equal | 179.418588 | 570.756442 | -306.536379 | -84.801475 |
-| A_completed | R3 | 0 | low | zero | equal_lambda_1.16 | 104.953724 | 570.756442 | -350.406299 | -115.396419 |
-| A_completed | R3 | 0 | low | zero | equal_lambda_1.5 | -53.284112 | 570.756442 | -443.629879 | -180.410675 |
-| A_completed | R3 | 0 | low | zero | equal_lambda_hendren_a | 46.115887 | 570.756442 | -385.069778 | -139.570778 |
-| A_completed | R3 | 0 | low | zero | hendren_a | 165.154939 | 593.108038 | -330.431402 | -97.521697 |
-| A_completed | R3 | 0 | low | zero | hendren_b | 170.643495 | 593.108038 | -324.942845 | -97.521697 |
-| A_completed | R3 | 0 | low | zero | log_a | 554.057634 | 1566.986597 | -453.284120 | -559.644843 |
-| A_completed | R3 | 0 | low | zero | log_b | 176.778471 | 1566.986597 | -830.563283 | -559.644843 |
-| A_completed | R3 | 0 | high | zero | equal | 129.256308 | 571.903926 | -424.168267 | -18.479351 |
-| A_completed | R3 | 0 | high | zero | equal_lambda_1.16 | 54.397532 | 571.903926 | -479.043639 | -38.462755 |
-| A_completed | R3 | 0 | high | zero | equal_lambda_1.5 | -104.677367 | 571.903926 | -595.653805 | -80.927488 |
-| A_completed | R3 | 0 | high | zero | equal_lambda_hendren_a | -4.751551 | 571.903926 | -522.402990 | -54.252487 |
-| A_completed | R3 | 0 | high | zero | hendren_a | 121.173697 | 594.319546 | -451.894595 | -21.251253 |
-| A_completed | R3 | 0 | high | zero | hendren_b | 128.039144 | 594.319546 | -445.029149 | -21.251253 |
-| A_completed | R3 | 0 | high | zero | log_a | 991.385234 | 1568.892956 | -657.519242 | 80.011519 |
-| A_completed | R3 | 0 | high | zero | log_b | 519.459721 | 1568.892956 | -1129.444754 | 80.011519 |
-| A_completed | R3 | 0 | low | upper | equal | 564.602778 | 814.751426 | -306.536379 | 56.387732 |
-| A_completed | R3 | 0 | low | upper | equal_lambda_1.16 | 512.728188 | 814.751426 | -350.406299 | 48.383061 |
-| A_completed | R3 | 0 | low | upper | equal_lambda_1.5 | 402.494683 | 814.751426 | -443.629879 | 31.373136 |
-| A_completed | R3 | 0 | low | upper | equal_lambda_hendren_a | 471.739881 | 814.751426 | -385.069778 | 42.058233 |
-| A_completed | R3 | 0 | low | upper | hendren_a | 575.367751 | 840.953262 | -330.431402 | 64.845892 |
-| A_completed | R3 | 0 | low | upper | hendren_b | 580.856308 | 840.953262 | -324.942845 | 64.845892 |
-| A_completed | R3 | 0 | low | upper | log_a | 2831.943210 | 2483.145976 | -453.284120 | 802.081355 |
-| A_completed | R3 | 0 | low | upper | log_b | 2454.664048 | 2483.145976 | -830.563283 | 802.081355 |
-| A_completed | R3 | 0 | high | upper | equal | 486.435359 | 815.891002 | -424.168267 | 94.712623 |
-| A_completed | R3 | 0 | high | upper | equal_lambda_1.16 | 429.687298 | 815.891002 | -479.043639 | 92.839935 |
-| A_completed | R3 | 0 | high | upper | equal_lambda_1.5 | 309.097670 | 815.891002 | -595.653805 | 88.860473 |
-| A_completed | R3 | 0 | high | upper | equal_lambda_hendren_a | 384.848257 | 815.891002 | -522.402990 | 91.360245 |
-| A_completed | R3 | 0 | high | upper | hendren_a | 499.181660 | 842.156739 | -451.894595 | 108.919516 |
-| A_completed | R3 | 0 | high | upper | hendren_b | 506.047106 | 842.156739 | -445.029149 | 108.919516 |
-| A_completed | R3 | 0 | high | upper | log_a | 2999.227010 | 2485.033187 | -657.519242 | 1171.713064 |
-| A_completed | R3 | 0 | high | upper | log_b | 2527.301497 | 2485.033187 | -1129.444754 | 1171.713064 |
-| B_counted_only_beside | R1 | 1 | low | zero | equal | partial scope | 613.396005 | -306.536379 | -21.125080 |
-| B_counted_only_beside | R1 | 1 | low | zero | equal_lambda_1.16 | partial scope | 613.396005 | -350.406299 | -41.531801 |
-| B_counted_only_beside | R1 | 1 | low | zero | equal_lambda_1.5 | partial scope | 613.396005 | -443.629879 | -84.896082 |
-| B_counted_only_beside | R1 | 1 | low | zero | equal_lambda_hendren_a | partial scope | 613.396005 | -385.069778 | -57.656013 |
-| B_counted_only_beside | R1 | 1 | low | zero | hendren_a | partial scope | 638.227325 | -330.431402 | -24.293842 |
-| B_counted_only_beside | R1 | 1 | low | zero | hendren_b | partial scope | 638.227325 | -324.942845 | -24.293842 |
-| B_counted_only_beside | R1 | 1 | low | zero | log_a | partial scope | 1750.558229 | -453.284120 | 54.494279 |
-| B_counted_only_beside | R1 | 1 | low | zero | log_b | partial scope | 1750.558229 | -830.563283 | 54.494279 |
-| B_counted_only_beside | R1 | 1 | high | zero | equal | partial scope | 614.281753 | -424.168267 | 37.331295 |
-| B_counted_only_beside | R1 | 1 | high | zero | equal_lambda_1.16 | partial scope | 614.281753 | -479.043639 | 26.277594 |
-| B_counted_only_beside | R1 | 1 | high | zero | equal_lambda_1.5 | partial scope | 614.281753 | -595.653805 | 2.788480 |
-| B_counted_only_beside | R1 | 1 | high | zero | equal_lambda_hendren_a | partial scope | 614.281753 | -522.402990 | 17.543598 |
-| B_counted_only_beside | R1 | 1 | high | zero | hendren_a | partial scope | 639.164943 | -451.894595 | 42.930989 |
-| B_counted_only_beside | R1 | 1 | high | zero | hendren_b | partial scope | 639.164943 | -445.029149 | 42.930989 |
-| B_counted_only_beside | R1 | 1 | high | zero | log_a | partial scope | 1751.994448 | -657.519242 | 618.287916 |
-| B_counted_only_beside | R1 | 1 | high | zero | log_b | partial scope | 1751.994448 | -1129.444754 | 618.287916 |
-| B_counted_only_beside | R1 | 1 | low | upper | equal | partial scope | 844.316305 | -306.536379 | 120.064127 |
-| B_counted_only_beside | R1 | 1 | low | upper | equal_lambda_1.16 | partial scope | 844.316305 | -350.406299 | 122.247680 |
-| B_counted_only_beside | R1 | 1 | low | upper | equal_lambda_1.5 | partial scope | 844.316305 | -443.629879 | 126.887729 |
-| B_counted_only_beside | R1 | 1 | low | upper | equal_lambda_hendren_a | partial scope | 844.316305 | -385.069778 | 123.972997 |
-| B_counted_only_beside | R1 | 1 | low | upper | hendren_a | partial scope | 872.736127 | -330.431402 | 138.073747 |
-| B_counted_only_beside | R1 | 1 | low | upper | hendren_b | partial scope | 872.736127 | -324.942845 | 138.073747 |
-| B_counted_only_beside | R1 | 1 | low | upper | log_a | partial scope | 2628.191943 | -453.284120 | 1416.220477 |
-| B_counted_only_beside | R1 | 1 | low | upper | log_b | partial scope | 2628.191943 | -830.563283 | 1416.220477 |
-| B_counted_only_beside | R1 | 1 | high | upper | equal | partial scope | 845.206871 | -424.168267 | 150.523268 |
-| B_counted_only_beside | R1 | 1 | high | upper | equal_lambda_1.16 | partial scope | 845.206871 | -479.043639 | 157.580284 |
-| B_counted_only_beside | R1 | 1 | high | upper | equal_lambda_1.5 | partial scope | 845.206871 | -595.653805 | 172.576441 |
-| B_counted_only_beside | R1 | 1 | high | upper | equal_lambda_hendren_a | partial scope | 845.206871 | -522.402990 | 163.156330 |
-| B_counted_only_beside | R1 | 1 | high | upper | hendren_a | partial scope | 873.678638 | -451.894595 | 173.101759 |
-| B_counted_only_beside | R1 | 1 | high | upper | hendren_b | partial scope | 873.678638 | -445.029149 | 173.101759 |
-| B_counted_only_beside | R1 | 1 | high | upper | log_a | partial scope | 2629.639995 | -657.519242 | 1709.989462 |
-| B_counted_only_beside | R1 | 1 | high | upper | log_b | partial scope | 2629.639995 | -1129.444754 | 1709.989462 |
-| B_counted_only_beside | R2 | 1 | low | zero | equal | partial scope | 426.878768 | -306.536379 | -11.973921 |
-| B_counted_only_beside | R2 | 1 | low | zero | equal_lambda_1.16 | partial scope | 426.878768 | -350.406299 | -30.916456 |
-| B_counted_only_beside | R2 | 1 | low | zero | equal_lambda_1.5 | partial scope | 426.878768 | -443.629879 | -71.169343 |
-| B_counted_only_beside | R2 | 1 | low | zero | equal_lambda_hendren_a | partial scope | 426.878768 | -385.069778 | -45.883754 |
-| B_counted_only_beside | R2 | 1 | low | zero | hendren_a | partial scope | 445.035242 | -330.431402 | -13.770009 |
-| B_counted_only_beside | R2 | 1 | low | zero | hendren_b | partial scope | 445.035242 | -324.942845 | -13.770009 |
-| B_counted_only_beside | R2 | 1 | low | zero | log_a | partial scope | 1326.153156 | -453.284120 | 236.283013 |
-| B_counted_only_beside | R2 | 1 | low | zero | log_b | partial scope | 1326.153156 | -830.563283 | 236.283013 |
-| B_counted_only_beside | R2 | 1 | high | zero | equal | partial scope | 454.627614 | -424.168267 | 44.844117 |
-| B_counted_only_beside | R2 | 1 | high | zero | equal_lambda_1.16 | partial scope | 454.627614 | -479.043639 | 34.992468 |
-| B_counted_only_beside | R2 | 1 | high | zero | equal_lambda_1.5 | partial scope | 454.627614 | -595.653805 | 14.057714 |
-| B_counted_only_beside | R2 | 1 | high | zero | equal_lambda_hendren_a | partial scope | 454.627614 | -522.402990 | 27.208264 |
-| B_counted_only_beside | R2 | 1 | high | zero | hendren_a | partial scope | 473.726051 | -451.894595 | 51.570735 |
-| B_counted_only_beside | R2 | 1 | high | zero | hendren_b | partial scope | 473.726051 | -445.029149 | 51.570735 |
-| B_counted_only_beside | R2 | 1 | high | zero | log_a | partial scope | 1384.163889 | -657.519242 | 739.389216 |
-| B_counted_only_beside | R2 | 1 | high | zero | log_b | partial scope | 1384.163889 | -1129.444754 | 739.389216 |
-| B_counted_only_beside | R2 | 1 | low | upper | equal | partial scope | 650.035230 | -306.536379 | 112.179258 |
-| B_counted_only_beside | R2 | 1 | low | upper | equal_lambda_1.16 | partial scope | 650.035230 | -350.406299 | 113.101232 |
-| B_counted_only_beside | R2 | 1 | low | upper | equal_lambda_1.5 | partial scope | 650.035230 | -443.629879 | 115.060426 |
-| B_counted_only_beside | R2 | 1 | low | upper | equal_lambda_hendren_a | partial scope | 650.035230 | -385.069778 | 113.829722 |
-| B_counted_only_beside | R2 | 1 | low | upper | hendren_a | partial scope | 671.659555 | -330.431402 | 129.006147 |
-| B_counted_only_beside | R2 | 1 | low | upper | hendren_b | partial scope | 671.659555 | -324.942845 | 129.006147 |
-| B_counted_only_beside | R2 | 1 | low | upper | log_a | partial scope | 2171.071792 | -453.284120 | 1335.621117 |
-| B_counted_only_beside | R2 | 1 | low | upper | log_b | partial scope | 2171.071792 | -830.563283 | 1335.621117 |
-| B_counted_only_beside | R2 | 1 | high | upper | equal | partial scope | 677.788910 | -424.168267 | 144.260747 |
-| B_counted_only_beside | R2 | 1 | high | upper | equal_lambda_1.16 | partial scope | 677.788910 | -479.043639 | 150.315759 |
-| B_counted_only_beside | R2 | 1 | high | upper | equal_lambda_1.5 | partial scope | 677.788910 | -595.653805 | 163.182659 |
-| B_counted_only_beside | R2 | 1 | high | upper | equal_lambda_hendren_a | partial scope | 677.788910 | -522.402990 | 155.100080 |
-| B_counted_only_beside | R2 | 1 | high | upper | hendren_a | partial scope | 700.355273 | -451.894595 | 165.899859 |
-| B_counted_only_beside | R2 | 1 | high | upper | hendren_b | partial scope | 700.355273 | -445.029149 | 165.899859 |
-| B_counted_only_beside | R2 | 1 | high | upper | log_a | partial scope | 2229.094533 | -657.519242 | 1619.692804 |
-| B_counted_only_beside | R2 | 1 | high | upper | log_b | partial scope | 2229.094533 | -1129.444754 | 1619.692804 |
-| B_counted_only_beside | R3 | 1 | low | zero | equal | partial scope | 540.002459 | -306.536379 | -59.345979 |
-| B_counted_only_beside | R3 | 1 | low | zero | equal_lambda_1.16 | partial scope | 540.002459 | -350.406299 | -85.868044 |
-| B_counted_only_beside | R3 | 1 | low | zero | equal_lambda_1.5 | partial scope | 540.002459 | -443.629879 | -142.227431 |
-| B_counted_only_beside | R3 | 1 | low | zero | equal_lambda_hendren_a | partial scope | 540.002459 | -385.069778 | -106.824248 |
-| B_counted_only_beside | R3 | 1 | low | zero | hendren_a | partial scope | 561.022452 | -330.431402 | -68.247876 |
-| B_counted_only_beside | R3 | 1 | low | zero | hendren_b | partial scope | 561.022452 | -324.942845 | -68.247876 |
-| B_counted_only_beside | R3 | 1 | low | zero | log_a | partial scope | 1491.452528 | -453.284120 | -314.134462 |
-| B_counted_only_beside | R3 | 1 | low | zero | log_b | partial scope | 1491.452528 | -830.563283 | -314.134462 |
-| B_counted_only_beside | R3 | 1 | high | zero | equal | partial scope | 540.888207 | -424.168267 | 6.976146 |
-| B_counted_only_beside | R3 | 1 | high | zero | equal_lambda_1.16 | partial scope | 540.888207 | -479.043639 | -8.934379 |
-| B_counted_only_beside | R3 | 1 | high | zero | equal_lambda_1.5 | partial scope | 540.888207 | -595.653805 | -42.744243 |
-| B_counted_only_beside | R3 | 1 | high | zero | equal_lambda_hendren_a | partial scope | 540.888207 | -522.402990 | -21.505957 |
-| B_counted_only_beside | R3 | 1 | high | zero | hendren_a | partial scope | 561.960070 | -451.894595 | 8.022567 |
-| B_counted_only_beside | R3 | 1 | high | zero | hendren_b | partial scope | 561.960070 | -445.029149 | 8.022567 |
-| B_counted_only_beside | R3 | 1 | high | zero | log_a | partial scope | 1492.888747 | -657.519242 | 325.521900 |
-| B_counted_only_beside | R3 | 1 | high | zero | log_b | partial scope | 1492.888747 | -1129.444754 | 325.521900 |
-| B_counted_only_beside | R3 | 1 | low | upper | equal | partial scope | 770.922759 | -306.536379 | 81.843228 |
-| B_counted_only_beside | R3 | 1 | low | upper | equal_lambda_1.16 | partial scope | 770.922759 | -350.406299 | 77.911437 |
-| B_counted_only_beside | R3 | 1 | low | upper | equal_lambda_1.5 | partial scope | 770.922759 | -443.629879 | 69.556381 |
-| B_counted_only_beside | R3 | 1 | low | upper | equal_lambda_hendren_a | partial scope | 770.922759 | -385.069778 | 74.804763 |
-| B_counted_only_beside | R3 | 1 | low | upper | hendren_a | partial scope | 795.531254 | -330.431402 | 94.119713 |
-| B_counted_only_beside | R3 | 1 | low | upper | hendren_b | partial scope | 795.531254 | -324.942845 | 94.119713 |
-| B_counted_only_beside | R3 | 1 | low | upper | log_a | partial scope | 2369.086242 | -453.284120 | 1047.591736 |
-| B_counted_only_beside | R3 | 1 | low | upper | log_b | partial scope | 2369.086242 | -830.563283 | 1047.591736 |
-| B_counted_only_beside | R3 | 1 | high | upper | equal | partial scope | 771.813325 | -424.168267 | 120.168119 |
-| B_counted_only_beside | R3 | 1 | high | upper | equal_lambda_1.16 | partial scope | 771.813325 | -479.043639 | 122.368311 |
-| B_counted_only_beside | R3 | 1 | high | upper | equal_lambda_1.5 | partial scope | 771.813325 | -595.653805 | 127.043717 |
-| B_counted_only_beside | R3 | 1 | high | upper | equal_lambda_hendren_a | partial scope | 771.813325 | -522.402990 | 124.106775 |
-| B_counted_only_beside | R3 | 1 | high | upper | hendren_a | partial scope | 796.473765 | -451.894595 | 138.193337 |
-| B_counted_only_beside | R3 | 1 | high | upper | hendren_b | partial scope | 796.473765 | -445.029149 | 138.193337 |
-| B_counted_only_beside | R3 | 1 | high | upper | log_a | partial scope | 2370.534294 | -657.519242 | 1417.223445 |
-| B_counted_only_beside | R3 | 1 | high | upper | log_b | partial scope | 2370.534294 | -1129.444754 | 1417.223445 |
+| A_completed | R1 | 1 | low | zero | equal | 284.960433 | 646.728876 | -340.643363 | -21.125080 |
+| A_completed | R1 | 1 | low | zero | equal_lambda_1.16 | 220.683792 | 646.728876 | -384.513283 | -41.531801 |
+| A_completed | R1 | 1 | low | zero | equal_lambda_1.5 | 84.095931 | 646.728876 | -477.736863 | -84.896082 |
+| A_completed | R1 | 1 | low | zero | equal_lambda_hendren_a | 169.896101 | 646.728876 | -419.176761 | -57.656013 |
+| A_completed | R1 | 1 | low | zero | hendren_a | 284.173198 | 673.053521 | -364.586480 | -24.293842 |
+| A_completed | R1 | 1 | low | zero | hendren_b | 289.661755 | 673.053521 | -359.097923 | -24.293842 |
+| A_completed | R1 | 1 | low | zero | log_a | 1348.562536 | 1835.628202 | -541.559944 | 54.494279 |
+| A_completed | R1 | 1 | low | zero | log_b | 971.283374 | 1835.628202 | -918.839107 | 54.494279 |
+| A_completed | R1 | 1 | high | zero | equal | 284.271242 | 648.000041 | -401.060094 | 37.331295 |
+| A_completed | R1 | 1 | high | zero | equal_lambda_1.16 | 218.342169 | 648.000041 | -455.935467 | 26.277594 |
+| A_completed | R1 | 1 | high | zero | equal_lambda_1.5 | 78.242889 | 648.000041 | -572.545633 | 2.788480 |
+| A_completed | R1 | 1 | high | zero | equal_lambda_hendren_a | 166.248821 | 648.000041 | -499.294818 | 17.543598 |
+| A_completed | R1 | 1 | high | zero | hendren_a | 288.204990 | 674.392889 | -429.118888 | 42.930989 |
+| A_completed | R1 | 1 | high | zero | hendren_b | 295.070437 | 674.392889 | -422.253441 | 42.930989 |
+| A_completed | R1 | 1 | high | zero | log_a | 1850.702147 | 1837.758849 | -605.344618 | 618.287916 |
+| A_completed | R1 | 1 | high | zero | log_b | 1378.776634 | 1837.758849 | -1077.270131 | 618.287916 |
+| A_completed | R1 | 1 | low | upper | equal | 670.144624 | 890.723859 | -340.643363 | 120.064127 |
+| A_completed | R1 | 1 | low | upper | equal_lambda_1.16 | 628.458256 | 890.723859 | -384.513283 | 122.247680 |
+| A_completed | R1 | 1 | low | upper | equal_lambda_1.5 | 539.874726 | 890.723859 | -477.736863 | 126.887729 |
+| A_completed | R1 | 1 | low | upper | equal_lambda_hendren_a | 595.520095 | 890.723859 | -419.176761 | 123.972997 |
+| A_completed | R1 | 1 | low | upper | hendren_a | 694.386011 | 920.898745 | -364.586480 | 138.073747 |
+| A_completed | R1 | 1 | low | upper | hendren_b | 699.874568 | 920.898745 | -359.097923 | 138.073747 |
+| A_completed | R1 | 1 | low | upper | log_a | 3626.448113 | 2751.787581 | -541.559944 | 1416.220477 |
+| A_completed | R1 | 1 | low | upper | log_b | 3249.168950 | 2751.787581 | -918.839107 | 1416.220477 |
+| A_completed | R1 | 1 | high | upper | equal | 641.450292 | 891.987118 | -401.060094 | 150.523268 |
+| A_completed | R1 | 1 | high | upper | equal_lambda_1.16 | 593.631935 | 891.987118 | -455.935467 | 157.580284 |
+| A_completed | R1 | 1 | high | upper | equal_lambda_1.5 | 492.017926 | 891.987118 | -572.545633 | 172.576441 |
+| A_completed | R1 | 1 | high | upper | equal_lambda_hendren_a | 555.848630 | 891.987118 | -499.294818 | 163.156330 |
+| A_completed | R1 | 1 | high | upper | hendren_a | 666.212953 | 922.230082 | -429.118888 | 173.101759 |
+| A_completed | R1 | 1 | high | upper | hendren_b | 673.078400 | 922.230082 | -422.253441 | 173.101759 |
+| A_completed | R1 | 1 | high | upper | log_a | 3858.543923 | 2753.899080 | -605.344618 | 1709.989462 |
+| A_completed | R1 | 1 | high | upper | log_b | 3386.618410 | 2753.899080 | -1077.270131 | 1709.989462 |
+| A_completed | R1 | 0.5 | low | zero | equal | 272.232685 | 646.728876 | -340.643363 | -33.852828 |
+| A_completed | R1 | 0.5 | low | zero | equal_lambda_1.16 | 205.919604 | 646.728876 | -384.513283 | -56.295988 |
+| A_completed | R1 | 0.5 | low | zero | equal_lambda_1.5 | 65.004309 | 646.728876 | -477.736863 | -103.987704 |
+| A_completed | R1 | 0.5 | low | zero | equal_lambda_hendren_a | 153.522836 | 646.728876 | -419.176761 | -74.029278 |
+| A_completed | R1 | 0.5 | low | zero | hendren_a | 269.536288 | 673.053521 | -364.586480 | -38.930752 |
+| A_completed | R1 | 0.5 | low | zero | hendren_b | 275.024845 | 673.053521 | -359.097923 | -38.930752 |
+| A_completed | R1 | 0.5 | low | zero | log_a | 1225.807346 | 1835.628202 | -541.559944 | -68.260912 |
+| A_completed | R1 | 0.5 | low | zero | log_b | 848.528183 | 1835.628202 | -918.839107 | -68.260912 |
+| A_completed | R1 | 0.5 | high | zero | equal | 271.543493 | 648.000041 | -401.060094 | 24.603547 |
+| A_completed | R1 | 0.5 | high | zero | equal_lambda_1.16 | 203.577981 | 648.000041 | -455.935467 | 11.513406 |
+| A_completed | R1 | 0.5 | high | zero | equal_lambda_1.5 | 59.151267 | 648.000041 | -572.545633 | -16.303142 |
+| A_completed | R1 | 0.5 | high | zero | equal_lambda_hendren_a | 149.875556 | 648.000041 | -499.294818 | 1.170333 |
+| A_completed | R1 | 0.5 | high | zero | hendren_a | 273.568080 | 674.392889 | -429.118888 | 28.294079 |
+| A_completed | R1 | 0.5 | high | zero | hendren_b | 280.433527 | 674.392889 | -422.253441 | 28.294079 |
+| A_completed | R1 | 0.5 | high | zero | log_a | 1727.946956 | 1837.758849 | -605.344618 | 495.532726 |
+| A_completed | R1 | 0.5 | high | zero | log_b | 1256.021443 | 1837.758849 | -1077.270131 | 495.532726 |
+| A_completed | R1 | 0.5 | low | upper | equal | 657.416875 | 890.723859 | -340.643363 | 107.336379 |
+| A_completed | R1 | 0.5 | low | upper | equal_lambda_1.16 | 613.694068 | 890.723859 | -384.513283 | 107.483492 |
+| A_completed | R1 | 0.5 | low | upper | equal_lambda_1.5 | 520.783103 | 890.723859 | -477.736863 | 107.796107 |
+| A_completed | R1 | 0.5 | low | upper | equal_lambda_hendren_a | 579.146830 | 890.723859 | -419.176761 | 107.599732 |
+| A_completed | R1 | 0.5 | low | upper | hendren_a | 679.749101 | 920.898745 | -364.586480 | 123.436836 |
+| A_completed | R1 | 0.5 | low | upper | hendren_b | 685.237658 | 920.898745 | -359.097923 | 123.436836 |
+| A_completed | R1 | 0.5 | low | upper | log_a | 3503.692922 | 2751.787581 | -541.559944 | 1293.465286 |
+| A_completed | R1 | 0.5 | low | upper | log_b | 3126.413760 | 2751.787581 | -918.839107 | 1293.465286 |
+| A_completed | R1 | 0.5 | high | upper | equal | 628.722544 | 891.987118 | -401.060094 | 137.795520 |
+| A_completed | R1 | 0.5 | high | upper | equal_lambda_1.16 | 578.867747 | 891.987118 | -455.935467 | 142.816096 |
+| A_completed | R1 | 0.5 | high | upper | equal_lambda_1.5 | 472.926304 | 891.987118 | -572.545633 | 153.484819 |
+| A_completed | R1 | 0.5 | high | upper | equal_lambda_hendren_a | 539.475365 | 891.987118 | -499.294818 | 146.783065 |
+| A_completed | R1 | 0.5 | high | upper | hendren_a | 651.576043 | 922.230082 | -429.118888 | 158.464848 |
+| A_completed | R1 | 0.5 | high | upper | hendren_b | 658.441489 | 922.230082 | -422.253441 | 158.464848 |
+| A_completed | R1 | 0.5 | high | upper | log_a | 3735.788732 | 2753.899080 | -605.344618 | 1587.234271 |
+| A_completed | R1 | 0.5 | high | upper | log_b | 3263.863219 | 2753.899080 | -1077.270131 | 1587.234271 |
+| A_completed | R1 | 0 | low | zero | equal | 259.504936 | 646.728876 | -340.643363 | -46.580576 |
+| A_completed | R1 | 0 | low | zero | equal_lambda_1.16 | 191.155416 | 646.728876 | -384.513283 | -71.060176 |
+| A_completed | R1 | 0 | low | zero | equal_lambda_1.5 | 45.912687 | 646.728876 | -477.736863 | -123.079326 |
+| A_completed | R1 | 0 | low | zero | equal_lambda_hendren_a | 137.149571 | 646.728876 | -419.176761 | -90.402543 |
+| A_completed | R1 | 0 | low | zero | hendren_a | 254.899378 | 673.053521 | -364.586480 | -53.567663 |
+| A_completed | R1 | 0 | low | zero | hendren_b | 260.387934 | 673.053521 | -359.097923 | -53.567663 |
+| A_completed | R1 | 0 | low | zero | log_a | 1103.052155 | 1835.628202 | -541.559944 | -191.016102 |
+| A_completed | R1 | 0 | low | zero | log_b | 725.772993 | 1835.628202 | -918.839107 | -191.016102 |
+| A_completed | R1 | 0 | high | zero | equal | 258.815745 | 648.000041 | -401.060094 | 11.875798 |
+| A_completed | R1 | 0 | high | zero | equal_lambda_1.16 | 188.813793 | 648.000041 | -455.935467 | -3.250782 |
+| A_completed | R1 | 0 | high | zero | equal_lambda_1.5 | 40.059645 | 648.000041 | -572.545633 | -35.394764 |
+| A_completed | R1 | 0 | high | zero | equal_lambda_hendren_a | 133.502291 | 648.000041 | -499.294818 | -15.202932 |
+| A_completed | R1 | 0 | high | zero | hendren_a | 258.931170 | 674.392889 | -429.118888 | 13.657168 |
+| A_completed | R1 | 0 | high | zero | hendren_b | 265.796616 | 674.392889 | -422.253441 | 13.657168 |
+| A_completed | R1 | 0 | high | zero | log_a | 1605.191766 | 1837.758849 | -605.344618 | 372.777535 |
+| A_completed | R1 | 0 | high | zero | log_b | 1133.266253 | 1837.758849 | -1077.270131 | 372.777535 |
+| A_completed | R1 | 0 | low | upper | equal | 644.689127 | 890.723859 | -340.643363 | 94.608631 |
+| A_completed | R1 | 0 | low | upper | equal_lambda_1.16 | 598.929881 | 890.723859 | -384.513283 | 92.719304 |
+| A_completed | R1 | 0 | low | upper | equal_lambda_1.5 | 501.691481 | 890.723859 | -477.736863 | 88.704485 |
+| A_completed | R1 | 0 | low | upper | equal_lambda_hendren_a | 562.773565 | 890.723859 | -419.176761 | 91.226467 |
+| A_completed | R1 | 0 | low | upper | hendren_a | 665.112190 | 920.898745 | -364.586480 | 108.799926 |
+| A_completed | R1 | 0 | low | upper | hendren_b | 670.600747 | 920.898745 | -359.097923 | 108.799926 |
+| A_completed | R1 | 0 | low | upper | log_a | 3380.937732 | 2751.787581 | -541.559944 | 1170.710095 |
+| A_completed | R1 | 0 | low | upper | log_b | 3003.658569 | 2751.787581 | -918.839107 | 1170.710095 |
+| A_completed | R1 | 0 | high | upper | equal | 615.994796 | 891.987118 | -401.060094 | 125.067772 |
+| A_completed | R1 | 0 | high | upper | equal_lambda_1.16 | 564.103559 | 891.987118 | -455.935467 | 128.051908 |
+| A_completed | R1 | 0 | high | upper | equal_lambda_1.5 | 453.834682 | 891.987118 | -572.545633 | 134.393196 |
+| A_completed | R1 | 0 | high | upper | equal_lambda_hendren_a | 523.102100 | 891.987118 | -499.294818 | 130.409800 |
+| A_completed | R1 | 0 | high | upper | hendren_a | 636.939132 | 922.230082 | -429.118888 | 143.827938 |
+| A_completed | R1 | 0 | high | upper | hendren_b | 643.804579 | 922.230082 | -422.253441 | 143.827938 |
+| A_completed | R1 | 0 | high | upper | log_a | 3613.033542 | 2753.899080 | -605.344618 | 1464.479081 |
+| A_completed | R1 | 0 | high | upper | log_b | 3141.108029 | 2753.899080 | -1077.270131 | 1464.479081 |
+| A_completed | R2 | 1 | low | zero | equal | 98.635038 | 451.252322 | -340.643363 | -11.973921 |
+| A_completed | R2 | 1 | low | zero | equal_lambda_1.16 | 35.822583 | 451.252322 | -384.513283 | -30.916456 |
+| A_completed | R2 | 1 | low | zero | equal_lambda_1.5 | -97.653884 | 451.252322 | -477.736863 | -71.169343 |
+| A_completed | R2 | 1 | low | zero | equal_lambda_hendren_a | -13.808193 | 451.252322 | -419.176761 | -45.883754 |
+| A_completed | R2 | 1 | low | zero | hendren_a | 92.171751 | 470.528241 | -364.586480 | -13.770009 |
+| A_completed | R2 | 1 | low | zero | hendren_b | 97.660308 | 470.528241 | -359.097923 | -13.770009 |
+| A_completed | R2 | 1 | low | zero | log_a | 1088.376966 | 1393.653898 | -541.559944 | 236.283013 |
+| A_completed | R2 | 1 | low | zero | log_b | 711.097804 | 1393.653898 | -918.839107 | 236.283013 |
+| A_completed | R2 | 1 | high | zero | equal | 124.228365 | 480.444342 | -401.060094 | 44.844117 |
+| A_completed | R2 | 1 | high | zero | equal_lambda_1.16 | 59.501343 | 480.444342 | -455.935467 | 34.992468 |
+| A_completed | R2 | 1 | high | zero | equal_lambda_1.5 | -78.043577 | 480.444342 | -572.545633 | 14.057714 |
+| A_completed | R2 | 1 | high | zero | equal_lambda_hendren_a | 8.357788 | 480.444342 | -499.294818 | 27.208264 |
+| A_completed | R2 | 1 | high | zero | hendren_a | 123.171251 | 500.719404 | -429.118888 | 51.570735 |
+| A_completed | R2 | 1 | high | zero | hendren_b | 130.036698 | 500.719404 | -422.253441 | 51.570735 |
+| A_completed | R2 | 1 | high | zero | log_a | 1588.139978 | 1454.095381 | -605.344618 | 739.389216 |
+| A_completed | R2 | 1 | high | zero | log_b | 1116.214465 | 1454.095381 | -1077.270131 | 739.389216 |
+| A_completed | R2 | 1 | low | upper | equal | 458.584406 | 687.048511 | -340.643363 | 112.179258 |
+| A_completed | R2 | 1 | low | upper | equal_lambda_1.16 | 415.636460 | 687.048511 | -384.513283 | 113.101232 |
+| A_completed | R2 | 1 | low | upper | equal_lambda_1.5 | 324.372074 | 687.048511 | -477.736863 | 115.060426 |
+| A_completed | R2 | 1 | low | upper | equal_lambda_hendren_a | 381.701472 | 687.048511 | -419.176761 | 113.829722 |
+| A_completed | R2 | 1 | low | upper | hendren_a | 474.464960 | 710.045293 | -364.586480 | 129.006147 |
+| A_completed | R2 | 1 | low | upper | hendren_b | 479.953516 | 710.045293 | -359.097923 | 129.006147 |
+| A_completed | R2 | 1 | low | upper | log_a | 3069.360984 | 2275.299812 | -541.559944 | 1335.621117 |
+| A_completed | R2 | 1 | low | upper | log_b | 2692.081822 | 2275.299812 | -918.839107 | 1335.621117 |
+| A_completed | R2 | 1 | high | upper | equal | 459.433248 | 716.232596 | -401.060094 | 144.260747 |
+| A_completed | R2 | 1 | high | upper | equal_lambda_1.16 | 410.612888 | 716.232596 | -455.935467 | 150.315759 |
+| A_completed | R2 | 1 | high | upper | equal_lambda_1.5 | 306.869622 | 716.232596 | -572.545633 | 163.182659 |
+| A_completed | R2 | 1 | high | upper | equal_lambda_hendren_a | 372.037857 | 716.232596 | -499.294818 | 155.100080 |
+| A_completed | R2 | 1 | high | upper | hendren_a | 477.009368 | 740.228396 | -429.118888 | 165.899859 |
+| A_completed | R2 | 1 | high | upper | hendren_b | 483.874814 | 740.228396 | -422.253441 | 165.899859 |
+| A_completed | R2 | 1 | high | upper | log_a | 3350.070053 | 2335.721868 | -605.344618 | 1619.692804 |
+| A_completed | R2 | 1 | high | upper | log_b | 2878.144540 | 2335.721868 | -1077.270131 | 1619.692804 |
+| A_completed | R2 | 0.5 | low | zero | equal | 85.907290 | 451.252322 | -340.643363 | -24.701669 |
+| A_completed | R2 | 0.5 | low | zero | equal_lambda_1.16 | 21.058395 | 451.252322 | -384.513283 | -45.680644 |
+| A_completed | R2 | 0.5 | low | zero | equal_lambda_1.5 | -116.745506 | 451.252322 | -477.736863 | -90.260966 |
+| A_completed | R2 | 0.5 | low | zero | equal_lambda_hendren_a | -30.181458 | 451.252322 | -419.176761 | -62.257019 |
+| A_completed | R2 | 0.5 | low | zero | hendren_a | 77.534841 | 470.528241 | -364.586480 | -28.406920 |
+| A_completed | R2 | 0.5 | low | zero | hendren_b | 83.023398 | 470.528241 | -359.097923 | -28.406920 |
+| A_completed | R2 | 0.5 | low | zero | log_a | 975.676683 | 1393.653898 | -541.559944 | 123.582729 |
+| A_completed | R2 | 0.5 | low | zero | log_b | 598.397520 | 1393.653898 | -918.839107 | 123.582729 |
+| A_completed | R2 | 0.5 | high | zero | equal | 111.500617 | 480.444342 | -401.060094 | 32.116369 |
+| A_completed | R2 | 0.5 | high | zero | equal_lambda_1.16 | 44.737156 | 480.444342 | -455.935467 | 20.228281 |
+| A_completed | R2 | 0.5 | high | zero | equal_lambda_1.5 | -97.135199 | 480.444342 | -572.545633 | -5.033908 |
+| A_completed | R2 | 0.5 | high | zero | equal_lambda_hendren_a | -8.015477 | 480.444342 | -499.294818 | 10.834999 |
+| A_completed | R2 | 0.5 | high | zero | hendren_a | 108.534341 | 500.719404 | -429.118888 | 36.933825 |
+| A_completed | R2 | 0.5 | high | zero | hendren_b | 115.399787 | 500.719404 | -422.253441 | 36.933825 |
+| A_completed | R2 | 0.5 | high | zero | log_a | 1475.439695 | 1454.095381 | -605.344618 | 626.688932 |
+| A_completed | R2 | 0.5 | high | zero | log_b | 1003.514182 | 1454.095381 | -1077.270131 | 626.688932 |
+| A_completed | R2 | 0.5 | low | upper | equal | 445.856658 | 687.048511 | -340.643363 | 99.451510 |
+| A_completed | R2 | 0.5 | low | upper | equal_lambda_1.16 | 400.872272 | 687.048511 | -384.513283 | 98.337044 |
+| A_completed | R2 | 0.5 | low | upper | equal_lambda_1.5 | 305.280451 | 687.048511 | -477.736863 | 95.968804 |
+| A_completed | R2 | 0.5 | low | upper | equal_lambda_hendren_a | 365.328207 | 687.048511 | -419.176761 | 97.456457 |
+| A_completed | R2 | 0.5 | low | upper | hendren_a | 459.828049 | 710.045293 | -364.586480 | 114.369237 |
+| A_completed | R2 | 0.5 | low | upper | hendren_b | 465.316606 | 710.045293 | -359.097923 | 114.369237 |
+| A_completed | R2 | 0.5 | low | upper | log_a | 2956.660701 | 2275.299812 | -541.559944 | 1222.920834 |
+| A_completed | R2 | 0.5 | low | upper | log_b | 2579.381539 | 2275.299812 | -918.839107 | 1222.920834 |
+| A_completed | R2 | 0.5 | high | upper | equal | 446.705500 | 716.232596 | -401.060094 | 131.532999 |
+| A_completed | R2 | 0.5 | high | upper | equal_lambda_1.16 | 395.848700 | 716.232596 | -455.935467 | 135.551571 |
+| A_completed | R2 | 0.5 | high | upper | equal_lambda_1.5 | 287.778000 | 716.232596 | -572.545633 | 144.091037 |
+| A_completed | R2 | 0.5 | high | upper | equal_lambda_hendren_a | 355.664592 | 716.232596 | -499.294818 | 138.726815 |
+| A_completed | R2 | 0.5 | high | upper | hendren_a | 462.372457 | 740.228396 | -429.118888 | 151.262949 |
+| A_completed | R2 | 0.5 | high | upper | hendren_b | 469.237904 | 740.228396 | -422.253441 | 151.262949 |
+| A_completed | R2 | 0.5 | high | upper | log_a | 3237.369770 | 2335.721868 | -605.344618 | 1506.992521 |
+| A_completed | R2 | 0.5 | high | upper | log_b | 2765.444257 | 2335.721868 | -1077.270131 | 1506.992521 |
+| A_completed | R2 | 0 | low | zero | equal | 73.179542 | 451.252322 | -340.643363 | -37.429417 |
+| A_completed | R2 | 0 | low | zero | equal_lambda_1.16 | 6.294208 | 451.252322 | -384.513283 | -60.444832 |
+| A_completed | R2 | 0 | low | zero | equal_lambda_1.5 | -135.837128 | 451.252322 | -477.736863 | -109.352588 |
+| A_completed | R2 | 0 | low | zero | equal_lambda_hendren_a | -46.554723 | 451.252322 | -419.176761 | -78.630284 |
+| A_completed | R2 | 0 | low | zero | hendren_a | 62.897930 | 470.528241 | -364.586480 | -43.043830 |
+| A_completed | R2 | 0 | low | zero | hendren_b | 68.386487 | 470.528241 | -359.097923 | -43.043830 |
+| A_completed | R2 | 0 | low | zero | log_a | 862.976400 | 1393.653898 | -541.559944 | 10.882446 |
+| A_completed | R2 | 0 | low | zero | log_b | 485.697237 | 1393.653898 | -918.839107 | 10.882446 |
+| A_completed | R2 | 0 | high | zero | equal | 98.772868 | 480.444342 | -401.060094 | 19.388621 |
+| A_completed | R2 | 0 | high | zero | equal_lambda_1.16 | 29.972968 | 480.444342 | -455.935467 | 5.464093 |
+| A_completed | R2 | 0 | high | zero | equal_lambda_1.5 | -116.226821 | 480.444342 | -572.545633 | -24.125530 |
+| A_completed | R2 | 0 | high | zero | equal_lambda_hendren_a | -24.388742 | 480.444342 | -499.294818 | -5.538266 |
+| A_completed | R2 | 0 | high | zero | hendren_a | 93.897430 | 500.719404 | -429.118888 | 22.296914 |
+| A_completed | R2 | 0 | high | zero | hendren_b | 100.762877 | 500.719404 | -422.253441 | 22.296914 |
+| A_completed | R2 | 0 | high | zero | log_a | 1362.739411 | 1454.095381 | -605.344618 | 513.988649 |
+| A_completed | R2 | 0 | high | zero | log_b | 890.813898 | 1454.095381 | -1077.270131 | 513.988649 |
+| A_completed | R2 | 0 | low | upper | equal | 433.128910 | 687.048511 | -340.643363 | 86.723762 |
+| A_completed | R2 | 0 | low | upper | equal_lambda_1.16 | 386.108084 | 687.048511 | -384.513283 | 83.572856 |
+| A_completed | R2 | 0 | low | upper | equal_lambda_1.5 | 286.188829 | 687.048511 | -477.736863 | 76.877181 |
+| A_completed | R2 | 0 | low | upper | equal_lambda_hendren_a | 348.954942 | 687.048511 | -419.176761 | 81.083192 |
+| A_completed | R2 | 0 | low | upper | hendren_a | 445.191139 | 710.045293 | -364.586480 | 99.732326 |
+| A_completed | R2 | 0 | low | upper | hendren_b | 450.679696 | 710.045293 | -359.097923 | 99.732326 |
+| A_completed | R2 | 0 | low | upper | log_a | 2843.960418 | 2275.299812 | -541.559944 | 1110.220550 |
+| A_completed | R2 | 0 | low | upper | log_b | 2466.681255 | 2275.299812 | -918.839107 | 1110.220550 |
+| A_completed | R2 | 0 | high | upper | equal | 433.977752 | 716.232596 | -401.060094 | 118.805251 |
+| A_completed | R2 | 0 | high | upper | equal_lambda_1.16 | 381.084512 | 716.232596 | -455.935467 | 120.787383 |
+| A_completed | R2 | 0 | high | upper | equal_lambda_1.5 | 268.686378 | 716.232596 | -572.545633 | 124.999415 |
+| A_completed | R2 | 0 | high | upper | equal_lambda_hendren_a | 339.291327 | 716.232596 | -499.294818 | 122.353550 |
+| A_completed | R2 | 0 | high | upper | hendren_a | 447.735547 | 740.228396 | -429.118888 | 136.626039 |
+| A_completed | R2 | 0 | high | upper | hendren_b | 454.600994 | 740.228396 | -422.253441 | 136.626039 |
+| A_completed | R2 | 0 | high | upper | log_a | 3124.669487 | 2335.721868 | -605.344618 | 1394.292237 |
+| A_completed | R2 | 0 | high | upper | log_b | 2652.743974 | 2335.721868 | -1077.270131 | 1394.292237 |
+| A_completed | R3 | 1 | low | zero | equal | 170.947451 | 570.936793 | -340.643363 | -59.345979 |
+| A_completed | R3 | 1 | low | zero | equal_lambda_1.16 | 100.555466 | 570.936793 | -384.513283 | -85.868044 |
+| A_completed | R3 | 1 | low | zero | equal_lambda_1.5 | -49.027500 | 570.936793 | -477.736863 | -142.227431 |
+| A_completed | R3 | 1 | low | zero | equal_lambda_hendren_a | 44.935784 | 570.936793 | -419.176761 | -106.824248 |
+| A_completed | R3 | 1 | low | zero | hendren_a | 160.460124 | 593.294480 | -364.586480 | -68.247876 |
+| A_completed | R3 | 1 | low | zero | hendren_b | 165.948681 | 593.294480 | -359.097923 | -68.247876 |
+| A_completed | R3 | 1 | low | zero | log_a | 711.619872 | 1567.314278 | -541.559944 | -314.134462 |
+| A_completed | R3 | 1 | low | zero | log_b | 334.340710 | 1567.314278 | -918.839107 | -314.134462 |
+| A_completed | R3 | 1 | high | zero | equal | 178.124010 | 572.207959 | -401.060094 | 6.976146 |
+| A_completed | R3 | 1 | high | zero | equal_lambda_1.16 | 107.338113 | 572.207959 | -455.935467 | -8.934379 |
+| A_completed | R3 | 1 | high | zero | equal_lambda_1.5 | -43.081917 | 572.207959 | -572.545633 | -42.744243 |
+| A_completed | R3 | 1 | high | zero | equal_lambda_hendren_a | 51.407184 | 572.207959 | -499.294818 | -21.505957 |
+| A_completed | R3 | 1 | high | zero | hendren_a | 173.537529 | 594.633849 | -429.118888 | 8.022567 |
+| A_completed | R3 | 1 | high | zero | hendren_b | 180.402975 | 594.633849 | -422.253441 | 8.022567 |
+| A_completed | R3 | 1 | high | zero | log_a | 1289.622207 | 1569.444925 | -605.344618 | 325.521900 |
+| A_completed | R3 | 1 | high | zero | log_b | 817.696694 | 1569.444925 | -1077.270131 | 325.521900 |
+| A_completed | R3 | 1 | low | upper | equal | 556.131642 | 814.931776 | -340.643363 | 81.843228 |
+| A_completed | R3 | 1 | low | upper | equal_lambda_1.16 | 508.329931 | 814.931776 | -384.513283 | 77.911437 |
+| A_completed | R3 | 1 | low | upper | equal_lambda_1.5 | 406.751294 | 814.931776 | -477.736863 | 69.556381 |
+| A_completed | R3 | 1 | low | upper | equal_lambda_hendren_a | 470.559778 | 814.931776 | -419.176761 | 74.804763 |
+| A_completed | R3 | 1 | low | upper | hendren_a | 570.672937 | 841.139705 | -364.586480 | 94.119713 |
+| A_completed | R3 | 1 | low | upper | hendren_b | 576.161494 | 841.139705 | -359.097923 | 94.119713 |
+| A_completed | R3 | 1 | low | upper | log_a | 2989.505449 | 2483.473657 | -541.559944 | 1047.591736 |
+| A_completed | R3 | 1 | low | upper | log_b | 2612.226286 | 2483.473657 | -918.839107 | 1047.591736 |
+| A_completed | R3 | 1 | high | upper | equal | 535.303060 | 816.195035 | -401.060094 | 120.168119 |
+| A_completed | R3 | 1 | high | upper | equal_lambda_1.16 | 482.627879 | 816.195035 | -455.935467 | 122.368311 |
+| A_completed | R3 | 1 | high | upper | equal_lambda_1.5 | 370.693120 | 816.195035 | -572.545633 | 127.043717 |
+| A_completed | R3 | 1 | high | upper | equal_lambda_hendren_a | 441.006992 | 816.195035 | -499.294818 | 124.106775 |
+| A_completed | R3 | 1 | high | upper | hendren_a | 551.545491 | 842.471042 | -429.118888 | 138.193337 |
+| A_completed | R3 | 1 | high | upper | hendren_b | 558.410938 | 842.471042 | -422.253441 | 138.193337 |
+| A_completed | R3 | 1 | high | upper | log_a | 3297.463983 | 2485.585156 | -605.344618 | 1417.223445 |
+| A_completed | R3 | 1 | high | upper | log_b | 2825.538470 | 2485.585156 | -1077.270131 | 1417.223445 |
+| A_completed | R3 | 0.5 | low | zero | equal | 158.219703 | 570.936793 | -340.643363 | -72.073727 |
+| A_completed | R3 | 0.5 | low | zero | equal_lambda_1.16 | 85.791279 | 570.936793 | -384.513283 | -100.632231 |
+| A_completed | R3 | 0.5 | low | zero | equal_lambda_1.5 | -68.119123 | 570.936793 | -477.736863 | -161.319053 |
+| A_completed | R3 | 0.5 | low | zero | equal_lambda_hendren_a | 28.562519 | 570.936793 | -419.176761 | -123.197513 |
+| A_completed | R3 | 0.5 | low | zero | hendren_a | 145.823214 | 593.294480 | -364.586480 | -82.884786 |
+| A_completed | R3 | 0.5 | low | zero | hendren_b | 151.311770 | 593.294480 | -359.097923 | -82.884786 |
+| A_completed | R3 | 0.5 | low | zero | log_a | 588.864682 | 1567.314278 | -541.559944 | -436.889652 |
+| A_completed | R3 | 0.5 | low | zero | log_b | 211.585519 | 1567.314278 | -918.839107 | -436.889652 |
+| A_completed | R3 | 0.5 | high | zero | equal | 165.396262 | 572.207959 | -401.060094 | -5.751603 |
+| A_completed | R3 | 0.5 | high | zero | equal_lambda_1.16 | 92.573925 | 572.207959 | -455.935467 | -23.698567 |
+| A_completed | R3 | 0.5 | high | zero | equal_lambda_1.5 | -62.173540 | 572.207959 | -572.545633 | -61.835866 |
+| A_completed | R3 | 0.5 | high | zero | equal_lambda_hendren_a | 35.033919 | 572.207959 | -499.294818 | -37.879222 |
+| A_completed | R3 | 0.5 | high | zero | hendren_a | 158.900618 | 594.633849 | -429.118888 | -6.614343 |
+| A_completed | R3 | 0.5 | high | zero | hendren_b | 165.766065 | 594.633849 | -422.253441 | -6.614343 |
+| A_completed | R3 | 0.5 | high | zero | log_a | 1166.867016 | 1569.444925 | -605.344618 | 202.766710 |
+| A_completed | R3 | 0.5 | high | zero | log_b | 694.941503 | 1569.444925 | -1077.270131 | 202.766710 |
+| A_completed | R3 | 0.5 | low | upper | equal | 543.403894 | 814.931776 | -340.643363 | 69.115480 |
+| A_completed | R3 | 0.5 | low | upper | equal_lambda_1.16 | 493.565743 | 814.931776 | -384.513283 | 63.147249 |
+| A_completed | R3 | 0.5 | low | upper | equal_lambda_1.5 | 387.659672 | 814.931776 | -477.736863 | 50.464758 |
+| A_completed | R3 | 0.5 | low | upper | equal_lambda_hendren_a | 454.186513 | 814.931776 | -419.176761 | 58.431498 |
+| A_completed | R3 | 0.5 | low | upper | hendren_a | 556.036026 | 841.139705 | -364.586480 | 79.482802 |
+| A_completed | R3 | 0.5 | low | upper | hendren_b | 561.524583 | 841.139705 | -359.097923 | 79.482802 |
+| A_completed | R3 | 0.5 | low | upper | log_a | 2866.750258 | 2483.473657 | -541.559944 | 924.836546 |
+| A_completed | R3 | 0.5 | low | upper | log_b | 2489.471096 | 2483.473657 | -918.839107 | 924.836546 |
+| A_completed | R3 | 0.5 | high | upper | equal | 522.575312 | 816.195035 | -401.060094 | 107.440371 |
+| A_completed | R3 | 0.5 | high | upper | equal_lambda_1.16 | 467.863692 | 816.195035 | -455.935467 | 107.604123 |
+| A_completed | R3 | 0.5 | high | upper | equal_lambda_1.5 | 351.601498 | 816.195035 | -572.545633 | 107.952095 |
+| A_completed | R3 | 0.5 | high | upper | equal_lambda_hendren_a | 424.633727 | 816.195035 | -499.294818 | 107.733510 |
+| A_completed | R3 | 0.5 | high | upper | hendren_a | 536.908581 | 842.471042 | -429.118888 | 123.556427 |
+| A_completed | R3 | 0.5 | high | upper | hendren_b | 543.774028 | 842.471042 | -422.253441 | 123.556427 |
+| A_completed | R3 | 0.5 | high | upper | log_a | 3174.708792 | 2485.585156 | -605.344618 | 1294.468255 |
+| A_completed | R3 | 0.5 | high | upper | log_b | 2702.783279 | 2485.585156 | -1077.270131 | 1294.468255 |
+| A_completed | R3 | 0 | low | zero | equal | 145.491955 | 570.936793 | -340.643363 | -84.801475 |
+| A_completed | R3 | 0 | low | zero | equal_lambda_1.16 | 71.027091 | 570.936793 | -384.513283 | -115.396419 |
+| A_completed | R3 | 0 | low | zero | equal_lambda_1.5 | -87.210745 | 570.936793 | -477.736863 | -180.410675 |
+| A_completed | R3 | 0 | low | zero | equal_lambda_hendren_a | 12.189254 | 570.936793 | -419.176761 | -139.570778 |
+| A_completed | R3 | 0 | low | zero | hendren_a | 131.186303 | 593.294480 | -364.586480 | -97.521697 |
+| A_completed | R3 | 0 | low | zero | hendren_b | 136.674860 | 593.294480 | -359.097923 | -97.521697 |
+| A_completed | R3 | 0 | low | zero | log_a | 466.109491 | 1567.314278 | -541.559944 | -559.644843 |
+| A_completed | R3 | 0 | low | zero | log_b | 88.830329 | 1567.314278 | -918.839107 | -559.644843 |
+| A_completed | R3 | 0 | high | zero | equal | 152.668514 | 572.207959 | -401.060094 | -18.479351 |
+| A_completed | R3 | 0 | high | zero | equal_lambda_1.16 | 77.809737 | 572.207959 | -455.935467 | -38.462755 |
+| A_completed | R3 | 0 | high | zero | equal_lambda_1.5 | -81.265162 | 572.207959 | -572.545633 | -80.927488 |
+| A_completed | R3 | 0 | high | zero | equal_lambda_hendren_a | 18.660654 | 572.207959 | -499.294818 | -54.252487 |
+| A_completed | R3 | 0 | high | zero | hendren_a | 144.263708 | 594.633849 | -429.118888 | -21.251253 |
+| A_completed | R3 | 0 | high | zero | hendren_b | 151.129155 | 594.633849 | -422.253441 | -21.251253 |
+| A_completed | R3 | 0 | high | zero | log_a | 1044.111826 | 1569.444925 | -605.344618 | 80.011519 |
+| A_completed | R3 | 0 | high | zero | log_b | 572.186313 | 1569.444925 | -1077.270131 | 80.011519 |
+| A_completed | R3 | 0 | low | upper | equal | 530.676145 | 814.931776 | -340.643363 | 56.387732 |
+| A_completed | R3 | 0 | low | upper | equal_lambda_1.16 | 478.801555 | 814.931776 | -384.513283 | 48.383061 |
+| A_completed | R3 | 0 | low | upper | equal_lambda_1.5 | 368.568050 | 814.931776 | -477.736863 | 31.373136 |
+| A_completed | R3 | 0 | low | upper | equal_lambda_hendren_a | 437.813248 | 814.931776 | -419.176761 | 42.058233 |
+| A_completed | R3 | 0 | low | upper | hendren_a | 541.399116 | 841.139705 | -364.586480 | 64.845892 |
+| A_completed | R3 | 0 | low | upper | hendren_b | 546.887673 | 841.139705 | -359.097923 | 64.845892 |
+| A_completed | R3 | 0 | low | upper | log_a | 2743.995068 | 2483.473657 | -541.559944 | 802.081355 |
+| A_completed | R3 | 0 | low | upper | log_b | 2366.715905 | 2483.473657 | -918.839107 | 802.081355 |
+| A_completed | R3 | 0 | high | upper | equal | 509.847564 | 816.195035 | -401.060094 | 94.712623 |
+| A_completed | R3 | 0 | high | upper | equal_lambda_1.16 | 453.099504 | 816.195035 | -455.935467 | 92.839935 |
+| A_completed | R3 | 0 | high | upper | equal_lambda_1.5 | 332.509876 | 816.195035 | -572.545633 | 88.860473 |
+| A_completed | R3 | 0 | high | upper | equal_lambda_hendren_a | 408.260462 | 816.195035 | -499.294818 | 91.360245 |
+| A_completed | R3 | 0 | high | upper | hendren_a | 522.271671 | 842.471042 | -429.118888 | 108.919516 |
+| A_completed | R3 | 0 | high | upper | hendren_b | 529.137117 | 842.471042 | -422.253441 | 108.919516 |
+| A_completed | R3 | 0 | high | upper | log_a | 3051.953602 | 2485.585156 | -605.344618 | 1171.713064 |
+| A_completed | R3 | 0 | high | upper | log_b | 2580.028089 | 2485.585156 | -1077.270131 | 1171.713064 |
+| B_counted_only_beside | R1 | 1 | low | zero | equal | partial scope | 613.568517 | -340.643363 | -21.125080 |
+| B_counted_only_beside | R1 | 1 | low | zero | equal_lambda_1.16 | partial scope | 613.568517 | -384.513283 | -41.531801 |
+| B_counted_only_beside | R1 | 1 | low | zero | equal_lambda_1.5 | partial scope | 613.568517 | -477.736863 | -84.896082 |
+| B_counted_only_beside | R1 | 1 | low | zero | equal_lambda_hendren_a | partial scope | 613.568517 | -419.176761 | -57.656013 |
+| B_counted_only_beside | R1 | 1 | low | zero | hendren_a | partial scope | 638.405611 | -364.586480 | -24.293842 |
+| B_counted_only_beside | R1 | 1 | low | zero | hendren_b | partial scope | 638.405611 | -359.097923 | -24.293842 |
+| B_counted_only_beside | R1 | 1 | low | zero | log_a | partial scope | 1750.874416 | -541.559944 | 54.494279 |
+| B_counted_only_beside | R1 | 1 | low | zero | log_b | partial scope | 1750.874416 | -918.839107 | 54.494279 |
+| B_counted_only_beside | R1 | 1 | high | zero | equal | partial scope | 614.572572 | -401.060094 | 37.331295 |
+| B_counted_only_beside | R1 | 1 | high | zero | equal_lambda_1.16 | partial scope | 614.572572 | -455.935467 | 26.277594 |
+| B_counted_only_beside | R1 | 1 | high | zero | equal_lambda_1.5 | partial scope | 614.572572 | -572.545633 | 2.788480 |
+| B_counted_only_beside | R1 | 1 | high | zero | equal_lambda_hendren_a | partial scope | 614.572572 | -499.294818 | 17.543598 |
+| B_counted_only_beside | R1 | 1 | high | zero | hendren_a | partial scope | 639.465497 | -429.118888 | 42.930989 |
+| B_counted_only_beside | R1 | 1 | high | zero | hendren_b | partial scope | 639.465497 | -422.253441 | 42.930989 |
+| B_counted_only_beside | R1 | 1 | high | zero | log_a | partial scope | 1752.527141 | -605.344618 | 618.287916 |
+| B_counted_only_beside | R1 | 1 | high | zero | log_b | partial scope | 1752.527141 | -1077.270131 | 618.287916 |
+| B_counted_only_beside | R1 | 1 | low | upper | equal | partial scope | 844.488817 | -340.643363 | 120.064127 |
+| B_counted_only_beside | R1 | 1 | low | upper | equal_lambda_1.16 | partial scope | 844.488817 | -384.513283 | 122.247680 |
+| B_counted_only_beside | R1 | 1 | low | upper | equal_lambda_1.5 | partial scope | 844.488817 | -477.736863 | 126.887729 |
+| B_counted_only_beside | R1 | 1 | low | upper | equal_lambda_hendren_a | partial scope | 844.488817 | -419.176761 | 123.972997 |
+| B_counted_only_beside | R1 | 1 | low | upper | hendren_a | partial scope | 872.914413 | -364.586480 | 138.073747 |
+| B_counted_only_beside | R1 | 1 | low | upper | hendren_b | partial scope | 872.914413 | -359.097923 | 138.073747 |
+| B_counted_only_beside | R1 | 1 | low | upper | log_a | partial scope | 2628.508130 | -541.559944 | 1416.220477 |
+| B_counted_only_beside | R1 | 1 | low | upper | log_b | partial scope | 2628.508130 | -918.839107 | 1416.220477 |
+| B_counted_only_beside | R1 | 1 | high | upper | equal | partial scope | 845.497690 | -401.060094 | 150.523268 |
+| B_counted_only_beside | R1 | 1 | high | upper | equal_lambda_1.16 | partial scope | 845.497690 | -455.935467 | 157.580284 |
+| B_counted_only_beside | R1 | 1 | high | upper | equal_lambda_1.5 | partial scope | 845.497690 | -572.545633 | 172.576441 |
+| B_counted_only_beside | R1 | 1 | high | upper | equal_lambda_hendren_a | partial scope | 845.497690 | -499.294818 | 163.156330 |
+| B_counted_only_beside | R1 | 1 | high | upper | hendren_a | partial scope | 873.979191 | -429.118888 | 173.101759 |
+| B_counted_only_beside | R1 | 1 | high | upper | hendren_b | partial scope | 873.979191 | -422.253441 | 173.101759 |
+| B_counted_only_beside | R1 | 1 | high | upper | log_a | partial scope | 2630.172689 | -605.344618 | 1709.989462 |
+| B_counted_only_beside | R1 | 1 | high | upper | log_b | partial scope | 2630.172689 | -1077.270131 | 1709.989462 |
+| B_counted_only_beside | R2 | 1 | low | zero | equal | partial scope | 427.031339 | -340.643363 | -11.973921 |
+| B_counted_only_beside | R2 | 1 | low | zero | equal_lambda_1.16 | partial scope | 427.031339 | -384.513283 | -30.916456 |
+| B_counted_only_beside | R2 | 1 | low | zero | equal_lambda_1.5 | partial scope | 427.031339 | -477.736863 | -71.169343 |
+| B_counted_only_beside | R2 | 1 | low | zero | equal_lambda_hendren_a | partial scope | 427.031339 | -419.176761 | -45.883754 |
+| B_counted_only_beside | R2 | 1 | low | zero | hendren_a | partial scope | 445.192921 | -364.586480 | -13.770009 |
+| B_counted_only_beside | R2 | 1 | low | zero | hendren_b | partial scope | 445.192921 | -359.097923 | -13.770009 |
+| B_counted_only_beside | R2 | 1 | low | zero | log_a | partial scope | 1326.477390 | -541.559944 | 236.283013 |
+| B_counted_only_beside | R2 | 1 | low | zero | log_b | partial scope | 1326.477390 | -918.839107 | 236.283013 |
+| B_counted_only_beside | R2 | 1 | high | zero | equal | partial scope | 454.884816 | -401.060094 | 44.844117 |
+| B_counted_only_beside | R2 | 1 | high | zero | equal_lambda_1.16 | partial scope | 454.884816 | -455.935467 | 34.992468 |
+| B_counted_only_beside | R2 | 1 | high | zero | equal_lambda_1.5 | partial scope | 454.884816 | -572.545633 | 14.057714 |
+| B_counted_only_beside | R2 | 1 | high | zero | equal_lambda_hendren_a | partial scope | 454.884816 | -499.294818 | 27.208264 |
+| B_counted_only_beside | R2 | 1 | high | zero | hendren_a | partial scope | 473.991863 | -429.118888 | 51.570735 |
+| B_counted_only_beside | R2 | 1 | high | zero | hendren_b | partial scope | 473.991863 | -422.253441 | 51.570735 |
+| B_counted_only_beside | R2 | 1 | high | zero | log_a | partial scope | 1384.696461 | -605.344618 | 739.389216 |
+| B_counted_only_beside | R2 | 1 | high | zero | log_b | partial scope | 1384.696461 | -1077.270131 | 739.389216 |
+| B_counted_only_beside | R2 | 1 | low | upper | equal | partial scope | 650.187801 | -340.643363 | 112.179258 |
+| B_counted_only_beside | R2 | 1 | low | upper | equal_lambda_1.16 | partial scope | 650.187801 | -384.513283 | 113.101232 |
+| B_counted_only_beside | R2 | 1 | low | upper | equal_lambda_1.5 | partial scope | 650.187801 | -477.736863 | 115.060426 |
+| B_counted_only_beside | R2 | 1 | low | upper | equal_lambda_hendren_a | partial scope | 650.187801 | -419.176761 | 113.829722 |
+| B_counted_only_beside | R2 | 1 | low | upper | hendren_a | partial scope | 671.817233 | -364.586480 | 129.006147 |
+| B_counted_only_beside | R2 | 1 | low | upper | hendren_b | partial scope | 671.817233 | -359.097923 | 129.006147 |
+| B_counted_only_beside | R2 | 1 | low | upper | log_a | partial scope | 2171.396026 | -541.559944 | 1335.621117 |
+| B_counted_only_beside | R2 | 1 | low | upper | log_b | partial scope | 2171.396026 | -918.839107 | 1335.621117 |
+| B_counted_only_beside | R2 | 1 | high | upper | equal | partial scope | 678.046112 | -401.060094 | 144.260747 |
+| B_counted_only_beside | R2 | 1 | high | upper | equal_lambda_1.16 | partial scope | 678.046112 | -455.935467 | 150.315759 |
+| B_counted_only_beside | R2 | 1 | high | upper | equal_lambda_1.5 | partial scope | 678.046112 | -572.545633 | 163.182659 |
+| B_counted_only_beside | R2 | 1 | high | upper | equal_lambda_hendren_a | partial scope | 678.046112 | -499.294818 | 155.100080 |
+| B_counted_only_beside | R2 | 1 | high | upper | hendren_a | partial scope | 700.621085 | -429.118888 | 165.899859 |
+| B_counted_only_beside | R2 | 1 | high | upper | hendren_b | partial scope | 700.621085 | -422.253441 | 165.899859 |
+| B_counted_only_beside | R2 | 1 | high | upper | log_a | partial scope | 2229.627104 | -605.344618 | 1619.692804 |
+| B_counted_only_beside | R2 | 1 | high | upper | log_b | partial scope | 2229.627104 | -1077.270131 | 1619.692804 |
+| B_counted_only_beside | R3 | 1 | low | zero | equal | partial scope | 540.174971 | -340.643363 | -59.345979 |
+| B_counted_only_beside | R3 | 1 | low | zero | equal_lambda_1.16 | partial scope | 540.174971 | -384.513283 | -85.868044 |
+| B_counted_only_beside | R3 | 1 | low | zero | equal_lambda_1.5 | partial scope | 540.174971 | -477.736863 | -142.227431 |
+| B_counted_only_beside | R3 | 1 | low | zero | equal_lambda_hendren_a | partial scope | 540.174971 | -419.176761 | -106.824248 |
+| B_counted_only_beside | R3 | 1 | low | zero | hendren_a | partial scope | 561.200738 | -364.586480 | -68.247876 |
+| B_counted_only_beside | R3 | 1 | low | zero | hendren_b | partial scope | 561.200738 | -359.097923 | -68.247876 |
+| B_counted_only_beside | R3 | 1 | low | zero | log_a | partial scope | 1491.768715 | -541.559944 | -314.134462 |
+| B_counted_only_beside | R3 | 1 | low | zero | log_b | partial scope | 1491.768715 | -918.839107 | -314.134462 |
+| B_counted_only_beside | R3 | 1 | high | zero | equal | partial scope | 541.179025 | -401.060094 | 6.976146 |
+| B_counted_only_beside | R3 | 1 | high | zero | equal_lambda_1.16 | partial scope | 541.179025 | -455.935467 | -8.934379 |
+| B_counted_only_beside | R3 | 1 | high | zero | equal_lambda_1.5 | partial scope | 541.179025 | -572.545633 | -42.744243 |
+| B_counted_only_beside | R3 | 1 | high | zero | equal_lambda_hendren_a | partial scope | 541.179025 | -499.294818 | -21.505957 |
+| B_counted_only_beside | R3 | 1 | high | zero | hendren_a | partial scope | 562.260623 | -429.118888 | 8.022567 |
+| B_counted_only_beside | R3 | 1 | high | zero | hendren_b | partial scope | 562.260623 | -422.253441 | 8.022567 |
+| B_counted_only_beside | R3 | 1 | high | zero | log_a | partial scope | 1493.421441 | -605.344618 | 325.521900 |
+| B_counted_only_beside | R3 | 1 | high | zero | log_b | partial scope | 1493.421441 | -1077.270131 | 325.521900 |
+| B_counted_only_beside | R3 | 1 | low | upper | equal | partial scope | 771.095271 | -340.643363 | 81.843228 |
+| B_counted_only_beside | R3 | 1 | low | upper | equal_lambda_1.16 | partial scope | 771.095271 | -384.513283 | 77.911437 |
+| B_counted_only_beside | R3 | 1 | low | upper | equal_lambda_1.5 | partial scope | 771.095271 | -477.736863 | 69.556381 |
+| B_counted_only_beside | R3 | 1 | low | upper | equal_lambda_hendren_a | partial scope | 771.095271 | -419.176761 | 74.804763 |
+| B_counted_only_beside | R3 | 1 | low | upper | hendren_a | partial scope | 795.709540 | -364.586480 | 94.119713 |
+| B_counted_only_beside | R3 | 1 | low | upper | hendren_b | partial scope | 795.709540 | -359.097923 | 94.119713 |
+| B_counted_only_beside | R3 | 1 | low | upper | log_a | partial scope | 2369.402429 | -541.559944 | 1047.591736 |
+| B_counted_only_beside | R3 | 1 | low | upper | log_b | partial scope | 2369.402429 | -918.839107 | 1047.591736 |
+| B_counted_only_beside | R3 | 1 | high | upper | equal | partial scope | 772.104144 | -401.060094 | 120.168119 |
+| B_counted_only_beside | R3 | 1 | high | upper | equal_lambda_1.16 | partial scope | 772.104144 | -455.935467 | 122.368311 |
+| B_counted_only_beside | R3 | 1 | high | upper | equal_lambda_1.5 | partial scope | 772.104144 | -572.545633 | 127.043717 |
+| B_counted_only_beside | R3 | 1 | high | upper | equal_lambda_hendren_a | partial scope | 772.104144 | -499.294818 | 124.106775 |
+| B_counted_only_beside | R3 | 1 | high | upper | hendren_a | partial scope | 796.774318 | -429.118888 | 138.193337 |
+| B_counted_only_beside | R3 | 1 | high | upper | hendren_b | partial scope | 796.774318 | -422.253441 | 138.193337 |
+| B_counted_only_beside | R3 | 1 | high | upper | log_a | partial scope | 2371.066988 | -605.344618 | 1417.223445 |
+| B_counted_only_beside | R3 | 1 | high | upper | log_b | partial scope | 2371.066988 | -1077.270131 | 1417.223445 |
 
 ## Change from frozen published v7 readings
 
@@ -403,101 +403,101 @@ This bridge changes pension basis and incorporates the adopted fixes. It is not 
 
 | Reading | End | G3+ | Weights | v7 world | Cash world | Change |
 |---|---|---|---|---:|---:|---:|
-| R1 | low | zero | equal | 472.319768 | 318.887066 | -153.432702 |
-| R1 | low | zero | equal_lambda_1.16 | 429.898521 | 254.610425 | -175.288096 |
-| R1 | low | zero | equal_lambda_1.5 | 339.753371 | 118.022564 | -221.730807 |
-| R1 | low | zero | equal_lambda_hendren_a | 396.411697 | 203.822734 | -192.588963 |
-| R1 | low | zero | hendren_a | 492.867340 | 318.141834 | -174.725506 |
-| R1 | low | zero | hendren_b | 497.870930 | 323.630390 | -174.240539 |
-| R1 | low | zero | log_a | 2622.355031 | 1436.510679 | -1185.844352 |
-| R1 | low | zero | log_b | 2278.241062 | 1059.231517 | -1219.009545 |
-| R1 | high | zero | equal | 354.691471 | 260.859036 | -93.832434 |
-| R1 | high | zero | equal_lambda_1.16 | 298.776096 | 194.929963 | -103.846133 |
-| R1 | high | zero | equal_lambda_1.5 | 179.955926 | 54.830684 | -125.125243 |
-| R1 | high | zero | equal_lambda_hendren_a | 254.637170 | 142.836616 | -111.800554 |
-| R1 | high | zero | hendren_a | 371.959940 | 265.114979 | -106.844960 |
-| R1 | high | zero | hendren_b | 378.441837 | 271.980426 | -106.461410 |
-| R1 | high | zero | log_a | 2431.854215 | 1797.975555 | -633.878660 |
-| R1 | high | zero | log_b | 1986.072050 | 1326.050042 | -660.022008 |
-| R1 | low | upper | equal | 771.502159 | 704.071256 | -67.430903 |
-| R1 | low | upper | equal_lambda_1.16 | 743.302064 | 662.384889 | -80.917175 |
-| R1 | low | upper | equal_lambda_1.5 | 683.376862 | 573.801359 | -109.575504 |
-| R1 | low | upper | equal_lambda_hendren_a | 721.041247 | 629.446728 | -91.594519 |
-| R1 | low | upper | hendren_a | 808.772100 | 728.354646 | -80.417454 |
-| R1 | low | upper | hendren_b | 813.775690 | 733.843203 | -79.932487 |
-| R1 | low | upper | log_a | 4187.932681 | 3714.396256 | -473.536426 |
-| R1 | low | upper | log_b | 3843.818712 | 3337.117093 | -506.701619 |
-| R1 | high | upper | equal | 653.873862 | 618.038087 | -35.835775 |
-| R1 | high | upper | equal_lambda_1.16 | 612.179640 | 570.219730 | -41.959910 |
-| R1 | high | upper | equal_lambda_1.5 | 523.579417 | 468.605721 | -54.973696 |
-| R1 | high | upper | equal_lambda_hendren_a | 579.266720 | 532.436424 | -46.830296 |
-| R1 | high | upper | hendren_a | 687.864700 | 643.122942 | -44.741758 |
-| R1 | high | upper | hendren_b | 694.346597 | 649.988389 | -44.358208 |
-| R1 | high | upper | log_a | 3997.431865 | 3805.817331 | -191.614534 |
-| R1 | high | upper | log_b | 3551.649700 | 3333.891818 | -217.757882 |
-| R2 | low | zero | equal | 245.243646 | 132.582518 | -112.661128 |
-| R2 | low | zero | equal_lambda_1.16 | 196.101224 | 69.770063 | -126.331161 |
-| R2 | low | zero | equal_lambda_1.5 | 91.673577 | -63.706404 | -155.379981 |
-| R2 | low | zero | equal_lambda_hendren_a | 157.308785 | 20.139287 | -137.169498 |
-| R2 | low | zero | hendren_a | 252.751032 | 126.161937 | -126.589095 |
-| R2 | low | zero | hendren_b | 257.754622 | 131.650494 | -126.104128 |
-| R2 | low | zero | log_a | 1963.694259 | 1176.317192 | -787.377067 |
-| R2 | low | zero | log_b | 1619.580289 | 799.038029 | -820.542260 |
-| R2 | high | zero | equal | 155.365891 | 100.851303 | -54.514588 |
-| R2 | high | zero | equal_lambda_1.16 | 92.729341 | 36.124282 | -56.605060 |
-| R2 | high | zero | equal_lambda_1.5 | -40.373326 | -101.420638 | -61.047312 |
-| R2 | high | zero | equal_lambda_hendren_a | 43.284800 | -15.019274 | -58.304074 |
-| R2 | high | zero | hendren_a | 160.527744 | 100.117571 | -60.410174 |
-| R2 | high | zero | hendren_b | 167.009641 | 106.983017 | -60.026624 |
-| R2 | high | zero | log_a | 1831.601325 | 1535.414000 | -296.187325 |
-| R2 | high | zero | log_b | 1385.819160 | 1063.488487 | -322.330673 |
-| R2 | low | upper | equal | 544.426038 | 492.531886 | -51.894152 |
-| R2 | low | upper | equal_lambda_1.16 | 509.504767 | 449.583940 | -59.920828 |
-| R2 | low | upper | equal_lambda_1.5 | 435.297068 | 358.319553 | -76.977515 |
-| R2 | low | upper | equal_lambda_hendren_a | 481.938335 | 415.648952 | -66.289384 |
-| R2 | low | upper | hendren_a | 568.655793 | 508.455146 | -60.200647 |
-| R2 | low | upper | hendren_b | 573.659382 | 513.943703 | -59.715680 |
-| R2 | low | upper | log_a | 3610.216659 | 3157.301210 | -452.915449 |
-| R2 | low | upper | log_b | 3266.102690 | 2780.022048 | -486.080642 |
-| R2 | high | upper | equal | 454.548282 | 436.056187 | -18.492096 |
-| R2 | high | upper | equal_lambda_1.16 | 406.132885 | 387.235826 | -18.897059 |
-| R2 | high | upper | equal_lambda_1.5 | 303.250165 | 283.492560 | -19.757605 |
-| R2 | high | upper | equal_lambda_hendren_a | 367.914350 | 348.660795 | -19.253555 |
-| R2 | high | upper | hendren_a | 476.432505 | 453.955687 | -22.476817 |
-| R2 | high | upper | hendren_b | 482.914401 | 460.821134 | -22.093267 |
-| R2 | high | upper | log_a | 3478.123725 | 3297.344075 | -180.779650 |
-| R2 | high | upper | log_b | 3032.341560 | 2825.418562 | -206.922998 |
-| R3 | low | zero | equal | 377.429577 | 204.874084 | -172.555494 |
-| R3 | low | zero | equal_lambda_1.16 | 330.682191 | 134.482099 | -196.200091 |
-| R3 | low | zero | equal_lambda_1.5 | 231.343994 | -15.100867 | -246.444861 |
-| R3 | low | zero | equal_lambda_hendren_a | 293.780364 | 78.862417 | -214.917947 |
-| R3 | low | zero | hendren_a | 390.398527 | 194.428759 | -195.969768 |
-| R3 | low | zero | hendren_b | 395.402117 | 199.917316 | -195.484801 |
-| R3 | low | zero | log_a | 2144.005890 | 799.568015 | -1344.437875 |
-| R3 | low | zero | log_b | 1799.891921 | 422.288852 | -1377.603068 |
-| R3 | high | zero | equal | 259.801280 | 154.711805 | -105.089475 |
-| R3 | high | zero | equal_lambda_1.16 | 199.559766 | 83.925908 | -115.633858 |
-| R3 | high | zero | equal_lambda_1.5 | 71.546549 | -66.494123 | -138.040671 |
-| R3 | high | zero | equal_lambda_hendren_a | 152.005837 | 27.994978 | -124.010858 |
-| R3 | high | zero | hendren_a | 269.491127 | 150.447518 | -119.043609 |
-| R3 | high | zero | hendren_b | 275.973024 | 157.312964 | -118.660059 |
-| R3 | high | zero | log_a | 1953.505074 | 1236.895615 | -716.609459 |
-| R3 | high | zero | log_b | 1507.722909 | 764.970102 | -742.752807 |
-| R3 | low | upper | equal | 676.611969 | 590.058275 | -86.553694 |
-| R3 | low | upper | equal_lambda_1.16 | 644.085734 | 542.256563 | -101.829170 |
-| R3 | low | upper | equal_lambda_1.5 | 574.967485 | 440.677927 | -134.289557 |
-| R3 | low | upper | equal_lambda_hendren_a | 618.409914 | 504.486411 | -113.923503 |
-| R3 | low | upper | hendren_a | 706.303287 | 604.641572 | -101.661715 |
-| R3 | low | upper | hendren_b | 711.306877 | 610.130129 | -101.176748 |
-| R3 | low | upper | log_a | 3709.583540 | 3077.453591 | -632.129949 |
-| R3 | low | upper | log_b | 3365.469571 | 2700.174429 | -665.295142 |
-| R3 | high | upper | equal | 558.983671 | 511.890855 | -47.092816 |
-| R3 | high | upper | equal_lambda_1.16 | 512.963309 | 459.215674 | -53.747635 |
-| R3 | high | upper | equal_lambda_1.5 | 415.170040 | 347.280915 | -67.889125 |
-| R3 | high | upper | equal_lambda_hendren_a | 476.635387 | 417.594787 | -59.040600 |
-| R3 | high | upper | hendren_a | 585.395887 | 528.455480 | -56.940407 |
-| R3 | high | upper | hendren_b | 591.877784 | 535.320927 | -56.556857 |
-| R3 | high | upper | log_a | 3519.082724 | 3244.737391 | -274.345333 |
-| R3 | high | upper | log_b | 3073.300559 | 2772.811878 | -300.488681 |
+| R1 | low | zero | equal | 472.319768 | 284.960433 | -187.359335 |
+| R1 | low | zero | equal_lambda_1.16 | 429.898521 | 220.683792 | -209.214729 |
+| R1 | low | zero | equal_lambda_1.5 | 339.753371 | 84.095931 | -255.657440 |
+| R1 | low | zero | equal_lambda_hendren_a | 396.411697 | 169.896101 | -226.515596 |
+| R1 | low | zero | hendren_a | 492.867340 | 284.173198 | -208.694142 |
+| R1 | low | zero | hendren_b | 497.870930 | 289.661755 | -208.209175 |
+| R1 | low | zero | log_a | 2622.355031 | 1348.562536 | -1273.792495 |
+| R1 | low | zero | log_b | 2278.241062 | 971.283374 | -1306.957688 |
+| R1 | high | zero | equal | 354.691471 | 284.271242 | -70.420229 |
+| R1 | high | zero | equal_lambda_1.16 | 298.776096 | 218.342169 | -80.433928 |
+| R1 | high | zero | equal_lambda_1.5 | 179.955926 | 78.242889 | -101.713037 |
+| R1 | high | zero | equal_lambda_hendren_a | 254.637170 | 166.248821 | -88.388349 |
+| R1 | high | zero | hendren_a | 371.959940 | 288.204990 | -83.754950 |
+| R1 | high | zero | hendren_b | 378.441837 | 295.070437 | -83.371399 |
+| R1 | high | zero | log_a | 2431.854215 | 1850.702147 | -581.152068 |
+| R1 | high | zero | log_b | 1986.072050 | 1378.776634 | -607.295416 |
+| R1 | low | upper | equal | 771.502159 | 670.144624 | -101.357536 |
+| R1 | low | upper | equal_lambda_1.16 | 743.302064 | 628.458256 | -114.843808 |
+| R1 | low | upper | equal_lambda_1.5 | 683.376862 | 539.874726 | -143.502137 |
+| R1 | low | upper | equal_lambda_hendren_a | 721.041247 | 595.520095 | -125.521152 |
+| R1 | low | upper | hendren_a | 808.772100 | 694.386011 | -114.386089 |
+| R1 | low | upper | hendren_b | 813.775690 | 699.874568 | -113.901122 |
+| R1 | low | upper | log_a | 4187.932681 | 3626.448113 | -561.484568 |
+| R1 | low | upper | log_b | 3843.818712 | 3249.168950 | -594.649761 |
+| R1 | high | upper | equal | 653.873862 | 641.450292 | -12.423570 |
+| R1 | high | upper | equal_lambda_1.16 | 612.179640 | 593.631935 | -18.547705 |
+| R1 | high | upper | equal_lambda_1.5 | 523.579417 | 492.017926 | -31.561491 |
+| R1 | high | upper | equal_lambda_hendren_a | 579.266720 | 555.848630 | -23.418091 |
+| R1 | high | upper | hendren_a | 687.864700 | 666.212953 | -21.651747 |
+| R1 | high | upper | hendren_b | 694.346597 | 673.078400 | -21.268197 |
+| R1 | high | upper | log_a | 3997.431865 | 3858.543923 | -138.887942 |
+| R1 | high | upper | log_b | 3551.649700 | 3386.618410 | -165.031290 |
+| R2 | low | zero | equal | 245.243646 | 98.635038 | -146.608608 |
+| R2 | low | zero | equal_lambda_1.16 | 196.101224 | 35.822583 | -160.278641 |
+| R2 | low | zero | equal_lambda_1.5 | 91.673577 | -97.653884 | -189.327461 |
+| R2 | low | zero | equal_lambda_hendren_a | 157.308785 | -13.808193 | -171.116978 |
+| R2 | low | zero | hendren_a | 252.751032 | 92.171751 | -160.579281 |
+| R2 | low | zero | hendren_b | 257.754622 | 97.660308 | -160.094314 |
+| R2 | low | zero | log_a | 1963.694259 | 1088.376966 | -875.317293 |
+| R2 | low | zero | log_b | 1619.580289 | 711.097804 | -908.482486 |
+| R2 | high | zero | equal | 155.365891 | 124.228365 | -31.137526 |
+| R2 | high | zero | equal_lambda_1.16 | 92.729341 | 59.501343 | -33.227998 |
+| R2 | high | zero | equal_lambda_1.5 | -40.373326 | -78.043577 | -37.670251 |
+| R2 | high | zero | equal_lambda_hendren_a | 43.284800 | 8.357788 | -34.927012 |
+| R2 | high | zero | hendren_a | 160.527744 | 123.171251 | -37.356493 |
+| R2 | high | zero | hendren_b | 167.009641 | 130.036698 | -36.972943 |
+| R2 | high | zero | log_a | 1831.601325 | 1588.139978 | -243.461347 |
+| R2 | high | zero | log_b | 1385.819160 | 1116.214465 | -269.604694 |
+| R2 | low | upper | equal | 544.426038 | 458.584406 | -85.841632 |
+| R2 | low | upper | equal_lambda_1.16 | 509.504767 | 415.636460 | -93.868308 |
+| R2 | low | upper | equal_lambda_1.5 | 435.297068 | 324.372074 | -110.924994 |
+| R2 | low | upper | equal_lambda_hendren_a | 481.938335 | 381.701472 | -100.236864 |
+| R2 | low | upper | hendren_a | 568.655793 | 474.464960 | -94.190833 |
+| R2 | low | upper | hendren_b | 573.659382 | 479.953516 | -93.705866 |
+| R2 | low | upper | log_a | 3610.216659 | 3069.360984 | -540.855675 |
+| R2 | low | upper | log_b | 3266.102690 | 2692.081822 | -574.020868 |
+| R2 | high | upper | equal | 454.548282 | 459.433248 | +4.884966 |
+| R2 | high | upper | equal_lambda_1.16 | 406.132885 | 410.612888 | +4.480003 |
+| R2 | high | upper | equal_lambda_1.5 | 303.250165 | 306.869622 | +3.619457 |
+| R2 | high | upper | equal_lambda_hendren_a | 367.914350 | 372.037857 | +4.123507 |
+| R2 | high | upper | hendren_a | 476.432505 | 477.009368 | +0.576863 |
+| R2 | high | upper | hendren_b | 482.914401 | 483.874814 | +0.960413 |
+| R2 | high | upper | log_a | 3478.123725 | 3350.070053 | -128.053672 |
+| R2 | high | upper | log_b | 3032.341560 | 2878.144540 | -154.197019 |
+| R3 | low | zero | equal | 377.429577 | 170.947451 | -206.482126 |
+| R3 | low | zero | equal_lambda_1.16 | 330.682191 | 100.555466 | -230.126724 |
+| R3 | low | zero | equal_lambda_1.5 | 231.343994 | -49.027500 | -280.371494 |
+| R3 | low | zero | equal_lambda_hendren_a | 293.780364 | 44.935784 | -248.844580 |
+| R3 | low | zero | hendren_a | 390.398527 | 160.460124 | -229.938403 |
+| R3 | low | zero | hendren_b | 395.402117 | 165.948681 | -229.453436 |
+| R3 | low | zero | log_a | 2144.005890 | 711.619872 | -1432.386018 |
+| R3 | low | zero | log_b | 1799.891921 | 334.340710 | -1465.551211 |
+| R3 | high | zero | equal | 259.801280 | 178.124010 | -81.677270 |
+| R3 | high | zero | equal_lambda_1.16 | 199.559766 | 107.338113 | -92.221653 |
+| R3 | high | zero | equal_lambda_1.5 | 71.546549 | -43.081917 | -114.628466 |
+| R3 | high | zero | equal_lambda_hendren_a | 152.005837 | 51.407184 | -100.598653 |
+| R3 | high | zero | hendren_a | 269.491127 | 173.537529 | -95.953598 |
+| R3 | high | zero | hendren_b | 275.973024 | 180.402975 | -95.570048 |
+| R3 | high | zero | log_a | 1953.505074 | 1289.622207 | -663.882867 |
+| R3 | high | zero | log_b | 1507.722909 | 817.696694 | -690.026215 |
+| R3 | low | upper | equal | 676.611969 | 556.131642 | -120.480327 |
+| R3 | low | upper | equal_lambda_1.16 | 644.085734 | 508.329931 | -135.755803 |
+| R3 | low | upper | equal_lambda_1.5 | 574.967485 | 406.751294 | -168.216190 |
+| R3 | low | upper | equal_lambda_hendren_a | 618.409914 | 470.559778 | -147.850136 |
+| R3 | low | upper | hendren_a | 706.303287 | 570.672937 | -135.630350 |
+| R3 | low | upper | hendren_b | 711.306877 | 576.161494 | -135.145384 |
+| R3 | low | upper | log_a | 3709.583540 | 2989.505449 | -720.078091 |
+| R3 | low | upper | log_b | 3365.469571 | 2612.226286 | -753.243284 |
+| R3 | high | upper | equal | 558.983671 | 535.303060 | -23.680611 |
+| R3 | high | upper | equal_lambda_1.16 | 512.963309 | 482.627879 | -30.335430 |
+| R3 | high | upper | equal_lambda_1.5 | 415.170040 | 370.693120 | -44.476920 |
+| R3 | high | upper | equal_lambda_hendren_a | 476.635387 | 441.006992 | -35.628395 |
+| R3 | high | upper | hendren_a | 585.395887 | 551.545491 | -33.850396 |
+| R3 | high | upper | hendren_b | 591.877784 | 558.410938 | -33.466846 |
+| R3 | high | upper | log_a | 3519.082724 | 3297.463983 | -221.618741 |
+| R3 | high | upper | log_b | 3073.300559 | 2825.538470 | -247.762089 |
 
 [CALCULATION: cash_readings.py; readings_cash_oct16.csv; readings_v7_bridge_oct16.csv]

@@ -1,15 +1,17 @@
 **Verdict:** On the live main case v9 (`oct16`; the matched-cash account of $284.4–352.9bn a year over 44.90M
 people), the evidence still supports the first claim in part and does not support the second as a measured claim.
-At equal weights, complete scope A and the G3+ zero bound, the modeled annual world gain is $318.9bn / $260.9bn
-under R1 (fiscal low / high end), $132.6 / 100.9bn under R2 and $204.9 / 154.7bn under R3. The leak is real:
-charging the payers' cost at λ 1.16 lowers R1 to $254.6 / 194.9bn and at λ 1.5 to $118.0 / 54.8bn, and at λ 1.5
-the R2 and R3 totals turn negative (−$63.7 / −101.4bn and −$15.1 / −66.5bn). Hendren's revealed weights leave R1
-almost unchanged ($318.1 / 265.1bn), which gives no sign that the recipients' dollars are worth less. That claim
+At equal weights, complete scope A and the G3+ zero bound, the modeled annual world gain is $285.0bn / $284.3bn
+under R1 (fiscal low / high end), $98.6 / 124.2bn under R2 and $170.9 / 178.1bn under R3. The leak is real:
+charging the payers' cost at λ 1.16 lowers R1 to $220.7 / 218.3bn and at λ 1.5 to $84.1 / 78.2bn, and at λ 1.5
+the R2 and R3 totals turn negative (−$97.7 / −78.0bn and −$49.0 / −43.1bn). Hendren's revealed weights leave R1
+almost unchanged ($284.2 / 288.2bn), which gives no sign that the recipients' dollars are worth less. That claim
 survives only as a moral weight w on the group: counting Mexico's residents, the world total turns negative when w
-is below 0.51 / 0.60 under R1 (0.61 / 0.70 at λ 1.16, 0.82 / 0.92 at λ 1.5) and 0.71 / 0.79 under R2.
+is below 0.56 / 0.56 under R1 (0.66 / 0.66 at λ 1.16, 0.87 / 0.88 at λ 1.5) and 0.78 / 0.74 under R2.
 Since 2026-10-21 the group's in-group victimization rows take the within-group lane's row A victims on the v9
-lineage at DOT's VSL (−$28.91 / −32.20bn) in place of the winners frame's −$20.11bn; this lowers every reading by
-$8.80 / 12.09bn and leaves other US residents and Mexico unchanged
+lineage at DOT's VSL (−$28.91 / −32.20bn) in place of the winners frame's −$20.11bn, lowering every reading by
+$8.80 / 12.09bn. Other US residents' crime, property-crime, unreimbursed-care and congestion rows take the v9
+pairing's rows at each end instead of the winners lane's September channels: their line is −$340.6 / 401.1bn
+(was −$306.5 / 424.2bn)
 ([decision](../../../decisions/2026-10-21-business-crime-in-pairing.md); `world_ledger.py` `INGROUP_VICTIMS`).
 [FRAMING-SENSITIVE] These are modeled readings under the case's removal and donor conventions and the
 `[DEGRADED]` all-public P032 pension-funding proxy, not measured effects. [CALCULATION:
@@ -3933,4 +3935,19 @@ recaptured after a review showed only its source hashes differed. Every reading'
 $8.80 / 12.09bn at the low / high end; R1 at equal weights is $318.9 / 260.9bn (was $327.7 / 273.0bn). Open: the
 others-side `crime_victims` row is still the September envelope (−$15.41 / −45.34bn), not the v9 victims row; this
 note does not change that scope choice. `rerun_lane.py … "sh {lane}/run_all.sh"`: IDENTICAL 294/294, exit 0.
+[CALCULATION: `derived/readings_cash_oct16.csv`, scope A_completed, public_pension_share 1, g3_bound zero]
+
+## 2026-10-21, later: others-side social rows from the v9 pairing (live case only)
+
+The others-side `crime_victims`, `property_crime`, `unreimbursed_care` and `congestion` rows read the winners lane's
+legacy channels: decision 4's victim envelope on the 40.9M frame (−15.41 / −30.93 / −45.34bn) and the September
+congestion arms (−2.01 / −13.01 / −30.83bn). `build_rows` put the arms' ends at the fiscal ends, which mismatched the
+objects. For `oct16`, `load` now replaces the four channels with the pairing's `current_social_rows` (`SOCIAL_PAIRING`,
+`pairing_social_channels`): bn_low / bn_high at the case's ends, bn_central their mean. The file is pinned through
+`inputs/oct16_source_hashes.json`. The group's received-care rows read the same unreimbursed-care channel, so the
+group line moves +$0.20 / +0.33bn. Other US residents move −$34.11 / +23.11bn (crime −22.15 / +3.51, congestion
+−11.70 / +19.99, care −0.20 / −0.33, property −0.06 / −0.06). At equal weights, scope A, G3+ zero, the readings are
+R1 +$285.0 / 284.3bn, R2 +$98.6 / 124.2bn and R3 +$170.9 / 178.1bn (were 318.9 / 260.9, 132.6 / 100.9 and
+204.9 / 154.7). The rest of the pairing's social rows stay outside the world scope, as declared above. The source-cell
+artifact was recaptured after review showed that only its source hashes differed.
 [CALCULATION: `derived/readings_cash_oct16.csv`, scope A_completed, public_pension_share 1, g3_bound zero]

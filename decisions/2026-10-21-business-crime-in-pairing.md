@@ -75,3 +75,10 @@ counting benefits when paid, $399.5–473.7bn. The fiscal case does not change.
 ## Supersedes
 
 None. Refines the v9 pairing's social rows; the fiscal case (v9) is unchanged.
+
+## Addendum, 2026-10-21 (later)
+
+The world ledger's others-side crime, property-crime, unreimbursed-care and congestion rows also moved from the winners
+lane's September channels to the pairing's v9 rows at each end. Other US residents' line becomes −$340.6 / 401.1bn, and
+R1 becomes +$285.0 / 284.3bn (after the in-group replacement above it was +$318.9 / 260.9bn).
+[CALCULATION: `world_ledger_2026_09_27/derived/readings_cash_oct16.csv`]

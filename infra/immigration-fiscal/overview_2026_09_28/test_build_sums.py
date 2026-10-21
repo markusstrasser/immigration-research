@@ -78,7 +78,7 @@ def test_a_claim_in_words_holds_on_the_page_and_fails_when_its_record_moves():
     moved["world.other_us_residents"]["expr"] = "(max(l1, l2, l3), 1.0)"
     assert B.prose_claim_errors(sites, moved) == [
         "'Other US residents lose at any weight' needs other US residents' line below zero at both ends in every "
-        "reading; world.other_us_residents is (-306.536379285804, 1.0)"]
+        "reading; world.other_us_residents is (-340.643362889102, 1.0)"]
     assert B.prose_claim_errors({}, recs) == [
         "'Other US residents lose at any weight' stands on no text site: drop its claim or restore the sentence"]
 

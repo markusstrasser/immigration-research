@@ -102,6 +102,29 @@ RETURN_OVER_DISCOUNT = {tau: (1.0, 1.0 / (1.0 - tau)) for tau in CAPITAL_TAX}
 # Cases whose in-group victimization rows take the within-group lane's row A (decision
 # 2026-10-21-business-crime-in-pairing, hole 3); earlier cases keep the winners group frame's figure.
 INGROUP_VICTIMS = dict(oct16="infra/immigration-fiscal/within_group_harm_2026_10_21/derived/rows.csv")
+# Cases whose others-side social channels take the pairing's own rows at each end, in place of the winners lane's
+# September channels (decision 4's victim envelope on the 40.9M frame, the September congestion arms). Channel id ->
+# the pairing's `current_social_rows` item; costs to others are negative here.
+SOCIAL_PAIRING = dict(oct16="infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json")
+SOCIAL_PAIRING_ROWS = dict(crime_victims="victims", property_crime="property_crime",
+                           unreimbursed_care="unreimbursed_care", congestion="congestion")
+
+
+def pairing_social_channels(case, ch):
+    """`ch` with the four others-side social channels at the pairing's v9 rows: bn_low / bn_high at the case's ends,
+    bn_central their mean. The group's received-care rows read the same unreimbursed-care channel."""
+    doc = json.loads(git_show("WORKTREE_SHA256_OCT16", SOCIAL_PAIRING[case]))
+    gate("social_pairing_case", doc.get("case") == case, case=doc.get("case"))
+    rows = doc["v9_social_environment"]["current_social_rows"]
+    ch = ch.copy()
+    for cid, item in SOCIAL_PAIRING_ROWS.items():
+        hit = [r for r in rows if r["item"] == item]
+        gate(f"social_pairing_{item}_unique", len(hit) == 1, rows=len(hit))
+        lo, hi = (-float(hit[0]["total_by_end_bn"][e]) for e in ("low", "high"))
+        gate(f"social_pairing_{item}_cost", np.isfinite([lo, hi]).all() and lo < 0 and hi < 0, low=lo, high=hi)
+        ch.loc[cid, ["bn_low", "bn_central", "bn_high"]] = [lo, (lo + hi) / 2, hi]
+        ch.loc[cid, "source_lane"] = "sept24_propagation_2026_09_24 (v9 pairing current_social_rows)"
+    return ch
 
 
 def gate(name, ok, **detail):
@@ -136,6 +159,8 @@ def load(case, basis, *, generation_lines=None):
         raise SystemExit(f"[BLOCKED] no pins for case {case}; the parent sends them")
     w = lambda name: lane_file(case, "winners", name)
     ch = pinned_csv(pin["winners"], w("channels.csv")).set_index("id")
+    if case in SOCIAL_PAIRING:
+        ch = pairing_social_channels(case, ch)
     specs = pinned_csv(pin["winners"], w("fiscal_specs.csv"))
     specs = specs[(specs.case == pin["model"]) & specs.band_end.notna()].drop_duplicates("band_end").set_index("band_end")
     # A case that charges the pension accrual (rule 7): the winners lane's future_pension_accrual must be the case
@@ -705,7 +730,9 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
             lh(min(vals), r.bn_central, max(vals)), initial="with the group", alternative="without the group",
             window="2024", comparator="measured (account)" if cid not in ("crime_victims", "property_crime")
             else "US measured; the harm the same offenders would do in Mexico is unknown (a gain to Mexico's "
-                 "residents here, not zero)", weight=wkey, tag="[DATA: winners channels]")
+                 "residents here, not zero)", weight=wkey,
+            tag="[DATA: v9 pairing current_social_rows]" if cid in SOCIAL_PAIRING_ROWS and I.get("case") in SOCIAL_PAIRING
+            else "[DATA: winners channels]")
     # The group's side of those channels.
     unc = ch.loc["unreimbursed_care"]
     pop = shares["pop"]

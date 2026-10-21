@@ -1,73 +1,73 @@
 case,basis,reading,end,g3_bound,public_pension_share,scope,enters_total,excluded_senders_debit_bn,generation,all_taxes_private_bn,with_services_bn,pension_basis,private_price_twin
-oct16,matched_cash,R1,low,zero,1.000000000000,A_completed,True,0.000000000000,G1,159.809249409926,297.998907155603,matched_cash,same reading
-oct16,matched_cash,R1,low,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,308.178739916259,matched_cash,same reading
-oct16,matched_cash,R1,low,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.549933538996,132.079119137866,matched_cash,same reading
-oct16,matched_cash,R1,high,zero,1.000000000000,A_completed,True,0.000000000000,G1,159.724172309194,299.899292709338,matched_cash,same reading
-oct16,matched_cash,R1,high,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,309.554193981099,matched_cash,same reading
-oct16,matched_cash,R1,high,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.481179850557,133.237424463822,matched_cash,same reading
-oct16,matched_cash,R1,low,upper,1.000000000000,A_completed,True,0.000000000000,G1,159.809249409926,297.998907155603,matched_cash,same reading
-oct16,matched_cash,R1,low,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,308.178739916259,matched_cash,same reading
-oct16,matched_cash,R1,low,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.445049899791,376.074102576653,matched_cash,same reading
-oct16,matched_cash,R1,high,upper,1.000000000000,A_completed,True,0.000000000000,G1,159.724172309194,299.899292709338,matched_cash,same reading
-oct16,matched_cash,R1,high,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,309.554193981099,matched_cash,same reading
-oct16,matched_cash,R1,high,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.505896944107,377.224501258486,matched_cash,same reading
-oct16,matched_cash,R2,low,zero,1.000000000000,A_completed,True,0.000000000000,G1,142.247549409926,241.753039062423,matched_cash,consumption
-oct16,matched_cash,R2,low,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,253.328818221205,matched_cash,consumption
-oct16,matched_cash,R2,low,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.549933538996,64.420492168013,matched_cash,consumption
-oct16,matched_cash,R2,high,zero,1.000000000000,A_completed,True,0.000000000000,G1,142.162472309194,250.569731415596,matched_cash,consumption
-oct16,matched_cash,R2,high,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,263.890787173017,matched_cash,consumption
-oct16,matched_cash,R2,high,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.481179850557,77.411098159652,matched_cash,consumption
-oct16,matched_cash,R2,low,upper,1.000000000000,A_completed,True,0.000000000000,G1,142.247549409926,241.753039062423,matched_cash,consumption
-oct16,matched_cash,R2,low,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,253.328818221205,matched_cash,consumption
-oct16,matched_cash,R2,low,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.445049899791,308.415475606800,matched_cash,consumption
-oct16,matched_cash,R2,high,upper,1.000000000000,A_completed,True,0.000000000000,G1,142.162472309194,250.569731415596,matched_cash,consumption
-oct16,matched_cash,R2,high,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,263.890787173017,matched_cash,consumption
-oct16,matched_cash,R2,high,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.505896944107,321.398174954316,matched_cash,consumption
-oct16,matched_cash,R3,low,zero,1.000000000000,A_completed,True,0.000000000000,G1,84.017166773049,222.206824518726,matched_cash,same reading
-oct16,matched_cash,R3,low,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,308.178739916259,matched_cash,same reading
-oct16,matched_cash,R3,low,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.549933538996,132.079119137866,matched_cash,same reading
-oct16,matched_cash,R3,high,zero,1.000000000000,A_completed,True,0.000000000000,G1,83.932089672317,224.107210072461,matched_cash,same reading
-oct16,matched_cash,R3,high,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,309.554193981099,matched_cash,same reading
-oct16,matched_cash,R3,high,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.481179850557,133.237424463822,matched_cash,same reading
-oct16,matched_cash,R3,low,upper,1.000000000000,A_completed,True,0.000000000000,G1,84.017166773049,222.206824518726,matched_cash,same reading
-oct16,matched_cash,R3,low,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,308.178739916259,matched_cash,same reading
-oct16,matched_cash,R3,low,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.445049899791,376.074102576653,matched_cash,same reading
-oct16,matched_cash,R3,high,upper,1.000000000000,A_completed,True,0.000000000000,G1,83.932089672317,224.107210072461,matched_cash,same reading
-oct16,matched_cash,R3,high,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,309.554193981099,matched_cash,same reading
-oct16,matched_cash,R3,high,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.505896944107,377.224501258486,matched_cash,same reading
-oct16,matched_cash,R1,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,153.667256571653,287.194078369493,matched_cash,same reading
-oct16,matched_cash,R1,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,287.981463303032,matched_cash,same reading
-oct16,matched_cash,R1,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.770180571872,126.159582372525,matched_cash,same reading
-oct16,matched_cash,R1,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,153.667256571653,288.919857553021,matched_cash,same reading
-oct16,matched_cash,R1,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,289.201002098017,matched_cash,same reading
-oct16,matched_cash,R1,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.812081552688,127.243820060422,matched_cash,same reading
-oct16,matched_cash,R1,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,153.667256571653,287.194078369493,matched_cash,same reading
-oct16,matched_cash,R1,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,287.981463303032,matched_cash,same reading
-oct16,matched_cash,R1,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.150119677771,357.079882622168,matched_cash,same reading
-oct16,matched_cash,R1,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,153.667256571653,288.919857553021,matched_cash,same reading
-oct16,matched_cash,R1,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,289.201002098017,matched_cash,same reading
-oct16,matched_cash,R1,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.113036625269,358.168938238380,matched_cash,same reading
-oct16,matched_cash,R2,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,136.825156571653,233.098126928399,matched_cash,consumption
-oct16,matched_cash,R2,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,236.176051660002,matched_cash,consumption
-oct16,matched_cash,R2,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.770180571872,61.340273675338,matched_cash,consumption
-oct16,matched_cash,R2,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,136.825156571653,241.562901515925,matched_cash,consumption
-oct16,matched_cash,R2,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,246.148781037841,matched_cash,consumption
-oct16,matched_cash,R2,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.812081552688,73.795439362283,matched_cash,consumption
-oct16,matched_cash,R2,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,136.825156571653,233.098126928399,matched_cash,consumption
-oct16,matched_cash,R2,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,236.176051660002,matched_cash,consumption
-oct16,matched_cash,R2,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.150119677771,292.260573924981,matched_cash,consumption
-oct16,matched_cash,R2,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,136.825156571653,241.562901515925,matched_cash,consumption
-oct16,matched_cash,R2,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,246.148781037841,matched_cash,consumption
-oct16,matched_cash,R2,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.113036625269,304.720557540241,matched_cash,consumption
-oct16,matched_cash,R3,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,80.273710284583,213.800532082423,matched_cash,same reading
-oct16,matched_cash,R3,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,287.981463303032,matched_cash,same reading
-oct16,matched_cash,R3,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.770180571872,126.159582372525,matched_cash,same reading
-oct16,matched_cash,R3,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,80.273710284583,215.526311265951,matched_cash,same reading
-oct16,matched_cash,R3,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,289.201002098017,matched_cash,same reading
-oct16,matched_cash,R3,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.812081552688,127.243820060422,matched_cash,same reading
-oct16,matched_cash,R3,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,80.273710284583,213.800532082423,matched_cash,same reading
-oct16,matched_cash,R3,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,287.981463303032,matched_cash,same reading
-oct16,matched_cash,R3,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.150119677771,357.079882622168,matched_cash,same reading
-oct16,matched_cash,R3,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,80.273710284583,215.526311265951,matched_cash,same reading
-oct16,matched_cash,R3,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,289.201002098017,matched_cash,same reading
-oct16,matched_cash,R3,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.113036625269,358.168938238380,matched_cash,same reading
+oct16,matched_cash,R1,low,zero,1.000000000000,A_completed,True,0.000000000000,G1,159.809249409926,298.045027203747,matched_cash,same reading
+oct16,matched_cash,R1,low,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,308.239018868145,matched_cash,same reading
+oct16,matched_cash,R1,low,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.549933538996,132.153070802859,matched_cash,same reading
+oct16,matched_cash,R1,high,zero,1.000000000000,A_completed,True,0.000000000000,G1,159.724172309194,299.977041380961,matched_cash,same reading
+oct16,matched_cash,R1,high,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,309.655811577449,matched_cash,same reading
+oct16,matched_cash,R1,high,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.481179850557,133.362091370056,matched_cash,same reading
+oct16,matched_cash,R1,low,upper,1.000000000000,A_completed,True,0.000000000000,G1,159.809249409926,298.045027203747,matched_cash,same reading
+oct16,matched_cash,R1,low,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,308.239018868145,matched_cash,same reading
+oct16,matched_cash,R1,low,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.445049899791,376.148054241646,matched_cash,same reading
+oct16,matched_cash,R1,high,upper,1.000000000000,A_completed,True,0.000000000000,G1,159.724172309194,299.977041380961,matched_cash,same reading
+oct16,matched_cash,R1,high,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,309.655811577449,matched_cash,same reading
+oct16,matched_cash,R1,high,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.505896944107,377.349168164719,matched_cash,same reading
+oct16,matched_cash,R2,low,zero,1.000000000000,A_completed,True,0.000000000000,G1,142.247549409926,241.793828053689,matched_cash,consumption
+oct16,matched_cash,R2,low,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,253.382129476092,matched_cash,consumption
+oct16,matched_cash,R2,low,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.549933538996,64.485895695088,matched_cash,consumption
+oct16,matched_cash,R2,high,zero,1.000000000000,A_completed,True,0.000000000000,G1,142.162472309194,250.638493049970,matched_cash,consumption
+oct16,matched_cash,R2,high,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,263.980658702141,matched_cash,consumption
+oct16,matched_cash,R2,high,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.481179850557,77.521354708684,matched_cash,consumption
+oct16,matched_cash,R2,low,upper,1.000000000000,A_completed,True,0.000000000000,G1,142.247549409926,241.793828053689,matched_cash,consumption
+oct16,matched_cash,R2,low,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,253.382129476092,matched_cash,consumption
+oct16,matched_cash,R2,low,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.445049899791,308.480879133875,matched_cash,consumption
+oct16,matched_cash,R2,high,upper,1.000000000000,A_completed,True,0.000000000000,G1,142.162472309194,250.638493049970,matched_cash,consumption
+oct16,matched_cash,R2,high,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,263.980658702141,matched_cash,consumption
+oct16,matched_cash,R2,high,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.505896944107,321.508431503348,matched_cash,consumption
+oct16,matched_cash,R3,low,zero,1.000000000000,A_completed,True,0.000000000000,G1,84.017166773049,222.252944566870,matched_cash,same reading
+oct16,matched_cash,R3,low,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,308.239018868145,matched_cash,same reading
+oct16,matched_cash,R3,low,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.549933538996,132.153070802859,matched_cash,same reading
+oct16,matched_cash,R3,high,zero,1.000000000000,A_completed,True,0.000000000000,G1,83.932089672317,224.184958744084,matched_cash,same reading
+oct16,matched_cash,R3,high,zero,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,309.655811577449,matched_cash,same reading
+oct16,matched_cash,R3,high,zero,1.000000000000,A_completed,True,0.000000000000,G3+,-89.481179850557,133.362091370056,matched_cash,same reading
+oct16,matched_cash,R3,low,upper,1.000000000000,A_completed,True,0.000000000000,G1,84.017166773049,222.252944566870,matched_cash,same reading
+oct16,matched_cash,R3,low,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.366730719640,308.239018868145,matched_cash,same reading
+oct16,matched_cash,R3,low,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.445049899791,376.148054241646,matched_cash,same reading
+oct16,matched_cash,R3,high,upper,1.000000000000,A_completed,True,0.000000000000,G1,83.932089672317,224.184958744084,matched_cash,same reading
+oct16,matched_cash,R3,high,upper,1.000000000000,A_completed,True,0.000000000000,G2,136.363800170381,309.655811577449,matched_cash,same reading
+oct16,matched_cash,R3,high,upper,1.000000000000,A_completed,True,0.000000000000,G3+,154.505896944107,377.349168164719,matched_cash,same reading
+oct16,matched_cash,R1,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,153.667256571653,287.238406680999,matched_cash,same reading
+oct16,matched_cash,R1,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,288.038453581823,matched_cash,same reading
+oct16,matched_cash,R1,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.770180571872,126.230775540244,matched_cash,same reading
+oct16,matched_cash,R1,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,153.667256571653,288.994585734658,matched_cash,same reading
+oct16,matched_cash,R1,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,289.297075685313,matched_cash,same reading
+oct16,matched_cash,R1,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.812081552688,127.363836722188,matched_cash,same reading
+oct16,matched_cash,R1,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,153.667256571653,287.238406680999,matched_cash,same reading
+oct16,matched_cash,R1,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,288.038453581823,matched_cash,same reading
+oct16,matched_cash,R1,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.150119677771,357.151075789886,matched_cash,same reading
+oct16,matched_cash,R1,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,153.667256571653,288.994585734658,matched_cash,same reading
+oct16,matched_cash,R1,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,289.297075685313,matched_cash,same reading
+oct16,matched_cash,R1,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.113036625269,358.288954900145,matched_cash,same reading
+oct16,matched_cash,R2,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,136.825156571653,233.137331291438,matched_cash,consumption
+oct16,matched_cash,R2,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,236.226454382406,matched_cash,consumption
+oct16,matched_cash,R2,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.770180571872,61.403237562262,matched_cash,consumption
+oct16,matched_cash,R2,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,136.825156571653,241.628991801404,matched_cash,consumption
+oct16,matched_cash,R2,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,246.233749394787,matched_cash,consumption
+oct16,matched_cash,R2,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.812081552688,73.901583192690,matched_cash,consumption
+oct16,matched_cash,R2,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,136.825156571653,233.137331291438,matched_cash,consumption
+oct16,matched_cash,R2,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,236.226454382406,matched_cash,consumption
+oct16,matched_cash,R2,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.150119677771,292.323537811904,matched_cash,consumption
+oct16,matched_cash,R2,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,136.825156571653,241.628991801404,matched_cash,consumption
+oct16,matched_cash,R2,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,246.233749394787,matched_cash,consumption
+oct16,matched_cash,R2,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.113036625269,304.826701370647,matched_cash,consumption
+oct16,matched_cash,R3,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,80.273710284583,213.844860393929,matched_cash,same reading
+oct16,matched_cash,R3,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,288.038453581823,matched_cash,same reading
+oct16,matched_cash,R3,low,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.770180571872,126.230775540244,matched_cash,same reading
+oct16,matched_cash,R3,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,80.273710284583,215.601039447588,matched_cash,same reading
+oct16,matched_cash,R3,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,289.297075685313,matched_cash,same reading
+oct16,matched_cash,R3,high,zero,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,-85.812081552688,127.363836722188,matched_cash,same reading
+oct16,matched_cash,R3,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,80.273710284583,213.844860393929,matched_cash,same reading
+oct16,matched_cash,R3,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.180879540914,288.038453581823,matched_cash,same reading
+oct16,matched_cash,R3,low,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.150119677771,357.151075789886,matched_cash,same reading
+oct16,matched_cash,R3,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G1,80.273710284583,215.601039447588,matched_cash,same reading
+oct16,matched_cash,R3,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G2,126.190990523198,289.297075685313,matched_cash,same reading
+oct16,matched_cash,R3,high,upper,1.000000000000,B_counted_only_beside,False,-2.512384037852,G3+,145.113036625269,358.288954900145,matched_cash,same reading
