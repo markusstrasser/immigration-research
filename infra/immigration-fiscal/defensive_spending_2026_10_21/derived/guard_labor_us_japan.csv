@@ -1,0 +1,15 @@
+country,group,codes,persons,per_100_employed,wage_bill_bn,basis
+US,police_detectives,33-3051 33-3052 33-3021 33-1012,933910,0.6057,81.12,"BLS OEWS May 2024 national, wage-and-salary jobs (no self-employed, no military)"
+US,corrections_bailiffs,33-3012 33-3011 33-1011,435680,0.2826,28.37,"BLS OEWS May 2024 national, wage-and-salary jobs (no self-employed, no military)"
+US,private_guards_detectives,33-9032 33-9021 33-9031 33-1091,1360780,0.8825,60.54,"BLS OEWS May 2024 national, wage-and-salary jobs (no self-employed, no military)"
+US,screeners_other_protective,33-9093 33-9099 33-1099,149910,0.0972,8.37,"BLS OEWS May 2024 national, wage-and-salary jobs (no self-employed, no military)"
+US,firefighters_beside,33-2011,332240,0.2155,21.23,"BLS OEWS May 2024 national, wage-and-salary jobs (no self-employed, no military)"
+US,lawyers,23-1011,747750,0.485,136.66,"BLS OEWS May 2024 national, wage-and-salary jobs (no self-employed, no military)"
+US,paralegals_beside,23-2011,367220,0.2382,24.42,"BLS OEWS May 2024 national, wage-and-salary jobs (no self-employed, no military)"
+US,engineers_beside,17-2000,1746750,1.1329,203.95,"BLS OEWS May 2024 national, wage-and-salary jobs (no self-employed, no military)"
+JP,police_detectives,,261907,0.3901,,NPA 警察白書 R6 police officers (定員); denominator LFS 2023 employment via ILOSTAT
+JP,corrections_bailiffs,,17280,0.0257,,MOJ 刑務官 定員 2025; denominator LFS 2023 employment via ILOSTAT
+JP,private_guards_detectives,,584868,0.8711,,NPA 警備員数 end-2023; denominator LFS 2023 employment via ILOSTAT
+CH,police_detectives,,18821,0.386,,KKPKS Pol I-IV FTE 2023; denominator LFS 2024 employment via ILOSTAT
+CH,corrections_bailiffs,,3266,0.067,,BFS prison security FTE; denominator LFS 2024 employment via ILOSTAT
+CH,private_guards_detectives,,23000,0.4717,,VSSU via SRF 2023 [secondary]; denominator LFS 2024 employment via ILOSTAT

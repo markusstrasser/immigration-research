@@ -1,0 +1,101 @@
+outcome,regressor,spec,weighted,n,b,se,p,r2,pop_wtd_mean_x,pop_wtd_mean_y,implied_share_linked
+guards,mex_share,bivariate,False,389,0.00269,0.00126,0.0326,0.012,11.92,0.8821,0.0363
+guards,mex_share,bivariate,True,389,0.00225,0.003,0.4541,0.006,11.92,0.8821,0.0304
+guards,mex_share,controls+region,False,389,0.0001,0.00153,0.949,0.359,11.92,0.8821,0.0013
+guards,mex_share,controls+region,True,389,-0.00487,0.00314,0.1216,0.578,11.92,0.8821,-0.0657
+guards,mex_share,controls+region+crime,False,319,-4e-05,0.00178,0.9816,0.297,12.26,0.8074,-0.0006
+guards,mex_share,controls+region+crime,True,319,-0.002,0.00301,0.5068,0.483,12.26,0.8074,-0.0303
+guards,mex_share,"controls+region, drop gaming/tourism/DC",False,383,0.00039,0.00147,0.7891,0.371,12.07,0.86,0.0055
+guards,mex_share,"controls+region, drop gaming/tourism/DC",True,383,-0.00402,0.00292,0.1688,0.636,12.07,0.86,-0.0564
+guards,mex_share,"controls+region, drop border metros [post-hoc]",False,379,-0.00257,0.00178,0.1486,0.353,10.88,0.8795,-0.0318
+guards,mex_share,"controls+region, drop border metros [post-hoc]",True,379,-0.00761,0.00348,0.0287,0.589,10.88,0.8795,-0.0942
+guards,fb_share,bivariate,False,389,0.01625,0.00285,0.0,0.089,15.35,0.8821,0.2827
+guards,fb_share,bivariate,True,389,0.02171,0.00413,0.0,0.261,15.35,0.8821,0.3777
+guards,fb_share,controls+region,False,389,0.00769,0.00339,0.0233,0.369,15.35,0.8821,0.1339
+guards,fb_share,controls+region,True,389,0.0118,0.00534,0.0272,0.586,15.35,0.8821,0.2053
+guards,fb_share,controls+region+crime,False,319,0.00861,0.00358,0.0163,0.311,14.72,0.8074,0.1569
+guards,fb_share,controls+region+crime,True,319,0.01566,0.0024,0.0,0.554,14.72,0.8074,0.2855
+guards,fb_share,"controls+region, drop gaming/tourism/DC",False,383,0.00593,0.00332,0.0741,0.377,15.1,0.86,0.1042
+guards,fb_share,"controls+region, drop gaming/tourism/DC",True,383,0.01051,0.00496,0.0342,0.646,15.1,0.86,0.1845
+guards,fb_share,"controls+region, drop border metros [post-hoc]",False,379,0.00553,0.00362,0.1269,0.352,15.18,0.8795,0.0954
+guards,fb_share,"controls+region, drop border metros [post-hoc]",True,379,0.01192,0.0052,0.022,0.585,15.18,0.8795,0.2058
+public_protective,mex_share,bivariate,False,265,0.01112,0.00361,0.0021,0.107,11.95,0.722,0.184
+public_protective,mex_share,bivariate,True,265,0.00377,0.0022,0.087,0.035,11.95,0.722,0.0624
+public_protective,mex_share,controls+region,False,265,0.01638,0.00418,0.0001,0.33,11.95,0.722,0.271
+public_protective,mex_share,controls+region,True,265,0.00738,0.00235,0.0017,0.385,11.95,0.722,0.1222
+public_protective,mex_share,controls+region+crime,False,221,0.01592,0.00466,0.0006,0.388,12.03,0.7087,0.2704
+public_protective,mex_share,controls+region+crime,True,221,0.00829,0.00276,0.0027,0.457,12.03,0.7087,0.1408
+public_protective,mex_share,"controls+region, drop gaming/tourism/DC",False,260,0.01651,0.00415,0.0001,0.335,12.08,0.7226,0.2762
+public_protective,mex_share,"controls+region, drop gaming/tourism/DC",True,260,0.00754,0.00238,0.0015,0.408,12.08,0.7226,0.1261
+public_protective,mex_share,"controls+region, drop border metros [post-hoc]",False,256,0.00657,0.00253,0.0095,0.273,11.03,0.7033,0.103
+public_protective,mex_share,"controls+region, drop border metros [post-hoc]",True,256,0.0036,0.0019,0.0583,0.38,11.03,0.7033,0.0565
+public_protective,fb_share,bivariate,False,265,0.00566,0.00755,0.4536,0.005,15.92,0.722,0.1249
+public_protective,fb_share,bivariate,True,265,-0.00075,0.00296,0.8006,0.001,15.92,0.722,-0.0165
+public_protective,fb_share,controls+region,False,265,0.03331,0.01221,0.0063,0.296,15.92,0.722,0.7347
+public_protective,fb_share,controls+region,True,265,0.00926,0.00304,0.0023,0.366,15.92,0.722,0.2043
+public_protective,fb_share,controls+region+crime,False,221,0.03142,0.01337,0.0188,0.342,15.04,0.7087,0.6666
+public_protective,fb_share,controls+region+crime,True,221,0.00825,0.00301,0.0062,0.424,15.04,0.7087,0.1749
+public_protective,fb_share,"controls+region, drop gaming/tourism/DC",False,260,0.03434,0.01235,0.0054,0.303,15.68,0.7226,0.7452
+public_protective,fb_share,"controls+region, drop gaming/tourism/DC",True,260,0.0101,0.00318,0.0015,0.391,15.68,0.7226,0.2191
+public_protective,fb_share,"controls+region, drop border metros [post-hoc]",False,256,0.0069,0.0052,0.1841,0.259,15.84,0.7033,0.1555
+public_protective,fb_share,"controls+region, drop border metros [post-hoc]",True,256,0.00578,0.00204,0.0046,0.383,15.84,0.7033,0.1303
+police_only,mex_share,bivariate,False,389,0.00745,0.00282,0.0083,0.131,11.92,0.5182,0.1713
+police_only,mex_share,bivariate,True,389,0.00106,0.00141,0.4529,0.006,11.92,0.5182,0.0243
+police_only,mex_share,controls+region,False,389,0.01036,0.00307,0.0007,0.308,11.92,0.5182,0.2384
+police_only,mex_share,controls+region,True,389,0.00247,0.00187,0.1867,0.368,11.92,0.5182,0.0567
+police_only,mex_share,controls+region+crime,False,318,0.00585,0.00194,0.0026,0.352,12.27,0.4947,0.1452
+police_only,mex_share,controls+region+crime,True,318,0.00307,0.00157,0.0514,0.404,12.27,0.4947,0.0761
+police_only,mex_share,"controls+region, drop gaming/tourism/DC",False,383,0.01053,0.00309,0.0006,0.312,12.07,0.5171,0.2459
+police_only,mex_share,"controls+region, drop gaming/tourism/DC",True,383,0.00301,0.00177,0.0894,0.388,12.07,0.5171,0.0703
+police_only,mex_share,"controls+region, drop border metros [post-hoc]",False,379,0.00739,0.00545,0.1746,0.247,10.89,0.508,0.1585
+police_only,mex_share,"controls+region, drop border metros [post-hoc]",True,379,-0.00059,0.00181,0.7426,0.386,10.89,0.508,-0.0127
+police_only,fb_share,bivariate,False,389,0.00702,0.00496,0.1567,0.022,15.33,0.5182,0.2076
+police_only,fb_share,bivariate,True,389,0.00138,0.00239,0.5644,0.004,15.33,0.5182,0.0408
+police_only,fb_share,controls+region,False,389,0.02111,0.00875,0.0159,0.223,15.33,0.5182,0.6243
+police_only,fb_share,controls+region,True,389,0.00607,0.00234,0.0094,0.378,15.33,0.5182,0.1796
+police_only,fb_share,controls+region+crime,False,318,0.00996,0.00473,0.0354,0.307,14.69,0.4947,0.2957
+police_only,fb_share,controls+region+crime,True,318,0.00641,0.00141,0.0,0.421,14.69,0.4947,0.1904
+police_only,fb_share,"controls+region, drop gaming/tourism/DC",False,383,0.02133,0.00882,0.0156,0.224,15.07,0.5171,0.6218
+police_only,fb_share,"controls+region, drop gaming/tourism/DC",True,383,0.00681,0.00213,0.0014,0.397,15.07,0.5171,0.1986
+police_only,fb_share,"controls+region, drop border metros [post-hoc]",False,379,0.01124,0.01105,0.3089,0.198,15.16,0.508,0.3355
+police_only,fb_share,"controls+region, drop border metros [post-hoc]",True,379,0.0039,0.00257,0.1301,0.399,15.16,0.508,0.1163
+corrections_only,mex_share,bivariate,False,267,0.00495,0.00248,0.0462,0.047,11.93,0.2072,0.285
+corrections_only,mex_share,bivariate,True,267,0.00228,0.00123,0.0643,0.031,11.93,0.2072,0.1311
+corrections_only,mex_share,controls+region,False,267,0.00798,0.00301,0.008,0.239,11.93,0.2072,0.4595
+corrections_only,mex_share,controls+region,True,267,0.00429,0.00132,0.0011,0.28,11.93,0.2072,0.2473
+corrections_only,mex_share,controls+region+crime,False,223,0.00802,0.00327,0.0142,0.273,12.01,0.2092,0.4602
+corrections_only,mex_share,controls+region+crime,True,223,0.00492,0.00152,0.0012,0.324,12.01,0.2092,0.2821
+corrections_only,mex_share,"controls+region, drop gaming/tourism/DC",False,262,0.00815,0.00298,0.0063,0.245,12.06,0.2095,0.4691
+corrections_only,mex_share,"controls+region, drop gaming/tourism/DC",True,262,0.00443,0.00132,0.0008,0.288,12.06,0.2095,0.2549
+corrections_only,mex_share,"controls+region, drop border metros [post-hoc]",False,258,0.00591,0.0023,0.0101,0.192,11.02,0.2002,0.3253
+corrections_only,mex_share,"controls+region, drop border metros [post-hoc]",True,258,0.00397,0.00122,0.0011,0.269,11.02,0.2002,0.2187
+corrections_only,fb_share,bivariate,False,267,0.00133,0.00472,0.7787,0.001,15.93,0.2072,0.1019
+corrections_only,fb_share,bivariate,True,267,-0.00309,0.00096,0.0012,0.026,15.93,0.2072,-0.2374
+corrections_only,fb_share,controls+region,False,267,0.01932,0.00764,0.0114,0.239,15.93,0.2072,1.4854
+corrections_only,fb_share,controls+region,True,267,0.00205,0.00229,0.3699,0.245,15.93,0.2072,0.1579
+corrections_only,fb_share,controls+region+crime,False,223,0.01885,0.00832,0.0235,0.269,15.05,0.2092,1.3559
+corrections_only,fb_share,controls+region+crime,True,223,0.00114,0.00216,0.5968,0.278,15.05,0.2092,0.0823
+corrections_only,fb_share,"controls+region, drop gaming/tourism/DC",False,262,0.02016,0.00772,0.009,0.247,15.69,0.2095,1.5095
+corrections_only,fb_share,"controls+region, drop gaming/tourism/DC",True,262,0.00251,0.00244,0.3045,0.252,15.69,0.2095,0.1879
+corrections_only,fb_share,"controls+region, drop border metros [post-hoc]",False,258,0.00787,0.00421,0.0614,0.179,15.85,0.2002,0.623
+corrections_only,fb_share,"controls+region, drop border metros [post-hoc]",True,258,-3e-05,0.00142,0.9845,0.235,15.85,0.2002,-0.0022
+lawyers,mex_share,bivariate,False,389,-0.00127,0.0004,0.0014,0.012,11.92,0.5134,-0.0294
+lawyers,mex_share,bivariate,True,389,-0.00378,0.0021,0.0722,0.041,11.92,0.5134,-0.0879
+lawyers,mex_share,controls+region,False,389,-0.00207,0.0006,0.0005,0.361,11.92,0.5134,-0.0481
+lawyers,mex_share,controls+region,True,389,-0.00605,0.00158,0.0001,0.647,11.92,0.5134,-0.1405
+lawyers,mex_share,controls+region+crime,False,320,-0.00254,0.00058,0.0,0.377,12.26,0.4789,-0.0649
+lawyers,mex_share,controls+region+crime,True,320,-0.00645,0.00197,0.0011,0.572,12.26,0.4789,-0.165
+lawyers,mex_share,"controls+region, drop gaming/tourism/DC",False,383,-0.00188,0.00055,0.0007,0.341,12.07,0.4918,-0.046
+lawyers,mex_share,"controls+region, drop gaming/tourism/DC",True,383,-0.0047,0.00121,0.0001,0.682,12.07,0.4918,-0.1153
+lawyers,mex_share,"controls+region, drop border metros [post-hoc]",False,379,-0.00278,0.00104,0.0078,0.358,10.89,0.5162,-0.0586
+lawyers,mex_share,"controls+region, drop border metros [post-hoc]",True,379,-0.00761,0.00203,0.0002,0.656,10.89,0.5162,-0.1605
+lawyers,fb_share,bivariate,False,389,0.00776,0.00196,0.0001,0.086,15.35,0.5134,0.232
+lawyers,fb_share,bivariate,True,389,0.01641,0.00343,0.0,0.351,15.35,0.5134,0.4907
+lawyers,fb_share,controls+region,False,389,-0.00076,0.00213,0.721,0.34,15.35,0.5134,-0.0227
+lawyers,fb_share,controls+region,True,389,0.00544,0.00449,0.2248,0.6,15.35,0.5134,0.1628
+lawyers,fb_share,controls+region+crime,False,320,-0.00041,0.00245,0.8674,0.349,14.71,0.4789,-0.0126
+lawyers,fb_share,controls+region+crime,True,320,0.00804,0.00408,0.049,0.551,14.71,0.4789,0.2468
+lawyers,fb_share,"controls+region, drop gaming/tourism/DC",False,383,-0.00088,0.00221,0.6926,0.321,15.1,0.4918,-0.0269
+lawyers,fb_share,"controls+region, drop gaming/tourism/DC",True,383,0.00735,0.00384,0.0556,0.664,15.1,0.4918,0.2256
+lawyers,fb_share,"controls+region, drop border metros [post-hoc]",False,379,-0.00016,0.00249,0.9484,0.333,15.19,0.5162,-0.0047
+lawyers,fb_share,"controls+region, drop border metros [post-hoc]",True,379,0.00587,0.00444,0.1861,0.603,15.19,0.5162,0.1727
