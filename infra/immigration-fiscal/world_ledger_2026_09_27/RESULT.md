@@ -12,6 +12,24 @@ year at BEA's 2024 GDP of $29.30tn, would offset R1; no measured channel has bee
 channel from immigration politics to policy is unpriced
 ([FAQ entry 21](../../../research/immigration-objections-faq-2026-09-21.md#21-a-one-year-account-misses-the-long-run-damage-slower-productivity-divided-communities-weaker-institutions))
 [CALCULATION: `closed_budget_2026_10_06/derived/oct16/summary.json` `gdp_2024_bn` × 0.01].
+[2026-10-21, after a cross-lab review of the world gain (Kimi K3, `.model-review/2026-10-21-world-gain-critique/`; only its verified points are
+taken): other US residents' line is the same in every reading by construction, because the readings vary only
+the group's side, so it is not a robustness result. R1 is the best-anchored pay counterfactual. R3 is a low
+parameter: MMP's same-person 2.0 an hour is below the 2024 stock's measured ratio, 3.2–4.9 an hour across the
+arrival and schooling cells and 2.9 a year per person on the latest run (3.6–5.2 and 3.21 in the October 7 table
+below, "Check: 2.0 does not describe the 2024 stock"). Every source on the cost of raising revenue puts it above
+1, so the welfare-consistent pairings are equal weights with λ 1.16 (R1 $220.7 / 218.3bn) and Hendren's weights
+with their own λ (R1 $284.2 / 288.2bn). Charging Hendren's λ while keeping equal weights (`equal_lambda_hendren_a`,
+R1 $169.9 / 166.2bn) mixes two welfare metrics and is not a reading to quote. The defensible R1 range is about
+$220–290bn a year at the G3+ zero bound. Two choices in it are conservative. G3+ at zero premium is a floor: the
+upper bound, G2's Mexico-to-US ratio carried to G3+, puts the world at $670.1 / 641.5bn (+$385.2 / 357.2bn, of
+which the group's own gain is +$244.0 / 244.0bn). The group's avoided victimization in Mexico is unpriced
+(homicide 24.9 against 5.8 per 100,000, 2023). One choice may run the other way: public goods at average cost. R2
+changes three things at once (pay at p70, output service prices, public goods at the cost of extending them), so
+the public-goods convention alone is not isolated on `oct16`. [DATA: derived/readings_cash_oct16.csv, scope
+A_completed, public_pension_share 1, weightings equal, equal_lambda_1.16, hendren_a and equal_lambda_hendren_a,
+g3_bound zero and upper; derived/beside_extra_meta_oct14.json and _oct07.json `tenure_check`; WDI
+VC.IHR.PSRC.P5 in `world_ledger.py`]]
 Since 2026-10-21 the group's in-group victimization rows take the within-group lane's row A victims on the v9
 lineage at DOT's VSL (−$28.91 / −32.20bn) in place of the winners frame's −$20.11bn, lowering every reading by
 $8.80 / 12.09bn. Other US residents' crime, property-crime, unreimbursed-care and congestion rows take the v9
