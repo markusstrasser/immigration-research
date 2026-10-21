@@ -1547,8 +1547,8 @@
    "bTop": 2628
   },
   "aheadShare": [
-   0.0279,
-   0.0471
+   0.027,
+   0.0451
   ],
   "aheadPersonsM": 292.59
  },
@@ -1690,8 +1690,8 @@
   ]
  },
  "victims": [
-  37.3167217855786,
-  41.5574614038241
+  37.55984706692055,
+  41.829294984180166
  ],
  "origins": [
   {
@@ -3011,19 +3011,19 @@
    "file": "infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json",
    "commit": null,
    "tracked": true,
-   "sha256": "3b7d00abeabf786fc140f36ec671c902729ffeed709f5848b00b22cd47a7406c"
+   "sha256": "cec86b26d7eb4f87d5b76f5c90b996605801f54ef44e7e3662706c96ad3470fb"
   },
   {
    "file": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct16/p7_inputs.json",
    "commit": null,
    "tracked": true,
-   "sha256": "e6eb32afdf0475fe690955b23b4f76dd6d818bdf8b39f24a65bffe0e60ee594f"
+   "sha256": "bb85cfb85f1c51e2b3760fb816288cae1f39dfaf3b8d9325b617518746675816"
   },
   {
    "file": "infra/immigration-fiscal/winners_losers_2026_09_24/derived/oct16/p7_net_shares.csv",
    "commit": null,
    "tracked": true,
-   "sha256": "32f4d1ca42756cd3e31c449993128f53311ea1f37d1520ce4cc17c4d32366011"
+   "sha256": "281eccaae85cb908c2dfefc259c646d50ddeceea72bd84cb93456757e50a0761"
   }
  ]
 }

@@ -68,8 +68,8 @@ visual grammar ... what's negative / positive").
 - The gates reproduce the case's files and runs (the band and the cash set from summary.json; the C2 tally on
   accrual and on cash from `c2_tally_oct16.csv`; `sign_reversal.csv`'s oct16 columns; the package's own
   proportional-reference, roads-fixed, colleges-fixed and general-administration-fixed runs) and every published figure the
-  page prints (ladder 194's −$80.1bn / +$45.4bn, the percentiles summing to the quintiles, the 2.8% / 4.7% ahead,
-  NIBRS murder and robbery ratios, the custody ratios, victims' $37.3–41.6bn, the origin screen's Mexico and India
+  page prints (ladder 194's −$80.1bn / +$45.4bn, the percentiles summing to the quintiles, the 2.7% / 4.5% ahead,
+  NIBRS murder and robbery ratios, the custody ratios, victims' $37.6–41.8bn, the origin screen's Mexico and India
   rows, the item T places, the FAQ 5 generation gaps and lifetime values, the back-cast's 2024 anchor, windows and
   per-member figures, the pandemic shares). The generation split prints at one decimal with controlled rounding so
   its parts add to the case. A last block checks each claim the text makes in words, so a rebuild that would leave

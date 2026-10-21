@@ -782,7 +782,9 @@ def displayed_sum_errors(table):
 # Sums the prose states in words: (what, [(record, sign)], total record). At each end, the parts as printed must
 # add to the total as printed. The bindings keep every sentence that states the sum quoting its records.
 PROSE_SUMS = [
-    ("the main estimate plus the costs outside the budget", [("case.main", 1), ("social.items", 1)], "pairing.total"),
+    # At one decimal: whole billions broke this sum at the high end on 2026-10-21 (437 + 121 against 557).
+    ("the main estimate plus the costs outside the budget", [("case.main_one_decimal", 1), ("social.items", 1)],
+     "pairing.total"),
     ("the time map's plain entries", [("cash_gap.all_governments", 1), ("capital_return.total", 1),
                                       ("cash.unplaced", 1), ("capped_aid.displaced", 1), ("cash.pension_accrual", 1)],
      "case.main"),

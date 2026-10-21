@@ -379,8 +379,8 @@ for (const conv of ["a", "b"]) {
     epsilon: "infinite", population: "lineage" }, "p7_net_shares.csv");
   const ahead = ["a", "b"].map((k) => num(wlRow(k).winners_share));
   const wlCase = wlIn.case === A.CASE_KEY && near(wlIn.population.with_coverage, V9.population.with_coverage, 1e-3);
-  gate("person by person: 2.8% / 4.7% ahead (INDEX, ladder 226), on main case v9 (p7_inputs.json case oct16, its lineage = summary.json v9)",
-    ahead.map((x) => (100 * x).toFixed(1)).join("/") === "2.8/4.7" && wlCase, ahead.map((x) => (100 * x).toFixed(2) + "%").join(" / "));
+  gate("person by person: 2.7% / 4.5% ahead (INDEX, ladder 226), on main case v9 (p7_inputs.json case oct16, its lineage = summary.json v9)",
+    ahead.map((x) => (100 * x).toFixed(1)).join("/") === "2.7/4.5" && wlCase, ahead.map((x) => (100 * x).toFixed(2) + "%").join(" / "));
   byPercentile.aheadShare = ahead.map((x) => round(x, 4));
   byPercentile.aheadPersonsM = round(num(wlRow("a").persons_m), 2);
   console.log(`    tax shares: ${a99[0]} … ${a[98]}, top 1% ${a[99]}; per-person cuts: ${b[0]} … ahead from ${cross}, top 1% ${b[99]}`);
@@ -429,8 +429,8 @@ gate("custody 2.56× (2010), 1.91×, 1.72×, 1.94× (2024); 2.10–2.23× reallo
 const REAL = readJson(path.join(FISCAL, "sept24_propagation_2026_09_24", "derived", A.CASE_KEY, "real_costs_totals.json"));
 const victimRow = REAL.v9_social_environment.current_social_rows[0];
 const victims = ["low", "high"].map((end) => num(victimRow.total_by_end_bn[end]));
-gate("victims' harm $37.3–41.6bn on the case's lineage (FAQ 12; real_costs_totals.json oct16, its first social row)",
-  victims.map((x) => x.toFixed(1)).join() === "37.3,41.6" && /victim/i.test(JSON.stringify(victimRow).slice(0, 400)), victims.map((x) => x.toFixed(3)).join(" / "));
+gate("victims' harm $37.6–41.8bn on the case's lineage (FAQ 12; real_costs_totals.json oct16, its first social row)",
+  victims.map((x) => x.toFixed(1)).join() === "37.6,41.8" && /victim/i.test(JSON.stringify(victimRow).slice(0, 400)), victims.map((x) => x.toFixed(3)).join(" / "));
 
 /* ---------------------------------------------------------------- origins ------------------- */
 

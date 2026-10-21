@@ -62,7 +62,7 @@ def test_the_prose_sums_add_as_printed_and_break_when_a_part_moves():
     moved = {k: dict(v) for k, v in recs.items()}
     moved["social.items"]["expr"] = "(l - 10, h)"
     assert B.prose_sum_errors(moved) == [
-        "the main estimate plus the costs outside the budget, low end: the parts print as 470, pairing.total as 480"]
+        "the main estimate plus the costs outside the budget, low end: the parts print as 473.1, pairing.total as 483.1"]
     moved = {k: dict(v) for k, v in recs.items()}
     moved["cash.unplaced"]["expr"] = "(u1 + p1 + 2, u2 + p2)"
     assert B.prose_sum_errors(moved) == [

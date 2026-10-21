@@ -345,8 +345,9 @@ GROUPS = [
         claim="Costs outside the public budget add about {{q:social.items|mid}} a year",
         range="about {{q:social.items|mid_range}}",
         why=("Some costs never pass through a budget: crime victims, pollution, crashes, traffic and fear. "
-             "The account prices them beside its total, net of gains from a larger economy. With them the total is "
-             "about {{q:pairing.total|mid_range}}."),
+             "The account prices them beside its total, net of gains from a larger economy. Added to the main "
+             "estimate's {{q:case.main_one_decimal|range_unit}}, they bring the total to about "
+             "{{q:pairing.total|mid_range}}."),
         terms=[("externality", "a cost that falls on people outside the transaction"),
                ("value of a statistical life", "the price that cost-benefit analysis uses for a death")],
         findings=[
@@ -367,6 +368,19 @@ GROUPS = [
                       "{{q:victims.harm|mid_range}} a year.",
                  why="The full cost counts a death at a statistical value, plus pain. Tangible losses alone are "
                      "$4.5bn. Police records confirm the offender shares."),
+            dict(refs=[319],
+                 text="Crime against businesses, and the crimes the victim survey misses, cost other residents "
+                      "{{q:business_crime.gross|mid}} a year gross, about a third of the cost of murder. Net of the "
+                      "group's own share, through prices, of other offenders' theft, the total counts "
+                      "{{q:business_crime.net|mid}}.",
+                 why="Retail theft is priced at the shrink survey's cost, with police records' offender shares: "
+                     "Hispanic residents shoplift at 0.91 times the all-resident rate. Businesses' security "
+                     "against offending on members adds {{q:security.commercial|range_unit}}."),
+            dict(refs=[320],
+                 text="Harm members do to one another, about {{q:within_group.harm|mid}} a year, is the group's "
+                      "own loss and stays out of the total.",
+                 why="Mostly crime victims inside the group and child maltreatment, at the same prices. For "
+                     "members' families in Mexico the studies disagree on the sign."),
             dict(refs=[195],
                  text="Traffic costs other commuters about {{q:congestion.item|mid_range}} a year.",
                  why="Speed falls 0.12% per 1% more people when road space stays fixed. Roads that grow with "

@@ -70,12 +70,17 @@ infra/immigration-fiscal/overview_2026_09_28/groups.py,work/f201/text,scale.net,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,work/f53/why,instrument.power_lost_year,value,2000,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/claim,social.items,mid,{{SOCIAL_ADD_WORDS}},was the pairing less the adopted fiscal case
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/range,social.items,mid_range,{{SOCIAL_ADD}},
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/why,case.main_one_decimal,range_unit,,"the prose sum's first part, at one decimal"
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/why,pairing.total,mid_range,{{SOCIAL_TOTAL}},
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f260/text,pm25.cost,mid_range,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f260/text,pm25.public,range_unit,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f260/why,pairing.life_years,range_unit,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f264/text,crash.cost,mid,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f189/text,victims.harm,mid_range,$29bn,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f319/text,business_crime.gross,mid,,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f319/text,business_crime.net,mid,,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f319/why,security.commercial,range_unit,,
+infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f320/text,within_group.harm,mid,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f195/text,congestion.item,mid_range,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f258/text,social.fear_security_school,range_unit,,
 infra/immigration-fiscal/overview_2026_09_28/groups.py,social/f190/text,housing.rent_elasticity_long_run,range,1%,ladder 79's short-run 1%; the renters' $34bn uses the long-run land share

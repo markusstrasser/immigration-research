@@ -68,6 +68,9 @@ CLASS = {
     264: ("study", "extrapolated", None),  # traffic elasticity from London, Manhattan, German strikes, 2020
     189: ("count", "arithmetic", "Jails record Hispanic ethnicity less often than people report it. Victims report "
                                  "the offender's ethnicity."),
+    319: ("count", "arithmetic", "A third of shoplifting victimisations have no recorded offender; the central "
+                                 "spreads them in the recorded mix."),
+    320: ("study", "extrapolated", None),
     195: ("study", "extrapolated", None),
     258: ("study", "extrapolated", None),
     190: ("study", "fitted", None),
