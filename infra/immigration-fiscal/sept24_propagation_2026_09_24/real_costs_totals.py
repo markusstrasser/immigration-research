@@ -757,7 +757,8 @@ def v8_added_social(bands_meta):
                 rule=v8_added_social.__doc__.split("\n\n")[1].strip())
 
 
-def apply_v8_environment(rows, doc, bands_meta, summary, transport, *, case="oct15", added_override=None):
+def apply_v8_environment(rows, doc, bands_meta, summary, transport, *, case="oct15", added_override=None,
+                         extra_rows=None):
     """Replace owned PM/crash/volunteering rows, retaining their declared frame.
 
     Sender/receiver quantities keep the v7 keys for the union and the 3.04M descendants. Under
@@ -769,6 +770,12 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport, *, case="oct
     PM per dollar on the legacy row's mortality weighting and receiver factor [ASSUMPTION: uniform intensity across
     public functions; public investment emissions not counted]. The legacy government row, re-spending alone, neither
     side, the earlier matched justice footing, carbon and life-year valuations are beside.
+
+    extra_rows (oct16 on): social rows outside the population lane's restatement, each dict(item, level_by_end_bn,
+    key, contract). The caller has already added their levels to the published pairing rows; they enter the closure,
+    the added people's terms and current_social_rows like the restated rows. added["crime_senders"], when present,
+    replaces the zero sender share on the crime keys (rows: exact amounts by item; share_12_plus: the share for
+    rows proportional to offending).
     """
     if transport not in V8_TRANSPORTS:
         raise ValueError("[BLOCKED] undeclared v8 social transport")
@@ -810,7 +817,11 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport, *, case="oct
             return d[f"union_before_boundary_{end}_bn"] * (1 + d[f"share_{end}"])
         return d[f"union_{end}_bn"] + d[f"added_{end}_bn"]
 
-    prior_social = {end: sum(amount(d["item"], end) for d in detail) for end in ("low", "high")}
+    extra = {r["item"]: r for r in (extra_rows or ())}
+    if len(extra) != len(extra_rows or ()) or set(extra) & {d["item"] for d in detail}:
+        raise ValueError("[BLOCKED] an extra social row repeats a row")
+    prior_social = {end: sum(amount(d["item"], end) for d in detail)
+                    + sum(r["level_by_end_bn"][end] for r in extra.values()) for end in ("low", "high")}
     for end in ("low", "high"):
         # The pairing's fiscal row is the case at both ends (PAIRING_LOW_FISCAL).
         if abs(before[end] - prior_social[end] - account["ends"][end]["set_cost_bn"]) > 1e-6:
@@ -896,14 +907,22 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport, *, case="oct
         levels["road_crash_externality"] += terms["crash_capacity"]
         levels["congestion"] += terms["congestion_capacity"]
         levels["victims"] += terms["crime_mortality"]
+        crime = added.get("crime_senders")
+        records = [(d["item"], LINEAGE_ROW_KEYS[d["item"]][("low", "high").index(end)], d[f"share_{end}"]) for d in detail]
+        for r in extra.values():
+            levels[r["item"]] = r["level_by_end_bn"][end]
+            records.append((r["item"], r["key"][("low", "high").index(end)], r["share_by_end"][end]))
         by_item = {}
-        for d in detail:
-            item = d["item"]
-            key = LINEAGE_ROW_KEYS[item][("low", "high").index(end)]
-            union_part = levels[item] / (1 + d[f"share_{end}"])
+        for item, key, own_share in records:
+            union_part = levels[item] / (1 + own_share)
             share = 0.0 if key is None or key in CRIME_KEYS else added["shares"][end][key]
             gross = union_part * share
             shift = union_part * added["item11_consumption_factor"] if key == "consumption" else 0.0
+            if crime and key in CRIME_KEYS:
+                exact = crime["rows"].get(item)
+                share = crime["share_12_plus"][end]
+                gross, shift = ((exact[end]["added_people_bn"], exact[end]["item11_consumption_bn"]) if exact
+                                else (union_part * share, 0.0))
             receivers = -(levels[item] + gross + shift) * added["completion_receiver_share"][receiver_scope(item)]
             by_item[item] = dict(level_bn=levels[item], union_part_bn=union_part, key=key, share=share,
                                  added_people_bn=gross, item11_consumption_bn=shift, completion_receivers_bn=receivers)
@@ -1039,6 +1058,14 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport, *, case="oct
                                                   assumptions="counterflow to re-spending inside pm25_consumption; removed public "
                                                               "consumption at government-average PM per dollar"),
                                     v8_added_by_end_bn=None))
+    # After the government side, so the earlier rows keep their positions (registry paths read them by index).
+    for item, r in extra.items():
+        v8 = {end: central["parts"][end]["v8_added_by_item"].get(item) for end in ("low", "high")}
+        values = {end: r["level_by_end_bn"][end] + (v8[end]["added_people_bn"] + v8[end]["item11_consumption_bn"]
+                                                    + v8[end]["completion_receivers_bn"] if added else 0.0)
+                  for end in ("low", "high")}
+        current_social_rows.append(dict(item=item, total_by_end_bn=values, contract=r["contract"],
+                                        v8_added_by_end_bn=v8 if added else None))
     current_social = {end: sum(record["total_by_end_bn"][end] for record in current_social_rows) for end in ("low", "high")}
     joint = {}
     for end in ("low", "high"):
@@ -1060,6 +1087,9 @@ def apply_v8_environment(rows, doc, bands_meta, summary, transport, *, case="oct
                           round3_completion_receivers_bn=central["parts"][end]["terms"].get("completion_receivers", 0.0),
                           interaction_residual_bn=interaction,fiscal_pairing_bn=fiscal,
                           social_rows_bn=current_social[end])
+        if extra:
+            # Inside crime_delta_bn: their levels before the added people's terms (those are in round3_*).
+            joint[end]["extra_social_rows_bn"] = {item: r["level_by_end_bn"][end] for item, r in extra.items()}
         append("pairing_without_round1_social_fixes", f"published pairing ({end})", baseline,
                note="v8 fiscal account; preserved pre-round1 social source rows; conditional source-key transport")
     for end in ("low", "high"):

@@ -106,9 +106,17 @@ def crime_sources(src, share):
         rows = prop[prop.price_set.eq(price)]
         require(len(rows) > 0, "property source price " + price)
         property_cost[end] = float((rows.victimisations_2024 * rows.unit_victim_cost).sum()) / 1e9 * share * (1 - share)
+    # Business losses: a random group's offending share equals its payment share, so the pass-through net of the
+    # losses is zero; its direct victims outside the NCVS frame are national counts at share x (1 - share).
+    business = src.document("business_crime_2026_10_21/derived/summary.json")["pairing"]["national_all_offenders_bn"]
+    business_crime = sum(business[x] for x in ("D", "E", "F")) * share * (1 - share)
+    # Commercial security against offending on the group's own members: offending share x member-victim share x
+    # outside payers, all at the population share.
+    commercial = spending["commercial"] * share * share * (1 - share)
     return dict(victims={e: victims for e in ENDS}, fear_avoidance={e: fear for e in ENDS},
                 private_security={e: security["total_bn"] for e in ENDS}, property_crime=property_cost,
-                school_disruption={e: 0. for e in ENDS})
+                school_disruption={e: 0. for e in ENDS}, business_crime={e: business_crime for e in ENDS},
+                commercial_security_member_victims={e: commercial for e in ENDS})
 
 
 def housing_source(src, share):
@@ -285,6 +293,7 @@ def average_components(national_fiscal, *, population_people, national_people, f
         assumptions=["Equal-count random removal pro rata in each age, skill, geography, source and receiver cell.",
             "Native central source coefficients and national dollar vintages retained; CE per-person spending uses its published source table at cent precision; no Mexican social-dollar scaling.",
             "Crime/fear/security use common active DOT units, P7 forward/reverse payments and WTP-security overlap rule.",
+            "Business crime: losses net to zero (offending share = payment share); direct victims outside the NCVS at the national all-offender count; commercial security against offending on members at the population share.",
             "School discipline gap is zero for a random average group under the native excess-discipline formula.",
             "Housing native rent path/integral uses random domestic landlord membership and the same foreign-owner share.",
             "Volunteering uses national CEV supply and random receivers; only the same primary-food incoming proxy at displacement1 is priced.",

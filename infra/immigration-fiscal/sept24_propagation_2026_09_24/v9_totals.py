@@ -4,6 +4,7 @@ Native-First: the existing named stack evaluator, own calibration records and
 source-v8 quantity-price bridge; historical output files are immutable inputs.
 """
 from __future__ import annotations
+import ast
 import copy
 import csv
 import hashlib
@@ -67,6 +68,8 @@ def added_social(old_meta, payload, R):
     age = d.A_AGE.to_numpy()
     scopes = {"all":np.ones(len(d), bool), "5_plus":age>=5, "5_17":(age>=5)&(age<18), "18_plus":age>=18}
     located_delta = {s:float(delta[m].sum()) for s,m in scopes.items()}
+    # The crime rows' offender scope (crime_senders): the victim lane's population share is of people aged 12+.
+    located_12_plus = float(delta[age>=12].sum())
     old_completion = out["people"]["completion_by_scope"]
     cov = json.loads((FISCAL / "coverage_bound_2026_10_14/derived/coverage_bound_oct15.json").read_text())["sets"]["set"]
     bands = {}
@@ -109,11 +112,102 @@ def added_social(old_meta, payload, R):
         outside = frames[f"cps_all_civilian|{scope}"]-frames[f"union|{scope}"]
         out["completion_receiver_share"][scope] = located_delta[scope]/outside
     out["people"].update(coverage=cov_scope["all"], coverage_by_scope=cov_scope,
-                         located_change_by_scope=located_delta, calibrated_complete=meta["population_v9"]["with_coverage"])
+                         located_change_by_scope=located_delta, calibrated_complete=meta["population_v9"]["with_coverage"],
+                         located_change_12_plus=located_12_plus)
     out["native_calibration"] = construction
     out["rule"] = added_social.__doc__
     out["sources_sha256"][R.rel(source)] = hashlib.sha256(source.read_bytes()).hexdigest()
     return out
+
+
+BUSINESS = FISCAL / "business_crime_2026_10_21/derived"
+BUSINESS_SUMMARY_SHA256 = "2d41773a36bea2c81edbb4ec28dfa2c77a70fcdcee76458e09c539ac086f9d83"
+
+
+def crime_rows(doc, added, R):
+    """The business-crime row, the commercial-security row and the crime rows' terms for the people v9 adds.
+
+    Senders. The victim lane gives the union Hispanic-offender incidents in proportion to its CPS share of Hispanics
+    aged 12+ (P7 puts that share on row 4). National incident counts include offences by people the Census misses,
+    and the CPS share carries the same undercount in its numerator and denominator, so the coverage people's
+    offending is already in the union's rows. The completion reporters are CPS Hispanics outside the union, so their
+    share went to outsiders, and item 16 moves native minors between the union and other Hispanics. Their change in
+    the union's count aged 12+ is the crime rows' sender share [ASSUMPTION: the lane's equal-rate population share].
+    Payers. The security and business rows also carry the group's payment share. Every person v9 adds pays, at the
+    consumption key's share, and item 11 moves its consumption to the stayers.
+    Commercial security. P7 charges businesses' security at offending x outside-victim share x (1 - payment share).
+    A business guards against offending at its premises whoever the offender's other victims are, and it passes the
+    cost to purchasers, as the business-crime row passes its losses; the part P7 leaves out, offending x (1 - outside
+    share) x (1 - payment share), is its own row. Outsiders' fear residual is priced on outside victims only, so this
+    spending has no counterpart there and P7's fear row is unchanged [FRAMING-SENSITIVE].
+    """
+    path = BUSINESS / "summary.json"
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    require(digest == BUSINESS_SUMMARY_SHA256, "stale business-crime summary " + digest)
+    pairing = json.loads(path.read_text())["pairing"]
+    printed = {r["end"]: r for r in csv.DictReader((BUSINESS / "summary.csv").open()) if r["arm"] == "central"}
+    p7, keys = doc["p7_crime"], doc["lineage_social_rows"]["keys"]
+    frame = {r["count"]: float(r["row4"]) for r in csv.DictReader((FISCAL / "population_basis_2026_09_29/derived/frame_counts.csv").open())}
+    delta = added["people"]["located_change_12_plus"] / frame["union|12_plus"]
+    tree = ast.parse((FISCAL / "social_costs_unpriced_2026_09_28/items.py").read_text())
+    phis = [ast.literal_eval(n.value) for n in tree.body if isinstance(n, ast.Assign)
+            and any(isinstance(t, ast.Name) and t.id == "PHI" for t in n.targets)]
+    require(len(phis) == 1, "one PHI declaration in the P7 items module")
+    phi = phis[0]["central"]
+    terms, gross, levels = {}, {}, {"business_crime": {}, "commercial_security_member_victims": {}}
+    for end in ("low", "high"):
+        q = p7["response_parameters"][end]
+        k, r = q["added_offending_share"], p7["recipient_shares"]["victims"]
+        require(abs(k - keys[f"{end}_end"]["justice_use_raw_coding" if end == "low" else "justice_use"]) < 1e-15, "P7 crime key")
+        res, com = q["national_spending"]["residential"], q["national_spending"]["commercial"]
+        out, off_u, p_u, p = q["outside_share_before_boundary"] * (1 - r), q["offending_share_union"], q["payment_share_union"], q["payment_share_lineage"]
+        b = pairing["ends"][end]
+        require(abs(b["crime_key"] - k) < 1e-15 and abs(pairing["payment_share_lineage"] - p) < 1e-15
+                and abs(pairing["payment_share_union"] - p_u) < 1e-15, "business crime on the pairing's keys")
+        require(abs(b["net_bn"] - float(printed[end]["net_with_without_bn"])) < 5e-7
+                and abs(b["gross_bn"] - float(printed[end]["gross_forward_bn"])) < 5e-7, "business summary.json against summary.csv")
+        lines, direct = b["loss_lines"].values(), sum(b["direct_union_bn"].values())
+
+        def business(g, pay):
+            return sum(x["L_bn"] * (x["S_union"] * g - pay) for x in lines) + direct * g
+        def security(o, pay):
+            return res * o * out + com * o * out * (1 - pay) - com * pay * (1 - o)
+        def forward(o, pay):
+            return (res + com * (1 - pay)) * o * out
+        def commercial(o, pay):
+            return com * o * (1 - out) * (1 - pay)
+        lineage = p7["lineage_crime_rows"][end]
+        o0, o9 = off_u * (1 + k), off_u * (1 + k + delta)
+        require(abs(business(1 + k, p) - b["net_bn"]) < 1e-9, f"business net from its parts ({end})")
+        require(abs(security(o0, p) - lineage["private_security"]) < 1e-9, f"P7 lineage security from its parameters ({end})")
+        wtp = lineage["fear_avoidance"] / phi + forward(o0, p)
+        require(lineage["fear_avoidance"] > 0, "P7 fear residual above its floor")
+        def fear(o, pay):
+            return phi * max(0.0, wtp * o / o0 - forward(o, pay))
+        c9, f11 = added["shares"][end]["consumption"], added["item11_consumption_factor"]
+        pa, p9 = p + p_u * c9, p + p_u * (c9 + f11)
+        rules = dict(private_security=security, fear_avoidance=fear, commercial_security_member_victims=commercial,
+                     business_crime=lambda o, pay: business(o / off_u, pay))
+        for item, f in rules.items():
+            terms.setdefault(item, {})[end] = dict(added_people_bn=f(o9, pa) - f(o0, p), item11_consumption_bn=f(o9, p9) - f(o9, pa))
+        levels["business_crime"][end] = b["net_bn"]
+        levels["commercial_security_member_victims"][end] = commercial(o0, p)
+        gross[end] = b["gross_bn"]
+    contract = lambda valuation, overlaps: dict(comparator="with_without", beneficiary_population="residents_outside_lineage",  # noqa: E731
+                                                valuation_basis=valuation, overlap_set=overlaps)
+    extra = [dict(item="business_crime", level_by_end_bn=levels["business_crime"], key=R.CRIME,
+                  share_by_end={e: p7["response_parameters"][e]["added_offending_share"] for e in ("low", "high")},
+                  contract=dict(contract("loss_pass_through_net", ["victims", "property_crime", "private_security"]),
+                                source=R.rel(path), gross_beside_bn=gross,
+                                decision="decisions/2026-10-21-business-crime-in-pairing.md")),
+             dict(item="commercial_security_member_victims", level_by_end_bn=levels["commercial_security_member_victims"], key=R.CRIME,
+                  share_by_end={e: p7["response_parameters"][e]["added_offending_share"] for e in ("low", "high")},
+                  contract=dict(contract("resource_spending", ["private_security", "fear_avoidance", "business_crime"]),
+                                source="p7_crime.response_parameters", decision="decisions/2026-10-21-business-crime-in-pairing.md"))]
+    senders = dict(share_12_plus={e: delta for e in ("low", "high")}, rows=terms,
+                   people_12_plus=added["people"]["located_change_12_plus"], union_12_plus_row4=frame["union|12_plus"],
+                   rule=crime_rows.__doc__)
+    return extra, senders, {R.rel(path): digest}
 
 
 def main(args):
@@ -154,8 +248,14 @@ def main(args):
             value = sum(r["change_bn"] for r in parts if r["source_side"]=="spending" and family.get(r["source_line"])=="consumption")
             bands["social_resource_account"]["ends"][end]["government_consumption_removed_bn"] += value
     added = added_social(old_meta,payload,R)
+    extra, added["crime_senders"], extra_sources = crime_rows(doc, added, R)
+    for i, end in enumerate(("low", "high")):
+        rows[i]["oct16"] += sum(r["level_by_end_bn"][end] for r in extra)
+        rows[i]["note"] += "; business crime (net) and commercial security against offending on members"
+    doc["sources_sha256"].update(extra_sources)
     bands["oct16_transport"] = load_transport().build_roads(frame)
-    R.apply_v8_environment(rows,doc,bands,summary,args.v8_social_transport,case="oct16",added_override=added)
+    R.apply_v8_environment(rows,doc,bands,summary,args.v8_social_transport,case="oct16",added_override=added,
+                           extra_rows=extra)
     env = doc.pop("v8_social_environment")
     env.update(current_fiscal_population=payload["meta"]["population_v9"]["with_coverage"],
                source_vintage="live source bundles verified by named-stack receipts; native count16 and tenure17 at source pre18 physical-consumption prices",
