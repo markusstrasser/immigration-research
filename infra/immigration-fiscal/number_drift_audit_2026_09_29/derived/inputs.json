@@ -1,5 +1,5 @@
 {
- "head": "673068caf51e8bdccc821047ad37d09ea010d470",
+ "head": "adede56c0f46cf3a79ddb4494cd6a416c6d2205d",
  "sha256": {
   "CLAUDE.md": "b3d8099a25e2b19e4db055b9c8887d5f61ac5f206864de00d4a1dda7721b37e4",
   "README.md": "e82c4018e75d0030de0e62a551bbddb2bcd2af333165872487317cf9b4971b59",
@@ -147,18 +147,20 @@
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/oct16/net_positive_shares.csv": "377f281c00212292c103b74de82bd082dc18657a9184ef186cf1074cedfbc351",
   "infra/immigration-fiscal/within_group_distribution_2026_09_29/derived/oct16/net_positive_shares_person_onbooks.csv": "325972a3ade15ca1b466f9fd585b91279045b98099981f326d55000cc3bf67bc",
   "infra/immigration-fiscal/within_group_harm_2026_10_21/derived/summary.json": "3565226567bdc5247f52ae7ce462bcb3f6d132ec2b259672675db46ce820729c",
+  "infra/immigration-fiscal/world_ledger_2026_09_27/derived/beside_extra_meta_oct14.json": "9764e46f72e71eda506db90488a5564e954473edb2f8c321f09ab8f6894d7bfe",
   "infra/immigration-fiscal/world_ledger_2026_09_27/derived/beside_extra_summary_oct07.csv": "223c70c22281cde1a18749320f49f8c78d3fd09a45f8acbb9682d9561eb001c6",
   "infra/immigration-fiscal/world_ledger_2026_09_27/derived/readings_cash_oct16.csv": "4273d8f0087add70185cd099b5ccc906bd014d9a4a3530cc131bc339c2a88e56",
   "infra/immigration-fiscal/world_ledger_2026_09_27/derived/readings_table_cash_oct16.md": "db353380443a7177fcf217eb98ab03e6a84d7e89ef171ae6fad3923530942d30",
   "infra/immigration-fiscal/world_ledger_2026_09_27/derived/world_ledger_oct07.csv": "d575cc930ecaf8590019075af3b8d5ede032b660621685ffba8305eb770c48d9",
-  "research/immigration-INDEX.md": "ac2a297267f23c6ea19deca93a58c216b573df70cefcfaa96aecfff21dc8576b",
+  "infra/immigration-fiscal/world_ledger_2026_09_27/world_ledger.py": "2564d0d849604d208a1d3b6c200ef4957b88e565e2a3d5900172244da4958c08",
+  "research/immigration-INDEX.md": "b55d21ebddbfe1d08628eef324606c7e015b1859dfa90c4d889670417ee65ab7",
   "research/immigration-administration-response-test-2026-09-20.md": "e63b1d3d3f0988a86aba945b3f85bc8c63708e4f5214d94e20bc581b171b2fd8",
   "research/immigration-adopted-account-by-generation-2026-09-25.md": "384a9c188aa26dc925f7e945ecb325040aa89a8a28104e8268d793e32d276d96",
-  "research/immigration-confidence-ladder.md": "766072e8677c880aa89770592a5689870da9b29db60de418a762c00a463a9d14",
+  "research/immigration-confidence-ladder.md": "d946f8026c6aaf9cedbe3eda97acbee6ce21f98dccc6db2eeb5aa45252587618",
   "research/immigration-indian-origin-full-account-and-selection-2026-09-29.md": "376649c54d30adba55496b356c6bc4710455e41a1beeb7ab67646833d12a0aec",
-  "research/immigration-objections-faq-2026-09-21.md": "eee96bbc35b18283a939204bb153c0a43157bef4607a4fa43dfd030692b26a66",
+  "research/immigration-objections-faq-2026-09-21.md": "39eee2b531f2aee788fbb4c9bb1dead7e7a1ed35ae1b3dcc570cd57959c8da2a",
   "research/immigration-real-fiscal-and-social-costs-2026-09-23.md": "b6e029c61bbdbee73ff86303427d5931f7f8ea4fbfdc12527484bf14ae130d29",
   "research/immigration-winners-and-losers-2026-09-25.md": "9e0178084e656b8a341bf6e5b9bff0a6df5a366ac33e6311e80b29cb7dd08b05",
-  "source_map.csv": "8c7e6ab04ae3ac8ec699fa838e95a4ecf7d7b3a06768cca3d5beeef0b77faad2"
+  "source_map.csv": "17f54d8a05bc55231b3219eaa79137509960cb296f1d07e76b6322bb07a16949"
  }
 }
