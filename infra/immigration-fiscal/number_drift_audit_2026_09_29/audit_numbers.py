@@ -410,7 +410,7 @@ MEMO_SPANS = {
         ("**Weighted by income.**", "weight (2.24), not a larger harm."),
         # the v9 verdict's pairing, §7's linked table and the life-year footnote (operator 2026-10-21)
         ("Fiscal and social costs together come to **", "(only the fiscal row's pension timing"),
-        ("| Fiscal main case |", "Two displayed values, public purchases' PM2.5 at both ends"),
+        ("| Fiscal main case |", "Each row is rounded once from the file and both columns add."),
         ("¹ Valuing deaths by remaining life-years", "`pairing_social_env_life_years_r003_beside`.]"),
     ],
     # the v6 verdicts (2026-10-07)

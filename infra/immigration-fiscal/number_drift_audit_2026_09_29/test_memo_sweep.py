@@ -38,8 +38,8 @@ def test_v9_is_current_in_the_registry_and_earlier_cases_retained():
     assert _rounded(earlier["case.per_member"], 2) == [[8.09, 10.08], [7.94, 9.91], [9.10, 10.79], [9.13, 10.79], [9.35, 10.95]]
     assert _rounded(earlier["case.cash_set"], 1) == [[281.8, 371.9], [264.4, 348.5], [307.4, 385.4], [307.4, 383.4], [294.7, 361.8]]
     # v9 publishes the aggregate pairing, whose per-member value uses v9's own lineage count.
-    assert [round(x, 1) for x in values["pairing.total"]] == [479.6, 553.7]
-    assert [round(x, 2) for x in values["pairing.per_member_priced"]] == [10.68, 12.33]
+    assert [round(x, 1) for x in values["pairing.total"]] == [483.1, 557.3]
+    assert [round(x, 2) for x in values["pairing.per_member_priced"]] == [10.76, 12.41]
     assert [round(x, 1) for x in values["pairing.fiscal_footing"]] == [368.0, 436.6]
     assert _rounded(earlier["pairing.total"], 1) == [[477.7, 573.4], [440.1, 537.5], [489.0, 570.7], [490.2, 570.7], [462.9, 535.5]]
     assert _rounded(earlier["pairing.per_member_priced"], 2) == [[10.56, 12.68], [10.29, 12.57], [11.44, 13.35], [11.47, 13.35], [11.66, 13.48]]
