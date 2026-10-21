@@ -9,9 +9,11 @@ is unmeasured. [CALCULATION: `main_case_2026_10_16/derived/summary.json`, `v9`.]
 the constructed people the Census misses take zero on administrative-use justice keys already counting them.
 A justice key on census ethnicity codes as recorded (the raw-coded alternative) has not been computed on v9.
 
-Fiscal and social costs together come to **$479.6–553.7bn a year** at central values, or $10.7–12.3k per member
-of the 44.90M-person lineage, and $396.0–470.1bn counting benefits when paid (only the fiscal row's pension timing
-changes). The fiscal row is the full case at both ends; victims take the equal Hispanic/NCVS
+Fiscal and social costs together come to **$483.1–557.3bn a year** at central values, or $10.8–12.4k per member
+of the 44.90M-person lineage, and $399.5–473.7bn counting benefits when paid (only the fiscal row's pension timing
+changes). Crime against businesses and the crimes the victim survey cannot see enter at their net, $1.4bn, with
+the gross of $5.2bn beside; businesses' security spending against offending on members adds $1.9–2.0bn
+([decision](../decisions/2026-10-21-business-crime-in-pairing.md)). Harm members do to other members, about $94–96bn a year, sits beside and is never added. The fiscal row is the full case at both ends; victims take the equal Hispanic/NCVS
 footing at the low end and the custody footing at the high. The social rows count effects on people outside
 the lineage, remove harm within the removed group, use common transport-department life values and price crashes
 on the with-versus-without, multivehicle basis. Other residents' re-spending of the budget saving and the pollution
@@ -143,13 +145,16 @@ Yes, use is the better key. It changes little because of what the account compar
 |---|---|---:|---|---|
 | Courts, police, prisons by use | reallocation inside the fiscal account | +5.9 on the September 23 lane (2019 arrests; +1.7 raw codes; grid −1.0 to +8.7); not isolated in the live case | measured shares, assumed keys | the key is inside the main case |
 | Uncompensated hospital care | government offsets inside the fiscal account; unreimbursed care outside budgets | 3.4 / 5.9 outside budgets on the current lineage's boundary; the fiscal use-key change is not separately isolated on v9 | measured uninsured share, published offsets, assumed use | fiscal part already inside; outside part a social item |
-| Crime victims' harm | losses of residents outside the lineage; excludes justice costs and offenders | 37.3 / 41.6 on the completed/covered lineage's sender and receiver boundary | measured incidents, modelled prices and recipient mix | yes, as a social (Z) item |
+| Crime victims' harm | losses of residents outside the lineage; excludes justice costs and offenders | 37.6 / 41.8 on the completed/covered lineage's sender and receiver boundary | measured incidents, modelled prices and recipient mix | yes, as a social (Z) item |
 | Property crime | same boundary, arrest-share proxy | 1.3 / 1.4 | proxy | yes, as Z; separate from violent harm |
+| Business crime, net | retail and employee theft, non-retail business losses, violence against under-12s and at jails, fraud; less the group's own payment toward others' losses | 1.4 / 1.4 (gross 5.2 / 5.2 beside) | measured losses and offender shares, assumed pass-through | yes, as Z |
+| Commercial security against offending on members | businesses' crime-driven security, passed to customers | 1.9 / 2.0 | P7's proportional response | yes, as Z |
 | Housing, net to other residents | rent paid to other residents' landlords, less the surplus triangle | −3.8 / −0.8, a gain | modelled elasticities, measured rents | yes, as Z, long run only |
 | Road congestion | other residents' extra travel time and fuel, with road capacity responding | 13.7 / 10.8 | measured traffic shares and delay, modelled speed/capacity response | yes, as Z beside the main case |
 
 Current dollar rows: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`,
 `v9_social_environment.current_social_rows`. Source methods: [victim harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md),
+[business crime](../infra/immigration-fiscal/business_crime_2026_10_21/RESULT.md),
 [uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md),
 [housing](../infra/immigration-fiscal/housing_transfer_2026_09_23/RESULT.md),
 [congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md).
@@ -353,27 +358,29 @@ for victims; the high end carries the custody ratio over to victims. Victims exc
 harm within the removed lineage is excluded. The receiver mix remains an exchangeability assumption.
 
 The original union and nonreporting descendants use source keys. Completion and coverage people carry non-crime
-rows at their own age-scoped key shares; crime totals already include them, so they take no extra crime charge.
+rows at their own age-scoped key shares. In the crime rows the coverage people are already inside the national
+incident counts; the completion reporters and item 16's minors, CPS Hispanics outside the union mask, send crime at
+their located share aged 12+ (0.70% of the union's).
 The stayers' consumption shift and removal of completion members from the receiver population are included.
 [ASSUMPTION: equal use within the stated key/age scope; uninsured use transported at the all-age share.]
 
 | $bn a year | Low end | High end |
 |---|---:|---:|
 | Fiscal main case | 368.0 | 436.6 |
-| Social rows, net (table below) | 111.6 | 117.1 |
-| **Total at central values** | **479.6** | **553.7** |
-| Per member of the 44.90M-person lineage | $10.7k | $12.3k |
-| Counting benefits when paid (fiscal row's pension timing only) | 396.0 | 470.1 |
+| Social rows, net (table below) | 115.1 | 120.7 |
+| **Total at central values** | **483.1** | **557.3** |
+| Per member of the 44.90M-person lineage | $10.8k | $12.4k |
+| Counting benefits when paid (fiscal row's pension timing only) | 399.5 | 473.7 |
 
 | Social row, $bn a year; positive costs others | Low end | High end |
 |---|---:|---:|
-| Crime victims' harm | 37.3 | 41.6 |
+| Crime victims' harm | 37.6 | 41.8 |
 | Property crime | 1.3 | 1.4 |
 | Unreimbursed care | 3.4 | 5.9 |
 | Congestion | 13.7 | 10.8 |
 | Housing net gain | −3.8 | −0.8 |
-| Fear and avoidance | 6.6 | 7.6 |
-| Private security | 0.5 | 0.6 |
+| Fear and avoidance | 6.7 | 7.6 |
+| Private security | 0.4 | 0.5 |
 | School disruption | −2.2 | −2.2 |
 | PM2.5 from consumption, including re-spending | 68.3 | 65.0 |
 | Road crashes | 12.5 | 12.7 |
@@ -382,11 +389,14 @@ The stayers' consumption shift and removal of completion members from the receiv
 | Formal volunteering after replacement | −4.0 | −4.0 |
 | Consumer-side scale | −2.3 | −2.3 |
 | Trade, travel and investment ties | −7.4 | −7.4 |
-| PM2.5 from removed public purchases | 9.7 | 10.2 |
-| **Social rows, net** | **111.6** | **117.1** |
+| PM2.5 from removed public purchases | 9.6 | 10.3 |
+| Business crime, net (gross 5.2 / 5.2 beside) | 1.4 | 1.4 |
+| Commercial security against offending on members | 1.9 | 2.0 |
+| **Social rows, net** | **115.1** | **120.7** |
 
-Two displayed values, public purchases' PM2.5 at both ends, move by less than $0.1bn under controlled rounding so
-both columns add. The social rows sum to $111.563948 / $117.124481bn before rounding. The source JSON lists every
+Each row is rounded once from the file and both columns add. The social rows sum to $115.110206 / $120.736551bn
+before rounding. Harm within the lineage, $93.6 / 96.3bn ([within-group lane](../infra/immigration-fiscal/within_group_harm_2026_10_21/RESULT.md)),
+is a different object and is never added. The source JSON lists every
 row, its sender/receiver scope and overlap rule. The matched justice-footing alternative, on the raw-coded fiscal
 key, has not been computed on v9. Promises deferred, wealth-equivalent promises, life-year values, CO2 and
 alternate re-spending/government responses are separate readings, never added together.¹ [CALCULATION:
@@ -394,8 +404,8 @@ alternate re-spending/government responses are separate readings, never added to
 `v9_social_environment.current_social_rows`, `variants`; c7b99ac7.]
 
 ¹ Valuing deaths by remaining life-years instead of the uniform DOT value of a statistical life, in the crime,
-PM2.5 and crash rows together, puts the pairing at $433.0–508.8bn with life-years undiscounted and
-$438.4–513.8bn at a 3% real discount rate. The value falls because PM2.5 deaths, like deaths generally, fall mostly
+PM2.5 and crash rows together, puts the pairing at $436.5–512.4bn with life-years undiscounted and
+$441.9–517.4bn at a 3% real discount rate. The value falls because PM2.5 deaths, like deaths generally, fall mostly
 on people over 65 ([air-pollution lane](../infra/immigration-fiscal/air_pollution_2026_09_28/RESULT.md)). This is a
 valuation choice beside the central, which keeps the transport departments' one value at every age.
 [FRAMING-SENSITIVE; CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv`,
@@ -440,6 +450,13 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
   of the total: CO2, ozone, disease and food safety, and the cuisine mix. Government-consumption PM is central;
   public-investment emissions remain unpriced
   (`sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`, `v9_social_environment`).
+- **Crime outside the victim survey.** Business losses, violence against children under 12 and at jails, and fraud
+  against individuals are priced since 2026-10-21 (§3, §7). Still unpriced: the survey's undercount of domestic
+  violence, and the 35% of shoplifting victimisations with no recorded offender, which the business lane bounds at
+  $1.4–4.7bn gross for retail external theft ([business crime](../infra/immigration-fiscal/business_crime_2026_10_21/RESULT.md)).
+  Effects of members' US presence on their families in Mexico have no defensible central: the studies disagree on
+  the sign for left-behind schooling (−$1.6bn to +$2.4bn a year)
+  ([within-group lane](../infra/immigration-fiscal/within_group_harm_2026_10_21/RESULT.md), block C).
 - **Innovation and automation.** The transported patent-effect scenario is too imprecise to
   supply an identified offset; this is not evidence of zero innovation. The schooling-corrected
   arm has a positive point estimate with very wide uncertainty
@@ -483,6 +500,13 @@ both the account and the pairing. None changes the sign. [CALCULATION: rows of �
 
 ## Revisions
 
+- 2026-10-21 ([business crime in the pairing](../decisions/2026-10-21-business-crime-in-pairing.md)): the verdict, §3,
+  §7 and §8 add two social rows: business crime at its net ($1.4bn, gross $5.2bn beside), on the operator's word,
+  and businesses' security spending against offending on members ($1.9–2.0bn), which P7 had scaled to outside victims
+  only. The completion reporters and item 16's minors now send crime (+$0.27 / 0.30bn). The pairing moves from
+  $479.6–553.7bn to $483.1–557.3bn ($10.8–12.4k per member), counting benefits when paid from $396.0–470.1bn to
+  $399.5–473.7bn; the life-year footnote moves with it. §7's claim that crime totals already included the completion
+  people is withdrawn. Concept affected: the social rows of the pairing.
 - 2026-10-21 (sign reversal; FAQ entry 2's revision of the same date): the case's sign-reversal script now freezes
   item 21's health-residual charge, item 15's college remainder and the union completion's service capital with
   their services; the break-evens above moved from −2.9–11.2% to 2.3–15.7% (enterprises at full response: −7.2–7.6% to −1.5–12.4%), and the least favorable reading

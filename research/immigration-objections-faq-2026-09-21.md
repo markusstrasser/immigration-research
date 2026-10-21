@@ -17,7 +17,7 @@ unmeasured. Counting benefits when paid, it is $284–353bn. It charges the retu
 roads, parks, rental assistance and government enterprises respond, and takes long-run property
 taxes. Applying year-one budget-response coefficients to this account gives
 $314–371bn ($230–287bn counting benefits when paid), which is not next year's cash saving. Other residents' social costs and
-benefits bring the total to $480–554bn (entry 4).
+benefits bring the total to $483–557bn (entry 4).
 The second anchor is the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$8,849, second generation
 −$8,499, third-plus −$7,118 per person, standard errors 539, 912 and 637). Its income taxes
@@ -55,10 +55,10 @@ nest is a different object: it raises the production term, mostly through a tran
 foreign-born residents to natives, and it has not been run on the main case (entry 14). No ratio of
 "offsets to cost" can be formed from these.
 
-**The fiscal-plus-social total is its own object.** The $480–554bn adds other residents' social
+**The fiscal-plus-social total is its own object.** The $483–557bn adds other residents' social
 costs and benefits to the main case's fiscal account at central values (entry 4). Both ends keep the
 case's fiscal charges ($368.0 / 436.6bn); the low end puts victims on the equal-offending footing and
-the high end on the custody footing ($37.3 / 41.6bn of victims' harm). The social rows include the
+the high end on the custody footing ($37.6 / 41.8bn of victims' harm). The social rows include the
 descendants and the people added by the reporting-rule and coverage corrections, on their own keys
 [ASSUMPTION]. Re-spending of the budget saving and the PM2.5 of the public purchases the budget response
 removes both count. A low fiscal end on the raw-coded justice key, a beside variant, has not been
@@ -235,37 +235,48 @@ So the response share moves the result more than any offset listed here.
   ±$490bn, and is not added (ladder 201). Institutions remain unpriced in both directions.
 
 Beside the fiscal account, a fiscal-plus-social total adds other residents' social costs and
-benefits to the main case: $480–554bn a year at central values[^life-years], $10.7–12.3k per member of the 44.90M-person
-lineage. Counting benefits when paid, it is $396–470bn. The same cash budget saving funds other residents'
+benefits to the main case: $483–557bn a year at central values[^life-years], $10.8–12.4k per member of the 44.90M-person
+lineage. Counting benefits when paid, it is $400–474bn. The same cash budget saving funds other residents'
 re-spending under both pension timings; capital services and the promises remain separate from that cash resource.
 At the low / high ends it contains:
-- victims' harm from crimes by group members against other residents, $37.3 / $41.6bn (entry 12),
+- victims' harm from crimes by group members against other residents, $37.6 / $41.8bn (entry 12),
   and property crime, $1.3 / $1.4bn;
+- crime against businesses and the crimes the victim survey misses (violence against children under 12 and in
+  jails, fraud against individuals), $1.4bn at both ends net of the group's own share, as shoppers, of other
+  offenders' theft; gross it is $5.2bn, about a third of the murder cost, shown beside (entry 12);
+- businesses' security spending against offending on group members, which they pass to their customers,
+  $1.9 / $2.0bn;
 - the group's unreimbursed hospital care, borne by hospitals, physicians and private payers,
   $3.4 / $5.9bn;
 - the congestion that remains once road budgets respond, $13.7 / $10.8bn;
 - fine particles (PM2.5) from consumption, including other residents' re-spending, $68.3 / $65.0bn;
-- PM2.5 from the public purchases the budget response removes, $9.7 / $10.2bn;
+- PM2.5 from the public purchases the budget response removes, $9.6 / $10.3bn;
 - road crashes, other residents' losses with the group's traffic against without it after traffic adjusts,
   $12.5 / $12.7bn; charging crashes by fault stays beside;
-- fear and avoidance among residents who are not victims, $6.6 / $7.6bn, private security,
-  $0.5 / $0.6bn, and school disruption, −$2.2bn at both ends;
+- fear and avoidance among residents who are not victims, $6.7 / $7.6bn, households' private security,
+  $0.4 / $0.5bn, and school disruption, −$2.2bn at both ends;
 - the housing net, a gain to other residents of $3.8 / $0.8bn; renters' payments to landlords are transfers;
 - five benefits, entered as negative costs: city size net of the schooling mix, $15.3bn; restaurant variety,
   $6.7bn; volunteering for people outside the group after incoming hours displace some of it, $4.0bn; trade,
   visit and investment ties with Mexico, $7.4bn; and consumer-side scale, $2.3bn.
 
 These rows include the added descendants and, at their shares of each key, the people added by the reporting
-rule and Census coverage. Crime rows add no coverage people: their administrative totals already carry them.
-The stayers in mixed households keep consumption from their own resources [ASSUMPTION]. The social rows total
-$111.6 / $117.1bn; with fiscal charges of $368.0 / $436.6bn, the totals are $479.6 / $553.7bn.
-The public-purchase PM2.5 row is displayed less than $0.1bn from its value at each end so the printed parts add to
-the printed totals.
+rule and Census coverage. In the crime rows the national incident counts already include the people the Census
+misses; the people added by the reporting rule, net of the native-minor calibration, send crime at their
+share aged 12 and over. The stayers in mixed
+households keep consumption from their own resources [ASSUMPTION]. The social rows total $115.1 / $120.7bn; with
+fiscal charges of $368.0 / $436.6bn, the totals are $483.1 / $557.3bn.
 [CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`,
 `v9_social_environment.current_social_rows`, `joint_social_stack.ends`, `cash_pairing_bn`]
 
+Harm group members do to one another is not a cost to other residents and stays out of the total: about
+$94–96bn a year, mostly crime victims within the group ($28.9 / $32.2bn) and child maltreatment ($27.9bn), with
+in-group shares of PM2.5, crashes, congestion and fear. Effects on members' families in Mexico have no defensible
+central: studies of left-behind children's schooling disagree on the sign.
+[CALCULATION: `within_group_harm_2026_10_21/derived/rows.csv`]
+
 [^life-years]: Valuing deaths by remaining life-years instead of the uniform DOT value of a statistical life, in the
-    crime, PM2.5 and crash rows together, puts the total at $433.0–508.8bn undiscounted and $438.4–513.8bn with life-years
+    crime, PM2.5 and crash rows together, puts the total at $436.5–512.4bn undiscounted and $441.9–517.4bn with life-years
     discounted at 3%, other rules fixed. It falls mostly because PM2.5 deaths come mostly at ages over 65, where fewer
     years remain [INFERENCE: people 65 and over are 76.2% of 2024 deaths, `air_pollution_2026_09_28/RESULT.md`].
     The uniform value stays central. [CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.csv`,
@@ -470,7 +481,7 @@ and with jails at the arrest share, prisons and jails are 22.9% Hispanic (ladder
 case's custody key comes from the ACS. Hispanic adults are imprisoned at 1.3 times the all-adult
 rate and 2.6 times the non-Hispanic white rate (BJS, 2023).
 Victim costs are outside a fiscal account. Crimes by group members against
-other residents cost the victims $37.3–41.6bn a year on the case's lineage, with descendant
+other residents cost the victims $37.6–41.8bn a year on the case's lineage, with descendant
 exposure and replacement income valued consistently with the other social rows, a social cost beside the fiscal
 headline ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3). Ladder 218's
 own figure, $28.9bn (range $15–45bn) plus $2.0bn for Hispanic members of mixed offender groups, is
@@ -480,9 +491,16 @@ times the non-Hispanic white rate for murder, rape and assault and 4.2 times for
 0.92–1.18 times the rate of all residents, and 70–81% of their victims are Hispanic. These are
 crude rates for Hispanics of any origin. On those inputs the victims' cost is $28.6bn. The
 $43bn arrest-share arm fails a check against victims' own reported ethnicity (ladder 202).
-Beyond the victims, fear and avoidance among residents who are not victims cost $6.6–7.6bn
-on the account's lineage. Private security adds $0.5–0.6bn; both count in the
-fiscal-plus-social total (entry 4). Start from the [custody and crime measurement rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
+Beyond the victims, fear and avoidance among residents who are not victims cost $6.7–7.6bn
+on the account's lineage. Households' private security adds $0.4–0.5bn and businesses' security against
+offending on members $1.9–2.0bn; all count in the fiscal-plus-social total (entry 4).
+Crime against businesses and the crimes the victim survey cannot see (violence against children under 12 and in
+jails, fraud against individuals) cost residents outside the lineage $5.2bn a year gross, about a third of the
+cost of the murders in the victims' figure. The group's own purchases also pay part of other offenders' theft through prices, so
+removing the group saves other residents $1.4bn, the figure the total counts. In Texas and Arizona police records,
+Hispanic residents shoplift at 0.91 times the all-resident rate; if every unidentified shoplifter were Hispanic,
+the gross would rise to about $7.6bn.
+[CALCULATION: `business_crime_2026_10_21/derived/summary.csv`; [business crime](../infra/immigration-fiscal/business_crime_2026_10_21/RESULT.md)] Start from the [custody and crime measurement rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
 and the [generation incarceration memo](immigration-mexican-origin-generation-incarceration-2026-09-16.md)
 before quoting any ratio.
 
@@ -862,6 +880,7 @@ they get more prominence.
 
 ## Revisions
 
+- 2026-10-21 ([business crime in the pairing](../decisions/2026-10-21-business-crime-in-pairing.md)): entries 4 and 12 and the anchors add crime against businesses and the crimes the victim survey misses at their net, $1.4bn (gross $5.2bn beside), and businesses' security against offending on members, $1.9–2.0bn; the people added by the reporting rule now send crime. The fiscal-plus-social total moves from $480–554bn to $483–557bn ($400–474bn counting benefits when paid), and the life-year footnote with it. Entry 4 states the harm members do to one another ($94–96bn) as outside the total and the effects on families in Mexico as having no defensible central. Concept affected: the fiscal-plus-social total and the crime answer.
 - 2026-10-21 (main case v9 consumer lanes, [decision](../decisions/2026-10-16-main-case-v9.md); pairing c7b99ac7, distribution 65b6e01c, generation a24d2468, back-cast e85c0766, closed budget 54248e8c, decomposition d133740b, comparators e5c9ab76, pension legacy cb0a5c52, legacy comparators f8c49849): the fiscal-plus-social total (anchors, combining rules, entry 4) is $480–554bn, $396–470bn counting benefits when paid; entry 4 gains a footnote valuing deaths by remaining life-years ($433.0–508.8bn at 0%, $438.4–513.8bn at 3%), at the operator's request. The capital return, rental assistance, production, income split, generation split (now at the two end specifications), average-resident and white gaps, back-cast windows, budget replay and closed budget follow `oct16`; the excess over average residents is printed as a pair at the case's ends. The federal legacy comparison, the raw-coded justice variant, the general-government addition's own size and the capital return's generation split have no v9 run and lose their numbers; the pension legacy comparison is $7.9–8.1bn. Entry 2 replaces its rebuttal of the January 2025 municipal-bond paper with an answer to the July 2026 version; entry 16 says the recent-arrival cut points the same way rather than agrees; entry 21 no longer calls the legacy measured, states the Clemens–Pritchett substitution as a scenario, adds the repo's county panel beside Mayda et al., and marks the bias direction of cross-place tests as inference. Concept affected: the fiscal-plus-social total, the comparators and legacy charges, and four answers' claims.
 
 - 2026-10-20 (main case v9, [decision](../decisions/2026-10-16-main-case-v9.md)): direct case figures use `oct16`: military service costs at zero under equal-cost replacement, one Trustees capital rate, the health residual keyed by non-VA payers, retirement administration and college response, native-minor calibration, fixed-count coverage tenure and the household taxable basket. The first-year and ancestry-share companions state their scope. Historical scenario rows without a v9 repricing lose their numbers; committed consumer figures await their phase-2 pass. Concept affected: the live account, population, response premises and companion readings.

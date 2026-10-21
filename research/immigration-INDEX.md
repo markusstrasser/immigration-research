@@ -215,23 +215,29 @@ existing interest and business subsidies stay at **zero response by assumption**
 prices channels outside the fiscal account. Use-keyed justice and government-funded uncompensated hospital care
 are already inside the case; their victims' and private-care consequences are separate social rows.
 
-Beside the fiscal account, the **fiscal-plus-social total is $479.6–553.7bn a year**, or $10.7–12.3k per member of
+Beside the fiscal account, the **fiscal-plus-social total is $483.1–557.3bn a year**, or $10.8–12.4k per member of
 the 44.90M-person lineage (ladder 309, [lane](../infra/immigration-fiscal/sept24_propagation_2026_09_24/RESULT.md),
 "Round 3 of the social review"). The low end uses the case's $368.0bn fiscal row and victims on the equal NCVS
 footing; the high end uses its $436.6bn fiscal row and the custody footing for victims. The added social net is
-$111.6 / $117.1bn, so the printed parts add. The raw-coded justice footing is a named beside variant.
+$115.1 / $120.7bn, so the printed parts add. It includes crime against businesses at its net, $1.4bn (gross
+$5.2bn beside), and businesses' security against offending on members, $1.9 / $2.0bn
+([decision](../decisions/2026-10-21-business-crime-in-pairing.md), ladder 319,
+[business-crime lane](../infra/immigration-fiscal/business_crime_2026_10_21/RESULT.md)). Harm members do to one another, $93.6 / $96.3bn
+([within-group lane](../infra/immigration-fiscal/within_group_harm_2026_10_21/RESULT.md), ladder 320), is never added. The
+raw-coded justice footing is a named beside variant.
 [CALCULATION: `sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json`, `joint_social_stack.ends`]
 
 The central prices re-spending by the other residents who receive the budget saving and the PM2.5 of the public
 purchases that the same budget response removes. It also carries multivehicle crash capacity, congestion's capacity
-response, crime mortality, incoming volunteering and the completion/coverage people's own non-crime rows. Crime
-rows take no extra charge for those people: national incident totals already include them. Item 11 moves the
+response, crime mortality, incoming volunteering and the completion/coverage people's own non-crime rows. In the
+crime rows national incident totals already include the coverage people; the completion reporters and item 16's
+minors send crime at their share aged 12 and over. Item 11 moves the
 stayers' consumption back to the stayers, and completion members leave the receiver population. These are declared
 static transports, with unmeasured behavioural interactions, rather than observed effects of a removal.
 The public-consumption PM term is $9.6 / $10.3bn at government-average intensity [ASSUMPTION].
 Without either re-spending or its public-purchase counterflow, holding all other rows fixed, the total is
-$482.4–559.2bn. Valuing deaths by remaining life-years instead of the uniform value of a statistical life gives
-$433.0–508.8bn at a 0% discount rate and $438.4–513.8bn at 3%, because PM2.5 deaths fall mostly on people over 65;
+$485.9–562.8bn. Valuing deaths by remaining life-years instead of the uniform value of a statistical life gives
+$436.5–512.4bn at a 0% discount rate and $441.9–517.4bn at 3%, because PM2.5 deaths fall mostly on people over 65;
 it is a valuation arm beside the central, not a change to it [FRAMING-SENSITIVE].
 [CALCULATION: `derived/oct16/real_costs_totals.json`, `v9_social_environment`, `joint_social_stack`;
 social sources: [crime](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md),
@@ -266,10 +272,10 @@ payers (the winners lane below removes them).
 
 [Who wins and who loses](immigration-winners-and-losers-2026-09-25.md) (ladder 226) follows every priced channel
 of the main case, with the paired social stack, to persons. Under stationary financing and household pooling at
-central values, 2.8% of other residents come out ahead when the cost is financed by tax shares, 4.7% by equal cuts
-per person and 8.3% by the responding programmes' own receipts; other residents' net is −$505.7bn a year
+central values, 2.7% of other residents come out ahead when the cost is financed by tax shares, 4.5% by equal cuts
+per person and 7.9% by the responding programmes' own receipts; other residents' net is −$509.2bn a year
 [MODEL; FRAMING-SENSITIVE]. At the low end of the fiscal and social ranges, where other residents' net is
-−$189.6bn, about two in five come out ahead (40.0–42.3%); at the high end, 2.9–3.6%. A minority ahead holds
+−$191.9bn, about two in five come out ahead (39.8–41.9%); at the high end, 2.8–3.5%. A minority ahead holds
 throughout; its size is conditional on incidence and on the ends. Taxpayers' fiscal channel is $392.2bn plus
 $9.5bn on capped programmes; its $83.6bn pension accrual, the Social Security and Part A promises the group's
 2024 work earns, is charged to today's covered earnings under stationary financing (cohort financing, beside,
@@ -284,18 +290,18 @@ The [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md
 case against the group living in Mexico, on the matched-cash account ($284.4–352.9bn a year, benefits counted when
 paid) over the 44.90M-person lineage. Other US residents lose $306.5bn a year at the low end and $424.2bn at the
 high in every reading, the fiscal cost plus the costs outside the budget, and more once raising the taxes is costed.
-Adding everyone's dollars at equal weight, the world gains $327.7bn at the low end and $273.0bn at the high in
+Adding everyone's dollars at equal weight, the world gains $318.9bn at the low end and $260.9bn at the high in
 reading R1 (urban Mexican pay at the 56th percentile of selection, US pay at state prices, household consumption
-prices, public goods at average cost): the group gains $655.3 / 659.8bn and Mexico's residents −$21.1 / +$37.4bn (printed so the parts add).
+prices, public goods at average cost): the group gains $646.5 / 647.7bn and Mexico's residents −$21.1 / +$37.4bn (printed so the parts add).
 Reading R2, which takes urban Mexican pay at the 70th percentile (CMP's p70), output service prices and public
-goods at the cost of extending them, gives $141.4 / 112.9bn [FRAMING-SENSITIVE]. That says whether the world is
+goods at the cost of extending them, gives $132.6 / 100.9bn [FRAMING-SENSITIVE]. That says whether the world is
 richer, not whether Americans are. Same-person pay is a parameter, not a reading: with MMP's same-person hourly
-gain of 2.0 for the first generation, R1 gives $213.7 / 166.8bn (R3). The transfer leaks in part: raising revenue
-costs payers 1.16–1.5 per dollar; at 1.16 R1 gives $263.4 / 207.0bn, and at 1.5 it gives $126.8 / 66.9bn while R2
-and R3 turn negative (−$54.9 / −89.3bn and −$6.3 / −54.4bn). Hendren's revealed welfare weights leave R1 at
-$327.2 / 277.6bn, so measured weights give no sign that the group's dollar is worth less than the payers'.
+gain of 2.0 for the first generation, R1 gives $204.9 / 154.7bn (R3). The transfer leaks in part: raising revenue
+costs payers 1.16–1.5 per dollar; at 1.16 R1 gives $254.6 / 194.9bn, and at 1.5 it gives $118.0 / 54.8bn while R2
+and R3 turn negative (−$63.7 / −101.4bn and −$15.1 / −66.5bn). Hendren's revealed welfare weights leave R1 at
+$318.1 / 265.1bn, so measured weights give no sign that the group's dollar is worth less than the payers'.
 Counting Mexico's residents, the world comes out behind only if the group's welfare counts for less than
-0.50 / 0.59 of others' under R1 (0.60 / 0.69 at λ 1.16, 0.81 / 0.90 at λ 1.5) and 0.69 / 0.77 under R2. The added
+0.51 / 0.60 of others' under R1 (0.61 / 0.70 at λ 1.16, 0.82 / 0.92 at λ 1.5) and 0.71 / 0.79 under R2. The added
 descendants' schooling is valued at zero, as every generation's is; over generations the sign turns on how fast
 descendants catch up (ladder 154). Mexico's pension funding is an all-public proxy [DEGRADED]. The national-cell,
 common-price, leak-share and second-generation-premium readings are not computed on v9 (lane). [CALCULATION:
@@ -920,6 +926,7 @@ its successor, the reason and its last commit are in [`notes/2026-10-20-deleted-
 
 ## Revisions
 
+- 2026-10-21 ([decision](../decisions/2026-10-21-business-crime-in-pairing.md)): the fiscal-plus-social total adds business crime at its net ($1.4bn, gross $5.2bn beside), businesses' security against offending on members ($1.9 / 2.0bn) and crime sent by the completion reporters and item 16's minors: $483.1–557.3bn, was $479.6–553.7bn. The winners count (2.7% / 4.5% / 7.9% ahead, −$509.2bn) and the world ledger, whose in-group victims now come from the within-group lane (R1 +$318.9 / 260.9bn), follow. Within-group harm, $93.6 / 96.3bn, is listed beside and never added. Concept affected: the fiscal-plus-social total, who comes out ahead and the world readings.
 - 2026-10-21 (sign reversal): the case's sign-reversal script now freezes item 21's health-residual charge, item 15's college remainder and the union completion's service capital with the services they belong to; it had kept them at the case's response, up to $23bn charged at zero response. The frozen ranges and break-evens above moved; with enterprises moving with services the least favourable reading now breaks even at a small positive response. Concept affected: the service-response sign break-even.
 - 2026-10-21, consumer pass ([decision](../decisions/2026-10-16-main-case-v9.md)): the consumer lanes follow `oct16`: closed budget, back-cast, household split, decomposition, reference group, break conditions, generation split, uncertainty, the paired social stack, Black and Indian-origin comparisons, distribution, winners, world ledger, debt and legacy comparisons. Direct taxes again exceed household transfers at both ends; C3's correction split now nets about −$2–4bn rather than cancelling to about $11bn; the white gap rises and C8 breaks upward; the share of other residents ahead falls to 3–8% under the paired social stack; the world ledger moves to the matched-cash account, where the world still gains in every equal-weight reading and the R2/R3 readings turn negative at λ 1.5. The federal legacy row, the Indian-origin social rows and several world-ledger readings are not computed on v9 and are named without numbers. The production-model wage transfer is labelled as modelled, September dates replace "Latest" labels, and rows routing to cruft documents point to their successors. Concept affected: claims and comparisons computed from the adopted account.
 - 2026-10-20 ([main case v9 decision](../decisions/2026-10-16-main-case-v9.md), adopted 2026-10-20): direct case figures follow the calibrated lineage, fixed military service costs under equal-cost replacement, one Trustees capital rate and payer-keyed non-VA health residual. Income-year 2024 tax and benefit rules remain the frame; only Social Security and Part A promises use current-law payable benefits. Consumer-derived figures await the separate propagation pass. Concept affected: the live annual account and its companion readings.
