@@ -385,10 +385,12 @@ GROUPS = [
                  text="Traffic costs other commuters about {{q:congestion.item|mid_range}} a year.",
                  why="Speed falls 0.12% per 1% more people when road space stays fixed. Roads that grow with "
                      "population take up part of it."),
-            dict(refs=[258],
+            dict(refs=[258, 323],
                  text="Fear, private security and school discipline cost about "
                       "{{q:social.fear_security_school|range_unit}} a year.",
-                 why="On the earlier survey count, the same method gave $51bn for non-Hispanic Black residents."),
+                 why="On the earlier survey count, the same method gave $51bn for non-Hispanic Black residents. "
+                     "Across US metros, guard jobs do not rise with the group's share once income, poverty and size "
+                     "are held fixed."),
             dict(refs=[190, 79, 180, 183, 57],
                  text="In the long run rents rise {{q:housing.rent_elasticity_long_run|range}}% per 1% more people. "
                       "Other renters pay about $34bn more, and landlords receive it.",
@@ -415,11 +417,12 @@ GROUPS = [
                       "that people live apart.",
                  why="Facebook friendship data by county and ZIP code, one point in time. The payoff to such "
                      "friendships does not grow with county size."),
-            dict(refs=[98, 101, 102, 321],
+            dict(refs=[98, 101, 102, 321, 322, 324],
                  text="Three effects have no price and no bound: native births, city productivity and politics.",
                  why="The designs tried here cannot separate these effects from their causes. For politics, the "
                      "paperwork, legal and advocacy spending and the news time are counted, but whether that time "
-                     "displaces anything, and what the politics does to policy, are not identified."),
+                     "displaces anything, and what the politics does to policy, are not identified. Coalition strain, "
+                     "sanctions on speech and concealed views are measured too; none has a price."),
         ],
         minor=[274, 309],
     ),

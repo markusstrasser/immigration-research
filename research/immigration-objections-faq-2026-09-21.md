@@ -871,13 +871,43 @@ carries them at zero and says so:
   group depends on the rule: 2–4% by on-air mentions of Mexico, 6% by the 2021–23 increase in unauthorized
   residents, 13–15% by green cards and naturalizations, 23% by the immigrant population and 30–45% by the
   unauthorized population (ladder 321; [attention lane](../infra/immigration-fiscal/attention_cost_2026_10_21/RESULT.md), its blind replication).
+- **Governability:** where mainstream parties refuse to govern with a large anti-immigration party, governments
+  took longer to form and fell sooner in the four countries that did so (Belgium, France, Germany, Sweden), a
+  suggestive pattern rather than a precise estimate with only four; where that party joined a government or
+  a support deal, formation was ordinary (Italy and Sweden in 2022, Denmark, Norway). Across 35 democracies the
+  party's vote share alone shows no reliable link. Canada's selected intake turned opinion within two years once
+  population growth of about 3% a year outran housing: agreement that immigration was too high rose from 27% to
+  58%, and the permanent-resident target was cut by a fifth. In Switzerland most immigrants come from the EU, and
+  its Germans and French are more often university-educated than the Swiss, yet a 2014 vote to cap immigration
+  passed; in municipal naturalization votes, applicants from the former Yugoslavia and Turkey drew 13–15 points
+  more no votes than comparable northwest Europeans. Governments elected on restriction in Italy, Poland and
+  Hungary improved their budget balances against their peers; the worst fiscal records belong to economic
+  populists. These costs run through a political response (response-mediated), so none is added (ladder 322;
+  [governability lane](../infra/immigration-fiscal/governability_2026_10_21/RESULT.md)).
+- **Defensive labor:** the US employs far more police, prison staff and soldiers than Japan or Switzerland and
+  holds twenty times Japan's share of its workforce in prison, but not more private guards (0.88 per 100 workers
+  against Japan's 0.87). Across US metros, guard jobs do not rise with the Mexican-origin share once income,
+  poverty, size and region are held fixed; police jobs rise only at the border, where federal officers work.
+  Studies in Italy and Chile find security spending rising with immigration through fear, without more
+  victimization; none measures time or attention lost. Not added: the account already prices private security,
+  fear and justice by use (ladder 323; [defensive-spending lane](../infra/immigration-fiscal/defensive_spending_2026_10_21/RESULT.md)).
+- **Speech:** of 1,997 documented sanctions against US scholars since 2000, 50 concern immigration, from both
+  sides: 26 from the left, six of them firings, and 24 from the right, mostly 2025–26 government actions. Of 131
+  attempts to stop campus speakers on immigration, 93% came from the left, and half succeeded. Conservative faculty
+  hide their politics at three times the rate of liberal faculty (55% against 17%). Two list experiments found
+  people concealing support for restriction by 12–28 points (2005, 2010), though a review of 264 such experiments
+  finds prejudice items answered honestly within about 5 points. Where researchers analysed the same data, those
+  who favoured immigration reached systematically different estimates from those who opposed it, and opponents
+  were about one team in eight. Whether news coverage of immigration carries more prejudice labels than other
+  coverage is not yet measured [DEGRADED]. These are institutions' responses to the debate (response-mediated),
+  not resources the group uses; none is priced or added (ladder 324; [speech lane](../infra/immigration-fiscal/speech_cost_2026_10_21/RESULT.md)).
 
 Why these stay at zero: immigrants settle where growth is, and the instruments that predict where they went also
 pick up local booms (ladder 199), so a test across places can mistake local growth for the absence of drag
 [INFERENCE].
 
 [FRAMING-SENSITIVE] A zero here means "not measured", not "no effect". The production gain the group brings is
-priced in the account (entry 14). [SOURCE: ladder 99, 102, 120, 154, 199, 262, 278, 279, 321;
+priced in the account (entry 14). [SOURCE: ladder 99, 102, 120, 154, 199, 262, 278, 279, 321–324;
 [automation channel](../infra/immigration-fiscal/automation_channel_2026_09_16/);
 [connectedness](../infra/immigration-fiscal/connectedness_fragmentation_2026_09_28/RESULT.md);
 [legacy comparisons](../infra/immigration-fiscal/legacy_comparators_2026_09_30/RESULT.md)] Would change it: a shock
@@ -894,6 +924,7 @@ they get more prominence.
 
 ## Revisions
 
+- 2026-10-21, governability, defensive-spending and speech lanes (ladder 322–324): entry 21 adds three channels beside political effects and attention: governability (cordons against inclusion, Canada's turn on volume through housing, Switzerland's origin-specific naturalization penalty, restriction governments' fiscal records near their peers), defensive labor (the US gap over Japan and Switzerland is prisons, police and the military, not guards; no link to the group across US metros) and speech (sanctions by direction, concealed restrictionism and the counter-evidence, analysts' stance). None is priced or added. Concept affected: the long-run channels the account carries at zero.
 - 2026-10-21, later ([attention lane](../infra/immigration-fiscal/attention_cost_2026_10_21/RESULT.md), blind replication): entry 21's political-attention bullet prints ranges that cover both the lane's estimate and a blind replication: private spending $11–13bn, the fight $1.2–2.6bn gross ($0.6–1.1bn split across issues, $0.15–0.4bn net), news time 1.5–13bn hours with a net of about zero, and the Mexican-origin share as rule-dependent (2–45%). Concept affected: the size of the political-attention channel.
 - 2026-10-21 ([attention lane](../infra/immigration-fiscal/attention_cost_2026_10_21/RESULT.md), eaefe2b1): entry 21 adds political attention: about $11.1bn of private paperwork, legal and advocacy spending ($1.8bn tied to the fight), 1.5–5.3bn news-hours, 3.5% of bills and no detected agenda displacement; the net of the news time and the policy channel stay unmeasured. Concept affected: the long-run channels the account carries at zero.
 - 2026-10-21 ([business crime in the pairing](../decisions/2026-10-21-business-crime-in-pairing.md)): entries 4 and 12 and the anchors add crime against businesses and the crimes the victim survey misses at their net, $1.4bn (gross $5.2bn beside), and businesses' security against offending on members, $1.9–2.0bn; the people added by the reporting rule now send crime. The fiscal-plus-social total moves from $480–554bn to $483–557bn ($400–474bn counting benefits when paid), and the life-year footnote with it. Entry 4 states the harm members do to one another ($94–96bn) as outside the total and the effects on families in Mexico as having no defensible central. Concept affected: the fiscal-plus-social total and the crime answer.
