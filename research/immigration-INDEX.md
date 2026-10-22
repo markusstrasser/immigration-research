@@ -473,6 +473,13 @@ on the account's own earnings data but not on the main case: at the direct estim
 far less than at ε = 3, and none is applied. The removal model's $27–80bn is a different population and a
 different elasticity (ladder 166).
 
+[Two October 2026 papers from Marginal Revolution, read in full](immigration-marginal-revolution-leads-2026-10-22.md):
+headline unchanged (ladder 325, FAQ entry 4). Offsetting the main case takes 1.26–1.49% of GDP, four to five times
+the 0.31% upper-limit surplus from all US immigrants; Battisti, Peri & Romano's joint labor-and-budget model gives US
+natives −0.10% per point of labor force from a low-skill inflow, and the group is less skilled than that case.
+Ancestry carries foreign ideas only from the origin's technology stock, and Mexico is the origin of at most 2 of
+1,448 (Hassan, Kalyani & Lopez Del Valle).
+
 [Cumulative 2005–2024 back-cast](immigration-historical-backcast-2026-09-20.md): no past year is measured.
 The joint method, carrying programme-measured source parts and income paths, gives **$3.77–4.32tn over 2015–2024**.
 Beside it, measured national budgets and count paths with the 2024 position held fixed or income-adjusted give

@@ -127,6 +127,10 @@ ALLOW = {
      "The costliest tenth of households carries"): (
         "the v9 household split's top-tenth cost shares (oct16 concentration_person_onbooks.csv, A 0.533242 / "
         "0.609490), which round like the published-CPS run's 52.60 / 60.93"),
+    ("research/immigration-marginal-revolution-leads-2026-10-22.md", "pairing.total", "±$490bn",
+     "inside an interval of about"): (
+        "the patent term's interval half-width (ladder 201, scale_spillovers_corrected.csv), which reads like the "
+        "October 14 pairing's high end"),
 }
 
 # the records whose current value comes from an adopted lane the evidence map does not show yet: record id → (path,
