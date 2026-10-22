@@ -240,9 +240,10 @@ So the response share moves the result more than any offset listed here.
   with capital fixed is 0.31% of natives' income, which the National Academies call an upper limit (2017,
   p. 171). A 2026 model that joins the labor market and the budget (Battisti, Peri & Romano) gives US natives
   +0.07% of consumption per point of labor force from recent arrivals, 38.6% of them with a degree, and −0.10% from
-  an inflow twice as low-skill intensive as natives. Among earners the group is less skilled than that: 19.0% hold
-  a BA against 43.3% of other earners. The model's US gain comes from immigrants bargaining for lower wages
-  (ladder 325).
+  an inflow twice as low-skill intensive as natives, 18.1% with a degree at the paper's US resident mix. Among
+  earners 19.0% of the group hold a BA: about that case on the paper's baseline, and well below it against the
+  43.3% of other earners in our survey; the two baselines differ in sample and definition. The model's US gain
+  comes from immigrants bargaining for lower wages (ladder 325).
 
 Beside the fiscal account, a fiscal-plus-social total adds other residents' social costs and
 benefits to the main case: $483–557bn a year at central values[^life-years], $10.8–12.4k per member of the 44.90M-person
@@ -934,6 +935,7 @@ they get more prominence.
 
 ## Revisions
 
+- 2026-10-22, later (operator check): entry 4's gains-from-trade bullet said the group is less skilled than the paper's low-skill case. That holds only against our survey's 43.3% of other earners; at the paper's own US resident mix (30.6% tertiary) the case is 18.1% with a degree and the group's 19.0% sits at it. The bullet now gives both baselines. Concept affected: how the group compares with the model's low-skill scenario.
 - 2026-10-22 ([two Marginal Revolution papers](immigration-marginal-revolution-leads-2026-10-22.md), ladder 325): entry 4's innovation bullet adds that ancestry carries ideas only from the origin's technology stock, with Mexico the origin of at most 2 of 1,448 foreign technologies, and a new bullet answers the claim that small gains from trade outweigh the fiscal cost: offsetting it takes 1.26–1.49% of GDP against a 0.31% upper-limit surplus for all immigrants, and the joint labor-and-budget model's US low-skill case is negative. Nothing is added. Concept affected: unpriced economic benefits.
 - 2026-10-21, governability, defensive-spending and speech lanes (ladder 322–324): entry 21 adds three channels beside political effects and attention: governability (cordons against inclusion, Canada's turn on volume through housing, Switzerland's origin-specific naturalization penalty, restriction governments' fiscal records near their peers), defensive labor (the US gap over Japan and Switzerland is prisons, police and the military, not guards; no link to the group across US metros) and speech (sanctions by direction, concealed restrictionism and the counter-evidence, analysts' stance). None is priced or added. Concept affected: the long-run channels the account carries at zero.
 - 2026-10-21, later ([attention lane](../infra/immigration-fiscal/attention_cost_2026_10_21/RESULT.md), blind replication): entry 21's political-attention bullet prints ranges that cover both the lane's estimate and a blind replication: private spending $11–13bn, the fight $1.2–2.6bn gross ($0.6–1.1bn split across issues, $0.15–0.4bn net), news time 1.5–13bn hours with a net of about zero, and the Mexican-origin share as rule-dependent (2–45%). Concept affected: the size of the political-attention channel.

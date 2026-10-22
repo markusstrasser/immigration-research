@@ -7,7 +7,7 @@ operator-owned. Quotes, pages and file hashes are in the
 **Result:** neither paper moves the main case ($368–437bn, v9). Tyler Cowen posted both as arguments that
 immigration's economic gains outweigh its fiscal cost. Read in full, each one cuts the other way for the
 Mexican-origin group. In Battisti, Peri & Romano's model, natives in the US lose from an inflow less skilled
-than residents, and the group is less skilled than the model's low-skill case. In Hassan, Kalyani & Lopez Del
+than residents, and on the paper's own baseline the group sits at the model's low-skill case. In Hassan, Kalyani & Lopez Del
 Valle, ancestry carries ideas only from the origin country's own technology stock, and Mexico is the origin of
 at most 2 of the 1,448 foreign technologies they find.
 
@@ -38,9 +38,12 @@ p. 27); the main case holds the same lines at zero response, so the two agree th
 
 **Against the group.** [CALCULATION from the account's earnings file] Among positive earners, 19.0% of the union
 hold a BA against 43.3% of other earners [DATA: `matched_benefits_2026_09_19/derived/skill_composition.csv`,
-`below_ba`]. The union's ratio of BA to non-BA earners is 0.31 of everyone else's, below Scenario 3's 0.5. In the
-paper's own terms, the group sits past the case where US natives lose [INFERENCE: the paper's tertiary category
-and the CPS BA split are close but not identical; the model was not run on a shock the size of the group].
+`below_ba`]. The comparison depends on the baseline. Against our survey's other earners, the union's ratio of BA to
+non-BA earners is 0.31 of theirs, below Scenario 3's 0.5. Against the paper's own US resident mix (30.6% tertiary,
+Table 7), Scenario 3 is 18.1% with a degree [CALCULATION: 0.5 × 0.306/0.694 = 0.2205], and the union's 19.0% sits
+at it. So the group is at or below the case where US natives lose, not clearly past it [INFERENCE: the paper's
+tertiary category and resident sample differ from the CPS BA split among positive earners; the model was not run
+on a shock the size of the group].
 
 **Cowen's claim, in magnitudes.** [CALCULATION] Offsetting the main case takes $368.0–436.6bn, 1.26–1.49% of
 2024 GDP ($29,300bn, BEA). The National Academies put the surplus from all US immigrants, 16.5% of hours, at 0.31%
@@ -78,3 +81,10 @@ that comes out positive. Neither paper supplies one.
 
 [INSTRUMENT] Read and summarized by an LLM on a politically charged topic; both papers are steel-manned first,
 and each [INFERENCE] is mine, not the authors'. See `notes/llm-bias-caveat.md`.
+
+## Revisions
+
+- 2026-10-22, later (operator check): §1 first said the group sits past Scenario 3. That held only against our
+  survey's 43.3% of other earners. At the paper's own resident mix the scenario is 18.1% with a degree and the
+  group's 19.0% sits at it; §1 and the result paragraph now give both baselines. Concept affected: the group's
+  position against the model's low-skill scenario.

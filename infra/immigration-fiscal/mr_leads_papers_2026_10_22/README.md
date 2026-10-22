@@ -60,3 +60,6 @@ Re-fetch: `curl -sL -o _cache/w3590N.pdf https://www.nber.org/system/files/worki
 - The union's BA share among positive earners, 0.190 against 0.433 for everyone else:
   `matched_benefits_2026_09_19/derived/skill_composition.csv`, proxy PEARNVAL, split `below_ba`, skill 1
   `positive_earners` over the group's total.
+- Scenario 3 at the paper's own US resident mix: half of 0.306/0.694 is 0.2205, so 18.1% with a degree. The union's
+  19.0% sits at it; only against the survey's 43.3% is it clearly below. The two baselines differ in sample
+  (residents against positive earners) and definition (tertiary against BA).
