@@ -244,7 +244,8 @@ def load_federal_microsim_into_duckdb(con, donor_rows: list[dict], ebornus: str 
     recipient_table = f"acs_{population}_person_recipient_cells_2023"
     output_table = f"acs_{population}_person_payroll_transfer_microsim_2023"
     population_column = "origin_label" if ebornus == "2" else "population_group"
-    if not con.execute("SELECT COUNT(*) FROM information_schema.tables WHERE table_name = ?", [recipient_table]).fetchone()[0]:
+    # fetchall drains the result; DuckDB 2.0 refuses register() while a fetchone() result is unfinished.
+    if not con.execute("SELECT COUNT(*) FROM information_schema.tables WHERE table_name = ?", [recipient_table]).fetchall()[0][0]:
         raise ValueError(f"Missing {recipient_table}; build or explicitly import ACS recipient counts first")
     con.register("_sipp_person_donors", pd.DataFrame(donor_rows))
     try:
@@ -254,7 +255,7 @@ def load_federal_microsim_into_duckdb(con, donor_rows: list[dict], ebornus: str 
               ON c.education_bucket = s.education_bucket
              AND c.age_band = s.age_band AND c.income_band = s.income_band
             WHERE s.person_weight_sum IS NULL
-        """).fetchone()
+        """).fetchall()[0]  # drained, so the finally's unregister() also runs on the raise path
         if unmatched[0]:
             raise ValueError(f"Unmatched ACS recipients: {unmatched[0]} cells, {unmatched[1]} adults; refusing a partial population estimate")
         con.execute(f"CREATE OR REPLACE TABLE {donor_table} AS SELECT * FROM _sipp_person_donors")
