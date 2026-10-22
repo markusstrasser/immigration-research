@@ -3,14 +3,14 @@
   "source_quantity_case": "frozen v7 social frame",
   "inputs_sha256": {
     "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/derived/p7_payload.json": "8208c9993b58c078c075a2109bdb761b70de543b86499c34e6a6f138a6a16974",
-    "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/oct15/mortality_receipt.json": "97d915f62fdf26e813c879b319255a1b694be3b9b49cd6ffa9872dc1c098e0bc",
+    "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/oct15/mortality_receipt.json": "fc8dc7f3744fe9aee6dbee38fbb7003f601dbdfe1d4182583e76de632648187f",
     "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/inputs/baseline_totals_oct14.json": "a9503beaba2e28abba2d8e1e5024b9933c33e647ce5d0e7776587ffa85cb0b80",
     "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/mortality_oct15.py": "df613b6fbe0ab0a4f2fd1289224f14756b678a7d6f57d85953d1724f32f24f7d",
     "infra/immigration-fiscal/social_costs_unpriced_2026_09_28/p7_crime.py": "0078b53087e131dc026ab0e8e2d1d5282b345885857a0fd92be7e7e15c2f1735",
     "infra/immigration-fiscal/population_basis_2026_09_29/derived/frame_counts.csv": "57d068d5ba8be325048baa07da831910ff318a762f7721bf192b0122b08f3527",
     "infra/immigration-fiscal/crime_victim_cost_2026_09_23/derived/oct15/mortality_arms.csv": "842c6421a255b1293f4d358a76e9978f7d49839c927575f4cdde760ca5e92ea0"
   },
-  "producer_receipt_sha256": "97d915f62fdf26e813c879b319255a1b694be3b9b49cd6ffa9872dc1c098e0bc",
+  "producer_receipt_sha256": "fc8dc7f3744fe9aee6dbee38fbb7003f601dbdfe1d4182583e76de632648187f",
   "baseline_contract": "exact p7_payload.lineage_crime_rows[end].victims; apply_p7_crime sets these boundary-adjusted rows directly",
   "central_round2_victim_delta_bn": {
     "low": 7.105427357601002e-15,
