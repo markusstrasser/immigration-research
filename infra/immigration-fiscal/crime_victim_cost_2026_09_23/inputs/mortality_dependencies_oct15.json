@@ -2,9 +2,9 @@
   "route": "crime mortality oct15 fixed-v7 quantities",
   "runtime": {
     "python": "3.13.15",
-    "numpy": "2.5.3",
+    "numpy": "2.5.4",
     "pandas": "3.0.6",
-    "pyarrow": "25.0.1"
+    "pyarrow": "26.0.0"
   },
   "method": "actual Python read paths, pandas Parquet paths, and imported repository modules",
   "files": [
@@ -280,13 +280,13 @@
     },
     {
       "path": "pyproject.toml",
-      "bytes": 602,
-      "sha256": "0ef9c8e68ffcb1b2cfab8a443787ae47d81dbe2ad69a18c862ede105c9726fd6"
+      "bytes": 600,
+      "sha256": "32502d555efdf6c3726adc079fbd94f5410fac7c14b2263c74fe441353abf460"
     },
     {
       "path": "uv.lock",
-      "bytes": 179568,
-      "sha256": "fda4346826789712bcd76fc60dedeb709be3ffaa3bd09db25c9f628587094aa2"
+      "bytes": 188027,
+      "sha256": "9b91f5d1fb218d3e95e7f8eb7dece12b150166b7a2dd5c2acccd8e9d9b73fa1f"
     }
   ]
 }
