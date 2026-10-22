@@ -105,11 +105,11 @@
   "infra/immigration-fiscal/world_ledger_2026_09_27/coverage_transport.py": "81753c3e27d321d88b3f8f3abc19384babd0f02494aeb3dd1100b2d8760cdd28",
   "infra/immigration-fiscal/world_ledger_2026_09_27/v9_snapshot.py": "e465f1d0f3765181c1112660a0d07a4c0d3a0a727d855c512ae57e12788e8fc2",
   "infra/immigration-fiscal/world_ledger_2026_09_27/v9_transport.py": "2795626455c3d55d9bcb345ba15ab2e051d8b830bbb85b4aeec5cb85292bab39",
-  "pyproject.toml": "0ef9c8e68ffcb1b2cfab8a443787ae47d81dbe2ad69a18c862ede105c9726fd6",
+  "pyproject.toml": "32502d555efdf6c3726adc079fbd94f5410fac7c14b2263c74fe441353abf460",
   "sources/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv": "b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7",
   "sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9",
   "sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be",
   "sources/immigration-fiscal/derived/ipums_usa/usa_00003_census1980-2000+acs2005-2024_mexborn.parquet": "4779fe688d764cb41751afde1ac44f5b2a80d5c19f622b2f34b0ab638f6dfa37",
-  "uv.lock": "fda4346826789712bcd76fc60dedeb709be3ffaa3bd09db25c9f628587094aa2"
+  "uv.lock": "9b91f5d1fb218d3e95e7f8eb7dece12b150166b7a2dd5c2acccd8e9d9b73fa1f"
  }
 }
