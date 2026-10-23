@@ -1,0 +1,267 @@
+{
+ "case_key": "oct16",
+ "lane": "main_case_2026_10_16",
+ "status": "adopted",
+ "band_bn": [
+  368.02973917888073,
+  436.56152715403437
+ ],
+ "end_specifications": [
+  [
+   16,
+   11
+  ],
+  [
+   16,
+   11
+  ]
+ ],
+ "rows": [
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "spec_rate": 0.02,
+   "one_rate": 0.020810698764237804,
+   "stock_charged_bn": 2723.9194975692117,
+   "engine_keys": {
+    "k12": 0.17723941103851604,
+    "k12_user_fees": 0.00975296263696325
+   },
+   "engine_return_at_spec_rate_bn": 10.187043451027716,
+   "completion_lines": {
+    "union_completion_k12_low": {
+     "amount_bn": 0.1285599157618036,
+     "response": 1
+    },
+    "union_completion_k12_high": {
+     "amount_bn": 0.19283987364270544,
+     "response": 0
+    },
+    "union_completion_k12_user_fees_low": {
+     "amount_bn": 0.006442263607563393,
+     "response": 1
+    },
+    "union_completion_k12_user_fees_high": {
+     "amount_bn": 0.009663395411345092,
+     "response": 0
+    }
+   },
+   "completion_return_at_spec_rate_bn": 0.13500217936936698,
+   "coverage_capital_k12_bn": 0.29448545617691513,
+   "count_capital_k12_bn": {
+    "native_minor_calibration": -0.09998406103729157,
+    "coverage_tenure": 0.005559532630550155
+   },
+   "k12_return_at_one_rate_bn": 10.940510040015711,
+   "effective_key": 0.19299970173727632,
+   "pupil_share_key_variant": 0.17480600215120404,
+   "case_cost_bn": 364.9176697290453
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "spec_rate": 0.03,
+   "one_rate": 0.020810698764237804,
+   "stock_charged_bn": 2723.9194975692117,
+   "engine_keys": {
+    "k12": 0.17723941103851604,
+    "k12_user_fees": 0.00975296263696325
+   },
+   "engine_return_at_spec_rate_bn": 15.280565176541574,
+   "completion_lines": {
+    "union_completion_k12_low": {
+     "amount_bn": 0.1285599157618036,
+     "response": 0
+    },
+    "union_completion_k12_high": {
+     "amount_bn": 0.19283987364270544,
+     "response": 1
+    },
+    "union_completion_k12_user_fees_low": {
+     "amount_bn": 0.006442263607563393,
+     "response": 0
+    },
+    "union_completion_k12_user_fees_high": {
+     "amount_bn": 0.009663395411345092,
+     "response": 1
+    }
+   },
+   "completion_return_at_spec_rate_bn": 0.20250326905405053,
+   "coverage_capital_k12_bn": 0.2944854561769151,
+   "count_capital_k12_bn": {
+    "native_minor_calibration": -0.09998406103729152,
+    "coverage_tenure": 0.005559532630550146
+   },
+   "k12_return_at_one_rate_bn": 10.940510040015711,
+   "effective_key": 0.19299970173727632,
+   "pupil_share_key_variant": 0.17480600215120404,
+   "case_cost_bn": 433.4650176617076
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "spec_rate": 0.02,
+   "one_rate": 0.020810698764237804,
+   "stock_charged_bn": 2723.9194975692117,
+   "engine_keys": {
+    "k12": 0.17723941103851604,
+    "k12_user_fees": 0.00975296263696325
+   },
+   "engine_return_at_spec_rate_bn": 10.187043451027716,
+   "completion_lines": {
+    "union_completion_k12_low": {
+     "amount_bn": 0.1285599157618036,
+     "response": 1
+    },
+    "union_completion_k12_high": {
+     "amount_bn": 0.19283987364270544,
+     "response": 0
+    },
+    "union_completion_k12_user_fees_low": {
+     "amount_bn": 0.006442263607563393,
+     "response": 1
+    },
+    "union_completion_k12_user_fees_high": {
+     "amount_bn": 0.009663395411345092,
+     "response": 0
+    }
+   },
+   "completion_return_at_spec_rate_bn": 0.13500217936936698,
+   "coverage_capital_k12_bn": 0.29448545617691513,
+   "count_capital_k12_bn": {
+    "native_minor_calibration": -0.09998406103729157,
+    "coverage_tenure": 0.005559532630550155
+   },
+   "k12_return_at_one_rate_bn": 10.940510040015711,
+   "effective_key": 0.19299970173727632,
+   "pupil_share_key_variant": 0.17480600215120404,
+   "case_cost_bn": 371.14180862871615
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "spec_rate": 0.03,
+   "one_rate": 0.020810698764237804,
+   "stock_charged_bn": 2723.9194975692117,
+   "engine_keys": {
+    "k12": 0.17723941103851604,
+    "k12_user_fees": 0.00975296263696325
+   },
+   "engine_return_at_spec_rate_bn": 15.280565176541574,
+   "completion_lines": {
+    "union_completion_k12_low": {
+     "amount_bn": 0.1285599157618036,
+     "response": 0
+    },
+    "union_completion_k12_high": {
+     "amount_bn": 0.19283987364270544,
+     "response": 1
+    },
+    "union_completion_k12_user_fees_low": {
+     "amount_bn": 0.006442263607563393,
+     "response": 0
+    },
+    "union_completion_k12_user_fees_high": {
+     "amount_bn": 0.009663395411345092,
+     "response": 1
+    }
+   },
+   "completion_return_at_spec_rate_bn": 0.20250326905405053,
+   "coverage_capital_k12_bn": 0.2944854561769151,
+   "count_capital_k12_bn": {
+    "native_minor_calibration": -0.09998406103729152,
+    "coverage_tenure": 0.005559532630550146
+   },
+   "k12_return_at_one_rate_bn": 10.940510040015711,
+   "effective_key": 0.19299970173727632,
+   "pupil_share_key_variant": 0.17480600215120404,
+   "case_cost_bn": 439.6580366463612
+  }
+ ],
+ "gates": [
+  {
+   "name": "b_hotdeck_union_matched/low reading",
+   "pass": true,
+   "detail": "low"
+  },
+  {
+   "name": "b_hotdeck_union_matched/low one stock",
+   "pass": true,
+   "detail": "[{\"id\":\"k12\",\"group\":\"core\",\"level\":\"state_local\",\"stock_charged_bn\":2723.9194975692117,\"key\":0.17723941103851604,\"response\":1,\"return_bn\":9.655717749309952},{\"id\":\"k12_user_fees\",\"group\":\"core\",\"level\":\"state_local\",\"stock_charged_bn\":2723.9194975692117,\"key\":0.00975296263696325,\"response\":1,\"return_bn\":0.5313257017177646}]"
+  },
+  {
+   "name": "b_hotdeck_union_matched/low coverage and count parts carry no rate interaction",
+   "pass": true,
+   "detail": "{\"capital_engine\":0.4129311768492497,\"capital_reporter\":0.005472304999207815,\"capital_own_coverage_rate_interaction\":0,\"capital_count_interaction\":0}"
+  },
+  {
+   "name": "b_hotdeck_union_matched/low one-rate deltas reproduce the rescaling",
+   "pass": true,
+   "detail": "0.4184034818484575 vs 0.4184034818484559"
+  },
+  {
+   "name": "b_hotdeck_union_matched/high reading",
+   "pass": true,
+   "detail": "high"
+  },
+  {
+   "name": "b_hotdeck_union_matched/high one stock",
+   "pass": true,
+   "detail": "[{\"id\":\"k12\",\"group\":\"core\",\"level\":\"state_local\",\"stock_charged_bn\":2723.9194975692117,\"key\":0.17723941103851604,\"response\":1,\"return_bn\":14.483576623964927},{\"id\":\"k12_user_fees\",\"group\":\"core\",\"level\":\"state_local\",\"stock_charged_bn\":2723.9194975692117,\"key\":0.00975296263696325,\"response\":1,\"return_bn\":0.7969885525766468}]"
+  },
+  {
+   "name": "b_hotdeck_union_matched/high coverage and count parts carry no rate interaction",
+   "pass": true,
+   "detail": "{\"capital_engine\":-4.6805905486646076,\"capital_reporter\":-0.062028784685475694,\"capital_own_coverage_rate_interaction\":0,\"capital_count_interaction\":0}"
+  },
+  {
+   "name": "b_hotdeck_union_matched/high one-rate deltas reproduce the rescaling",
+   "pass": true,
+   "detail": "-4.742619333350083 vs -4.742619333350085"
+  },
+  {
+   "name": "b_matched_over_pooled/low reading",
+   "pass": true,
+   "detail": "low"
+  },
+  {
+   "name": "b_matched_over_pooled/low one stock",
+   "pass": true,
+   "detail": "[{\"id\":\"k12\",\"group\":\"core\",\"level\":\"state_local\",\"stock_charged_bn\":2723.9194975692117,\"key\":0.17723941103851604,\"response\":1,\"return_bn\":9.655717749309952},{\"id\":\"k12_user_fees\",\"group\":\"core\",\"level\":\"state_local\",\"stock_charged_bn\":2723.9194975692117,\"key\":0.00975296263696325,\"response\":1,\"return_bn\":0.5313257017177646}]"
+  },
+  {
+   "name": "b_matched_over_pooled/low coverage and count parts carry no rate interaction",
+   "pass": true,
+   "detail": "{\"capital_engine\":0.4129311768492497,\"capital_reporter\":0.005472304999207815,\"capital_own_coverage_rate_interaction\":0,\"capital_count_interaction\":0}"
+  },
+  {
+   "name": "b_matched_over_pooled/low one-rate deltas reproduce the rescaling",
+   "pass": true,
+   "detail": "0.4184034818484575 vs 0.4184034818484559"
+  },
+  {
+   "name": "b_matched_over_pooled/high reading",
+   "pass": true,
+   "detail": "high"
+  },
+  {
+   "name": "b_matched_over_pooled/high one stock",
+   "pass": true,
+   "detail": "[{\"id\":\"k12\",\"group\":\"core\",\"level\":\"state_local\",\"stock_charged_bn\":2723.9194975692117,\"key\":0.17723941103851604,\"response\":1,\"return_bn\":14.483576623964927},{\"id\":\"k12_user_fees\",\"group\":\"core\",\"level\":\"state_local\",\"stock_charged_bn\":2723.9194975692117,\"key\":0.00975296263696325,\"response\":1,\"return_bn\":0.7969885525766468}]"
+  },
+  {
+   "name": "b_matched_over_pooled/high coverage and count parts carry no rate interaction",
+   "pass": true,
+   "detail": "{\"capital_engine\":-4.6805905486646076,\"capital_reporter\":-0.062028784685475694,\"capital_own_coverage_rate_interaction\":0,\"capital_count_interaction\":0}"
+  },
+  {
+   "name": "b_matched_over_pooled/high one-rate deltas reproduce the rescaling",
+   "pass": true,
+   "detail": "-4.742619333350083 vs -4.742619333350085"
+  }
+ ]
+}

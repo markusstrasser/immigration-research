@@ -1,0 +1,25 @@
+gate,pass,detail
+tcapout_identity_every_row,True,max |TCAPOUT - (F12+G15+K09+K10+K11+J99)| = 0 thousand dollars over FY1992-2024 (rounding)
+negative_items_clipped,True,1 negative capital/enrollment cells set to 0
+fy2024_construction_matches_capital_lane,True,F12 FY2024 90.159bn vs Table 9 90.159bn
+fy2024_outlay_matches_capital_lane,True,items sum 113.088bn vs 113.088bn
+structures_rate_is_capital_lane_1_83pct,True,delta_s 0.01828
+equipment_rate_plausible,True,delta_e 0.21913
+chain_coverage_real_construction,True,0.9911 of FY1992-2024 real construction chains to an FY2024 ID (min 0.98; FY1992-1999 alone 0.9829); 0.9922 of the depreciated stock; non-7-digit IDs hold 0.0275% of F12
+survey_years_cover_most_pupils,True,FY1993 reported rows hold 0.955 of the 1992/1995 mean pupils; FY1994 reported rows hold 0.954 of the 1992/1995 mean pupils
+national_calibration_ratio_plausible,True,F-33/BEA post-FY1992 K-12 structures 0.9822; equipment 0.9589
+reuse_reproduces_school_cost_capital_outlay_ratio,True,FY2024 capital outlay R 1.067228 vs r_other_concepts 1.067228
+group_pupil_coverage,True,"0.9143 of CCD group pupils and 0.9360 of all pupils sit in districts with a capital price (min 0.85); the rest take their state's mean, as in weighting.py"
+account_embedded_relative_reproduced,True,0.954196588 vs 0.954196604
+r_finite_structures_a,True,R_K 1.0379
+r_finite_structures_b,True,R_K 1.0272
+r_finite_equipment_a,True,R_K 0.8550
+r_finite_s2000_structures_a,True,R_K 1.0494
+r_finite_s2000_structures_b,True,R_K 1.0501
+arm_a_decomposes_into_vintages,True,start FY1992: R 1.037901 = vintage mix 1.037901
+arm_b_decomposes_into_vintages,True,start FY1992: R 1.027208 = vintage mix 1.027208
+s2000_arm_a_decomposes_into_vintages,True,start FY2000: R 1.049449 = vintage mix 1.049449
+s2000_arm_b_decomposes_into_vintages,True,start FY2000: R 1.050083 = vintage mix 1.050083
+case_base_methods_agree_low,True,K-12 capital is method-free
+case_base_methods_agree_high,True,K-12 capital is method-free
+case_stock_is_bea_k12_central,True,2723.9195 vs 2723.9195

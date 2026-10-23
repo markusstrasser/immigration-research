@@ -1,0 +1,485 @@
+{
+ "lane": "school_capital_where_enrolled_2026_10_24",
+ "case_key": "oct16",
+ "case_band_bn": [
+  368.02973917888073,
+  436.56152715403437
+ ],
+ "adopted": false,
+ "units": "2024 dollars; $bn a year for income year 2024",
+ "rates": {
+  "structures": 0.01828465699928969,
+  "equipment": 0.21913149216626981,
+  "equipment_2023": 0.1747445303752557,
+  "equipment_software": 0.2836558883126916
+ },
+ "pre_start": {
+  "start_fiscal_year": 1992,
+  "pi_pre_start_share_of_k12_structures": 0.25368686527968237,
+  "pre_start_structures_bn": {
+   "proportional": 663.7812771779993,
+   "bea_level": 675.8084821729801
+  },
+  "pre_start_equipment_bn": 0.004643032012837674
+ },
+ "pre_start_fy2000": {
+  "start_fiscal_year": 2000,
+  "pi_pre_start_share_of_k12_structures": 0.3624849462783021,
+  "pre_start_structures_bn": {
+   "proportional": 944.4391168963639,
+   "bea_level": 965.6408544637139
+  },
+  "pre_start_equipment_bn": 0.08101488805505758
+ },
+ "calibration": {
+  "post_start_structures_f33_over_bea_same_vintages": 0.982203234626016,
+  "total_structures_f33_plus_bea_level_pre_over_bea": 0.98671804024586,
+  "total_capital_f33_proportional_over_bea": 0.9816909626087454,
+  "equipment_f33_over_bea": 0.9589359263015219,
+  "bea_post_start_k12_structures_bn": 1988.1389848270196,
+  "bea_k12_total_bn": 2723.919498
+ },
+ "calibration_fy2000_start": {
+  "post_start_structures_f33_over_bea_same_vintages": 0.9780438685155624,
+  "total_structures_f33_plus_bea_level_pre_over_bea": 0.9860026356571782,
+  "total_capital_f33_proportional_over_bea": 0.9776325504668297,
+  "equipment_f33_over_bea": 0.9593618723560136,
+  "bea_post_start_k12_structures_bn": 1698.3066125362861,
+  "bea_k12_total_bn": 2723.919498
+ },
+ "chain": {
+  "chained_share_real_f12": 0.9910802748726923,
+  "chained_share_real_f12_before_2000": 0.9829064054588879,
+  "chained_share_structures_stock_2024": 0.9921752377426822,
+  "chained_share_start_enrollment": 0.9685862546448527,
+  "unchained_states_without_fy2024_pupils": [
+   0
+  ]
+ },
+ "chain_fy2000_start": {
+  "chained_share_real_f12": 0.993004681618441,
+  "chained_share_real_f12_before_2000": null,
+  "chained_share_structures_stock_2024": 0.9937826596424721,
+  "chained_share_start_enrollment": 0.9805989871552387,
+  "unchained_states_without_fy2024_pupils": []
+ },
+ "survey_years": {
+  "1993": {
+   "units": 13909,
+   "v33_millions": 40.901842,
+   "v33_shortfall_vs_1992_1995_mean": 0.04479761650138925
+  },
+  "1994": {
+   "units": 13271,
+   "v33_millions": 40.870582,
+   "v33_shortfall_vs_1992_1995_mean": 0.04552764784100882
+  }
+ },
+ "non_7digit_id_share_of_f12": 0.0002750787350616612,
+ "coverage": {
+  "group_pupils": 0.9142860552316896,
+  "all_pupils": 0.9359950733766003,
+  "f33_fy2024_pupils_in_chained_ids": 1.0
+ },
+ "r_embedded_account": 0.9541966043392603,
+ "arm_order": {
+  "FY1992": {
+   "pre_relative_arm_a": 0.966540484537627,
+   "pre_relative_arm_b": 0.9249650259824723,
+   "b_ge_a": false,
+   "post_relative": 1.0615207923902208
+  },
+  "FY2000": {
+   "pre_relative_arm_a": 0.9910889300417791,
+   "pre_relative_arm_b": 0.9933726186487841,
+   "b_ge_a": true,
+   "post_relative": 1.0821275115675542
+  },
+  "vintages_FY1992_1999": {
+   "national_per_pupil": 6196.509938134739,
+   "relative_C": 0.9431075427828748,
+   "share_of_measured_stock": 0.14822848370258254
+  }
+ },
+ "R_K_mexican_district_share": {
+  "structures_a": {
+   "C_district": 1.0379009941102313,
+   "state_weighted": 1.0604241771809129,
+   "A_account_state_mix": 1.0308908369076464,
+   "A_state_mix_only": 1.0533374108320277,
+   "B_ccd_state_mix": 1.0379009941102313
+  },
+  "structures_b": {
+   "C_district": 1.0272075342553095,
+   "state_weighted": 1.058903530508482,
+   "A_account_state_mix": 1.0217055734644402,
+   "A_state_mix_only": 1.052755674072883,
+   "B_ccd_state_mix": 1.0272075342553095
+  },
+  "equipment_a": {
+   "C_district": 0.854961642833228,
+   "state_weighted": 0.8646483852466716,
+   "A_account_state_mix": 0.8751649758444637,
+   "A_state_mix_only": 0.8861286093647357,
+   "B_ccd_state_mix": 0.854961642833228
+  },
+  "equipment_b": {
+   "C_district": 0.8549584006483801,
+   "state_weighted": 0.8646481131762368,
+   "A_account_state_mix": 0.8751623150033676,
+   "A_state_mix_only": 0.8861287256055839,
+   "B_ccd_state_mix": 0.8549584006483801
+  },
+  "structures_post": {
+   "C_district": 1.0615207923902208,
+   "state_weighted": 1.1001911834239755,
+   "A_account_state_mix": 1.0518788814754623,
+   "A_state_mix_only": 1.089602310393125,
+   "B_ccd_state_mix": 1.0615207923902208
+  },
+  "structures_pre_a": {
+   "C_district": 0.966540484537627,
+   "state_weighted": 0.9402794665427182,
+   "A_account_state_mix": 0.9677013642176999,
+   "A_state_mix_only": 0.9441533525928133,
+   "B_ccd_state_mix": 0.9665404845376268
+  },
+  "structures_pre_b": {
+   "C_district": 0.9249650259824723,
+   "state_weighted": 0.9358795618086563,
+   "A_account_state_mix": 0.9328855092253128,
+   "A_state_mix_only": 0.9442915771377988,
+   "B_ccd_state_mix": 0.9249650259824724
+  },
+  "structures_a_realloc": {
+   "C_district": 1.0370854263747231,
+   "state_weighted": 1.0592987922158073,
+   "A_account_state_mix": 1.0300530871132343,
+   "A_state_mix_only": 1.0521887124737375,
+   "B_ccd_state_mix": 1.0370854263747231
+  },
+  "structures_b_realloc": {
+   "C_district": 1.027463322896597,
+   "state_weighted": 1.0587940418430362,
+   "A_account_state_mix": 1.0218516878486104,
+   "A_state_mix_only": 1.0525417791486744,
+   "B_ccd_state_mix": 1.0274633228965973
+  },
+  "structures_a_bea_level": {
+   "C_district": 1.037580892562925,
+   "state_weighted": 1.0598852445414697,
+   "A_account_state_mix": 1.0306066508771057,
+   "A_state_mix_only": 1.0528463704294346,
+   "B_ccd_state_mix": 1.037580892562925
+  },
+  "structures_b_bea_level": {
+   "C_district": 1.026744140373077,
+   "state_weighted": 1.058345948780231,
+   "A_account_state_mix": 1.0212993545438018,
+   "A_state_mix_only": 1.0522596130897888,
+   "B_ccd_state_mix": 1.026744140373077
+  },
+  "g15_cumulative": {
+   "C_district": 1.050941277124306,
+   "state_weighted": 1.0992782228075566,
+   "A_account_state_mix": 1.041043733974038,
+   "A_state_mix_only": 1.0908299725345132,
+   "B_ccd_state_mix": 1.0509412771243065
+  }
+ },
+ "R_K_mexican_district_share_fy2000_start": {
+  "structures_a": {
+   "C_district": 1.0494491086864415,
+   "state_weighted": 1.0693112289234747,
+   "A_account_state_mix": 1.0419833390020257,
+   "A_state_mix_only": 1.0618808565613147,
+   "B_ccd_state_mix": 1.0494491086864415
+  },
+  "structures_b": {
+   "C_district": 1.050082725453589,
+   "state_weighted": 1.093898091174901,
+   "A_account_state_mix": 1.0386121020111483,
+   "A_state_mix_only": 1.0822848344131732,
+   "B_ccd_state_mix": 1.0500827254535892
+  },
+  "equipment_a": {
+   "C_district": 0.8550453674908692,
+   "state_weighted": 0.8647096082501637,
+   "A_account_state_mix": 0.8752311937497815,
+   "A_state_mix_only": 0.8861712508663887,
+   "B_ccd_state_mix": 0.8550453674908692
+  },
+  "equipment_b": {
+   "C_district": 0.8550503724870813,
+   "state_weighted": 0.8648091773230894,
+   "A_account_state_mix": 0.8752199980492474,
+   "A_state_mix_only": 0.8862530477910698,
+   "B_ccd_state_mix": 0.8550503724870813
+  },
+  "structures_post": {
+   "C_district": 1.0821275115675542,
+   "state_weighted": 1.1248045854149138,
+   "A_account_state_mix": 1.0702494442802548,
+   "A_state_mix_only": 1.1117669267102708,
+   "B_ccd_state_mix": 1.0821275115675542
+  },
+  "structures_pre_a": {
+   "C_district": 0.9910889300417791,
+   "state_weighted": 0.9702059510365888,
+   "A_account_state_mix": 0.9917546060322127,
+   "A_state_mix_only": 0.9732335501227019,
+   "B_ccd_state_mix": 0.9910889300417791
+  },
+  "structures_pre_b": {
+   "C_district": 0.9933726186487841,
+   "state_weighted": 1.039202435442334,
+   "A_account_state_mix": 0.982863514931064,
+   "A_state_mix_only": 1.0303340423476612,
+   "B_ccd_state_mix": 0.9933726186487841
+  },
+  "structures_a_realloc": {
+   "C_district": 1.0483774063969635,
+   "state_weighted": 1.0680223870475662,
+   "A_account_state_mix": 1.0407809770442127,
+   "A_state_mix_only": 1.0604590177191273,
+   "B_ccd_state_mix": 1.0483774063969635
+  },
+  "structures_b_realloc": {
+   "C_district": 1.0499404584349241,
+   "state_weighted": 1.093334228571359,
+   "A_account_state_mix": 1.0383029903620609,
+   "A_state_mix_only": 1.0815510230214351,
+   "B_ccd_state_mix": 1.0499404584349241
+  },
+  "structures_a_bea_level": {
+   "C_district": 1.0489825955514658,
+   "state_weighted": 1.0685190121250798,
+   "A_account_state_mix": 1.0415805497305277,
+   "A_state_mix_only": 1.06116998487753,
+   "B_ccd_state_mix": 1.0489825955514658
+  },
+  "structures_b_bea_level": {
+   "C_district": 1.0496267754949162,
+   "state_weighted": 1.0934583374277131,
+   "A_account_state_mix": 1.038162659257153,
+   "A_state_mix_only": 1.0818660093221517,
+   "B_ccd_state_mix": 1.0496267754949162
+  },
+  "g15_cumulative": {
+   "C_district": 1.0195047807547692,
+   "state_weighted": 1.07189979758202,
+   "A_account_state_mix": 1.0033238539258238,
+   "A_state_mix_only": 1.0575222506018787,
+   "B_ccd_state_mix": 1.0195047807547692
+  }
+ },
+ "R_current_spending_f33_district": 0.966788,
+ "case_base": {
+  "k12_return_at_one_rate_bn": {
+   "low": 10.940510040015711,
+   "high": 10.940510040015711
+  },
+  "effective_key": 0.19299970173727632,
+  "one_rate": 0.020810698764237804,
+  "k12_depreciation_base_bn": {
+   "structures": 9.400893109811829,
+   "equipment": 2.896739278364341
+  },
+  "pupil_share_key_variant": 0.17480600215120404
+ },
+ "headline_key_consistent_A": {
+  "a": {
+   "F_structures": 1.0803757131597564,
+   "F_equipment": 0.9171746911114586,
+   "F_stock_combined": 1.0767825464891927,
+   "F_depreciation_combined": 1.0419332881535377,
+   "delta_return_low_bn": 0.8400402207629862,
+   "delta_depreciation_low_bn": 0.5156801625396691,
+   "delta_low_bn": 1.3557203833026552,
+   "share_of_headline_low": 0.003683725087889454,
+   "delta_return_high_bn": 0.8400402207629862,
+   "delta_depreciation_high_bn": 0.5156801625396691,
+   "delta_high_bn": 1.3557203833026552,
+   "share_of_headline_high": 0.003105450890601061
+  },
+  "b": {
+   "F_structures": 1.0707495382169452,
+   "F_equipment": 0.917171902544528,
+   "F_stock_combined": 1.0673682478615527,
+   "F_depreciation_combined": 1.0345739268888368,
+   "delta_return_low_bn": 0.7370429921075844,
+   "delta_depreciation_low_bn": 0.4251774430945932,
+   "delta_low_bn": 1.1622204352021777,
+   "share_of_headline_low": 0.0031579525007822285,
+   "delta_return_high_bn": 0.7370429921075844,
+   "delta_depreciation_high_bn": 0.4251774430945932,
+   "delta_high_bn": 1.1622204352021777,
+   "share_of_headline_high": 0.0026622145171122814
+  }
+ },
+ "brief_literal_C": {
+  "a": {
+   "F_structures": 1.0379009941102313,
+   "F_equipment": 0.854961642833228,
+   "F_stock_combined": 1.0338732523014296,
+   "F_depreciation_combined": 0.9948091543417814,
+   "delta_return_low_bn": 0.37059065689177734,
+   "delta_depreciation_low_bn": -0.0638351116885328,
+   "delta_low_bn": 0.30675554520324455,
+   "share_of_headline_low": 0.0008335074928663472,
+   "delta_return_high_bn": 0.37059065689177734,
+   "delta_depreciation_high_bn": -0.0638351116885328,
+   "delta_high_bn": 0.30675554520324455,
+   "share_of_headline_high": 0.0007026628003685958
+  },
+  "b": {
+   "F_structures": 1.0272075342553095,
+   "F_equipment": 0.8549584006483801,
+   "F_stock_combined": 1.0234151569886603,
+   "F_depreciation_combined": 0.986633803049687,
+   "delta_return_low_bn": 0.2561737601229815,
+   "delta_depreciation_low_bn": -0.16437257652291254,
+   "delta_low_bn": 0.09180118360006895,
+   "share_of_headline_low": 0.00024943958008635006,
+   "delta_return_high_bn": 0.2561737601229815,
+   "delta_depreciation_high_bn": -0.16437257652291254,
+   "delta_high_bn": 0.09180118360006895,
+   "share_of_headline_high": 0.0002102823494285566
+  }
+ },
+ "fy2000_start_sensitivity": {
+  "a": {
+   "key_consistent_A": {
+    "F_structures": 1.0920006781239322,
+    "F_equipment": 0.9172440876121553,
+    "F_stock_combined": 1.0881530946430982,
+    "F_depreciation_combined": 1.0508363089259052,
+    "delta_return_low_bn": 0.9644398170012705,
+    "delta_depreciation_low_bn": 0.6251662391425422,
+    "delta_low_bn": 1.5896060561438126,
+    "share_of_headline_low": 0.004319232624217862,
+    "delta_return_high_bn": 0.9644398170012705,
+    "delta_depreciation_high_bn": 0.6251662391425422,
+    "delta_high_bn": 1.5896060561438126,
+    "share_of_headline_high": 0.0036411959306321172
+   },
+   "brief_literal_C": {
+    "F_structures": 1.0494491086864415,
+    "F_equipment": 0.8550453674908692,
+    "F_stock_combined": 1.0451689575285026,
+    "F_depreciation_combined": 1.0036568020694678,
+    "delta_return_low_bn": 0.4941714333376265,
+    "delta_depreciation_low_bn": 0.04497000756663617,
+    "delta_low_bn": 0.5391414409042626,
+    "share_of_headline_low": 0.0014649398771608864,
+    "delta_return_high_bn": 0.4941714333376265,
+    "delta_depreciation_high_bn": 0.04497000756663617,
+    "delta_high_bn": 0.5391414409042626,
+    "share_of_headline_high": 0.0012349724090873323
+   }
+  },
+  "b": {
+   "key_consistent_A": {
+    "F_structures": 1.0884676148374495,
+    "F_equipment": 0.9172323544950144,
+    "F_stock_combined": 1.0846975598306514,
+    "F_depreciation_combined": 1.0481327041149768,
+    "delta_return_low_bn": 0.9266345036920738,
+    "delta_depreciation_low_bn": 0.5919183010548379,
+    "delta_low_bn": 1.5185528047469117,
+    "share_of_headline_low": 0.004126168738795371,
+    "delta_return_high_bn": 0.9266345036920738,
+    "delta_depreciation_high_bn": 0.5919183010548379,
+    "delta_high_bn": 1.5185528047469117,
+    "share_of_headline_high": 0.003478439372902213
+   },
+   "brief_literal_C": {
+    "F_structures": 1.050082725453589,
+    "F_equipment": 0.8550503724870813,
+    "F_stock_combined": 1.0457887342667354,
+    "F_depreciation_combined": 1.0041423476998117,
+    "delta_return_low_bn": 0.5009521069648307,
+    "delta_depreciation_low_bn": 0.050941069236289487,
+    "delta_low_bn": 0.5518931762011202,
+    "share_of_headline_low": 0.0014995885317106745,
+    "delta_return_high_bn": 0.5009521069648307,
+    "delta_depreciation_high_bn": 0.050941069236289487,
+    "delta_high_bn": 0.5518931762011202,
+    "share_of_headline_high": 0.001264181889317958
+   }
+  }
+ },
+ "land_lower_bound": {
+  "primary": {
+   "R_C_district": 1.050941277124306,
+   "R_A_account_state_mix": 1.041043733974038,
+   "R_state_weighted": 1.0992782228075566,
+   "national_g15_cumulative_bn": 163.61622587191889,
+   "group_charge_key_consistent_bn": 0.7169696616866933,
+   "group_charge_brief_literal_bn": 0.6906342643411939
+  },
+  "realloc": {
+   "R_C_district": 1.0531792849452672,
+   "R_A_account_state_mix": 1.043144008297591,
+   "R_state_weighted": 1.100968112062853,
+   "national_g15_cumulative_bn": 163.61622587191889,
+   "group_charge_key_consistent_bn": 0.7184161263471727,
+   "group_charge_brief_literal_bn": 0.6921049886515461
+  },
+  "fy2000_start": {
+   "R_C_district": 1.0195047807547692,
+   "R_A_account_state_mix": 1.0033238539258238,
+   "R_state_weighted": 1.07189979758202,
+   "national_g15_cumulative_bn": 133.88239860999545,
+   "group_charge_key_consistent_bn": 0.5654185546860239,
+   "group_charge_brief_literal_bn": 0.5482214851569726
+  }
+ },
+ "inputs": {
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/_cache/f33_pre2000/elsec92.txt": "ca90deeb969974c32ec4b62bbc865692ba1ad6b6368007806cd88295eb1a0e9d",
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/_cache/f33_pre2000/elsec93.txt": "b97f5323cb3b96eeee20a702883ff071312acc0a042802ecbfb52880f845159d",
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/_cache/f33_pre2000/elsec94.txt": "f8fb08bb6a6f91301f572cae25936e3e5d5ac865729118bcf48c01d9ef73d2d3",
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/_cache/f33_pre2000/elsec95.txt": "0f2ea0667b8452233ee6f87957b4b7b035d7aa75b41864d14fcf7f01f6ac4e87",
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/_cache/f33_pre2000/elsec96.txt": "dade92b5d6b8b7c7d8ce220e921849a3e21d114888a5dbf4cb98c5f083f2fccc",
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/_cache/f33_pre2000/elsec97.txt": "2f4eb61dddd2c168c7dbb87e219c82c1ad5645282f69b5a3243562afaddfeef2",
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/_cache/f33_pre2000/elsec98.txt": "a67ecb8325a7c77b82c52a92d44d18c5d5a4492c0c53882fbb5c998c7b1eaaea",
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/_cache/f33_pre2000/elsec99_xls.csv": "6b16a8cfe6af92cc20eeebadcf91d2cfa16e4755f05aaaae800a661e724e8e12",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec00.txt": "75c2641e339890b50732c570692274b36c97b76371ae8ed61e181b3ea2d9d1d5",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec01.txt": "dd47d423717e554bdf7d0bda58d9b01f8badaa43ef609ab1f7d31dbf7643783c",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec02.txt": "b1d3042f9d762f739c718f891d9dd1dc44a6f1bbc6d8b070fb3d2b1db9a377a6",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec03.txt": "c177e13df60907cd4e621c654c935eab9fffebddf879c2fd9201a7ccb06d46c6",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec04.txt": "544d94711d99f439fbb8874492b2f650129672169297f256def046e791fa94fe",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec05.txt": "942b20c19bbbaea8bf63241f73bb43214fcbcc102852f55aea9af4af95660470",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec06.txt": "289ee21c5bc4d520ad9eb3c94c37209926ab5ca2c299c2fb2a8235a235bc38a5",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec07.txt": "fce7ca44526be432d3ebf6e0df78c2fdc0fae2219ca1a8ab14fc4bea29ea88f7",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec08.txt": "5d47291b7d11c48344eed87256465d3161066b7be0e21528fe4e3e802e241c03",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec09.txt": "e942a8ba235423d773e634814d589d8c6a789e832e1aafff9623138693c31b90",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec10.txt": "5bebf41c59ddb0f8ddc4e00070abbcb522237fec1c9febac9078d8e3fc841896",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec11.txt": "6ab759e9d895a565936ac43de649306f7e46f55806abd03812549ac81bb413f5",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec12.txt": "50687138f57e13d7e5ec11c29ba0a02ba0de441adb3006e97d23fdcc11958cfa",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec13.txt": "885c9555df969bcf95fc68029909026fca8b41dd083aecb5b4155a27b08aa6e9",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec14.txt": "01f543bb00857997ea2dce2ad490b451761807e808ee0923387b06608348dce3",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec15.txt": "1c5f37bf8b1dabef17034b56c7ef6a3a0fb36f8609392a23bf0dc77d70e7ca0e",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec16.txt": "f3ded3df830de19045144f643283f7a1118ce2304353f7ea068ad8b04b5f533f",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec17.txt": "101670d8fdbc05d5ba7b191f2fcde6fc3b237e06f639f1963675cb59895b8ea8",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec18.txt": "ff3c94df24800925ff7fdc1bb7a607366ccfb2b642ab719ea4637acf9dc532f5",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec19.txt": "0d3fe071e52fa01d40b5dddaabfe0e07c997a593b740d9c35b3c240a137ddb09",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec20.txt": "e9240626b5ea1cbc933dcae6ccf4798b9fed13eedf9ce62f94924de6e2d99526",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec21.txt": "6716cf04e6c97e920c7fd70a416f04fecd74c0b6b1fdf75cd5d93a6c16672a38",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec22_xlsx.csv": "e6fe34b8be667ef93dc5e0627a33ea3d09ab03eb8a8b382f81177350096038c7",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec23.txt": "db51c7cef12fbe388b231dc498d73a93549174c8783772462c4bd474c879afd0",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/f33/elsec24.txt": "89757cb6955ccce1224acefcec46fd3e7e02c8f5d5bdae7127516e0299baf211",
+  "infra/immigration-fiscal/school_dilution_2026_09_24/_cache/cpiaucsl_monthly.csv": "f8ecddf53a9a9a74dda92c2c4204e6039466fcb744bc74171b73b5f6aac48119",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/_cache/fa_Section7All_xls.xlsx": "e67f534560f111575d5314bab8fe4d62dd696c2e49f421eaa2fa73f25dea12ae",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/derived/k12_share_key.csv": "981163ed0ef6eb5692038f09b2447b58e1a4146892610f8456a7c817ac52ae80",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/derived/national_k12_capital.csv": "eda32a95d7244a79d7808aae007a81d9fe6f3ad05fe2ba3407059c3f6e11094c",
+  "infra/immigration-fiscal/school_capital_return_2026_09_26/derived/cash_accrual_bridge_national.csv": "6e6e42840b54406c47db1b167c4515704903d22eefe03f99464d414809f7969a",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/account_embedded_price.json": "65fddd5d7660633e26a180fbdb66f50761c6aa0a58e1891abc8a8a747cb12f48",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/account_pupils_by_state.csv": "5f7d85c5e6a13c0069cf382bcc07b08d5ca3a987d8c14b2e79f0bdb9eeafa355",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/r_other_concepts.csv": "b43a8418b87ff9741f7d0a920b42c4699623e1dbbcbf3dc754f1e61408745d4b",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/weighting.py": "3fb4b1b51c96bb8542fdb0242f3f28574be47586eabc6b41d5f71562ce8d2d84",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/ccd.py": "885a61eb94eb27cdda7c67ba9d052bad7b041707930c24607a5780c9358bc30f",
+  "infra/immigration-fiscal/school_capital_where_enrolled_2026_10_24/case_base.cjs": "5021c0a1ca544ebfcbf8b32a04d17199d09362f294ea55d0cc97f04f3ef6919e"
+ },
+ "gates_failed": []
+}

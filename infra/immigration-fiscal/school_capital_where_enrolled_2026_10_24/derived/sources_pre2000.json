@@ -1,0 +1,76 @@
+[
+ {
+  "fiscal_year": 1992,
+  "file": "elsec92.txt",
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/1992/secondary-education-finance/elsec92.txt",
+  "bytes": 6962015,
+  "sha256": "ca90deeb969974c32ec4b62bbc865692ba1ad6b6368007806cd88295eb1a0e9d",
+  "rows": 15868,
+  "header": 132
+ },
+ {
+  "fiscal_year": 1993,
+  "file": "elsec93.txt",
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/1993/secondary-education-finance/elsec93.txt",
+  "bytes": 6301735,
+  "sha256": "b97f5323cb3b96eeee20a702883ff071312acc0a042802ecbfb52880f845159d",
+  "rows": 14132,
+  "header": 132
+ },
+ {
+  "fiscal_year": 1994,
+  "file": "elsec94.txt",
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/1994/secondary-education-finance/elsec94.txt",
+  "bytes": 5906713,
+  "sha256": "f8fb08bb6a6f91301f572cae25936e3e5d5ac865729118bcf48c01d9ef73d2d3",
+  "rows": 13358,
+  "header": 130
+ },
+ {
+  "fiscal_year": 1995,
+  "file": "elsec95.txt",
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/1995/secondary-education-finance/elsec95.txt",
+  "bytes": 6838044,
+  "sha256": "0f2ea0667b8452233ee6f87957b4b7b035d7aa75b41864d14fcf7f01f6ac4e87",
+  "rows": 15553,
+  "header": 130
+ },
+ {
+  "fiscal_year": 1996,
+  "file": "elsec96.txt",
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/1996/secondary-education-finance/elsec96.txt",
+  "bytes": 6831369,
+  "sha256": "dade92b5d6b8b7c7d8ce220e921849a3e21d114888a5dbf4cb98c5f083f2fccc",
+  "rows": 15506,
+  "header": 130
+ },
+ {
+  "fiscal_year": 1997,
+  "file": "elsec97.txt",
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/1997/secondary-education-finance/elsec97.txt",
+  "bytes": 6948029,
+  "sha256": "2f4eb61dddd2c168c7dbb87e219c82c1ad5645282f69b5a3243562afaddfeef2",
+  "rows": 15679,
+  "header": 131
+ },
+ {
+  "fiscal_year": 1998,
+  "file": "elsec98.txt",
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/1998/secondary-education-finance/elsec98.txt",
+  "bytes": 6924159,
+  "sha256": "a67ecb8325a7c77b82c52a92d44d18c5d5a4492c0c53882fbb5c998c7b1eaaea",
+  "rows": 15512,
+  "header": 131
+ },
+ {
+  "fiscal_year": 1999,
+  "file": "elsec99.xls",
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/1999/secondary-education-finance/elsec99.xls",
+  "bytes": 53908480,
+  "sha256": "4aa8d1ef506791588719f8de91f319971d34ee9ccb4669e169b31758cf4e15ad",
+  "converted": "elsec99_xls.csv",
+  "converted_sha256": "6b16a8cfe6af92cc20eeebadcf91d2cfa16e4755f05aaaae800a661e724e8e12",
+  "rows": 15550,
+  "header": 245
+ }
+]
