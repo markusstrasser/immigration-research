@@ -34,6 +34,17 @@ Per-pupil current expenditures, SLFS sample, FY2022 dollars:
 So the group's pupils are in schools that spend 5.9% more than the national average, and white pupils
 in schools that spend 5.8% less. The relative gap is 12.4%.
 
+## The shares: the group is the base, not an add-on
+
+The group is not a small minority being added to a fixed system. Hispanic pupils are **52.7% of
+Texas pupils**, **56.1% of California's pupils**, **74.1% of Los Angeles Unified's pupils**, **61.8%
+of Houston ISD's** and **70.0% of Dallas ISD's**. The Mexican-origin share of Texans under 30 was **38.0%** in
+2023 (41.1% in 2010). In these places the school system is sized around the group, so the 0.836
+"fixed overhead" reading is least applicable exactly where the group is largest; the 1.0 central is
+the right reading there. The 12.4% national gap against whites is therefore a comparison between the
+group's urban-majority districts and the rural/small-town districts where white pupils are
+disproportionately concentrated, not a within-district transfer.
+
 ## The decomposition: between states, between districts, within districts
 
 | Margin | Ratio | Reading |
