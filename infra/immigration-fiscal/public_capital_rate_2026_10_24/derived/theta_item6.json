@@ -1,0 +1,742 @@
+{
+ "base_response": {
+  "low": 1,
+  "high": 0.37
+ },
+ "farhi_gourio_2001_16": {
+  "baseline": {
+   "rent": 5.55,
+   "risk": 5.23,
+   "mismeasurement": 0.09,
+   "source": "Table 12, baseline",
+   "theta": 0.48942042318307266
+  },
+  "aa_rate_risk_free": {
+   "rent": 5.55,
+   "risk": 3.79,
+   "mismeasurement": 0,
+   "source": "Table 10, AA rate as risk-free rate",
+   "theta": 0.4057815845824411
+  },
+  "term_premium_risk_free": {
+   "rent": 5.55,
+   "risk": 4.97,
+   "mismeasurement": 0,
+   "source": "Table 10, 10-year Treasury net of term premium",
+   "theta": 0.47243346007604564
+  },
+  "leverage": {
+   "rent": 6.99,
+   "risk": 3.81,
+   "mismeasurement": 0,
+   "source": "Table 10, leverage",
+   "theta": 0.35277777777777775
+  },
+  "bias_constant_10": {
+   "rent": 4.79,
+   "risk": 5.23,
+   "mismeasurement": 0.85,
+   "source": "Table 12, constant bias 10 percent",
+   "theta": 0.5593376264949402
+  },
+  "bias_rising_10_30": {
+   "rent": 3.27,
+   "risk": 5.23,
+   "mismeasurement": 2.37,
+   "source": "Table 12, rising bias 10-30 percent",
+   "theta": 0.6991720331186753
+  }
+ },
+ "theta": {
+  "zero": {
+   "theta": 0,
+   "high_end_corporate_response": 0.37,
+   "set": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 436.56152715403437,
+     "engine_bn": 0,
+     "coverage_bn": 0,
+     "count_bn": 0,
+     "total_bn": 0
+    }
+   },
+   "cash": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 352.92883143380107,
+     "engine_bn": 0,
+     "coverage_bn": 0,
+     "count_bn": 0,
+     "total_bn": 0
+    }
+   }
+  },
+  "anchor_fg_baseline": {
+   "theta": 0.48942042318307266,
+   "high_end_corporate_response": 0.6783348666053357,
+   "set": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 436.56152715403437,
+     "engine_bn": -12.83634498405695,
+     "coverage_bn": -0.5724402678387092,
+     "count_bn": 0.07397060552334148,
+     "total_bn": -13.334814646372319
+    }
+   },
+   "cash": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 352.92883143380107,
+     "engine_bn": -12.836344984056495,
+     "coverage_bn": -0.5724402678387092,
+     "count_bn": 0.07397060552334148,
+     "total_bn": -13.334814646371864
+    }
+   }
+  },
+  "fg_aa_rate_risk_free": {
+   "theta": 0.4057815845824411,
+   "high_end_corporate_response": 0.6256423982869379,
+   "set": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 436.56152715403437,
+     "engine_bn": -10.642695239403793,
+     "coverage_bn": -0.47461386562427876,
+     "count_bn": 0.0613294993424425,
+     "total_bn": -11.05597960568563
+    }
+   },
+   "cash": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 352.92883143380107,
+     "engine_bn": -10.642695239403452,
+     "coverage_bn": -0.47461386562427876,
+     "count_bn": 0.0613294993424425,
+     "total_bn": -11.05597960568529
+    }
+   }
+  },
+  "fg_term_premium_risk_free": {
+   "theta": 0.47243346007604564,
+   "high_end_corporate_response": 0.6676330798479088,
+   "set": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 436.56152715403437,
+     "engine_bn": -12.390816950602357,
+     "coverage_bn": -0.5525718249823404,
+     "count_bn": 0.07140320970676065,
+     "total_bn": -12.871985565877937
+    }
+   },
+   "cash": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 352.92883143380107,
+     "engine_bn": -12.390816950602016,
+     "coverage_bn": -0.5525718249823404,
+     "count_bn": 0.07140320970676065,
+     "total_bn": -12.871985565877596
+    }
+   }
+  },
+  "fg_leverage": {
+   "theta": 0.35277777777777775,
+   "high_end_corporate_response": 0.5922499999999999,
+   "set": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 436.56152715403437,
+     "engine_bn": -9.252530225063026,
+     "coverage_bn": -0.41261908174011047,
+     "count_bn": 0.05331854700235885,
+     "total_bn": -9.611830759800778
+    }
+   },
+   "cash": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 352.92883143380107,
+     "engine_bn": -9.252530225062628,
+     "coverage_bn": -0.41261908174011047,
+     "count_bn": 0.05331854700235885,
+     "total_bn": -9.61183075980038
+    }
+   }
+  },
+  "fg_bias_constant_10": {
+   "theta": 0.5593376264949402,
+   "high_end_corporate_response": 0.7223827046918123,
+   "set": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 436.56152715403437,
+     "engine_bn": -14.67010855320791,
+     "coverage_bn": -0.654217448958525,
+     "count_bn": 0.08453783488381886,
+     "total_bn": -15.239788167282617
+    }
+   },
+   "cash": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 352.92883143380107,
+     "engine_bn": -14.670108553207456,
+     "coverage_bn": -0.654217448958525,
+     "count_bn": 0.08453783488381886,
+     "total_bn": -15.239788167282162
+    }
+   }
+  },
+  "fg_bias_rising_10_30": {
+   "theta": 0.6991720331186753,
+   "high_end_corporate_response": 0.8104783808647654,
+   "set": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 436.56152715403437,
+     "engine_bn": -18.337635691509888,
+     "coverage_bn": -0.8177718111981561,
+     "count_bn": 0.10567229360477357,
+     "total_bn": -19.04973520910327
+    }
+   },
+   "cash": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 352.92883143380107,
+     "engine_bn": -18.33763569150915,
+     "coverage_bn": -0.8177718111981561,
+     "count_bn": 0.10567229360477357,
+     "total_bn": -19.049735209102533
+    }
+   }
+  },
+  "one": {
+   "theta": 1,
+   "high_end_corporate_response": 1,
+   "set": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 436.56152715403437,
+     "engine_bn": -26.227644732462295,
+     "coverage_bn": -1.1696288931215735,
+     "count_bn": 0.15113918835314324,
+     "total_bn": -27.246134437230726
+    }
+   },
+   "cash": {
+    "low": {
+     "total_bn": 0,
+     "rule": "item 6 already at response 1; rate only"
+    },
+    "high": {
+     "before_bn": 352.92883143380107,
+     "engine_bn": -26.2276447324615,
+     "coverage_bn": -1.1696288931215735,
+     "count_bn": 0.15113918835314324,
+     "total_bn": -27.24613443722993
+    }
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "item6 corporate response is {low 1, high 0.37}",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "cash/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "cash/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "cash/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "cash/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "cash/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "cash/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "cash/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "cash item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "cash/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "cash/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "set high reproduces arm B",
+   "pass": true
+  },
+  {
+   "check": "set theta 0 is the identity",
+   "pass": true
+  },
+  {
+   "check": "set corporate leg linear in the response",
+   "pass": true
+  },
+  {
+   "check": "cash high reproduces arm B",
+   "pass": true
+  },
+  {
+   "check": "cash theta 0 is the identity",
+   "pass": true
+  },
+  {
+   "check": "cash corporate leg linear in the response",
+   "pass": true
+  },
+  {
+   "check": "set/high spec reading",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_capital at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set/high spec carries corporate_labor at 0.37",
+   "pass": true
+  },
+  {
+   "check": "set item19 passthrough absent centrally",
+   "pass": true
+  },
+  {
+   "check": "set/high coverage corporate parts present at source response",
+   "pass": true
+  },
+  {
+   "check": "set/high count corporate parts typed fiscal_line at source response",
+   "pass": true
+  },
+  {
+   "check": "7% arm reproduces rate_check",
+   "pass": true
+  },
+  {
+   "check": "rate and corporate legs additive (7% arm)",
+   "pass": true
+  }
+ ],
+ "additivity_at_capital_7pct": {
+  "corporate_leg_theta1_bn": -27.246134437230726,
+  "at_default_rate_bn": -27.246134437230726
+ }
+}

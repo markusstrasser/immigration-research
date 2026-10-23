@@ -1,17 +1,25 @@
 claude-opus-5-5
 
-**Verdict:** Keep the case's rate essentially where it is. The opportunity cost of the group's public capital is
-**2.22% central** (state/local lines; 2.55% on the small federal lines), range **2.08–3.30%** (federal 2.08–4.80%).
-That moves the $368.0–436.6bn headline by **+$2.9bn / +$3.2bn** at the central rate (to $370.9–439.7bn) and by
-**+$0 to +$24.3bn / +$26.9bn** across the range (top: $392.3–463.4bn). Every capital line moves up in proportion:
-schools, colleges, police, health, roads, transport, parks, general government, the enterprises and the
-union-completion/coverage capital (table, §4). OMB's 7% on the whole stock, the case's own `capital_7pct` beside arm
-(+$96.15 / +$105.47bn → $464.2–542.0bn, reproduced exactly here), applies only if every dollar of the capital displaced
-private investment AND the displaced return is measured with its risk premium while the rest of the case discounts
-at a risk-free 2.08%. Neither condition holds. That makes it an inconsistent beside arm, not an alternative central.
-The one reading that comes near it, Burgess–Zerbe's SOC with measured returns throughout (6.10%,
-+$78.6 / +$86.2bn), would also move the case's consumption rate and its pension leg; it is not a capital-only change.
-[CALCULATION: `rate_model.py` → `derived/rate_model.json`, `derived/line_deltas.csv`]
+**Verdict:** Read the rate together with item 6. Pricing the displaced private return above the Baa yield also
+credits the group with corporate tax on that same return, which item 6 counts only at TP-5's normal share (0.37). On
+one parameter, θ (the share of the measured return above the safe rate that scales with capital), the paired v9 band
+is **$370.9–439.8bn at θ = 0, $375.0–430.9bn at the anchor θ = 0.49, and $379.2–421.7bn at θ = 1** (set, central
+displacement; cash $287.3–356.1 / $291.3–347.3 / $295.5–338.1bn). At θ = 0, r_i is the Baa yield (3.49% real), not
+the rate itself: the rate is r_c + d·(r_i − r_c) = 2.22% state/local and 2.55% federal. The scale runs to the GRR
+measured return (7.52%) at θ = 1. The anchor is Farhi & Gourio (2018, BPEA, Table 12):
+in 2001–16, risk premia plus unmeasured capital are 5.32 of the 10.87-point wedge between the return on capital and the
+safe rate, net of depreciation; markups are 5.55. Its variants give 0.35–0.70, and that whole range keeps the band
+within $373.8–433.4bn to $376.7–427.1bn. **I recommend θ = 0.49 paired: $375.0–430.9bn**, rate 2.42% state/local and
+3.20% federal, item 6's high-end corporate response 0.678. It is the one measured split of the wedge into risk and
+rent that asset prices discipline. At the high end the two legs nearly cancel, and the item 6 leg is larger:
+−$13.3bn against +$7.7bn. So a higher private return narrows the band; it does not raise the headline. The unpaired
+central (θ = 0, 2.22% / 2.55%, +$2.9 / +$3.2bn) remains the floor of the pairing. The unpaired high scenario (GRR at
+high displacement, +$27.0bn at the high end) counts the return without its corporate tax. Paired at θ = 1, its high
+end is $436.3bn, −$0.2bn from today. OMB's 7% on the whole stock (`capital_7pct`, +$96.15 / +$105.47bn) remains an
+inconsistent beside arm: it needs full displacement, a risk-bearing return beside risk-free valuations elsewhere,
+and item 6 left at 0.37 (§3, §6, §7).
+[CALCULATION: `theta_item6.cjs` → `derived/theta_item6.json`; `rate_model.py` → `derived/rate_model.json`,
+`derived/theta_pairing.csv`, `derived/line_deltas.csv`; SOURCE: `reads/farhi_gourio_2018.md`]
 
 # Opportunity cost of public capital: rate model and repricing of v9 item 20
 
@@ -77,15 +85,17 @@ the blended d is about 0.1. [SOURCE: `reads/cbo_crowding_out.md`, `reads/muni_lo
 | Scenario | State/local | Federal | Δ headline, low / high end ($bn) | Headline ($bn) |
 |---|---:|---:|---:|---:|
 | Low: open economy, SPC = 1 (Lind 1990; A-4 2023 lower value) | 2.081% | 2.081% | 0 / 0 | 368.0–436.6 |
-| **Central: d central, r_i Baa real** | **2.222%** | **2.547%** | **+2.86 / +3.18** | **370.9–439.7** |
-| High: d high, r_i GRR measured 7.52% | 3.297% | 4.801% | +24.27 / +26.86 | 392.3–463.4 |
-| Beside: d central, r_i GRR measured | 2.622% | 3.876% | +11.00 / +12.26 | 379.0–448.8 |
+| **Central: d central, r_i Baa real** | **2.222%** | **2.547%** | **+2.89 / +3.22** | **370.9–439.8** |
+| High: d high, r_i GRR measured 7.52% (unpaired; §7) | 3.297% | 4.801% | +24.43 / +27.02 | 392.5–463.6 |
+| Beside: d central, r_i GRR measured (unpaired; §7) | 2.622% | 3.876% | +11.13 / +12.39 | 379.2–449.0 |
 | Beside: Burgess–Zerbe margin, CBO 33/43/24 weights, risk-consistent | 2.547% | 2.547% | +9.11 / +9.99 | 377.1–446.6 |
 | Beside: Burgess–Zerbe SOC, CBO weights, measured returns (7.52/5.40/5.40) | 6.10% | 6.10% | +78.55 / +86.17 | 446.6–522.7 |
 | Beside: full displacement at 7% (A-94 1992; case arm `capital_7pct`) | 7.00% | 7.00% | +96.15 / +105.47 | 464.2–542.0 |
 
 The cash set moves by the same dollars; the capital return is not a pension leg (checked in the script: the set and
-cash 7% deltas match to 1e-6).
+cash 7% deltas match to 1e-6). Since the θ follow-up, the two federal enterprise lines (`ent_other_fed`,
+`ent_power_fed`, $0.22bn of return) carry the federal margin; the first pass had labelled them state/local. That
+adds $0.03bn central and $0.16bn high.
 
 ## 4. Dollars by line
 
@@ -96,7 +106,7 @@ The capital return at 2.081% is **$40.68bn (low end) / $44.62bn (high end)**, de
 
 | Line group | Return at 2.081% (low / high) | Δ central | Δ high |
 |---|---:|---:|---:|
-| Enterprises (state/local housing, transit, utilities…) | 12.65 / 12.64 | +0.85 / +0.85 | +7.39 / +7.39 |
+| Enterprises (state/local and federal housing, transit, utilities…) | 12.65 / 12.64 | +0.89 / +0.89 | +7.55 / +7.55 |
 | Schools (K-12) | 10.61 / 10.60 | +0.72 / +0.72 | +6.20 / +6.19 |
 | Roads | 6.98 / 9.54 | +0.47 / +0.66 | +4.08 / +5.66 |
 | Colleges | 3.35 / 3.35 | +0.23 / +0.23 | +1.96 / +1.95 |
@@ -106,7 +116,7 @@ The capital return at 2.081% is **$40.68bn (low end) / $44.62bn (high end)**, de
 | Parks | 1.06 / 1.23 | +0.07 / +0.10 | +0.62 / +0.80 |
 | Health | 0.60 / 0.60 | +0.06 / +0.06 | +0.45 / +0.45 |
 | Transport (air, federal) | 0.00 / 0.07 | 0 / +0.01 | 0 / +0.08 |
-| **Total** | **40.68 / 44.62** | **+2.86 / +3.18** | **+24.27 / +26.86** |
+| **Total** | **40.68 / 44.62** | **+2.89 / +3.22** | **+24.43 / +27.02** |
 
 Per line: `derived/line_deltas.csv` (420 rows).
 
@@ -122,10 +132,8 @@ Per line: `derived/line_deltas.csv` (420 rows).
   is understated. At d_bond = 0.33 alone, their central rate would be 2.55%, about +$0.85bn more.
 - **Item 6, taxes on the job-serving business capital.** The high end counts the corporate tax at Treasury's
   normal-return share, 0.37. That share treats the normal return as risk-free, the same premise as this lane's central
-  r_i. Adopting a measured r_i of 7.5% consistently would push that share toward 1 and credit the group with more
-  receipts, so the cost **falls**. Rough scale from v7's item-6 corporate line at the high end (−$16.68bn at 0.37):
-  about −$28bn at a share of 1 [INFERENCE; not v9-priced]. That roughly cancels the high-end capital rise
-  (+$26.9bn). A measured-return reading therefore leaves the high end near unchanged once applied symmetrically.
+  r_i. Now priced on v9 in §7: at a share of 1 the high end falls by $27.25bn (engine −26.23, own coverage −1.17,
+  count items +0.15), set and cash alike.
 - **Booked public-employee pension and retiree-health normal costs.** These keep BEA's valuations; no change under SPC.
 - **Capital return at the job-serving private capital.** The case charges none (item 6 counts only the taxes), so
   nothing to move.
@@ -164,7 +172,60 @@ Per line: `derived/line_deltas.csv` (420 rows).
 Net: no tested argument supports 7% on the whole stock alongside the case's other risk-free valuations. The measured
 inputs put the defensible range at 2.08–3.30%.
 
-## Gaps
+## 7. Paired reading: the rate and item 6 on one parameter
+
+**θ** is the share of the measured private return above the safe rate that scales with capital: risk premia and
+returns to unmeasured or expensed intangibles. Rents and market power do not scale. The rate leg uses
+r_i(θ) = Baa real 3.49% + θ·(GRR 7.52% − 3.49%) in r = r_c + d·(r_i − r_c) on every capital line, with d as in §3.
+Item 6's high-end corporate response is 0.37 + θ·0.63, the TP-5 normal share plus the scaling part of its 63%
+supernormal share. The low end already has item 6 at 1, so only its rate moves.
+
+**Pricing.** `theta_item6.cjs` resets `receipt:corporate_capital` and `receipt:corporate_labor` on the high-end
+specification (MAIN_SPECS[11]) and runs `evaluateFull` with every v9 post-engine term, averaged over the two methods.
+The engine moves the union-completion corporate carriers with the override. Three post-engine pieces price corporate
+receipts at the source response: the case's own coverage line parts and the typed parts of items 16 and 16+17. They
+are transported by the response ratio. Its 111 checks:
+- the unmodified runs reproduce arm B (set and cash);
+- θ = 0 is the identity, and the leg is linear in the response;
+- every corporate coverage and count part sits at the source response;
+- item 19's pass-through is absent;
+- the corporate leg at the `capital_7pct` arm equals the leg at the default rate, so the legs add.
+
+| θ | Source | r_i | Rate, state/local / federal | Rate leg, low / high ($bn) | Item 6 response (high) | Item 6 leg (high, $bn) | Set ($bn) | Cash ($bn) |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|
+| 0 | today's central | 3.49% | 2.222% / 2.547% | +2.89 / +3.22 | 0.370 | 0 | 370.9–439.8 | 287.3–356.1 |
+| 0.353 | FG leverage | 4.91% | 2.363% / 3.016% | +5.80 / +6.46 | 0.592 | −9.61 | 373.8–433.4 | 290.2–349.8 |
+| 0.406 | FG, AA rate as risk-free | 5.13% | 2.384% / 3.086% | +6.23 / +6.94 | 0.626 | −11.06 | 374.3–432.4 | 290.6–348.8 |
+| 0.472 | FG, Treasury net of term premium | 5.40% | 2.411% / 3.175% | +6.78 / +7.55 | 0.668 | −12.87 | 374.8–431.2 | 291.2–347.6 |
+| **0.489** | **FG baseline (anchor)** | **5.46%** | **2.418% / 3.197%** | **+6.92 / +7.71** | **0.678** | **−13.33** | **375.0–430.9** | **291.3–347.3** |
+| 0.559 | FG, 10% unmeasured capital | 5.75% | 2.446% / 3.290% | +7.50 / +8.35 | 0.722 | −15.24 | 375.5–429.7 | 291.9–346.0 |
+| 0.699 | FG, 10–30% unmeasured capital | 6.31% | 2.502% / 3.476% | +8.65 / +9.63 | 0.810 | −19.05 | 376.7–427.1 | 293.1–343.5 |
+| 1 | all excess scales | 7.52% | 2.622% / 3.876% | +11.13 / +12.39 | 1 | −27.25 | 379.2–421.7 | 295.5–338.1 |
+
+At high displacement (d high), the same θ gives $374.4–443.6bn (θ 0), $383.2–440.0bn (0.49) and $392.5–436.3bn (1).
+[CALCULATION: `derived/theta_pairing.csv`, `rate_model.json` theta_pairing]
+
+**The anchor.** Farhi & Gourio decompose the wedge MPK − rf into depreciation, rents ((µ−1)/α times the user cost),
+risk (r* − rf) and, in an extension, unmeasured capital. Their estimates match six macro and finance ratios at once,
+asset prices among them. For 2001–16 the baseline gives rents 5.55, risk 5.23 and unmeasured capital 0.09, so θ =
+0.489. They warn that models without risk "have attributed too big a role to rising market power" (p. 149). Their
+footnote 16 puts Barkai's bond-rate user cost in that class. [SOURCE: `reads/farhi_gourio_2018.md`, Tables 10 and 12]
+
+**Why 0.49 and not an end.**
+- θ = 0 treats the whole equity premium as rent. That is Barkai's construction, which FG reject for ignoring risk.
+- θ = 1 treats markups as zero. Their own estimate is 3.3–7.0 points, and Power–Frerick list market power among the
+  excess returns.
+- The paper's intangible versions (0.56–0.70) rest on "largely illustrative" mismeasurement. Its leverage version
+  (0.35) is "conservative" by the authors' account. The baseline sits between and needs neither assumption.
+- The choice moves little: across 0.35–0.70 the band stays within $373.8–433.4bn and $376.7–427.1bn.
+
+**Limits.**
+- [GAP] FG's split is for the whole private economy over 2001–16, at a −0.35% safe rate. Item 6's base is C-corporation
+  taxable income in the group's industries.
+- [GAP] The rate leg's θ = 0 starts at Baa, a corporate yield, while TP-5's 0.37 is above a risk-free rate. FG's
+  AA-rate version (0.406) is the closer match for the rate leg. The difference is about $1.5bn.
+- [INFERENCE] If incumbents' rents scale with market size under a removal, θ is higher. This is unmeasured.
+
 - [GAP] US municipal-bond → private-investment displacement is unmeasured; d_bond borrows CBO's federal figure.
 - [GAP] d_tax high (0.15) is an inference for business-paid taxes; the measured MPS product tops out at 0.078.
 - [GAP] Enterprise debt share is unmeasured (21% applied to them).
@@ -172,17 +233,26 @@ inputs put the defensible range at 2.08–3.30%.
   M-25-23 (A-94 rescission) is cited from a tracker, not read. The A-4 2023 preamble was not read.
 - [GAP] The 2024 10-yr TIPS mean computed here from FRED DFII10 is 1.86%; the v9 decision quotes 1.94%. A series
   choice to check; not load-bearing here.
-- [GAP] The item-6 symmetry figure is a v7-scale inference; pricing it needs the v9 package (`postFor`).
+- [DONE 2026-10-24] The item 6 symmetry is now priced on v9 (§7); the v7-scale inference (−$28bn) is superseded by
+  −$27.25bn.
+- [GAP] θ's anchor is one paper. Karabarbounis–Neiman (2019, factorless income) and De Loecker–Eeckhout–Unger (2020)
+  were not read. Crouzet–Eberly (rents vs intangibles in Q) was not read either. Barkai is characterized through FG's
+  footnote, not read.
 
 ## Reproduce
-`OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/rate_model.py`
-(deterministic: three runs, the last after the session crash, gave md5 7e6e8cbf… for `derived/rate_model.json` and 4219417c… for `derived/line_deltas.csv`).
-Inputs: `main_case_2026_10_16/derived/{rate_check,summary}.json`. Raw downloads are in `_cache/` (ignored).
+```sh
+node infra/immigration-fiscal/public_capital_rate_2026_10_24/theta_item6.cjs        # ~15 s; writes derived/theta_item6.json
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/rate_model.py
+```
+Order matters: `rate_model.py` reads `theta_item6.json`. Inputs: `main_case_2026_10_16/` package and
+`derived/{rate_check,summary}.json`, and `job_capital_taxes_2026_10_14/derived/item.json`. Raw downloads are in
+`_cache/` (ignored). Byte-identity checksums are in the findings log.
 
 ## Files covered and skipped
 Read: OMB A-4 2003/2023, A-94 1992/2023, M-25-15, NPP w31526, Moore et al. 2004 (SFU copy), MBV 2013, Burgess–Zerbe
 2011, the GRR usdata.csv, FRED AAA/BAA/DFII10/EXPINF10YR, Pinardon-Touati 2026, CBO (Exa), and the school lane §3, §5,
-§7. Skipped: Bradford 1975 and Harberger 1969/72 (cited through Moore and Burgess–Zerbe, not read), Szekeres 2011
+§7. For the θ follow-up: Farhi & Gourio 2018 (PDF, Tables 2, 4, 10–12), item 6 RESULT §2 and `item.json`, and the v9
+package's `companions.cjs`, `item_rate.cjs` and `rate_check.cjs`. Skipped: Bradford 1975 and Harberger 1969/72 (cited through Moore and Burgess–Zerbe, not read), Szekeres 2011
 comment, MBV 2013 SOC weights detail (not needed for the arithmetic).
 
 ## Findings log (append-only)
@@ -227,3 +297,10 @@ comment, MBV 2013 SOC weights detail (not needed for the arithmetic).
   buildings bear on the response, not the rate. Lind's open economy sets the low end. Ricardian equivalence and
   Burgess–Zerbe both land at 2.55%.
 - Rerun after the crash: byte-identical outputs (rate_model.json 7e6e8cbf…, line_deltas.csv 4219417c…).
+4. 2026-10-24 01:14 JST (from `date`): θ follow-up opened (paired rate × item 6 corporate response). [DONE 01:24] anchor,
+   package pricing and the federal enterprise label fix are in §7, §3 and the Verdict.
+5. 2026-10-24 01:24:45 JST (from `date`): ran `theta_item6.cjs` and `rate_model.py` twice in order, and the outputs are
+   byte-identical. md5: line_deltas.csv f9e53243…, rate_model.json 2f83ec37…, theta_item6.json c1b1c9e6…,
+   theta_pairing.csv a5e3f4d7…. The θ anchor is Farhi & Gourio 2018 Table 12 baseline 2001–16, θ = 0.489
+   (`reads/farhi_gourio_2018.md`). The federal enterprise fix moves the unpaired central from +2.86/+3.18 to
+   +2.89/+3.22.

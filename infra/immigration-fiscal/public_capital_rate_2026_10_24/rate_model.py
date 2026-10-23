@@ -11,7 +11,9 @@ Inputs read here:
 - main_case_2026_10_16/derived/rate_check.json: arm B (2.081%) and arm capital_7pct (7% on capital only).
 - main_case_2026_10_16/derived/summary.json v9.one_rate: per-line B-minus-v8 deltas (v8 rates 2% low, 3% high),
   used only for the line split, scaled to the v9 totals implied by the 7% arm.
-Run: uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/rate_model.py
+Run (theta_item6.cjs first; it writes derived/theta_item6.json, read below):
+    node infra/immigration-fiscal/public_capital_rate_2026_10_24/theta_item6.cjs
+    uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/rate_model.py
 """
 import csv
 import json
@@ -75,7 +77,8 @@ def group_of(k):
 
 
 def level_of(k):
-    return "federal" if k in FED else "state_local"
+    # federal enterprises (ent_other_fed, ent_power_fed) carry the federal margin too
+    return "federal" if k in FED or k.endswith("_fed") else "state_local"
 
 
 # Inputs (sources in reads/). Each tuple is (low, central, high).
@@ -157,5 +160,48 @@ out = {
                         "headline": [round(head["low"] + totals[(n, "low")], 1),
                                      round(head["high"] + totals[(n, "high")], 1)]} for n in SCEN},
 }
+# Paired reading (RESULT section 7): theta = share of the measured return above the safe rate that scales with
+# capital. Rate leg: r_i(theta) = Baa real + theta * (GRR - Baa real); item 6 leg from theta_item6.cjs, which prices
+# the high-end corporate response 0.37 + theta * 0.63 on the v9 package (low end already at 1).
+TH = json.loads((OUT / "theta_item6.json").read_text())
+assert all(c["pass"] for c in TH["checks"]), "[BLOCKED] theta_item6 checks"
+
+
+def r_i_theta(t):
+    return R_I["baa_real_2024"] + t * (R_I["grr_all_capital_pretax_2024"] - R_I["baa_real_2024"])
+
+
+theta_rows, pairing = [], {}
+for name, e in TH["theta"].items():
+    t = e["theta"]
+    pairing[name] = {"theta": t, "r_i": r_i_theta(t), "item6_high_response": e["high_end_corporate_response"]}
+    for dname, di in (("d_central", 1), ("d_high", 2)):
+        scen = (di, r_i_theta(t))
+        rd = {end: sum(v * (rate(level_of(k), scen) / RC - 1) for k, v in lines[end].items()) for end in ("low", "high")}
+        rec = {"rate_state_local": rate("state_local", scen), "rate_federal": rate("federal", scen)}
+        for which in ("set", "cash"):
+            base = check["arms"]["B"][which]
+            band = []
+            for i, end in enumerate(("low", "high")):
+                i6 = e[which][end]["total_bn"]
+                band.append(base[i] + rd[end] + i6)
+                theta_rows.append({"theta_name": name, "theta": round(t, 4), "r_i": round(r_i_theta(t), 6), "d": dname,
+                                   "which": which, "end": end, "rate_state_local": round(rec["rate_state_local"], 6),
+                                   "rate_federal": round(rec["rate_federal"], 6), "rate_delta_bn": round(rd[end], 4),
+                                   "item6_response": 1 if end == "low" else round(e["high_end_corporate_response"], 4),
+                                   "item6_delta_bn": round(i6, 4), "paired_delta_bn": round(rd[end] + i6, 4),
+                                   "cost_bn": round(band[-1], 4)})
+            rec[which] = {"rate_delta_bn": [rd["low"], rd["high"]], "item6_delta_bn": [e[which]["low"]["total_bn"], e[which]["high"]["total_bn"]],
+                          "band_bn": band, "band_printed": [round(x, 1) for x in band]}
+        pairing[name][dname] = rec
+# the unpaired scenarios are the theta-0 and theta-1 rate legs
+for i, end in enumerate(("low", "high")):
+    assert abs(pairing["zero"]["d_central"]["set"]["rate_delta_bn"][i] - totals[("central (d central, r_i = Baa real 2024)", end)]) < 1e-9
+    assert abs(pairing["one"]["d_high"]["set"]["rate_delta_bn"][i] - totals[("high (d high, r_i = GRR measured pre-tax 2024)", end)]) < 1e-9
+out["theta_pairing"] = pairing
+with open(OUT / "theta_pairing.csv", "w", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=list(theta_rows[0].keys()), lineterminator="\n")
+    w.writeheader()
+    w.writerows(theta_rows)
 (OUT / "rate_model.json").write_text(json.dumps(out, indent=1) + "\n")
 print(json.dumps(out, indent=1))
