@@ -1,0 +1,421 @@
+scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,air_fed,transport,federal,0.0,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,capital_coverage,union-completion and coverage capital,state_local,1.5017,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,capital_reporter,union-completion and coverage capital,state_local,0.4553,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,college,colleges,state_local,4.3101,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,college_user_fees,colleges,state_local,-0.9623,0.020811,-0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_airports_sl,enterprises,state_local,1.5678,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_housing_sl,enterprises,state_local,0.7051,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_other_fed,enterprises,state_local,0.1492,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_other_sl,enterprises,state_local,0.1986,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_ports_sl,enterprises,state_local,0.2485,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_power_fed,enterprises,state_local,0.0728,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_power_sl,enterprises,state_local,1.4263,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_sewer_sl,enterprises,state_local,3.223,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_tolls_sl,enterprises,state_local,1.3188,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_transit_sl,enterprises,state_local,1.3309,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,ent_water_sl,enterprises,state_local,2.4101,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,gps_fed,general government,federal,0.2405,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,gps_sl,general government,state_local,2.043,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,health_fed,health,federal,0.1387,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,health_fed_user_fees,health,federal,-0.0046,0.020811,-0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,health_sl,health,state_local,0.4788,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,health_sl_user_fees,health,state_local,-0.0159,0.020811,-0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,hwy_fed,roads,federal,0.0,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,hwy_sl,roads,state_local,6.9766,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,k12,schools,state_local,10.0563,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,k12_user_fees,schools,state_local,0.5534,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,pos_fed,police/safety,federal,0.3286,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,pos_sl,police/safety,state_local,0.8631,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,rec_fed,parks,federal,0.0,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,rec_sl,parks,state_local,1.0642,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,air_fed,transport,federal,0.0648,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,capital_coverage,union-completion and coverage capital,state_local,1.6823,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,capital_reporter,union-completion and coverage capital,state_local,0.4954,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,college,colleges,state_local,4.3076,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,college_user_fees,colleges,state_local,-0.9617,0.020811,-0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_airports_sl,enterprises,state_local,1.5669,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_housing_sl,enterprises,state_local,0.7047,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_other_fed,enterprises,state_local,0.1491,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_other_sl,enterprises,state_local,0.1985,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_ports_sl,enterprises,state_local,0.2483,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_power_fed,enterprises,state_local,0.0728,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_power_sl,enterprises,state_local,1.4255,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_sewer_sl,enterprises,state_local,3.2212,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_tolls_sl,enterprises,state_local,1.318,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_transit_sl,enterprises,state_local,1.3302,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,ent_water_sl,enterprises,state_local,2.4088,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,gps_fed,general government,federal,0.3406,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,gps_sl,general government,state_local,2.8937,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,health_fed,health,federal,0.1386,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,health_fed_user_fees,health,federal,-0.0046,0.020811,-0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,health_sl,health,state_local,0.4785,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,health_sl_user_fees,health,state_local,-0.0158,0.020811,-0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,hwy_fed,roads,federal,0.1171,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,hwy_sl,roads,state_local,9.42,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,k12,schools,state_local,10.0507,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,k12_user_fees,schools,state_local,0.5531,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,pos_fed,police/safety,federal,0.3284,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,pos_sl,police/safety,state_local,0.8626,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,rec_fed,parks,federal,0.11,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,rec_sl,parks,state_local,1.1179,0.020811,0.0
+"central (d central, r_i = Baa real 2024)",low,air_fed,transport,federal,0.0,0.025471,0.0
+"central (d central, r_i = Baa real 2024)",low,capital_coverage,union-completion and coverage capital,state_local,1.5017,0.022215,0.1014
+"central (d central, r_i = Baa real 2024)",low,capital_reporter,union-completion and coverage capital,state_local,0.4553,0.022215,0.0307
+"central (d central, r_i = Baa real 2024)",low,college,colleges,state_local,4.3101,0.022215,0.2909
+"central (d central, r_i = Baa real 2024)",low,college_user_fees,colleges,state_local,-0.9623,0.022215,-0.0649
+"central (d central, r_i = Baa real 2024)",low,ent_airports_sl,enterprises,state_local,1.5678,0.022215,0.1058
+"central (d central, r_i = Baa real 2024)",low,ent_housing_sl,enterprises,state_local,0.7051,0.022215,0.0476
+"central (d central, r_i = Baa real 2024)",low,ent_other_fed,enterprises,state_local,0.1492,0.022215,0.0101
+"central (d central, r_i = Baa real 2024)",low,ent_other_sl,enterprises,state_local,0.1986,0.022215,0.0134
+"central (d central, r_i = Baa real 2024)",low,ent_ports_sl,enterprises,state_local,0.2485,0.022215,0.0168
+"central (d central, r_i = Baa real 2024)",low,ent_power_fed,enterprises,state_local,0.0728,0.022215,0.0049
+"central (d central, r_i = Baa real 2024)",low,ent_power_sl,enterprises,state_local,1.4263,0.022215,0.0963
+"central (d central, r_i = Baa real 2024)",low,ent_sewer_sl,enterprises,state_local,3.223,0.022215,0.2175
+"central (d central, r_i = Baa real 2024)",low,ent_tolls_sl,enterprises,state_local,1.3188,0.022215,0.089
+"central (d central, r_i = Baa real 2024)",low,ent_transit_sl,enterprises,state_local,1.3309,0.022215,0.0898
+"central (d central, r_i = Baa real 2024)",low,ent_water_sl,enterprises,state_local,2.4101,0.022215,0.1627
+"central (d central, r_i = Baa real 2024)",low,gps_fed,general government,federal,0.2405,0.025471,0.0538
+"central (d central, r_i = Baa real 2024)",low,gps_sl,general government,state_local,2.043,0.022215,0.1379
+"central (d central, r_i = Baa real 2024)",low,health_fed,health,federal,0.1387,0.025471,0.0311
+"central (d central, r_i = Baa real 2024)",low,health_fed_user_fees,health,federal,-0.0046,0.025471,-0.001
+"central (d central, r_i = Baa real 2024)",low,health_sl,health,state_local,0.4788,0.022215,0.0323
+"central (d central, r_i = Baa real 2024)",low,health_sl_user_fees,health,state_local,-0.0159,0.022215,-0.0011
+"central (d central, r_i = Baa real 2024)",low,hwy_fed,roads,federal,0.0,0.025471,0.0
+"central (d central, r_i = Baa real 2024)",low,hwy_sl,roads,state_local,6.9766,0.022215,0.4709
+"central (d central, r_i = Baa real 2024)",low,k12,schools,state_local,10.0563,0.022215,0.6788
+"central (d central, r_i = Baa real 2024)",low,k12_user_fees,schools,state_local,0.5534,0.022215,0.0374
+"central (d central, r_i = Baa real 2024)",low,pos_fed,police/safety,federal,0.3286,0.025471,0.0736
+"central (d central, r_i = Baa real 2024)",low,pos_sl,police/safety,state_local,0.8631,0.022215,0.0583
+"central (d central, r_i = Baa real 2024)",low,rec_fed,parks,federal,0.0,0.025471,0.0
+"central (d central, r_i = Baa real 2024)",low,rec_sl,parks,state_local,1.0642,0.022215,0.0718
+"central (d central, r_i = Baa real 2024)",high,air_fed,transport,federal,0.0648,0.025471,0.0145
+"central (d central, r_i = Baa real 2024)",high,capital_coverage,union-completion and coverage capital,state_local,1.6823,0.022215,0.1135
+"central (d central, r_i = Baa real 2024)",high,capital_reporter,union-completion and coverage capital,state_local,0.4954,0.022215,0.0334
+"central (d central, r_i = Baa real 2024)",high,college,colleges,state_local,4.3076,0.022215,0.2908
+"central (d central, r_i = Baa real 2024)",high,college_user_fees,colleges,state_local,-0.9617,0.022215,-0.0649
+"central (d central, r_i = Baa real 2024)",high,ent_airports_sl,enterprises,state_local,1.5669,0.022215,0.1058
+"central (d central, r_i = Baa real 2024)",high,ent_housing_sl,enterprises,state_local,0.7047,0.022215,0.0476
+"central (d central, r_i = Baa real 2024)",high,ent_other_fed,enterprises,state_local,0.1491,0.022215,0.0101
+"central (d central, r_i = Baa real 2024)",high,ent_other_sl,enterprises,state_local,0.1985,0.022215,0.0134
+"central (d central, r_i = Baa real 2024)",high,ent_ports_sl,enterprises,state_local,0.2483,0.022215,0.0168
+"central (d central, r_i = Baa real 2024)",high,ent_power_fed,enterprises,state_local,0.0728,0.022215,0.0049
+"central (d central, r_i = Baa real 2024)",high,ent_power_sl,enterprises,state_local,1.4255,0.022215,0.0962
+"central (d central, r_i = Baa real 2024)",high,ent_sewer_sl,enterprises,state_local,3.2212,0.022215,0.2174
+"central (d central, r_i = Baa real 2024)",high,ent_tolls_sl,enterprises,state_local,1.318,0.022215,0.089
+"central (d central, r_i = Baa real 2024)",high,ent_transit_sl,enterprises,state_local,1.3302,0.022215,0.0898
+"central (d central, r_i = Baa real 2024)",high,ent_water_sl,enterprises,state_local,2.4088,0.022215,0.1626
+"central (d central, r_i = Baa real 2024)",high,gps_fed,general government,federal,0.3406,0.025471,0.0763
+"central (d central, r_i = Baa real 2024)",high,gps_sl,general government,state_local,2.8937,0.022215,0.1953
+"central (d central, r_i = Baa real 2024)",high,health_fed,health,federal,0.1386,0.025471,0.031
+"central (d central, r_i = Baa real 2024)",high,health_fed_user_fees,health,federal,-0.0046,0.025471,-0.001
+"central (d central, r_i = Baa real 2024)",high,health_sl,health,state_local,0.4785,0.022215,0.0323
+"central (d central, r_i = Baa real 2024)",high,health_sl_user_fees,health,state_local,-0.0158,0.022215,-0.0011
+"central (d central, r_i = Baa real 2024)",high,hwy_fed,roads,federal,0.1171,0.025471,0.0262
+"central (d central, r_i = Baa real 2024)",high,hwy_sl,roads,state_local,9.42,0.022215,0.6358
+"central (d central, r_i = Baa real 2024)",high,k12,schools,state_local,10.0507,0.022215,0.6784
+"central (d central, r_i = Baa real 2024)",high,k12_user_fees,schools,state_local,0.5531,0.022215,0.0373
+"central (d central, r_i = Baa real 2024)",high,pos_fed,police/safety,federal,0.3284,0.025471,0.0735
+"central (d central, r_i = Baa real 2024)",high,pos_sl,police/safety,state_local,0.8626,0.022215,0.0582
+"central (d central, r_i = Baa real 2024)",high,rec_fed,parks,federal,0.11,0.025471,0.0246
+"central (d central, r_i = Baa real 2024)",high,rec_sl,parks,state_local,1.1179,0.022215,0.0755
+"high (d high, r_i = GRR measured pre-tax 2024)",low,air_fed,transport,federal,0.0,0.048005,0.0
+"high (d high, r_i = GRR measured pre-tax 2024)",low,capital_coverage,union-completion and coverage capital,state_local,1.5017,0.032967,0.8772
+"high (d high, r_i = GRR measured pre-tax 2024)",low,capital_reporter,union-completion and coverage capital,state_local,0.4553,0.032967,0.2659
+"high (d high, r_i = GRR measured pre-tax 2024)",low,college,colleges,state_local,4.3101,0.032967,2.5176
+"high (d high, r_i = GRR measured pre-tax 2024)",low,college_user_fees,colleges,state_local,-0.9623,0.032967,-0.5621
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_airports_sl,enterprises,state_local,1.5678,0.032967,0.9158
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_housing_sl,enterprises,state_local,0.7051,0.032967,0.4119
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_other_fed,enterprises,state_local,0.1492,0.032967,0.0872
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_other_sl,enterprises,state_local,0.1986,0.032967,0.116
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_ports_sl,enterprises,state_local,0.2485,0.032967,0.1451
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_power_fed,enterprises,state_local,0.0728,0.032967,0.0425
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_power_sl,enterprises,state_local,1.4263,0.032967,0.8331
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_sewer_sl,enterprises,state_local,3.223,0.032967,1.8827
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_tolls_sl,enterprises,state_local,1.3188,0.032967,0.7703
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_transit_sl,enterprises,state_local,1.3309,0.032967,0.7774
+"high (d high, r_i = GRR measured pre-tax 2024)",low,ent_water_sl,enterprises,state_local,2.4101,0.032967,1.4078
+"high (d high, r_i = GRR measured pre-tax 2024)",low,gps_fed,general government,federal,0.2405,0.048005,0.3142
+"high (d high, r_i = GRR measured pre-tax 2024)",low,gps_sl,general government,state_local,2.043,0.032967,1.1934
+"high (d high, r_i = GRR measured pre-tax 2024)",low,health_fed,health,federal,0.1387,0.048005,0.1812
+"high (d high, r_i = GRR measured pre-tax 2024)",low,health_fed_user_fees,health,federal,-0.0046,0.048005,-0.006
+"high (d high, r_i = GRR measured pre-tax 2024)",low,health_sl,health,state_local,0.4788,0.032967,0.2797
+"high (d high, r_i = GRR measured pre-tax 2024)",low,health_sl_user_fees,health,state_local,-0.0159,0.032967,-0.0093
+"high (d high, r_i = GRR measured pre-tax 2024)",low,hwy_fed,roads,federal,0.0,0.048005,0.0
+"high (d high, r_i = GRR measured pre-tax 2024)",low,hwy_sl,roads,state_local,6.9766,0.032967,4.0752
+"high (d high, r_i = GRR measured pre-tax 2024)",low,k12,schools,state_local,10.0563,0.032967,5.8741
+"high (d high, r_i = GRR measured pre-tax 2024)",low,k12_user_fees,schools,state_local,0.5534,0.032967,0.3232
+"high (d high, r_i = GRR measured pre-tax 2024)",low,pos_fed,police/safety,federal,0.3286,0.048005,0.4294
+"high (d high, r_i = GRR measured pre-tax 2024)",low,pos_sl,police/safety,state_local,0.8631,0.032967,0.5042
+"high (d high, r_i = GRR measured pre-tax 2024)",low,rec_fed,parks,federal,0.0,0.048005,0.0
+"high (d high, r_i = GRR measured pre-tax 2024)",low,rec_sl,parks,state_local,1.0642,0.032967,0.6217
+"high (d high, r_i = GRR measured pre-tax 2024)",high,air_fed,transport,federal,0.0648,0.048005,0.0847
+"high (d high, r_i = GRR measured pre-tax 2024)",high,capital_coverage,union-completion and coverage capital,state_local,1.6823,0.032967,0.9827
+"high (d high, r_i = GRR measured pre-tax 2024)",high,capital_reporter,union-completion and coverage capital,state_local,0.4954,0.032967,0.2894
+"high (d high, r_i = GRR measured pre-tax 2024)",high,college,colleges,state_local,4.3076,0.032967,2.5162
+"high (d high, r_i = GRR measured pre-tax 2024)",high,college_user_fees,colleges,state_local,-0.9617,0.032967,-0.5618
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_airports_sl,enterprises,state_local,1.5669,0.032967,0.9152
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_housing_sl,enterprises,state_local,0.7047,0.032967,0.4116
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_other_fed,enterprises,state_local,0.1491,0.032967,0.0871
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_other_sl,enterprises,state_local,0.1985,0.032967,0.1159
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_ports_sl,enterprises,state_local,0.2483,0.032967,0.1451
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_power_fed,enterprises,state_local,0.0728,0.032967,0.0425
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_power_sl,enterprises,state_local,1.4255,0.032967,0.8327
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_sewer_sl,enterprises,state_local,3.2212,0.032967,1.8816
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_tolls_sl,enterprises,state_local,1.318,0.032967,0.7699
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_transit_sl,enterprises,state_local,1.3302,0.032967,0.777
+"high (d high, r_i = GRR measured pre-tax 2024)",high,ent_water_sl,enterprises,state_local,2.4088,0.032967,1.407
+"high (d high, r_i = GRR measured pre-tax 2024)",high,gps_fed,general government,federal,0.3406,0.048005,0.445
+"high (d high, r_i = GRR measured pre-tax 2024)",high,gps_sl,general government,state_local,2.8937,0.032967,1.6903
+"high (d high, r_i = GRR measured pre-tax 2024)",high,health_fed,health,federal,0.1386,0.048005,0.1811
+"high (d high, r_i = GRR measured pre-tax 2024)",high,health_fed_user_fees,health,federal,-0.0046,0.048005,-0.006
+"high (d high, r_i = GRR measured pre-tax 2024)",high,health_sl,health,state_local,0.4785,0.032967,0.2795
+"high (d high, r_i = GRR measured pre-tax 2024)",high,health_sl_user_fees,health,state_local,-0.0158,0.032967,-0.0093
+"high (d high, r_i = GRR measured pre-tax 2024)",high,hwy_fed,roads,federal,0.1171,0.048005,0.1531
+"high (d high, r_i = GRR measured pre-tax 2024)",high,hwy_sl,roads,state_local,9.42,0.032967,5.5025
+"high (d high, r_i = GRR measured pre-tax 2024)",high,k12,schools,state_local,10.0507,0.032967,5.8709
+"high (d high, r_i = GRR measured pre-tax 2024)",high,k12_user_fees,schools,state_local,0.5531,0.032967,0.3231
+"high (d high, r_i = GRR measured pre-tax 2024)",high,pos_fed,police/safety,federal,0.3284,0.048005,0.4291
+"high (d high, r_i = GRR measured pre-tax 2024)",high,pos_sl,police/safety,state_local,0.8626,0.032967,0.5039
+"high (d high, r_i = GRR measured pre-tax 2024)",high,rec_fed,parks,federal,0.11,0.048005,0.1438
+"high (d high, r_i = GRR measured pre-tax 2024)",high,rec_sl,parks,state_local,1.1179,0.032967,0.653
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,air_fed,transport,federal,0.0,0.038759,0.0
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,capital_coverage,union-completion and coverage capital,state_local,1.5017,0.026221,0.3904
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,capital_reporter,union-completion and coverage capital,state_local,0.4553,0.026221,0.1184
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,college,colleges,state_local,4.3101,0.026221,1.1205
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,college_user_fees,colleges,state_local,-0.9623,0.026221,-0.2502
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_airports_sl,enterprises,state_local,1.5678,0.026221,0.4076
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_housing_sl,enterprises,state_local,0.7051,0.026221,0.1833
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_other_fed,enterprises,state_local,0.1492,0.026221,0.0388
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_other_sl,enterprises,state_local,0.1986,0.026221,0.0516
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_ports_sl,enterprises,state_local,0.2485,0.026221,0.0646
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_power_fed,enterprises,state_local,0.0728,0.026221,0.0189
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_power_sl,enterprises,state_local,1.4263,0.026221,0.3708
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_sewer_sl,enterprises,state_local,3.223,0.026221,0.8379
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_tolls_sl,enterprises,state_local,1.3188,0.026221,0.3428
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_transit_sl,enterprises,state_local,1.3309,0.026221,0.346
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,ent_water_sl,enterprises,state_local,2.4101,0.026221,0.6266
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,gps_fed,general government,federal,0.2405,0.038759,0.2074
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,gps_sl,general government,state_local,2.043,0.026221,0.5311
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,health_fed,health,federal,0.1387,0.038759,0.1196
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,health_fed_user_fees,health,federal,-0.0046,0.038759,-0.004
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,health_sl,health,state_local,0.4788,0.026221,0.1245
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,health_sl_user_fees,health,state_local,-0.0159,0.026221,-0.0041
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,hwy_fed,roads,federal,0.0,0.038759,0.0
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,hwy_sl,roads,state_local,6.9766,0.026221,1.8137
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,k12,schools,state_local,10.0563,0.026221,2.6143
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,k12_user_fees,schools,state_local,0.5534,0.026221,0.1439
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,pos_fed,police/safety,federal,0.3286,0.038759,0.2834
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,pos_sl,police/safety,state_local,0.8631,0.026221,0.2244
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,rec_fed,parks,federal,0.0,0.038759,0.0
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,rec_sl,parks,state_local,1.0642,0.026221,0.2767
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,air_fed,transport,federal,0.0648,0.038759,0.0559
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,capital_coverage,union-completion and coverage capital,state_local,1.6823,0.026221,0.4373
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,capital_reporter,union-completion and coverage capital,state_local,0.4954,0.026221,0.1288
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,college,colleges,state_local,4.3076,0.026221,1.1198
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,college_user_fees,colleges,state_local,-0.9617,0.026221,-0.25
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_airports_sl,enterprises,state_local,1.5669,0.026221,0.4073
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_housing_sl,enterprises,state_local,0.7047,0.026221,0.1832
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_other_fed,enterprises,state_local,0.1491,0.026221,0.0388
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_other_sl,enterprises,state_local,0.1985,0.026221,0.0516
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_ports_sl,enterprises,state_local,0.2483,0.026221,0.0646
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_power_fed,enterprises,state_local,0.0728,0.026221,0.0189
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_power_sl,enterprises,state_local,1.4255,0.026221,0.3706
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_sewer_sl,enterprises,state_local,3.2212,0.026221,0.8374
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_tolls_sl,enterprises,state_local,1.318,0.026221,0.3426
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_transit_sl,enterprises,state_local,1.3302,0.026221,0.3458
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,ent_water_sl,enterprises,state_local,2.4088,0.026221,0.6262
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,gps_fed,general government,federal,0.3406,0.038759,0.2937
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,gps_sl,general government,state_local,2.8937,0.026221,0.7523
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,health_fed,health,federal,0.1386,0.038759,0.1195
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,health_fed_user_fees,health,federal,-0.0046,0.038759,-0.004
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,health_sl,health,state_local,0.4785,0.026221,0.1244
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,health_sl_user_fees,health,state_local,-0.0158,0.026221,-0.0041
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,hwy_fed,roads,federal,0.1171,0.038759,0.101
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,hwy_sl,roads,state_local,9.42,0.026221,2.4489
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,k12,schools,state_local,10.0507,0.026221,2.6129
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,k12_user_fees,schools,state_local,0.5531,0.026221,0.1438
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,pos_fed,police/safety,federal,0.3284,0.038759,0.2832
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,pos_sl,police/safety,state_local,0.8626,0.026221,0.2243
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,rec_fed,parks,federal,0.11,0.038759,0.0949
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,rec_sl,parks,state_local,1.1179,0.026221,0.2906
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,air_fed,transport,federal,0.0,0.07,0.0
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,capital_coverage,union-completion and coverage capital,state_local,1.5017,0.07,3.5494
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,capital_reporter,union-completion and coverage capital,state_local,0.4553,0.07,1.0761
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,college,colleges,state_local,4.3101,0.07,10.1875
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,college_user_fees,colleges,state_local,-0.9623,0.07,-2.2744
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_airports_sl,enterprises,state_local,1.5678,0.07,3.7056
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_housing_sl,enterprises,state_local,0.7051,0.07,1.6667
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_other_fed,enterprises,state_local,0.1492,0.07,0.3527
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_other_sl,enterprises,state_local,0.1986,0.07,0.4694
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_ports_sl,enterprises,state_local,0.2485,0.07,0.5873
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_power_fed,enterprises,state_local,0.0728,0.07,0.1721
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_power_sl,enterprises,state_local,1.4263,0.07,3.3713
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_sewer_sl,enterprises,state_local,3.223,0.07,7.6182
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_tolls_sl,enterprises,state_local,1.3188,0.07,3.1171
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_transit_sl,enterprises,state_local,1.3309,0.07,3.1458
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,ent_water_sl,enterprises,state_local,2.4101,0.07,5.6967
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,gps_fed,general government,federal,0.2405,0.07,0.5683
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,gps_sl,general government,state_local,2.043,0.07,4.829
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,health_fed,health,federal,0.1387,0.07,0.3278
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,health_fed_user_fees,health,federal,-0.0046,0.07,-0.0109
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,health_sl,health,state_local,0.4788,0.07,1.1316
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,health_sl_user_fees,health,state_local,-0.0159,0.07,-0.0375
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,hwy_fed,roads,federal,0.0,0.07,0.0
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,hwy_sl,roads,state_local,6.9766,0.07,16.4903
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,k12,schools,state_local,10.0563,0.07,23.7697
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,k12_user_fees,schools,state_local,0.5534,0.07,1.308
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,pos_fed,police/safety,federal,0.3286,0.07,0.7766
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,pos_sl,police/safety,state_local,0.8631,0.07,2.0401
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,rec_fed,parks,federal,0.0,0.07,0.0
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,rec_sl,parks,state_local,1.0642,0.07,2.5155
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,air_fed,transport,federal,0.0648,0.07,0.1532
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,capital_coverage,union-completion and coverage capital,state_local,1.6823,0.07,3.9764
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,capital_reporter,union-completion and coverage capital,state_local,0.4954,0.07,1.1711
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,college,colleges,state_local,4.3076,0.07,10.1818
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,college_user_fees,colleges,state_local,-0.9617,0.07,-2.2732
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_airports_sl,enterprises,state_local,1.5669,0.07,3.7036
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_housing_sl,enterprises,state_local,0.7047,0.07,1.6657
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_other_fed,enterprises,state_local,0.1491,0.07,0.3525
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_other_sl,enterprises,state_local,0.1985,0.07,0.4692
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_ports_sl,enterprises,state_local,0.2483,0.07,0.587
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_power_fed,enterprises,state_local,0.0728,0.07,0.172
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_power_sl,enterprises,state_local,1.4255,0.07,3.3694
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_sewer_sl,enterprises,state_local,3.2212,0.07,7.6139
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_tolls_sl,enterprises,state_local,1.318,0.07,3.1153
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_transit_sl,enterprises,state_local,1.3302,0.07,3.144
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,ent_water_sl,enterprises,state_local,2.4088,0.07,5.6935
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,gps_fed,general government,federal,0.3406,0.07,0.805
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,gps_sl,general government,state_local,2.8937,0.07,6.8398
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,health_fed,health,federal,0.1386,0.07,0.3276
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,health_fed_user_fees,health,federal,-0.0046,0.07,-0.0109
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,health_sl,health,state_local,0.4785,0.07,1.131
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,health_sl_user_fees,health,state_local,-0.0158,0.07,-0.0375
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,hwy_fed,roads,federal,0.1171,0.07,0.2769
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,hwy_sl,roads,state_local,9.42,0.07,22.2657
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,k12,schools,state_local,10.0507,0.07,23.7564
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,k12_user_fees,schools,state_local,0.5531,0.07,1.3072
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,pos_fed,police/safety,federal,0.3284,0.07,0.7762
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,pos_sl,police/safety,state_local,0.8626,0.07,2.0389
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,rec_fed,parks,federal,0.11,0.07,0.26
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,rec_sl,parks,state_local,1.1179,0.07,2.6423
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,air_fed,transport,federal,0.0,0.025471,0.0
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,capital_coverage,union-completion and coverage capital,state_local,1.5017,0.025471,0.3363
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,capital_reporter,union-completion and coverage capital,state_local,0.4553,0.025471,0.1019
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,college,colleges,state_local,4.3101,0.025471,0.9651
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,college_user_fees,colleges,state_local,-0.9623,0.025471,-0.2155
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_airports_sl,enterprises,state_local,1.5678,0.025471,0.3511
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_housing_sl,enterprises,state_local,0.7051,0.025471,0.1579
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_other_fed,enterprises,state_local,0.1492,0.025471,0.0334
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_other_sl,enterprises,state_local,0.1986,0.025471,0.0445
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_ports_sl,enterprises,state_local,0.2485,0.025471,0.0556
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_power_fed,enterprises,state_local,0.0728,0.025471,0.0163
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_power_sl,enterprises,state_local,1.4263,0.025471,0.3194
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_sewer_sl,enterprises,state_local,3.223,0.025471,0.7217
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_tolls_sl,enterprises,state_local,1.3188,0.025471,0.2953
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_transit_sl,enterprises,state_local,1.3309,0.025471,0.298
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,ent_water_sl,enterprises,state_local,2.4101,0.025471,0.5397
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,gps_fed,general government,federal,0.2405,0.025471,0.0538
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,gps_sl,general government,state_local,2.043,0.025471,0.4575
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,health_fed,health,federal,0.1387,0.025471,0.0311
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,health_fed_user_fees,health,federal,-0.0046,0.025471,-0.001
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,health_sl,health,state_local,0.4788,0.025471,0.1072
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,health_sl_user_fees,health,state_local,-0.0159,0.025471,-0.0036
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,hwy_fed,roads,federal,0.0,0.025471,0.0
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,hwy_sl,roads,state_local,6.9766,0.025471,1.5622
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,k12,schools,state_local,10.0563,0.025471,2.2519
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,k12_user_fees,schools,state_local,0.5534,0.025471,0.1239
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,pos_fed,police/safety,federal,0.3286,0.025471,0.0736
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,pos_sl,police/safety,state_local,0.8631,0.025471,0.1933
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,rec_fed,parks,federal,0.0,0.025471,0.0
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,rec_sl,parks,state_local,1.0642,0.025471,0.2383
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,air_fed,transport,federal,0.0648,0.025471,0.0145
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,capital_coverage,union-completion and coverage capital,state_local,1.6823,0.025471,0.3767
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,capital_reporter,union-completion and coverage capital,state_local,0.4954,0.025471,0.1109
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,college,colleges,state_local,4.3076,0.025471,0.9646
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,college_user_fees,colleges,state_local,-0.9617,0.025471,-0.2154
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_airports_sl,enterprises,state_local,1.5669,0.025471,0.3509
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_housing_sl,enterprises,state_local,0.7047,0.025471,0.1578
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_other_fed,enterprises,state_local,0.1491,0.025471,0.0334
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_other_sl,enterprises,state_local,0.1985,0.025471,0.0444
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_ports_sl,enterprises,state_local,0.2483,0.025471,0.0556
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_power_fed,enterprises,state_local,0.0728,0.025471,0.0163
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_power_sl,enterprises,state_local,1.4255,0.025471,0.3192
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_sewer_sl,enterprises,state_local,3.2212,0.025471,0.7213
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_tolls_sl,enterprises,state_local,1.318,0.025471,0.2951
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_transit_sl,enterprises,state_local,1.3302,0.025471,0.2979
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,ent_water_sl,enterprises,state_local,2.4088,0.025471,0.5394
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,gps_fed,general government,federal,0.3406,0.025471,0.0763
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,gps_sl,general government,state_local,2.8937,0.025471,0.648
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,health_fed,health,federal,0.1386,0.025471,0.031
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,health_fed_user_fees,health,federal,-0.0046,0.025471,-0.001
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,health_sl,health,state_local,0.4785,0.025471,0.1071
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,health_sl_user_fees,health,state_local,-0.0158,0.025471,-0.0035
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,hwy_fed,roads,federal,0.1171,0.025471,0.0262
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,hwy_sl,roads,state_local,9.42,0.025471,2.1094
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,k12,schools,state_local,10.0507,0.025471,2.2506
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,k12_user_fees,schools,state_local,0.5531,0.025471,0.1238
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,pos_fed,police/safety,federal,0.3284,0.025471,0.0735
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,pos_sl,police/safety,state_local,0.8626,0.025471,0.1932
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,rec_fed,parks,federal,0.11,0.025471,0.0246
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,rec_sl,parks,state_local,1.1179,0.025471,0.2503
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,air_fed,transport,federal,0.0,0.060996,0.0
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,capital_coverage,union-completion and coverage capital,state_local,1.5017,0.060996,2.8997
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,capital_reporter,union-completion and coverage capital,state_local,0.4553,0.060996,0.8791
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,college,colleges,state_local,4.3101,0.060996,8.3227
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,college_user_fees,colleges,state_local,-0.9623,0.060996,-1.8581
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_airports_sl,enterprises,state_local,1.5678,0.060996,3.0273
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_housing_sl,enterprises,state_local,0.7051,0.060996,1.3616
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_other_fed,enterprises,state_local,0.1492,0.060996,0.2882
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_other_sl,enterprises,state_local,0.1986,0.060996,0.3835
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_ports_sl,enterprises,state_local,0.2485,0.060996,0.4798
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_power_fed,enterprises,state_local,0.0728,0.060996,0.1406
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_power_sl,enterprises,state_local,1.4263,0.060996,2.7542
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_sewer_sl,enterprises,state_local,3.223,0.060996,6.2237
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_tolls_sl,enterprises,state_local,1.3188,0.060996,2.5465
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_transit_sl,enterprises,state_local,1.3309,0.060996,2.57
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,ent_water_sl,enterprises,state_local,2.4101,0.060996,4.6539
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,gps_fed,general government,federal,0.2405,0.060996,0.4643
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,gps_sl,general government,state_local,2.043,0.060996,3.9451
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,health_fed,health,federal,0.1387,0.060996,0.2678
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,health_fed_user_fees,health,federal,-0.0046,0.060996,-0.0089
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,health_sl,health,state_local,0.4788,0.060996,0.9245
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,health_sl_user_fees,health,state_local,-0.0159,0.060996,-0.0306
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,hwy_fed,roads,federal,0.0,0.060996,0.0
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,hwy_sl,roads,state_local,6.9766,0.060996,13.4718
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,k12,schools,state_local,10.0563,0.060996,19.4187
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,k12_user_fees,schools,state_local,0.5534,0.060996,1.0686
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,pos_fed,police/safety,federal,0.3286,0.060996,0.6345
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,pos_sl,police/safety,state_local,0.8631,0.060996,1.6666
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,rec_fed,parks,federal,0.0,0.060996,0.0
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,rec_sl,parks,state_local,1.0642,0.060996,2.0551
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,air_fed,transport,federal,0.0648,0.060996,0.1252
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,capital_coverage,union-completion and coverage capital,state_local,1.6823,0.060996,3.2485
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,capital_reporter,union-completion and coverage capital,state_local,0.4954,0.060996,0.9567
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,college,colleges,state_local,4.3076,0.060996,8.318
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,college_user_fees,colleges,state_local,-0.9617,0.060996,-1.8571
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_airports_sl,enterprises,state_local,1.5669,0.060996,3.0256
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_housing_sl,enterprises,state_local,0.7047,0.060996,1.3608
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_other_fed,enterprises,state_local,0.1491,0.060996,0.288
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_other_sl,enterprises,state_local,0.1985,0.060996,0.3833
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_ports_sl,enterprises,state_local,0.2483,0.060996,0.4795
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_power_fed,enterprises,state_local,0.0728,0.060996,0.1405
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_power_sl,enterprises,state_local,1.4255,0.060996,2.7526
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_sewer_sl,enterprises,state_local,3.2212,0.060996,6.2202
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_tolls_sl,enterprises,state_local,1.318,0.060996,2.5451
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_transit_sl,enterprises,state_local,1.3302,0.060996,2.5685
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,ent_water_sl,enterprises,state_local,2.4088,0.060996,4.6513
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,gps_fed,general government,federal,0.3406,0.060996,0.6576
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,gps_sl,general government,state_local,2.8937,0.060996,5.5878
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,health_fed,health,federal,0.1386,0.060996,0.2677
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,health_fed_user_fees,health,federal,-0.0046,0.060996,-0.0089
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,health_sl,health,state_local,0.4785,0.060996,0.924
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,health_sl_user_fees,health,state_local,-0.0158,0.060996,-0.0306
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,hwy_fed,roads,federal,0.1171,0.060996,0.2262
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,hwy_sl,roads,state_local,9.42,0.060996,18.19
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,k12,schools,state_local,10.0507,0.060996,19.4079
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,k12_user_fees,schools,state_local,0.5531,0.060996,1.068
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,pos_fed,police/safety,federal,0.3284,0.060996,0.6341
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,pos_sl,police/safety,state_local,0.8626,0.060996,1.6657
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,rec_fed,parks,federal,0.11,0.060996,0.2124
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,rec_sl,parks,state_local,1.1179,0.060996,2.1586

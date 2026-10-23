@@ -1,0 +1,166 @@
+{
+ "r_c": 0.020810698764237804,
+ "capital_return_at_rc_bn": {
+  "low": 40.67853618053498,
+  "high": 44.62334906450093
+ },
+ "check_7pct_arm_reproduced_bn": {
+  "low": 96.15000402834728,
+  "high": 105.47417864960363
+ },
+ "capital_return_by_group_at_rc_bn": {
+  "colleges": [
+   3.348,
+   3.346
+  ],
+  "enterprises": [
+   12.651,
+   12.644
+  ],
+  "general government": [
+   2.283,
+   3.234
+  ],
+  "health": [
+   0.597,
+   0.597
+  ],
+  "parks": [
+   1.064,
+   1.228
+  ],
+  "police/safety": [
+   1.192,
+   1.191
+  ],
+  "roads": [
+   6.977,
+   9.537
+  ],
+  "schools": [
+   10.61,
+   10.604
+  ],
+  "transport": [
+   0.0,
+   0.065
+  ],
+  "union-completion and coverage capital": [
+   1.957,
+   2.178
+  ]
+ },
+ "d_state_local": [
+  0.0388944,
+  0.0994701,
+  0.22349999999999998
+ ],
+ "d_federal": [
+  0.00936,
+  0.33,
+  0.5
+ ],
+ "d_tax": [
+  0.00936,
+  0.03819,
+  0.15
+ ],
+ "r_i_candidates": {
+  "aaa_real_2024": 0.027841,
+  "baa_real_2024": 0.034932000000000005,
+  "ce_pretax_tau25": 0.027747598352317073,
+  "grr_all_capital_pretax_2024": 0.0752,
+  "grr_all_capital_pretax_1947_2024": 0.0741,
+  "omb_a94_1992": 0.07
+ },
+ "state_local_rate": {
+  "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)": 0.020810698764237804,
+  "central (d central, r_i = Baa real 2024)": 0.022215346010289194,
+  "high (d high, r_i = GRR measured pre-tax 2024)": 0.032966707590430654,
+  "beside: d central, r_i = GRR measured (no risk adjustment)": 0.026220807997089195,
+  "beside: full displacement at 7% (A-94 1992 / A-4 2003)": 0.07,
+  "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns": 0.025470728172039332,
+  "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns": 0.060996
+ },
+ "federal_rate": {
+  "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)": 0.020810698764237804,
+  "central (d central, r_i = Baa real 2024)": 0.025470728172039332,
+  "high (d high, r_i = GRR measured pre-tax 2024)": 0.04800534938211891,
+  "beside: d central, r_i = GRR measured (no risk adjustment)": 0.03875916817203933,
+  "beside: full displacement at 7% (A-94 1992 / A-4 2003)": 0.07,
+  "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns": 0.025470728172039332,
+  "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns": 0.060996
+ },
+ "headline_bn": {
+  "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)": {
+   "delta": [
+    0.0,
+    0.0
+   ],
+   "headline": [
+    368.0,
+    436.6
+   ]
+  },
+  "central (d central, r_i = Baa real 2024)": {
+   "delta": [
+    2.856,
+    3.183
+   ],
+   "headline": [
+    370.9,
+    439.7
+   ]
+  },
+  "high (d high, r_i = GRR measured pre-tax 2024)": {
+   "delta": [
+    24.269,
+    26.857
+   ],
+   "headline": [
+    392.3,
+    463.4
+   ]
+  },
+  "beside: d central, r_i = GRR measured (no risk adjustment)": {
+   "delta": [
+    10.999,
+    12.26
+   ],
+   "headline": [
+    379.0,
+    448.8
+   ]
+  },
+  "beside: full displacement at 7% (A-94 1992 / A-4 2003)": {
+   "delta": [
+    96.15,
+    105.474
+   ],
+   "headline": [
+    464.2,
+    542.0
+   ]
+  },
+  "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns": {
+   "delta": [
+    9.109,
+    9.992
+   ],
+   "headline": [
+    377.1,
+    446.6
+   ]
+  },
+  "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns": {
+   "delta": [
+    78.55,
+    86.167
+   ],
+   "headline": [
+    446.6,
+    522.7
+   ]
+  }
+ }
+}

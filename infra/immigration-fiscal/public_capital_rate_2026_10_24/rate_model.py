@@ -1,0 +1,161 @@
+"""Opportunity-cost rate for public capital and its price in the v9 main case.
+
+Model (steady-state Harberger weighting; see RESULT.md section 2):
+    r = r_c + d * (r_i - r_c)
+r_c = the case's 2.0810698764% (item 20); d = share of the capital's financing that displaces domestic private
+investment; r_i = marginal pre-tax real return on the displaced private capital. Foreign-financed and
+consumption-financed shares cost r_c. The case's capital return is linear in the rate, so each line moves by
+return_at_rc * (r / r_c - 1).
+
+Inputs read here:
+- main_case_2026_10_16/derived/rate_check.json: arm B (2.081%) and arm capital_7pct (7% on capital only).
+- main_case_2026_10_16/derived/summary.json v9.one_rate: per-line B-minus-v8 deltas (v8 rates 2% low, 3% high),
+  used only for the line split, scaled to the v9 totals implied by the 7% arm.
+Run: uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/rate_model.py
+"""
+import csv
+import json
+from collections import defaultdict
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+CASE = HERE.parent / "main_case_2026_10_16" / "derived"
+OUT = HERE / "derived"
+OUT.mkdir(exist_ok=True)
+
+summary = json.loads((CASE / "summary.json").read_text())
+check = json.loads((CASE / "rate_check.json").read_text())
+RC = summary["v9"]["one_rate"]["flat_real_equivalent"]
+V8_RATE = {"low": 0.02, "high": 0.03}  # v8 rule: 2% low end, 3% high end (decision v9, alternative 2)
+assert abs(RC - 0.020810698764237804) < 1e-15
+
+B = check["arms"]["B"]["set"]
+S7 = check["arms"]["capital_7pct"]["set"]
+assert abs(B[0] - 368.0297) < 1e-3 and abs(B[1] - 436.5615) < 1e-3, "[BLOCKED] arm B moved"
+# cash set moves by the same capital amount (capital return is not a pension leg)
+for i in range(2):
+    d_set = S7[i] - B[i]
+    d_cash = check["arms"]["capital_7pct"]["cash"][i] - check["arms"]["B"]["cash"][i]
+    assert abs(d_set - d_cash) < 1e-6, "[BLOCKED] set and cash 7% deltas differ"
+CAP = {e: (S7[i] - B[i]) / (0.07 / RC - 1) for i, e in enumerate(["low", "high"])}
+
+# Line split from the source-owned B-minus-v8 parts (method b_hotdeck_union_matched; the other method checked).
+FED = {"pos_fed", "health_fed", "health_fed_user_fees", "gps_fed", "hwy_fed", "air_fed", "rec_fed"}
+GROUP = {
+    "k12": "schools", "k12_user_fees": "schools", "college": "colleges", "college_user_fees": "colleges",
+    "pos_sl": "police/safety", "pos_fed": "police/safety", "health_sl": "health", "health_fed": "health",
+    "health_sl_user_fees": "health", "health_fed_user_fees": "health", "hwy_sl": "roads", "hwy_fed": "roads",
+    "air_fed": "transport", "rec_sl": "parks", "rec_fed": "parks", "gps_sl": "general government",
+    "gps_fed": "general government",
+}
+lines = {}
+for e in ("low", "high"):
+    ratio = RC / V8_RATE[e] - 1
+    by = summary["v9"]["one_rate"]["by_end"][e]["by_method"]
+    tot = {}
+    for m, mv in by.items():
+        acc = defaultdict(float)
+        for p in mv["parts"]:
+            key = p["line"] if p["component"] == "capital_engine" else p["component"]
+            acc[key] += p["delta_bn"] / ratio * (1 + ratio)
+        tot[m] = acc
+    a, b = tot["b_hotdeck_union_matched"], tot["b_matched_over_pooled"]
+    assert abs(sum(a.values()) - sum(b.values())) / sum(a.values()) < 0.002, "[BLOCKED] methods disagree"
+    scale = CAP[e] / sum(a.values())
+    assert abs(scale - 1) < 0.01, f"[BLOCKED] v8-standalone split vs v9 total off by {scale - 1:.4f}"
+    lines[e] = {k: v * scale for k, v in a.items()}
+
+
+def group_of(k):
+    if k.startswith("ent_"):
+        return "enterprises"
+    if k in ("capital_reporter", "capital_coverage"):
+        return "union-completion and coverage capital"
+    return GROUP[k]
+
+
+def level_of(k):
+    return "federal" if k in FED else "state_local"
+
+
+# Inputs (sources in reads/). Each tuple is (low, central, high).
+MPS = (0.024, 0.067, 0.11)          # marginal propensity to save out of disposable income: Dynan et al. via Moore et al. 2004 n.7; central = midpoint
+DOMESTIC = (0.39, 0.57, 0.71)        # share of a national-saving decline that falls on domestic investment: Huntley 2014 small/central/large
+D_BOND = (0.15, 0.33, 0.50)          # investment displaced per $ of borrowing: Huntley 2014 / CBO 2025 LTBO 0.33 (0.15-0.50)
+D_TAX_HIGH_OVERRIDE = 0.15           # [INFERENCE] widening for business-paid taxes out of owners' saving
+DEBT_SHARE_SL = 0.21                 # school_capital_return_2026_09_26 RESULT section 7: debt finances 21% of K-12 capital
+d_tax = (MPS[0] * DOMESTIC[0], MPS[1] * DOMESTIC[1], D_TAX_HIGH_OVERRIDE)
+d_sl = tuple((1 - DEBT_SHARE_SL) * t + DEBT_SHARE_SL * b for t, b in zip(d_tax, D_BOND))
+d_fed = (d_tax[0], D_BOND[1], D_BOND[2])  # federal margin: tax-financed (low) to CBO deficit-financed (central/high)
+# marginal pre-tax private return
+R_I = {
+    "aaa_real_2024": 0.050442 - 0.022601,   # FRED AAA 2024 mean minus Cleveland Fed 10y expected inflation 2024 mean
+    "baa_real_2024": 0.057533 - 0.022601,
+    "ce_pretax_tau25": RC / (1 - 0.25),     # certainty-equivalent pre-tax: r_c/(1 - tau_k), tau_k 2024 = 0.25 (GRR series)
+    "grr_all_capital_pretax_2024": 0.0752,  # GRR all capital pre-tax 2024 annual mean (usdata.csv)
+    "grr_all_capital_pretax_1947_2024": 0.0741,
+    "omb_a94_1992": 0.07,
+}
+SCEN = {
+    "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)": ("zero", None),
+    "central (d central, r_i = Baa real 2024)": (1, R_I["baa_real_2024"]),
+    "high (d high, r_i = GRR measured pre-tax 2024)": (2, R_I["grr_all_capital_pretax_2024"]),
+    "beside: d central, r_i = GRR measured (no risk adjustment)": (1, R_I["grr_all_capital_pretax_2024"]),
+    "beside: full displacement at 7% (A-94 1992 / A-4 2003)": ("full", 0.07),
+    # Burgess & Zerbe (2011): the capital market is the marginal source for every project (debt paydown is the
+    # alternative use), weights = CBO's 33/43/24 for every line.
+    "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns": ("soc", (R_I["baa_real_2024"], RC, RC)),
+    "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns": ("soc", (R_I["grr_all_capital_pretax_2024"], 0.0540, 0.0540)),
+}
+CBO_W = (0.33, 0.43, 0.24)  # displaced investment, induced private saving, foreign inflow (Huntley 2014 central)
+
+
+def rate(level, scen):
+    which, ri = scen
+    if which == "zero":
+        return RC
+    if which == "full":
+        return ri
+    if which == "soc":
+        return sum(w * r for w, r in zip(CBO_W, ri))
+    d = (d_sl if level == "state_local" else d_fed)[which]
+    return RC + d * (ri - RC)
+
+
+rows, totals = [], {}
+for name, scen in SCEN.items():
+    for e in ("low", "high"):
+        tot = 0.0
+        for k, v in sorted(lines[e].items()):
+            r = rate(level_of(k), scen)
+            delta = v * (r / RC - 1)
+            tot += delta
+            rows.append({"scenario": name, "end": e, "line": k, "group": group_of(k), "level": level_of(k),
+                         "return_at_2081_bn": round(v, 4), "rate": round(r, 6), "delta_bn": round(delta, 4)})
+        totals[(name, e)] = tot
+
+with open(OUT / "line_deltas.csv", "w", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
+    w.writeheader()
+    w.writerows(rows)
+
+grp = defaultdict(lambda: [0.0, 0.0])
+for e_i, e in enumerate(("low", "high")):
+    for k, v in lines[e].items():
+        grp[group_of(k)][e_i] += v
+
+head = {"low": B[0], "high": B[1]}
+out = {
+    "r_c": RC,
+    "capital_return_at_rc_bn": CAP,
+    "check_7pct_arm_reproduced_bn": {e: CAP[e] * (0.07 / RC - 1) for e in CAP},
+    "capital_return_by_group_at_rc_bn": {g: [round(x, 3) for x in v] for g, v in sorted(grp.items())},
+    "d_state_local": d_sl, "d_federal": d_fed, "d_tax": d_tax, "r_i_candidates": R_I,
+    "state_local_rate": {n: rate("state_local", s) for n, s in SCEN.items()},
+    "federal_rate": {n: rate("federal", s) for n, s in SCEN.items()},
+    "headline_bn": {n: {"delta": [round(totals[(n, "low")], 3), round(totals[(n, "high")], 3)],
+                        "headline": [round(head["low"] + totals[(n, "low")], 1),
+                                     round(head["high"] + totals[(n, "high")], 1)]} for n in SCEN},
+}
+(OUT / "rate_model.json").write_text(json.dumps(out, indent=1) + "\n")
+print(json.dumps(out, indent=1))
