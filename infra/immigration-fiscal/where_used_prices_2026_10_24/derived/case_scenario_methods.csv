@@ -1,0 +1,161 @@
+scenario,classification,method,end,specification,delta_bn,cost_bn
+existing_k12_operating_already_included,included; no incremental correction,b_hotdeck_union_matched,low,16,0,364.9176697290453
+existing_college_er_already_included,included; no incremental correction,b_hotdeck_union_matched,low,16,0,364.9176697290453
+college_operating_gross_fixed_sales_proxy,conditional gross scope/finance bridge; fee dollars fixed,b_hotdeck_union_matched,low,16,0.28661950877716436,365.2042892378225
+college_operating_responsive_net_proxy,conditional scope/sales/finance bridge,b_hotdeck_union_matched,low,16,4.990019876021734,369.90768960506705
+college_capital_gross_book_proxy,conditional historic-cost whole-campus asset proxy,b_hotdeck_union_matched,low,16,-0.4524886975514164,364.4651810314939
+college_capital_responsive_assets_proxy,conditional historic-cost expense-allocation asset proxy,b_hotdeck_union_matched,low,16,-0.31237456045897716,364.60529516858634
+college_capital_net_depreciable_proxy,conditional historic-cost net asset proxy,b_hotdeck_union_matched,low,16,-0.4319510985465058,364.4857186304988
+parks_matched_municipal_proxy,conditional municipal-only FY22/FY24/NIPA bridge,b_hotdeck_union_matched,low,16,-0.1753651678528172,364.7423045611925
+parks_sl_capital_zero_allocation_bound,allocation bound; response held; federal unchanged,b_hotdeck_union_matched,low,16,-1.1151863577580912,363.8024833712872
+parks_sl_capital_full_allocation_bound,allocation bound; response held; federal unchanged,b_hotdeck_union_matched,low,16,7.301907661681469,372.2195773907268
+stipulated_k12_capital_input,stipulated sibling input; baseline caveat in RESULT,b_hotdeck_union_matched,low,16,1.3557203833026392,366.27339011234795
+k12_capital_existing_k_denominator_diagnostic,conditional denominator diagnostic; additions share union factor,b_hotdeck_union_matched,low,16,0.5426148833755065,365.4602846124208
+combined_stipulated_k12_plus_municipal,conditional incomplete package; unknown capital/mix held,b_hotdeck_union_matched,low,16,1.180355215449822,366.09802494449514
+combined_stipulated_k12_book_capital_municipal,conditional incomplete package; no duplicate operating factor,b_hotdeck_union_matched,low,16,0.7278665178984056,365.6455362469437
+combined_denominator_diagnostic_book_capital_municipal,conditional denominator and asset diagnostics; incomplete package,b_hotdeck_union_matched,low,16,-0.08523898202872715,364.8324307470166
+combined_with_responsive_net_proxy,conditional construction sensitivity; not identified correction,b_hotdeck_union_matched,low,16,5.717886393920139,370.63555612296545
+college_asset_arm:case_fall:1:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.5034647133083467,364.41420501573697
+college_asset_arm:case_fall:1:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.376901885176153,364.54076784386916
+college_asset_arm:case_fall:1:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.4904550569633557,364.42721467208196
+college_asset_arm:case_fall:2:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.4524886975514164,364.4651810314939
+college_asset_arm:case_fall:2:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.31237456045897716,364.60529516858634
+college_asset_arm:case_fall:2:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.4319510985465058,364.4857186304988
+college_asset_arm:case_fall:3:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.3939622972558823,364.52370743178943
+college_asset_arm:case_fall:3:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.24287950288066895,364.67479022616465
+college_asset_arm:case_fall:3:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.3673922980734119,364.5502774309719
+college_asset_arm:annual_case_state_raked:1:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.4831510359346112,364.4345186931107
+college_asset_arm:annual_case_state_raked:1:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.3640392575550777,364.55363047149024
+college_asset_arm:annual_case_state_raked:1:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.4714900696650375,364.4461796593803
+college_asset_arm:annual_case_state_raked:2:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.43929760740678603,364.47837212163853
+college_asset_arm:annual_case_state_raked:2:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.3088555137854314,364.6088142152599
+college_asset_arm:annual_case_state_raked:2:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.42140885704446873,364.49626087200085
+college_asset_arm:annual_case_state_raked:3:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.3882693364675447,364.52940039257777
+college_asset_arm:annual_case_state_raked:3:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.24865545331965677,364.66901427572566
+college_asset_arm:annual_case_state_raked:3:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,low,16,-0.36538896671254406,364.55228076233277
+college_asset_unallocated_bound:depreciable_gross:lower,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,low,16,-0.7447774195417765,364.17289230950354
+college_asset_unallocated_bound:depreciable_gross:upper,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,low,16,2.2623454140493777,367.1800151430947
+college_asset_unallocated_bound:assets_responsive_proxy:lower,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,low,16,-0.6591812057243942,364.2584885233209
+college_asset_unallocated_bound:assets_responsive_proxy:upper,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,low,16,2.716636119559837,367.63430584860515
+college_asset_unallocated_bound:net_depreciable:lower,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,low,16,-0.8295231077512994,364.088146621294
+college_asset_unallocated_bound:net_depreciable:upper,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,low,16,3.226922875760806,368.1445926048061
+existing_k12_operating_already_included,included; no incremental correction,b_hotdeck_union_matched,high,11,0,433.4650176617076
+existing_college_er_already_included,included; no incremental correction,b_hotdeck_union_matched,high,11,0,433.4650176617076
+college_operating_gross_fixed_sales_proxy,conditional gross scope/finance bridge; fee dollars fixed,b_hotdeck_union_matched,high,11,0.28661950877716436,433.75163717048474
+college_operating_responsive_net_proxy,conditional scope/sales/finance bridge,b_hotdeck_union_matched,high,11,4.990019876021734,438.4550375377293
+college_capital_gross_book_proxy,conditional historic-cost whole-campus asset proxy,b_hotdeck_union_matched,high,11,-0.4524886975514164,433.01252896415616
+college_capital_responsive_assets_proxy,conditional historic-cost expense-allocation asset proxy,b_hotdeck_union_matched,high,11,-0.31237456045897716,433.1526431012486
+college_capital_net_depreciable_proxy,conditional historic-cost net asset proxy,b_hotdeck_union_matched,high,11,-0.4319510985465058,433.03306656316107
+parks_matched_municipal_proxy,conditional municipal-only FY22/FY24/NIPA bridge,b_hotdeck_union_matched,high,11,-0.20477219973048477,433.2602454619771
+parks_sl_capital_zero_allocation_bound,allocation bound; response held; federal unchanged,b_hotdeck_union_matched,high,11,-1.1720473306417034,432.2929703310659
+parks_sl_capital_full_allocation_bound,allocation bound; response held; federal unchanged,b_hotdeck_union_matched,high,11,7.674216353104157,441.13923401481173
+stipulated_k12_capital_input,stipulated sibling input; baseline caveat in RESULT,b_hotdeck_union_matched,high,11,1.3557203833026392,434.8207380450102
+k12_capital_existing_k_denominator_diagnostic,conditional denominator diagnostic; additions share union factor,b_hotdeck_union_matched,high,11,0.5426148833755065,434.0076325450831
+combined_stipulated_k12_plus_municipal,conditional incomplete package; unknown capital/mix held,b_hotdeck_union_matched,high,11,1.1509481835722113,434.6159658452798
+combined_stipulated_k12_book_capital_municipal,conditional incomplete package; no duplicate operating factor,b_hotdeck_union_matched,high,11,0.6984594860207949,434.1634771477284
+combined_denominator_diagnostic_book_capital_municipal,conditional denominator and asset diagnostics; incomplete package,b_hotdeck_union_matched,high,11,-0.11464601390633788,433.35037164780124
+combined_with_responsive_net_proxy,conditional construction sensitivity; not identified correction,b_hotdeck_union_matched,high,11,5.6884793620425285,439.1534970237501
+college_asset_arm:case_fall:1:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.5034647133083467,432.96155294839923
+college_asset_arm:case_fall:1:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.376901885176153,433.0881157765314
+college_asset_arm:case_fall:1:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.4904550569633557,432.9745626047442
+college_asset_arm:case_fall:2:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.4524886975514164,433.01252896415616
+college_asset_arm:case_fall:2:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.31237456045897716,433.1526431012486
+college_asset_arm:case_fall:2:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.4319510985465058,433.03306656316107
+college_asset_arm:case_fall:3:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.3939622972558823,433.0710553644517
+college_asset_arm:case_fall:3:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.24287950288066895,433.2221381588269
+college_asset_arm:case_fall:3:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.3673922980734119,433.09762536363417
+college_asset_arm:annual_case_state_raked:1:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.4831510359346112,432.98186662577297
+college_asset_arm:annual_case_state_raked:1:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.3640392575550777,433.1009784041525
+college_asset_arm:annual_case_state_raked:1:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.4714900696650375,432.99352759204254
+college_asset_arm:annual_case_state_raked:2:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.43929760740678603,433.0257200543008
+college_asset_arm:annual_case_state_raked:2:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.3088555137854314,433.15616214792215
+college_asset_arm:annual_case_state_raked:2:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.42140885704446873,433.0436088046631
+college_asset_arm:annual_case_state_raked:3:depreciable_gross,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.3882693364675447,433.07674832524003
+college_asset_arm:annual_case_state_raked:3:assets_responsive_proxy,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.24865545331965677,433.2163622083879
+college_asset_arm:annual_case_state_raked:3:net_depreciable,conditional institution allocation arm,b_hotdeck_union_matched,high,11,-0.36538896671254406,433.09962869499503
+college_asset_unallocated_bound:depreciable_gross:lower,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,high,11,-0.7447774195417765,432.7202402421658
+college_asset_unallocated_bound:depreciable_gross:upper,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,high,11,2.2623454140493777,435.72736307575695
+college_asset_unallocated_bound:assets_responsive_proxy:lower,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,high,11,-0.6591812057243942,432.8058364559832
+college_asset_unallocated_bound:assets_responsive_proxy:upper,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,high,11,2.716636119559837,436.1816537812674
+college_asset_unallocated_bound:net_depreciable:lower,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,high,11,-0.8295231077512994,432.6354945539563
+college_asset_unallocated_bound:net_depreciable:upper,allocation bound conditional on GASB book-value proxy,b_hotdeck_union_matched,high,11,3.226922875760806,436.6919405374684
+existing_k12_operating_already_included,included; no incremental correction,b_matched_over_pooled,low,16,0,371.14180862871615
+existing_college_er_already_included,included; no incremental correction,b_matched_over_pooled,low,16,0,371.14180862871615
+college_operating_gross_fixed_sales_proxy,conditional gross scope/finance bridge; fee dollars fixed,b_matched_over_pooled,low,16,0.28661950877716436,371.4284281374933
+college_operating_responsive_net_proxy,conditional scope/sales/finance bridge,b_matched_over_pooled,low,16,4.990019876021734,376.1318285047379
+college_capital_gross_book_proxy,conditional historic-cost whole-campus asset proxy,b_matched_over_pooled,low,16,-0.4524886975514164,370.68931993116473
+college_capital_responsive_assets_proxy,conditional historic-cost expense-allocation asset proxy,b_matched_over_pooled,low,16,-0.31237456045897716,370.82943406825717
+college_capital_net_depreciable_proxy,conditional historic-cost net asset proxy,b_matched_over_pooled,low,16,-0.4319510985465058,370.70985753016964
+parks_matched_municipal_proxy,conditional municipal-only FY22/FY24/NIPA bridge,b_matched_over_pooled,low,16,-0.1753651678528172,370.96644346086333
+parks_sl_capital_zero_allocation_bound,allocation bound; response held; federal unchanged,b_matched_over_pooled,low,16,-1.1151863577580912,370.02662227095806
+parks_sl_capital_full_allocation_bound,allocation bound; response held; federal unchanged,b_matched_over_pooled,low,16,7.301907661681469,378.4437162903976
+stipulated_k12_capital_input,stipulated sibling input; baseline caveat in RESULT,b_matched_over_pooled,low,16,1.3557203833026392,372.4975290120188
+k12_capital_existing_k_denominator_diagnostic,conditional denominator diagnostic; additions share union factor,b_matched_over_pooled,low,16,0.5426148833755065,371.68442351209166
+combined_stipulated_k12_plus_municipal,conditional incomplete package; unknown capital/mix held,b_matched_over_pooled,low,16,1.180355215449822,372.32216384416597
+combined_stipulated_k12_book_capital_municipal,conditional incomplete package; no duplicate operating factor,b_matched_over_pooled,low,16,0.7278665178984056,371.86967514661455
+combined_denominator_diagnostic_book_capital_municipal,conditional denominator and asset diagnostics; incomplete package,b_matched_over_pooled,low,16,-0.08523898202872715,371.0565696466874
+combined_with_responsive_net_proxy,conditional construction sensitivity; not identified correction,b_matched_over_pooled,low,16,5.717886393920139,376.8596950226363
+college_asset_arm:case_fall:1:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.5034647133083467,370.6383439154078
+college_asset_arm:case_fall:1:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.376901885176153,370.76490674354
+college_asset_arm:case_fall:1:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.4904550569633557,370.6513535717528
+college_asset_arm:case_fall:2:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.4524886975514164,370.68931993116473
+college_asset_arm:case_fall:2:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.31237456045897716,370.82943406825717
+college_asset_arm:case_fall:2:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.4319510985465058,370.70985753016964
+college_asset_arm:case_fall:3:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.3939622972558823,370.74784633146027
+college_asset_arm:case_fall:3:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.24287950288066895,370.8989291258355
+college_asset_arm:case_fall:3:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.3673922980734119,370.77441633064274
+college_asset_arm:annual_case_state_raked:1:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.4831510359346112,370.65865759278154
+college_asset_arm:annual_case_state_raked:1:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.3640392575550777,370.77776937116107
+college_asset_arm:annual_case_state_raked:1:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.4714900696650375,370.6703185590511
+college_asset_arm:annual_case_state_raked:2:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.43929760740678603,370.70251102130936
+college_asset_arm:annual_case_state_raked:2:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.3088555137854314,370.8329531149307
+college_asset_arm:annual_case_state_raked:2:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.42140885704446873,370.7203997716717
+college_asset_arm:annual_case_state_raked:3:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.3882693364675447,370.7535392922486
+college_asset_arm:annual_case_state_raked:3:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.24865545331965677,370.8931531753965
+college_asset_arm:annual_case_state_raked:3:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,low,16,-0.36538896671254406,370.7764196620036
+college_asset_unallocated_bound:depreciable_gross:lower,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,low,16,-0.7447774195417765,370.3970312091744
+college_asset_unallocated_bound:depreciable_gross:upper,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,low,16,2.2623454140493777,373.4041540427655
+college_asset_unallocated_bound:assets_responsive_proxy:lower,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,low,16,-0.6591812057243942,370.48262742299175
+college_asset_unallocated_bound:assets_responsive_proxy:upper,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,low,16,2.716636119559837,373.858444748276
+college_asset_unallocated_bound:net_depreciable:lower,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,low,16,-0.8295231077512994,370.31228552096485
+college_asset_unallocated_bound:net_depreciable:upper,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,low,16,3.226922875760806,374.36873150447695
+existing_k12_operating_already_included,included; no incremental correction,b_matched_over_pooled,high,11,0,439.6580366463612
+existing_college_er_already_included,included; no incremental correction,b_matched_over_pooled,high,11,0,439.6580366463612
+college_operating_gross_fixed_sales_proxy,conditional gross scope/finance bridge; fee dollars fixed,b_matched_over_pooled,high,11,0.28661950877716436,439.9446561551384
+college_operating_responsive_net_proxy,conditional scope/sales/finance bridge,b_matched_over_pooled,high,11,4.990019876021734,444.64805652238294
+college_capital_gross_book_proxy,conditional historic-cost whole-campus asset proxy,b_matched_over_pooled,high,11,-0.4524886975514164,439.2055479488098
+college_capital_responsive_assets_proxy,conditional historic-cost expense-allocation asset proxy,b_matched_over_pooled,high,11,-0.31237456045897716,439.34566208590223
+college_capital_net_depreciable_proxy,conditional historic-cost net asset proxy,b_matched_over_pooled,high,11,-0.4319510985465058,439.2260855478147
+parks_matched_municipal_proxy,conditional municipal-only FY22/FY24/NIPA bridge,b_matched_over_pooled,high,11,-0.20477219973048477,439.4532644466307
+parks_sl_capital_zero_allocation_bound,allocation bound; response held; federal unchanged,b_matched_over_pooled,high,11,-1.1720473306417034,438.4859893157195
+parks_sl_capital_full_allocation_bound,allocation bound; response held; federal unchanged,b_matched_over_pooled,high,11,7.674216353104157,447.33225299946537
+stipulated_k12_capital_input,stipulated sibling input; baseline caveat in RESULT,b_matched_over_pooled,high,11,1.3557203833026392,441.01375702966385
+k12_capital_existing_k_denominator_diagnostic,conditional denominator diagnostic; additions share union factor,b_matched_over_pooled,high,11,0.5426148833755065,440.2006515297367
+combined_stipulated_k12_plus_municipal,conditional incomplete package; unknown capital/mix held,b_matched_over_pooled,high,11,1.1509481835722113,440.8089848299334
+combined_stipulated_k12_book_capital_municipal,conditional incomplete package; no duplicate operating factor,b_matched_over_pooled,high,11,0.6984594860207949,440.356496132382
+combined_denominator_diagnostic_book_capital_municipal,conditional denominator and asset diagnostics; incomplete package,b_matched_over_pooled,high,11,-0.11464601390633788,439.5433906324549
+combined_with_responsive_net_proxy,conditional construction sensitivity; not identified correction,b_matched_over_pooled,high,11,5.6884793620425285,445.34651600840374
+college_asset_arm:case_fall:1:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.5034647133083467,439.15457193305286
+college_asset_arm:case_fall:1:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.376901885176153,439.28113476118506
+college_asset_arm:case_fall:1:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.4904550569633557,439.16758158939786
+college_asset_arm:case_fall:2:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.4524886975514164,439.2055479488098
+college_asset_arm:case_fall:2:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.31237456045897716,439.34566208590223
+college_asset_arm:case_fall:2:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.4319510985465058,439.2260855478147
+college_asset_arm:case_fall:3:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.3939622972558823,439.26407434910533
+college_asset_arm:case_fall:3:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.24287950288066895,439.41515714348054
+college_asset_arm:case_fall:3:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.3673922980734119,439.2906443482878
+college_asset_arm:annual_case_state_raked:1:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.4831510359346112,439.1748856104266
+college_asset_arm:annual_case_state_raked:1:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.3640392575550777,439.29399738880613
+college_asset_arm:annual_case_state_raked:1:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.4714900696650375,439.1865465766962
+college_asset_arm:annual_case_state_raked:2:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.43929760740678603,439.2187390389544
+college_asset_arm:annual_case_state_raked:2:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.3088555137854314,439.3491811325758
+college_asset_arm:annual_case_state_raked:2:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.42140885704446873,439.23662778931674
+college_asset_arm:annual_case_state_raked:3:depreciable_gross,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.3882693364675447,439.26976730989367
+college_asset_arm:annual_case_state_raked:3:assets_responsive_proxy,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.24865545331965677,439.40938119304155
+college_asset_arm:annual_case_state_raked:3:net_depreciable,conditional institution allocation arm,b_matched_over_pooled,high,11,-0.36538896671254406,439.29264767964867
+college_asset_unallocated_bound:depreciable_gross:lower,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,high,11,-0.7447774195417765,438.91325922681943
+college_asset_unallocated_bound:depreciable_gross:upper,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,high,11,2.2623454140493777,441.9203820604106
+college_asset_unallocated_bound:assets_responsive_proxy:lower,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,high,11,-0.6591812057243942,438.9988554406368
+college_asset_unallocated_bound:assets_responsive_proxy:upper,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,high,11,2.716636119559837,442.37467276592105
+college_asset_unallocated_bound:net_depreciable:lower,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,high,11,-0.8295231077512994,438.8285135386099
+college_asset_unallocated_bound:net_depreciable:upper,allocation bound conditional on GASB book-value proxy,b_matched_over_pooled,high,11,3.226922875760806,442.884959522122

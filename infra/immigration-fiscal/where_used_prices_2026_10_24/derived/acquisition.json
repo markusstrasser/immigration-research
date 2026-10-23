@@ -1,0 +1,113 @@
+{
+  "cache_limit_bytes": 5000000000,
+  "files": [
+    {
+      "bytes": 7295855,
+      "members": [
+        "EFFY2023.csv",
+        "EFFY2023_RV.csv"
+      ],
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/ipeds/EFFY2023.zip",
+      "sha256": "bfc36572b930551f784ebb9c1e428b8f985fa70a80dab2e7c7121bd2c6feb433",
+      "url": "https://nces.ed.gov/ipeds/datacenter/data/EFFY2023.zip"
+    },
+    {
+      "bytes": 20264,
+      "members": [
+        "EFFY2023_dict.xlsx"
+      ],
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/ipeds/EFFY2023_Dict.zip",
+      "sha256": "994163601b2feb3b29276f6b407de5724572446a04f0728487e6d5a62ecba11c",
+      "url": "https://nces.ed.gov/ipeds/datacenter/data/EFFY2023_Dict.zip"
+    },
+    {
+      "bytes": 560124,
+      "members": [
+        "f2223_f2.csv"
+      ],
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/ipeds/F2223_F2.zip",
+      "sha256": "87d7d5768903d9dda56126822f6baca95f483b232ff20e11a0fa2df6cc5c565f",
+      "url": "https://nces.ed.gov/ipeds/datacenter/data/F2223_F2.zip"
+    },
+    {
+      "bytes": 50072,
+      "members": [
+        "f2223_f2.xlsx"
+      ],
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/ipeds/F2223_F2_Dict.zip",
+      "sha256": "659202702d87faa08a941346647f79f9cc0cda620d76deccc7ae1fb1109b08b2",
+      "url": "https://nces.ed.gov/ipeds/datacenter/data/F2223_F2_Dict.zip"
+    },
+    {
+      "bytes": 50453,
+      "members": [
+        "f2223_f1a.xlsx"
+      ],
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/ipeds/F2223_F1A_Dict.zip",
+      "sha256": "c2d052827b48075fce820dd6dd6141055f9dd7be76f1c93d6ec1613214be576e",
+      "url": "https://nces.ed.gov/ipeds/datacenter/data/F2223_F1A_Dict.zip"
+    },
+    {
+      "bytes": 12711,
+      "members": [
+        "EFIA2023_dict.xlsx"
+      ],
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/ipeds/EFIA2023_Dict.zip",
+      "sha256": "0cd11956a92afb316d391ba393028220df8fb17b1165ec5772f8e0529f019a19",
+      "url": "https://nces.ed.gov/ipeds/datacenter/data/EFIA2023_Dict.zip"
+    },
+    {
+      "bytes": 30291,
+      "members": [
+        "Flags2023_dict.xlsx"
+      ],
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/ipeds/FLAGS2023_Dict.zip",
+      "sha256": "25cb651535af1295e654d909031b1841e74d5abecd241e2cec7049119d28dd59",
+      "url": "https://nces.ed.gov/ipeds/datacenter/data/FLAGS2023_Dict.zip"
+    },
+    {
+      "bytes": 1781727,
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/parks/acs5_2024_place.json",
+      "sha256": "292991089ff331e87a629e2f91d0c4225729e672f92b0e636423d75381d4dbfe",
+      "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME%2CB03001_001E%2CB03001_004E&for=place%3A%2A"
+    },
+    {
+      "bytes": 89,
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/parks/acs5_2024_us.json",
+      "sha256": "f9d39eecaa48131613981fa8a48ee73de80e60e3686a4c788c386686a2302387",
+      "url": "https://api.census.gov/data/2024/acs/acs5?get=NAME%2CB03001_001E%2CB03001_004E&for=us%3A%2A"
+    },
+    {
+      "bytes": 239462,
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/parks/B03001.json",
+      "sha256": "2560e83a6988f84b64c6e724ce66367d2f3169f37f2253b5967a2a0000e5e1e1",
+      "url": "https://api.census.gov/data/2024/acs/acs5/groups/B03001.json"
+    },
+    {
+      "bytes": 170140,
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/parks/Staffing_Spending_Volunteers_WEB_DATA_TABLES_City_Park_Facts_2024.xlsx",
+      "sha256": "05bcfbebf7f23559540610f27e701de2ce5a95d27246a477ecff0c71336e7329",
+      "url": "https://parkserve.tpl.org/downloads/cpf/Staffing_Spending_Volunteers_WEB_DATA_TABLES_City_Park_Facts_2024.xlsx"
+    },
+    {
+      "bytes": 103184,
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/parks/Acreage_Park_System_Highlights_WEB_DATA_TABLES_City_Park_Facts_2024.xlsx",
+      "sha256": "44879e8fc2f782fb33fd6a3f90f494d0d8e9dcb054995023ded0a5851dceeb3a",
+      "url": "https://parkserve.tpl.org/downloads/cpf/Acreage_Park_System_Highlights_WEB_DATA_TABLES_City_Park_Facts_2024.xlsx"
+    },
+    {
+      "bytes": 86782,
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/parks/2024_CPF_Methodology.pdf",
+      "sha256": "b5c5d09a82b7fd19d5951dd0aa5d70aea2ba9b4e0b386c13ad76978d5faf1874",
+      "url": "https://parkserve.tpl.org/downloads/cpf/2024_CPF_Methodology.pdf"
+    },
+    {
+      "bytes": 1761083,
+      "path": "infra/immigration-fiscal/where_used_prices_2026_10_24/_cache/parks/census_classification.pdf",
+      "sha256": "7e3b2f0c8cdd0c48f2f66a926f683f5720ac52105a4a37097e10064ec97b1e55",
+      "url": "https://www2.census.gov/govs/class/classfull.pdf"
+    }
+  ],
+  "source": "NCES IPEDS complete data files",
+  "vintage": "2022-23"
+}

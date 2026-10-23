@@ -1,0 +1,22 @@
+{
+  "infra/immigration-fiscal/detention_reconciliation_2026_09_20/_cache/census_2024_units.zip": {
+    "bytes": 4267040,
+    "sha256": "0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a"
+  },
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": {
+    "bytes": 147271429,
+    "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+  },
+  "infra/immigration-fiscal/receipt_side_long_run_2026_09_28/_cache/census_2022_individual_unit_file.zip": {
+    "bytes": 9719280,
+    "sha256": "c8de889f6b3320d3be347e3880607346d6440eda82705b26db2fa410fe6e83a5"
+  },
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/_cache/acs5_2024_B03001_county.json": {
+    "bytes": 273636,
+    "sha256": "47676895c6c7ed8d6638a80ace2eecbc6070b7e398474e9780808328c7574553"
+  },
+  "sources/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv": {
+    "bytes": 41378,
+    "sha256": "b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7"
+  }
+}

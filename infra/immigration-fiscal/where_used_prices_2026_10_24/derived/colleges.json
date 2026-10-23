@@ -1,0 +1,79 @@
+{
+  "case_er_share_acs": 0.11506996999009124,
+  "case_er_share_reproduced": true,
+  "case_response_reproduced": 0.8857748497320679,
+  "coverage": {
+    "excluded_public_fasb_units": [
+      130943,
+      177931,
+      180647,
+      213598,
+      214777,
+      215266,
+      215275,
+      215284,
+      215293,
+      215309,
+      216339,
+      219374,
+      231970,
+      238096,
+      365505,
+      366252,
+      434016,
+      442781
+    ],
+    "gasb_fall_fte": 9884549.053807,
+    "gasb_fall_fte_share": 0.982549368524686,
+    "gasb_group_fte_share": 0.9983299254111634,
+    "missing_finance_units": [
+      119678,
+      130943,
+      177931,
+      180647,
+      200697,
+      213598,
+      214777,
+      215266,
+      215275,
+      215284,
+      215293,
+      215309,
+      216339,
+      219374,
+      231970,
+      238096,
+      365505,
+      366252,
+      417248,
+      417275,
+      431187,
+      434016,
+      442781,
+      492306,
+      492315,
+      492324,
+      495271
+    ],
+    "public_fall_fte": 10060104.225244999,
+    "state_degree_cells_raked": 102
+  },
+  "limits": [
+    "IPEDS Hispanic within state/degree is a proxy for the lineage; ACS cannot observe parental birthplace.",
+    "Annual Hispanic FTE uses attendance-weighted headcounts normalized to EFIA actual FTE; race-specific credit hours are unavailable.",
+    "Case-state raking holds the case college key's state/degree mix, not the K12 pupil mix.",
+    "Responsive-net institution weighting transports item15's conditional finance-to-NIPA bridge; fees/Pell remain fixed.",
+    "National item15 finance includes units without allocated enrollment: see concept-specific coverage and bounds, not FTE coverage alone.",
+    "Historic-cost book assets and whole-campus depreciation do not identify current replacement-cost responsive instructional assets.",
+    "Public FASB colleges are reported separately; no silent harmonization or zero-cost imputation."
+  ],
+  "operating": {
+    "already_where_enrolled": true,
+    "new_er_factor": 1.0,
+    "responsive_net_factor_case_fall": 1.1751225966456744
+  },
+  "population": {
+    "all": 340110990.0,
+    "mexican_union_proxy": 39429519.0
+  }
+}

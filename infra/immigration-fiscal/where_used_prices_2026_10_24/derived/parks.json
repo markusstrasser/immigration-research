@@ -1,0 +1,69 @@
+{
+  "capital_identified": false,
+  "case_matched_municipal_bridge_index_delta": -0.031605887188701706,
+  "case_matched_municipal_bridge_relative_to_whole_sl_index": 0.970590383367629,
+  "case_raked_factor_on_matched_municipal_block": 0.9202201001423193,
+  "case_state_index_reproduced": 1.074678653033285,
+  "coverage": {
+    "matched_ops_bn": 20.800922,
+    "matched_share_of_municipal_E61": 0.9865446491502334,
+    "matched_share_of_sl_E61": 0.5112077704265696,
+    "mexican_origin": 29495112.0,
+    "mexican_origin_share": 0.7777931985084464,
+    "municipalities": 19367,
+    "national_ops_bn": 40.689761000000026,
+    "population": 209638625.0,
+    "population_share": 0.6259317472726728,
+    "positive_operations": 13405,
+    "unmatched_municipal_ops_bn": 0.283701,
+    "unmatched_municipalities": 34
+  },
+  "factor_vs_acs_state_prices": 0.9162558140258417,
+  "factor_vs_national_municipal_price": 1.1593736420767606,
+  "factor_within_covered_cities": 0.9330099194986833,
+  "limits": [
+    "Residence measures geographic provision, not visitors or Mexican-origin use inside a place.",
+    "Case delta proportionally transports FY2022 municipal shares to FY2024 NIPA using each state's FY2024 parks+libraries direct-spending price.",
+    "Current E61 cash spending is not NIPA consumption net of sales/depreciation; that bridge remains conditional.",
+    "Case state-price weights are reconstructed on their original published CPS frame; no 40.90M level is substituted for the case count.",
+    "The same within-state price correction on additions/coverage/count is a transport assumption.",
+    "Other governments and unmatched municipalities remain unpriced; national operating correction is not identified.",
+    "Construction flow, acreage, and PAD-US/ParkServe polygons do not identify replacement-cost capital."
+  ],
+  "national_E61_by_type_bn": {
+    "0": 6.505191000000001,
+    "1": 7.3566000000000065,
+    "2": 21.084623000000057,
+    "3": 1.4069059999999731,
+    "4": 4.336440999999988
+  },
+  "raw_2022_allocations_bn": {
+    "all_unpriced_E61_delta_bound": [
+      -2.1663566746261838,
+      17.722482325373843
+    ],
+    "all_unpriced_E61_state_baseline": 2.1663566746261838,
+    "all_unpriced_E61_total": 19.888839000000026,
+    "matched_measured": 2.7305340313343676,
+    "matched_state_baseline": 2.980100087263792,
+    "unmatched_baseline": 0.009655361170378532,
+    "unmatched_delta_bound": [
+      -0.009655361170378532,
+      0.27404563882962146
+    ]
+  },
+  "scope": "matched municipal E61 current operations; provision by residence",
+  "tpl_cross_check": {
+    "cities": 89,
+    "limits": "Convenience cross-check, not the top100 universe or national estimate. Public-only dollars, mixed source vintages. Capital outlay and acreage are not asset values.",
+    "mexican_origin": 9900247.0,
+    "population": 56731904.0,
+    "relative_to_covered_residents": {
+      "acres": 0.6628994227596757,
+      "capital_outlay": 0.6637647515456047,
+      "designed_acres": 0.9403696303879833,
+      "operations": 0.90381145860222
+    },
+    "scope": "exact 7-digit place FIPS only; PS-prefixed regional systems excluded; includes Des Moines"
+  }
+}

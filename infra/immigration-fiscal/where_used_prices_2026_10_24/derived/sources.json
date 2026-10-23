@@ -1,0 +1,26 @@
+{
+  "infra/immigration-fiscal/affirmative_action_cost_2026_09_24/_cache/ipeds/HD2023.csv": {
+    "bytes": 4537050,
+    "sha256": "d779a92d637e122c90009112e284ab5c75bc2b3d26774a29746800f522aace0f"
+  },
+  "infra/immigration-fiscal/affirmative_action_cost_2026_09_24/_cache/ipeds/ef2023a.csv": {
+    "bytes": 27288030,
+    "sha256": "527ba4696abe0168e086fbc437587008fbfa89fbf1062f95fc3d33652977a2ea"
+  },
+  "sources/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip": {
+    "bytes": 602847146,
+    "sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894"
+  },
+  "sources/immigration-fiscal/data/external/stage3/nces/ipeds_2023/EFIA2023.zip": {
+    "bytes": 191187,
+    "sha256": "87229fac9a64563df477b47f392d5af7913e474363b440739a70a636c449560d"
+  },
+  "sources/immigration-fiscal/data/external/stage3/nces/ipeds_2023/F2223_F1A.zip": {
+    "bytes": 711679,
+    "sha256": "beabdb0384f000a2fa487e7083512f880013c897d8e10bab9682f4c836687de9"
+  },
+  "sources/immigration-fiscal/data/external/stage3/nces/ipeds_2023/FLAGS2023.zip": {
+    "bytes": 73241,
+    "sha256": "df763ac04b15821bbcaa1dac238cbea9c2d88a5ae1b3532e2d1cd90489c8e3d3"
+  }
+}
