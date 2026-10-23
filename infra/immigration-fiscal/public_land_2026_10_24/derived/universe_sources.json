@@ -1,0 +1,134 @@
+[
+  {
+    "bytes": 13845,
+    "path": "public_land_2026_10_24/_cache/universes/hifld_hospitals_metadata.json",
+    "sha256": "649fe5993a14a551fa25da77f2c90d48089f83a5be28ca2427025243781f4987",
+    "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/Hospitals_RAPT/FeatureServer/6?f=json"
+  },
+  {
+    "bytes": 4226330,
+    "path": "public_land_2026_10_24/_cache/universes/hifld_hospitals.geojson",
+    "sha256": "5069d0f26e05fb2068e50f0d3fbc470b1b0914372f9038a1c9f5bcd1877e542e",
+    "url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/Hospitals_RAPT/FeatureServer/6/query"
+  },
+  {
+    "bytes": 53644,
+    "path": "public_land_2026_10_24/_cache/universes/hud_developments_metadata.json",
+    "sha256": "29c742af19f979ffd9796dacb56459e326aec9e829fa920233cb54c34066e6ff",
+    "url": "https://services.arcgis.com/VTyQ9soqVukalItT/arcgis/rest/services/Public_Housing_Developments/FeatureServer/0?f=json"
+  },
+  {
+    "bytes": 2653995,
+    "path": "public_land_2026_10_24/_cache/universes/hud_developments.geojson",
+    "sha256": "25b54954ffc92ea72b65718c2bf0304ed699bcf45bc61cbf870f6157403f6248",
+    "url": "https://services.arcgis.com/VTyQ9soqVukalItT/arcgis/rest/services/Public_Housing_Developments/FeatureServer/0/query"
+  },
+  {
+    "bytes": 26322,
+    "path": "public_land_2026_10_24/_cache/universes/faa_bts_airports_metadata.json",
+    "sha256": "3b94acf227f4d41b6b561aaa9bf3af91ca1cc75ff1e753a5b13d359d92304940",
+    "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/ArcGIS/rest/services/NTAD_Aviation_Facilities/FeatureServer/0?f=json"
+  },
+  {
+    "bytes": 8981558,
+    "path": "public_land_2026_10_24/_cache/universes/faa_bts_airports.geojson",
+    "sha256": "6be0789b5a87dec108f8358a6483105495340639f6d656f3c2b361e8a2d23edc",
+    "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/ArcGIS/rest/services/NTAD_Aviation_Facilities/FeatureServer/0/query"
+  },
+  {
+    "bytes": 1554055,
+    "path": "public_land_2026_10_24/_cache/universes/cms_hospital_general.csv",
+    "sha256": "f48f2a51c3eccc9fb30e0aebab7818a8358e8303bf501666df7b7a6eb91c13ad",
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0/download?format=csv"
+  },
+  {
+    "bytes": 2132572,
+    "path": "public_land_2026_10_24/_cache/universes/cms_hospital_dictionary.pdf",
+    "sha256": "ad58e612dd5fcbe88076f362e2681dc69bdd68e62b8001314558a0f40c29c364",
+    "url": "https://data.cms.gov/provider-data/sites/default/files/data_dictionaries/HospitalCompare-DataDictionary.pdf"
+  },
+  {
+    "bytes": 151910,
+    "path": "public_land_2026_10_24/_cache/universes/ipeds_hd2023_dictionary.zip",
+    "sha256": "131d8f2f56a71078ea453989384cce91985fa2a29a94f168a718dedc6a466e3b",
+    "url": "https://nces.ed.gov/ipeds/datacenter/data/HD2023_Dict.zip"
+  },
+  {
+    "bytes": 680611,
+    "path": "public_land_2026_10_24/_cache/universes/faa_txt_csv_mapping.pdf",
+    "sha256": "87113fee5b394af586722dfd8681340d83d0d16bfd933d97ed721c773c51eb6d",
+    "url": "https://nfdc.faa.gov/webContent/28DaySub/TXT_to_CSV_Mapping.pdf"
+  },
+  {
+    "bytes": 42331,
+    "path": "public_land_2026_10_24/_cache/universes/faa_bts_dictionary.xlsx",
+    "sha256": "dcd91711341871f10f7c054dc0dbd2fae80c94993511112da6e7201f5d576ac4",
+    "url": "https://doi.org/10.21949/1529011"
+  },
+  {
+    "bytes": 27493,
+    "path": "public_land_2026_10_24/_cache/universes/faa_bts_metadata.xml",
+    "sha256": "89b2051371f537a3e07a920b485b0dd80ffaee3c1d5cd9fd3b70f7a36cefeb6a",
+    "url": "https://www.arcgis.com/sharing/rest/content/items/1551114f78e34d8395fd77bf41cd8a80/info/metadata/metadata.xml"
+  },
+  {
+    "bytes": 6558,
+    "path": "public_land_2026_10_24/_cache/universes/hud_item.json",
+    "sha256": "f5597f25e18c20ce59a17ac2bbc20d7a4ca6bc58cf83bb5893a2c626e1ecaba3",
+    "url": "https://www.arcgis.com/sharing/rest/content/items/5c96143f79c940a0a8cedae99a1ac562?f=json"
+  },
+  {
+    "bytes": 3760,
+    "path": "public_land_2026_10_24/_cache/universes/hifld_fema_item.json",
+    "sha256": "41f562764c776c01ff8896300f599b2523e602f8b3a6b19964e702ad79a37b09",
+    "url": "https://www.arcgis.com/sharing/rest/content/items/c4b621eb03ca4f78a05d9063629e98bf?f=json"
+  },
+  {
+    "bytes": 956395,
+    "path": "public_land_2026_10_24/_cache/universes/scope_service_academies_gao.html",
+    "sha256": "f1d3b24c90b1d7747722649f6d544b89782f1f2ddaea606dc1e9c8ef74d75313",
+    "url": "https://files.gao.gov/reports/GAO-26-107049/index.html"
+  },
+  {
+    "bytes": 124010,
+    "path": "public_land_2026_10_24/_cache/universes/scope_nps_about.html",
+    "sha256": "fd4cdb9c61002969f3dfc1690e5627cfaa1770cc5aab729f1effee57bf9e2678",
+    "url": "https://nps.edu/web/guest/about"
+  },
+  {
+    "bytes": 38113,
+    "path": "public_land_2026_10_24/_cache/universes/scope_afit_about.html",
+    "sha256": "4919383538b467ce11fc91d49db47d1e3544fe7f16979e47d29d137c185b7f68",
+    "url": "https://www.afit.edu/ABOUT/"
+  },
+  {
+    "bytes": 63507,
+    "path": "public_land_2026_10_24/_cache/universes/scope_bie_colleges.html",
+    "sha256": "de1919551f952aaa5882f614aae7a4dece3912a198982560d4f4fb69db46d135",
+    "url": "https://www.bie.edu/news-article/bureau-indian-education-offers-postsecondary-opportunities"
+  },
+  {
+    "bytes": 5398,
+    "path": "public_land_2026_10_24/_cache/universes/scope_iaia_4411.html",
+    "sha256": "5735b4121725864e1a5621886ad8f66c7a10c51fdc4435e16edadc8c6e117d7e",
+    "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap56-subchapI-sec4411.htm"
+  },
+  {
+    "bytes": 14227,
+    "path": "public_land_2026_10_24/_cache/universes/scope_iaia_4412.html",
+    "sha256": "0223a8690ca0db6da8d6ada5c47b32c70965ac0a200c19e4a9a11fc028b39f6f",
+    "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap56-subchapI-sec4412.htm"
+  },
+  {
+    "bytes": 369076,
+    "path": "public_land_2026_10_24/_cache/universes/scope_bea_tribal_gce2005.pdf",
+    "sha256": "0d2d6840e5559d032d3c3799e4f5613457d1a8b8ab0149f18fa8ff9b4252be14",
+    "url": "https://apps.bea.gov/scb/pdf/2005/10October/1005_gce.pdf"
+  },
+  {
+    "bytes": 4537050,
+    "path": "affirmative_action_cost_2026_09_24/_cache/ipeds/HD2023.csv",
+    "sha256": "d779a92d637e122c90009112e284ab5c75bc2b3d26774a29746800f522aace0f",
+    "url": "https://nces.ed.gov/ipeds/datacenter/data/HD2023.zip"
+  }
+]

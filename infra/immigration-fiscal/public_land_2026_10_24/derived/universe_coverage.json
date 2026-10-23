@@ -1,0 +1,313 @@
+{
+  "airport": {
+    "case_scope_counts": {
+      "defense_excluded": 309,
+      "eligible": 4769,
+      "not_public": 14139
+    },
+    "open_public_airport_acreage_coverage": {
+      "missing_acreage": 230,
+      "positive_acreage": 3787,
+      "positive_acres": 2055164.0,
+      "public_open_airports": 4017
+    },
+    "ownership_counts": {
+      "CG": 8,
+      "MA": 96,
+      "MN": 70,
+      "MR": 135,
+      "PR": 14139,
+      "PU": 4769
+    },
+    "primary_dictionary": {
+      "acreage_unit": "acre",
+      "airport_public_flag": "civil publicly owned PU only; military codes retained in ownership field and excluded from airport-enterprise acreage",
+      "ownership_codes": {
+        "CG": "Coast Guard owned",
+        "MA": "Air Force owned",
+        "MN": "Navy owned",
+        "MR": "Army owned",
+        "PR": "Privately owned",
+        "PU": "Publicly owned"
+      }
+    },
+    "public_acreage_recorded": 3920,
+    "public_case_scope_counts": {
+      "eligible": 4769
+    },
+    "public_records": 4769,
+    "public_valid_geocodes": 4769,
+    "records": 19217,
+    "source_dates": [
+      "2026/10/01"
+    ],
+    "unknown_ownership": 0
+  },
+  "cms_hospitals": {
+    "government_records": 1144,
+    "limitation": "CMS Medicare universe differs from HIFLD and contains no coordinates; not an acreage or ownership-share imputation",
+    "ownership_counts": {
+      "Department of Defense": 32,
+      "Government - Federal": 42,
+      "Government - Hospital District or Authority": 511,
+      "Government - Local": 390,
+      "Government - State": 201,
+      "Physician": 80,
+      "Proprietary": 1036,
+      "Tribal": 17,
+      "Veterans Health Administration": 131,
+      "Voluntary non-profit - Church": 263,
+      "Voluntary non-profit - Other": 352,
+      "Voluntary non-profit - Private": 2299
+    },
+    "records": 5354
+  },
+  "college": {
+    "case_scope_counts": {
+      "eligible": 1945,
+      "federal_education_excluded": 10,
+      "not_public": 3880
+    },
+    "federal_control_field": "HD CONTROL=1 does not distinguish federal; F1SYSTYP/F1SYSNAM identify no system for these ten; explicit primary-source institution IDs excluded",
+    "federal_scope_authorities": {
+      "119678": {
+        "authority_file": "scope_nps_about.html",
+        "name": "Naval Postgraduate School"
+      },
+      "128328": {
+        "authority_file": "scope_service_academies_gao.html",
+        "name": "United States Air Force Academy"
+      },
+      "130624": {
+        "authority_file": "scope_service_academies_gao.html",
+        "name": "United States Coast Guard Academy"
+      },
+      "155140": {
+        "authority_file": "scope_bie_colleges.html",
+        "name": "Haskell Indian Nations University"
+      },
+      "164155": {
+        "authority_file": "scope_service_academies_gao.html",
+        "name": "United States Naval Academy"
+      },
+      "187745": {
+        "authority_file": "scope_iaia_4412.html",
+        "name": "Institute of American Indian and Alaska Native Culture and Arts Development"
+      },
+      "188216": {
+        "authority_file": "scope_bie_colleges.html",
+        "name": "Southwestern Indian Polytechnic Institute"
+      },
+      "197027": {
+        "authority_file": "scope_service_academies_gao.html",
+        "name": "United States Merchant Marine Academy"
+      },
+      "197036": {
+        "authority_file": "scope_service_academies_gao.html",
+        "name": "United States Military Academy"
+      },
+      "200697": {
+        "authority_file": "scope_afit_about.html",
+        "name": "Air Force Institute of Technology-Graduate School of Engineering & Management"
+      }
+    },
+    "ownership_counts": {
+      "private for profit": 2127,
+      "private nonprofit": 1753,
+      "public": 1955
+    },
+    "public_acreage_recorded": 0,
+    "public_case_scope_counts": {
+      "eligible": 1945,
+      "federal_education_excluded": 10
+    },
+    "public_records": 1955,
+    "public_valid_geocodes": 1955,
+    "records": 5835,
+    "source_dates": [
+      "2023-24"
+    ],
+    "tribal_scope_rule": "Tribal control/federal grants do not imply federal ownership: BEA SCB October2005 printedp8 treats tribal governments as local governments; explicit federal institutions still excluded",
+    "unknown_ownership": 0
+  },
+  "hospital": {
+    "case_scope_counts": {
+      "defense_excluded": 113,
+      "eligible": 1378,
+      "federal_scope_unresolved": 50,
+      "not_public": 6885
+    },
+    "federal_scope_rule": "SOURCE host TRICARE/health.mil excluded as defense/joint; VA/IHS source or VHA owner nondefense; other federal/MILITARY unresolved; TYPE=MILITARY alone never decides",
+    "ownership_counts": {
+      "GOVERNMENT - DISTRICT/AUTHORITY": 367,
+      "GOVERNMENT - FEDERAL": 340,
+      "GOVERNMENT - LOCAL": 514,
+      "GOVERNMENT - STATE": 292,
+      "LIMITED LIABILITY": 1,
+      "NON-PROFIT": 3372,
+      "NOT AVAILABLE": 1052,
+      "PROPRIETARY": 2478,
+      "VETERANS HEALTH ADMINISTRATION": 10
+    },
+    "public_acreage_recorded": 0,
+    "public_case_scope_counts": {
+      "defense_excluded": 108,
+      "eligible": 1377,
+      "federal_scope_unresolved": 38
+    },
+    "public_records": 1523,
+    "public_valid_geocodes": 1523,
+    "records": 8426,
+    "source_dates": [
+      "1338854400000",
+      "1339372800000",
+      "1339632000000",
+      "1340582400000",
+      "1340755200000",
+      "1341273600000",
+      "1342051200000",
+      "1342569600000",
+      "1343001600000",
+      "1343779200000",
+      "1343865600000",
+      "1344211200000",
+      "1344816000000",
+      "1351123200000",
+      "1351468800000",
+      "1352160000000",
+      "1353283200000",
+      "1353715200000",
+      "1360886400000",
+      "1362096000000",
+      "1363305600000",
+      "1369872000000",
+      "1373414400000",
+      "1410998400000",
+      "1411171200000",
+      "1411430400000",
+      "1420588800000",
+      "1424995200000",
+      "1425340800000",
+      "1453680000000",
+      "1454544000000",
+      "1457395200000",
+      "1468108800000",
+      "1469750400000",
+      "1470009600000",
+      "1470700800000",
+      "1471305600000",
+      "1471824000000",
+      "1474588800000",
+      "1474848000000",
+      "1475712000000",
+      "1483920000000",
+      "1489104000000",
+      "1533772800000",
+      "1533859200000",
+      "1534204800000",
+      "1534377600000",
+      "1534723200000",
+      "1593388800000",
+      "1596240000000",
+      "1596758400000",
+      "1596844800000",
+      "1596931200000",
+      "1597017600000",
+      "1597190400000",
+      "1597363200000",
+      "1597449600000",
+      "1599004800000",
+      "1600992000000",
+      "1602201600000",
+      "1615420800000",
+      "1619481600000",
+      "1620691200000",
+      "1628726400000",
+      "1631318400000",
+      "1633046400000",
+      "1633910400000",
+      "1637020800000",
+      "1637107200000",
+      "1640649600000",
+      "1643673600000",
+      "1683763200000",
+      "1699920000000",
+      "1702512000000",
+      "1703116800000",
+      "1704067200000",
+      "1704672000000",
+      "1704758400000",
+      "1704844800000",
+      "1706659200000",
+      "1706940000000",
+      "1707091200000",
+      "1709251200000",
+      "1709856000000",
+      "1710115200000",
+      "1710460800000",
+      "1710806400000",
+      "1710892800000",
+      "1710979200000",
+      "1711670400000",
+      "1711929600000",
+      "1712793600000",
+      "1712880000000",
+      "1713139200000",
+      "1713312000000",
+      "1713330000000",
+      "1713484800000",
+      "1713571200000",
+      "1713744000000",
+      "1713830400000",
+      "1715644800000",
+      "1721710800000",
+      "1725598800000",
+      "1734501600000",
+      "1735624800000",
+      "1735711200000",
+      "1736316000000",
+      "1736488800000",
+      "1737007200000",
+      "1737439200000",
+      "1737612000000",
+      "1737698400000",
+      "1738303200000",
+      "1738389600000",
+      "1738562400000",
+      "1738648800000",
+      "1740031200000",
+      "1740376800000",
+      "1740463200000",
+      "1740549600000",
+      "1740636000000",
+      "1741327200000",
+      "1741755600000",
+      "1741842000000",
+      "1742446800000",
+      "1742533200000",
+      "1744088400000",
+      "1748408400000",
+      "1751518800000"
+    ],
+    "unknown_ownership": 1052
+  },
+  "housing": {
+    "case_scope_counts": {
+      "eligible": 5889
+    },
+    "ownership_counts": {
+      "public housing development (HUD)": 5889
+    },
+    "public_acreage_recorded": 0,
+    "public_case_scope_counts": {
+      "eligible": 5889
+    },
+    "public_records": 5889,
+    "public_valid_geocodes": 5889,
+    "records": 5889,
+    "source_dates": [
+      "1783361963000"
+    ],
+    "unknown_ownership": 0
+  }
+}

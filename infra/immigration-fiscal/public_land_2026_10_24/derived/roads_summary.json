@@ -1,0 +1,126 @@
+{
+  "account_scope_authorities": {
+    "federal_rule": "BEA FAAt701-A line49 k1gndef1sq00: federal NONDEFENSE highways; explicit military owners72/73/74 excluded; Army Corps70 retained",
+    "read_only_sources": [
+      {
+        "path": "public_land_2026_10_24/_cache/universes/scope_bea_tribal_gce2005.pdf",
+        "sha256": "0d2d6840e5559d032d3c3799e4f5613457d1a8b8ab0149f18fa8ff9b4252be14"
+      },
+      {
+        "path": "school_capital_return_2026_09_26/_cache/fa_Section7All_xls.xlsx",
+        "sha256": "e67f534560f111575d5314bab8fe4d62dd696c2e49f421eaa2fa73f25dea12ae"
+      }
+    ],
+    "tribal_rule": "BEA SCB October2005 printedp8: tribal governments treated as local; casinos as enterprises"
+  },
+  "all_public_owner_miles_including_explicit_defense": 4173765.2651999993,
+  "caveats": [
+    "Widths are typical design cross-sections transferred nationally; not measured or representative existing ROW widths.",
+    "No national confidence interval; low/high widths are design-template scenarios.",
+    "Toll ID includes managed-lane sections; assigning the entire section's ROW to tolls is a proxy and may overassign toll land.",
+    "No toll ID in the county summary: lower-class tolls identified only by toll authority ownership 31/32.",
+    "No calibration to HM-20; spatial gaps and overlaps can change county values.",
+    "1-mile unit for arm C (test 0.1 and 10 miles); HPMS dynamic-segmentation row length is not a land parcel.",
+    "Road, utility and park rights-of-way may overlap; easements cannot automatically be sold as fee-simple land.",
+    "Explicit military owners72/73/74 are excluded from the nondefense account; owner70 Army Corps retained. Alternatives retain their acreage.",
+    "Tribal owner50 is state/local for the BEA account, while HPMS ownership_level remains tribal. Land restrictions and federal trust interests remain unresolved.",
+    "Other federal owners include roads on public park lands; these are highway ROW only, not the full federal estate."
+  ],
+  "county_count_public": 3142,
+  "excluded_ownership_miles": {
+    "federal": 5769.1444,
+    "other_or_missing": 18324.4813,
+    "private": 16364.4829
+  },
+  "explicit_military_excluded_acres": 45768.94515151516,
+  "explicit_military_excluded_miles": 5769.1444,
+  "extracted_miles_all_owners": 4208454.2294,
+  "max_absolute_cell_difference_miles": 1.4551915228366852e-11,
+  "mileage_closure_cells": 714,
+  "national_mileage_coverage_ratio": 1.0,
+  "official_hm20_miles": 4208454.2294,
+  "owner_code_source": "HPMS Field Manual 2024, Ownership Item 6, printed pp.38-39; _cache/roads/hpms_field_manual2024.pdf",
+  "primary_owner_codes": {
+    "1": "State Highway Agency",
+    "2": "County Highway Agency",
+    "3": "Town or Township Highway Agency",
+    "4": "City or Municipal Highway Agency",
+    "11": "State Park, Forest, or Reservation Agency",
+    "12": "Local Park Forest, or Reservation Agency",
+    "21": "Other State Agency",
+    "25": "Other Local Agency",
+    "26": "Private (other than Railroad)",
+    "27": "Railroad",
+    "31": "State Toll Authority",
+    "32": "Local Toll Authority",
+    "40": "Other Public Instrumentality (i.e. Airport)",
+    "50": "Indian Tribe Nation",
+    "60": "Other Federal Agency",
+    "62": "Bureau of Indian Affairs",
+    "63": "Bureau of Fish and Wildlife",
+    "64": "U.S. Forest Service",
+    "66": "National Park Service",
+    "67": "Tennessee Valley Authority",
+    "68": "Bureau of Land Management",
+    "69": "Bureau of Reclamation",
+    "70": "U.S. Army Corps of Engineers",
+    "72": "U.S. Air Force",
+    "73": "U.S. Navy/Marines",
+    "74": "U.S. Army",
+    "80": "Other"
+  },
+  "public_acres_width_central": 43998956.22393939,
+  "public_acres_width_high": 52568631.45478788,
+  "public_acres_width_low": 34468404.732363634,
+  "public_miles_used": 4167996.1207999997,
+  "status": "design-width scenario; mileage measured; no national observed ROW acreage",
+  "tribal_included_acres": 173022.28818181818,
+  "tribal_included_miles": 17289.1497,
+  "unknown_county_public_miles": 96.44229999999999,
+  "width_parameters_ft_low_central_high": {
+    "rural_2_lane_arterial_collector": [
+      100.0,
+      125.0,
+      150.0
+    ],
+    "rural_4_lane_arterial_collector": [
+      150.0,
+      200.0,
+      250.0
+    ],
+    "rural_freeway": [
+      250.0,
+      275.0,
+      300.0
+    ],
+    "rural_local": [
+      60.0,
+      80.0,
+      100.0
+    ],
+    "urban_arterial": [
+      100.0,
+      125.0,
+      150.0
+    ],
+    "urban_collector": [
+      40.0,
+      50.0,
+      60.0
+    ],
+    "urban_freeway": [
+      150.0,
+      175.0,
+      200.0
+    ],
+    "urban_local": [
+      41.0,
+      50.0,
+      50.0
+    ]
+  },
+  "width_sources": {
+    "other_classes": "NCDOT Roadway Design Manual chapter 9 pp.9-1 and 9-1 continued (revisions 2007/2017), supplement to the FHWA/AASHTO templates",
+    "urban_local_collector": "FHWA/ITE Traffic Calming: State of the Practice (1999), Tables 10.5 and 10.6, printed pages 190 and 193; AASHTO columns; 41 ft urban-local lower scenario from DelDOT column"
+  }
+}

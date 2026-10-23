@@ -1,0 +1,362 @@
+[
+  {
+    "bytes": 25441328,
+    "path": "_cache/roads/fhwa_traffic_calming1999.pdf",
+    "sha256": "7d5790afae9a8390328e0cebb0edaef46de0fcfef0d0080c32ece8b4a3e0ba35",
+    "url": "https://rosap.ntl.bts.gov/view/dot/42943/dot_42943_DS1.pdf"
+  },
+  {
+    "bytes": 33056,
+    "path": "_cache/roads/hm20.xlsx",
+    "sha256": "abe81f96d44531d93f9c77f064a70f0061e9fae836f1cdf4040e383da934c000",
+    "url": "https://www.fhwa.dot.gov/policyinformation/statistics/2024/xls/hm20.xlsx"
+  },
+  {
+    "bytes": 25893,
+    "path": "_cache/roads/hpms_2024_readme.md",
+    "sha256": "a4da78b4fdd8248dd50150b47386b00611ab8e0d09a6874cc9f26cbcea532f7f",
+    "url": "https://raw.githubusercontent.com/FHWA/HPMS/2024-HPMS/README_2024_HPMS_All.md"
+  },
+  {
+    "bytes": 1125955,
+    "path": "_cache/roads/hpms_county_2024.csv",
+    "sha256": "d5807e0b74e81296b9c45e58117dedc36247220b0b37b8e89d4a8036df27af1c",
+    "url": "https://data.transportation.gov/resource/eq35-vm98.csv?$limit=1000000"
+  },
+  {
+    "bytes": 26206,
+    "path": "_cache/roads/hpms_county_metadata.json",
+    "sha256": "c85ce310577a440563da3acf557811aa6fb4e01d337a3a4d74c5a09f1c96c719",
+    "url": "https://data.transportation.gov/api/views/eq35-vm98.json"
+  },
+  {
+    "bytes": 171784,
+    "path": "_cache/roads/hpms_field_manual04.html",
+    "sha256": "ee71f85153223a93ec5aa346bdad185c58e5b226a463a94c577b18a32a93a5b4",
+    "url": "https://www.fhwa.dot.gov/policyinformation/hpms/fieldmanual/page04.cfm"
+  },
+  {
+    "bytes": 5398704,
+    "path": "_cache/roads/hpms_field_manual2024.pdf",
+    "sha256": "886e1fc3531b0207f36f90ae94a208da4a1a41500155beb687959c502673a85b",
+    "url": "https://www.reginfo.gov/public/do/DownloadDocument?objectID=144173101"
+  },
+  {
+    "bytes": 160014,
+    "path": "_cache/roads/hpms_sections_metadata.json",
+    "sha256": "43b35035f9d358265f982fd4d0665c46d419932527ad8495b1f183114f929996",
+    "url": "https://data.transportation.gov/api/views/42um-tgh5.json"
+  },
+  {
+    "bytes": 161256,
+    "path": "_cache/roads/ncdot_row.pdf",
+    "sha256": "1cd34f41f0cf5198a890428e2418b7748d109c8ecd2afa16f310abe49d87c9ac",
+    "url": "https://connect.ncdot.gov/projects/Roadway/Roadway%20Design%20Manual/09.%20Right%20of%20Way.pdf"
+  },
+  {
+    "bytes": 186903,
+    "path": "_cache/roads/sections_01_2024.json",
+    "sha256": "927f959d8ef5aec2bd1b0c4cfefae4fe6db2c1060b26ce9eb4d896f5232d4e69",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D1+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 34508,
+    "path": "_cache/roads/sections_02_2024.json",
+    "sha256": "2d8abcd671c96c123747ed2bedf0b86ca44182fa320db2705fdd9f948ced77ab",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D2+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 153924,
+    "path": "_cache/roads/sections_04_2024.json",
+    "sha256": "330c61327926a7aea76ead5906b3e62ccf1dab46e29cd773eebfd473b7d4d284",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D4+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 150773,
+    "path": "_cache/roads/sections_05_2024.json",
+    "sha256": "886dd4eeba34936d5c776e79af3339f091eab9efe57cee46f60c1ddcc8e82d91",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D5+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 446320,
+    "path": "_cache/roads/sections_06_2024.json",
+    "sha256": "16b08be39ca8a891dfc8b8adc477ec0c082150b7afaed26709c4eab28accae95",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D6+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 170973,
+    "path": "_cache/roads/sections_08_2024.json",
+    "sha256": "eed0402b543fe2f0b6d3fab6ca7ba387d09aa04b2c38563ec1dd9f6962edd577",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D8+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 69481,
+    "path": "_cache/roads/sections_09_2024.json",
+    "sha256": "d7bf055a932cf1e3530ad96dce089c0189a812f2bb7a0472a0340c2ed5ce6269",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D9+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 19177,
+    "path": "_cache/roads/sections_10_2024.json",
+    "sha256": "70b53d80925472a56825e09e99623b3c898f668906bb1d70a5f4bd3c77934263",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D10+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 6533,
+    "path": "_cache/roads/sections_11_2024.json",
+    "sha256": "3ca53c34fddc60c8af00872ef5a888185045e0927bfb97ffeb0394951ac868e9",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D11+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 385449,
+    "path": "_cache/roads/sections_12_2024.json",
+    "sha256": "d93cd200a12ee2944c26f7c314a96d7b0ee386d43380b4a94348cdece6309cdc",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D12+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 390685,
+    "path": "_cache/roads/sections_13_2024.json",
+    "sha256": "4bcb9a6426d748c32c8a9ea6433179d2dc069d8e7a34cb270220c6b4e5ca1264",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D13+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 20677,
+    "path": "_cache/roads/sections_15_2024.json",
+    "sha256": "40de6ebc8a9fa577b15021235b08bfa93c67014abe3afb61b53ebbf4d0b250e3",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D15+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 98048,
+    "path": "_cache/roads/sections_16_2024.json",
+    "sha256": "b2764b1bc878c6bb887f6661417e47c8243bf1a6f29980dc636b7d0fa3adc4c7",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D16+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 339601,
+    "path": "_cache/roads/sections_17_2024.json",
+    "sha256": "b2f5652d9e24d04615854e08533acd7c2f6582549bbf45aa4e6ea23bd328e33d",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D17+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 297600,
+    "path": "_cache/roads/sections_18_2024.json",
+    "sha256": "f00a3851f69774c795052b101510525772c0f829e653443b0f10feb455852d6c",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D18+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 225259,
+    "path": "_cache/roads/sections_19_2024.json",
+    "sha256": "db8607eeb7d5013c9cf46fd9199d6baab490356ba39edb0339e54d1992e871f3",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D19+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 166999,
+    "path": "_cache/roads/sections_20_2024.json",
+    "sha256": "f0e5ea64e1d971d7cf34b3a5dbceb4af2c6137c7f650990d9e4b935226285449",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D20+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 148919,
+    "path": "_cache/roads/sections_21_2024.json",
+    "sha256": "e69ca000493770ac281318bc59c9c38c4b051ea470748292bf0bb3dc61719c60",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D21+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 168427,
+    "path": "_cache/roads/sections_22_2024.json",
+    "sha256": "98a3cf34f414d5f1d66c8268ace45882739c32deb04ed2058a5a9f19fcb2ea4e",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D22+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 37326,
+    "path": "_cache/roads/sections_23_2024.json",
+    "sha256": "6b8d8fd7d9114df711dded9008717d5ea462c96860fe1f113a96fb64afaa1f38",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D23+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 139227,
+    "path": "_cache/roads/sections_24_2024.json",
+    "sha256": "f4268a83f94d7c480313fc644d59707676bcdd61f8861512e01db12b021d0a1c",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D24+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 109907,
+    "path": "_cache/roads/sections_25_2024.json",
+    "sha256": "c799c4fc7f0248000efb7c9d221f1a2494cbb842e7106075498cff7f50f3dba7",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D25+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 227619,
+    "path": "_cache/roads/sections_26_2024.json",
+    "sha256": "8f8c89e9511c2d5daa529553710f4645191f29bd5bb4d58c12a9eafb1b10d83f",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D26+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 185246,
+    "path": "_cache/roads/sections_27_2024.json",
+    "sha256": "bc04b349f4a4358b838d6370fa009228740219bd557bdd54bd26db70ce3bde9e",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D27+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 196338,
+    "path": "_cache/roads/sections_28_2024.json",
+    "sha256": "009323a489ca8fe04f4a140c1032274b8b962b6e04fb920fb6aa4c99d6587fb0",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D28+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 233442,
+    "path": "_cache/roads/sections_29_2024.json",
+    "sha256": "fe7eefe46f244f98c0687565f37274f2e1dbf85c318e18c2b82211ead13111e5",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D29+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 81036,
+    "path": "_cache/roads/sections_30_2024.json",
+    "sha256": "c44abd6173d3ca27c0fa4f1bbc630a1e9ed10b2f7e661882d39f693c9acc3e99",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D30+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 119709,
+    "path": "_cache/roads/sections_31_2024.json",
+    "sha256": "85768f8b36c2940defbeef9fc935c098933d814c0b50d6866ce8572ccd8c9377",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D31+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 48988,
+    "path": "_cache/roads/sections_32_2024.json",
+    "sha256": "dc7bdc9d5ead7767c1499d8051c183377a898cf48bc008183b8499cadf6d8973",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D32+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 50853,
+    "path": "_cache/roads/sections_33_2024.json",
+    "sha256": "b8010e4b84bf1bca31433d2b1fd8bb4590e9d2bf25cca2633d1a41974ee6cc76",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D33+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 165460,
+    "path": "_cache/roads/sections_34_2024.json",
+    "sha256": "caa633c8274f506581f1b5848e5095dc3ac42d83e946b2eb0b3f738e03d8802b",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D34+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 95163,
+    "path": "_cache/roads/sections_35_2024.json",
+    "sha256": "7a258afda6652dd8c74c1f9834463bb20bbe6a40f13f306cb7b3259e7829a824",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D35+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 395487,
+    "path": "_cache/roads/sections_36_2024.json",
+    "sha256": "ada42a6dad0f319dbdde08fdb2116b319066feee629161ac2df173a39dcc3c2d",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D36+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 272897,
+    "path": "_cache/roads/sections_37_2024.json",
+    "sha256": "9be39c18cec527496247d7cdcc9d4f26fb71767247fb4a509343f4c9bc29309f",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D37+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 48967,
+    "path": "_cache/roads/sections_38_2024.json",
+    "sha256": "e3ae5054a3487d9b3178967e63ae12c4c952fbb45c557b53d6978d14c73dca05",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D38+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 388861,
+    "path": "_cache/roads/sections_39_2024.json",
+    "sha256": "ad7f20b1321fc29f0d03edf1f10ca6df50549fca995e907131a14ccf17c6a137",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D39+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 169517,
+    "path": "_cache/roads/sections_40_2024.json",
+    "sha256": "9ef6b602a0cd9d8c35ed22e371633d7723994d08a20df48664ce12c264a5dc50",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D40+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 136115,
+    "path": "_cache/roads/sections_41_2024.json",
+    "sha256": "312b8807070164731ac4683be65244b031063c7f13246342112cac5c05120dc1",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D41+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 287336,
+    "path": "_cache/roads/sections_42_2024.json",
+    "sha256": "6257a06e8e6442a6ca04cbeabbfe7311d2e25fabe1d00c8ef89168ad027b72a5",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D42+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 23240,
+    "path": "_cache/roads/sections_44_2024.json",
+    "sha256": "aff9ad2e279362a70400ec6227d4f3249905ec396ddc925aa4b23fd89ef59b1f",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D44+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 120530,
+    "path": "_cache/roads/sections_45_2024.json",
+    "sha256": "39dd4bcccd19b3e1c84f1a8075966091ff635d3aa315976b097ace8d7d9b1e5b",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D45+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 81969,
+    "path": "_cache/roads/sections_46_2024.json",
+    "sha256": "c59754fa7b3597c8679e99ec25cf5746e56887eae42bf504696a725f0d816367",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D46+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 252455,
+    "path": "_cache/roads/sections_47_2024.json",
+    "sha256": "190431765a3360d61748c9035af96c3728474820d9d2f95e71e38b30b053e7a4",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D47+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 674527,
+    "path": "_cache/roads/sections_48_2024.json",
+    "sha256": "03d5f2483d81bca43db8fd3f794d2e1cdb46cf4b516b78c296b3d1764a0fe314",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D48+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 75744,
+    "path": "_cache/roads/sections_49_2024.json",
+    "sha256": "027e56e4a6d1f52be9d52a0a5381ec31ebd6d35ee415fa1dc9871bd942c68ade",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D49+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 28101,
+    "path": "_cache/roads/sections_50_2024.json",
+    "sha256": "dea3d2c35e12ba2504a64fdf55b85629fc0fb0010712c2fe888cf2ea8ce27a32",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D50+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 294208,
+    "path": "_cache/roads/sections_51_2024.json",
+    "sha256": "90c5b0be1971c561b3ca74737ddf1d413183f67473d3ff0f352e2a6230602223",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D51+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 142733,
+    "path": "_cache/roads/sections_53_2024.json",
+    "sha256": "62a64d1c9cbed2d8c9fd89ad0dee043a05cf796e48cdd3e5b8586881be41d5d1",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D53+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 75259,
+    "path": "_cache/roads/sections_54_2024.json",
+    "sha256": "1aabd231ec55d0bc0cc400e8e64cdebbb70c2befdb7c81c987df03309d1792a5",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D54+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 282727,
+    "path": "_cache/roads/sections_55_2024.json",
+    "sha256": "d9d8863f67e499ac40e785e37418790d5c62a65e39e709edecea29359b67b4de",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D55+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  },
+  {
+    "bytes": 39391,
+    "path": "_cache/roads/sections_56_2024.json",
+    "sha256": "bd2a94e2f904158e636e474921b65510de34c7eb6b52631d921bd733b13969e9",
+    "url": "https://data.transportation.gov/resource/42um-tgh5.json?%24select=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes%2Csum%28sectionlength%29+as+miles%2Ccount%28%2A%29+as+n&%24where=stateid%3D56+AND+facility_type+in+%281%2C2%29+AND+urban_id%3E0+AND+is_restricted+is+null+AND+%28f_system+in+%281%2C2%2C3%2C4%2C5%29+OR+%28f_system%3D6+AND+urban_id%3C%3E99999%29%29&%24group=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24order=stateid%2Ccounty_id%2Cf_system%2Curban_id%2Cownership%2Ctoll_id%2Cthrough_lanes&%24limit=100000"
+  }
+]

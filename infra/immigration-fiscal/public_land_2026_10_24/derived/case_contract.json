@@ -1,0 +1,6042 @@
+{
+ "case_key": "oct16",
+ "status": "adopted",
+ "rate": 0.020810698764237804,
+ "band_bn": [
+  368.02973917888073,
+  436.56152715403437
+ ],
+ "rule": "Land uses each physical component's sum of full-return coefficients; fee offsets share the land once. Completion, own coverage, selected count items, college response and health residual retained. No land depreciation.",
+ "rows": [
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "k12",
+   "physical_line": "k12",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 2723.9194975692117,
+   "key_rule": {
+    "denominator_line": "education_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "education_services",
+     "school_reprice"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "school_reprice",
+    "note": "the school part's response: school_reprice's response over the specification's school fraction",
+    "share": "school"
+   },
+   "engine_key": 0.17723941103851604,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 10.047111671669683,
+   "completion_bn": 0.1337710840037341,
+   "college_response_bn": 0,
+   "coverage_bn": 0.2787828012239244,
+   "count_bn": -0.08911973247566726,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 10.370545824421674,
+   "effective_key_times_response": 0.1829450586531581
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "college",
+   "physical_line": "college",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1198.387599270317,
+   "key_rule": {
+    "denominator_line": "education_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "education_services",
+     "college_rekey"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "college_rekey",
+    "note": "the college part's response: college_rekey's response over (1 - the school fraction)",
+    "share": "college"
+   },
+   "engine_key": 0.1726634533874922,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 4.3061027849763045,
+   "completion_bn": 0.057572964355182076,
+   "college_response_bn": -0.4984415181879203,
+   "coverage_bn": 0.10377036665953338,
+   "count_bn": -0.034367552306688795,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.9346370454964106,
+   "effective_key_times_response": 0.15776864929282175
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "pos_sl",
+   "physical_line": "pos_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 289.47299999999996,
+   "key_rule": {
+    "denominator_line": "public_order_safety",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "public_order_safety"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "public_order_safety"
+   },
+   "engine_key": 0.14314099837583416,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.8623007559910516,
+   "completion_bn": 0.008545661370745677,
+   "college_response_bn": 0,
+   "coverage_bn": 0.016719499929878468,
+   "count_bn": -0.0027759143029936666,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.884790002988682,
+   "effective_key_times_response": 0.14687418919770903
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "pos_fed",
+   "physical_line": "pos_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 110.2,
+   "key_rule": {
+    "denominator_line": "public_order_safety",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "public_order_safety"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "public_order_safety"
+   },
+   "engine_key": 0.14314099837583416,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.32827083462089346,
+   "completion_bn": 0.0032532632855436375,
+   "college_response_bn": 0,
+   "coverage_bn": 0.006364976672341142,
+   "count_bn": -0.0010567678373800044,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.33683230674139825,
+   "effective_key_times_response": 0.14687418919770903
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "health_sl",
+   "physical_line": "health_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 365.979,
+   "key_rule": {
+    "denominator_line": "health_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "health_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": 0.06280228282256226,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.4783196904196322,
+   "completion_bn": 0.005415164295675746,
+   "college_response_bn": 0,
+   "coverage_bn": 0.04545615174134345,
+   "count_bn": -0.0034620484102720096,
+   "health_residual_bn": 0.6561074850822497,
+   "full_return_at_case_rate_bn": 1.181836443128629,
+   "effective_key_times_response": 0.15517242555132912
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "health_fed",
+   "physical_line": "health_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 106.019,
+   "key_rule": {
+    "denominator_line": "health_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "health_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": 0.06280228282256226,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.1385625275182428,
+   "completion_bn": 0.0015686973937391136,
+   "college_response_bn": 0,
+   "coverage_bn": 0.005044456020517786,
+   "count_bn": -0.00046824843118581974,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.14470743250131388,
+   "effective_key_times_response": 0.06558740855299318
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "gps_sl",
+   "physical_line": "gps_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1292.9385000000002,
+   "key_rule": {
+    "denominator_line": "general_public_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "general_public_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "general_public_services"
+   },
+   "engine_key": 0.1263228581121298,
+   "engine_response": 0.6005266346459308,
+   "engine_at_case_rate_bn": 2.0411679842818624,
+   "completion_bn": 0.021785185345038177,
+   "college_response_bn": 0,
+   "coverage_bn": 0.09346601169794182,
+   "count_bn": -0.015589712263931436,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 2.1408294690609115,
+   "effective_key_times_response": 0.07956417130571519
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "gps_fed",
+   "physical_line": "gps_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 152.17000000000002,
+   "key_rule": {
+    "denominator_line": "general_public_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "general_public_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "general_public_services"
+   },
+   "engine_key": 0.1263228581121298,
+   "engine_response": 0.6005266346459308,
+   "engine_at_case_rate_bn": 0.24023148213791373,
+   "completion_bn": 0.0025639670053559825,
+   "college_response_bn": 0,
+   "coverage_bn": 0.011000308986139564,
+   "count_bn": -0.001834802285802802,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.2519609558436065,
+   "effective_key_times_response": 0.07956417130571518
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "hwy_sl",
+   "physical_line": "hwy_sl",
+   "level": "state_local",
+   "group": "block",
+   "stock_charged_bn": 4388.9962727707125,
+   "key_rule": {
+    "kind": "part_rekeyed",
+    "parent_line": "economic_affairs_services",
+    "correction_line": "roads_vmt_sl",
+    "part_national_bn": 201.005,
+    "note": "the road key k_road, read on the evaluation: economic_affairs_services's key plus roads_vmt_sl's amount over the sl_highways national total (candidate v4, roads keyed by miles)"
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "sl_highways",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0.7401981546463505
+    }
+   },
+   "engine_key": 0.1030967761680307,
+   "engine_response": 0.7401981546463505,
+   "engine_at_case_rate_bn": 6.970195478730746,
+   "completion_bn": 0.07520497598094196,
+   "college_response_bn": 0,
+   "coverage_bn": 0.3457698070408666,
+   "count_bn": -0.02938087116664833,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 7.361789390585907,
+   "effective_key_times_response": 0.08059934526979279
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "rec_sl",
+   "physical_line": "rec_sl",
+   "level": "state_local",
+   "group": "block",
+   "stock_charged_bn": 425.0824916531727,
+   "key_rule": {
+    "denominator_line": "recreation_culture",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "recreation_culture"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "recreation_culture",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "sl_recreation_and_culture",
+    "values": {
+     "across_high": 0.9514857707559868,
+     "high": 1,
+     "low": 0.9514857707559868
+    }
+   },
+   "engine_key": 0.12632285810618976,
+   "engine_response": 0.9514857707559868,
+   "engine_at_case_rate_bn": 1.063271373484124,
+   "completion_bn": 0.011348190899459099,
+   "college_response_bn": 0,
+   "coverage_bn": 0.04868768048364005,
+   "count_bn": -0.008120887109129117,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.1151863577580938,
+   "effective_key_times_response": 0.12606297953871143
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "hwy_fed",
+   "physical_line": "hwy_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 54.573499999999996,
+   "key_rule": {
+    "kind": "part_rekeyed",
+    "parent_line": "economic_affairs_services",
+    "correction_line": "roads_vmt_fed",
+    "part_national_bn": 1.827,
+    "note": "the road key k_road, read on the evaluation: economic_affairs_services's key plus roads_vmt_fed's amount over the fed_highways national total (candidate v4, roads keyed by miles)"
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_highways",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.1030967761680307,
+   "engine_response": 0,
+   "engine_at_case_rate_bn": 0,
+   "completion_bn": 0,
+   "college_response_bn": 0,
+   "coverage_bn": 0,
+   "count_bn": 0,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0,
+   "effective_key_times_response": 0
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "air_fed",
+   "physical_line": "air_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 35.406,
+   "key_rule": {
+    "denominator_line": "economic_affairs_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "economic_affairs_services"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_air",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.08795907471910581,
+   "engine_response": 0,
+   "engine_at_case_rate_bn": 0,
+   "completion_bn": 0,
+   "college_response_bn": 0,
+   "coverage_bn": 0,
+   "count_bn": 0,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0,
+   "effective_key_times_response": 0
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "rec_fed",
+   "physical_line": "rec_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 41.8305,
+   "key_rule": {
+    "denominator_line": "recreation_culture",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "recreation_culture"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "recreation_culture",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_recreation_and_culture",
+    "values": {
+     "across_high": 0.9514857707559868,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.12632285810618976,
+   "engine_response": 0,
+   "engine_at_case_rate_bn": 0,
+   "completion_bn": 0,
+   "college_response_bn": 0,
+   "coverage_bn": 0,
+   "count_bn": 0,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0,
+   "effective_key_times_response": 0
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_housing_sl",
+   "physical_line": "ent_housing_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 420.402,
+   "key_rule": {
+    "denominator_line": "housing_subsidies",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "housing_subsidies"
+    ],
+    "note": "the rental line's evaluated key, the capital lane's variant public_housing_at_rental_assistance_key (candidate v4 item 4)"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.0805213246593752,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.7044697466878297,
+   "completion_bn": 0.0115961114160578,
+   "college_response_bn": 0,
+   "coverage_bn": 0.02573002614876494,
+   "count_bn": 0.017693596903405405,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.7594894811560579,
+   "effective_key_times_response": 0.08681011409656303
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_transit_sl",
+   "physical_line": "ent_transit_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 505.7986332941459,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.3296773090105092,
+   "completion_bn": 0.014191515274073339,
+   "college_response_bn": 0,
+   "coverage_bn": 0.060886529612205836,
+   "count_bn": -0.010155600524297665,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.3945997533724905,
+   "effective_key_times_response": 0.13249066188817085
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_airports_sl",
+   "physical_line": "ent_airports_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 595.8142303973117,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.5663163369683122,
+   "completion_bn": 0.016717140368934978,
+   "college_response_bn": 0,
+   "coverage_bn": 0.07172233848517087,
+   "count_bn": -0.011962964927760278,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.6427928508946579,
+   "effective_key_times_response": 0.13249066188817094
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_ports_sl",
+   "physical_line": "ent_ports_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 94.43351434918577,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.2482531445813694,
+   "completion_bn": 0.0026495814204613114,
+   "college_response_bn": 0,
+   "coverage_bn": 0.011367624563079083,
+   "count_bn": -0.0018960688794074727,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.26037428168550236,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_power_sl",
+   "physical_line": "ent_power_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 542.057,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.4249957308033159,
+   "completion_bn": 0.01520883942453192,
+   "college_response_bn": 0,
+   "coverage_bn": 0.06525120356110192,
+   "count_bn": -0.01088360859646264,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.4945721651924873,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_water_sl",
+   "physical_line": "ent_water_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 915.9465,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 2.407901479261848,
+   "completion_bn": 0.025699295904235205,
+   "college_response_bn": 0,
+   "coverage_bn": 0.11025890547041886,
+   "count_bn": -0.018390691756217277,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 2.525468988880285,
+   "effective_key_times_response": 0.13249066188817094
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_sewer_sl",
+   "physical_line": "ent_sewer_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 1224.8960000000002,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 3.2200886081686217,
+   "completion_bn": 0.03436768933110623,
+   "college_response_bn": 0,
+   "coverage_bn": 0.14744932403267463,
+   "count_bn": -0.024593887055001047,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.3773117344774017,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_tolls_sl",
+   "physical_line": "ent_tolls_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 501.1837272292877,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.317545334992129,
+   "completion_bn": 0.014062031907379938,
+   "college_response_bn": 0,
+   "coverage_bn": 0.060331000996112986,
+   "count_bn": -0.010062940838472445,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.3818754270571492,
+   "effective_key_times_response": 0.13249066188817085
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_power_fed",
+   "physical_line": "ent_power_fed",
+   "level": "federal",
+   "group": "enterprise",
+   "stock_charged_bn": 27.6655,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.07272891852801297,
+   "completion_bn": 0.0007762286016034992,
+   "college_response_bn": 0,
+   "coverage_bn": 0.003330290305483862,
+   "count_bn": -0.0005554775118215189,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.07627995992327881,
+   "effective_key_times_response": 0.13249066188817085
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_other_sl",
+   "physical_line": "ent_other_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 75.4805887275022,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.19842842486161327,
+   "completion_bn": 0.002117807082328455,
+   "college_response_bn": 0,
+   "coverage_bn": 0.009086127953278088,
+   "count_bn": -0.0015155254601281853,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.20811683443709164,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_other_fed",
+   "physical_line": "ent_other_fed",
+   "level": "federal",
+   "group": "enterprise",
+   "stock_charged_bn": 56.71180600256709,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.14908779231668245,
+   "completion_bn": 0.0015911993590494156,
+   "college_response_bn": 0,
+   "coverage_bn": 0.006826797915701167,
+   "count_bn": -0.0011386793258466553,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.1563671102655864,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "k12_user_fees",
+   "physical_line": "k12",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 2723.9194975692117,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_k12",
+    "note": "carrier user_fees_key_k12: key_target - key_union less the item's edits on education_services and school_reprice over education_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "school_reprice",
+    "note": "the school part's response: school_reprice's response over the specification's school fraction",
+    "share": "school"
+   },
+   "engine_key": 0.00975296263696325,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.5528629562072833,
+   "completion_bn": 0.006703400364840684,
+   "college_response_bn": 0,
+   "coverage_bn": 0.01570265495299075,
+   "count_bn": -0.005304795931074207,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.5699642155940405,
+   "effective_key_times_response": 0.01005464308411827
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "college_user_fees",
+   "physical_line": "college",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1198.387599270317,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_college",
+    "note": "carrier user_fees_key_college: key_target - key_union less the item's edits on education_services and college_rekey over education_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "college_rekey",
+    "note": "the college part's response: college_rekey's response over (1 - the school fraction)",
+    "share": "college"
+   },
+   "engine_key": -0.03854858618402715,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.9613741128611243,
+   "completion_bn": -0.011656551603876028,
+   "college_response_bn": 0.1111445738638205,
+   "coverage_bn": -0.024186407439504495,
+   "count_bn": 0.00817084474927912,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.8779016532914052,
+   "effective_key_times_response": -0.03520155898757001
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "health_sl_user_fees",
+   "physical_line": "health_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 365.979,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_health",
+    "note": "carrier user_fees_key_health: 0 less the item's edits on health_services over health_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": -0.002079886038647402,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.015840991782491893,
+   "completion_bn": -0.00016486108616908888,
+   "college_response_bn": 0,
+   "coverage_bn": -0.000582366605280018,
+   "count_bn": 0.000053769316456424656,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.016534450157484573,
+   "effective_key_times_response": -0.002170935539356347
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "specification": 16,
+   "line": "health_fed_user_fees",
+   "physical_line": "health_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 106.019,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_health",
+    "note": "carrier user_fees_key_health: 0 less the item's edits on health_services over health_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": -0.002079886038647402,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.0045889138660633755,
+   "completion_bn": -0.000047757951944129654,
+   "college_response_bn": 0,
+   "coverage_bn": -0.00016870346420199583,
+   "count_bn": 0.000015576219295078917,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.004789799062914421,
+   "effective_key_times_response": -0.0021709355393563466
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "k12",
+   "physical_line": "k12",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 2723.9194975692117,
+   "key_rule": {
+    "denominator_line": "education_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "education_services",
+     "school_reprice"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "school_reprice",
+    "note": "the school part's response: school_reprice's response over the specification's school fraction",
+    "share": "school"
+   },
+   "engine_key": 0.17723941103851604,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 10.047111671669683,
+   "completion_bn": 0.13377108400373416,
+   "college_response_bn": 0,
+   "coverage_bn": 0.2787828012239243,
+   "count_bn": -0.08911973247566725,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 10.370545824421674,
+   "effective_key_times_response": 0.1829450586531581
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "college",
+   "physical_line": "college",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1198.387599270317,
+   "key_rule": {
+    "denominator_line": "education_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "education_services",
+     "college_rekey"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "college_rekey",
+    "note": "the college part's response: college_rekey's response over (1 - the school fraction)",
+    "share": "college"
+   },
+   "engine_key": 0.1726634533874922,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 4.3061027849763045,
+   "completion_bn": 0.05757296435518203,
+   "college_response_bn": -0.49844151818792026,
+   "coverage_bn": 0.10377036665953336,
+   "count_bn": -0.03436755230668879,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.9346370454964106,
+   "effective_key_times_response": 0.15776864929282175
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "pos_sl",
+   "physical_line": "pos_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 289.47299999999996,
+   "key_rule": {
+    "denominator_line": "public_order_safety",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "public_order_safety"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "public_order_safety"
+   },
+   "engine_key": 0.14314099837583416,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.8623007559910516,
+   "completion_bn": 0.008545661370745675,
+   "college_response_bn": 0,
+   "coverage_bn": 0.016719499929878468,
+   "count_bn": -0.0027759143029936666,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.884790002988682,
+   "effective_key_times_response": 0.14687418919770903
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "pos_fed",
+   "physical_line": "pos_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 110.2,
+   "key_rule": {
+    "denominator_line": "public_order_safety",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "public_order_safety"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "public_order_safety"
+   },
+   "engine_key": 0.14314099837583416,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.32827083462089346,
+   "completion_bn": 0.003253263285543639,
+   "college_response_bn": 0,
+   "coverage_bn": 0.0063649766723411424,
+   "count_bn": -0.0010567678373800044,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.33683230674139825,
+   "effective_key_times_response": 0.14687418919770903
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "health_sl",
+   "physical_line": "health_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 365.979,
+   "key_rule": {
+    "denominator_line": "health_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "health_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": 0.06280228282256226,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.4783196904196322,
+   "completion_bn": 0.005415164295675747,
+   "college_response_bn": 0,
+   "coverage_bn": 0.04545615174134345,
+   "count_bn": -0.0034620484102720096,
+   "health_residual_bn": 0.6561074850822497,
+   "full_return_at_case_rate_bn": 1.181836443128629,
+   "effective_key_times_response": 0.15517242555132912
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "health_fed",
+   "physical_line": "health_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 106.019,
+   "key_rule": {
+    "denominator_line": "health_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "health_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": 0.06280228282256226,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.1385625275182428,
+   "completion_bn": 0.0015686973937391118,
+   "college_response_bn": 0,
+   "coverage_bn": 0.005044456020517786,
+   "count_bn": -0.00046824843118581963,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.14470743250131388,
+   "effective_key_times_response": 0.06558740855299318
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "gps_sl",
+   "physical_line": "gps_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1292.9385000000002,
+   "key_rule": {
+    "denominator_line": "general_public_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "general_public_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "general_public_services"
+   },
+   "engine_key": 0.1263228581121298,
+   "engine_response": 0.8510539647701243,
+   "engine_at_case_rate_bn": 2.8927011818703723,
+   "completion_bn": 0.030873515497073827,
+   "college_response_bn": 0,
+   "coverage_bn": 0.13245810466622104,
+   "count_bn": -0.0220934187867735,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.0339393832468935,
+   "effective_key_times_response": 0.11275670309494583
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "gps_fed",
+   "physical_line": "gps_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 152.17000000000002,
+   "key_rule": {
+    "denominator_line": "general_public_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "general_public_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "general_public_services"
+   },
+   "engine_key": 0.1263228581121298,
+   "engine_response": 0.8510539647701243,
+   "engine_at_case_rate_bn": 0.3404511033163717,
+   "completion_bn": 0.003633601175299307,
+   "college_response_bn": 0,
+   "coverage_bn": 0.015589411087270471,
+   "count_bn": -0.0026002439688997767,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.35707387161004167,
+   "effective_key_times_response": 0.11275670309494586
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "hwy_sl",
+   "physical_line": "hwy_sl",
+   "level": "state_local",
+   "group": "block",
+   "stock_charged_bn": 4388.9962727707125,
+   "key_rule": {
+    "kind": "part_rekeyed",
+    "parent_line": "economic_affairs_services",
+    "correction_line": "roads_vmt_sl",
+    "part_national_bn": 201.005,
+    "note": "the road key k_road, read on the evaluation: economic_affairs_services's key plus roads_vmt_sl's amount over the sl_highways national total (candidate v4, roads keyed by miles)"
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "sl_highways",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0.7401981546463505
+    }
+   },
+   "engine_key": 0.1030967761680307,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 9.416661518240266,
+   "completion_bn": 0.1016011395176649,
+   "college_response_bn": 0,
+   "coverage_bn": 0.46713140916443835,
+   "count_bn": -0.039693251033145124,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 9.945700815889225,
+   "effective_key_times_response": 0.1088888762608457
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "rec_sl",
+   "physical_line": "rec_sl",
+   "level": "state_local",
+   "group": "block",
+   "stock_charged_bn": 425.0824916531727,
+   "key_rule": {
+    "denominator_line": "recreation_culture",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "recreation_culture"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "recreation_culture",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "sl_recreation_and_culture",
+    "values": {
+     "across_high": 0.9514857707559868,
+     "high": 1,
+     "low": 0.9514857707559868
+    }
+   },
+   "engine_key": 0.12632285810618976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.1174853120917614,
+   "completion_bn": 0.011926810939529433,
+   "college_response_bn": 0,
+   "coverage_bn": 0.0511701614254894,
+   "count_bn": -0.008534953815102041,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.172047330641678,
+   "effective_key_times_response": 0.13249066188194306
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "hwy_fed",
+   "physical_line": "hwy_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 54.573499999999996,
+   "key_rule": {
+    "kind": "part_rekeyed",
+    "parent_line": "economic_affairs_services",
+    "correction_line": "roads_vmt_fed",
+    "part_national_bn": 1.827,
+    "note": "the road key k_road, read on the evaluation: economic_affairs_services's key plus roads_vmt_fed's amount over the fed_highways national total (candidate v4, roads keyed by miles)"
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_highways",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.1030967761680307,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.11708831482813428,
+   "completion_bn": 0.0012633252440579026,
+   "college_response_bn": 0,
+   "coverage_bn": 0.005808388609531012,
+   "count_bn": -0.0004935523980041691,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.12366647628371903,
+   "effective_key_times_response": 0.10888887626084569
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "air_fed",
+   "physical_line": "air_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 35.406,
+   "key_rule": {
+    "denominator_line": "economic_affairs_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "economic_affairs_services"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_air",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.08795907471910581,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.06481032212648337,
+   "completion_bn": 0.0008585181247929142,
+   "college_response_bn": 0,
+   "coverage_bn": 0.003133853501247677,
+   "count_bn": -0.0005552793905531613,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.06824741436197079,
+   "effective_key_times_response": 0.09262381704468296
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "rec_fed",
+   "physical_line": "rec_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 41.8305,
+   "key_rule": {
+    "denominator_line": "recreation_culture",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "recreation_culture"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "recreation_culture",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_recreation_and_culture",
+    "values": {
+     "across_high": 0.9514857707559868,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.12632285810618976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.10996681883005878,
+   "completion_bn": 0.0011736650527894353,
+   "college_response_bn": 0,
+   "coverage_bn": 0.005035430721186605,
+   "count_bn": -0.0008398872985197468,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.11533602730551507,
+   "effective_key_times_response": 0.13249066188194306
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_housing_sl",
+   "physical_line": "ent_housing_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 420.402,
+   "key_rule": {
+    "denominator_line": "housing_subsidies",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "housing_subsidies"
+    ],
+    "note": "the rental line's evaluated key, the capital lane's variant public_housing_at_rental_assistance_key (candidate v4 item 4)"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.0805213246593752,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.7044697466878298,
+   "completion_bn": 0.011596111416057805,
+   "college_response_bn": 0,
+   "coverage_bn": 0.02573002614876494,
+   "count_bn": 0.017693596903405405,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.759489481156058,
+   "effective_key_times_response": 0.08681011409656304
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_transit_sl",
+   "physical_line": "ent_transit_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 505.7986332941459,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.3296773090105094,
+   "completion_bn": 0.014191515274073344,
+   "college_response_bn": 0,
+   "coverage_bn": 0.060886529612205836,
+   "count_bn": -0.010155600524297665,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.3945997533724908,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_airports_sl",
+   "physical_line": "ent_airports_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 595.8142303973117,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.566316336968312,
+   "completion_bn": 0.016717140368934968,
+   "college_response_bn": 0,
+   "coverage_bn": 0.07172233848517087,
+   "count_bn": -0.011962964927760276,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.6427928508946577,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_ports_sl",
+   "physical_line": "ent_ports_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 94.43351434918577,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.24825314458136943,
+   "completion_bn": 0.0026495814204613097,
+   "college_response_bn": 0,
+   "coverage_bn": 0.011367624563079081,
+   "count_bn": -0.001896068879407472,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.26037428168550236,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_power_sl",
+   "physical_line": "ent_power_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 542.057,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.4249957308033159,
+   "completion_bn": 0.015208839424531927,
+   "college_response_bn": 0,
+   "coverage_bn": 0.06525120356110192,
+   "count_bn": -0.01088360859646264,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.4945721651924873,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_water_sl",
+   "physical_line": "ent_water_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 915.9465,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 2.4079014792618474,
+   "completion_bn": 0.025699295904235225,
+   "college_response_bn": 0,
+   "coverage_bn": 0.11025890547041883,
+   "count_bn": -0.018390691756217277,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 2.525468988880284,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_sewer_sl",
+   "physical_line": "ent_sewer_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 1224.8960000000002,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 3.2200886081686217,
+   "completion_bn": 0.03436768933110624,
+   "college_response_bn": 0,
+   "coverage_bn": 0.14744932403267463,
+   "count_bn": -0.024593887055001044,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.3773117344774017,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_tolls_sl",
+   "physical_line": "ent_tolls_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 501.1837272292877,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.317545334992129,
+   "completion_bn": 0.01406203190737994,
+   "college_response_bn": 0,
+   "coverage_bn": 0.060331000996112986,
+   "count_bn": -0.010062940838472449,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.3818754270571492,
+   "effective_key_times_response": 0.13249066188817085
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_power_fed",
+   "physical_line": "ent_power_fed",
+   "level": "federal",
+   "group": "enterprise",
+   "stock_charged_bn": 27.6655,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.07272891852801298,
+   "completion_bn": 0.0007762286016034997,
+   "college_response_bn": 0,
+   "coverage_bn": 0.0033302903054838622,
+   "count_bn": -0.0005554775118215188,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.07627995992327882,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_other_sl",
+   "physical_line": "ent_other_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 75.4805887275022,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.19842842486161327,
+   "completion_bn": 0.0021178070823284554,
+   "college_response_bn": 0,
+   "coverage_bn": 0.00908612795327809,
+   "count_bn": -0.0015155254601281858,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.20811683443709164,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_other_fed",
+   "physical_line": "ent_other_fed",
+   "level": "federal",
+   "group": "enterprise",
+   "stock_charged_bn": 56.71180600256709,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.14908779231668248,
+   "completion_bn": 0.001591199359049415,
+   "college_response_bn": 0,
+   "coverage_bn": 0.006826797915701165,
+   "count_bn": -0.0011386793258466553,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.15636711026558642,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "k12_user_fees",
+   "physical_line": "k12",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 2723.9194975692117,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_k12",
+    "note": "carrier user_fees_key_k12: key_target - key_union less the item's edits on education_services and school_reprice over education_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "school_reprice",
+    "note": "the school part's response: school_reprice's response over the specification's school fraction",
+    "share": "school"
+   },
+   "engine_key": 0.00975296263696325,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.5528629562072833,
+   "completion_bn": 0.006703400364840686,
+   "college_response_bn": 0,
+   "coverage_bn": 0.015702654952990742,
+   "count_bn": -0.005304795931074204,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.5699642155940405,
+   "effective_key_times_response": 0.01005464308411827
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "college_user_fees",
+   "physical_line": "college",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1198.387599270317,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_college",
+    "note": "carrier user_fees_key_college: key_target - key_union less the item's edits on education_services and college_rekey over education_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "college_rekey",
+    "note": "the college part's response: college_rekey's response over (1 - the school fraction)",
+    "share": "college"
+   },
+   "engine_key": -0.03854858618402715,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.9613741128611243,
+   "completion_bn": -0.01165655160387602,
+   "college_response_bn": 0.11114457386382048,
+   "coverage_bn": -0.024186407439504495,
+   "count_bn": 0.008170844749279121,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.8779016532914052,
+   "effective_key_times_response": -0.03520155898757001
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "health_sl_user_fees",
+   "physical_line": "health_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 365.979,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_health",
+    "note": "carrier user_fees_key_health: 0 less the item's edits on health_services over health_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": -0.002079886038647402,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.015840991782491893,
+   "completion_bn": -0.00016486108616908885,
+   "college_response_bn": 0,
+   "coverage_bn": -0.000582366605280018,
+   "count_bn": 0.000053769316456424656,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.016534450157484573,
+   "effective_key_times_response": -0.002170935539356347
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "specification": 11,
+   "line": "health_fed_user_fees",
+   "physical_line": "health_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 106.019,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_health",
+    "note": "carrier user_fees_key_health: 0 less the item's edits on health_services over health_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": -0.002079886038647402,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.0045889138660633755,
+   "completion_bn": -0.00004775795194412966,
+   "college_response_bn": 0,
+   "coverage_bn": -0.00016870346420199583,
+   "count_bn": 0.00001557621929507892,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.004789799062914421,
+   "effective_key_times_response": -0.0021709355393563466
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "k12",
+   "physical_line": "k12",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 2723.9194975692117,
+   "key_rule": {
+    "denominator_line": "education_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "education_services",
+     "school_reprice"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "school_reprice",
+    "note": "the school part's response: school_reprice's response over the specification's school fraction",
+    "share": "school"
+   },
+   "engine_key": 0.17723941103851604,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 10.047111671669683,
+   "completion_bn": 0.1337710840037341,
+   "college_response_bn": 0,
+   "coverage_bn": 0.2787828012239244,
+   "count_bn": -0.08911973247566726,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 10.370545824421674,
+   "effective_key_times_response": 0.1829450586531581
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "college",
+   "physical_line": "college",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1198.387599270317,
+   "key_rule": {
+    "denominator_line": "education_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "education_services",
+     "college_rekey"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "college_rekey",
+    "note": "the college part's response: college_rekey's response over (1 - the school fraction)",
+    "share": "college"
+   },
+   "engine_key": 0.1726634533874922,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 4.3061027849763045,
+   "completion_bn": 0.057572964355182076,
+   "college_response_bn": -0.4984415181879203,
+   "coverage_bn": 0.10377036665953338,
+   "count_bn": -0.034367552306688795,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.9346370454964106,
+   "effective_key_times_response": 0.15776864929282175
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "pos_sl",
+   "physical_line": "pos_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 289.47299999999996,
+   "key_rule": {
+    "denominator_line": "public_order_safety",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "public_order_safety"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "public_order_safety"
+   },
+   "engine_key": 0.14314099837583416,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.8623007559910516,
+   "completion_bn": 0.008545661370745677,
+   "college_response_bn": 0,
+   "coverage_bn": 0.016719499929878468,
+   "count_bn": -0.0027759143029936666,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.884790002988682,
+   "effective_key_times_response": 0.14687418919770903
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "pos_fed",
+   "physical_line": "pos_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 110.2,
+   "key_rule": {
+    "denominator_line": "public_order_safety",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "public_order_safety"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "public_order_safety"
+   },
+   "engine_key": 0.14314099837583416,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.32827083462089346,
+   "completion_bn": 0.0032532632855436375,
+   "college_response_bn": 0,
+   "coverage_bn": 0.006364976672341142,
+   "count_bn": -0.0010567678373800044,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.33683230674139825,
+   "effective_key_times_response": 0.14687418919770903
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "health_sl",
+   "physical_line": "health_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 365.979,
+   "key_rule": {
+    "denominator_line": "health_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "health_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": 0.06280228282256226,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.4783196904196322,
+   "completion_bn": 0.005415164295675746,
+   "college_response_bn": 0,
+   "coverage_bn": 0.04545615174134345,
+   "count_bn": -0.0034620484102720096,
+   "health_residual_bn": 0.6561074850822497,
+   "full_return_at_case_rate_bn": 1.181836443128629,
+   "effective_key_times_response": 0.15517242555132912
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "health_fed",
+   "physical_line": "health_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 106.019,
+   "key_rule": {
+    "denominator_line": "health_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "health_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": 0.06280228282256226,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.1385625275182428,
+   "completion_bn": 0.0015686973937391136,
+   "college_response_bn": 0,
+   "coverage_bn": 0.005044456020517786,
+   "count_bn": -0.00046824843118581974,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.14470743250131388,
+   "effective_key_times_response": 0.06558740855299318
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "gps_sl",
+   "physical_line": "gps_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1292.9385000000002,
+   "key_rule": {
+    "denominator_line": "general_public_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "general_public_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "general_public_services"
+   },
+   "engine_key": 0.1263228581121298,
+   "engine_response": 0.6005266346459308,
+   "engine_at_case_rate_bn": 2.0411679842818624,
+   "completion_bn": 0.021785185345038177,
+   "college_response_bn": 0,
+   "coverage_bn": 0.09346601169794182,
+   "count_bn": -0.015589712263931436,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 2.1408294690609115,
+   "effective_key_times_response": 0.07956417130571519
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "gps_fed",
+   "physical_line": "gps_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 152.17000000000002,
+   "key_rule": {
+    "denominator_line": "general_public_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "general_public_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "general_public_services"
+   },
+   "engine_key": 0.1263228581121298,
+   "engine_response": 0.6005266346459308,
+   "engine_at_case_rate_bn": 0.24023148213791373,
+   "completion_bn": 0.0025639670053559825,
+   "college_response_bn": 0,
+   "coverage_bn": 0.011000308986139564,
+   "count_bn": -0.001834802285802802,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.2519609558436065,
+   "effective_key_times_response": 0.07956417130571518
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "hwy_sl",
+   "physical_line": "hwy_sl",
+   "level": "state_local",
+   "group": "block",
+   "stock_charged_bn": 4388.9962727707125,
+   "key_rule": {
+    "kind": "part_rekeyed",
+    "parent_line": "economic_affairs_services",
+    "correction_line": "roads_vmt_sl",
+    "part_national_bn": 201.005,
+    "note": "the road key k_road, read on the evaluation: economic_affairs_services's key plus roads_vmt_sl's amount over the sl_highways national total (candidate v4, roads keyed by miles)"
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "sl_highways",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0.7401981546463505
+    }
+   },
+   "engine_key": 0.10299468770937967,
+   "engine_response": 0.7401981546463505,
+   "engine_at_case_rate_bn": 6.963293453862771,
+   "completion_bn": 0.07502025826738029,
+   "college_response_bn": 0,
+   "coverage_bn": 0.3457698070408666,
+   "count_bn": -0.02938087116664833,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 7.35470264800437,
+   "effective_key_times_response": 0.08052175722945876
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "rec_sl",
+   "physical_line": "rec_sl",
+   "level": "state_local",
+   "group": "block",
+   "stock_charged_bn": 425.0824916531727,
+   "key_rule": {
+    "denominator_line": "recreation_culture",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "recreation_culture"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "recreation_culture",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "sl_recreation_and_culture",
+    "values": {
+     "across_high": 0.9514857707559868,
+     "high": 1,
+     "low": 0.9514857707559868
+    }
+   },
+   "engine_key": 0.12632285810618976,
+   "engine_response": 0.9514857707559868,
+   "engine_at_case_rate_bn": 1.063271373484124,
+   "completion_bn": 0.011348190899459099,
+   "college_response_bn": 0,
+   "coverage_bn": 0.04868768048364005,
+   "count_bn": -0.008120887109129117,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.1151863577580938,
+   "effective_key_times_response": 0.12606297953871143
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "hwy_fed",
+   "physical_line": "hwy_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 54.573499999999996,
+   "key_rule": {
+    "kind": "part_rekeyed",
+    "parent_line": "economic_affairs_services",
+    "correction_line": "roads_vmt_fed",
+    "part_national_bn": 1.827,
+    "note": "the road key k_road, read on the evaluation: economic_affairs_services's key plus roads_vmt_fed's amount over the fed_highways national total (candidate v4, roads keyed by miles)"
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_highways",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.10299468770937967,
+   "engine_response": 0,
+   "engine_at_case_rate_bn": 0,
+   "completion_bn": 0,
+   "college_response_bn": 0,
+   "coverage_bn": 0,
+   "count_bn": 0,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0,
+   "effective_key_times_response": 0
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "air_fed",
+   "physical_line": "air_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 35.406,
+   "key_rule": {
+    "denominator_line": "economic_affairs_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "economic_affairs_services"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_air",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.08761848799499129,
+   "engine_response": 0,
+   "engine_at_case_rate_bn": 0,
+   "completion_bn": 0,
+   "college_response_bn": 0,
+   "coverage_bn": 0,
+   "count_bn": 0,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0,
+   "effective_key_times_response": 0
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "rec_fed",
+   "physical_line": "rec_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 41.8305,
+   "key_rule": {
+    "denominator_line": "recreation_culture",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "recreation_culture"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "recreation_culture",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_recreation_and_culture",
+    "values": {
+     "across_high": 0.9514857707559868,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.12632285810618976,
+   "engine_response": 0,
+   "engine_at_case_rate_bn": 0,
+   "completion_bn": 0,
+   "college_response_bn": 0,
+   "coverage_bn": 0,
+   "count_bn": 0,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0,
+   "effective_key_times_response": 0
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_housing_sl",
+   "physical_line": "ent_housing_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 420.402,
+   "key_rule": {
+    "denominator_line": "housing_subsidies",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "housing_subsidies"
+    ],
+    "note": "the rental line's evaluated key, the capital lane's variant public_housing_at_rental_assistance_key (candidate v4 item 4)"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.0829556627691666,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.725767428498354,
+   "completion_bn": 0.012253275355277525,
+   "college_response_bn": 0,
+   "coverage_bn": 0.02573002614876494,
+   "count_bn": 0.017693596903405405,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.7814443269058019,
+   "effective_key_times_response": 0.08931956644816987
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_transit_sl",
+   "physical_line": "ent_transit_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 505.7986332941459,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.3296773090105092,
+   "completion_bn": 0.014191515274073339,
+   "college_response_bn": 0,
+   "coverage_bn": 0.060886529612205836,
+   "count_bn": -0.010155600524297665,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.3945997533724905,
+   "effective_key_times_response": 0.13249066188817085
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_airports_sl",
+   "physical_line": "ent_airports_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 595.8142303973117,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.5663163369683122,
+   "completion_bn": 0.016717140368934978,
+   "college_response_bn": 0,
+   "coverage_bn": 0.07172233848517087,
+   "count_bn": -0.011962964927760278,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.6427928508946579,
+   "effective_key_times_response": 0.13249066188817094
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_ports_sl",
+   "physical_line": "ent_ports_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 94.43351434918577,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.2482531445813694,
+   "completion_bn": 0.0026495814204613114,
+   "college_response_bn": 0,
+   "coverage_bn": 0.011367624563079083,
+   "count_bn": -0.0018960688794074727,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.26037428168550236,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_power_sl",
+   "physical_line": "ent_power_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 542.057,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.4249957308033159,
+   "completion_bn": 0.01520883942453192,
+   "college_response_bn": 0,
+   "coverage_bn": 0.06525120356110192,
+   "count_bn": -0.01088360859646264,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.4945721651924873,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_water_sl",
+   "physical_line": "ent_water_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 915.9465,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 2.407901479261848,
+   "completion_bn": 0.025699295904235205,
+   "college_response_bn": 0,
+   "coverage_bn": 0.11025890547041886,
+   "count_bn": -0.018390691756217277,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 2.525468988880285,
+   "effective_key_times_response": 0.13249066188817094
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_sewer_sl",
+   "physical_line": "ent_sewer_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 1224.8960000000002,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 3.2200886081686217,
+   "completion_bn": 0.03436768933110623,
+   "college_response_bn": 0,
+   "coverage_bn": 0.14744932403267463,
+   "count_bn": -0.024593887055001047,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.3773117344774017,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_tolls_sl",
+   "physical_line": "ent_tolls_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 501.1837272292877,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.317545334992129,
+   "completion_bn": 0.014062031907379938,
+   "college_response_bn": 0,
+   "coverage_bn": 0.060331000996112986,
+   "count_bn": -0.010062940838472445,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.3818754270571492,
+   "effective_key_times_response": 0.13249066188817085
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_power_fed",
+   "physical_line": "ent_power_fed",
+   "level": "federal",
+   "group": "enterprise",
+   "stock_charged_bn": 27.6655,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.07272891852801297,
+   "completion_bn": 0.0007762286016034992,
+   "college_response_bn": 0,
+   "coverage_bn": 0.003330290305483862,
+   "count_bn": -0.0005554775118215189,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.07627995992327881,
+   "effective_key_times_response": 0.13249066188817085
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_other_sl",
+   "physical_line": "ent_other_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 75.4805887275022,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.19842842486161327,
+   "completion_bn": 0.002117807082328455,
+   "college_response_bn": 0,
+   "coverage_bn": 0.009086127953278088,
+   "count_bn": -0.0015155254601281853,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.20811683443709164,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "ent_other_fed",
+   "physical_line": "ent_other_fed",
+   "level": "federal",
+   "group": "enterprise",
+   "stock_charged_bn": 56.71180600256709,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.14908779231668245,
+   "completion_bn": 0.0015911993590494156,
+   "college_response_bn": 0,
+   "coverage_bn": 0.006826797915701167,
+   "count_bn": -0.0011386793258466553,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.1563671102655864,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "k12_user_fees",
+   "physical_line": "k12",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 2723.9194975692117,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_k12",
+    "note": "carrier user_fees_key_k12: key_target - key_union less the item's edits on education_services and school_reprice over education_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "school_reprice",
+    "note": "the school part's response: school_reprice's response over the specification's school fraction",
+    "share": "school"
+   },
+   "engine_key": 0.00975296263696325,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.5528629562072833,
+   "completion_bn": 0.006703400364840684,
+   "college_response_bn": 0,
+   "coverage_bn": 0.01570265495299075,
+   "count_bn": -0.005304795931074207,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.5699642155940405,
+   "effective_key_times_response": 0.01005464308411827
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "college_user_fees",
+   "physical_line": "college",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1198.387599270317,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_college",
+    "note": "carrier user_fees_key_college: key_target - key_union less the item's edits on education_services and college_rekey over education_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "college_rekey",
+    "note": "the college part's response: college_rekey's response over (1 - the school fraction)",
+    "share": "college"
+   },
+   "engine_key": -0.03854858618402715,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.9613741128611243,
+   "completion_bn": -0.011656551603876028,
+   "college_response_bn": 0.1111445738638205,
+   "coverage_bn": -0.024186407439504495,
+   "count_bn": 0.00817084474927912,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.8779016532914052,
+   "effective_key_times_response": -0.03520155898757001
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "health_sl_user_fees",
+   "physical_line": "health_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 365.979,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_health",
+    "note": "carrier user_fees_key_health: 0 less the item's edits on health_services over health_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": -0.002079886038647402,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.015840991782491893,
+   "completion_bn": -0.00016486108616908888,
+   "college_response_bn": 0,
+   "coverage_bn": -0.000582366605280018,
+   "count_bn": 0.000053769316456424656,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.016534450157484573,
+   "effective_key_times_response": -0.002170935539356347
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "specification": 16,
+   "line": "health_fed_user_fees",
+   "physical_line": "health_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 106.019,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_health",
+    "note": "carrier user_fees_key_health: 0 less the item's edits on health_services over health_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": -0.002079886038647402,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.0045889138660633755,
+   "completion_bn": -0.000047757951944129654,
+   "college_response_bn": 0,
+   "coverage_bn": -0.00016870346420199583,
+   "count_bn": 0.000015576219295078917,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.004789799062914421,
+   "effective_key_times_response": -0.0021709355393563466
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "k12",
+   "physical_line": "k12",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 2723.9194975692117,
+   "key_rule": {
+    "denominator_line": "education_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "education_services",
+     "school_reprice"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "school_reprice",
+    "note": "the school part's response: school_reprice's response over the specification's school fraction",
+    "share": "school"
+   },
+   "engine_key": 0.17723941103851604,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 10.047111671669683,
+   "completion_bn": 0.13377108400373416,
+   "college_response_bn": 0,
+   "coverage_bn": 0.2787828012239243,
+   "count_bn": -0.08911973247566725,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 10.370545824421674,
+   "effective_key_times_response": 0.1829450586531581
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "college",
+   "physical_line": "college",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1198.387599270317,
+   "key_rule": {
+    "denominator_line": "education_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "education_services",
+     "college_rekey"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "college_rekey",
+    "note": "the college part's response: college_rekey's response over (1 - the school fraction)",
+    "share": "college"
+   },
+   "engine_key": 0.1726634533874922,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 4.3061027849763045,
+   "completion_bn": 0.05757296435518203,
+   "college_response_bn": -0.49844151818792026,
+   "coverage_bn": 0.10377036665953336,
+   "count_bn": -0.03436755230668879,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.9346370454964106,
+   "effective_key_times_response": 0.15776864929282175
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "pos_sl",
+   "physical_line": "pos_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 289.47299999999996,
+   "key_rule": {
+    "denominator_line": "public_order_safety",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "public_order_safety"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "public_order_safety"
+   },
+   "engine_key": 0.14314099837583416,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.8623007559910516,
+   "completion_bn": 0.008545661370745675,
+   "college_response_bn": 0,
+   "coverage_bn": 0.016719499929878468,
+   "count_bn": -0.0027759143029936666,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.884790002988682,
+   "effective_key_times_response": 0.14687418919770903
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "pos_fed",
+   "physical_line": "pos_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 110.2,
+   "key_rule": {
+    "denominator_line": "public_order_safety",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "public_order_safety"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "public_order_safety"
+   },
+   "engine_key": 0.14314099837583416,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.32827083462089346,
+   "completion_bn": 0.003253263285543639,
+   "college_response_bn": 0,
+   "coverage_bn": 0.0063649766723411424,
+   "count_bn": -0.0010567678373800044,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.33683230674139825,
+   "effective_key_times_response": 0.14687418919770903
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "health_sl",
+   "physical_line": "health_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 365.979,
+   "key_rule": {
+    "denominator_line": "health_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "health_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": 0.06280228282256226,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.4783196904196322,
+   "completion_bn": 0.005415164295675747,
+   "college_response_bn": 0,
+   "coverage_bn": 0.04545615174134345,
+   "count_bn": -0.0034620484102720096,
+   "health_residual_bn": 0.6561074850822497,
+   "full_return_at_case_rate_bn": 1.181836443128629,
+   "effective_key_times_response": 0.15517242555132912
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "health_fed",
+   "physical_line": "health_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 106.019,
+   "key_rule": {
+    "denominator_line": "health_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "health_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": 0.06280228282256226,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.1385625275182428,
+   "completion_bn": 0.0015686973937391118,
+   "college_response_bn": 0,
+   "coverage_bn": 0.005044456020517786,
+   "count_bn": -0.00046824843118581963,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.14470743250131388,
+   "effective_key_times_response": 0.06558740855299318
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "gps_sl",
+   "physical_line": "gps_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1292.9385000000002,
+   "key_rule": {
+    "denominator_line": "general_public_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "general_public_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "general_public_services"
+   },
+   "engine_key": 0.1263228581121298,
+   "engine_response": 0.8510539647701243,
+   "engine_at_case_rate_bn": 2.8927011818703723,
+   "completion_bn": 0.030873515497073827,
+   "college_response_bn": 0,
+   "coverage_bn": 0.13245810466622104,
+   "count_bn": -0.0220934187867735,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.0339393832468935,
+   "effective_key_times_response": 0.11275670309494583
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "gps_fed",
+   "physical_line": "gps_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 152.17000000000002,
+   "key_rule": {
+    "denominator_line": "general_public_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "general_public_services"
+    ]
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "general_public_services"
+   },
+   "engine_key": 0.1263228581121298,
+   "engine_response": 0.8510539647701243,
+   "engine_at_case_rate_bn": 0.3404511033163717,
+   "completion_bn": 0.003633601175299307,
+   "college_response_bn": 0,
+   "coverage_bn": 0.015589411087270471,
+   "count_bn": -0.0026002439688997767,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.35707387161004167,
+   "effective_key_times_response": 0.11275670309494586
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "hwy_sl",
+   "physical_line": "hwy_sl",
+   "level": "state_local",
+   "group": "block",
+   "stock_charged_bn": 4388.9962727707125,
+   "key_rule": {
+    "kind": "part_rekeyed",
+    "parent_line": "economic_affairs_services",
+    "correction_line": "roads_vmt_sl",
+    "part_national_bn": 201.005,
+    "note": "the road key k_road, read on the evaluation: economic_affairs_services's key plus roads_vmt_sl's amount over the sl_highways national total (candidate v4, roads keyed by miles)"
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "sl_highways",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0.7401981546463505
+    }
+   },
+   "engine_key": 0.10299468770937967,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 9.407336954507363,
+   "completion_bn": 0.10135158780991993,
+   "college_response_bn": 0,
+   "coverage_bn": 0.46713140916443835,
+   "count_bn": -0.039693251033145124,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 9.936126700448575,
+   "effective_key_times_response": 0.10878405562619939
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "rec_sl",
+   "physical_line": "rec_sl",
+   "level": "state_local",
+   "group": "block",
+   "stock_charged_bn": 425.0824916531727,
+   "key_rule": {
+    "denominator_line": "recreation_culture",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "recreation_culture"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "recreation_culture",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "sl_recreation_and_culture",
+    "values": {
+     "across_high": 0.9514857707559868,
+     "high": 1,
+     "low": 0.9514857707559868
+    }
+   },
+   "engine_key": 0.12632285810618976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.1174853120917614,
+   "completion_bn": 0.011926810939529433,
+   "college_response_bn": 0,
+   "coverage_bn": 0.0511701614254894,
+   "count_bn": -0.008534953815102041,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.172047330641678,
+   "effective_key_times_response": 0.13249066188194306
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "hwy_fed",
+   "physical_line": "hwy_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 54.573499999999996,
+   "key_rule": {
+    "kind": "part_rekeyed",
+    "parent_line": "economic_affairs_services",
+    "correction_line": "roads_vmt_fed",
+    "part_national_bn": 1.827,
+    "note": "the road key k_road, read on the evaluation: economic_affairs_services's key plus roads_vmt_fed's amount over the fed_highways national total (candidate v4, roads keyed by miles)"
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_highways",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.10299468770937967,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.11697237167228461,
+   "completion_bn": 0.0012602222771661079,
+   "college_response_bn": 0,
+   "coverage_bn": 0.005808388609531012,
+   "count_bn": -0.0004935523980041691,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.12354743016097755,
+   "effective_key_times_response": 0.10878405562619939
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "air_fed",
+   "physical_line": "air_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 35.406,
+   "key_rule": {
+    "denominator_line": "economic_affairs_services",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "economic_affairs_services"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "economic_affairs_services",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_air",
+    "values": {
+     "across_high": 0.7401981546463505,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.08761848799499129,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.064559369790157,
+   "completion_bn": 0.0008513651937630389,
+   "college_response_bn": 0,
+   "coverage_bn": 0.003133853501247677,
+   "count_bn": -0.0005552793905531613,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.06798930909461455,
+   "effective_key_times_response": 0.09227352252751521
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "rec_fed",
+   "physical_line": "rec_fed",
+   "level": "federal",
+   "group": "block",
+   "stock_charged_bn": 41.8305,
+   "key_rule": {
+    "denominator_line": "recreation_culture",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "recreation_culture"
+    ]
+   },
+   "response_rule": {
+    "file": "infra/immigration-fiscal/service_response_long_run_2026_09_27/derived/responses.json",
+    "kind": "long_run_subfunction",
+    "line": "recreation_culture",
+    "note": "low at the low end, high at the high end; across_high is the response lane's across-state reading at the high end",
+    "subfunction": "fed_recreation_and_culture",
+    "values": {
+     "across_high": 0.9514857707559868,
+     "high": 1,
+     "low": 0
+    }
+   },
+   "engine_key": 0.12632285810618976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.10996681883005878,
+   "completion_bn": 0.0011736650527894353,
+   "college_response_bn": 0,
+   "coverage_bn": 0.005035430721186605,
+   "count_bn": -0.0008398872985197468,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.11533602730551507,
+   "effective_key_times_response": 0.13249066188194306
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_housing_sl",
+   "physical_line": "ent_housing_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 420.402,
+   "key_rule": {
+    "denominator_line": "housing_subsidies",
+    "kind": "lines_amount_over_national",
+    "numerator_lines": [
+     "housing_subsidies"
+    ],
+    "note": "the rental line's evaluated key, the capital lane's variant public_housing_at_rental_assistance_key (candidate v4 item 4)"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.0829556627691666,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.7257674284983541,
+   "completion_bn": 0.012253275355277532,
+   "college_response_bn": 0,
+   "coverage_bn": 0.02573002614876494,
+   "count_bn": 0.017693596903405405,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.781444326905802,
+   "effective_key_times_response": 0.08931956644816988
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_transit_sl",
+   "physical_line": "ent_transit_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 505.7986332941459,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.3296773090105094,
+   "completion_bn": 0.014191515274073344,
+   "college_response_bn": 0,
+   "coverage_bn": 0.060886529612205836,
+   "count_bn": -0.010155600524297665,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.3945997533724908,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_airports_sl",
+   "physical_line": "ent_airports_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 595.8142303973117,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.566316336968312,
+   "completion_bn": 0.016717140368934968,
+   "college_response_bn": 0,
+   "coverage_bn": 0.07172233848517087,
+   "count_bn": -0.011962964927760276,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.6427928508946577,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_ports_sl",
+   "physical_line": "ent_ports_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 94.43351434918577,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.24825314458136943,
+   "completion_bn": 0.0026495814204613097,
+   "college_response_bn": 0,
+   "coverage_bn": 0.011367624563079081,
+   "count_bn": -0.001896068879407472,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.26037428168550236,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_power_sl",
+   "physical_line": "ent_power_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 542.057,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.4249957308033159,
+   "completion_bn": 0.015208839424531927,
+   "college_response_bn": 0,
+   "coverage_bn": 0.06525120356110192,
+   "count_bn": -0.01088360859646264,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.4945721651924873,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_water_sl",
+   "physical_line": "ent_water_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 915.9465,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 2.4079014792618474,
+   "completion_bn": 0.025699295904235225,
+   "college_response_bn": 0,
+   "coverage_bn": 0.11025890547041883,
+   "count_bn": -0.018390691756217277,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 2.525468988880284,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_sewer_sl",
+   "physical_line": "ent_sewer_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 1224.8960000000002,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 3.2200886081686217,
+   "completion_bn": 0.03436768933110624,
+   "college_response_bn": 0,
+   "coverage_bn": 0.14744932403267463,
+   "count_bn": -0.024593887055001044,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 3.3773117344774017,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_tolls_sl",
+   "physical_line": "ent_tolls_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 501.1837272292877,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 1.317545334992129,
+   "completion_bn": 0.01406203190737994,
+   "college_response_bn": 0,
+   "coverage_bn": 0.060331000996112986,
+   "count_bn": -0.010062940838472449,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 1.3818754270571492,
+   "effective_key_times_response": 0.13249066188817085
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_power_fed",
+   "physical_line": "ent_power_fed",
+   "level": "federal",
+   "group": "enterprise",
+   "stock_charged_bn": 27.6655,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.07272891852801298,
+   "completion_bn": 0.0007762286016034997,
+   "college_response_bn": 0,
+   "coverage_bn": 0.0033302903054838622,
+   "count_bn": -0.0005554775118215188,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.07627995992327882,
+   "effective_key_times_response": 0.13249066188817088
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_other_sl",
+   "physical_line": "ent_other_sl",
+   "level": "state_local",
+   "group": "enterprise",
+   "stock_charged_bn": 75.4805887275022,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.19842842486161327,
+   "completion_bn": 0.0021178070823284554,
+   "college_response_bn": 0,
+   "coverage_bn": 0.00908612795327809,
+   "count_bn": -0.0015155254601281858,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.20811683443709164,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "ent_other_fed",
+   "physical_line": "ent_other_fed",
+   "level": "federal",
+   "group": "enterprise",
+   "stock_charged_bn": 56.71180600256709,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "enterprise_surplus",
+    "note": "the enterprise-surplus receipt's own key (resident population), as the account keys it"
+   },
+   "response_rule": {
+    "kind": "enterprises_switch",
+    "values": {
+     "A": 0,
+     "D": 1
+    }
+   },
+   "engine_key": 0.12632285811212976,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.14908779231668248,
+   "completion_bn": 0.001591199359049415,
+   "college_response_bn": 0,
+   "coverage_bn": 0.006826797915701165,
+   "count_bn": -0.0011386793258466553,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.15636711026558642,
+   "effective_key_times_response": 0.1324906618881709
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "k12_user_fees",
+   "physical_line": "k12",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 2723.9194975692117,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_k12",
+    "note": "carrier user_fees_key_k12: key_target - key_union less the item's edits on education_services and school_reprice over education_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "school_reprice",
+    "note": "the school part's response: school_reprice's response over the specification's school fraction",
+    "share": "school"
+   },
+   "engine_key": 0.00975296263696325,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": 0.5528629562072833,
+   "completion_bn": 0.006703400364840686,
+   "college_response_bn": 0,
+   "coverage_bn": 0.015702654952990742,
+   "count_bn": -0.005304795931074204,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": 0.5699642155940405,
+   "effective_key_times_response": 0.01005464308411827
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "college_user_fees",
+   "physical_line": "college",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 1198.387599270317,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_college",
+    "note": "carrier user_fees_key_college: key_target - key_union less the item's edits on education_services and college_rekey over education_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response_over_share",
+    "line": "college_rekey",
+    "note": "the college part's response: college_rekey's response over (1 - the school fraction)",
+    "share": "college"
+   },
+   "engine_key": -0.03854858618402715,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.9613741128611243,
+   "completion_bn": -0.01165655160387602,
+   "college_response_bn": 0.11114457386382048,
+   "coverage_bn": -0.024186407439504495,
+   "count_bn": 0.008170844749279121,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.8779016532914052,
+   "effective_key_times_response": -0.03520155898757001
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "health_sl_user_fees",
+   "physical_line": "health_sl",
+   "level": "state_local",
+   "group": "core",
+   "stock_charged_bn": 365.979,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_health",
+    "note": "carrier user_fees_key_health: 0 less the item's edits on health_services over health_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": -0.002079886038647402,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.015840991782491893,
+   "completion_bn": -0.00016486108616908885,
+   "college_response_bn": 0,
+   "coverage_bn": -0.000582366605280018,
+   "count_bn": 0.000053769316456424656,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.016534450157484573,
+   "effective_key_times_response": -0.002170935539356347
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "specification": 11,
+   "line": "health_fed_user_fees",
+   "physical_line": "health_fed",
+   "level": "federal",
+   "group": "core",
+   "stock_charged_bn": 106.019,
+   "key_rule": {
+    "kind": "receipt_amount_over_national",
+    "line": "user_fees_key_health",
+    "note": "carrier user_fees_key_health: 0 less the item's edits on health_services over health_services's national total"
+   },
+   "response_rule": {
+    "kind": "line_response",
+    "line": "health_services"
+   },
+   "engine_key": -0.002079886038647402,
+   "engine_response": 1,
+   "engine_at_case_rate_bn": -0.0045889138660633755,
+   "completion_bn": -0.00004775795194412966,
+   "college_response_bn": 0,
+   "coverage_bn": -0.00016870346420199583,
+   "count_bn": 0.00001557621929507892,
+   "health_residual_bn": 0,
+   "full_return_at_case_rate_bn": -0.004789799062914421,
+   "effective_key_times_response": -0.0021709355393563466
+  }
+ ],
+ "totals": [
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "low",
+   "case_cost_bn": 364.9176697290453,
+   "capital_return_bn": 40.67110212895085,
+   "rate_derivative_bn": 40.671102128950864
+  },
+  {
+   "method": "b_hotdeck_union_matched",
+   "end": "high",
+   "case_cost_bn": 433.4650176617076,
+   "capital_return_bn": 44.61734727504136,
+   "rate_derivative_bn": 44.617347275041425
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "low",
+   "case_cost_bn": 371.14180862871615,
+   "capital_return_bn": 40.685970232119054,
+   "rate_derivative_bn": 40.68597023211908
+  },
+  {
+   "method": "b_matched_over_pooled",
+   "end": "high",
+   "case_cost_bn": 439.6580366463612,
+   "capital_return_bn": 44.62935085396036,
+   "rate_derivative_bn": 44.62935085396041
+  }
+ ],
+ "checks": [
+  {
+   "name": "adopted oct16",
+   "pass": true,
+   "detail": "oct16"
+  },
+  {
+   "name": "required case rate",
+   "pass": true,
+   "detail": 0.020810698764237804
+  },
+  {
+   "name": "b_hotdeck_union_matched/low specification",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/k12 declared stock",
+   "pass": true,
+   "detail": 2723.9194975692117
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/k12 engine key and response",
+   "pass": true,
+   "detail": 9.655717749309952
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/k12 source rate rescaling",
+   "pass": true,
+   "detail": 10.047111671669683
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/k12 own parts at case rate",
+   "pass": true,
+   "detail": 84
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/college declared stock",
+   "pass": true,
+   "detail": 1198.387599270317
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/college engine key and response",
+   "pass": true,
+   "detail": 4.138354827735181
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/college source rate rescaling",
+   "pass": true,
+   "detail": 4.3061027849763045
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/college own parts at case rate",
+   "pass": true,
+   "detail": 84
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/pos_sl declared stock",
+   "pass": true,
+   "detail": 289.47299999999996
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/pos_sl engine key and response",
+   "pass": true,
+   "detail": 0.8287090844569567
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/pos_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.8623007559910516
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/pos_sl own parts at case rate",
+   "pass": true,
+   "detail": 36
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/pos_fed declared stock",
+   "pass": true,
+   "detail": 110.2
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/pos_fed engine key and response",
+   "pass": true,
+   "detail": 0.3154827604203385
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/pos_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.32827083462089346
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/pos_fed own parts at case rate",
+   "pass": true,
+   "detail": 36
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_sl declared stock",
+   "pass": true,
+   "detail": 365.979
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_sl engine key and response",
+   "pass": true,
+   "detail": 0.45968633330237024
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.4783196904196322
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_sl own parts at case rate",
+   "pass": true,
+   "detail": 52
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_fed declared stock",
+   "pass": true,
+   "detail": 106.019
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_fed engine key and response",
+   "pass": true,
+   "detail": 0.13316470445130454
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.1385625275182428
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/gps_sl declared stock",
+   "pass": true,
+   "detail": 1292.9385000000002
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/gps_sl engine key and response",
+   "pass": true,
+   "detail": 1.9616525205674615
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/gps_sl source rate rescaling",
+   "pass": true,
+   "detail": 2.0411679842818624
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/gps_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/gps_fed declared stock",
+   "pass": true,
+   "detail": 152.17000000000002
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/gps_fed engine key and response",
+   "pass": true,
+   "detail": 0.2308730570361627
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/gps_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.24023148213791373
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/gps_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/hwy_sl declared stock",
+   "pass": true,
+   "detail": 4388.9962727707125
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/hwy_sl engine key and response",
+   "pass": true,
+   "detail": 6.698665487108675
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/hwy_sl source rate rescaling",
+   "pass": true,
+   "detail": 6.970195478730746
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/hwy_sl own parts at case rate",
+   "pass": true,
+   "detail": 68
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/rec_sl declared stock",
+   "pass": true,
+   "detail": 425.0824916531727
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/rec_sl engine key and response",
+   "pass": true,
+   "detail": 1.0218507177772476
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/rec_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.063271373484124
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/rec_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/hwy_fed declared stock",
+   "pass": true,
+   "detail": 54.573499999999996
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/hwy_fed engine key and response",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/hwy_fed source rate rescaling",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/hwy_fed own parts at case rate",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/air_fed declared stock",
+   "pass": true,
+   "detail": 35.406
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/air_fed engine key and response",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/air_fed source rate rescaling",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/air_fed own parts at case rate",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/rec_fed declared stock",
+   "pass": true,
+   "detail": 41.8305
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/rec_fed engine key and response",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/rec_fed source rate rescaling",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/rec_fed own parts at case rate",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_housing_sl declared stock",
+   "pass": true,
+   "detail": 420.402
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_housing_sl engine key and response",
+   "pass": true,
+   "detail": 0.677026518589013
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_housing_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.7044697466878297
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_housing_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_transit_sl declared stock",
+   "pass": true,
+   "detail": 505.7986332941459
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_transit_sl engine key and response",
+   "pass": true,
+   "detail": 1.2778785797385108
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_transit_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.3296773090105092
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_transit_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_airports_sl declared stock",
+   "pass": true,
+   "detail": 595.8142303973117
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_airports_sl engine key and response",
+   "pass": true,
+   "detail": 1.505299129753348
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_airports_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.5663163369683122
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_airports_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_ports_sl declared stock",
+   "pass": true,
+   "detail": 94.43351434918577
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_ports_sl engine key and response",
+   "pass": true,
+   "detail": 0.23858222868323928
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_ports_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.2482531445813694
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_ports_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_power_sl declared stock",
+   "pass": true,
+   "detail": 542.057
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_power_sl engine key and response",
+   "pass": true,
+   "detail": 1.3694837899937347
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_power_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.4249957308033159
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_power_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_water_sl declared stock",
+   "pass": true,
+   "detail": 915.9465
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_water_sl engine key and response",
+   "pass": true,
+   "detail": 2.3140995951560375
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_water_sl source rate rescaling",
+   "pass": true,
+   "detail": 2.407901479261848
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_water_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_sewer_sl declared stock",
+   "pass": true,
+   "detail": 1224.8960000000002
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_sewer_sl engine key and response",
+   "pass": true,
+   "detail": 3.0946472722023066
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_sewer_sl source rate rescaling",
+   "pass": true,
+   "detail": 3.2200886081686217
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_sewer_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_tolls_sl declared stock",
+   "pass": true,
+   "detail": 501.1837272292877
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_tolls_sl engine key and response",
+   "pass": true,
+   "detail": 1.266219217257873
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_tolls_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.317545334992129
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_tolls_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_power_fed declared stock",
+   "pass": true,
+   "detail": 27.6655
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_power_fed engine key and response",
+   "pass": true,
+   "detail": 0.06989570062202252
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_power_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.07272891852801297
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_power_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_other_sl declared stock",
+   "pass": true,
+   "detail": 75.4805887275022
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_other_sl engine key and response",
+   "pass": true,
+   "detail": 0.1906984740008856
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_other_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.19842842486161327
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_other_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_other_fed declared stock",
+   "pass": true,
+   "detail": 56.71180600256709
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_other_fed engine key and response",
+   "pass": true,
+   "detail": 0.14327994845889822
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_other_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.14908779231668245
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/ent_other_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/k12_user_fees declared stock",
+   "pass": true,
+   "detail": 2723.9194975692117
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/k12_user_fees engine key and response",
+   "pass": true,
+   "detail": 0.5313257017177646
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/k12_user_fees source rate rescaling",
+   "pass": true,
+   "detail": 0.5528629562072833
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/k12_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 32
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/college_user_fees declared stock",
+   "pass": true,
+   "detail": 1198.387599270317
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/college_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.9239229530468241
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/college_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.9613741128611243
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/college_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 32
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_sl_user_fees declared stock",
+   "pass": true,
+   "detail": 365.979
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_sl_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.015223892250762752
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_sl_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.015840991782491893
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_sl_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_fed_user_fees declared stock",
+   "pass": true,
+   "detail": 106.019
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_fed_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.0044101487586271785
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_fed_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.0045889138660633755
+  },
+  {
+   "name": "b_hotdeck_union_matched/low/health_fed_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_hotdeck_union_matched/low complete capital response from 7pct arm",
+   "pass": true,
+   "detail": {
+    "rebuilt": 40.67110212895085,
+    "from7": 40.671102128950864
+   }
+  },
+  {
+   "name": "b_hotdeck_union_matched/high specification",
+   "pass": true,
+   "detail": 11
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/k12 declared stock",
+   "pass": true,
+   "detail": 2723.9194975692117
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/k12 engine key and response",
+   "pass": true,
+   "detail": 14.483576623964927
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/k12 source rate rescaling",
+   "pass": true,
+   "detail": 10.047111671669683
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/k12 own parts at case rate",
+   "pass": true,
+   "detail": 84
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/college declared stock",
+   "pass": true,
+   "detail": 1198.387599270317
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/college engine key and response",
+   "pass": true,
+   "detail": 6.207532241602771
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/college source rate rescaling",
+   "pass": true,
+   "detail": 4.3061027849763045
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/college own parts at case rate",
+   "pass": true,
+   "detail": 84
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/pos_sl declared stock",
+   "pass": true,
+   "detail": 289.47299999999996
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/pos_sl engine key and response",
+   "pass": true,
+   "detail": 1.2430636266854351
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/pos_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.8623007559910516
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/pos_sl own parts at case rate",
+   "pass": true,
+   "detail": 36
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/pos_fed declared stock",
+   "pass": true,
+   "detail": 110.2
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/pos_fed engine key and response",
+   "pass": true,
+   "detail": 0.4732241406305077
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/pos_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.32827083462089346
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/pos_fed own parts at case rate",
+   "pass": true,
+   "detail": 36
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_sl declared stock",
+   "pass": true,
+   "detail": 365.979
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_sl engine key and response",
+   "pass": true,
+   "detail": 0.6895294999535553
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.4783196904196322
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_sl own parts at case rate",
+   "pass": true,
+   "detail": 52
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_fed declared stock",
+   "pass": true,
+   "detail": 106.019
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_fed engine key and response",
+   "pass": true,
+   "detail": 0.19974705667695683
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.1385625275182428
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/gps_sl declared stock",
+   "pass": true,
+   "detail": 1292.9385000000002
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/gps_sl engine key and response",
+   "pass": true,
+   "detail": 4.170020259254353
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/gps_sl source rate rescaling",
+   "pass": true,
+   "detail": 2.8927011818703723
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/gps_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/gps_fed declared stock",
+   "pass": true,
+   "detail": 152.17000000000002
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/gps_fed engine key and response",
+   "pass": true,
+   "detail": 0.49078280432575483
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/gps_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.3404511033163717
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/gps_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/hwy_sl declared stock",
+   "pass": true,
+   "detail": 4388.9962727707125
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/hwy_sl engine key and response",
+   "pass": true,
+   "detail": 13.574740990084894
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/hwy_sl source rate rescaling",
+   "pass": true,
+   "detail": 9.416661518240266
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/hwy_sl own parts at case rate",
+   "pass": true,
+   "detail": 68
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/rec_sl declared stock",
+   "pass": true,
+   "detail": 425.0824916531727
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/rec_sl engine key and response",
+   "pass": true,
+   "detail": 1.61092905829588
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/rec_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.1174853120917614
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/rec_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/hwy_fed declared stock",
+   "pass": true,
+   "detail": 54.573499999999996
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/hwy_fed engine key and response",
+   "pass": true,
+   "detail": 0.16879055742618068
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/hwy_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.11708831482813428
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/hwy_fed own parts at case rate",
+   "pass": true,
+   "detail": 68
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/air_fed declared stock",
+   "pass": true,
+   "detail": 35.406
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/air_fed engine key and response",
+   "pass": true,
+   "detail": 0.0934283699851398
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/air_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.06481032212648337
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/air_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/rec_fed declared stock",
+   "pass": true,
+   "detail": 41.8305
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/rec_fed engine key and response",
+   "pass": true,
+   "detail": 0.15852444948032912
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/rec_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.10996681883005878
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/rec_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_housing_sl declared stock",
+   "pass": true,
+   "detail": 420.402
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_housing_sl engine key and response",
+   "pass": true,
+   "detail": 1.0155397778835196
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_housing_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.7044697466878298
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_housing_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_transit_sl declared stock",
+   "pass": true,
+   "detail": 505.7986332941459
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_transit_sl engine key and response",
+   "pass": true,
+   "detail": 1.916817869607766
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_transit_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.3296773090105094
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_transit_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_airports_sl declared stock",
+   "pass": true,
+   "detail": 595.8142303973117
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_airports_sl engine key and response",
+   "pass": true,
+   "detail": 2.257948694630022
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_airports_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.566316336968312
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_airports_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_ports_sl declared stock",
+   "pass": true,
+   "detail": 94.43351434918577
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_ports_sl engine key and response",
+   "pass": true,
+   "detail": 0.3578733430248589
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_ports_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.24825314458136943
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_ports_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_power_sl declared stock",
+   "pass": true,
+   "detail": 542.057
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_power_sl engine key and response",
+   "pass": true,
+   "detail": 2.0542256849906018
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_power_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.4249957308033159
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_power_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_water_sl declared stock",
+   "pass": true,
+   "detail": 915.9465
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_water_sl engine key and response",
+   "pass": true,
+   "detail": 3.4711493927340555
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_water_sl source rate rescaling",
+   "pass": true,
+   "detail": 2.4079014792618474
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_water_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_sewer_sl declared stock",
+   "pass": true,
+   "detail": 1224.8960000000002
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_sewer_sl engine key and response",
+   "pass": true,
+   "detail": 4.64197090830346
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_sewer_sl source rate rescaling",
+   "pass": true,
+   "detail": 3.2200886081686217
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_sewer_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_tolls_sl declared stock",
+   "pass": true,
+   "detail": 501.1837272292877
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_tolls_sl engine key and response",
+   "pass": true,
+   "detail": 1.8993288258868095
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_tolls_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.317545334992129
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_tolls_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_power_fed declared stock",
+   "pass": true,
+   "detail": 27.6655
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_power_fed engine key and response",
+   "pass": true,
+   "detail": 0.10484355093303378
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_power_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.07272891852801298
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_power_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_other_sl declared stock",
+   "pass": true,
+   "detail": 75.4805887275022
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_other_sl engine key and response",
+   "pass": true,
+   "detail": 0.2860477110013284
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_other_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.19842842486161327
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_other_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_other_fed declared stock",
+   "pass": true,
+   "detail": 56.71180600256709
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_other_fed engine key and response",
+   "pass": true,
+   "detail": 0.2149199226883473
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_other_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.14908779231668248
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/ent_other_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/k12_user_fees declared stock",
+   "pass": true,
+   "detail": 2723.9194975692117
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/k12_user_fees engine key and response",
+   "pass": true,
+   "detail": 0.7969885525766468
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/k12_user_fees source rate rescaling",
+   "pass": true,
+   "detail": 0.5528629562072833
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/k12_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 32
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/college_user_fees declared stock",
+   "pass": true,
+   "detail": 1198.387599270317
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/college_user_fees engine key and response",
+   "pass": true,
+   "detail": -1.3858844295702362
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/college_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.9613741128611243
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/college_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 32
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_sl_user_fees declared stock",
+   "pass": true,
+   "detail": 365.979
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_sl_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.022835838376144127
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_sl_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.015840991782491893
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_sl_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_fed_user_fees declared stock",
+   "pass": true,
+   "detail": 106.019
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_fed_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.006615223137940767
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_fed_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.0045889138660633755
+  },
+  {
+   "name": "b_hotdeck_union_matched/high/health_fed_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_hotdeck_union_matched/high complete capital response from 7pct arm",
+   "pass": true,
+   "detail": {
+    "rebuilt": 44.61734727504136,
+    "from7": 44.617347275041425
+   }
+  },
+  {
+   "name": "b_matched_over_pooled/low specification",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_matched_over_pooled/low/k12 declared stock",
+   "pass": true,
+   "detail": 2723.9194975692117
+  },
+  {
+   "name": "b_matched_over_pooled/low/k12 engine key and response",
+   "pass": true,
+   "detail": 9.655717749309952
+  },
+  {
+   "name": "b_matched_over_pooled/low/k12 source rate rescaling",
+   "pass": true,
+   "detail": 10.047111671669683
+  },
+  {
+   "name": "b_matched_over_pooled/low/k12 own parts at case rate",
+   "pass": true,
+   "detail": 84
+  },
+  {
+   "name": "b_matched_over_pooled/low/college declared stock",
+   "pass": true,
+   "detail": 1198.387599270317
+  },
+  {
+   "name": "b_matched_over_pooled/low/college engine key and response",
+   "pass": true,
+   "detail": 4.138354827735181
+  },
+  {
+   "name": "b_matched_over_pooled/low/college source rate rescaling",
+   "pass": true,
+   "detail": 4.3061027849763045
+  },
+  {
+   "name": "b_matched_over_pooled/low/college own parts at case rate",
+   "pass": true,
+   "detail": 84
+  },
+  {
+   "name": "b_matched_over_pooled/low/pos_sl declared stock",
+   "pass": true,
+   "detail": 289.47299999999996
+  },
+  {
+   "name": "b_matched_over_pooled/low/pos_sl engine key and response",
+   "pass": true,
+   "detail": 0.8287090844569567
+  },
+  {
+   "name": "b_matched_over_pooled/low/pos_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.8623007559910516
+  },
+  {
+   "name": "b_matched_over_pooled/low/pos_sl own parts at case rate",
+   "pass": true,
+   "detail": 36
+  },
+  {
+   "name": "b_matched_over_pooled/low/pos_fed declared stock",
+   "pass": true,
+   "detail": 110.2
+  },
+  {
+   "name": "b_matched_over_pooled/low/pos_fed engine key and response",
+   "pass": true,
+   "detail": 0.3154827604203385
+  },
+  {
+   "name": "b_matched_over_pooled/low/pos_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.32827083462089346
+  },
+  {
+   "name": "b_matched_over_pooled/low/pos_fed own parts at case rate",
+   "pass": true,
+   "detail": 36
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_sl declared stock",
+   "pass": true,
+   "detail": 365.979
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_sl engine key and response",
+   "pass": true,
+   "detail": 0.45968633330237024
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.4783196904196322
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_sl own parts at case rate",
+   "pass": true,
+   "detail": 52
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_fed declared stock",
+   "pass": true,
+   "detail": 106.019
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_fed engine key and response",
+   "pass": true,
+   "detail": 0.13316470445130454
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.1385625275182428
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/gps_sl declared stock",
+   "pass": true,
+   "detail": 1292.9385000000002
+  },
+  {
+   "name": "b_matched_over_pooled/low/gps_sl engine key and response",
+   "pass": true,
+   "detail": 1.9616525205674615
+  },
+  {
+   "name": "b_matched_over_pooled/low/gps_sl source rate rescaling",
+   "pass": true,
+   "detail": 2.0411679842818624
+  },
+  {
+   "name": "b_matched_over_pooled/low/gps_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/gps_fed declared stock",
+   "pass": true,
+   "detail": 152.17000000000002
+  },
+  {
+   "name": "b_matched_over_pooled/low/gps_fed engine key and response",
+   "pass": true,
+   "detail": 0.2308730570361627
+  },
+  {
+   "name": "b_matched_over_pooled/low/gps_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.24023148213791373
+  },
+  {
+   "name": "b_matched_over_pooled/low/gps_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/hwy_sl declared stock",
+   "pass": true,
+   "detail": 4388.9962727707125
+  },
+  {
+   "name": "b_matched_over_pooled/low/hwy_sl engine key and response",
+   "pass": true,
+   "detail": 6.692032336587236
+  },
+  {
+   "name": "b_matched_over_pooled/low/hwy_sl source rate rescaling",
+   "pass": true,
+   "detail": 6.963293453862771
+  },
+  {
+   "name": "b_matched_over_pooled/low/hwy_sl own parts at case rate",
+   "pass": true,
+   "detail": 68
+  },
+  {
+   "name": "b_matched_over_pooled/low/rec_sl declared stock",
+   "pass": true,
+   "detail": 425.0824916531727
+  },
+  {
+   "name": "b_matched_over_pooled/low/rec_sl engine key and response",
+   "pass": true,
+   "detail": 1.0218507177772476
+  },
+  {
+   "name": "b_matched_over_pooled/low/rec_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.063271373484124
+  },
+  {
+   "name": "b_matched_over_pooled/low/rec_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/hwy_fed declared stock",
+   "pass": true,
+   "detail": 54.573499999999996
+  },
+  {
+   "name": "b_matched_over_pooled/low/hwy_fed engine key and response",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/hwy_fed source rate rescaling",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/hwy_fed own parts at case rate",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/air_fed declared stock",
+   "pass": true,
+   "detail": 35.406
+  },
+  {
+   "name": "b_matched_over_pooled/low/air_fed engine key and response",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/air_fed source rate rescaling",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/air_fed own parts at case rate",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/rec_fed declared stock",
+   "pass": true,
+   "detail": 41.8305
+  },
+  {
+   "name": "b_matched_over_pooled/low/rec_fed engine key and response",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/rec_fed source rate rescaling",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/rec_fed own parts at case rate",
+   "pass": true,
+   "detail": 0
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_housing_sl declared stock",
+   "pass": true,
+   "detail": 420.402
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_housing_sl engine key and response",
+   "pass": true,
+   "detail": 0.6974945307896636
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_housing_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.725767428498354
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_housing_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_transit_sl declared stock",
+   "pass": true,
+   "detail": 505.7986332941459
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_transit_sl engine key and response",
+   "pass": true,
+   "detail": 1.2778785797385108
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_transit_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.3296773090105092
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_transit_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_airports_sl declared stock",
+   "pass": true,
+   "detail": 595.8142303973117
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_airports_sl engine key and response",
+   "pass": true,
+   "detail": 1.505299129753348
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_airports_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.5663163369683122
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_airports_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_ports_sl declared stock",
+   "pass": true,
+   "detail": 94.43351434918577
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_ports_sl engine key and response",
+   "pass": true,
+   "detail": 0.23858222868323928
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_ports_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.2482531445813694
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_ports_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_power_sl declared stock",
+   "pass": true,
+   "detail": 542.057
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_power_sl engine key and response",
+   "pass": true,
+   "detail": 1.3694837899937347
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_power_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.4249957308033159
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_power_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_water_sl declared stock",
+   "pass": true,
+   "detail": 915.9465
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_water_sl engine key and response",
+   "pass": true,
+   "detail": 2.3140995951560375
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_water_sl source rate rescaling",
+   "pass": true,
+   "detail": 2.407901479261848
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_water_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_sewer_sl declared stock",
+   "pass": true,
+   "detail": 1224.8960000000002
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_sewer_sl engine key and response",
+   "pass": true,
+   "detail": 3.0946472722023066
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_sewer_sl source rate rescaling",
+   "pass": true,
+   "detail": 3.2200886081686217
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_sewer_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_tolls_sl declared stock",
+   "pass": true,
+   "detail": 501.1837272292877
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_tolls_sl engine key and response",
+   "pass": true,
+   "detail": 1.266219217257873
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_tolls_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.317545334992129
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_tolls_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_power_fed declared stock",
+   "pass": true,
+   "detail": 27.6655
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_power_fed engine key and response",
+   "pass": true,
+   "detail": 0.06989570062202252
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_power_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.07272891852801297
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_power_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_other_sl declared stock",
+   "pass": true,
+   "detail": 75.4805887275022
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_other_sl engine key and response",
+   "pass": true,
+   "detail": 0.1906984740008856
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_other_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.19842842486161327
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_other_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_other_fed declared stock",
+   "pass": true,
+   "detail": 56.71180600256709
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_other_fed engine key and response",
+   "pass": true,
+   "detail": 0.14327994845889822
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_other_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.14908779231668245
+  },
+  {
+   "name": "b_matched_over_pooled/low/ent_other_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/low/k12_user_fees declared stock",
+   "pass": true,
+   "detail": 2723.9194975692117
+  },
+  {
+   "name": "b_matched_over_pooled/low/k12_user_fees engine key and response",
+   "pass": true,
+   "detail": 0.5313257017177646
+  },
+  {
+   "name": "b_matched_over_pooled/low/k12_user_fees source rate rescaling",
+   "pass": true,
+   "detail": 0.5528629562072833
+  },
+  {
+   "name": "b_matched_over_pooled/low/k12_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 32
+  },
+  {
+   "name": "b_matched_over_pooled/low/college_user_fees declared stock",
+   "pass": true,
+   "detail": 1198.387599270317
+  },
+  {
+   "name": "b_matched_over_pooled/low/college_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.9239229530468241
+  },
+  {
+   "name": "b_matched_over_pooled/low/college_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.9613741128611243
+  },
+  {
+   "name": "b_matched_over_pooled/low/college_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 32
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_sl_user_fees declared stock",
+   "pass": true,
+   "detail": 365.979
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_sl_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.015223892250762752
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_sl_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.015840991782491893
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_sl_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_fed_user_fees declared stock",
+   "pass": true,
+   "detail": 106.019
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_fed_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.0044101487586271785
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_fed_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.0045889138660633755
+  },
+  {
+   "name": "b_matched_over_pooled/low/health_fed_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_matched_over_pooled/low complete capital response from 7pct arm",
+   "pass": true,
+   "detail": {
+    "rebuilt": 40.685970232119054,
+    "from7": 40.68597023211908
+   }
+  },
+  {
+   "name": "b_matched_over_pooled/high specification",
+   "pass": true,
+   "detail": 11
+  },
+  {
+   "name": "b_matched_over_pooled/high/k12 declared stock",
+   "pass": true,
+   "detail": 2723.9194975692117
+  },
+  {
+   "name": "b_matched_over_pooled/high/k12 engine key and response",
+   "pass": true,
+   "detail": 14.483576623964927
+  },
+  {
+   "name": "b_matched_over_pooled/high/k12 source rate rescaling",
+   "pass": true,
+   "detail": 10.047111671669683
+  },
+  {
+   "name": "b_matched_over_pooled/high/k12 own parts at case rate",
+   "pass": true,
+   "detail": 84
+  },
+  {
+   "name": "b_matched_over_pooled/high/college declared stock",
+   "pass": true,
+   "detail": 1198.387599270317
+  },
+  {
+   "name": "b_matched_over_pooled/high/college engine key and response",
+   "pass": true,
+   "detail": 6.207532241602771
+  },
+  {
+   "name": "b_matched_over_pooled/high/college source rate rescaling",
+   "pass": true,
+   "detail": 4.3061027849763045
+  },
+  {
+   "name": "b_matched_over_pooled/high/college own parts at case rate",
+   "pass": true,
+   "detail": 84
+  },
+  {
+   "name": "b_matched_over_pooled/high/pos_sl declared stock",
+   "pass": true,
+   "detail": 289.47299999999996
+  },
+  {
+   "name": "b_matched_over_pooled/high/pos_sl engine key and response",
+   "pass": true,
+   "detail": 1.2430636266854351
+  },
+  {
+   "name": "b_matched_over_pooled/high/pos_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.8623007559910516
+  },
+  {
+   "name": "b_matched_over_pooled/high/pos_sl own parts at case rate",
+   "pass": true,
+   "detail": 36
+  },
+  {
+   "name": "b_matched_over_pooled/high/pos_fed declared stock",
+   "pass": true,
+   "detail": 110.2
+  },
+  {
+   "name": "b_matched_over_pooled/high/pos_fed engine key and response",
+   "pass": true,
+   "detail": 0.4732241406305077
+  },
+  {
+   "name": "b_matched_over_pooled/high/pos_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.32827083462089346
+  },
+  {
+   "name": "b_matched_over_pooled/high/pos_fed own parts at case rate",
+   "pass": true,
+   "detail": 36
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_sl declared stock",
+   "pass": true,
+   "detail": 365.979
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_sl engine key and response",
+   "pass": true,
+   "detail": 0.6895294999535553
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.4783196904196322
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_sl own parts at case rate",
+   "pass": true,
+   "detail": 52
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_fed declared stock",
+   "pass": true,
+   "detail": 106.019
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_fed engine key and response",
+   "pass": true,
+   "detail": 0.19974705667695683
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.1385625275182428
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/gps_sl declared stock",
+   "pass": true,
+   "detail": 1292.9385000000002
+  },
+  {
+   "name": "b_matched_over_pooled/high/gps_sl engine key and response",
+   "pass": true,
+   "detail": 4.170020259254353
+  },
+  {
+   "name": "b_matched_over_pooled/high/gps_sl source rate rescaling",
+   "pass": true,
+   "detail": 2.8927011818703723
+  },
+  {
+   "name": "b_matched_over_pooled/high/gps_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/gps_fed declared stock",
+   "pass": true,
+   "detail": 152.17000000000002
+  },
+  {
+   "name": "b_matched_over_pooled/high/gps_fed engine key and response",
+   "pass": true,
+   "detail": 0.49078280432575483
+  },
+  {
+   "name": "b_matched_over_pooled/high/gps_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.3404511033163717
+  },
+  {
+   "name": "b_matched_over_pooled/high/gps_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/hwy_sl declared stock",
+   "pass": true,
+   "detail": 4388.9962727707125
+  },
+  {
+   "name": "b_matched_over_pooled/high/hwy_sl engine key and response",
+   "pass": true,
+   "detail": 13.561299014149526
+  },
+  {
+   "name": "b_matched_over_pooled/high/hwy_sl source rate rescaling",
+   "pass": true,
+   "detail": 9.407336954507363
+  },
+  {
+   "name": "b_matched_over_pooled/high/hwy_sl own parts at case rate",
+   "pass": true,
+   "detail": 68
+  },
+  {
+   "name": "b_matched_over_pooled/high/rec_sl declared stock",
+   "pass": true,
+   "detail": 425.0824916531727
+  },
+  {
+   "name": "b_matched_over_pooled/high/rec_sl engine key and response",
+   "pass": true,
+   "detail": 1.61092905829588
+  },
+  {
+   "name": "b_matched_over_pooled/high/rec_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.1174853120917614
+  },
+  {
+   "name": "b_matched_over_pooled/high/rec_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/hwy_fed declared stock",
+   "pass": true,
+   "detail": 54.573499999999996
+  },
+  {
+   "name": "b_matched_over_pooled/high/hwy_fed engine key and response",
+   "pass": true,
+   "detail": 0.16862341769123493
+  },
+  {
+   "name": "b_matched_over_pooled/high/hwy_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.11697237167228461
+  },
+  {
+   "name": "b_matched_over_pooled/high/hwy_fed own parts at case rate",
+   "pass": true,
+   "detail": 68
+  },
+  {
+   "name": "b_matched_over_pooled/high/air_fed declared stock",
+   "pass": true,
+   "detail": 35.406
+  },
+  {
+   "name": "b_matched_over_pooled/high/air_fed engine key and response",
+   "pass": true,
+   "detail": 0.09306660557851984
+  },
+  {
+   "name": "b_matched_over_pooled/high/air_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.064559369790157
+  },
+  {
+   "name": "b_matched_over_pooled/high/air_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/rec_fed declared stock",
+   "pass": true,
+   "detail": 41.8305
+  },
+  {
+   "name": "b_matched_over_pooled/high/rec_fed engine key and response",
+   "pass": true,
+   "detail": 0.15852444948032912
+  },
+  {
+   "name": "b_matched_over_pooled/high/rec_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.10996681883005878
+  },
+  {
+   "name": "b_matched_over_pooled/high/rec_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_housing_sl declared stock",
+   "pass": true,
+   "detail": 420.402
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_housing_sl engine key and response",
+   "pass": true,
+   "detail": 1.0462417961844954
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_housing_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.7257674284983541
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_housing_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_transit_sl declared stock",
+   "pass": true,
+   "detail": 505.7986332941459
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_transit_sl engine key and response",
+   "pass": true,
+   "detail": 1.916817869607766
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_transit_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.3296773090105094
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_transit_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_airports_sl declared stock",
+   "pass": true,
+   "detail": 595.8142303973117
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_airports_sl engine key and response",
+   "pass": true,
+   "detail": 2.257948694630022
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_airports_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.566316336968312
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_airports_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_ports_sl declared stock",
+   "pass": true,
+   "detail": 94.43351434918577
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_ports_sl engine key and response",
+   "pass": true,
+   "detail": 0.3578733430248589
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_ports_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.24825314458136943
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_ports_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_power_sl declared stock",
+   "pass": true,
+   "detail": 542.057
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_power_sl engine key and response",
+   "pass": true,
+   "detail": 2.0542256849906018
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_power_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.4249957308033159
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_power_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_water_sl declared stock",
+   "pass": true,
+   "detail": 915.9465
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_water_sl engine key and response",
+   "pass": true,
+   "detail": 3.4711493927340555
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_water_sl source rate rescaling",
+   "pass": true,
+   "detail": 2.4079014792618474
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_water_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_sewer_sl declared stock",
+   "pass": true,
+   "detail": 1224.8960000000002
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_sewer_sl engine key and response",
+   "pass": true,
+   "detail": 4.64197090830346
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_sewer_sl source rate rescaling",
+   "pass": true,
+   "detail": 3.2200886081686217
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_sewer_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_tolls_sl declared stock",
+   "pass": true,
+   "detail": 501.1837272292877
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_tolls_sl engine key and response",
+   "pass": true,
+   "detail": 1.8993288258868095
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_tolls_sl source rate rescaling",
+   "pass": true,
+   "detail": 1.317545334992129
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_tolls_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_power_fed declared stock",
+   "pass": true,
+   "detail": 27.6655
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_power_fed engine key and response",
+   "pass": true,
+   "detail": 0.10484355093303378
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_power_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.07272891852801298
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_power_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_other_sl declared stock",
+   "pass": true,
+   "detail": 75.4805887275022
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_other_sl engine key and response",
+   "pass": true,
+   "detail": 0.2860477110013284
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_other_sl source rate rescaling",
+   "pass": true,
+   "detail": 0.19842842486161327
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_other_sl own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_other_fed declared stock",
+   "pass": true,
+   "detail": 56.71180600256709
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_other_fed engine key and response",
+   "pass": true,
+   "detail": 0.2149199226883473
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_other_fed source rate rescaling",
+   "pass": true,
+   "detail": 0.14908779231668248
+  },
+  {
+   "name": "b_matched_over_pooled/high/ent_other_fed own parts at case rate",
+   "pass": true,
+   "detail": 20
+  },
+  {
+   "name": "b_matched_over_pooled/high/k12_user_fees declared stock",
+   "pass": true,
+   "detail": 2723.9194975692117
+  },
+  {
+   "name": "b_matched_over_pooled/high/k12_user_fees engine key and response",
+   "pass": true,
+   "detail": 0.7969885525766468
+  },
+  {
+   "name": "b_matched_over_pooled/high/k12_user_fees source rate rescaling",
+   "pass": true,
+   "detail": 0.5528629562072833
+  },
+  {
+   "name": "b_matched_over_pooled/high/k12_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 32
+  },
+  {
+   "name": "b_matched_over_pooled/high/college_user_fees declared stock",
+   "pass": true,
+   "detail": 1198.387599270317
+  },
+  {
+   "name": "b_matched_over_pooled/high/college_user_fees engine key and response",
+   "pass": true,
+   "detail": -1.3858844295702362
+  },
+  {
+   "name": "b_matched_over_pooled/high/college_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.9613741128611243
+  },
+  {
+   "name": "b_matched_over_pooled/high/college_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 32
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_sl_user_fees declared stock",
+   "pass": true,
+   "detail": 365.979
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_sl_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.022835838376144127
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_sl_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.015840991782491893
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_sl_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_fed_user_fees declared stock",
+   "pass": true,
+   "detail": 106.019
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_fed_user_fees engine key and response",
+   "pass": true,
+   "detail": -0.006615223137940767
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_fed_user_fees source rate rescaling",
+   "pass": true,
+   "detail": -0.0045889138660633755
+  },
+  {
+   "name": "b_matched_over_pooled/high/health_fed_user_fees own parts at case rate",
+   "pass": true,
+   "detail": 16
+  },
+  {
+   "name": "b_matched_over_pooled/high complete capital response from 7pct arm",
+   "pass": true,
+   "detail": {
+    "rebuilt": 44.62935085396036,
+    "from7": 44.62935085396041
+   }
+  }
+ ]
+}

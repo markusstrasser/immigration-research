@@ -1,0 +1,493 @@
+{
+  "airport": {
+    "acreage_missing": 230,
+    "acreage_recorded": 3787,
+    "footprint_coverage": 0.9427433408015933,
+    "limitation": "FAA acreage belongs to the whole airport; price at reference point, no within-airport land-price weighting; civil PU ownership does not separate all federal owners",
+    "universe": 4017
+  },
+  "case_key": "oct16",
+  "case_rate": 0.020810698764237804,
+  "complete_total_bn": null,
+  "facility_overlap": {
+    "dissolved_sites": 3027,
+    "overlap_pairs": 43,
+    "raw_accepted_sites": 3065
+  },
+  "headline_band_bn": [
+    368.02973917888073,
+    436.56152715403437
+  ],
+  "overlap_limit": "Same-line facility/PAD overlaps removed. Road easements, utility corridors, and cross-class school/park/facility overlap unresolved; subtotal not a national ownership census or strict lower bound.",
+  "ownership_and_matching": [
+    {
+      "accepted_public_sites": 0,
+      "facility_class": "airport",
+      "map_records": 6492,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 5392
+    },
+    {
+      "accepted_public_sites": 1774,
+      "facility_class": "college",
+      "map_records": 6354,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 1945,
+      "public_universe_match_rate": 0.803598971722365,
+      "public_universe_matches": 1563,
+      "unknown_ownership_sites": 5749
+    },
+    {
+      "accepted_public_sites": 4,
+      "facility_class": "government",
+      "map_records": 84,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 80
+    },
+    {
+      "accepted_public_sites": 1203,
+      "facility_class": "health",
+      "map_records": 8092,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 1329,
+      "public_universe_match_rate": 0.7727614747930776,
+      "public_universe_matches": 1027,
+      "unknown_ownership_sites": 6522
+    },
+    {
+      "accepted_public_sites": 37,
+      "facility_class": "housing",
+      "map_records": 272,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 5889,
+      "public_universe_match_rate": 0.0010188487009679063,
+      "public_universe_matches": 6,
+      "unknown_ownership_sites": 224
+    },
+    {
+      "accepted_public_sites": 0,
+      "facility_class": "institutional_unclassified",
+      "map_records": 692,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 684
+    },
+    {
+      "accepted_public_sites": 4,
+      "facility_class": "port",
+      "map_records": 1288,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 1283
+    },
+    {
+      "accepted_public_sites": 10,
+      "facility_class": "power",
+      "map_records": 92912,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 92896
+    },
+    {
+      "accepted_public_sites": 4,
+      "facility_class": "public_safety",
+      "map_records": 43,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 39
+    },
+    {
+      "accepted_public_sites": 0,
+      "facility_class": "railway_unclassified",
+      "map_records": 8022,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 8019
+    },
+    {
+      "accepted_public_sites": 9,
+      "facility_class": "sewer",
+      "map_records": 518,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 509
+    },
+    {
+      "accepted_public_sites": 0,
+      "facility_class": "toll",
+      "map_records": 862,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 861
+    },
+    {
+      "accepted_public_sites": 5,
+      "facility_class": "transit",
+      "map_records": 2259,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 2254
+    },
+    {
+      "accepted_public_sites": 15,
+      "facility_class": "water",
+      "map_records": 12348,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 12333
+    },
+    {
+      "accepted_public_sites": 0,
+      "facility_class": "works_unclassified",
+      "map_records": 5974,
+      "national_completeness": "not identified; no area expansion for unmapped sites",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 5974
+    },
+    {
+      "accepted_public_sites": 3787,
+      "facility_class": "airport",
+      "map_records": 4017,
+      "national_completeness": "230 missing acreage; whole-airport reference-point pricing",
+      "public_universe": 4017,
+      "public_universe_match_rate": 0.9427433408015933,
+      "public_universe_matches": 3787,
+      "unknown_ownership_sites": 0
+    },
+    {
+      "accepted_public_sites": 72088,
+      "facility_class": "school",
+      "map_records": 98065,
+      "national_completeness": "source school lane imputes unmatched schools; school national estimate, not new estate coverage",
+      "public_universe": 98065,
+      "public_universe_match_rate": 0.735104267577627,
+      "public_universe_matches": 72088,
+      "unknown_ownership_sites": 0
+    },
+    {
+      "accepted_public_sites": 143741,
+      "facility_class": "park",
+      "map_records": 144003,
+      "national_completeness": "selected public-fee recreation designations only; raw tract intersection rate, overlaps removed before price",
+      "public_universe": 144003,
+      "public_universe_match_rate": 0.9981805934598584,
+      "public_universe_matches": 143741,
+      "unknown_ownership_sites": 0
+    },
+    {
+      "accepted_public_sites": 93214,
+      "facility_class": "highway",
+      "map_records": 93214,
+      "national_completeness": "714/714 official mileage cells; ROW acreage modeled; source ownership/scope exclusions retained",
+      "public_universe": 0,
+      "public_universe_match_rate": null,
+      "public_universe_matches": 0,
+      "unknown_ownership_sites": 0
+    }
+  ],
+  "paired_rate_note": "2.42% applied uniformly as requested; the source paired-theta model has different federal and state/local rates and an item-6 receipt leg, neither bundled here",
+  "paired_rate_requested": 0.0242,
+  "parks": {
+    "matched_sites": 143741,
+    "overlap_acres_removed": 808519.0966769923,
+    "overlap_rule": "subtract union of all earlier lexicographic source IDs within each tract; original site acreage determines B/C discounts",
+    "pieces": 178814,
+    "pricing_rule": "tract prices apply to intersected pieces, with source-site acreage retained for B/C discounts",
+    "raw_area_coverage": 0.9876814816976427,
+    "raw_intersected_acres": 17462035.297075972,
+    "site_count": 144003,
+    "source_geometry_acres": 17679824.53924513,
+    "union_intersected_acres": 16653516.20039898
+  },
+  "priced_records": 372524,
+  "road_scenarios_group_charge_bn": {
+    "high_C_0.1_mile_units": 16.96048905801474,
+    "high_C_10.0_mile_units": 1.0472429752989956,
+    "high_width_high": {
+      "A": 36.46953025549328,
+      "B": 23.705194666070636,
+      "C": 4.58149166463738
+    },
+    "high_width_low": {
+      "A": 25.09785373108969,
+      "B": 16.3136049252083,
+      "C": 3.9895958158681455
+    },
+    "low_C_0.1_mile_units": 11.949295880340165,
+    "low_C_10.0_mile_units": 0.7382207010225551,
+    "low_width_high": {
+      "A": 25.743407350785724,
+      "B": 16.733214778010716,
+      "C": 3.2243559615469866
+    },
+    "low_width_low": {
+      "A": 17.815764293667982,
+      "B": 11.580246790884187,
+      "C": 2.814397441085809
+    }
+  },
+  "roads": {
+    "account_scope_authorities": {
+      "federal_rule": "BEA FAAt701-A line49 k1gndef1sq00: federal NONDEFENSE highways; explicit military owners72/73/74 excluded; Army Corps70 retained",
+      "read_only_sources": [
+        {
+          "path": "public_land_2026_10_24/_cache/universes/scope_bea_tribal_gce2005.pdf",
+          "sha256": "0d2d6840e5559d032d3c3799e4f5613457d1a8b8ab0149f18fa8ff9b4252be14"
+        },
+        {
+          "path": "school_capital_return_2026_09_26/_cache/fa_Section7All_xls.xlsx",
+          "sha256": "e67f534560f111575d5314bab8fe4d62dd696c2e49f421eaa2fa73f25dea12ae"
+        }
+      ],
+      "tribal_rule": "BEA SCB October2005 printedp8: tribal governments treated as local; casinos as enterprises"
+    },
+    "all_public_owner_miles_including_explicit_defense": 4173765.2651999993,
+    "caveats": [
+      "Widths are typical design cross-sections transferred nationally; not measured or representative existing ROW widths.",
+      "No national confidence interval; low/high widths are design-template scenarios.",
+      "Toll ID includes managed-lane sections; assigning the entire section's ROW to tolls is a proxy and may overassign toll land.",
+      "No toll ID in the county summary: lower-class tolls identified only by toll authority ownership 31/32.",
+      "No calibration to HM-20; spatial gaps and overlaps can change county values.",
+      "1-mile unit for arm C (test 0.1 and 10 miles); HPMS dynamic-segmentation row length is not a land parcel.",
+      "Road, utility and park rights-of-way may overlap; easements cannot automatically be sold as fee-simple land.",
+      "Explicit military owners72/73/74 are excluded from the nondefense account; owner70 Army Corps retained. Alternatives retain their acreage.",
+      "Tribal owner50 is state/local for the BEA account, while HPMS ownership_level remains tribal. Land restrictions and federal trust interests remain unresolved.",
+      "Other federal owners include roads on public park lands; these are highway ROW only, not the full federal estate."
+    ],
+    "county_count_public": 3142,
+    "excluded_ownership_miles": {
+      "federal": 5769.1444,
+      "other_or_missing": 18324.4813,
+      "private": 16364.4829
+    },
+    "explicit_military_excluded_acres": 45768.94515151516,
+    "explicit_military_excluded_miles": 5769.1444,
+    "extracted_miles_all_owners": 4208454.2294,
+    "max_absolute_cell_difference_miles": 1.4551915228366852e-11,
+    "mileage_closure_cells": 714,
+    "national_mileage_coverage_ratio": 1.0,
+    "official_hm20_miles": 4208454.2294,
+    "owner_code_source": "HPMS Field Manual 2024, Ownership Item 6, printed pp.38-39; _cache/roads/hpms_field_manual2024.pdf",
+    "primary_owner_codes": {
+      "1": "State Highway Agency",
+      "11": "State Park, Forest, or Reservation Agency",
+      "12": "Local Park Forest, or Reservation Agency",
+      "2": "County Highway Agency",
+      "21": "Other State Agency",
+      "25": "Other Local Agency",
+      "26": "Private (other than Railroad)",
+      "27": "Railroad",
+      "3": "Town or Township Highway Agency",
+      "31": "State Toll Authority",
+      "32": "Local Toll Authority",
+      "4": "City or Municipal Highway Agency",
+      "40": "Other Public Instrumentality (i.e. Airport)",
+      "50": "Indian Tribe Nation",
+      "60": "Other Federal Agency",
+      "62": "Bureau of Indian Affairs",
+      "63": "Bureau of Fish and Wildlife",
+      "64": "U.S. Forest Service",
+      "66": "National Park Service",
+      "67": "Tennessee Valley Authority",
+      "68": "Bureau of Land Management",
+      "69": "Bureau of Reclamation",
+      "70": "U.S. Army Corps of Engineers",
+      "72": "U.S. Air Force",
+      "73": "U.S. Navy/Marines",
+      "74": "U.S. Army",
+      "80": "Other"
+    },
+    "public_acres_width_central": 43998956.22393939,
+    "public_acres_width_high": 52568631.45478788,
+    "public_acres_width_low": 34468404.732363634,
+    "public_miles_used": 4167996.1207999997,
+    "status": "design-width scenario; mileage measured; no national observed ROW acreage",
+    "tribal_included_acres": 173022.28818181818,
+    "tribal_included_miles": 17289.1497,
+    "unknown_county_public_miles": 96.44229999999999,
+    "width_parameters_ft_low_central_high": {
+      "rural_2_lane_arterial_collector": [
+        100.0,
+        125.0,
+        150.0
+      ],
+      "rural_4_lane_arterial_collector": [
+        150.0,
+        200.0,
+        250.0
+      ],
+      "rural_freeway": [
+        250.0,
+        275.0,
+        300.0
+      ],
+      "rural_local": [
+        60.0,
+        80.0,
+        100.0
+      ],
+      "urban_arterial": [
+        100.0,
+        125.0,
+        150.0
+      ],
+      "urban_collector": [
+        40.0,
+        50.0,
+        60.0
+      ],
+      "urban_freeway": [
+        150.0,
+        175.0,
+        200.0
+      ],
+      "urban_local": [
+        41.0,
+        50.0,
+        50.0
+      ]
+    },
+    "width_sources": {
+      "other_classes": "NCDOT Roadway Design Manual chapter 9 pp.9-1 and 9-1 continued (revisions 2007/2017), supplement to the FHWA/AASHTO templates",
+      "urban_local_collector": "FHWA/ITE Traffic Calming: State of the Practice (1999), Tables 10.5 and 10.6, printed pages 190 and 193; AASHTO columns; 41 ft urban-local lower scenario from DelDOT column"
+    }
+  },
+  "school_input_reproduction": {
+    "A": {
+      "reproduced_bn": 3.995909156724036,
+      "source_bn": 3.995909156724036
+    },
+    "B": {
+      "reproduced_bn": 2.6051560812631225,
+      "source_bn": 2.6051560812631225
+    },
+    "C": {
+      "reproduced_bn": 0.3791373807092807,
+      "source_bn": 0.3791373807092807
+    }
+  },
+  "status": "[DEGRADED] Complete public-land total not identified; mapped/design-scenario subtotal only; beside adopted case",
+  "top10_county_share_B": 0.30462925078748626,
+  "totals": {
+    "high_A": {
+      "complete_total_bn": null,
+      "mapped_charge_242pct_bn": 70.79181383389742,
+      "mapped_charge_7pct_bn": 204.76970943689338,
+      "mapped_charge_case_bn": 60.87715341616701,
+      "mapped_national_value_bn": 23921.115369363237,
+      "paired_share_of_adopted_headline": 0.13944690411229801,
+      "share_of_adopted_headline": [
+        0.16541367975313997,
+        0.13944690411229801
+      ]
+    },
+    "high_B": {
+      "complete_total_bn": null,
+      "mapped_charge_242pct_bn": 46.05639132276241,
+      "mapped_charge_7pct_bn": 133.22096663608963,
+      "mapped_charge_case_bn": 39.60602008206051,
+      "mapped_national_value_bn": 15562.650467129304,
+      "paired_share_of_adopted_headline": 0.09072265332278376,
+      "share_of_adopted_headline": [
+        0.10761635777159306,
+        0.09072265332278376
+      ]
+    },
+    "high_C": {
+      "complete_total_bn": null,
+      "mapped_charge_242pct_bn": 6.224461469720132,
+      "mapped_charge_7pct_bn": 18.004640614892942,
+      "mapped_charge_case_bn": 5.352702174212833,
+      "mapped_national_value_bn": 2227.7139660207304,
+      "paired_share_of_adopted_headline": 0.01226104876695699,
+      "share_of_adopted_headline": [
+        0.014544210981849905,
+        0.01226104876695699
+      ]
+    },
+    "low_A": {
+      "complete_total_bn": null,
+      "mapped_charge_242pct_bn": 58.85363257009611,
+      "mapped_charge_7pct_bn": 170.237780161435,
+      "mapped_charge_case_bn": 50.61095944617375,
+      "mapped_national_value_bn": 23921.115369363237,
+      "paired_share_of_adopted_headline": 0.13751866780954436,
+      "share_of_adopted_headline": [
+        0.13751866780954436,
+        0.11593087411093926
+      ]
+    },
+    "low_B": {
+      "complete_total_bn": null,
+      "mapped_charge_242pct_bn": 38.295039650523144,
+      "mapped_charge_7pct_bn": 110.77077584862067,
+      "mapped_charge_case_bn": 32.93167497237933,
+      "mapped_national_value_bn": 15562.650467129304,
+      "paired_share_of_adopted_headline": 0.08948101597945295,
+      "share_of_adopted_headline": [
+        0.08948101597945295,
+        0.07543421241689001
+      ]
+    },
+    "low_C": {
+      "complete_total_bn": null,
+      "mapped_charge_242pct_bn": 4.6989749509604355,
+      "mapped_charge_7pct_bn": 13.592076304431012,
+      "mapped_charge_case_bn": 4.040865793600691,
+      "mapped_national_value_bn": 2227.7139660207304,
+      "paired_share_of_adopted_headline": 0.010979726265101174,
+      "share_of_adopted_headline": [
+        0.010979726265101174,
+        0.009256119795858535
+      ]
+    }
+  },
+  "unpriced_acres": 12727.78454371362,
+  "unpriced_records": 4383,
+  "variants": {
+    "high_A_without_manhattan_sf_dc": 57.41213606910913,
+    "high_A_without_park_instrumentality_roads": 60.72891504746637,
+    "high_A_without_state_price_fallback": 54.110691440350685,
+    "high_B_without_manhattan_sf_dc": 37.340528136982265,
+    "high_B_without_park_instrumentality_roads": 39.50966514240509,
+    "high_B_without_state_price_fallback": 35.207737134773026,
+    "high_C_without_manhattan_sf_dc": 5.114868951456496,
+    "high_C_without_park_instrumentality_roads": 5.332069452590703,
+    "high_C_without_state_price_fallback": 4.695657447377326,
+    "low_A_without_manhattan_sf_dc": 47.722851638778806,
+    "low_A_without_park_instrumentality_roads": 50.50114481100133,
+    "low_A_without_state_price_fallback": 45.40049234976775,
+    "low_B_without_manhattan_sf_dc": 31.041590546408585,
+    "low_B_without_park_instrumentality_roads": 32.86029545951725,
+    "low_B_without_state_price_fallback": 29.544791441586618,
+    "low_C_without_manhattan_sf_dc": 3.8454806145168106,
+    "low_C_without_park_instrumentality_roads": 4.025585946276844,
+    "low_C_without_state_price_fallback": 3.5822243249824006
+  }
+}

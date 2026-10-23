@@ -1,0 +1,54 @@
+{
+  "overture": {
+    "coverage_limit": "OSM footprints are an incomplete volunteer map, not a complete facility universe",
+    "overlap_policy": "stable IDs retained for authoritative point matching; a facility is priced once after parent matches; unmatched acres never imputed",
+    "ownership_limit": "operator:type government is operating evidence, not a fee-title record; unknown is retained",
+    "release": "2026-10-21.0"
+  },
+  "padus": {
+    "api_generalization_max_degrees": 5e-05,
+    "count": 144003,
+    "designation_filter": [
+      "SP",
+      "SREC",
+      "LP",
+      "LREC",
+      "REC"
+    ],
+    "exact_duplicate_geometries": 1975,
+    "geometry_acres": 17679824.539244935,
+    "geometry_precision_degrees": 1e-05,
+    "invalid_source_geometries_repaired": 5710,
+    "overlap_policy": "unique OBJECTID; exact duplicate geometries flagged, all positive-area tract overlaps dissolved by stable source ID",
+    "ownership": "public fee (STAT/DIST/LOC/TRIB)",
+    "per_page_requests": "_cache/footprints/padus/requests.json",
+    "per_page_requests_sha256": "e7175057570bfc3a0b65382b400a89f08fa78ff8ff679d01dcd66ced640fb290",
+    "query_count": 144003,
+    "reported_acres_sum": 17515763,
+    "scope_limit": "state/local park designation does not identify only capital-bearing or saleable acres",
+    "tribal_fee_records": 3,
+    "tribal_request": "_cache/footprints/padus/tribal.geojson.request.json",
+    "zero_buffer_fallback_details": [
+      {
+        "name": "Bayshore Boulevard Greenway",
+        "objectid": 84437,
+        "raw_geometry_acres": 7.943324969030273,
+        "repaired_acres": 7.935769411074549,
+        "reported_acres": 8
+      }
+    ],
+    "zero_buffer_fallback_records": 1
+  },
+  "park_tract_split": {
+    "matched_sites": 143741,
+    "overlap_acres_removed": 808519.0966769923,
+    "overlap_rule": "subtract union of all earlier lexicographic source IDs within each tract; original site acreage determines B/C discounts",
+    "pieces": 178814,
+    "pricing_rule": "tract prices apply to intersected pieces, with source-site acreage retained for B/C discounts",
+    "raw_area_coverage": 0.9876814816976427,
+    "raw_intersected_acres": 17462035.297075972,
+    "site_count": 144003,
+    "source_geometry_acres": 17679824.53924513,
+    "union_intersected_acres": 16653516.20039898
+  }
+}

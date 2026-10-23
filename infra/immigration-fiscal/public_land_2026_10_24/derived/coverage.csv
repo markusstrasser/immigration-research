@@ -1,0 +1,20 @@
+facility_class,map_records,accepted_public_sites,unknown_ownership_sites,public_universe,public_universe_matches,public_universe_match_rate,national_completeness
+airport,6492,0,5392,0,0,,not identified; no area expansion for unmapped sites
+college,6354,1774,5749,1945,1563,0.803598971722,not identified; no area expansion for unmapped sites
+government,84,4,80,0,0,,not identified; no area expansion for unmapped sites
+health,8092,1203,6522,1329,1027,0.772761474793,not identified; no area expansion for unmapped sites
+housing,272,37,224,5889,6,0.00101884870097,not identified; no area expansion for unmapped sites
+institutional_unclassified,692,0,684,0,0,,not identified; no area expansion for unmapped sites
+port,1288,4,1283,0,0,,not identified; no area expansion for unmapped sites
+power,92912,10,92896,0,0,,not identified; no area expansion for unmapped sites
+public_safety,43,4,39,0,0,,not identified; no area expansion for unmapped sites
+railway_unclassified,8022,0,8019,0,0,,not identified; no area expansion for unmapped sites
+sewer,518,9,509,0,0,,not identified; no area expansion for unmapped sites
+toll,862,0,861,0,0,,not identified; no area expansion for unmapped sites
+transit,2259,5,2254,0,0,,not identified; no area expansion for unmapped sites
+water,12348,15,12333,0,0,,not identified; no area expansion for unmapped sites
+works_unclassified,5974,0,5974,0,0,,not identified; no area expansion for unmapped sites
+airport,4017,3787,0,4017,3787,0.942743340802,230 missing acreage; whole-airport reference-point pricing
+school,98065,72088,0,98065,72088,0.735104267578,"source school lane imputes unmatched schools; school national estimate, not new estate coverage"
+park,144003,143741,0,144003,143741,0.99818059346,"selected public-fee recreation designations only; raw tract intersection rate, overlaps removed before price"
+highway,93214,93214,0,0,0,,714/714 official mileage cells; ROW acreage modeled; source ownership/scope exclusions retained
