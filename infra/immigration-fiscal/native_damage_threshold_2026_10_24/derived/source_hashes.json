@@ -1,0 +1,38 @@
+[
+  {
+    "path": "infra/immigration-fiscal/live_case.json",
+    "sha256": "38984550688e14ed2b7b6186e05bf35a847790b155f228cc1e255227f8c2bf2b"
+  },
+  {
+    "path": "infra/immigration-fiscal/main_case_2026_10_16/derived/corrections.json",
+    "sha256": "4300b06c5db6c9ddca86e59538be66a7aa6cea71bdf4ca9c13625756a711f530"
+  },
+  {
+    "path": "infra/immigration-fiscal/main_case_2026_10_16/derived/summary.json",
+    "sha256": "0d48ffa601855c68722e1c1524c22615745ff36ef4789969923934aa6f0fc45a"
+  },
+  {
+    "path": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+    "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+  },
+  {
+    "path": "infra/immigration-fiscal/native_damage_threshold_2026_10_24/_cache/basis_bea_annual_2026.html",
+    "sha256": "62554fd0e29225117c63abd9e5b0cac49fb05f3963fda3efca9c15f45810f6a0"
+  },
+  {
+    "path": "infra/immigration-fiscal/world_ledger_2026_09_27/derived/readings_cash_oct16.csv",
+    "sha256": "4273d8f0087add70185cd099b5ccc906bd014d9a4a3530cc131bc339c2a88e56"
+  },
+  {
+    "path": "infra/immigration-fiscal/native_damage_threshold_2026_10_24/source_inputs.json",
+    "sha256": "c8143d502010dc4e136619ca06f67ab75e02c2ff332ca6470ab0064748cb2809"
+  },
+  {
+    "path": "infra/immigration-fiscal/native_damage_threshold_2026_10_24/derived/roots_inputs.json",
+    "sha256": "7115fcc6ed6319bab00702ed348f2ce466cb7bde689a22947bf943337ad729b0"
+  },
+  {
+    "path": "infra/immigration-fiscal/main_case_candidate_2026_09_28/derived/production_row4.json",
+    "sha256": "69839e58a9601363562c0884ae1f7ba9ed7c25086cb3eb545e181806704ac3ac"
+  }
+]

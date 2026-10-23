@@ -1,0 +1,106 @@
+{
+  "sign": "positive = harm from migration, negative = benefit; percentages divide by current native-output proxy",
+  "eligible_additional_causal_native_output_terms": [],
+  "empty_set_accounting_subtotal_pct": 0,
+  "total_omitted_damage_pct": null,
+  "total_omitted_damage_status": "not identified; the empty subtotal is not an estimate or bound on omitted effects",
+  "full_range_including_weaker_evidence_pct": null,
+  "full_range_status": "not identified; incomparable treatments, missing transfer functions, overlap, and no joint distribution",
+  "lewis_counted_g1_dose": {
+    "delta_ratio": 0.0371433041037105,
+    "conditional_pct_times_native_exposed_sector_share": 0.11149201850406971,
+    "coefficient_95_normal_range_times_sector_share": [
+      -1.622484703719719,
+      1.8760313674028546
+    ],
+    "sector_share_and_transport": "unmeasured; whole-economy application means setting sector share to one as an illustration"
+  },
+  "peri_counted_g1_stock_as_inflow": {
+    "inflow_over_initial_workers_proxy": 0.043094198879717,
+    "conditional_harm_pct": -3.7212826279292517,
+    "coefficient_95_normal_range_pct": [
+      -5.73300451473588,
+      -1.666629225919198
+    ],
+    "transport_status": "not an identified lineage or low-skill native effect"
+  },
+  "deep_roots_gap_bounds": [
+    0.04189690448197225,
+    0.05871311689987557
+  ],
+  "deep_roots_ecological_readings": {
+    "putterman_weil": {
+      "central_midpoint_of_missing_input_bounds_pct": 0.9644346160291698,
+      "source_input_coverage_only_range_pct": [
+        0.8025916005457101,
+        1.1265374776261556
+      ],
+      "coefficient_95_normal_and_source_coverage_envelope_pct": [
+        0.26905881807264015,
+        1.8814133272809528
+      ],
+      "envelope_is": "not an uncertainty interval for native output; excludes causal, lineage-ancestry, incidence, and date transport uncertainty",
+      "beta_needed_for_1pct_at_gap_midpoint": 1.2855006263336244
+    },
+    "briggeman": {
+      "central_midpoint_of_missing_input_bounds_pct": -0.12918171159013572,
+      "source_input_coverage_only_range_pct": [
+        -0.15075718512240885,
+        -0.10760157601892252
+      ],
+      "coefficient_95_normal_and_source_coverage_envelope_pct": [
+        -0.6850361461151229,
+        0.38639600546353575
+      ],
+      "envelope_is": "not an uncertainty interval for native output; excludes causal, lineage-ancestry, incidence, and date transport uncertainty",
+      "beta_needed_for_1pct_at_gap_midpoint": 1.2855006263336244
+    }
+  },
+  "clemens_pritchett_model_only": {
+    "phi_needed_for_1pct_current_output_loss": 0.07619047619047618,
+    "loss_per_pp_phi_near_zero_pct": 0.125,
+    "measured_phi_range": null,
+    "actual_lineage_native_output_effect_pct": null
+  },
+  "politics": {
+    "counted_g1_belowhs_adults_pp": 1.7427132309447662,
+    "counted_g1_hsplus_adults_pp": 2.2804588987644996,
+    "conditional_low_skill_only_vote_change_pp": 7.952000472800967,
+    "coefficient_95_normal_low_skill_only_vote_change_pp": [
+      4.717315590579768,
+      11.186685355022167
+    ],
+    "conditional_both_skill_arms_vote_change_pp": 4.481142028881399,
+    "both_arms_interval": null,
+    "vote_warning": "fixed-denominator counted-G1 composition illustration, not finite national removal or national election prediction; covariance absent for two-arm interval",
+    "extra_year15_episode_probability_for_1pct_loss": 0.099009900990099,
+    "probability_threshold_assumption": "Zero episode probability absent the group's contribution; fixed homogeneous 10-percent year15 output loss. A nonzero baseline changes this diagnostic.",
+    "measured_extra_episode_probability": null
+  },
+  "attention_gross_allocation_only": {
+    "mexico_mentions_low": {
+      "bn": 0.222418,
+      "pct_native_output": 0.0009045421504995796
+    },
+    "immigrant_stock_rule": {
+      "bn": 2.5578070000000004,
+      "pct_native_output": 0.010402234730745166
+    },
+    "unauthorized_stock_high": {
+      "bn": 5.004405,
+      "pct_native_output": 0.02035219838624054
+    }
+  },
+  "historical_scale_design_costs_only": {
+    "old_union_population": 40896574.15235156,
+    "harm_bn": [
+      109,
+      677
+    ],
+    "normalization_pct": [
+      0.4432873886306601,
+      2.7532620376418064
+    ],
+    "scope": "40.90M old-source calibration, not a repricing of the 44.90M lineage or native-only incidence; alternatives to existing scale row"
+  }
+}

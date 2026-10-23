@@ -1,0 +1,55 @@
+{
+  "lewis": {
+    "output_log_coefficient": -0.03,
+    "se": 0.24,
+    "source": "Lewis 2011 author manuscript, Table VII, PDF p44; reads/production.md",
+    "transport": "Counted Mexico-born contribution to the nationwide D/HS-equivalent ratio; proportional incidence and exposed-sector share are assumed, not identified."
+  },
+  "peri": {
+    "output_log_coefficient": 0.88,
+    "se": 0.25,
+    "source": "Peri 2012 published paper, Table 2, p352; reads/production.md",
+    "transport": "Treat counted current Mexico-born earners as a historical immigrant-worker inflow, applying the mixed-skill state coefficient nationally. Diagnostic only."
+  },
+  "putterman_weil": {
+    "log_gdp_coefficient": 1.24,
+    "se": 0.42,
+    "source": "Putterman-Weil October2009 revision, Table4 p34; reads/social_institutions.md",
+    "transport": "Assign 2000 Mexico ancestry-statehist to every 2024 lineage member and the 2000 US index to the observed whole-US mixture; all country-level covariance acts as a uniform native externality. These are unverified assumptions."
+  },
+  "briggeman": {
+    "log_gdp_coefficient": -0.167,
+    "se": 0.303,
+    "source": "Briggeman 2022 Table3 p92, population-weighted geographic-controls specification; reads/social_institutions.md",
+    "transport": "Same ecological plug-in as Putterman-Weil, using an alternative observational specification."
+  },
+  "clemens_pritchett": {
+    "mexico_initial_gap": 0.125,
+    "mexico_initial_gap_se": 0.00377,
+    "mexico_assimilation": 0.0282,
+    "mexico_assimilation_se": 0.00219,
+    "mexico_source_tfp_gap": 0.523,
+    "conservative_c_scenario": 0.5,
+    "source": "Clemens-Pritchett IZA dp9730, Eq3 p18; Table1 p35; reads/social_institutions.md",
+    "transport": "Threshold and derivative in the authors' model only. The 2024 lineage's unassimilated dynastic labor buffer phi is not measured."
+  },
+  "politics": {
+    "mayda_low_skill_vote_pp_per_share_pp": 4.563,
+    "mayda_low_skill_se": 0.947,
+    "mayda_high_skill_vote_pp_per_share_pp": -1.522,
+    "mayda_high_skill_se": 0.494,
+    "funke_year15_gdp_loss_fraction_scenario": 0.1,
+    "source": "Mayda-Peri-Steingress 2022 author proof II p6 (adults18+, low skill belowHS, high skill HS+) and Table5 p19; appendix TableA3 p45; Funke-Schularick-Trebesch AER2023 pp3269-3273; reads/politics_other_channels.md",
+    "transport": "Vote arithmetic is a stock-dose extrapolation, not a government-probability estimate. Funke's 0.10 is an approximate year15 graph, not a transport confidence bound."
+  },
+  "attention": {
+    "all_origin_gross_bn": 11.1209,
+    "attribution": {
+      "mexico_mentions_low": 0.02,
+      "immigrant_stock_rule": 0.23,
+      "unauthorized_stock_high": 0.45
+    },
+    "source": "Completed attention_cost_2026_10_21/derived/attention_cost.csv; FAQ21 attribution alternatives; reads/politics_other_channels.md",
+    "transport": "Reuse of gross spending under incompatible attribution conventions; not net lost GDP, not a causal low-skill share response."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "bea": {
+    "gdp_2024_bn": 29381.0,
+    "gdi_2024_bn": 29296.3,
+    "compensation_2024_bn": 15041.7,
+    "proprietors_2024_bn": 1916.0,
+    "source": "BEA September 2026 Annual Update, Tables 5 and 6, 2024 levels"
+  },
+  "cps": {
+    "national_frame": "published CPS ASEC 2025 civilian weights; income year 2024",
+    "case_dose_frame": "CPS with adopted row4 Mexico-born reweight; missed people not imputed",
+    "native_definition": "PRCITSHP in 1,2,3 (CPS native; includes born abroad to US parents)",
+    "native_labor_income_share": 0.8043832706143201,
+    "native_wages_share": 0.8047552169917759,
+    "native_property_income_share": 0.8777943565706215,
+    "population_civilian_published": 336727803.00001377,
+    "population_native_published": 283672179.878623,
+    "population_civilian_row4": 335543722.1788498,
+    "observable_union_row4": 39712493.33118789,
+    "mexborn_row4": 11036701.061391931,
+    "mexborn_case_with_coverage": 11482806.16892956,
+    "mexborn_adult25plus_noba_share_adults_pp": 3.8584722939064457,
+    "mexborn_adult25plus_hsless_share_adults_pp": 3.360514600499589,
+    "mexborn_adult18plus_noba_share_adults_pp": 3.591415542956447,
+    "mexborn_adult18plus_belowhs_share_adults_pp": 1.7427132309447662,
+    "mexborn_adult18plus_hsplus_share_adults_pp": 2.2804588987644996,
+    "mexborn_earners_share_earners_pp": 4.131381319731254,
+    "mexborn_earners_noba_share_earners_pp": 3.6212857349315972,
+    "mexborn_earners_hsless_share_earners_pp": 3.1030750473563677,
+    "lewis_all_industry_labor_force_drop_hsequiv": 0.18014237656332033,
+    "lewis_all_industry_labor_force_drop_hsequiv_without_mexborn": 0.14299907245960983,
+    "lewis_delta_drop_hsequiv": 0.0371433041037105,
+    "mexborn_nocoverage_warning": "case Census-coverage additions not individually observed; this is counted G1 dose"
+  },
+  "native_output_proxy": {
+    "comp_only": {
+      "labor_weight": 0.5134334369869233,
+      "native_factor_share": 0.8401026503951352,
+      "native_output_proxy_bn": 24683.055971259466
+    },
+    "central_two_thirds_proprietors": {
+      "labor_weight": 0.5570339371638512,
+      "native_factor_share": 0.836901890328909,
+      "native_output_proxy_bn": 24589.014439753675
+    },
+    "all_proprietors": {
+      "labor_weight": 0.5788341872523152,
+      "native_factor_share": 0.8353015102957959,
+      "native_output_proxy_bn": 24541.99367400078
+    },
+    "production_alpha_065": {
+      "labor_weight": 0.65,
+      "native_factor_share": 0.8300771506990257,
+      "native_output_proxy_bn": 24388.496764688072
+    }
+  },
+  "lineage_people": 44903074.086245224,
+  "lineage_share_published_civilian_pp": 13.335125191976912,
+  "r1_world_gain_bn": [
+    218.342168754904,
+    288.204990373246
+  ],
+  "r1_break_even_native_output_pct": {
+    "comp_only": [
+      0.884583209668762,
+      1.1676228045215593
+    ],
+    "central_two_thirds_proprietors": [
+      0.8879663285808835,
+      1.1720884180998234
+    ],
+    "all_proprietors": [
+      0.8896676107703941,
+      1.1743340585999893
+    ],
+    "production_alpha_065": [
+      0.8952670222423879,
+      1.1817251106289417
+    ]
+  },
+  "r1_break_even_total_gdp_pct": [
+    0.7431406989377626,
+    0.9809230127403629
+  ],
+  "native_output_is": "allocation proxy, not BEA measurement or native welfare",
+  "bea_vintage": "September 2026; preserves world ledger numerator rather than rebuilding it"
+}

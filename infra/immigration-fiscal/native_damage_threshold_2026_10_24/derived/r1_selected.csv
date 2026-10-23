@@ -1,0 +1,5 @@
+case,basis,reading,end,g3_bound,public_pension_share,scope,enters_total,excluded_senders_debit_bn,weighting,status,world_total_bn,group_total_bn,other_us_residents_bn,mexico_residents_bn,breakeven_w
+oct16,matched_cash,R1,low,zero,1.0,A_completed,True,0.0,equal_lambda_1.16,[DEGRADED] P032 all-public proxy,220.683792100313,646.72887554005,-384.513282838876,-41.531800600861,0.658769230126
+oct16,matched_cash,R1,low,zero,1.0,A_completed,True,0.0,hendren_a,[DEGRADED] P032 all-public proxy,284.1731982543,673.053520570879,-364.586480299526,-24.293842017053,0.577785139563
+oct16,matched_cash,R1,high,zero,1.0,A_completed,True,0.0,equal_lambda_1.16,[DEGRADED] P032 all-public proxy,218.342168754904,648.000041331766,-455.935466656823,26.27759407996,0.663052230203
+oct16,matched_cash,R1,high,zero,1.0,A_completed,True,0.0,hendren_a,[DEGRADED] P032 all-public proxy,288.204990373246,674.392889101903,-429.118887645178,42.93098891652,0.572645270983

@@ -1,0 +1,77 @@
+{
+  "construction": "Paper Eq 1, 30 half-centuries 1451-1500 back to 1-50, normalized 5 percent discount",
+  "countries": {
+    "mex": {
+      "bound_meaning": "Only missing source indices bounded 0-1; neither confidence interval nor immigrant causal effect",
+      "matrix_row_mass": 1.0,
+      "missing": [
+        {
+          "code": "gnq",
+          "weight": 0.00067838
+        },
+        {
+          "code": "gnb",
+          "weight": 0.00065727
+        },
+        {
+          "code": "lbn",
+          "weight": 0.004
+        },
+        {
+          "code": "tza",
+          "weight": 0.00029101
+        }
+      ],
+      "missing_mass": 0.00562666,
+      "normalized_lower": 0.5142199960020232,
+      "normalized_upper": 0.5198466560020232,
+      "partial_sum_not_estimate": 0.5142199960020232,
+      "unadjusted_statehist1500": 0.5332680261648745
+    },
+    "usa": {
+      "bound_meaning": "Only missing source indices bounded 0-1; neither confidence interval nor immigrant causal effect",
+      "matrix_row_mass": 1.00004,
+      "missing": [
+        {
+          "code": "gnq",
+          "weight": 0.0011
+        },
+        {
+          "code": "gnb",
+          "weight": 0.00536
+        },
+        {
+          "code": "lbn",
+          "weight": 0.00249
+        },
+        {
+          "code": "pri",
+          "weight": 0.00199
+        },
+        {
+          "code": "vct",
+          "weight": 2e-05
+        },
+        {
+          "code": "tza",
+          "weight": 0.00023
+        }
+      ],
+      "missing_mass": 0.01119,
+      "normalized_lower": 0.5617435604839954,
+      "normalized_upper": 0.5729331129018987,
+      "partial_sum_not_estimate": 0.5617660302264148,
+      "unadjusted_statehist1500": 0.0
+    }
+  },
+  "sources": {
+    "social_matrix.xls": {
+      "sha256": "aff57e0e2076519c5de318d7cd038b4a3c6ca056522b10feec8e9abcec60a1a6",
+      "url": "https://drive.google.com/uc?export=download&id=1BC9tdKJ_uZi8F8BvzPdo9LXQKpRxsJZ6"
+    },
+    "social_statehist.xls": {
+      "sha256": "8a1eda6f242b205a8b2bae1b422f62f6ca018c3bfe7757cd8ee19120d645183c",
+      "url": "https://drive.google.com/uc?export=download&id=1mS-KaK5sGgd3HYXSwBmMeBin_hT_8x0R"
+    }
+  }
+}
