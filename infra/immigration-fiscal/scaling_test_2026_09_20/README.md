@@ -70,6 +70,7 @@ Run from the repository root with the existing cached project dependencies:
 ```sh
 UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run --offline --with scipy python3 infra/immigration-fiscal/scaling_test_2026_09_20/analyze.py
 UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run --offline --with scipy python3 infra/immigration-fiscal/scaling_test_2026_09_20/state_analyze.py
+uv run --no-project python3 scripts/estimate_screen.py
 UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run --offline --with scipy python3 infra/immigration-fiscal/scaling_test_2026_09_20/verify_school.py
 UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run --offline python3 infra/immigration-fiscal/scaling_test_2026_09_20/verify_state.py
 UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run --offline --with scipy python3 -m unittest discover -s infra/immigration-fiscal/scaling_test_2026_09_20 -v
@@ -87,6 +88,14 @@ prediction and coverage tables, 16 theory-only fiscal rows; `state/` contains
 350 state-year observations, 60 coefficients and national reconciliation. School
 current dollars are 2020-real; state current operations are nominal with year effects.
 None is a net fiscal balance until explicitly joined to the separate annual account.
+
+`scripts/estimate_screen.py` applies the four-test publication gate to the 60
+coefficients and writes `state/estimates_screened.csv` (the full audit trail, with
+`screen` and `screen_reason`) and `state/screen_summary.md` (the memo table, point
+estimates only on pass; failed rows print "not identified" and a code: P precision,
+S stability, I influence, D data quality). The across-state estimates pass for all
+ten functions; the within-state estimates fail, mostly on precision, which is the
+memo's "all ten within-state intervals include 1" in mechanical form.
 
 Independent verifiers reproduce the eight primary school regressions and all
 60 state regressions using closed-form residualization rather than the producers'

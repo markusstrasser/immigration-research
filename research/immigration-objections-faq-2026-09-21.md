@@ -172,13 +172,16 @@ stay outside the current headline. [CALCULATION: [federal comparison](../infra/i
 SOURCE: [BEA pension accounting](https://www.bea.gov/index.php/news/blog/2013-06-17/bea-move-accrual-accounting-defined-benefit-pension-plans);
 [decision](../decisions/2026-09-30-legacy-comparisons-separate.md); FRAMING-SENSITIVE]
 
-The sign turns on ordinary service budgets. With enterprises and their capital moving with their lines and
+The sign is decided by whether service budgets respond at all. The measured scaling is near-proportional
+across the ten state/local functions ([scaling test](immigration-service-scaling-test-2026-09-20.md)), so the
+break-even thresholds below are thresholds, not estimates, and sit far outside it [THRESHOLD]. With enterprises and their capital moving with their lines and
 private capital adjusting, break-even thresholds across the personal specifications span 2.3% to 15.7%. Every
 reading turns into a gain below 2.3% of service costs responding; the most favorable turns into a gain below 15.7%.
 With enterprises held at full response while other services fall, the thresholds span −1.5% to 12.4%, and the
 least favorable reading stays a cost at every nonnegative service response.
-With every service budget frozen, enterprises included, and private capital held fixed, other residents' net
-position runs from −$33.4bn (a cost) to +$93.6bn (a gain)
+With every service budget frozen, enterprises included, and private capital held fixed — a budget-scoring
+convention, not a measured scaling, which the [scaling test](immigration-service-scaling-test-2026-09-20.md)
+rejects — other residents' net position runs from −$33.4bn (a cost) to +$93.6bn (a gain)
 ([sign reversal](../infra/immigration-fiscal/main_case_2026_10_16/RESULT.md), `derived/sign_reversal.csv`, `oct16`,
 the personal rows). [SOURCE: complete account;
 [administration scope](immigration-education-administration-scope-2026-09-20.md);
@@ -330,7 +333,7 @@ object: all origins, from arrival, with descendants, discounted. The 1997 volume
 holding debt at the 2016 share of GDP did not happen (76.0% → 97.4% by 2024), which the
 [back-tests](immigration-projection-backtest-2026-09-19.md) grade as a failed policy assumption
 and not as a failure of assimilation; the 2016 volume's sign turns on its public-goods and
-descendant scenarios ([canon audit](immigration-canon-citation-audit-2026-09-17.md), C9). Would
+descendant scenarios, which are not measured here ([canon audit](immigration-canon-citation-audit-2026-09-17.md), C9). Would
 change it: a linked parent–child file, or the second generation tabulated by birth cohort.
 
 On adult outcomes rather than dollars the convergence is partial and uneven. In IPUMS-CPS

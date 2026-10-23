@@ -106,6 +106,13 @@ extract exactly; national/state-sum differences are at most $6,000 of rounding.
 | Health | 1.009 | 1.174 [−.585, 2.933] |
 | Hospitals | 1.374 | .451 [−1.535, 2.436] |
 
+**Screening.** The within-state point estimates above are **not identified**: their
+95% intervals contain both 1.0 and 0.75, so they cannot separate proportional from
+sublinear scaling, and the pre-2020 windows straddle both. The across-state estimates
+pass the four-test screen (precision, stability, influence, data quality;
+`scripts/estimate_screen.py`, output `derived/state/screen_summary.md`). Read the
+within-state column as an interval, not a point estimate.
+
 All ten full-panel within-state intervals include 1; that is imprecision, not
 proof of proportional costs. Census-wave and pre-2020 specifications are exported
 for every function. For example, pre-2020 K–12 is 1.380 [.669, 2.091], showing

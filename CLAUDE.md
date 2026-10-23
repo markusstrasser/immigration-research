@@ -27,6 +27,8 @@ Truth is the objective. Not consensus, not novelty, not volume. A single well-so
 
 **7. Flag the instrument's bias.** This research is conducted through an LLM. The model has systematic dispositions from post-training (see `notes/llm-bias-caveat.md`). On politically charged topics, acknowledge this. Don't pretend neutrality where the instrument isn't neutral.
 
+**8. Carry the range into the routing layer.** A routing-layer sentence (INDEX, FAQ, this file) that makes a result conditional on a parameter must state that parameter's measured range, or link to the lane that does. "The sign turns on X" without the measured range of X is a bug. A break-even is a threshold, not an estimate: tag it `[THRESHOLD]` and pair it with the measured range. An estimate that fails its precision, stability, influence or data-quality screen is reported as "not identified", not as a point estimate (`scripts/estimate_screen.py`; lint: `scripts/check_conditional_ranges.py`).
+
 ### Autonomy Boundaries
 
 **Autonomous:** conduct research, write memos, update docs index, save papers to corpus, run analyses on local data, commit findings.

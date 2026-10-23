@@ -138,6 +138,10 @@ The unconditional-hours coefficient in the preferred column is **not statistical
 
 **Instrument bias.** This is a politically charged topic analyzed through an LLM with known post-training dispositions [SOURCE: `notes/llm-bias-caveat.md`]. The disposition here would push toward inflating the pro-immigration benefit; the net-of-offset framing in §3 and the conservative arm are the guards. The fiscal comparison is [FRAMING-SENSITIVE] in the same way the underlying ledger is: reference gaps are differences from a chosen comparison profile, not measured net costs.
 
+> **Superseded in part (2026-09-23).** The hours-tax figure below ($8.7bn) is corrected to $2.6bn in the
+> Revisions, and the $22bn total is gross consumer surplus, not a fiscal offset. Read §6 with the
+> Revisions at the end of the file.
+
 ## 6. What this settles
 
 The pro-side's two flagship native benefits, priced at their own authors' published elasticities and extrapolated as far as the extrapolation can be pushed, come to roughly **$22bn a year**, of which **$9bn** is fiscal. Against a reference gap of $291bn to $354bn, the fiscal offset is **1.4% to 3.0%**. The consumer-price channel is further halved once the same paper's wage gain to native high-school dropouts is netted out, and it may be zero if the two most recent US studies are right. No arm of this calculation, including arms deliberately built to be generous, brings the two channels within an order of magnitude of the fiscal figures. That conclusion is robust because it does not depend on which elasticity is correct: even multiplying the central arm by three leaves the fiscal offset under 10%.
