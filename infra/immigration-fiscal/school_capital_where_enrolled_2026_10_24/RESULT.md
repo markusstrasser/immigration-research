@@ -118,3 +118,12 @@ At the 2.081% return only, the group's share is a **lower-bound charge of $0.72b
   (`account_embedded_price.json`, 8.49M pupils). The v9 engine's K-12 capital key is 0.17724 against a pupil
   share of 0.17481, so v9's pupil count and price are not separately read here. If v9's embedded price differs
   from 0.954 by ±2%, the delta moves by about ±$0.2bn. Not load-bearing at this size; re-derive on adoption.
+
+## Correction, 2026-10-24 02:28 JST
+
+The divisor 0.9542 omits the preferred school price k = 1.0341917412 that the case has applied to the school key since
+September 24 (`main_case_2026_09_24/package.cjs` CENTRAL.k = "preferred"; recovered in
+`user_fee_allocation_2026_10_07/fee_lines.py`). With the embedded k the divisor is 0.9868, and the correction is
+**+$0.54bn** (return +$0.45bn, depreciation +$0.09bn), not +$1.36bn. The +$1.36bn above double counts part of k.
+Source: `where_used_prices_2026_10_24/RESULT.md` lines 36–46 (d2692c49). Concept affected: the size of the K-12
+where-enrolled capital correction.
