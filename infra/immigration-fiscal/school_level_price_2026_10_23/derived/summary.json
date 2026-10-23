@@ -1,0 +1,130 @@
+{
+  "schools": 91955,
+  "members": 47905461,
+  "hispanic": 13441485,
+  "national_pp": 12863.379667716797,
+  "national_hispanic_pp": 13623.695283156077,
+  "national_white_pp": 12116.24433299007,
+  "national_k_hispanic": 1.059106987050024,
+  "national_k_white": 0.9419176488585025,
+  "national_k_relative": 1.1244156942313819,
+  "state_k_median": 1.0128523603543687,
+  "state_k_iqr": [
+    0.9933969606601187,
+    1.0364268793131965
+  ],
+  "district_k_median": 1.0011337092501058,
+  "district_k_iqr": [
+    0.9964472097653331,
+    1.0087131121559065
+  ],
+  "hispanic_weighted_state_k": 1.026700108339853,
+  "white_weighted_state_k": 0.9635655984063056,
+  "checks": {
+    "schools_with_hispanic_gt_total": 0,
+    "schools_with_white_gt_total": 0,
+    "schools_with_negative_pp": 0,
+    "hispanic_share_of_members": 0.28058356436649257
+  },
+  "top_states": [
+    {
+      "state": "NY",
+      "k_hispanic": 1.0824592034605374,
+      "k_white": 0.912693925695527,
+      "hispanic": 722119
+    },
+    {
+      "state": "VA",
+      "k_hispanic": 1.0736702655144288,
+      "k_white": 0.9642716551864228,
+      "hispanic": 224306
+    },
+    {
+      "state": "UT",
+      "k_hispanic": 1.0597445237281753,
+      "k_white": 0.9773732603373989,
+      "hispanic": 128191
+    },
+    {
+      "state": "TN",
+      "k_hispanic": 1.0591212843242541,
+      "k_white": 0.9498335327322076,
+      "hispanic": 128093
+    },
+    {
+      "state": "WI",
+      "k_hispanic": 1.0545317113383523,
+      "k_white": 0.9676928020837872,
+      "hispanic": 104615
+    },
+    {
+      "state": "MA",
+      "k_hispanic": 1.0499483258774156,
+      "k_white": 0.9548484527057425,
+      "hispanic": 209441
+    },
+    {
+      "state": "AZ",
+      "k_hispanic": 1.0471410612107057,
+      "k_white": 0.9165124860710315,
+      "hispanic": 408910
+    },
+    {
+      "state": "IN",
+      "k_hispanic": 1.0448445529172887,
+      "k_white": 0.9643717262266911,
+      "hispanic": 139682
+    }
+  ],
+  "top_districts": [
+    {
+      "leaid": "0102100",
+      "state": "AL",
+      "k_within": 1.3164165208331258,
+      "hispanic": 1515
+    },
+    {
+      "leaid": "5306220",
+      "state": "WA",
+      "k_within": 1.2763781359594542,
+      "hispanic": 1154
+    },
+    {
+      "leaid": "4901050",
+      "state": "UT",
+      "k_within": 1.2446556571497565,
+      "hispanic": 3078
+    },
+    {
+      "leaid": "4503909",
+      "state": "SC",
+      "k_within": 1.2411529626711615,
+      "hispanic": 1943
+    },
+    {
+      "leaid": "4900270",
+      "state": "UT",
+      "k_within": 1.2341774671214873,
+      "hispanic": 218
+    },
+    {
+      "leaid": "0101410",
+      "state": "AL",
+      "k_within": 1.2165717209581342,
+      "hispanic": 514
+    },
+    {
+      "leaid": "2005790",
+      "state": "KS",
+      "k_within": 1.179063496471725,
+      "hispanic": 425
+    },
+    {
+      "leaid": "3704620",
+      "state": "NC",
+      "k_within": 1.1708185794801262,
+      "hispanic": 8100
+    }
+  ],
+  "note": "Hispanic proxy for Mexican origin; SLFS FY2022 sample; current expenditures only"
+}
