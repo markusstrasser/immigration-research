@@ -48,12 +48,14 @@ uv run --no-project python3 -m pytest infra/immigration-fiscal/school_level_pric
 ## What it says
 
 The group's pupils attend schools that spend **5.9% more than the national average** and **12.4% more
-than the schools white pupils attend**, but the within-district gap is **0.1%**. The gap is between
-districts and states. The within-state correction is **1.027**, against the proposed district
-k = 1.034; the national 1.059 is mostly the state mix the case already prices. The group is the
-**majority** of pupils in Texas (52.7%), California (56.1%), Los Angeles Unified (74.1%), Houston ISD
-(61.8%) and Dallas ISD (70.0%), so the fixed-overhead reading is weakest exactly where the group is
-largest. See `RESULT.md`.
+than the schools white pupils attend** in the SLFS measure, but that is mostly composition. The
+group-weighted **within-district** factor is **1.005** (1.037 excluding single-school districts and
+NYC), not zero; the unweighted median 1.001 was misleading because 4,531 of 15,949 districts are
+single-school. The within-state correction is **1.027**, against the proposed 1.034. The state-level
+0.75–0.92 is a **cross-school size gradient, not the response**; the 0.836 panel response remains the
+case's. The shares are Hispanic, not Mexican-origin: 52.7% of Texas pupils, 56.1% of California's,
+74.1% of LAUSD's; the Mexican-origin under-30 share in Texas is 38.0%, a plurality, not a majority.
+See `RESULT.md`.
 
 ## Limits
 

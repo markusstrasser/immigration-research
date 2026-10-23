@@ -18,6 +18,18 @@
     0.9964472097653331,
     1.0087131121559065
   ],
+  "chain": {
+    "P0_national": 12863.379667716797,
+    "P1_state": 13268.140172255678,
+    "P2_district": 13552.406200610258,
+    "P3_school": 13623.695283156077,
+    "between_states": 1.0314661088294477,
+    "between_districts": 1.0214247079593712,
+    "within_districts": 1.0052602527913168,
+    "within_districts_ex_single_and_nyc": 1.0371921809145699,
+    "single_school_districts": 4531,
+    "districts": 15949
+  },
   "hispanic_weighted_state_k": 1.026700108339853,
   "white_weighted_state_k": 0.9635655984063056,
   "checks": {

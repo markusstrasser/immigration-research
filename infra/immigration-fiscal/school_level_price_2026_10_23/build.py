@@ -140,6 +140,34 @@ def main() -> None:
     district_k.to_csv(OUT / "district_k.csv", index=False)
 
     national_pp = float(df["tcur"].sum() / df["member"].sum())
+
+    # Group-weighted chain: P1 state, P2 district, P3 school.
+    state_avg = (
+        df.groupby("STABR")
+        .apply(lambda g: pd.Series({"pp": g["tcur"].sum() / g["member"].sum(), "w": g["hispanic"].sum()}), include_groups=False)
+    )
+    dist_avg = (
+        df.groupby("LEAID")
+        .apply(lambda g: pd.Series({"pp": g["tcur"].sum() / g["member"].sum(), "w": g["hispanic"].sum(), "n": len(g)}), include_groups=False)
+    )
+    P1 = float((state_avg["pp"] * state_avg["w"]).sum() / state_avg["w"].sum())
+    P2 = float((dist_avg["pp"] * dist_avg["w"]).sum() / dist_avg["w"].sum())
+    P3 = float((df["pp"] * df["hispanic"]).sum() / df["hispanic"].sum())
+    multi = dist_avg.loc[(dist_avg["n"] > 1) & (~dist_avg.index.astype(str).str.startswith("36"))]
+    P2x = float((multi["pp"] * multi["w"]).sum() / multi["w"].sum())
+    chain = {
+        "P0_national": national_pp,
+        "P1_state": P1,
+        "P2_district": P2,
+        "P3_school": P3,
+        "between_states": P1 / national_pp,
+        "between_districts": P2 / P1,
+        "within_districts": P3 / P2,
+        "within_districts_ex_single_and_nyc": P3 / P2x,
+        "single_school_districts": int((dist_avg["n"] == 1).sum()),
+        "districts": int(len(dist_avg)),
+    }
+
     hispanic_weight = state_k["hispanic"].clip(lower=0)
     white_weight = state_k["members"] - state_k["hispanic"]
     summary = {
@@ -156,6 +184,7 @@ def main() -> None:
         "state_k_iqr": [float(state_k["k_hispanic"].quantile(q)) for q in (0.25, 0.75)],
         "district_k_median": float(district_k["k_within"].median()),
         "district_k_iqr": [float(district_k["k_within"].quantile(q)) for q in (0.25, 0.75)],
+        "chain": chain,
         "hispanic_weighted_state_k": float((hispanic_weight * state_k["k_hispanic"]).sum() / hispanic_weight.sum()),
         "white_weighted_state_k": float(
             ((white_weight.clip(lower=0) * state_k["k_white"]).sum() / white_weight.clip(lower=0).sum())
