@@ -1,0 +1,380 @@
+[
+ {
+  "url": "https://www.fhfa.gov/document/land-prices_2024_20_june.xlsx",
+  "path": "_cache/fhfa/land-prices_2024_20_june.xlsx",
+  "bytes": 17160123,
+  "sha256": "3db67f331d609117ef52adab6068f18eb1184f821ed750af2517d03f047b618b"
+ },
+ {
+  "url": "https://www.fhfa.gov/document/wp1901.pdf",
+  "path": "_cache/fhfa/wp1901.pdf",
+  "bytes": 2543712,
+  "sha256": "e3ec08dda6dd1822a30e7c254d5a7be7ab15777f38acb937257465e23079cd70"
+ },
+ {
+  "url": "https://www.fhfa.gov/document/faqs-land-10-28-20.pdf",
+  "path": "_cache/fhfa/faqs-land-10-28-20.pdf",
+  "bytes": 201314,
+  "sha256": "21d2b7cd44332ab7453f2f4d1c2c746e426b897eb8d2c382981aac30074bb0ea"
+ },
+ {
+  "url": "https://www.fhfa.gov/hpi/download/annual/hpi_at_county.xlsx",
+  "path": "_cache/hpi/hpi_at_county.xlsx",
+  "bytes": 5334194,
+  "sha256": "534e9fd3224c4d9365300cc1be471bcfe4455b72311263a35e9cb50adf79afd1"
+ },
+ {
+  "url": "https://nces.ed.gov/programs/edge/data/EDGE_GEOCODE_PUBLICSCH_2324.zip",
+  "path": "_cache/nces/EDGE_GEOCODE_PUBLICSCH_2324.zip",
+  "bytes": 30281920,
+  "sha256": "7542cfed5345c73b57c70afa4fed54bfb911d7259a73fc3f5440301d6db96043"
+ },
+ {
+  "url": "https://nces.ed.gov/ccd/Data/zip/ccd_sch_029_2324_w_1a_073124.zip",
+  "path": "_cache/nces/ccd_sch_029_2324_w_1a_073124.zip",
+  "bytes": 12624979,
+  "sha256": "3910300771b1db27e0589d014451f95e3190ca71ab4dcabe06227224f58b4ecb"
+ },
+ {
+  "url": "https://nces.ed.gov/ccd/Data/zip/ccd_sch_052_2324_l_1a_073124.zip",
+  "path": "_cache/nces/ccd_sch_052_2324_l_1a_073124.zip",
+  "bytes": 207481236,
+  "sha256": "06bd50eede0c036e4c92b6464b69f192ff3b8f9f739b403c2b218a9f6ec3e239"
+ },
+ {
+  "url": "https://nces.ed.gov/ccd/Data/zip/ccd_sch_129_2324_w_1a_073124.zip",
+  "path": "_cache/nces/ccd_sch_129_2324_w_1a_073124.zip",
+  "bytes": 5304421,
+  "sha256": "d6b788db69e48e883d31af7173646d2cb66170b24cc7e64915516b5d87c50a11"
+ },
+ {
+  "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_tracts_national.zip",
+  "path": "_cache/gaz/Gaz_tracts_national_2010.zip",
+  "bytes": 2475122,
+  "sha256": "d1f4f1037e7d96d073a5b7c155289b7a974483b638f045d568848bde5219ad3b"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_01_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_01_140_00_500k.zip",
+  "bytes": 1164359,
+  "sha256": "6310223813f29a360b319e0cbaa2c31d6b1fc447530e165306f64152e9f897d7"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_02_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_02_140_00_500k.zip",
+  "bytes": 722817,
+  "sha256": "4d8923ffc6ebb7e7dd05102ebbb639d0201f855f4374c3c2706c6729ae492d1e"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_04_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_04_140_00_500k.zip",
+  "bytes": 876423,
+  "sha256": "47962a87db4b0bba01d7a41403668a1a380a9a4054c9ab1044a753803224e51a"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_05_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_05_140_00_500k.zip",
+  "bytes": 814851,
+  "sha256": "f5a2b41b5fc7a00dab8b51960404ae450f66a70a31a0dcd11a567274bbcc1c74"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_06_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_06_140_00_500k.zip",
+  "bytes": 3395528,
+  "sha256": "fd7081d0909ebafc5fafdbcc06b6856c6a99671f6284e099195d3131340b903f"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_08_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_08_140_00_500k.zip",
+  "bytes": 832056,
+  "sha256": "2f6f9741ada326f82d2d5115e275c263d2ef28fdd159d77a1274f8ec198ce908"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_09_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_09_140_00_500k.zip",
+  "bytes": 283571,
+  "sha256": "cf3bd775644cd5b769e2152f4353f006e42f7ac74895d5624ae45110bc02a77a"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_10_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_10_140_00_500k.zip",
+  "bytes": 101232,
+  "sha256": "6d81fb5462c76377509db4ef559c5fb04bafb15ee59a20cf0cb1a385506e7509"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_11_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_11_140_00_500k.zip",
+  "bytes": 39970,
+  "sha256": "5f58070cae4e9009f75aeaaab8ac07ee399478a680c94cadb528ad04448e03ed"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_12_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_12_140_00_500k.zip",
+  "bytes": 1644714,
+  "sha256": "5736369aa63ab0208fc40f1616956014ac226b59b5d437a5181c3c302df12716"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_13_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_13_140_00_500k.zip",
+  "bytes": 1452863,
+  "sha256": "77f71351178d58566fe9ea64300c08454ba93d41b88181da484a06eb9b9569ce"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_15_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_15_140_00_500k.zip",
+  "bytes": 177543,
+  "sha256": "3797ae73d8368113d616c01241dc90c358c9541ab8030e8ff6e0232b1cb96f9d"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_16_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_16_140_00_500k.zip",
+  "bytes": 457020,
+  "sha256": "0e6dc5b70d89701576bd6c139dfea95a7158866f8b8517c33fe10f862adfae42"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_17_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_17_140_00_500k.zip",
+  "bytes": 1303961,
+  "sha256": "064f1d5799964f06279b4c1be2aff13cb436e0993cad244744f7396006b7b37b"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_18_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_18_140_00_500k.zip",
+  "bytes": 651996,
+  "sha256": "3d00502ee221c1e237e196d5019f9bb5ad7c9e7e3567ac79d4b606b9e7bbc3a0"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_19_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_19_140_00_500k.zip",
+  "bytes": 446203,
+  "sha256": "d2ac65ce4153682cf47f4b268e15cafead3f7c6cced04bdabccba0619b363ac7"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_20_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_20_140_00_500k.zip",
+  "bytes": 346000,
+  "sha256": "915758ca214ba6788570bb6614aa555947bce9e975fef4e3da5a05f8db1d2030"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_21_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_21_140_00_500k.zip",
+  "bytes": 1144344,
+  "sha256": "033ca293cb3f95295c03153ea5511ae88755e6f0af28e29a9c78c9369b3624b1"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_22_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_22_140_00_500k.zip",
+  "bytes": 905504,
+  "sha256": "84cde357c2fb4dd6234496fde09324510b842d7d42f25bdf0b0c443b144932a4"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_23_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_23_140_00_500k.zip",
+  "bytes": 261694,
+  "sha256": "5e59efe47414c602c683b901fea39c045801cef964b8da3096aaae2b87c506fa"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_24_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_24_140_00_500k.zip",
+  "bytes": 611177,
+  "sha256": "affd477c510ec7aa1013cb31a535738ad92926475daf3f66cb9fa92124bf9b55"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_25_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_25_140_00_500k.zip",
+  "bytes": 534888,
+  "sha256": "a3afe00321cf8fb2f9854f140347277edcd7e7ead44a695fd19c4add967c51c1"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_26_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_26_140_00_500k.zip",
+  "bytes": 996274,
+  "sha256": "faa087e6d0ebf13ebc5cd6bca3ace2fcd2952da04e80304534cda3f255261f18"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_27_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_27_140_00_500k.zip",
+  "bytes": 726273,
+  "sha256": "d1ee873b54e6adec1b438d14f1eb8f8fff59e7a6c12c5e9ece1ff0ce384ddb49"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_28_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_28_140_00_500k.zip",
+  "bytes": 630178,
+  "sha256": "3506f21532c00d87a2731d50290111541077359d7bf1c0f706327a61e1e0a0d1"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_29_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_29_140_00_500k.zip",
+  "bytes": 1035097,
+  "sha256": "1e89b98d315e2041bf28ab4c05ac4d8d76274464ef4705a026184b68dc888540"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_30_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_30_140_00_500k.zip",
+  "bytes": 653685,
+  "sha256": "c59ec7fc500916ef91b7295fabb3ff3b623bfe83b88e961d39abc91f82c687d0"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_31_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_31_140_00_500k.zip",
+  "bytes": 291524,
+  "sha256": "98ef8301c9b9569ea13692a564cd1b83cf6940d4e1cf52796a86f5137e3d2652"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_32_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_32_140_00_500k.zip",
+  "bytes": 338987,
+  "sha256": "bb197c4b7650f872a0bb3b6684b8da25c0c2e425cf6902e05a490bbb805a396b"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_33_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_33_140_00_500k.zip",
+  "bytes": 124381,
+  "sha256": "4326d718f4c17bbd647238f8d2acbd715b24d16aeb3228675fac2eb4d51ef9b1"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_34_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_34_140_00_500k.zip",
+  "bytes": 672712,
+  "sha256": "41ad7d4e0f645629a9b6566cda3d1bd2530166f09513e70a85aa7aab5f4bae44"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_35_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_35_140_00_500k.zip",
+  "bytes": 458005,
+  "sha256": "d7e8e11b3bf6386b1cb9dd7842244176d45bc999532515924b769d783a5705fd"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_36_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_36_140_00_500k.zip",
+  "bytes": 1592988,
+  "sha256": "b682123647cf49af4931d2b18302dd15c0b7082ba83897b8c0402636dc19537c"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_37_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_37_140_00_500k.zip",
+  "bytes": 1602450,
+  "sha256": "f9a7ac502539300f3fa2f10d6906acd970f1da793d15dda0a50fe0f7847e74ea"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_38_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_38_140_00_500k.zip",
+  "bytes": 202771,
+  "sha256": "0de449e3f7d45d2f8ae0bbf51d69dfaf67cf7d817ae2447b09201e7a3a47dd72"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_39_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_39_140_00_500k.zip",
+  "bytes": 1221607,
+  "sha256": "ca7db3dccf91bf31f231ca4bbee04e9986dccb943f783a64c0314b8e0a9ab4d4"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_40_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_40_140_00_500k.zip",
+  "bytes": 676703,
+  "sha256": "d4532246ef4ee6c735e809f51d8df8d2cbdb04c809d00eccfa8653825d668dee"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_41_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_41_140_00_500k.zip",
+  "bytes": 808229,
+  "sha256": "e68e4e0d7c15cc2d14bd85b190ceaa895ea9ea7ba37778d6ba560b045c85087b"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_42_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_42_140_00_500k.zip",
+  "bytes": 1355827,
+  "sha256": "cb720e626ef6f3f9c48aee18dd890b6c3d5d567aae437304ffc1ff06a7d10865"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_44_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_44_140_00_500k.zip",
+  "bytes": 80361,
+  "sha256": "959c532446599563177634a6f43a1c8d06e6c2c3b80cb19909dfa0558e77556c"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_45_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_45_140_00_500k.zip",
+  "bytes": 898799,
+  "sha256": "1588085356e4014717318d36f1b483af0cea29d0b7c3af4c1f67cb038c4c11a9"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_46_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_46_140_00_500k.zip",
+  "bytes": 238192,
+  "sha256": "e06bc81e5a4336d782699c3da787e372ba6ac39949290a7898fc059a10905ea1"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_47_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_47_140_00_500k.zip",
+  "bytes": 1242217,
+  "sha256": "39cc4822a0236371cb57bf3ef38f1cf33ee45579c2a1b9557ca58f932035d677"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_48_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_48_140_00_500k.zip",
+  "bytes": 3179112,
+  "sha256": "e62392ee3e3023b8361bd3b7702a030b9b8f20e3c997baf9304b1829abcc8779"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_49_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_49_140_00_500k.zip",
+  "bytes": 513115,
+  "sha256": "9f96869050643fca3ba0abb4ea1c43a73bf1ec65140939897c9853f000145eeb"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_50_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_50_140_00_500k.zip",
+  "bytes": 88569,
+  "sha256": "0cf41f41b0983588f8b67a6ee6783ffed2f0693cb1bfe6713718f8d8a0e9cea7"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_51_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_51_140_00_500k.zip",
+  "bytes": 1248894,
+  "sha256": "0eb0842c4ef1b26e5f178999fd9bec39c91cb5d41cef6dd7f6b4e57ed7489568"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_53_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_53_140_00_500k.zip",
+  "bytes": 1067885,
+  "sha256": "a9593222c808d6f4d8a7a5a7697c68761e950e1edeb5e4561b1fca72e7b25e05"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_54_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_54_140_00_500k.zip",
+  "bytes": 668577,
+  "sha256": "918cbc5ba558cea8cc0cb243029a468677d4e70e89e6cb1019da352e51e56c39"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_55_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_55_140_00_500k.zip",
+  "bytes": 806203,
+  "sha256": "afa027575da32a7bc5e3a0aebcb0b711a8c0e3fbf9bd2e83ba975c10e186308f"
+ },
+ {
+  "url": "https://www2.census.gov/geo/tiger/GENZ2010/gz_2010_56_140_00_500k.zip",
+  "path": "_cache/tracts2010/gz_2010_56_140_00_500k.zip",
+  "bytes": 236289,
+  "sha256": "83de2277de743dbe403901d79975751b68966c5b56245ee0b6ccea4fa2128101"
+ },
+ {
+  "url": "https://services1.arcgis.com/4ZKi1B1zTblbwgWB/ArcGIS/rest/services/California_School_Campus_Database_2025/FeatureServer/0/query",
+  "path": "_cache/bench_cscd/schools_stacked.geojson",
+  "bytes": 35119848,
+  "sha256": "ce7acea6a95c5b0c1fbf4ffa129c0b5d3728a9bb91fbe813f94232e005fc7e6e"
+ },
+ {
+  "url": "https://services1.arcgis.com/4ZKi1B1zTblbwgWB/ArcGIS/rest/services/California_School_Campus_Database_2025/FeatureServer/2/query",
+  "path": "_cache/bench_cscd/school_property.geojson",
+  "bytes": 25677212,
+  "sha256": "4372f0b903c267ca34020173a093dc1e75d429cd4aa040aa8ce8bdab71027652"
+ },
+ {
+  "url": "s3://overturemaps-us-west-2/release/2026-10-21.0/theme=base/type=land_use/ (query in acquire_overture.py)",
+  "path": "_cache/overture/us_education_2026-10-21.0.parquet",
+  "bytes": 25848087,
+  "sha256": "084ef17a680c0ed56d1cffd10867abb5025e2b377956b47134a30ac136ee03e6"
+ }
+]

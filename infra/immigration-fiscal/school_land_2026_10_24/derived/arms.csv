@@ -1,0 +1,5 @@
+arm,label,national_bn,per_pupil_usd,land_to_k12_structures,where_enrolled_ratio,group_value_pupil_share_bn,group_value_where_enrolled_bn,charge_case_flat_real_pupil_share_bn,charge_case_flat_real_where_enrolled_bn,charge_omb_2003_3pct_pupil_share_bn,charge_omb_2003_3pct_where_enrolled_bn,charge_omb_2003_7pct_pupil_share_bn,charge_omb_2003_7pct_where_enrolled_bn
+A,"A residential, all acres",958.225,20266,0.359701,1.14632,167.504,192.012,3.48587,3.99591,5.02511,5.76037,11.7252,13.4409
+B,B developable share (central),626.891,13258.5,0.235324,1.14235,109.584,125.183,2.28053,2.60516,3.28753,3.7555,7.67091,8.76284
+C,C vacant-land plattage (AES),95.933,2028.94,0.0360116,1.08639,16.7697,18.2184,0.348988,0.379137,0.50309,0.546552,1.17388,1.27529
+D,D FHFA county lot-size elasticity,54.8759,1160.6,0.0205995,1.15897,9.59264,11.1176,0.199629,0.231365,0.287779,0.333528,0.671485,0.778231

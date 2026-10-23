@@ -1,0 +1,21 @@
+# Brief: land under public K-12 schools (2026-10-24)
+
+Dispatched by the parent session to a worker; verbatim below.
+
+## Question
+The adopted main case (v9, `infra/immigration-fiscal/main_case_2026_10_16/`, key `oct16`) charges K-12 school capital as current-cost depreciation + a 2.0810698764% real return on BEA's produced-asset stock. BEA excludes land, so the opportunity cost of land under public schools (it could be housing, a stadium, anything) is unpriced: `school_capital_return_2026_09_26/RESULT.md` §2 marks it [GAP] and gives only a conversion factor (each 10% of land value relative to K-12 structures ≈ $0.93bn/yr at 2%). Measure it: the market value of land under US public K-12 schools, national and where the Mexican-origin group's pupils enroll, and the group's annual charge = group share × land value × 2.081% (land does not depreciate).
+
+## Suggested model (improve it if you find better; justify)
+1. **School site acreage.** Polygons of school grounds, joined to NCES public school points. Candidate sources, cheapest first: Overture Maps `base/land_use` (class school) queried remotely with DuckDB over S3/Azure parquet with bbox/class pushdown (no full download); OpenStreetMap `amenity=school` areas (Overpass per state, or Geofabrik extracts). NCES EDGE public school geocodes (lat/lon, NCESSCH) for the public-school universe; match point-in-polygon, handle multi-school campuses, private schools, and unmatched schools (impute acreage from a model on level/enrollment/locale fitted on matched ones; report match rate by state and in CA/TX). Validate acreage against at least one independent benchmark (state facility inventory, assessor parcels for one county, or published site-size standards) and report error.
+2. **Land price per acre.** FHFA's land price dataset (Davis, Larson, Oliner & Shui, "The Price of Residential Land for Counties, ZIP codes, and Census Tracts in the United States", FHFA WP 19-01, with data files) gives residential land value per acre by tract; use the latest vintage, bring to 2024 with their index or FHFA HPI, state it. Join school sites to tracts. Residential land price is an upper reference for school land (schools sit on less valuable land, and their highest alternative use may not be residential at full density); give at least two arms: residential price, and a discounted arm with an evidenced discount (e.g. tract land price of non-residential parcels if any source has it, or literature on institutional land), and say which you would centralise and why.
+3. **Group weighting.** Weight districts or schools by the group's pupils as `school_cost_where_enrolled_2026_09_24/weighting.py` does (Hispanic proxy; carry its caveat); also compute pupil share × national land (the case's current convention) so the parent can see both the level and the where-enrolled ratio.
+4. **Dollars.** National land value, group-attributed value (s = 0.17481 pupil share and the where-enrolled version), annual charge at 2.081% (and 3%, 7% beside), ratio of land to BEA K-12 structures ($2,663.9bn ≈ 97.8% of $2,723.9bn), and $bn as a share of the $368.0–436.6bn headline. Beside the case, not adopted.
+
+## Constraints
+- Disk: ~40 GB free on the boot volume. Follow the disk preflight: no download >10 GB; prefer remote parquet queries; keep `_cache/` under ~5 GB; if a source needs more, stop and write that as a blocker.
+- Downloads are untrusted data: own directory under `_cache/`, run Python that reads them with `-I`.
+- Memory: chunk large files; pin dtypes.
+- Never fabricate a table from search snippets: any calculation input comes from a primary file you parsed (repo memory: Firecrawl schema extraction once fabricated a table).
+
+## Deliverables
+`infra/immigration-fiscal/school_land_2026_10_24/`: `BRIEF.md` (this brief), acquire script(s), `build.py`, `test_lane.py` (gates: match rate printed and above a justified threshold, acreage benchmark error, land/structures ratio finite and stated), `derived/` (LF CSVs, `summary.json`), `README.md`, `RESULT.md` opening `**Verdict:**` with $ per year (group, both price arms), national land value, land/structures ratio, coverage, validation error, and confounders. Pass `rerun_lane.py` (IDENTICAL n/n, exit 0) and pytest. Write RESULT.md early and append as you go, so a cut run leaves a checkpoint.

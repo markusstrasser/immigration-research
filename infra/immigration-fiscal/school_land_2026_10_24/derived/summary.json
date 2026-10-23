@@ -1,0 +1,376 @@
+{
+ "acreage": {
+  "imputation": {
+   "coef": {
+    "charter": -0.666230771792379,
+    "const": -1.0455902566703827,
+    "level_High": 0.7205955777739819,
+    "level_Middle": 0.3593481514470287,
+    "level_Not applicable": 0.10079110897543975,
+    "level_Not reported": 1.1129985821867194e-13,
+    "level_Other": 0.38045157347718916,
+    "level_Prekindergarten": 1.4686028464952698,
+    "level_Secondary": 0.6840445121308567,
+    "level_Ungraded": 0.20337059617971875,
+    "locale_12": 0.2928851540226266,
+    "locale_13": 0.3951253433895757,
+    "locale_21": 0.5094784157219114,
+    "locale_22": 0.578712866009074,
+    "locale_23": 0.6065932659523211,
+    "locale_31": 0.5804822878427698,
+    "locale_32": 0.46738599734395136,
+    "locale_33": 0.3673501552559931,
+    "locale_41": 0.8697304225107987,
+    "locale_42": 0.7148624542787523,
+    "locale_43": 0.6248891651763303,
+    "log1p_k12": 0.47901791713120434,
+    "type_2": 0.2549220905235007,
+    "type_3": 0.3487873246845544,
+    "type_4": -0.4903652759429874
+   },
+   "n_fit": 46840,
+   "r2": 0.5103374426339116,
+   "rmse_log": 0.6329171443568123,
+   "smear": 1.219271153629188
+  },
+  "imputed": 319708.4122166226,
+  "per_school_median_matched": 10.981046391097191,
+  "polygon": 1147448.5519204612,
+  "total": 1467156.9641370839
+ },
+ "arms": {
+  "A": {
+   "annual_charge_bn": {
+    "case_flat_real": {
+     "pupil_share": 3.4858653038697507,
+     "where_enrolled": 3.995909156724036
+    },
+    "omb_2003_3pct": {
+     "pupil_share": 5.025105610379663,
+     "where_enrolled": 5.760367590718505
+    },
+    "omb_2003_7pct": {
+     "pupil_share": 11.725246424219216,
+     "where_enrolled": 13.440857711676513
+    }
+   },
+   "group_value_bn": {
+    "pupil_share": 167.5035203459888,
+    "where_enrolled": 192.01225302395017
+   },
+   "hispanic_weight_ratio": 1.266820000015298,
+   "national_bn": 958.2252227306318,
+   "per_pupil_usd": 20266.042067926843,
+   "ratio_to_k12_capital": 0.35178177019759166,
+   "ratio_to_k12_structures": 0.3597012458759215,
+   "share_of_headline_where_enrolled_at_case_rate": [
+    0.010857571362682257,
+    0.009153140870597463
+   ],
+   "where_enrolled_ratio": 1.146317716949095
+  },
+  "B": {
+   "annual_charge_bn": {
+    "case_flat_real": {
+     "pupil_share": 2.2805270792870487,
+     "where_enrolled": 2.6051560812631225
+    },
+    "omb_2003_3pct": {
+     "pupil_share": 3.2875307625989367,
+     "where_enrolled": 3.7555049603715744
+    },
+    "omb_2003_7pct": {
+     "pupil_share": 7.670905112730853,
+     "where_enrolled": 8.762844907533676
+    }
+   },
+   "group_value_bn": {
+    "pupil_share": 109.58435875329789,
+    "where_enrolled": 125.18349867905249
+   },
+   "hispanic_weight_ratio": 1.2676291379690179,
+   "national_bn": 626.8912817908243,
+   "per_pupil_usd": 13258.47492574388,
+   "ratio_to_k12_capital": 0.2301431016409455,
+   "ratio_to_k12_structures": 0.23532419074330896,
+   "share_of_headline_where_enrolled_at_case_rate": [
+    0.007078656434329312,
+    0.005967443119063332
+   ],
+   "where_enrolled_ratio": 1.1423482338466953
+  },
+  "C": {
+   "annual_charge_bn": {
+    "case_flat_real": {
+     "pupil_share": 0.34898849007446636,
+     "where_enrolled": 0.3791373807092807
+    },
+    "omb_2003_3pct": {
+     "pupil_share": 0.503090012538435,
+     "where_enrolled": 0.546551634336484
+    },
+    "omb_2003_7pct": {
+     "pupil_share": 1.1738766959230151,
+     "where_enrolled": 1.2752871467851297
+    }
+   },
+   "group_value_bn": {
+    "pupil_share": 16.7696670846145,
+    "where_enrolled": 18.218387811216136
+   },
+   "hispanic_weight_ratio": 1.2704317114039854,
+   "national_bn": 95.93301647679718,
+   "per_pupil_usd": 2028.9411106103005,
+   "ratio_to_k12_capital": 0.03521874143579004,
+   "ratio_to_k12_structures": 0.03601160220872169,
+   "share_of_headline_where_enrolled_at_case_rate": [
+    0.0010301813694599314,
+    0.0008684626498832721
+   ],
+   "where_enrolled_ratio": 1.0863893552144979
+  },
+  "D": {
+   "annual_charge_bn": {
+    "case_flat_real": {
+     "pupil_share": 0.1996294997010521,
+     "where_enrolled": 0.2313648275738533
+    },
+    "omb_2003_3pct": {
+     "pupil_share": 0.28777913989717524,
+     "where_enrolled": 0.3335277160007372
+    },
+    "omb_2003_7pct": {
+     "pupil_share": 0.6714846597600757,
+     "where_enrolled": 0.7782313373350536
+    }
+   },
+   "group_value_bn": {
+    "pupil_share": 9.592637996572508,
+    "where_enrolled": 11.117590533357907
+   },
+   "hispanic_weight_ratio": 1.2328633582704578,
+   "national_bn": 54.875907454682526,
+   "per_pupil_usd": 1160.601310225462,
+   "ratio_to_k12_capital": 0.020145935848564184,
+   "ratio_to_k12_structures": 0.020599470575165518,
+   "share_of_headline_where_enrolled_at_case_rate": [
+    0.0006286579668535931,
+    0.0005299707216119839
+   ],
+   "where_enrolled_ratio": 1.15897113362667
+  }
+ },
+ "discount_evidence": {
+  "arm_C_factor": {
+   "Alameda County CA": 0.10387158639845406,
+   "Cobb County GA": 0.05393513121528703,
+   "Fulton County GA": 0.15549525570855488,
+   "Marin County CA": 0.23590886789580173
+  },
+  "median_mid": 0.7644057125321861,
+  "ratio_mid": {
+   "Alameda County CA": 0.7949986764896231,
+   "Cobb County GA": 0.7338127485747492,
+   "Fulton County GA": 0.22518423674532717,
+   "Marin County CA": 1.0977382809938907
+  }
+ },
+ "group": {
+  "admin_group_pupils_weighting": 8642657.355650976,
+  "lane_group_pupils": 8592477.741689507,
+  "share_source": {
+   "district": 97779,
+   "state": 286
+  }
+ },
+ "inputs": {
+  "case_rate": 0.020810698764237804,
+  "fhfa_land": "WP 19-01 v4.0 (June 2024), pooled cross-section 2015 prices",
+  "headline_band_bn": [
+   368.02973917888073,
+   436.56152715403437
+  ],
+  "hpi": "FHFA annual county all-transactions HPI (last updated 2026-03-31)",
+  "k12_capital_bn": 2723.9194975692117,
+  "k12_structures_bn": 2663.9474667295713,
+  "nces": "EDGE/CCD 2023-24",
+  "overture_release": "2026-10-21.0",
+  "pupil_share_s": 0.17480600215120404
+ },
+ "lane": "school_land_2026_10_24",
+ "matching": {
+  "by_how": {
+   "inside": 71110,
+   "near": 713,
+   "near_name": 265
+  },
+  "ca": {
+   "match_rate": 0.8354590594878785,
+   "pupil_match_rate": 0.894259951951119
+  },
+  "match_rate": 0.735104267577627,
+  "matched": 72088,
+  "pupil_match_rate": 0.8132597675489903,
+  "thresholds_m": {
+   "any": 60.0,
+   "name": 200.0
+  },
+  "tx": {
+   "match_rate": 0.791970405831792,
+   "pupil_match_rate": 0.8845948084660566
+  }
+ },
+ "parts_B": {
+  "charter": {
+   "acres": 54344.80457215614,
+   "pupils": 3473398.0,
+   "schools": 7719,
+   "value_B_bn": 44.29608263481231
+  },
+  "imputed": {
+   "acres": 319708.4122166226,
+   "pupils": 8829509.0,
+   "schools": 25977,
+   "value_B_bn": 146.29596367895425
+  },
+  "polygon": {
+   "acres": 1147448.5519204612,
+   "pupils": 38452798.0,
+   "schools": 72088,
+   "value_B_bn": 480.59531811187014
+  }
+ },
+ "prices": {
+  "acre_share_by_level": {
+   "county": 0.14581941955735772,
+   "state": 0.027994172057106387,
+   "tract": 0.8261864083855359
+  },
+  "acre_weighted_p24_usd": 653117.0462011317,
+  "aes_coef": [
+   -0.543,
+   -0.030529999999999998,
+   0.003601
+  ],
+  "dev_share": {
+   "large": 0.65,
+   "small": 0.8,
+   "small_acres": 2.0
+  },
+  "fhfa_tracts_in_2010_gazetteer": 0.9997065027973953
+ },
+ "sensitivities_B": {
+  "acreage_calibrated_to_cscd": {
+   "group_charge_case_rate_bn": {
+    "pupil_share": 2.746512666132723,
+    "where_enrolled": 3.1006639433697467
+   },
+   "imputed_factor": 1.349401261155029,
+   "national_bn": 754.9854861907385,
+   "polygon_factor": 1.1601726177671143,
+   "ratio_to_k12_structures": 0.28340854901226936,
+   "where_enrolled_ratio": 1.128945801562857
+  },
+  "central_B": {
+   "group_charge_case_rate_bn": {
+    "pupil_share": 2.2805270792870487,
+    "where_enrolled": 2.6051560812631225
+   },
+   "national_bn": 626.8912817908243,
+   "ratio_to_k12_structures": 0.23532419074330896,
+   "where_enrolled_ratio": 1.1423482338466953
+  },
+  "excluding_charters": {
+   "group_charge_case_rate_bn": {
+    "pupil_share": 2.119385237169785,
+    "where_enrolled": 2.447494187792155
+   },
+   "national_bn": 582.5951991560121,
+   "ratio_to_k12_structures": 0.21869620419776611,
+   "where_enrolled_ratio": 1.1548132660679118
+  },
+  "excluding_manhattan_36061": {
+   "group_charge_case_rate_bn": {
+    "pupil_share": 1.9966810081581372,
+    "where_enrolled": 2.463075422514445
+   },
+   "national_bn": 548.8651846760637,
+   "ratio_to_k12_structures": 0.20603453766672244,
+   "where_enrolled_ratio": 1.2335848402677696
+  },
+  "hispanic_weights": {
+   "group_charge_case_rate_bn": {
+    "pupil_share": 2.2805270792870487,
+    "where_enrolled": 2.8908625756316435
+   },
+   "national_bn": 626.8912817908243,
+   "ratio_to_k12_structures": 0.23532419074330896,
+   "where_enrolled_ratio": 1.2676291379690179
+  },
+  "inside_matches_only": {
+   "group_charge_case_rate_bn": {
+    "pupil_share": 2.328236141368638,
+    "where_enrolled": 2.6362983827791946
+   },
+   "national_bn": 640.0059671427368,
+   "ratio_to_k12_structures": 0.24024721776080976,
+   "where_enrolled_ratio": 1.1323157200151803
+  },
+  "no_2022_2024_carry_forward": {
+   "group_charge_case_rate_bn": {
+    "pupil_share": 2.053197896055604,
+    "where_enrolled": 2.3753930672025136
+   },
+   "national_bn": 564.4010424252062,
+   "ratio_to_k12_structures": 0.21186643110425157,
+   "where_enrolled_ratio": 1.156923583335965
+  },
+  "tract_priced_only_rescaled": {
+   "group_charge_case_rate_bn": {
+    "pupil_share": 1.647787941965423,
+    "where_enrolled": 1.9178548161077416
+   },
+   "national_bn": 452.95839915266686,
+   "note": "schools priced at their own tract only; national total is for that subset",
+   "ratio_to_k12_structures": 0.17003278210615277,
+   "where_enrolled_ratio": 1.1638966199863026
+  }
+ },
+ "status": "beside the case, not adopted",
+ "universe": {
+  "intersecting_pairs": 8246,
+  "non_virtual": 98065,
+  "polygons": 95971,
+  "pupils_non_virtual": 47282307.0,
+  "schools": 99297,
+  "virtual": 1232
+ },
+ "validation": {
+  "ca_schools": 10271,
+  "ca_schools_with_cscd": 9041,
+  "campus_level": {
+   "mean_abs_log_error": 0.1776410748252724,
+   "median_ratio": 0.9898387653655923,
+   "n": 6954,
+   "share_within_25pct": 0.7978142076502732,
+   "sum_ratio": 0.8619407014833836
+  },
+  "cscd_properties": 8545,
+  "cscd_total_acres": 133602.463,
+  "imputed": {
+   "median_ratio": 1.0861114998515455,
+   "n": 769,
+   "sum_ratio": 0.7410694126253027
+  },
+  "lane_ca_imputed_acres": 14345.796634045459,
+  "lane_ca_polygon_acres": 104702.60302268117,
+  "lane_ca_total_acres": 119048.39965672664,
+  "lane_ca_total_over_cscd": 0.8910644084213227,
+  "sole_occupant": {
+   "median_ratio": 0.9910097012941497,
+   "n": 5734,
+   "sum_ratio": 0.8887383996493498
+  }
+ },
+ "year": 2024
+}
