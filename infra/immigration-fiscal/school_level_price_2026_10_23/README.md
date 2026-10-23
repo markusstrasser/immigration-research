@@ -26,6 +26,7 @@ unzip -o ../../school_cost_where_enrolled_2026_09_24/_cache/slfs22_data_2025047_
 
 ```sh
 uv run --no-project python3 infra/immigration-fiscal/school_level_price_2026_10_23/build.py
+uv run --no-project python3 infra/immigration-fiscal/school_level_price_2026_10_23/state_elasticity.py
 uv run --no-project python3 -m pytest infra/immigration-fiscal/school_level_price_2026_10_23/ -q
 ```
 
@@ -38,6 +39,8 @@ uv run --no-project python3 -m pytest infra/immigration-fiscal/school_level_pric
 - `state_k.csv` — Hispanic- and white-weighted price vs state average, by state.
 - `district_k.csv` — within-district price gap, by district (≥5 schools, ≥100 Hispanic pupils).
 - `summary.json` — national readings, the decomposition and the checks.
+- `state_elasticity.csv` — within-district spending elasticity by state (district FE, pupil weighted).
+- `state_elasticity_summary.json` — national pooled and Hispanic-weighted state averages.
 
 `_cache/` (ignored) holds the three intermediate tables: `ccd_school_2122.csv`,
 `slfs_school_2122.csv` and `school_merge.csv`.

@@ -1,0 +1,7 @@
+{
+  "national_pupil_weighted_beta": 0.8949359486899127,
+  "national_se": 0.005025943422025057,
+  "hispanic_weighted_state_beta": 0.8992197874521297,
+  "states": 50,
+  "note": "within-district, district FE, SLFS FY2022; state cells are noisy for small states"
+}

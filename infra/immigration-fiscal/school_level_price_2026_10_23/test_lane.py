@@ -33,6 +33,19 @@ def test_district_table():
     assert d["hispanic"].sum() > 5_000_000
 
 
+def test_state_elasticity():
+    d = pd.read_csv(OUT / "state_elasticity.csv")
+    assert len(d) >= 80
+    pw = d[d.weighting.eq("pupil_weighted")]
+    assert pw["beta"].between(0.4, 1.3).all()
+    for state in ("CA", "TX", "AZ"):
+        row = pw[pw.state.eq(state)].iloc[0]
+        assert 0.8 < row.beta < 1.0
+    s = json.loads((OUT / "state_elasticity_summary.json").read_text())
+    assert 0.8 < s["national_pupil_weighted_beta"] < 1.0
+    assert 0.8 < s["hispanic_weighted_state_beta"] < 1.0
+
+
 def test_merge_totals():
     d = pd.read_csv(HERE / "_cache" / "school_merge.csv", dtype={"NCESSCH": str})
     assert len(d) > 80_000

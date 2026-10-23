@@ -45,6 +45,40 @@ the right reading there. The 12.4% national gap against whites is therefore a co
 group's urban-majority districts and the rural/small-town districts where white pupils are
 disproportionately concentrated, not a within-district transfer.
 
+## The response by state: CA and TX are ~0.92, not 0.836
+
+The scaling lane's 0.836 is a **national** within-district average. Run separately by state on the
+SLFS/CCD school merge (log current expenditures on log membership, district fixed effects, pupil
+weighted), the high-share states are closer to proportional:
+
+| State | Within-district elasticity | 95% CI |
+|---|---:|---|
+| CA | **0.919** | [0.884, 0.954] |
+| TX | **0.922** | [0.907, 0.937] |
+| AZ | 0.903 | [0.868, 0.939] |
+| NY | 0.868 | [0.838, 0.897] |
+| IL | 0.913 | [0.848, 0.978] |
+| FL | 0.807 | [0.781, 0.833] |
+| GA | 0.781 | [0.761, 0.801] |
+| NC | 0.748 | [0.719, 0.777] |
+| National pooled | 0.895 | [0.885, 0.905] |
+| Hispanic-weighted state average | **0.899** | — |
+
+So the 0.836 low side is a national average that **understates** the response in CA and TX. The
+differentiated ensemble is 0.75–0.95 by state, with the group's high-share states at **0.90–0.92**.
+The national pooled SLFS estimate (0.895) is above the scaling lane's F-33 panel estimate (0.836);
+the difference is the sample and measure (school-level FY2022 vs district F-33 2000–2019), not a
+contradiction.
+
+## Does this change the bottom line?
+
+No. The share finding is **interpretation**: the group is the majority of pupils in the high-share
+places, so the 1.0 central is the right reading there and the 0.836 low side is a small-district
+average. The price finding (k = 1.034) is a **+$2.8–3.7bn** correction on the September 24 case
+(about 1%), and the response finding (CA/TX ~0.92 vs 0.836) supports the central rather than the low
+side. The headline stays **$368.0–436.6bn**; adopting k = 1.034 would put it at roughly
+**$371–440bn**, a ~1% move. The sign and the order of magnitude do not change.
+
 ## The decomposition: between states, between districts, within districts
 
 | Margin | Ratio | Reading |
