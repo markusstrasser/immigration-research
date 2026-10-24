@@ -1,7 +1,7 @@
 ---
 date: 2026-10-24
 concepts: [estimate-screen, influence-test, public-land]
-status: adopted
+status: reopened
 supersedes: []
 relations:
   - refines: decisions/2026-10-23-routing-layer-range-and-estimate-screen.md
@@ -52,3 +52,11 @@ main case v10. The drop-five result stays reported beside it.
 ## Supersedes
 
 None; refines test 3 of decisions/2026-10-23-routing-layer-range-and-estimate-screen.md for sums.
+
+## Revisions
+
+- 2026-10-24 15:0x JST: **reopened.** A blind review found the repricing test duplicates the stability screen's
+  county-average variant and does not test concentration; the land estimate is again "not identified" and the
+  drop-five rule stands until a concentration test for sums is designed (for example, an independent price source for
+  the top units, or the share of the sum in the top five against a pre-set limit). Source:
+  `infra/immigration-fiscal/land_price_rule_2026_10_24/RESULT.md` "Screen revision withdrawn".

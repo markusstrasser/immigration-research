@@ -79,3 +79,13 @@ The operator adopted the repricing influence test for sums
 ([decision](../../../decisions/2026-10-24-influence-test-for-sums.md)). Under it the estimate moves 2.9% / 2.8% and
 passes every screen, so **$19.74 / 23.68bn at the case rate is identified** and enters candidate main case v10. The
 drop-five result above (33%) stays as recorded.
+
+## Screen revision withdrawn (2026-10-24 15:0x JST)
+
+A blind review the same afternoon found that the repricing test reruns the stability screen's county-average variant
+($22.19bn) and does not test whether a few counties drive the sum; the five counties carry 31% of national value. It
+also found construct problems (the 0.65 factor is an acreage share, dedicated streets, the land user cost, as-is prices
+on small-lot tracts, water inside park polygons) and that the group's location is not weighted for any line except K-12,
+so the explanation under "Screen" above is wrong: the five counties dominate because their land is dear, not because
+the group lives there. **The estimate is again not identified.** The successor lane `land_price_rule_r2_2026_10_24`
+reworks it; nothing from this lane enters the main case.
