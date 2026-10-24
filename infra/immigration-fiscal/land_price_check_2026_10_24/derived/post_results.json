@@ -1,0 +1,43 @@
+{
+ "A_assessor_alternatives": {
+  "06037": {
+   "acre_weighted_mean": 3717415.4053628966,
+   "mean": 5316281.700604253,
+   "median": 4100151.2163735116,
+   "n": 135601
+  },
+  "06071": {
+   "acre_weighted_mean": 375419.26414716,
+   "mean": 881317.8191435123,
+   "median": 641824.0514716675,
+   "n": 56380
+  },
+  "06073": {
+   "acre_weighted_mean": 1495817.1603696833,
+   "mean": 3054713.1846562484,
+   "median": 1826387.7139618215,
+   "n": 104357
+  }
+ },
+ "B_transactions_house_index": {
+  "coverage_ok": true,
+  "gmean_q": 0.8280691766150299,
+  "moved": [
+   -0.06436684769202228,
+   -0.06376018598475675
+  ],
+  "passes": true,
+  "q": {
+   "06037": 1.1397650639694958,
+   "06059": 0.74560341732254,
+   "06071": 0.3939398629806417,
+   "06073": 0.6034471730830313,
+   "06085": 0.5562631133518093
+  },
+  "repriced_bn": [
+   15.417444812721905,
+   14.636199614079977
+  ]
+ },
+ "note": "B passes with house-price indexes; A and C still fail, so 1 of 3 passes and land stays not identified. A's acre-weighted mean is below its median; its lot<=1 acre San Diego variant (worker) is q 0.52."
+}
