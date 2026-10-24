@@ -328,3 +328,15 @@ Rates at the bound: state and local 2.62% low / 2.22% high, state and local high
 2.55%. The highway change adds $1.8bn to the low end and $0.6bn to the high end. [CALCULATION: `derived/rate_model.json`
 `theta_pairing.bound`] The table in §7 and the verdict above keep the first pass's numbers as recorded. Rerun with both
 commands: IDENTICAL 16/16.
+
+## Correction, 2026-10-24 19:42 JST: line split of completion and coverage capital
+
+`rate_model.py` splits capital by line from v8-standalone `one_rate` parts and books union-completion
+(`capital_reporter`) and coverage (`capital_coverage`) capital as their own lines at the plain state/local rate. In
+the case, each of those pieces belongs to a parent line: highway and federal completion, coverage and count capital
+take the highway and federal rates. The candidate v10 (`main_case_2026_10_24`) prices each piece on its parent line
+inside the engine run. Its total capital at the case rate matches this lane's to 1e-9, but its split differs
+(state/local highways $7.358bn in-run against $6.977bn here at the low end), so the bound's change from v9 is
+**+$13.038bn / +$3.888bn**, $0.120bn / $0.043bn above this lane's +$12.919bn / +$3.844bn. The in-run figure is
+the right one; this lane's band ($380.949 / 440.406bn set) understates it by that amount. The lane's per-level rates
+are unchanged. [CALCULATION: ../main_case_2026_10_24/derived/summary.json v10.item22]
