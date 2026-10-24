@@ -1,0 +1,2514 @@
+{
+ "pass": true,
+ "count": 627,
+ "checks": [
+  {
+   "name": "items off is the v9 case",
+   "pass": true
+  },
+  {
+   "name": "items off v9 payloads exactly",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "items off v9 bands exactly",
+   "pass": true
+  },
+  {
+   "name": "items off v9 end specifications",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/0",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/1",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/2",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/3",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/4",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/5",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/6",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/7",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/8",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/9",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/10",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/11",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/12",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/13",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/14",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/15",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/16",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/17",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/18",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/19",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/20",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/21",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/22",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/23",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/24",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/25",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/26",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/27",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/28",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/29",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/30",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/31",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/32",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/33",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/34",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/35",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/36",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/37",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/38",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/39",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/40",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/41",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/42",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/43",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/44",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/45",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/46",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/47",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/48",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/49",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/50",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/51",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/52",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/53",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/54",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/55",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/56",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/57",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/58",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/59",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/60",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/61",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/62",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_hotdeck_union_matched/63",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/0",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/1",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/2",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/3",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/4",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/5",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/6",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/7",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/8",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/9",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/10",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/11",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/12",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/13",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/14",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/15",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/16",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/17",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/18",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/19",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/20",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/21",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/22",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/23",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/24",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/25",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/26",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/27",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/28",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/29",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/30",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/31",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/32",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/33",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/34",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/35",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/36",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/37",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/38",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/39",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/40",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/41",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/42",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/43",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/44",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/45",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/46",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/47",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/48",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/49",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/50",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/51",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/52",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/53",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/54",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/55",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/56",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/57",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/58",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/59",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/60",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/61",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/62",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec b_matched_over_pooled/63",
+   "pass": true
+  },
+  {
+   "name": "v9 per_spec rows checked",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "candidate identity",
+   "pass": true
+  },
+  {
+   "name": "64 specifications retained",
+   "pass": true
+  },
+  {
+   "name": "ends agree across methods",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 0",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 1",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 2",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 3",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 4",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 5",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 6",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 7",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 8",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 9",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 10",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 11",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 12",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 13",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 14",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 15",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 16",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 17",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 18",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 19",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 20",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 21",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 22",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 23",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 24",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 25",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 26",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 27",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 28",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 29",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 30",
+   "pass": true
+  },
+  {
+   "name": "set payload/method mean 31",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 0",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 1",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 2",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 3",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 4",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 5",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 6",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 7",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 8",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 9",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 10",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 11",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 12",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 13",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 14",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 15",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 16",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 17",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 18",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 19",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 20",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 21",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 22",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 23",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 24",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 25",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 26",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 27",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 28",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 29",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 30",
+   "pass": true
+  },
+  {
+   "name": "cash payload/method mean 31",
+   "pass": true
+  },
+  {
+   "name": "v10 adds no edits",
+   "pass": true
+  },
+  {
+   "name": "v10 payload model is v9's",
+   "pass": true
+  },
+  {
+   "name": "v10 payload model is v9's",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/0",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/1",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/2",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/3",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/4",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/5",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/6",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/7",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/8",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/9",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/10",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/11",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/12",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/13",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/14",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/15",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/16",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/17",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/18",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/19",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/20",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/21",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/22",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/23",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/24",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/25",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/26",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/27",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/28",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/29",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/30",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/31",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/32",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/33",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/34",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/35",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/36",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/37",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/38",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/39",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/40",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/41",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/42",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/43",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/44",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/45",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/46",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/47",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/48",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/49",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/50",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/51",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/52",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/53",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/54",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/55",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/56",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/57",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/58",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/59",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/60",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/61",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/62",
+   "pass": true
+  },
+  {
+   "name": "set accounting 0/63",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/0",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/1",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/2",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/3",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/4",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/5",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/6",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/7",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/8",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/9",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/10",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/11",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/12",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/13",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/14",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/15",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/16",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/17",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/18",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/19",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/20",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/21",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/22",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/23",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/24",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/25",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/26",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/27",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/28",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/29",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/30",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/31",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/32",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/33",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/34",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/35",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/36",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/37",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/38",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/39",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/40",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/41",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/42",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/43",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/44",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/45",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/46",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/47",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/48",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/49",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/50",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/51",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/52",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/53",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/54",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/55",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/56",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/57",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/58",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/59",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/60",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/61",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/62",
+   "pass": true
+  },
+  {
+   "name": "set accounting 1/63",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/0",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/1",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/2",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/3",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/4",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/5",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/6",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/7",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/8",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/9",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/10",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/11",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/12",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/13",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/14",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/15",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/16",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/17",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/18",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/19",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/20",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/21",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/22",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/23",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/24",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/25",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/26",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/27",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/28",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/29",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/30",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/31",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/32",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/33",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/34",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/35",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/36",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/37",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/38",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/39",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/40",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/41",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/42",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/43",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/44",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/45",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/46",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/47",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/48",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/49",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/50",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/51",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/52",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/53",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/54",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/55",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/56",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/57",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/58",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/59",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/60",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/61",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/62",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 0/63",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/0",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/1",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/2",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/3",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/4",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/5",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/6",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/7",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/8",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/9",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/10",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/11",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/12",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/13",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/14",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/15",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/16",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/17",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/18",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/19",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/20",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/21",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/22",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/23",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/24",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/25",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/26",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/27",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/28",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/29",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/30",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/31",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/32",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/33",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/34",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/35",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/36",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/37",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/38",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/39",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/40",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/41",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/42",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/43",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/44",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/45",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/46",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/47",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/48",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/49",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/50",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/51",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/52",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/53",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/54",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/55",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/56",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/57",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/58",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/59",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/60",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/61",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/62",
+   "pass": true
+  },
+  {
+   "name": "cash accounting 1/63",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "item22 lane replica set/0",
+   "pass": true
+  },
+  {
+   "name": "item22 lane replica set/1",
+   "pass": true
+  },
+  {
+   "name": "item22 lane replica cash/0",
+   "pass": true
+  },
+  {
+   "name": "item22 lane replica cash/1",
+   "pass": true
+  },
+  {
+   "name": "item22 in-run capital closes to the 7% arm low",
+   "pass": true
+  },
+  {
+   "name": "item22 standalone is the in-run rate delta set/low",
+   "pass": true
+  },
+  {
+   "name": "item22 standalone is the in-run rate delta cash/low",
+   "pass": true
+  },
+  {
+   "name": "item22 in-run capital closes to the 7% arm high",
+   "pass": true
+  },
+  {
+   "name": "item22 standalone is the in-run rate delta set/high",
+   "pass": true
+  },
+  {
+   "name": "item22 standalone is the in-run rate delta cash/high",
+   "pass": true
+  },
+  {
+   "name": "item23 oracle set/0",
+   "pass": true
+  },
+  {
+   "name": "item24 oracle set/0",
+   "pass": true
+  },
+  {
+   "name": "items 23+24 corrected partial sum set/0",
+   "pass": true
+  },
+  {
+   "name": "item23 oracle set/1",
+   "pass": true
+  },
+  {
+   "name": "item24 oracle set/1",
+   "pass": true
+  },
+  {
+   "name": "items 23+24 corrected partial sum set/1",
+   "pass": true
+  },
+  {
+   "name": "item23 oracle cash/0",
+   "pass": true
+  },
+  {
+   "name": "item24 oracle cash/0",
+   "pass": true
+  },
+  {
+   "name": "items 23+24 corrected partial sum cash/0",
+   "pass": true
+  },
+  {
+   "name": "item23 oracle cash/1",
+   "pass": true
+  },
+  {
+   "name": "item24 oracle cash/1",
+   "pass": true
+  },
+  {
+   "name": "items 23+24 corrected partial sum cash/1",
+   "pass": true
+  },
+  {
+   "name": "item23 return/depreciation parts 0",
+   "pass": true
+  },
+  {
+   "name": "item24 parts 0",
+   "pass": true
+  },
+  {
+   "name": "item23 return/depreciation parts 1",
+   "pass": true
+  },
+  {
+   "name": "item24 parts 1",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "item changes plus interactions close",
+   "pass": true
+  },
+  {
+   "name": "r1 K-12 group ratio is one number per value variant across ends",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism college/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism college/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism college/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_airports_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_airports_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_airports_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_housing_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_housing_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_housing_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_ports_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_ports_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_ports_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_power_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_power_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_power_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_sewer_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_sewer_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_sewer_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_tolls_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_tolls_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_tolls_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_transit_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_transit_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_transit_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_water_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_water_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_water_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism gps_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism gps_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism gps_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_fed/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_fed/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_fed/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_fed/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_fed/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_fed/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism k12/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism k12/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism k12/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism pos_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism pos_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism pos_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism rec_sl/central/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism rec_sl/low/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism rec_sl/high/low",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism college/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism college/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism college/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_airports_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_airports_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_airports_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_housing_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_housing_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_housing_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_ports_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_ports_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_ports_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_power_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_power_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_power_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_sewer_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_sewer_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_sewer_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_tolls_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_tolls_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_tolls_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_transit_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_transit_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_transit_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_water_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_water_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism ent_water_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism gps_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism gps_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism gps_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_fed/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_fed/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_fed/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism health_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_fed/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_fed/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_fed/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism hwy_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism k12/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism k12/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism k12/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism pos_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism pos_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism pos_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism rec_sl/central/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism rec_sl/low/high",
+   "pass": true
+  },
+  {
+   "name": "item25 mechanism rec_sl/high/high",
+   "pass": true
+  },
+  {
+   "name": "item25 off by default",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "v9 item21 arm reproduces population",
+   "pass": true
+  },
+  {
+   "name": "v9 item21 arm reproduces no_ethnicity",
+   "pass": true
+  },
+  {
+   "name": "v9 item21 arm reproduces plain_pooled",
+   "pass": true
+  }
+ ]
+}

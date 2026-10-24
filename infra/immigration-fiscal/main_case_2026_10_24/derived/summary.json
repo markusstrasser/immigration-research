@@ -1,0 +1,1337 @@
+{
+ "lane": "main_case_2026_10_24",
+ "case_key": "oct24",
+ "status": "candidate",
+ "decision": null,
+ "base": "oct16",
+ "v10": {
+  "status": "candidate",
+  "case_key": "oct24",
+  "selected_items": [
+   "pension_tr2026",
+   "retiree_health",
+   "added_age_mix",
+   "user_fees",
+   "personal_allocation",
+   "child_credits",
+   "job_capital_taxes",
+   "white_end_tax_keys",
+   "row4_frame",
+   "foreign_source_tax",
+   "union_completion",
+   "mixed_unit_removal",
+   "coverage",
+   "veterans_compensation",
+   "income_security_administration",
+   "public_college_response",
+   "native_minor_calibration",
+   "coverage_tenure",
+   "consumption_tax_bases",
+   "one_rate",
+   "health_residual_key",
+   "capital_rate_theta_bound",
+   "k12_capital_where_enrolled",
+   "where_used_prices"
+  ],
+  "new_items": [
+   "capital_rate_theta_bound",
+   "k12_capital_where_enrolled",
+   "where_used_prices"
+  ],
+  "pending_items": [
+   "public_land"
+  ],
+  "land_lane": null,
+  "band_bn": [
+   380.98247588740634,
+   440.33441774844266
+  ],
+  "cash_set_bn": [
+   297.34978016717395,
+   356.70172202820936
+  ],
+  "v9_band_bn": [
+   368.02973917888073,
+   436.56152715403437
+  ],
+  "v9_cash_set_bn": [
+   284.39704345864834,
+   352.92883143380107
+  ],
+  "change_from_v9_bn": {
+   "set": [
+    12.952736708525606,
+    3.7728905944082953
+   ],
+   "cash": [
+    12.952736708525606,
+    3.7728905944082953
+   ]
+  },
+  "end_specifications": {
+   "set": [
+    [
+     16,
+     11
+    ],
+    [
+     16,
+     11
+    ]
+   ],
+   "cash": [
+    [
+     16,
+     11
+    ],
+    [
+     16,
+     11
+    ]
+   ],
+   "same_as_v9": true
+  },
+  "population": {
+   "without_coverage": 42951314.00418314,
+   "with_coverage": 44903074.086245224,
+   "completion": 517435.75719317,
+   "coverage": 1951760.0820620805,
+   "native_minor_calibration": -326988.2145133476,
+   "tenure": 5.820766091346741e-11
+  },
+  "per_member_usd": {
+   "set": [
+    8484.552196930976,
+    9806.331230300479
+   ],
+   "cash": [
+    6622.036157169439,
+    7943.81519053892
+   ]
+  },
+  "change_by_item": {
+   "capital_rate_theta_bound": {
+    "set": [
+     13.038477164561868,
+     3.887666807919402
+    ],
+    "cash": [
+     13.038477164561868,
+     3.887666807919345
+    ],
+    "ends": {
+     "set": [
+      [
+       16,
+       11
+      ],
+      [
+       16,
+       11
+      ]
+     ],
+     "cash": [
+      [
+       16,
+       11
+      ],
+      [
+       16,
+       11
+      ]
+     ]
+    }
+   },
+   "k12_capital_where_enrolled": {
+    "set": [
+     0.5426148833755065,
+     0.5426148833755633
+    ],
+    "cash": [
+     0.5426148833755065,
+     0.5426148833754496
+    ],
+    "ends": {
+     "set": [
+      [
+       16,
+       11
+      ],
+      [
+       16,
+       11
+      ]
+     ],
+     "cash": [
+      [
+       16,
+       11
+      ],
+      [
+       16,
+       11
+      ]
+     ]
+    }
+   },
+   "where_used_prices": {
+    "set": [
+     -0.6278538654042336,
+     -0.6572608972818443
+    ],
+    "cash": [
+     -0.6278538654042336,
+     -0.6572608972818443
+    ],
+    "ends": {
+     "set": [
+      [
+       16,
+       11
+      ],
+      [
+       16,
+       11
+      ]
+     ],
+     "cash": [
+      [
+       16,
+       11
+      ],
+      [
+       16,
+       11
+      ]
+     ]
+    }
+   }
+  },
+  "interactions": {
+   "total": {
+    "set": [
+     -0.0005014740075353075,
+     -0.0001301996048255205
+    ],
+    "cash": [
+     -0.0005014740075353075,
+     -0.00013019960465499025
+    ]
+   },
+   "pairs": {
+    "capital_rate_theta_bound+k12_capital_where_enrolled": {
+     "set": [
+      0.11713096631166309,
+      0.030411158476738365
+     ],
+     "cash": [
+      0.11713096631166309,
+      0.03041115847685205
+     ]
+    },
+    "capital_rate_theta_bound+where_used_prices": {
+     "set": [
+      -0.11763244031914155,
+      -0.030541358081507042
+     ],
+     "cash": [
+      -0.11763244031914155,
+      -0.030541358081563885
+     ]
+    },
+    "k12_capital_where_enrolled+where_used_prices": {
+     "set": [
+      0,
+      0
+     ],
+     "cash": [
+      0,
+      0
+     ]
+    }
+   },
+   "higher_order": {
+    "set": [
+     -5.684341886080802e-14,
+     -5.684341886080802e-14
+    ],
+    "cash": [
+     -5.684341886080802e-14,
+     5.684341886080802e-14
+    ]
+   }
+  },
+  "post_terms_at_ends_bn": {
+   "set": [
+    {
+     "capital_rate_theta_bound": 13.038477164561849,
+     "k12_capital_where_enrolled": 0.65974584968715,
+     "where_used_prices": -0.7454863057233779
+    },
+    {
+     "capital_rate_theta_bound": 3.887666807919371,
+     "k12_capital_where_enrolled": 0.5730260418522997,
+     "where_used_prices": -0.6878022553633789
+    }
+   ],
+   "cash": [
+    {
+     "capital_rate_theta_bound": 13.038477164561849,
+     "k12_capital_where_enrolled": 0.65974584968715,
+     "where_used_prices": -0.7454863057233779
+    },
+    {
+     "capital_rate_theta_bound": 3.887666807919371,
+     "k12_capital_where_enrolled": 0.5730260418522997,
+     "where_used_prices": -0.6878022553633789
+    }
+   ]
+  },
+  "item22": {
+   "lane_band_bn": {
+    "set": [
+     380.9486705247462,
+     440.4056985310365
+    ],
+    "cash": [
+     297.31597480451444,
+     356.77300281080323
+    ]
+   },
+   "lane_rate_delta_bn": [
+    12.918931345865571,
+    3.844171377002161
+   ],
+   "in_run_rate_delta_bn": [
+    13.038477164561849,
+    3.8876668079193664
+   ],
+   "in_run_minus_lane_bn": [
+    0.11954581869627745,
+    0.043495430917205535
+   ],
+   "capital_at_case_rate_bn": [
+    40.67853618053496,
+    44.62334906450087
+   ],
+   "by_level_at_case_rate_bn": {
+    "in_run": [
+     {
+      "state_local": 32.35893219502755,
+      "federal": 0.9613579662122694,
+      "state_local_highways": 7.358246019295139
+     },
+     {
+      "state_local": 33.30890308209712,
+      "federal": 1.3735322242348607,
+      "state_local_highways": 9.9409137581689
+     }
+    ],
+    "lane": [
+     {
+      "state_local": 32.776798427268275,
+      "federal": 0.9251414338044713,
+      "state_local_highways": 6.976596319462221
+     },
+     {
+      "state_local": 33.88645886672185,
+      "federal": 1.3168500280244244,
+      "state_local_highways": 9.420040169754648
+     }
+    ]
+   },
+   "reason": "the rate lane splits capital by line from v8-standalone one_rate parts and books union-completion (capital_reporter) and coverage (capital_coverage) capital as separate lines at the plain state/local rate; the in-run construction keeps each piece on its parent line, so highway and federal completion, coverage and count capital take the highway and federal rates. Totals agree to 1e-9."
+  },
+  "item23": {
+   "applied_factors": {
+    "structures": 1.0446570689967363,
+    "equipment": 0.8868516877080177,
+    "stock_combined": 1.0411826971492706
+   },
+   "embedded_k": 1.0341917412164008,
+   "parts_at_ends_bn": [
+    {
+     "k12_capital_where_enrolled:return": 0.4505597116365214,
+     "k12_capital_where_enrolled:depreciation": 0.09205517173898953
+    },
+    {
+     "k12_capital_where_enrolled:return": 0.4505597116365214,
+     "k12_capital_where_enrolled:depreciation": 0.09205517173898953
+    }
+   ]
+  },
+  "item24": {
+   "constants": {
+    "parks": {
+     "index_delta": -0.031605887188701706,
+     "sl_budget_bn": 48.901
+    },
+    "college": {
+     "factor": 0.8446929903,
+     "higher_fraction": 0.953144689302506
+    }
+   },
+   "parts_at_ends_bn": [
+    {
+     "where_used_prices:parks_matched_municipal": -0.17536516785284084,
+     "where_used_prices:college_gross_book_capital": -0.45248869755140053
+    },
+    {
+     "where_used_prices:parks_matched_municipal": -0.2047721997304719,
+     "where_used_prices:college_gross_book_capital": -0.45248869755140037
+    }
+   ]
+  },
+  "item25_mechanism_test": {
+   "lane": "infra/immigration-fiscal/land_price_rule_2026_10_24",
+   "k12_group_ratio_by_value_variant": {
+    "central": 1.144811266643335,
+    "low": 1.144731060064891,
+    "high": 1.1488551731351246
+   },
+   "lines": {
+    "college:central:low": {
+     "r1_bn": 0.349426819803,
+     "mechanism_bn": 0.3494268198031145,
+     "error_bn": 1.145195049900849e-13
+    },
+    "college:low:low": {
+     "r1_bn": 0.18815955193,
+     "mechanism_bn": 0.1881595519308214,
+     "error_bn": 8.213985047689221e-13
+    },
+    "college:high:low": {
+     "r1_bn": 0.537532281464,
+     "mechanism_bn": 0.5375322814637564,
+     "error_bn": -2.4358293160275934e-13
+    },
+    "ent_airports_sl:central:low": {
+     "r1_bn": 1.08920106027,
+     "mechanism_bn": 1.0892010602701843,
+     "error_bn": 1.8429702208777599e-13
+    },
+    "ent_airports_sl:low:low": {
+     "r1_bn": 0.593306342326,
+     "mechanism_bn": 0.5933063423258561,
+     "error_bn": -1.438849039914203e-13
+    },
+    "ent_airports_sl:high:low": {
+     "r1_bn": 1.66827359972,
+     "mechanism_bn": 1.6682735997242402,
+     "error_bn": 4.240163775648398e-12
+    },
+    "ent_housing_sl:central:low": {
+     "r1_bn": 0.00250715123025,
+     "mechanism_bn": 0.0025071512302472423,
+     "error_bn": -2.757776645934129e-15
+    },
+    "ent_housing_sl:low:low": {
+     "r1_bn": 0.00135000915511,
+     "mechanism_bn": 0.0013500091551066017,
+     "error_bn": -3.398323289438565e-15
+    },
+    "ent_housing_sl:high:low": {
+     "r1_bn": 0.00385661399792,
+     "mechanism_bn": 0.003856613997918198,
+     "error_bn": -1.8023776915399026e-15
+    },
+    "ent_ports_sl:central:low": {
+     "r1_bn": 0.000815189109297,
+     "mechanism_bn": 0.0008151891092979961,
+     "error_bn": 9.961649560796815e-16
+    },
+    "ent_ports_sl:low:low": {
+     "r1_bn": 0.000438947981929,
+     "mechanism_bn": 0.0004389479819284176,
+     "error_bn": -5.823791969505887e-16
+    },
+    "ent_ports_sl:high:low": {
+     "r1_bn": 0.00125352117665,
+     "mechanism_bn": 0.0012535211766494276,
+     "error_bn": -5.724587470723463e-16
+    },
+    "ent_power_sl:central:low": {
+     "r1_bn": 0.0000997302692579,
+     "mechanism_bn": 0.00009973026925796359,
+     "error_bn": 6.358845741627484e-17
+    },
+    "ent_power_sl:low:low": {
+     "r1_bn": 0.0000537923723739,
+     "mechanism_bn": 0.0000537923723740802,
+     "error_bn": 1.8020117733066887e-16
+    },
+    "ent_power_sl:high:low": {
+     "r1_bn": 0.000132521322936,
+     "mechanism_bn": 0.00013252132293583126,
+     "error_bn": -1.6872896309305663e-16
+    },
+    "ent_sewer_sl:central:low": {
+     "r1_bn": 0.0000215274073774,
+     "mechanism_bn": 0.000021527407377401546,
+     "error_bn": 1.5449880957918438e-18
+    },
+    "ent_sewer_sl:low:low": {
+     "r1_bn": 0.0000120086159776,
+     "mechanism_bn": 0.000012008615977631616,
+     "error_bn": 3.1616351789214014e-17
+    },
+    "ent_sewer_sl:high:low": {
+     "r1_bn": 0.0000326650167696,
+     "mechanism_bn": 0.0000326650167695037,
+     "error_bn": -9.62974817074469e-17
+    },
+    "ent_tolls_sl:central:low": {
+     "r1_bn": 0.220166463209,
+     "mechanism_bn": 0.22016646320892017,
+     "error_bn": -7.982503547054876e-14
+    },
+    "ent_tolls_sl:low:low": {
+     "r1_bn": 0.143273257641,
+     "mechanism_bn": 0.1432732576414843,
+     "error_bn": 4.843070389171089e-13
+    },
+    "ent_tolls_sl:high:low": {
+     "r1_bn": 0.255683780167,
+     "mechanism_bn": 0.25568378016722504,
+     "error_bn": 2.2504220709151923e-13
+    },
+    "ent_transit_sl:central:low": {
+     "r1_bn": 0.0000272105980924,
+     "mechanism_bn": 0.000027210598092433027,
+     "error_bn": 3.302750867933968e-17
+    },
+    "ent_transit_sl:low:low": {
+     "r1_bn": 0.0000146518605113,
+     "mechanism_bn": 0.000014651860511312213,
+     "error_bn": 1.2212521033512502e-17
+    },
+    "ent_transit_sl:high:low": {
+     "r1_bn": 0.0000382344806886,
+     "mechanism_bn": 0.000038234480688711444,
+     "error_bn": 1.1144243080435379e-16
+    },
+    "ent_water_sl:central:low": {
+     "r1_bn": 0.0000323591898061,
+     "mechanism_bn": 0.00003235918980599335,
+     "error_bn": -1.0665161245468346e-16
+    },
+    "ent_water_sl:low:low": {
+     "r1_bn": 0.0000174253820484,
+     "mechanism_bn": 0.00001742538204841602,
+     "error_bn": 1.6019087098473328e-17
+    },
+    "ent_water_sl:high:low": {
+     "r1_bn": 0.0000469055907526,
+     "mechanism_bn": 0.000046905590752692294,
+     "error_bn": 9.229270993282856e-17
+    },
+    "gps_sl:central:low": {
+     "r1_bn": 0.0000124716699745,
+     "mechanism_bn": 0.00001247166997453009,
+     "error_bn": 3.0089998418261765e-17
+    },
+    "gps_sl:low:low": {
+     "r1_bn": 0.00000671551460167,
+     "mechanism_bn": 0.000006715514601673869,
+     "error_bn": 3.869246503057644e-18
+    },
+    "gps_sl:high:low": {
+     "r1_bn": 0.0000191871845762,
+     "mechanism_bn": 0.0000191871845761874,
+     "error_bn": -1.2600462123354972e-17
+    },
+    "health_fed:central:low": {
+     "r1_bn": 0.00764948640398,
+     "mechanism_bn": 0.0076494864039833195,
+     "error_bn": 3.3193933712816204e-15
+    },
+    "health_fed:low:low": {
+     "r1_bn": 0.0041190922352,
+     "mechanism_bn": 0.004119092235209803,
+     "error_bn": 9.802922362744937e-15
+    },
+    "health_fed:high:low": {
+     "r1_bn": 0.0117682903106,
+     "mechanism_bn": 0.011768290310600317,
+     "error_bn": 3.174543961037557e-16
+    },
+    "health_sl:central:low": {
+     "r1_bn": 0.0361708473782,
+     "mechanism_bn": 0.036170847378228704,
+     "error_bn": 2.8706204080464204e-14
+    },
+    "health_sl:low:low": {
+     "r1_bn": 0.0194798971477,
+     "mechanism_bn": 0.019479897147717022,
+     "error_bn": 1.702110674628443e-14
+    },
+    "health_sl:high:low": {
+     "r1_bn": 0.0556371796675,
+     "mechanism_bn": 0.05563717966758609,
+     "error_bn": 8.609085666577698e-14
+    },
+    "hwy_fed:central:low": {
+     "r1_bn": 0,
+     "mechanism_bn": 0,
+     "error_bn": 0
+    },
+    "hwy_fed:low:low": {
+     "r1_bn": 0,
+     "mechanism_bn": 0,
+     "error_bn": 0
+    },
+    "hwy_fed:high:low": {
+     "r1_bn": 0,
+     "mechanism_bn": 0,
+     "error_bn": 0
+    },
+    "hwy_sl:central:low": {
+     "r1_bn": 10.3463554221,
+     "mechanism_bn": 10.346355422052628,
+     "error_bn": -4.737188419312588e-11
+    },
+    "hwy_sl:low:low": {
+     "r1_bn": 6.22345598474,
+     "mechanism_bn": 6.2234559847379165,
+     "error_bn": -2.0836665726164938e-12
+    },
+    "hwy_sl:high:low": {
+     "r1_bn": 13.892275106,
+     "mechanism_bn": 13.892275106043376,
+     "error_bn": 4.3376857661314716e-11
+    },
+    "k12:central:low": {
+     "r1_bn": 2.85154897121,
+     "mechanism_bn": 2.851548971214083,
+     "error_bn": 4.082956195361476e-12
+    },
+    "k12:low:low": {
+     "r1_bn": 1.53552385581,
+     "mechanism_bn": 1.5355238558121986,
+     "error_bn": 2.19868567796766e-12
+    },
+    "k12:high:low": {
+     "r1_bn": 4.37367317058,
+     "mechanism_bn": 4.3736731705862635,
+     "error_bn": 6.263434215725283e-12
+    },
+    "pos_sl:central:low": {
+     "r1_bn": 0.000282664541535,
+     "mechanism_bn": 0.00028266454153399274,
+     "error_bn": -1.0072780283476579e-15
+    },
+    "pos_sl:low:low": {
+     "r1_bn": 0.000152203983903,
+     "mechanism_bn": 0.0001522039839028016,
+     "error_bn": -1.9838189251053517e-16
+    },
+    "pos_sl:high:low": {
+     "r1_bn": 0.000434868525438,
+     "mechanism_bn": 0.00043486852543832266,
+     "error_bn": 3.226585665316861e-16
+    },
+    "rec_sl:central:low": {
+     "r1_bn": 4.83660563091,
+     "mechanism_bn": 4.836605630893526,
+     "error_bn": -1.6473933328597923e-11
+    },
+    "rec_sl:low:low": {
+     "r1_bn": 2.67502462043,
+     "mechanism_bn": 2.6750246204119703,
+     "error_bn": -1.8029577830702692e-11
+    },
+    "rec_sl:high:low": {
+     "r1_bn": 7.32623806289,
+     "mechanism_bn": 7.326238062866829,
+     "error_bn": -2.3170798613136867e-11
+    },
+    "college:central:high": {
+     "r1_bn": 0.349426819803,
+     "mechanism_bn": 0.3494268198031144,
+     "error_bn": 1.1440848268762238e-13
+    },
+    "college:low:high": {
+     "r1_bn": 0.18815955193,
+     "mechanism_bn": 0.18815955193082134,
+     "error_bn": 8.213429936176908e-13
+    },
+    "college:high:high": {
+     "r1_bn": 0.537532281464,
+     "mechanism_bn": 0.5375322814637562,
+     "error_bn": -2.438049762076844e-13
+    },
+    "ent_airports_sl:central:high": {
+     "r1_bn": 1.08920106027,
+     "mechanism_bn": 1.0892010602701843,
+     "error_bn": 1.8429702208777599e-13
+    },
+    "ent_airports_sl:low:high": {
+     "r1_bn": 0.593306342326,
+     "mechanism_bn": 0.5933063423258561,
+     "error_bn": -1.438849039914203e-13
+    },
+    "ent_airports_sl:high:high": {
+     "r1_bn": 1.66827359972,
+     "mechanism_bn": 1.6682735997242402,
+     "error_bn": 4.240163775648398e-12
+    },
+    "ent_housing_sl:central:high": {
+     "r1_bn": 0.00250715123025,
+     "mechanism_bn": 0.0025071512302472423,
+     "error_bn": -2.757776645934129e-15
+    },
+    "ent_housing_sl:low:high": {
+     "r1_bn": 0.00135000915511,
+     "mechanism_bn": 0.0013500091551066017,
+     "error_bn": -3.398323289438565e-15
+    },
+    "ent_housing_sl:high:high": {
+     "r1_bn": 0.00385661399792,
+     "mechanism_bn": 0.003856613997918198,
+     "error_bn": -1.8023776915399026e-15
+    },
+    "ent_ports_sl:central:high": {
+     "r1_bn": 0.000815189109297,
+     "mechanism_bn": 0.000815189109297996,
+     "error_bn": 9.96056535862433e-16
+    },
+    "ent_ports_sl:low:high": {
+     "r1_bn": 0.000438947981929,
+     "mechanism_bn": 0.00043894798192841756,
+     "error_bn": -5.82433407059213e-16
+    },
+    "ent_ports_sl:high:high": {
+     "r1_bn": 0.00125352117665,
+     "mechanism_bn": 0.0012535211766494274,
+     "error_bn": -5.726755875068434e-16
+    },
+    "ent_power_sl:central:high": {
+     "r1_bn": 0.0000997302692579,
+     "mechanism_bn": 0.00009973026925796359,
+     "error_bn": 6.358845741627484e-17
+    },
+    "ent_power_sl:low:high": {
+     "r1_bn": 0.0000537923723739,
+     "mechanism_bn": 0.0000537923723740802,
+     "error_bn": 1.8020117733066887e-16
+    },
+    "ent_power_sl:high:high": {
+     "r1_bn": 0.000132521322936,
+     "mechanism_bn": 0.00013252132293583126,
+     "error_bn": -1.6872896309305663e-16
+    },
+    "ent_sewer_sl:central:high": {
+     "r1_bn": 0.0000215274073774,
+     "mechanism_bn": 0.000021527407377401546,
+     "error_bn": 1.5449880957918438e-18
+    },
+    "ent_sewer_sl:low:high": {
+     "r1_bn": 0.0000120086159776,
+     "mechanism_bn": 0.000012008615977631616,
+     "error_bn": 3.1616351789214014e-17
+    },
+    "ent_sewer_sl:high:high": {
+     "r1_bn": 0.0000326650167696,
+     "mechanism_bn": 0.0000326650167695037,
+     "error_bn": -9.62974817074469e-17
+    },
+    "ent_tolls_sl:central:high": {
+     "r1_bn": 0.220166463209,
+     "mechanism_bn": 0.22016646320892017,
+     "error_bn": -7.982503547054876e-14
+    },
+    "ent_tolls_sl:low:high": {
+     "r1_bn": 0.143273257641,
+     "mechanism_bn": 0.1432732576414843,
+     "error_bn": 4.843070389171089e-13
+    },
+    "ent_tolls_sl:high:high": {
+     "r1_bn": 0.255683780167,
+     "mechanism_bn": 0.25568378016722504,
+     "error_bn": 2.2504220709151923e-13
+    },
+    "ent_transit_sl:central:high": {
+     "r1_bn": 0.0000272105980924,
+     "mechanism_bn": 0.000027210598092433024,
+     "error_bn": 3.302412054755066e-17
+    },
+    "ent_transit_sl:low:high": {
+     "r1_bn": 0.0000146518605113,
+     "mechanism_bn": 0.000014651860511312211,
+     "error_bn": 1.2210826967617994e-17
+    },
+    "ent_transit_sl:high:high": {
+     "r1_bn": 0.0000382344806886,
+     "mechanism_bn": 0.00003823448068871144,
+     "error_bn": 1.1143565454077575e-16
+    },
+    "ent_water_sl:central:high": {
+     "r1_bn": 0.0000323591898061,
+     "mechanism_bn": 0.00003235918980599334,
+     "error_bn": -1.0666516498183953e-16
+    },
+    "ent_water_sl:low:high": {
+     "r1_bn": 0.0000174253820484,
+     "mechanism_bn": 0.000017425382048416012,
+     "error_bn": 1.6012310834895294e-17
+    },
+    "ent_water_sl:high:high": {
+     "r1_bn": 0.0000469055907526,
+     "mechanism_bn": 0.000046905590752692274,
+     "error_bn": 9.227238114209446e-17
+    },
+    "gps_sl:central:high": {
+     "r1_bn": 0.000017674593543,
+     "mechanism_bn": 0.0000176745935430264,
+     "error_bn": 2.6400322900022033e-17
+    },
+    "gps_sl:low:high": {
+     "r1_bn": 0.00000951708883086,
+     "mechanism_bn": 0.000009517088830865785,
+     "error_bn": 5.785235029746871e-18
+    },
+    "gps_sl:high:high": {
+     "r1_bn": 0.0000271916823739,
+     "mechanism_bn": 0.00002719168237386872,
+     "error_bn": -3.12792326762068e-17
+    },
+    "health_fed:central:high": {
+     "r1_bn": 0.00764948640398,
+     "mechanism_bn": 0.0076494864039833195,
+     "error_bn": 3.3193933712816204e-15
+    },
+    "health_fed:low:high": {
+     "r1_bn": 0.0041190922352,
+     "mechanism_bn": 0.004119092235209803,
+     "error_bn": 9.802922362744937e-15
+    },
+    "health_fed:high:high": {
+     "r1_bn": 0.0117682903106,
+     "mechanism_bn": 0.011768290310600317,
+     "error_bn": 3.174543961037557e-16
+    },
+    "health_sl:central:high": {
+     "r1_bn": 0.0361708473782,
+     "mechanism_bn": 0.036170847378228704,
+     "error_bn": 2.8706204080464204e-14
+    },
+    "health_sl:low:high": {
+     "r1_bn": 0.0194798971477,
+     "mechanism_bn": 0.019479897147717022,
+     "error_bn": 1.702110674628443e-14
+    },
+    "health_sl:high:high": {
+     "r1_bn": 0.0556371796675,
+     "mechanism_bn": 0.05563717966758609,
+     "error_bn": 8.609085666577698e-14
+    },
+    "hwy_fed:central:high": {
+     "r1_bn": 0.0569324816819,
+     "mechanism_bn": 0.056932481681942065,
+     "error_bn": 4.206357484548562e-14
+    },
+    "hwy_fed:low:high": {
+     "r1_bn": 0.0368516553665,
+     "mechanism_bn": 0.03685165536654812,
+     "error_bn": 4.812122922359663e-14
+    },
+    "hwy_fed:high:high": {
+     "r1_bn": 0.0768658127196,
+     "mechanism_bn": 0.07686581271951032,
+     "error_bn": -8.967826481409702e-14
+    },
+    "hwy_sl:central:high": {
+     "r1_bn": 13.9778184492,
+     "mechanism_bn": 13.977818449163625,
+     "error_bn": -3.637623535723833e-11
+    },
+    "hwy_sl:low:high": {
+     "r1_bn": 8.40782423689,
+     "mechanism_bn": 8.407824236891454,
+     "error_bn": 1.4530598946294049e-12
+    },
+    "hwy_sl:high:high": {
+     "r1_bn": 18.7683190222,
+     "mechanism_bn": 18.76831902219586,
+     "error_bn": -4.1389114358025836e-12
+    },
+    "k12:central:high": {
+     "r1_bn": 2.85154897121,
+     "mechanism_bn": 2.851548971214083,
+     "error_bn": 4.082956195361476e-12
+    },
+    "k12:low:high": {
+     "r1_bn": 1.53552385581,
+     "mechanism_bn": 1.5355238558121986,
+     "error_bn": 2.19868567796766e-12
+    },
+    "k12:high:high": {
+     "r1_bn": 4.37367317058,
+     "mechanism_bn": 4.3736731705862635,
+     "error_bn": 6.263434215725283e-12
+    },
+    "pos_sl:central:high": {
+     "r1_bn": 0.000282664541535,
+     "mechanism_bn": 0.00028266454153399274,
+     "error_bn": -1.0072780283476579e-15
+    },
+    "pos_sl:low:high": {
+     "r1_bn": 0.000152203983903,
+     "mechanism_bn": 0.0001522039839028016,
+     "error_bn": -1.9838189251053517e-16
+    },
+    "pos_sl:high:high": {
+     "r1_bn": 0.000434868525438,
+     "mechanism_bn": 0.00043486852543832266,
+     "error_bn": 3.226585665316861e-16
+    },
+    "rec_sl:central:high": {
+     "r1_bn": 5.08321383204,
+     "mechanism_bn": 5.083213832037325,
+     "error_bn": -2.675193400136777e-12
+    },
+    "rec_sl:low:high": {
+     "r1_bn": 2.81141841806,
+     "mechanism_bn": 2.81141841804589,
+     "error_bn": -1.411004646456604e-11
+    },
+    "rec_sl:high:high": {
+     "r1_bn": 7.69978730954,
+     "mechanism_bn": 7.699787309531589,
+     "error_bn": -8.410161456140486e-12
+    }
+   },
+   "max_abs_error_bn": 4.737188419312588e-11
+  },
+  "rates_by_end": {
+   "state_local": [
+    0.026220807997089195,
+    0.022215346010289194
+   ],
+   "state_local_highways": [
+    0.031549611071443,
+    0.023598883429033
+   ],
+   "federal": [
+    0.03875916817203933,
+    0.025470728172039332
+   ]
+  },
+  "case_rate": 0.020810698764237804,
+  "companions": {
+   "lineage_arm_a": {
+    "band_bn": [
+     366.990704692995,
+     425.1705854449322
+    ],
+    "cash_set_bn": [
+     285.3663167167264,
+     343.5461974686639
+    ],
+    "ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "cash_ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "v9_band_bn": [
+     354.4463894448642,
+     421.50982754443135
+    ],
+    "change_from_v9_bn": [
+     12.544315248130772,
+     3.660757900500869
+    ]
+   },
+   "lineage_arm_c": {
+    "band_bn": [
+     394.96710018492263,
+     455.49051511509435
+    ],
+    "cash_set_bn": [
+     309.3260969027456,
+     369.8495118329172
+    ],
+    "ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "cash_ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "v9_band_bn": [
+     381.60581060904985,
+     451.6054864971467
+    ],
+    "change_from_v9_bn": [
+     13.361289575872775,
+     3.8850286179476257
+    ]
+   },
+   "lineage_c3_minus_se": {
+    "band_bn": [
+     385.22027828109094,
+     444.4328995598474
+    ],
+    "cash_set_bn": [
+     301.64713876654184,
+     360.85976004529726
+    ],
+    "ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "cash_ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "v9_band_bn": [
+     372.26519321330767,
+     440.6595306520975
+    ],
+    "change_from_v9_bn": [
+     12.955085067783273,
+     3.773368907749898
+    ]
+   },
+   "lineage_c3_plus_se": {
+    "band_bn": [
+     376.7446711600812,
+     436.2359350735913
+    ],
+    "cash_set_bn": [
+     293.05241923416537,
+     352.5436831476745
+    ],
+    "ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "cash_ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "v9_band_bn": [
+     363.7942828108133,
+     432.4635227925246
+    ],
+    "change_from_v9_bn": [
+     12.95038834926794,
+     3.7724122810666927
+    ]
+   },
+   "shared_allocation": {
+    "band_bn": [
+     335.5830454414821,
+     394.190372394531
+    ],
+    "cash_set_bn": [
+     246.2702240587354,
+     304.87755101178436
+    ],
+    "ends": [
+     [
+      48,
+      43
+     ],
+     [
+      48,
+      43
+     ]
+    ],
+    "cash_ends": [
+     [
+      48,
+      43
+     ],
+     [
+      48,
+      43
+     ]
+    ],
+    "v9_band_bn": [
+     322.7919675480988,
+     390.4700764745399
+    ],
+    "change_from_v9_bn": [
+     12.791077893383317,
+     3.720295919991088
+    ]
+   },
+   "school_within_district": {
+    "band_bn": [
+     350.3098125575557,
+     413.2770868437416
+    ],
+    "cash_set_bn": [
+     266.67711683732284,
+     329.64439112350885
+    ],
+    "ends": [
+     [
+      24,
+      3
+     ],
+     [
+      24,
+      3
+     ]
+    ],
+    "cash_ends": [
+     [
+      24,
+      3
+     ],
+     [
+      24,
+      3
+     ]
+    ],
+    "v9_band_bn": [
+     337.88393995116525,
+     409.7013942616561
+    ],
+    "change_from_v9_bn": [
+     12.425872606390442,
+     3.5756925820854804
+    ]
+   },
+   "first_year": {
+    "band_bn": [
+     313.89376203689636,
+     370.9017728747163
+    ],
+    "cash_set_bn": [
+     230.26106631666323,
+     287.269077154483
+    ],
+    "ends": [
+     [
+      24,
+      7
+     ],
+     [
+      24,
+      7
+     ]
+    ],
+    "cash_ends": [
+     [
+      24,
+      7
+     ],
+     [
+      24,
+      7
+     ]
+    ],
+    "v9_band_bn": [
+     313.83578644083934,
+     370.83815145261286
+    ],
+    "change_from_v9_bn": [
+     0.05797559605701963,
+     0.06362142210343791
+    ]
+   },
+   "coverage_da_middle_0_17": {
+    "band_bn": [
+     378.2996436065997,
+     437.5184396063564
+    ],
+    "cash_set_bn": [
+     294.83735271448745,
+     354.05614871424325
+    ],
+    "ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "cash_ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "v9_band_bn": [
+     365.4106079713848,
+     433.7640173278629
+    ],
+    "change_from_v9_bn": [
+     12.889035635214896,
+     3.7544222784935073
+    ]
+   },
+   "coverage_da_middle": {
+    "band_bn": [
+     376.8345965027645,
+     434.7900866794676
+    ],
+    "cash_set_bn": [
+     298.6140851646901,
+     356.5695753413924
+    ],
+    "ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "cash_ends": [
+     [
+      16,
+      11
+     ],
+     [
+      16,
+      11
+     ]
+    ],
+    "v9_band_bn": [
+     364.1360787143001,
+     431.0932518708678
+    ],
+    "change_from_v9_bn": [
+     12.698517788464414,
+     3.6968348085998173
+    ]
+   },
+   "health_residual_key_population": {
+    "band_bn": [
+     374.5682452657202,
+     433.952875228709
+    ],
+    "cash_set_bn": [
+     290.9355495454878,
+     350.3201795084756
+    ],
+    "v9_band_bn_recomputed": [
+     361.65965981933607,
+     430.1914477944898
+    ],
+    "v9_band_bn": [
+     361.65965981933607,
+     430.1914477944898
+    ],
+    "change_from_v9_bn": [
+     12.908585446384109,
+     3.761427434219172
+    ]
+   },
+   "health_residual_key_no_ethnicity": {
+    "band_bn": [
+     374.7908346552523,
+     434.17596680271845
+    ],
+    "cash_set_bn": [
+     291.1581389350199,
+     350.54327108248515
+    ],
+    "v9_band_bn_recomputed": [
+     361.8829275008821,
+     430.4147154760358
+    ],
+    "v9_band_bn": [
+     361.8829275008821,
+     430.4147154760358
+    ],
+    "change_from_v9_bn": [
+     12.907907154370207,
+     3.761251326682668
+    ]
+   },
+   "health_residual_key_plain_pooled": {
+    "band_bn": [
+     388.1877350648838,
+     447.5003179095579
+    ],
+    "cash_set_bn": [
+     304.5550393446515,
+     363.86762218932455
+    ],
+    "v9_band_bn_recomputed": [
+     375.18183680382833,
+     443.7136247789821
+    ],
+    "v9_band_bn": [
+     375.18183680382833,
+     443.7136247789821
+    ],
+    "change_from_v9_bn": [
+     13.00589826105545,
+     3.786693130575827
+    ]
+   }
+  },
+  "pending": {
+   "ancestry_share": "not recomputed: ancestry rows weight each generation's cost by its ancestry share, and the v10 post terms carry no generation split yet (capital pieces would need v9_split generation parts per capital component); v9's values are not carried",
+   "public_land": "item 25 off: V10_LAND_LANE unset; the land figure is under rework in land_price_rule_r2_2026_10_24"
+  }
+ },
+ "checks": 627
+}
