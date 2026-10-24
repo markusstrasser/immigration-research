@@ -11,8 +11,10 @@ Inputs read here:
 - main_case_2026_10_16/derived/rate_check.json: arm B (2.081%) and arm capital_7pct (7% on capital only).
 - main_case_2026_10_16/derived/summary.json v9.one_rate: per-line B-minus-v8 deltas (v8 rates 2% low, 3% high),
   used only for the line split, scaled to the v9 totals implied by the 7% arm.
-Run (theta_item6.cjs first; it writes derived/theta_item6.json, read below):
+- derived/financing_shares.json (financing_shares.py): federal and debt shares by level, revision of 2026-10-24 evening.
+Run (theta_item6.cjs and financing_shares.py first; they write derived/theta_item6.json and financing_shares.json):
     node infra/immigration-fiscal/public_capital_rate_2026_10_24/theta_item6.cjs
+    uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/financing_shares.py
     uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/rate_model.py
 """
 import csv
@@ -76,12 +78,23 @@ def group_of(k):
     return GROUP[k]
 
 
-def level_of(k):
+# Lines with their own measured financing (financing_shares.py); every other state/local line takes the residual.
+LEVEL_OF_LINE = {"hwy_sl": "state_local_hwy", "k12": "state_local_k12", "k12_user_fees": "state_local_k12",
+                 "ent_water_sl": "state_local_water", "ent_sewer_sl": "state_local_sewer",
+                 "ent_power_sl": "state_local_power", "ent_transit_sl": "state_local_transit",
+                 "ent_airports_sl": "state_local_airports", "ent_ports_sl": "state_local_ports"}
+
+
+def level_of(k, by_line=LEVEL_OF_LINE):
     # federal enterprises (ent_other_fed, ent_power_fed) carry the federal margin too
     if k in FED or k.endswith("_fed"):
         return "federal"
-    # federal-aid grants finance part of state/local highway capital at the federal margin
-    return "state_local_hwy" if k == "hwy_sl" else "state_local"
+    # federal-aid grants finance part of state/local highway, transit, airport, port and sewer capital
+    return by_line.get(k, "state_local")
+
+
+# The first pass's mapping (21% everywhere, the highway blend only): the "before" of the 2026-10-24 evening revision.
+OLD_LEVEL_OF_LINE = {"hwy_sl": "state_local_hwy"}
 
 
 # Inputs (sources in reads/). Each tuple is (low, central, high).
@@ -96,7 +109,24 @@ d_fed = (d_tax[0], D_BOND[1], D_BOND[2])  # federal margin: tax-financed (low) t
 # FHWA 23rd C&P Report, Highlights: the federal government funded 42.5% of highway capital spending in 2014
 HWY_FED_SHARE = 0.425
 d_hwy_sl = tuple(HWY_FED_SHARE * f + (1 - HWY_FED_SHARE) * s for f, s in zip(d_fed, d_sl))
-D_BY_LEVEL = {"state_local": d_sl, "state_local_hwy": d_hwy_sl, "federal": d_fed}
+OLD_D_BY_LEVEL = {"state_local": d_sl, "state_local_hwy": d_hwy_sl, "federal": d_fed}
+
+
+def d_of(fed_share, debt_share):
+    """d for capital a share fed_share of which the federal government financed, debt carrying debt_share of the rest."""
+    return tuple(fed_share * f + (1 - fed_share) * ((1 - debt_share) * t + debt_share * b) for t, b, f in zip(d_tax, D_BOND, d_fed))
+
+
+# Revision of 2026-10-24 evening: debt and federal shares by function (financing_shares.py, RESULT "Revision ...:
+# enterprise debt share and federal capital grants"). Lines without a function measure take the residual share.
+FIN = json.loads((OUT / "financing_shares.json").read_text())
+assert all(c["pass"] for c in FIN["checks"]), "[BLOCKED] financing_shares checks"
+assert FIN["levels"]["state_local_hwy"]["federal_share"] == HWY_FED_SHARE
+D_BY_LEVEL = {lv: d_of(v["federal_share"], v["debt_share_of_nonfederal_stock"]) for lv, v in FIN["levels"].items()}
+D_BY_LEVEL["federal"] = d_fed
+assert set(LEVEL_OF_LINE.values()) | {"state_local", "federal"} == set(D_BY_LEVEL)
+assert all(abs(a - b) < 1e-15 for a, b in zip(d_of(0, DEBT_SHARE_SL), d_sl)) and \
+    all(abs(a - b) < 1e-15 for a, b in zip(d_of(HWY_FED_SHARE, DEBT_SHARE_SL), d_hwy_sl)), "[BLOCKED] d_of reproduces the first pass"
 # marginal pre-tax private return
 R_I = {
     "aaa_real_2024": 0.050442 - 0.022601,   # FRED AAA 2024 mean minus Cleveland Fed 10y expected inflation 2024 mean
@@ -120,7 +150,7 @@ SCEN = {
 CBO_W = (0.33, 0.43, 0.24)  # displaced investment, induced private saving, foreign inflow (Huntley 2014 central)
 
 
-def rate(level, scen):
+def rate(level, scen, dmap=None):
     which, ri = scen
     if which == "zero":
         return RC
@@ -128,7 +158,7 @@ def rate(level, scen):
         return ri
     if which == "soc":
         return sum(w * r for w, r in zip(CBO_W, ri))
-    d = D_BY_LEVEL[level][which]
+    d = (dmap or D_BY_LEVEL)[level][which]
     return RC + d * (ri - RC)
 
 
@@ -160,10 +190,15 @@ out = {
     "capital_return_at_rc_bn": CAP,
     "check_7pct_arm_reproduced_bn": {e: CAP[e] * (0.07 / RC - 1) for e in CAP},
     "capital_return_by_group_at_rc_bn": {g: [round(x, 3) for x in v] for g, v in sorted(grp.items())},
-    "d_state_local": d_sl, "d_state_local_highways": d_hwy_sl, "hwy_federal_share": HWY_FED_SHARE,
+    # since the 2026-10-24 evening revision: the residual level (lines without a function measure) and hwy_sl
+    "d_state_local": D_BY_LEVEL["state_local"], "d_state_local_highways": D_BY_LEVEL["state_local_hwy"],
+    "hwy_federal_share": HWY_FED_SHARE, "d_by_level": D_BY_LEVEL,
+    "d_state_local_first_pass": d_sl, "d_state_local_highways_first_pass": d_hwy_sl,
+    "financing_by_level": FIN["levels"],
     "d_federal": d_fed, "d_tax": d_tax, "r_i_candidates": R_I,
     "state_local_rate": {n: rate("state_local", s) for n, s in SCEN.items()},
     "federal_rate": {n: rate("federal", s) for n, s in SCEN.items()},
+    "rate_by_level": {n: {lv: rate(lv, s) for lv in D_BY_LEVEL} for n, s in SCEN.items()},
     "headline_bn": {n: {"delta": [round(totals[(n, "low")], 3), round(totals[(n, "high")], 3)],
                         "headline": [round(head["low"] + totals[(n, "low")], 1),
                                      round(head["high"] + totals[(n, "high")], 1)]} for n in SCEN},
@@ -221,6 +256,64 @@ pairing["bound"] = {
                "rate_delta_bn": [pairing["one"]["d_central"][which]["rate_delta_bn"][0], pairing["zero"]["d_central"][which]["rate_delta_bn"][1]]}
        for which in ("set", "cash")},
 }
+# Contract for consumers (v10 prices each capital piece in-run): every line key -> level, every level -> its rate at
+# each end of the bound. Levels without a line here (none today) would still be priced by rate_by_level_by_end.
+BOUND_SCEN = {"low": (1, r_i_theta(1.0)), "high": (1, r_i_theta(0.0))}
+all_keys = sorted(set(lines["low"]) | set(lines["high"]))
+pairing["bound"]["level_by_component"] = {k: level_of(k) for k in all_keys}
+pairing["bound"]["rate_by_level_by_end"] = {lv: [rate(lv, BOUND_SCEN["low"]), rate(lv, BOUND_SCEN["high"])] for lv in D_BY_LEVEL}
+assert pairing["bound"]["rate_by_level_by_end"]["state_local"] == pairing["bound"]["rate_state_local_by_end"]
+assert pairing["bound"]["rate_by_level_by_end"]["state_local_hwy"] == pairing["bound"]["rate_state_local_highways_by_end"]
+assert pairing["bound"]["rate_by_level_by_end"]["federal"] == pairing["bound"]["rate_federal_by_end"]
+
+
+# The bound's band under each financing premise (RESULT, revision of 2026-10-24 evening). Item 6 is zero at both
+# bound ends (asserted above), so a band is arm B plus the rate leg.
+def bound_band(dmap, by_line):
+    rd = [sum(v * (rate(level_of(k, by_line), BOUND_SCEN[end], dmap) / RC - 1) for k, v in lines[end].items())
+          for end in ("low", "high")]
+    return {"rate_delta_bn": rd, **{w: [check["arms"]["B"][w][i] + rd[i] for i in range(2)] for w in ("set", "cash")}}
+
+
+S24 = FIN["stocks_bn"]["2024"]
+s_agg = FIN["census_debt_fy2024_bn"] / (S24["total"] - HWY_FED_SHARE * S24["highways_nontoll"])
+lv = FIN["levels"]
+no_new_fed = {k: d_of(0 if k != "state_local_hwy" else HWY_FED_SHARE, FIN["debt_to_stock_fy2024"][k.replace("state_local_", "")]
+                      if k not in ("state_local", "state_local_hwy") else v["debt_share_of_nonfederal_stock"]) for k, v in lv.items()}
+alt = FIN["debt_share_of_nonfederal_stock_alternatives"]
+NAME = {"state_local": "residual", "state_local_hwy": "residual"}
+
+
+def alt_map(which):
+    return {k: d_of(v["federal_share"], alt[which][NAME.get(k, k.replace("state_local_", ""))]) for k, v in lv.items()}
+
+
+PREMISES = {
+    "first_pass": ("21% everywhere, highway grants only (the bound before this revision)", OLD_D_BY_LEVEL, OLD_LEVEL_OF_LINE),
+    "a_aggregate_recheck": (f"one debt share consistent with Census FY2024 debt, {s_agg:.4f}, highway grants only",
+                            {"state_local": d_of(0, s_agg), "state_local_hwy": d_of(HWY_FED_SHARE, s_agg), "federal": d_fed},
+                            OLD_LEVEL_OF_LINE),
+    "b_function_debt_shares": ("plus debt shares by function, residual for the rest; highway grants only",
+                               {**no_new_fed, "federal": d_fed}, LEVEL_OF_LINE),
+    "c_revised": ("plus federal grants for transit, airports, ports and sewer (adopted in this lane)", D_BY_LEVEL, LEVEL_OF_LINE),
+    "sens_unmeasured_at_21pct": ("revised, but lines without a function measure at 21% (non-capital debt in the residual)",
+                                 {**D_BY_LEVEL, "state_local": d_of(0, DEBT_SHARE_SL),
+                                  "state_local_hwy": d_of(HWY_FED_SHARE, DEBT_SHARE_SL)}, LEVEL_OF_LINE),
+    "sens_measures_low": ("revised, each measured share at its lower alternative (residual recomputed)",
+                          {**alt_map("low"), "federal": d_fed}, LEVEL_OF_LINE),
+    "sens_measures_high": ("revised, each measured share at its higher alternative (residual recomputed)",
+                           {**alt_map("high"), "federal": d_fed}, LEVEL_OF_LINE),
+}
+premises = {k: {"rule": r, **bound_band(dm, bl)} for k, (r, dm, bl) in PREMISES.items()}
+FIRST_PASS_BOUND = {"set": (380.949, 440.406), "cash": (297.316, 356.773)}  # RESULT, revision of 2026-10-24 15:00 JST
+for w in ("set", "cash"):
+    for i in range(2):
+        assert abs(premises["first_pass"][w][i] - FIRST_PASS_BOUND[w][i]) < 5e-4, "[BLOCKED] first pass not reproduced"
+        assert abs(premises["c_revised"][w][i] - pairing["bound"][w]["band_bn"][i]) < 1e-9
+for k, v in premises.items():
+    v["change_from_first_pass_bn"] = {w: [v[w][i] - premises["first_pass"][w][i] for i in range(2)] for w in ("set", "cash")}
+pairing["bound"]["financing_premises"] = premises
+pairing["bound"]["s_aggregate_fy2024"] = s_agg
 out["theta_pairing"] = pairing
 with open(OUT / "theta_pairing.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(theta_rows[0].keys()), lineterminator="\n")

@@ -1,0 +1,307 @@
+{
+ "concepts": {
+  "debt_to_stock": "long-term public-purpose debt outstanding (Census 49U) / BEA current-cost net stock, average of the year-ends bracketing the fiscal year",
+  "federal_share": "federal grants for the function / its capital spending (FHWA's highway rule)",
+  "debt_share_of_nonfederal_stock": "debt_to_stock / (1 - federal_share); d = f*d_fed + (1-f)*((1-s)*d_tax + s*d_bond)"
+ },
+ "levels": {
+  "state_local": {
+   "federal_share": 0.0,
+   "debt_share_of_nonfederal_stock": 0.24349570405602627,
+   "status": "residual: total less measured debt over the unmeasured non-federal stock"
+  },
+  "state_local_hwy": {
+   "federal_share": 0.425,
+   "debt_share_of_nonfederal_stock": 0.24349570405602627,
+   "status": "FHWA federal share; debt at the residual"
+  },
+  "state_local_k12": {
+   "federal_share": 0.0,
+   "debt_share_of_nonfederal_stock": 0.2135994925801408,
+   "status": "F-33 FY2024 debt / school lane K-12 stock"
+  },
+  "state_local_water": {
+   "federal_share": 0.0,
+   "debt_share_of_nonfederal_stock": 0.23373525006013365,
+   "status": "interest-based debt; federal share [GAP]"
+  },
+  "state_local_sewer": {
+   "federal_share": 0.09938714636652228,
+   "debt_share_of_nonfederal_stock": 0.1951172011168489,
+   "status": "district-construction debt; Census federal sewerage aid"
+  },
+  "state_local_power": {
+   "federal_share": 0.0,
+   "debt_share_of_nonfederal_stock": 0.2456846549845743,
+   "status": "interest-based debt (electric + gas); no federal capital aid"
+  },
+  "state_local_transit": {
+   "federal_share": 0.38640688493384295,
+   "debt_share_of_nonfederal_stock": 0.28844849370963516,
+   "status": "interest-based debt; NTD federal share"
+  },
+  "state_local_airports": {
+   "federal_share": 0.30653438733321947,
+   "debt_share_of_nonfederal_stock": 0.19334285356488073,
+   "status": "district-construction debt; FAA grants (OMB 12.3)"
+  },
+  "state_local_ports": {
+   "federal_share": 0.027472211204266617,
+   "debt_share_of_nonfederal_stock": 0.11916752658524568,
+   "status": "district-construction debt; PIDP grants (OMB 12.3)"
+  }
+ },
+ "debt_to_stock_fy2024": {
+  "water": 0.23373525006013365,
+  "power": 0.2456846549845743,
+  "transit": 0.17699000979143586,
+  "sewer": 0.1757250592908225,
+  "airports": 0.13407662040211366,
+  "ports": 0.11589373112620575,
+  "k12": 0.2135994925801408
+ },
+ "debt_to_stock_fy2022": {
+  "water": 0.24677938421985385,
+  "power": 0.2593956532177414,
+  "transit": 0.18686734507593283,
+  "sewer": 0.18553180109816458,
+  "airports": 0.1415590751185379,
+  "ports": 0.12236144781289225,
+  "k12": 0.22383389768582268
+ },
+ "debt_to_stock_alternatives_fy2024": {
+  "water": [
+   0.23373525006013365,
+   0.23535223274742348
+  ],
+  "power": [
+   0.24281281064068866,
+   0.2456846549845743
+  ],
+  "transit": [
+   0.1582849416057486,
+   0.17699000979143586
+  ],
+  "sewer": [
+   0.16744649017256846,
+   0.18871242961940213
+  ],
+  "airports": [
+   0.12776014753466775,
+   0.14398586572315136
+  ],
+  "ports": [
+   0.11043387089128735,
+   0.12445912760961717
+  ],
+  "k12": [
+   0.2135994925801408,
+   0.2135994925801408
+  ]
+ },
+ "debt_share_of_nonfederal_stock_alternatives": {
+  "low": {
+   "water": 0.23373525006013365,
+   "power": 0.24281281064068866,
+   "transit": 0.25796401184958284,
+   "sewer": 0.185925050366552,
+   "airports": 0.18423429395922794,
+   "ports": 0.1135534348360739,
+   "k12": 0.2135994925801408,
+   "residual": 0.24674710427034885
+  },
+  "high": {
+   "water": 0.23535223274742348,
+   "power": 0.2456846549845743,
+   "transit": 0.28844849370963516,
+   "sewer": 0.20953779291296057,
+   "airports": 0.20763230806707425,
+   "ports": 0.12797488055712325,
+   "k12": 0.2135994925801408,
+   "residual": 0.24041493832702462
+  }
+ },
+ "aggregate_debt_to_stock": {
+  "2022": 0.20930379434681937,
+  "2024": 0.19824052509428694
+ },
+ "fy2022_to_fy2024_scale": 0.9471425289395354,
+ "old_rule_implied_debt_fy2024_bn": 3029.52364763475,
+ "census_debt_fy2024_bn": 3229.660592,
+ "debt_fy2022_bn": {
+  "water": 204.60725525052302,
+  "power": 128.27037232921347,
+  "transit": 85.84057897286988,
+  "sewer": 206.0355697988266,
+  "airports": 76.60024512567107,
+  "ports": 10.494272309093866
+ },
+ "debt_fy2022_national_rate_bn": {
+  "water": 206.0227301921455,
+  "power": 126.77100093670673,
+  "transit": 76.76857606898564
+ },
+ "district_interest_rate_fy2022": {
+  "91": 0.038601954707467835,
+  "92": 0.03897396441550634,
+  "93": 0.0305433120273194,
+  "94": 0.034285148530162644,
+  "80": 0.03697110142497003,
+  "01": 0.02965536073555288,
+  "87": 0.031122184526486338
+ },
+ "national_interest_rate": {
+  "2022": 0.038336740769495524,
+  "2024": 0.03943331361675171
+ },
+ "district_estimator_calibration": {
+  "water": 1.1421907498607566,
+  "electric": 1.058824291314998,
+  "transit": 1.0134776631167604,
+  "k12": 1.1390316693765148,
+  "mean": 1.0883810934172575
+ },
+ "district_construction_coverage_fy2022": {
+  "sewer": 0.12484246111127678,
+  "airports": 0.20157580524649654,
+  "ports": 0.31130584457153176
+ },
+ "stocks_bn": {
+  "2022": {
+   "total": 14821.497,
+   "k12": 2457.272632459,
+   "water": 829.11,
+   "sewer": 1110.5135,
+   "power": 494.497,
+   "transit": 459.36639672377686,
+   "airports": 541.118575842121,
+   "ports": 85.76453202107476,
+   "tolls": 464.0007478682486,
+   "highways_nontoll": 4063.375252131752
+  },
+  "2024": {
+   "total": 16291.6265,
+   "k12": 2723.9199258945,
+   "water": 915.9465,
+   "sewer": 1224.896,
+   "power": 542.057,
+   "transit": 505.798633,
+   "airports": 595.81423,
+   "ports": 94.433514,
+   "tolls": 501.183727,
+   "highways_nontoll": 4388.996273000001
+  }
+ },
+ "federal_shares": {
+  "highways_nontoll": 0.425,
+  "transit": 0.38640688493384295,
+  "airports": 0.30653438733321947,
+  "ports": 0.027472211204266617,
+  "sewer": 0.09938714636652228
+ },
+ "federal_share_checks": {
+  "ntd_transit_by_year": {
+   "2022": 0.34440807716964505,
+   "2023": 0.37436794917100347,
+   "2024": 0.38640688493384295,
+   "2025": 0.3948994359343495
+  },
+  "airports_by_fy": {
+   "2017": 0.3115471377092115,
+   "2018": 0.3367335411469865,
+   "2019": 0.2775710815163424,
+   "2024": 0.30653438733321947
+  },
+  "census_highways_by_fy": {
+   "2022": 0.41926238215316375,
+   "2024": 0.4247142508644691
+  },
+  "census_sewer_fy2022": 0.07884330055993323
+ },
+ "residual_base_bn": 7823.437281080499,
+ "measured_debt_fy2024_bn": 1324.6872231051402,
+ "gaps": [
+  "water: federal capital share (drinking-water SRF capitalization grants) is not coded by Census and EPA's STAG outlays are not split by fund; no federal blend",
+  "tolls, housing, colleges, health, parks, general government and other enterprises: no function-level debt measure; they take the residual",
+  "housing: federal share of public housing capital (HUD Capital Fund, merged into the Public Housing Fund from FY2021) is not separable from operating aid; no federal blend",
+  "state bonds for school construction are state debt (F-33 omits them): K-12 understated, residual overstated"
+ ],
+ "inputs_sha256": {
+  "capital_return_services_2026_09_27/derived/census_finance.csv": "366cc23aff7c96256911094422299cee17acd1bec7319c03cc25f8e47637aead",
+  "capital_return_services_2026_09_27/derived/enterprise_components.csv": "6862b7a5ffa0c101731f741f5809797563e71c67b0f2fde448ea1a6e749f5fe5",
+  "public_capital_rate_2026_10_24/_cache/census_dl/2022/2022FinEstDAT_07152026modp.txt": "92f777607e28b2d9531b45ba2aa933f83cfb917681a9bac8385a03a5c3ac4408",
+  "public_capital_rate_2026_10_24/_cache/census_dl/2022/22statetypepu.txt": "c6b7e9dbbe6db22b946ee5d278d62e56950073856a550eb9b7f862f515cebd26",
+  "public_capital_rate_2026_10_24/_cache/census_dl/2022/Fin_PID_2022.txt": "b4822c8b8815fc66594582c38eeb15253df87b2016b42544d88b04762713d4eb",
+  "public_capital_rate_2026_10_24/_cache/census_dl/2024/2024FinEstDAT_07152026modp.txt": "46525bd3dcff33e4fdd300d0cbb716318a55478536481e3954ce0b2261934b6d",
+  "public_capital_rate_2026_10_24/_cache/census_dl/2024/24statetypepu.txt": "5a02f39c3bffe92e6eab7d34a3eab6c0b15c06eab6d52beaa74fe80b3ae6e1e5",
+  "public_capital_rate_2026_10_24/_cache/census_dl/2024/Fin_PID_2024.txt": "e8c294b2333e81b2e4a41555aa2b542834ed09d8371533a9b797f2e15635d9a1",
+  "public_capital_rate_2026_10_24/_cache/census_dl/elsec22_sumtables.xlsx": "00b4d8ef0c0298c4687f1e307e4863639558fc3e767a2a68db6bfd1fc8198b12",
+  "public_capital_rate_2026_10_24/_cache/ntd/ntd_funding_by_expense_type.csv": "01e05d03e7b84f4d16ff27c6094647cf220364a3d86311399aa6f83fa9681e1b",
+  "public_capital_rate_2026_10_24/_cache/omb/hist12z3_fy2027.xlsx": "43aa30c0d39116909b990a93926540fd173bce4963f26ee3a0d28a6f900d974d",
+  "school_capital_return_2026_09_26/_cache/fa_Section7All_xls.xlsx": "e67f534560f111575d5314bab8fe4d62dd696c2e49f421eaa2fa73f25dea12ae",
+  "school_capital_return_2026_09_26/derived/cash_accrual_bridge_national.csv": "6e6e42840b54406c47db1b167c4515704903d22eefe03f99464d414809f7969a",
+  "school_capital_return_2026_09_26/derived/national_k12_capital.csv": "eda32a95d7244a79d7808aae007a81d9fe6f3ad05fe2ba3407059c3f6e11094c"
+ },
+ "checks": [
+  {
+   "check": "splits_match_the_services_lane",
+   "pass": true,
+   "detail": "transit 0.4229, airports 0.4981, ports 0.0790 of S&L transportation; tolls 0.1025 of S&L highways (capital_return_services_2026_09_27 gates); water, sewer, power = FAAt701 l69, l68, l66"
+  },
+  {
+   "check": "k12_stock_is_the_school_lanes",
+   "pass": true,
+   "detail": "K-12 stock 2024 average 2723.920bn (school lane central 2723.919)"
+  },
+  {
+   "check": "census_2022_units_add_to_the_us_total",
+   "pass": true,
+   "detail": "FY2022 unit file 49U 3102.16bn vs state-by-type 3102.20bn (Census of Governments: every unit)"
+  },
+  {
+   "check": "f33_debt",
+   "pass": true,
+   "detail": "F-33 debt outstanding FY2022 550.02bn (elsec22 Table 13), FY2024 581.83bn (school lane)"
+  },
+  {
+   "check": "district_interest_rates_near_national",
+   "pass": true,
+   "detail": "FY2022 interest / debt: national 0.0383; districts 91 0.0386, 92 0.0390, 93 0.0305, 94 0.0343, 80 0.0370, 01 0.0297, 87 0.0311; school districts 0.0372; F-33 interest/debt 0.0381"
+  },
+  {
+   "check": "district_estimator_calibration",
+   "pass": true,
+   "detail": "district debt/construction x national construction over the direct measure: water 1.142, electric 1.059, transit 1.013, k12 1.139; mean 1.088"
+  },
+  {
+   "check": "fy2022_shares_move_to_fy2024_by_the_aggregate",
+   "pass": true,
+   "detail": "aggregate debt/stock FY2022 0.2093, FY2024 0.1982 (ratio 0.9471); K-12 FY2022 0.2238 x ratio = 0.2120 vs F-33 FY2024 0.2136"
+  },
+  {
+   "check": "airport_grant_share_stable",
+   "pass": true,
+   "detail": "FAA airport grants (AIP, its general-fund supplements, AIG, ATP; OMB 12.3 outlays) / Census airport construction: FY2017 0.312, FY2018 0.337, FY2019 0.278, FY2024 0.307; FY2020-23 omitted: COVID relief paid through AIP"
+  },
+  {
+   "check": "census_highway_aid_reproduces_fhwa",
+   "pass": true,
+   "detail": "Census federal highway aid (B46) / highway construction: FY2022 0.419, FY2024 0.425 vs FHWA 0.425"
+  },
+  {
+   "check": "transit_federal_share",
+   "pass": true,
+   "detail": "NTD federal share of capital funds expended: 2022 0.3444, 2023 0.3744, 2024 0.3864, 2025 0.3949"
+  },
+  {
+   "check": "shares_add_to_total_debt",
+   "pass": true,
+   "detail": "measured debt 1324.7bn + residual 0.2435 x 7823.4bn = Census FY2024 49U 3229.7bn"
+  },
+  {
+   "check": "all_shares_in_range",
+   "pass": true,
+   "detail": "water 0.2337, power 0.2457, transit 0.2884, sewer 0.1951, airports 0.1933, ports 0.1192, k12 0.2136, residual 0.2435"
+  }
+ ]
+}

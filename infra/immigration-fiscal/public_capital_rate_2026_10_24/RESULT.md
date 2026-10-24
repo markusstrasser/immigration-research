@@ -21,6 +21,9 @@ and item 6 left at 0.37 (§3, §6, §7).
 [CALCULATION: `theta_item6.cjs` → `derived/theta_item6.json`; `rate_model.py` → `derived/rate_model.json`,
 `derived/theta_pairing.csv`, `derived/line_deltas.csv`; SOURCE: `reads/farhi_gourio_2018.md`]
 
+**Revised 2026-10-24 20:22 JST:** debt and federal shares are now measured by function. The adopted bound moves to
+$382.25–440.76bn set (+$1.30 / +$0.36bn) and $298.62–357.13bn cash; see "Revision, 2026-10-24 20:22 JST" at the end.
+
 # Opportunity cost of public capital: rate model and repricing of v9 item 20
 
 ## 1. Frameworks and the steel-men
@@ -247,6 +250,7 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/publ
 Order matters: `rate_model.py` reads `theta_item6.json`. Inputs: `main_case_2026_10_16/` package and
 `derived/{rate_check,summary}.json`, and `job_capital_taxes_2026_10_14/derived/item.json`. Raw downloads are in
 `_cache/` (ignored). Byte-identity checksums are in the findings log.
+Since 2026-10-24 20:22 JST, `financing_shares.py` runs before `rate_model.py`; the full command list is in that revision.
 
 ## Files covered and skipped
 Read: OMB A-4 2003/2023, A-94 1992/2023, M-25-15, NPP w31526, Moore et al. 2004 (SFU copy), MBV 2013, Burgess–Zerbe
@@ -340,3 +344,197 @@ inside the engine run. Its total capital at the case rate matches this lane's to
 **+$13.038bn / +$3.888bn**, $0.120bn / $0.043bn above this lane's +$12.919bn / +$3.844bn. The in-run figure is
 the right one; this lane's band ($380.949 / 440.406bn set) understates it by that amount. The lane's per-level rates
 are unchanged. [CALCULATION: ../main_case_2026_10_24/derived/summary.json v10.item22]
+
+## Revision, 2026-10-24 20:22 JST: enterprise debt share and federal capital grants
+
+Both cost-raising [GAP]s are now measured, and the second one is real. Federal grants finance **38.6%** of transit
+capital and **30.7%** of airport capital, so those lines move toward the federal margin as highways already did. The
+first [GAP]'s premise fails on the case's own concept. Measured as debt outstanding over the current-cost stock,
+enterprises carry **12–25%** debt, about the same as the rest of state and local capital and no higher. They are
+revenue-bond financed, but they also pay for much of their capital from charges, and their debt amortizes faster
+than their structures depreciate. The aggregate re-check runs the other way: at 21% on every non-federal dollar, the
+old rule accounts for $3,030bn of the $3,230bn that Census reports. The lines without a function measure therefore
+take a residual of **24.3%**. The adopted bound (θ = 1 low, θ = 0 high, d central) moves to
+**$382.250–440.760bn set** (+$1.301 / +$0.355bn) and **$298.617–357.128bn cash**, by the same dollars.
+[CALCULATION: `derived/rate_model.json` `theta_pairing.bound.financing_premises`]
+
+### Concepts
+
+- **Debt share:** long-term public-purpose debt outstanding (Census item 49U), divided by BEA's current-cost net stock
+  (average of the year-ends that bracket the fiscal year). This is the school lane's concept for its 21% (F-33 debt
+  over the K-12 stock), applied by function. It is the right concept for d because the case charges a return on a
+  stock held in steady state. That stock is carried by its outstanding debt, which displaces private capital at
+  d_bond, and by past tax- or charge-financed investment, at d_tax. New issuance over capital outlay measures how a
+  year's projects are first paid for. Debt amortizes over 20–30 years against service lives of 45–60, so a flow share
+  overstates what borrowing carries [INFERENCE]. FY2022 issuance ($393.8bn, refundings included) is 0.91 of
+  construction ($434.9bn). It is not used. [DATA: Census FY2022 29U, F codes]
+- **Federal share:** federal grants for the function divided by its capital spending, FHWA's rule for the 42.5% on
+  highways. A federally financed share f costs the federal margin. Debt carries s of the rest:
+  s = (debt/stock)/(1 − f), and d = f·d_fed + (1 − f)·((1 − s)·d_tax + s·d_bond). With f = 0 and s = 0.21, this
+  reproduces the first pass exactly (asserted in `rate_model.py`).
+
+### Debt by function
+
+Census has collected debt as one public-purpose code (49U) since 2006, so it publishes no debt by function. The
+2022 and 2024 item lists carry only 19U/29U/39U/49U and short-term 61V/64V.
+[SOURCE: https://www2.census.gov/govs/pubs/classification/2006_classification_manual.pdf, debt codes; 2022 and 2024
+technical documentation in the unit-file zips] Two routes measure it, both on FY2022, the Census of Governments
+(every unit; the 2024 survey is a sample):
+
+1. **Utilities.** Census reports interest by utility (I91 water, I92 electric, I93 gas, I94 transit). Debt equals
+   that interest divided by the interest rate of the same function's single-function districts. The rates are
+   3.86% for water, 3.90% electric, 3.05% gas and 3.43% transit, against 3.83% nationally, 3.72% for school districts
+   and 3.81% in F-33. Using the national rate instead changes water and power by about 1% and transit by −11%; the
+   alternatives row below carries that.
+2. **Sewer, airports, ports.** Census has no utility interest for these. The estimate is single-function districts'
+   debt over their construction, times the function's national construction, divided by the method's bias. That
+   bias was measured on the four functions with a direct figure: water 1.142, electric 1.059, transit 1.013 and K-12
+   1.139 (F-33 FY2022 debt $550.0bn; Table 13), mean 1.088. Districts account for 12% of sewer construction, 20% of
+   airport construction and 31% of port construction. Charges were tried as the scaler instead and missed the
+   utilities by up to 43%, so construction is used.
+
+FY2022 shares move to FY2024 by the change in the aggregate debt/stock ratio: 20.93% in FY2022 to 19.82% in FY2024,
+a factor of 0.947. Out of sample, this turns K-12's FY2022 share of 22.38% into 21.20%, against F-33's measured
+21.36% for FY2024. K-12 keeps its FY2024 F-33 measure ($581.8bn / $2,723.9bn).
+
+| Function (line) | Debt FY2022, $bn | Stock FY2022, $bn | Debt/stock FY2024 | Alternatives | Federal share | Debt share s of the non-federal stock |
+|---|---:|---:|---:|---:|---:|---:|
+| Water (`ent_water_sl`) | 204.6 | 829.1 | 0.234 | 0.234–0.235 | [GAP] | 0.234 |
+| Electric + gas (`ent_power_sl`) | 128.3 | 494.5 | 0.246 | 0.243–0.246 | 0 | 0.246 |
+| Transit (`ent_transit_sl`) | 85.8 | 459.4 | 0.177 | 0.158–0.177 | 0.386 | 0.288 |
+| Sewer (`ent_sewer_sl`) | 206.0 | 1,110.5 | 0.176 | 0.167–0.189 | 0.099 | 0.195 |
+| Airports (`ent_airports_sl`) | 76.6 | 541.1 | 0.134 | 0.128–0.144 | 0.307 | 0.193 |
+| Ports (`ent_ports_sl`) | 10.5 | 85.8 | 0.116 | 0.110–0.125 | 0.027 | 0.119 |
+| K-12 (`k12`, `k12_user_fees`) | 550.0 (F-33) | 2,457.3 | 0.214 (F-33 FY2024) | | 0 | 0.214 |
+| **Residual:** every other state/local line | | | | | 0 (highways 0.425) | **0.243** |
+
+[CALCULATION: `financing_shares.py` → `derived/financing_shares.json` (`debt_fy2022_bn`, `stocks_bn`,
+`debt_to_stock_fy2024`, `debt_to_stock_alternatives_fy2024`, `levels`); DATA: Census unit files
+https://www2.census.gov/programs-surveys/gov-finances/tables/2022/2022_Individual_Unit_File.zip and
+https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_Individual_Unit_Files.zip; F-33
+https://www2.census.gov/programs-surveys/school-finances/tables/2022/secondary-education-finance/elsec22_sumtables.xlsx
+Table 13; BEA Fixed Assets Table 7.1 lines 55–69 (`school_capital_return_2026_09_26/_cache/fa_Section7All_xls.xlsx`);
+transit, airport and port stocks are line 65 times the services lane's mode shares 0.4229 / 0.4981 / 0.0790, and
+tolls are 0.1025 of line 67]
+
+**The residual and the aggregate.** FY2024 Census debt is $3,229.7bn. The measured functions carry $1,324.7bn. The
+rest falls on $7,823.4bn of stock that is neither measured nor federally financed: the total less the measured
+stocks, less 42.5% of non-toll highways. So s = 0.2435. The residual takes every line without its own measure:
+general government, colleges, police, health, parks, tolls, public housing, other enterprises, union-completion and
+coverage capital, and `hwy_sl`'s non-federal part. One share consistent with the total and highway grants alone
+would be 0.2239. [CALCULATION: `financing_shares.json` `residual_base_bn`, `measured_debt_fy2024_bn`;
+`rate_model.json` `theta_pairing.bound.s_aggregate_fy2024`]
+
+### Federal shares
+
+| Function | Federal share | Measure | Checks |
+|---|---:|---|---|
+| Highways (`hwy_sl`) | 0.425 | FHWA C&P 23rd, 2014 (unchanged) | Census federal highway aid (B46) / highway construction: 0.419 (FY2022), 0.425 (FY2024) |
+| Transit | 0.386 | NTD 2024: federal funds expended on capital $11.34bn / $29.35bn | 0.344 (2022), 0.374 (2023), 0.395 (2025) |
+| Airports | 0.307 | OMB 12.3 FY2024: AIP $3.871bn + AIG $1.069bn + ATP $0.596bn over Census FY2024 airport construction $18.06bn | 0.312 (FY2017), 0.337 (FY2018), 0.278 (FY2019); FY2020–23 omitted because COVID relief went through the AIP account |
+| Ports | 0.027 | OMB 12.3 FY2024: Port Infrastructure Development $0.105bn / port construction $3.82bn | |
+| Sewer | 0.099 | Census FY2024 federal sewerage aid (B80) $3.16bn / construction $31.80bn | 0.079 (FY2022) |
+| Water | [GAP] | Census has no code for federal water-supply aid, and EPA's STAG outlays ($7.3bn in FY2024) are not split between the clean-water and drinking-water funds | none applied |
+
+[SOURCE: NTD "2022–2025 NTD Annual Data – Funding Sources (by Expense Type)", https://data.transportation.gov/d/4tmr-gwuu,
+rows "Funds Expended on Capital"; OMB Historical Table 12.3 (FY2027 budget),
+https://www.whitehouse.gov/wp-content/uploads/2026/04/hist12z3_fy2027.xlsx, sha256 43aa30c0…; Census items B46, B80,
+F01, F44, F45, F80, F87; `capital_return_services_2026_09_27/derived/census_finance.csv` for FY2017–19 F01]
+
+[INFERENCE] The sewer share overlaps the debt share: clean-water SRF capitalization grants reach utilities as loans,
+which Census counts as their debt. The overlap counts some capital in both f and s. Dropping sewer's federal share
+entirely (rate 2.5668% instead of 2.7254% at the low end) would lower the low end by $0.25bn; that bounds the
+overlap. AIP also funds land and equipment, which Census
+construction excludes, so the airport share may be slightly overstated.
+
+### Rates at the bound and the band
+
+| Level | Lines | Rate, low end (θ = 1) | Rate, high end (θ = 0) | Change from the first pass, low / high ($bn) |
+|---|---|---:|---:|---:|
+| `state_local` (residual) | general government, colleges, police, health, parks, tolls, housing, other enterprises, completion and coverage capital | 2.6752% | 2.2353% | +0.306 / +0.087 |
+| `state_local_hwy` | `hwy_sl` | 3.1855% | 2.3678% | +0.102 / +0.036 |
+| `state_local_k12` | `k12`, `k12_user_fees` | 2.6278% | 2.2230% | +0.029 / +0.008 |
+| `state_local_water` | `ent_water_sl` | 2.6598% | 2.2313% | +0.044 / +0.011 |
+| `state_local_sewer` | `ent_sewer_sl` | 2.7254% | 2.2484% | +0.160 / +0.042 |
+| `state_local_power` | `ent_power_sl` | 2.6787% | 2.2362% | +0.039 / +0.010 |
+| `state_local_transit` | `ent_transit_sl` | 3.1830% | 2.3672% | +0.359 / +0.093 |
+| `state_local_airports` | `ent_airports_sl` | 2.9881% | 2.3166% | +0.276 / +0.072 |
+| `state_local_ports` | `ent_ports_sl` | 2.5163% | 2.1941% | −0.013 / −0.003 |
+| `federal` | every `_fed` line | 3.8759% | 2.5471% | 0 / 0 |
+| **Total** | | | | **+1.301 / +0.355** |
+
+First-pass rates: 2.6221% / 2.2215% for state/local, 3.1550% / 2.3599% for highways. The contract for consumers is
+`theta_pairing.bound.level_by_component` (all 30 line keys mapped to a level) and `rate_by_level_by_end`. The three
+existing keys keep their names. `rate_state_local_by_end` now holds the residual level's rates.
+[CALCULATION: `derived/rate_model.json` `theta_pairing.bound`, `d_by_level`; `derived/line_deltas.csv` `level`]
+
+| Premise (the bound, d central) | Set, $bn | Cash, $bn | Change from the first pass, set |
+|---|---:|---:|---:|
+| First pass: 21% everywhere, highway grants only | 380.949–440.406 | 297.316–356.773 | 0 / 0 |
+| (a) One share consistent with Census debt (0.2239), highway grants only | 381.338–440.514 | 297.705–356.881 | +0.389 / +0.108 |
+| (b) Plus debt shares by function, residual for the rest | 381.242–440.499 | 297.609–356.866 | +0.293 / +0.093 |
+| **(c) Plus federal grants for transit, airports, ports and sewer (this revision)** | **382.250–440.760** | **298.617–357.128** | **+1.301 / +0.355** |
+| Sensitivity: (c) with unmeasured lines kept at 21% | 381.842–440.638 | 298.209–357.005 | +0.893 / +0.232 |
+| Sensitivity: (c) with each measured share at its lower / higher alternative | 382.239–440.759 / 382.261–440.761 | | +1.290 / +1.312 low end |
+
+By premise, at the low end:
+- the aggregate re-check adds $0.39bn;
+- the function debt shares subtract $0.10bn, because the measured enterprises sit below the aggregate;
+- the federal grants add $1.01bn. The transit and airport lines move by +$0.36bn and +$0.28bn in total, debt
+  share included.
+
+The high end moves a quarter as much, because its spread r_i − r_c is 1.41 points against 5.44.
+[CALCULATION: `rate_model.json` `theta_pairing.bound.financing_premises`]
+
+This lane's line split is approximate (Correction, 19:42). The candidate v10 should price each piece in-run at
+`rate_by_level_by_end[level_by_component[parent line]]`, so its band will differ from this one by about the 19:42
+correction, +$0.12 / +$0.04bn. v10's `items.cjs` (`levelOf`, `RATES`) still reads only the three original
+levels. Until it reads `level_by_component`, it would apply the residual rate (2.6752% / 2.2353%) to K-12 and the
+enterprises. `capital_reporter` and `capital_coverage` map to `state_local` here; in v10 they take their parent
+line's level.
+
+### Gaps and limits
+
+- [GAP] **Non-capital debt in the residual.** Pension obligation bonds, deficit borrowing and debt that buys land
+  (BEA's stock has none) all fall into the residual. Its 24.3% is an upper bound on what the residual lines'
+  borrowing carries. No measured national total of pension obligation bonds was found (CRR's briefs give
+  cumulative issuance by state, not stocks outstanding). The sensitivity row with the unmeasured lines at 21% treats
+  the whole $200bn gap as non-capital debt: −$0.41 / −$0.12bn.
+- [GAP] Water's federal share (drinking-water SRF) and public housing's federal share are unmeasured, and both
+  raise cost; no blend is applied. Public housing's is likely large, but the HUD Capital Fund merged with operating
+  aid into the Public Housing Fund in FY2021 (OMB 12.3), so it cannot be separated.
+- [GAP] Tolls have no reliable debt measure. Districts account for 4% of toll construction, and the two scalers give
+  $455bn and $202bn. Tolls take the residual.
+- [INFERENCE] F-33 omits state bonds for school construction (California's are large). That understates K-12's share
+  and overstates the residual by the same dollars; the total is unaffected.
+- The debt shares use FY2022 function measures moved to FY2024 by one aggregate factor (0.947). The K-12 check
+  validates the factor to 0.16 points; nothing validates it function by function.
+
+### Reproduce
+```sh
+node infra/immigration-fiscal/public_capital_rate_2026_10_24/theta_item6.cjs
+uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/financing_shares.py
+uv run --no-project python3 infra/immigration-fiscal/public_capital_rate_2026_10_24/rate_model.py
+uv run --no-project python3 -m pytest infra/immigration-fiscal/public_capital_rate_2026_10_24/test_rate_model.py -q -p no:cacheprovider
+```
+Raw inputs, all ignored, have sha256 recorded in `financing_shares.json` `inputs_sha256`:
+- `_cache/census_dl/{2022,2024}/` holds the Census unit files with their PID and state-by-type files;
+- `_cache/census_dl/elsec22_sumtables.xlsx` is F-33;
+- `_cache/ntd/ntd_funding_by_expense_type.csv` is NTD;
+- `_cache/omb/hist12z3_fy2027.xlsx` is OMB 12.3, a byte-identical copy of `debt_legacy_2026_09_23/_cache/`.
+
+`_cache/` is 103 MB.
+
+### Log (times from `date`)
+- 2026-10-24 19:58:45 JST: started. Read the RESULT, `rate_model.py`, v10's `items.cjs` and the school lane's 21%
+  (F-33 debt / K-12 stock).
+- 20:01: the 2006 classification manual and the 2022 and 2024 item lists confirm Census has no debt by function.
+  Utility interest (I91–I94) and special-district function codes (PID columns 137–138) are the routes.
+- 20:06–20:09: pulled NTD funding by expense type (data.transportation.gov 4tmr-gwuu) and OMB 12.3. The FAA CATS
+  national summary was not reachable (404; DWU's dashboard renders by script), so airports use OMB outlays over
+  Census construction.
+- 20:12: pulled the 2024 unit file. Chose FY2022 (complete count) for function measures, moved to FY2024 by the
+  aggregate factor, and validated the move on K-12.
+- 20:21:31: `rerun_lane.py` with the four commands above: rc 0 at each step, **IDENTICAL: 20/20**, exit 0. md5:
+  financing_shares.json 2d0d5281…, rate_model.json 6e3c296a…, theta_item6.json c1b1c9e6… (unchanged),
+  financing_shares.csv 726d6036…, line_deltas.csv 0e3ec6d0…, theta_pairing.csv dade47bf…. Six tests pass.

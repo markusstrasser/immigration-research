@@ -1,0 +1,10 @@
+level,federal_share,debt_share_of_nonfederal_stock,status
+state_local,0.0,0.243496,residual: total less measured debt over the unmeasured non-federal stock
+state_local_hwy,0.425,0.243496,FHWA federal share; debt at the residual
+state_local_k12,0.0,0.213599,F-33 FY2024 debt / school lane K-12 stock
+state_local_water,0.0,0.233735,interest-based debt; federal share [GAP]
+state_local_sewer,0.099387,0.195117,district-construction debt; Census federal sewerage aid
+state_local_power,0.0,0.245685,interest-based debt (electric + gas); no federal capital aid
+state_local_transit,0.386407,0.288448,interest-based debt; NTD federal share
+state_local_airports,0.306534,0.193343,district-construction debt; FAA grants (OMB 12.3)
+state_local_ports,0.027472,0.119168,district-construction debt; PIDP grants (OMB 12.3)
