@@ -1,0 +1,2322 @@
+{
+ "gate": "G4 v10",
+ "pass": true,
+ "verdict": "PASS",
+ "checks": 446,
+ "records": [
+  {
+   "name": "v9 exported name Engine retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name MODEL retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name FISCAL retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name HERE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ALLOCS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SYN retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SYN_LINES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name MEDICAID retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name MAIN_SPECS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name PROFILES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name MAIN_PROFILE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CASES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name METHODS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name STACKS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CENTRAL retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CONSTANTS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name BOOKING retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LTSS_CENTRAL retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LTSS_RANGE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name gateState retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name gate retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name near retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name span retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name f2 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name csvRows retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name read retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name readJson retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name both retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name scale retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name plus retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name stateFor retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name cost retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name band retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name build retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name expand retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name correctionsPayload retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name stackShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name stackFactor retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name cboShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name row3Shifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name otaShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name row1Shifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name medicalShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name educationShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name minusT0 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name benefitShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name justiceShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name constantShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name bookingRow retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name packageShifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name evalPackage retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name mean2 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name central retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name mts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name schoolV retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name schoolLines retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ltssMain retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name benefitSe retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name P24 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name R retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CK retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SEPT24 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name GG24 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SCHOOL24 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CK_SPECS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name RESPONSES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name responsesFor retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name specsFor retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name bandFor retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name row8Shifts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ckEdits retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name cellId retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name P26 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name S_PUPIL retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name WITHIN_DISTRICT_B retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SCHOOL retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name RULES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name withSchool retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name PSCHOOLS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LR retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LR_FILE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LR_LINES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name READINGS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name RENTAL retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SUBFUNCTIONS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LONG_RUN_VARIANTS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name RATES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CAP retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CAP_FILE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name PARTS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ENTERPRISES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ENTERPRISES_ALLOWED retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ENTERPRISE_LINE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ENTERPRISE_RECEIPT retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name REKEY_LINE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OLD_PROFILES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ALL_PROFILES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name subfunctionResponses retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name blendedResponses retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name componentsFor retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name keyOf retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name responseOfRule retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name capitalReturn retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name evaluateFull retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name receiptResponseOf retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name populationShare retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name enterpriseRekeyShift retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name rekeyEdits retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name withCentral retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name modelFor retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name capitalMeta retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name sha256 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LANE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SEPT27 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V4PKG retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name BUILDER retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEMS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name PARENT retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name FOLLOW_LR retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ENTERPRISE_SPLITS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name PAYLOAD_LINES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name PAYLOAD_RECEIPT_LINES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ZERO_RECEIPT_LINES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINE_RESPONSES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name KEY_KINDS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name RESPONSE_KINDS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name withSyntheticLines retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name payloadModel retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name forPayload retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name adopt retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ADOPTED retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name DECISION retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name STAMPED retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CANDIDATE_TEXT retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name optionsOf retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name stripSpec retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name moveSpec retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name withLineage retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name viaCandidate retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_EDITS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_META retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name BASE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_LANE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name COUNTING retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name COUNTINGS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_FILES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name POPULATION_FILE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name BASE_FILES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name GROUP_PATHS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SEPT29 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SEPT29_CASH retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CASH retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CASH_PAYLOAD retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ADDITION retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name POP retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name forCase retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name merge retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name adoptLineage retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name longRunAt retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name moveLeaf retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name responseDiffs retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name tableOf retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name withItems retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM_EDITS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CASE_ITEMS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM_RECEIPT_LINES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM_COMPONENTS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name STATUS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CASE_KEY retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT05 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT05_CASH retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT05_FILES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM_BASE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM_IDS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM_ARMS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_ITEM retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM_DETAIL retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_OPTION retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_OPTION_META retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SHARED_SPECS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ALL_SPECS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ALLOCATION_RULE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V7_EDITS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V7_ITEMS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V7_RESPONSES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V7_BASE_EDITS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name fixReceipts retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT07 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT07_CASH retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT07_FILES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V7_IDS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V6 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V7 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name REGISTRY retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CANDIDATE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name NEW_IDS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SLOTS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name PENSION retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OPEB retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name AGE_MIX retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name FEES retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name CREDITS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name JOBCAP retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ROW4 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ALLOCATION retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name RESERVED_META retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_PAYLOADS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name COUNT retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name LINEAGE_OPTIONS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name forItems retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name forItems7 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name caseOf retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name caseOn retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name rebase retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name checkBuilt retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name checkLineage retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name checkBuilt7 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V6_PACKAGE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V8_ITEMS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V8_EDITS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name POST_ENGINE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name POPULATION_V8 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name postEngine retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT14 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT14_CASH retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V8_IDS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V7_PACKAGE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name forItems8 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name FOREIGN retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name MIXED retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name COVER retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name COVERAGE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM6_LOW_CORPORATE_RESPONSE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V8 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V9_ITEMS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V9_EDITS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name POPULATION_V9 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name postFor retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name OCT15 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V9_BASE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V9_BUILT retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V9_IDS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V8_PACKAGE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name DEFAULT_ARMS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name caseOn9 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name forItems9 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name COVERAGE_MODE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name STUB13 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name SPEND retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name R5_COUNT retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name BASKET retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name PASS retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name RATE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM19 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM19_ARM retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name ITEM18_CARRIER_MODE retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "v9 exported name V9 retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable modelFor",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable payloadModel",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable correctionsPayload",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable withItems",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable withCentral",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable specsFor",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable responsesFor",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable evaluateFull",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable bandFor",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable band",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable evalPackage",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable central",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable withSyntheticLines",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable stateFor",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable postFor",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable postFor9",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "callable postEngine",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "all three specification collections retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "new items off returns the adopted v9 module",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "ancestry file built on this rate file",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set payload applies with raw engine (all but the stored meta)",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 raw-applied payload model prices as the case model",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 raw-applied payload model prices as the case model",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/0 raw-applied payload model prices as the case model",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/31 raw-applied payload model prices as the case model",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set candidate stamp",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set full selected registry declared",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "guard set flat-rate reader stops on v10",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/16 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/16 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/16 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/16 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/11 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/11 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/11 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/11 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/0 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/0 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/0 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/0 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/31 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/31 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/31 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_hotdeck_union_matched/31 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/16 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/16 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/16 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/16 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/11 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/11 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/11 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/11 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/0 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/0 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/0 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/0 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/31 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/31 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/31 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/b_matched_over_pooled/31 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 stateFor carrier responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 raw engine plus v9 and v10 declared post amounts closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/16 postEngine returns the full canonical post amount",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 stateFor carrier responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 raw engine plus v9 and v10 declared post amounts closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/11 postEngine returns the full canonical post amount",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set options payload {\"allocation\":\"shared\"}",
+   "pass": true,
+   "details": {
+    "payload": [
+     348.3718866907963,
+     409.75705668236617
+    ],
+    "central": [
+     348.37188669079643,
+     409.7570566823665
+    ]
+   }
+  },
+  {
+   "name": "set options payload {\"incomeTax\":\"row3\",\"tax_key\":\"cbo_2022\"}",
+   "pass": true,
+   "details": {
+    "payload": [
+     382.93840678220823,
+     441.2723048745301
+    ],
+    "central": [
+     382.9384067822083,
+     441.27230487453016
+    ]
+   }
+  },
+  {
+   "name": "guard set payload rate guard retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/capital_rate_theta_bound post-engine registry route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/capital_rate_theta_bound/low method mean",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/capital_rate_theta_bound/low/b_hotdeck_union_matched sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/low/b_hotdeck_union_matched payload-only item 22",
+   "pass": true,
+   "details": {
+    "priced": 14.354941897177813,
+    "total": 14.354941897177813
+   }
+  },
+  {
+   "name": "set/capital_rate_theta_bound/low/b_matched_over_pooled sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/low/b_matched_over_pooled payload-only item 22",
+   "pass": true,
+   "details": {
+    "priced": 14.35744924149536,
+    "total": 14.35744924149536
+   }
+  },
+  {
+   "name": "set/capital_rate_theta_bound/low generation parts close to the payload-model amount",
+   "pass": true,
+   "details": {
+    "g": 14.35619556933659,
+    "z": 14.356195569336586
+   }
+  },
+  {
+   "name": "set/capital_rate_theta_bound/high method mean",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/capital_rate_theta_bound/high/b_hotdeck_union_matched sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/high/b_hotdeck_union_matched payload-only item 22",
+   "pass": true,
+   "details": {
+    "priced": 4.245829325105599,
+    "total": 4.245829325105599
+   }
+  },
+  {
+   "name": "set/capital_rate_theta_bound/high/b_matched_over_pooled sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/high/b_matched_over_pooled payload-only item 22",
+   "pass": true,
+   "details": {
+    "priced": 4.246053122575747,
+    "total": 4.246053122575747
+   }
+  },
+  {
+   "name": "set/capital_rate_theta_bound/high generation parts close to the payload-model amount",
+   "pass": true,
+   "details": {
+    "g": 4.245941223840671,
+    "z": 4.245941223840672
+   }
+  },
+  {
+   "name": "set/k12_capital_where_enrolled post-engine registry route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/k12_capital_where_enrolled/low method mean",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/k12_capital_where_enrolled/low/b_hotdeck_union_matched sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/k12_capital_where_enrolled/low/b_matched_over_pooled sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/k12_capital_where_enrolled/low generation parts close to the payload-model amount",
+   "pass": true,
+   "details": {
+    "g": 0.660982709915515,
+    "z": 0.660982709915515
+   }
+  },
+  {
+   "name": "set/k12_capital_where_enrolled/high method mean",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/k12_capital_where_enrolled/high/b_hotdeck_union_matched sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/k12_capital_where_enrolled/high/b_matched_over_pooled sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/k12_capital_where_enrolled/high generation parts close to the payload-model amount",
+   "pass": true,
+   "details": {
+    "g": 0.5733471725797481,
+    "z": 0.5733471725797487
+   }
+  },
+  {
+   "name": "set/native_minor_calibration inherited post-engine route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/native_minor_calibration/low inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/native_minor_calibration/high inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/coverage_tenure inherited post-engine route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/coverage_tenure/low inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/coverage_tenure/high inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/health_residual_key inherited post-engine route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/health_residual_key/low inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set/health_residual_key/high inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "set denominator is v9's (no people added)",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash payload applies with raw engine (all but the stored meta)",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 raw-applied payload model prices as the case model",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 raw-applied payload model prices as the case model",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/0 raw-applied payload model prices as the case model",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/31 raw-applied payload model prices as the case model",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash candidate stamp",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash full selected registry declared",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "guard cash flat-rate reader stops on v10",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/16 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/16 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/16 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/16 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/11 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/11 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/11 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/11 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/0 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/0 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/0 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/0 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/31 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/31 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/31 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_hotdeck_union_matched/31 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/16 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/16 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/16 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/16 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/11 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/11 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/11 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/11 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/0 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/0 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/0 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/0 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/31 viaCandidate",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/31 cost",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/31 v10 postFor closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/b_matched_over_pooled/31 v9 cost plus v10 post route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 stateFor carrier responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 raw engine plus v9 and v10 declared post amounts closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/16 postEngine returns the full canonical post amount",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 stateFor carrier responses",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 raw engine plus v9 and v10 declared post amounts closes",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/11 postEngine returns the full canonical post amount",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash options payload {\"allocation\":\"shared\"}",
+   "pass": true,
+   "details": {
+    "payload": [
+     259.0590653080499,
+     320.44423529962023
+    ],
+    "central": [
+     259.05906530804975,
+     320.4442352996199
+    ]
+   }
+  },
+  {
+   "name": "cash options payload {\"incomeTax\":\"row3\",\"tax_key\":\"cbo_2022\"}",
+   "pass": true,
+   "details": {
+    "payload": [
+     299.3057575541662,
+     357.6396556464877
+    ],
+    "central": [
+     299.30575755416635,
+     357.6396556464881
+    ]
+   }
+  },
+  {
+   "name": "guard cash payload rate guard retained",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/capital_rate_theta_bound post-engine registry route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/capital_rate_theta_bound/low method mean",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/capital_rate_theta_bound/low/b_hotdeck_union_matched sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/low/b_hotdeck_union_matched payload-only item 22",
+   "pass": true,
+   "details": {
+    "priced": 14.354941897177813,
+    "total": 14.354941897177813
+   }
+  },
+  {
+   "name": "cash/capital_rate_theta_bound/low/b_matched_over_pooled sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/low/b_matched_over_pooled payload-only item 22",
+   "pass": true,
+   "details": {
+    "priced": 14.35744924149536,
+    "total": 14.35744924149536
+   }
+  },
+  {
+   "name": "cash/capital_rate_theta_bound/low generation parts close to the payload-model amount",
+   "pass": true,
+   "details": {
+    "g": 14.35619556933659,
+    "z": 14.356195569336586
+   }
+  },
+  {
+   "name": "cash/capital_rate_theta_bound/high method mean",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/capital_rate_theta_bound/high/b_hotdeck_union_matched sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/high/b_hotdeck_union_matched payload-only item 22",
+   "pass": true,
+   "details": {
+    "priced": 4.245829325105599,
+    "total": 4.245829325105599
+   }
+  },
+  {
+   "name": "cash/capital_rate_theta_bound/high/b_matched_over_pooled sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/high/b_matched_over_pooled payload-only item 22",
+   "pass": true,
+   "details": {
+    "priced": 4.246053122575747,
+    "total": 4.246053122575747
+   }
+  },
+  {
+   "name": "cash/capital_rate_theta_bound/high generation parts close to the payload-model amount",
+   "pass": true,
+   "details": {
+    "g": 4.245941223840671,
+    "z": 4.245941223840672
+   }
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled post-engine registry route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled/low method mean",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled/low/b_hotdeck_union_matched sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled/low/b_matched_over_pooled sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled/low generation parts close to the payload-model amount",
+   "pass": true,
+   "details": {
+    "g": 0.660982709915515,
+    "z": 0.660982709915515
+   }
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled/high method mean",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled/high/b_hotdeck_union_matched sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled/high/b_matched_over_pooled sub-rows close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled/high generation parts close to the payload-model amount",
+   "pass": true,
+   "details": {
+    "g": 0.5733471725797481,
+    "z": 0.5733471725797487
+   }
+  },
+  {
+   "name": "cash/native_minor_calibration inherited post-engine route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/native_minor_calibration/low inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/native_minor_calibration/high inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/coverage_tenure inherited post-engine route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/coverage_tenure/low inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/coverage_tenure/high inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/health_residual_key inherited post-engine route",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/health_residual_key/low inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash/health_residual_key/high inherited generation parts close",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "cash denominator is v9's (no people added)",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "guard v10 items out of order",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "guard v10 items before v9 items",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "guard item 25 without a land lane",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "guard generation consumer rejects unknown destination",
+   "pass": true,
+   "details": null
+  },
+  {
+   "name": "a variant without item 22 keeps item 20's flat rate",
+   "pass": true,
+   "details": null
+  }
+ ]
+}

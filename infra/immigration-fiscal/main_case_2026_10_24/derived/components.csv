@@ -1,0 +1,23 @@
+component,label,range_dev_low_end_lo,range_dev_low_end_hi,range_dev_high_end_lo,range_dev_high_end_hi
+tax_block,tax block: on-books share (low/central/high) x fill-in method,-4.5623,4.6815,-4.5456,4.6648
+income_tax,"CBO income gradients: 2018/2019/2022 data, scaled or not by the stack's factor",-1.3157,2.1148,-1.3124,2.1201
+medical,decision 2: medical-ethnicity specifications and the MCBS 65+ bound,-1.0909,8.0410,-1.0873,8.0247
+ltss,long-term-care carve-out: extremes of the lane's 960 combinations,-1.4439,3.0689,-1.4439,3.0689
+education,audit row 6 weight w (0.77/0.82) x school price k (low/high),-2.7331,2.6825,-3.0692,3.0093
+benefits,benefit keys: central +/- 1.96 SE (package_se.csv),-2.3158,2.3158,-2.3158,2.3158
+justice,row 7 on 2023 arrests; booking factor Texas only or Arizona only,-1.0410,0.2626,-1.0361,0.2614
+row8,audit row 8: unallocable S&L spending at the all-spending elasticity,0.0000,0.0000,0.0000,0.0000
+row9,audit row 9: MEPS donor filter (non-LTSS remainder),-0.8224,0.8224,-0.8224,0.8224
+row10,audit row 10: foster care keyed by WIC,-0.5140,0.5140,-0.5140,0.5140
+small,"audit small items (origin allocation, grants, top-codes, flags)",-0.4112,0.5140,-0.4112,0.5140
+shelter,"shelter keying (mapping A, central outlays, NYC June 2025 share)",-0.2973,0.1077,-0.2973,0.1077
+care,"care and household services (hours taxes, elder-care Medicaid, output)",-9.4576,1.5934,-9.4576,1.5934
+finite_removal,general government's removal response: r = b (fixed plus constant marginal cost); engine-key population share,-0.4838,0.0026,-0.5027,0.0038
+consumption_key,consumption key: the lane's twelve saving-and-remittance specifications,-4.1218,1.3680,-3.8176,1.2670
+school_response,school response: within-district elasticity 0.836 read over the removal (0.8489) or taken as the response,-32.7638,0.0000,-28.6904,0.0000
+long_run_response,long-run responses: r = b; within-state uncapped; federal fixed at the high end; across-state at the high end; held-at-zero lines at 1,-0.5370,13.7003,-9.5539,18.0062
+capital_rate,return on public capital: 2% at both ends; 3% at both ends,-1.5798,0.0000,0.0000,0.8781
+capital_definition,"return on public capital: the capital lane's definition variants (engine_components.json variants), each re-run at every specification",-0.9301,2.0967,-0.8597,1.3192
+property_long_run,"long-run property taxes: the receipt-side lane's low responses, and 1 everywhere with the case-scaled tenant national",-14.0926,3.3961,-14.0926,3.3961
+payroll_compliance,payroll compliance: the lane's low-cost and high-cost readings at row 2's central shares,-0.7127,2.5564,-0.7134,2.5594
+transit_key,transit riders' key: national commuter counts; the deficit-weighted key with NHTS 2017's all-trip adjustments,0.0000,0.0000,0.0000,0.0000

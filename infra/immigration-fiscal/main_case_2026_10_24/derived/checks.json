@@ -1,6 +1,10 @@
 {
  "pass": true,
- "count": 627,
+ "count": 1195,
+ "rate_source": {
+  "file": "infra/immigration-fiscal/public_capital_rate_2026_10_24/derived/rate_model.json",
+  "sha256": "92c332e48bd6ab36ec43f7f3e4faa97bca16d3feaf86decb19075bc952f045d4"
+ },
  "checks": [
   {
    "name": "items off is the v9 case",
@@ -1863,6 +1867,54 @@
    "pass": true
   },
   {
+   "name": "set candidate stamp",
+   "pass": true
+  },
+  {
+   "name": "set flat rate removed",
+   "pass": true
+  },
+  {
+   "name": "set rates published",
+   "pass": true
+  },
+  {
+   "name": "set selected items",
+   "pass": true
+  },
+  {
+   "name": "set/capital_rate_theta_bound post_engine_by_end",
+   "pass": true
+  },
+  {
+   "name": "set/k12_capital_where_enrolled post_engine_by_end",
+   "pass": true
+  },
+  {
+   "name": "cash candidate stamp",
+   "pass": true
+  },
+  {
+   "name": "cash flat rate removed",
+   "pass": true
+  },
+  {
+   "name": "cash rates published",
+   "pass": true
+  },
+  {
+   "name": "cash selected items",
+   "pass": true
+  },
+  {
+   "name": "cash/capital_rate_theta_bound post_engine_by_end",
+   "pass": true
+  },
+  {
+   "name": "cash/k12_capital_where_enrolled post_engine_by_end",
+   "pass": true
+  },
+  {
    "name": "valid set end specification numbers",
    "pass": true
   },
@@ -1884,22 +1936,6 @@
   },
   {
    "name": "valid cash end specification numbers",
-   "pass": true
-  },
-  {
-   "name": "item22 lane replica set/0",
-   "pass": true
-  },
-  {
-   "name": "item22 lane replica set/1",
-   "pass": true
-  },
-  {
-   "name": "item22 lane replica cash/0",
-   "pass": true
-  },
-  {
-   "name": "item22 lane replica cash/1",
    "pass": true
   },
   {
@@ -1907,23 +1943,7 @@
    "pass": true
   },
   {
-   "name": "item22 standalone is the in-run rate delta set/low",
-   "pass": true
-  },
-  {
-   "name": "item22 standalone is the in-run rate delta cash/low",
-   "pass": true
-  },
-  {
    "name": "item22 in-run capital closes to the 7% arm high",
-   "pass": true
-  },
-  {
-   "name": "item22 standalone is the in-run rate delta set/high",
-   "pass": true
-  },
-  {
-   "name": "item22 standalone is the in-run rate delta cash/high",
    "pass": true
   },
   {
@@ -1935,19 +1955,11 @@
    "pass": true
   },
   {
-   "name": "items 23+24 corrected partial sum set/0",
-   "pass": true
-  },
-  {
    "name": "item23 oracle set/1",
    "pass": true
   },
   {
    "name": "item24 oracle set/1",
-   "pass": true
-  },
-  {
-   "name": "items 23+24 corrected partial sum set/1",
    "pass": true
   },
   {
@@ -1959,19 +1971,11 @@
    "pass": true
   },
   {
-   "name": "items 23+24 corrected partial sum cash/0",
-   "pass": true
-  },
-  {
    "name": "item23 oracle cash/1",
    "pass": true
   },
   {
    "name": "item24 oracle cash/1",
-   "pass": true
-  },
-  {
-   "name": "items 23+24 corrected partial sum cash/1",
    "pass": true
   },
   {
@@ -1991,19 +1995,7 @@
    "pass": true
   },
   {
-   "name": "valid set end specification numbers",
-   "pass": true
-  },
-  {
-   "name": "valid cash end specification numbers",
-   "pass": true
-  },
-  {
-   "name": "valid set end specification numbers",
-   "pass": true
-  },
-  {
-   "name": "valid cash end specification numbers",
+   "name": "item23 divisor is the school lane's embedded relative times k",
    "pass": true
   },
   {
@@ -2020,6 +2012,214 @@
   },
   {
    "name": "r1 K-12 group ratio is one number per value variant across ends",
+   "pass": true
+  },
+  {
+   "name": "item25 loader stops on a lane without group-weighted values (r1)",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio college/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio college/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio college/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_airports_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_airports_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_airports_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_housing_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_housing_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_housing_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_ports_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_ports_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_ports_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_power_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_power_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_power_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_sewer_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_sewer_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_sewer_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_tolls_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_tolls_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_tolls_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_transit_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_transit_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_transit_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_water_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_water_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio ent_water_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio gps_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio gps_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio gps_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio health_fed/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio health_fed/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio health_fed/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio health_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio health_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio health_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio hwy_fed/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio hwy_fed/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio hwy_fed/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio hwy_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio hwy_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio hwy_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio k12/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio k12/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio k12/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio pos_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio pos_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio pos_sl/high",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio rec_sl/central",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio rec_sl/low",
+   "pass": true
+  },
+  {
+   "name": "item25 r2 ratio rec_sl/high",
    "pass": true
   },
   {
@@ -2431,10 +2631,6 @@
    "pass": true
   },
   {
-   "name": "item25 off by default",
-   "pass": true
-  },
-  {
    "name": "valid set end specification numbers",
    "pass": true
   },
@@ -2508,6 +2704,2086 @@
   },
   {
    "name": "v9 item21 arm reproduces plain_pooled",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid cash end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "valid set end specification numbers",
+   "pass": true
+  },
+  {
+   "name": "where-used year one b_hotdeck_union_matched/24: parks follow the recreation response",
+   "pass": true
+  },
+  {
+   "name": "where-used year one b_hotdeck_union_matched/7: parks follow the recreation response",
+   "pass": true
+  },
+  {
+   "name": "where-used year one b_matched_over_pooled/24: parks follow the recreation response",
+   "pass": true
+  },
+  {
+   "name": "where-used year one b_matched_over_pooled/7: parks follow the recreation response",
+   "pass": true
+  },
+  {
+   "name": "ancestry built on this rate file",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/0",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/0",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/0",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/1",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/1",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/1",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/2",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/2",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/2",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/3",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/3",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/3",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/4",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/4",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/4",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/5",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/5",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/5",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/6",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/6",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/6",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/7",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/7",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/7",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/8",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/8",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/8",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/9",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/9",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/9",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/10",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/10",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/10",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/11",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/11",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/11",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/12",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/12",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/12",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/13",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/13",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/13",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/14",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/14",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/14",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/15",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/15",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/15",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/16",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/16",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/16",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/17",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/17",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/17",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/18",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/18",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/18",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/19",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/19",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/19",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/20",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/20",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/20",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/21",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/21",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/21",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/22",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/22",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/22",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/23",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/23",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/23",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/24",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/24",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/24",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/25",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/25",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/25",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/26",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/26",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/26",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/27",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/27",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/27",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/28",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/28",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/28",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/29",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/29",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/29",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/30",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/30",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/30",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/31",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/31",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/31",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/32",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/32",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/32",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/33",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/33",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/33",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/34",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/34",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/34",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/35",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/35",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/35",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/36",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/36",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/36",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/37",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/37",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/37",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/38",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/38",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/38",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/39",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/39",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/39",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/40",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/40",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/40",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/41",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/41",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/41",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/42",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/42",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/42",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/43",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/43",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/43",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/44",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/44",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/44",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/45",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/45",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/45",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/46",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/46",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/46",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/47",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/47",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/47",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/48",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/48",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/48",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/49",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/49",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/49",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/50",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/50",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/50",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/51",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/51",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/51",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/52",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/52",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/52",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/53",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/53",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/53",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/54",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/54",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/54",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/55",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/55",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/55",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/56",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/56",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/56",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/57",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/57",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/57",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/58",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/58",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/58",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/59",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/59",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/59",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/60",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/60",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/60",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/61",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/61",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/61",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/62",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/62",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/62",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_hotdeck_union_matched/63",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_hotdeck_union_matched/63",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_hotdeck_union_matched/63",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/0",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/0",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/0",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/1",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/1",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/1",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/2",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/2",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/2",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/3",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/3",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/3",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/4",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/4",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/4",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/5",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/5",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/5",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/6",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/6",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/6",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/7",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/7",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/7",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/8",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/8",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/8",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/9",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/9",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/9",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/10",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/10",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/10",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/11",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/11",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/11",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/12",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/12",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/12",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/13",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/13",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/13",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/14",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/14",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/14",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/15",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/15",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/15",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/16",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/16",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/16",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/17",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/17",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/17",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/18",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/18",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/18",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/19",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/19",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/19",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/20",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/20",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/20",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/21",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/21",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/21",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/22",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/22",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/22",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/23",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/23",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/23",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/24",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/24",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/24",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/25",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/25",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/25",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/26",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/26",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/26",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/27",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/27",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/27",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/28",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/28",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/28",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/29",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/29",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/29",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/30",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/30",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/30",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/31",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/31",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/31",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/32",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/32",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/32",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/33",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/33",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/33",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/34",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/34",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/34",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/35",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/35",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/35",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/36",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/36",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/36",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/37",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/37",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/37",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/38",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/38",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/38",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/39",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/39",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/39",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/40",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/40",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/40",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/41",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/41",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/41",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/42",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/42",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/42",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/43",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/43",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/43",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/44",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/44",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/44",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/45",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/45",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/45",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/46",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/46",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/46",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/47",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/47",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/47",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/48",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/48",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/48",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/49",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/49",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/49",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/50",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/50",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/50",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/51",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/51",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/51",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/52",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/52",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/52",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/53",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/53",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/53",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/54",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/54",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/54",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/55",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/55",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/55",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/56",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/56",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/56",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/57",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/57",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/57",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/58",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/58",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/58",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/59",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/59",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/59",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/60",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/60",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/60",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/61",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/61",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/61",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/62",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/62",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/62",
+   "pass": true
+  },
+  {
+   "name": "set per_spec accounting b_matched_over_pooled/63",
+   "pass": true
+  },
+  {
+   "name": "per_spec v10 cost minus v10 terms is v9's b_matched_over_pooled/63",
+   "pass": true
+  },
+  {
+   "name": "per_spec descriptors are v9's b_matched_over_pooled/63",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/0",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/1",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/2",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/3",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/4",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/5",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/6",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/7",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/8",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/9",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/10",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/11",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/12",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/13",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/14",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/15",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/16",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/17",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/18",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/19",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/20",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/21",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/22",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/23",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/24",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/25",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/26",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/27",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/28",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/29",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/30",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/31",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/32",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/33",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/34",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/35",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/36",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/37",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/38",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/39",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/40",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/41",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/42",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/43",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/44",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/45",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/46",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/47",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/48",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/49",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/50",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/51",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/52",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/53",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/54",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/55",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/56",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/57",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/58",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/59",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/60",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/61",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/62",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_hotdeck_union_matched/63",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/0",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/1",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/2",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/3",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/4",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/5",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/6",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/7",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/8",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/9",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/10",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/11",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/12",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/13",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/14",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/15",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/16",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/17",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/18",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/19",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/20",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/21",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/22",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/23",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/24",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/25",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/26",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/27",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/28",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/29",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/30",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/31",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/32",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/33",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/34",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/35",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/36",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/37",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/38",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/39",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/40",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/41",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/42",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/43",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/44",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/45",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/46",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/47",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/48",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/49",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/50",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/51",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/52",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/53",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/54",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/55",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/56",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/57",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/58",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/59",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/60",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/61",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/62",
+   "pass": true
+  },
+  {
+   "name": "cash per_spec accounting b_matched_over_pooled/63",
    "pass": true
   }
  ]

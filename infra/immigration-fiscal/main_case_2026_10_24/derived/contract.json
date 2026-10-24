@@ -1,0 +1,380 @@
+{
+ "gate": "G2 v10: every v9 output file a consumer reads is present with every v9 column, row and key; additions, type changes and removals listed",
+ "files_missing": [],
+ "files_not_written": {
+  "g1.json": "v9's G1 gate record; v10's gates are checks.json",
+  "generality.json": "v9's generality gate record over v9's own items",
+  "api_check.json": "replaced by v10's own api_check.json (in OWN)",
+  "contract.json": "replaced by v10's own contract.json (in OWN)",
+  "coverage_check.json": "v9 input check of item 12 coverage; v10 adds no people and carries v9's coverage",
+  "source_checks.json": "v9 input check of item 21's sources; unchanged inputs",
+  "market_check.json": "v9 input check; unchanged inputs",
+  "rate_check.json": "v9's item 20 rate arms; v10 reprices item 20's capital through item 22 (summary.v10.item22)",
+  "union_credit_parts.json": "v8 union-completion input carried by v9; v10 adds no edits",
+  "union_people.json": "v8 union-completion input carried by v9; v10 adds no people",
+  "union_probe_checks.json": "v8 union-completion check carried by v9",
+  "mixed_overlap.json": "v8 item 11 input carried by v9; v10 adds no edits",
+  "lineage_addition.json": "NOT RECOMPUTED for v10: v9's lineage-addition dollars omit items 22-23; a consumer of it must read v9's file and add the v10 terms' added-lineage parts (derived/ancestry.json generation_at_ends.*.added) or stop"
+ },
+ "unlisted_v9_files": [],
+ "files_added": [
+  "ancestry.json",
+  "checks.json",
+  "independent_check.json",
+  "per_spec_cash.csv"
+ ],
+ "own": [
+  "api_check.json",
+  "contract.json",
+  "checks.json",
+  "independent_check.json",
+  "ancestry.json",
+  "per_spec_cash.csv"
+ ],
+ "self_checks": [
+  {
+   "name": "missing CSV row",
+   "pass": true
+  },
+  {
+   "name": "missing CSV column",
+   "pass": true
+  },
+  {
+   "name": "reordered CSV rows",
+   "pass": true
+  },
+  {
+   "name": "missing JSON key",
+   "pass": true
+  },
+  {
+   "name": "undocumented JSON type change",
+   "pass": true
+  },
+  {
+   "name": "undocumented removal of the flat rate elsewhere",
+   "pass": true
+  }
+ ],
+ "files": {
+  "components.csv": {
+   "columns_same_order": true,
+   "columns_added": [],
+   "columns_missing": [],
+   "rows": {
+    "v9": 22,
+    "here": 22,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   },
+   "pass": true
+  },
+  "corrections.json": {
+   "pass": true,
+   "key_paths": {
+    "v9": 13462,
+    "here": 13713,
+    "added": 252
+   },
+   "missing": [],
+   "removed_documented": [
+    "meta.one_rate.flat_real_equivalent: removed with item 22 on, so that a flat-rate reader stops; rates are meta.v10.rates"
+   ],
+   "type_changed": [],
+   "type_changes_documented": [
+    "meta.adopted: string -> null: v10 is a candidate; the parent controls adoption",
+    "meta.decision: string -> null: no v10 decision record exists yet"
+   ],
+   "added_subtrees": [
+    "meta.items.[].number",
+    "meta.items.[].beside",
+    "meta.items.[].post_engine_by_end.low.specification",
+    "meta.items.[].post_engine_by_end.low.parts.[].rate",
+    "meta.items.[].post_engine_by_end.low.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].rate",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.rows",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].rate",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.rows",
+    "meta.items.[].post_engine_by_end.high.specification",
+    "meta.items.[].post_engine_by_end.high.parts.[].rate",
+    "meta.items.[].post_engine_by_end.high.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].rate",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.rows",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].rate",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.rows",
+    "meta.items.[].post_engine",
+    "meta.items.[].post_engine_by_end.low.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.low.parts.[].factor",
+    "meta.items.[].post_engine_by_end.low.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.low.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.low.parts.[].rule",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].factor",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].rule",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].factor",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].rule",
+    "meta.items.[].post_engine_by_end.high.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.high.parts.[].factor",
+    "meta.items.[].post_engine_by_end.high.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.high.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.high.parts.[].rule",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].factor",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].rule",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].factor",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].rule",
+    "meta.one_rate.v10",
+    "meta.v10"
+   ]
+  },
+  "corrections_cash.json": {
+   "pass": true,
+   "key_paths": {
+    "v9": 13069,
+    "here": 13320,
+    "added": 252
+   },
+   "missing": [],
+   "removed_documented": [
+    "meta.one_rate.flat_real_equivalent: removed with item 22 on, so that a flat-rate reader stops; rates are meta.v10.rates"
+   ],
+   "type_changed": [],
+   "type_changes_documented": [
+    "meta.adopted: string -> null: v10 is a candidate; the parent controls adoption",
+    "meta.decision: string -> null: no v10 decision record exists yet"
+   ],
+   "added_subtrees": [
+    "meta.items.[].number",
+    "meta.items.[].beside",
+    "meta.items.[].post_engine_by_end.low.specification",
+    "meta.items.[].post_engine_by_end.low.parts.[].rate",
+    "meta.items.[].post_engine_by_end.low.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].rate",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.rows",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].rate",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.rows",
+    "meta.items.[].post_engine_by_end.high.specification",
+    "meta.items.[].post_engine_by_end.high.parts.[].rate",
+    "meta.items.[].post_engine_by_end.high.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].rate",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.rows",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].rate",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].by_part_at_case_rate_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.rows",
+    "meta.items.[].post_engine",
+    "meta.items.[].post_engine_by_end.low.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.low.parts.[].factor",
+    "meta.items.[].post_engine_by_end.low.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.low.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.low.parts.[].rule",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].factor",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.low.by_method.b_hotdeck_union_matched.parts.[].rule",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].factor",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.low.by_method.b_matched_over_pooled.parts.[].rule",
+    "meta.items.[].post_engine_by_end.high.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.high.parts.[].factor",
+    "meta.items.[].post_engine_by_end.high.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.high.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.high.parts.[].rule",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].factor",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.high.by_method.b_hotdeck_union_matched.parts.[].rule",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].k12_return_bn",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].factor",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].k12_key",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].embedded_k",
+    "meta.items.[].post_engine_by_end.high.by_method.b_matched_over_pooled.parts.[].rule",
+    "meta.one_rate.v10",
+    "meta.v10"
+   ]
+  },
+  "lineage_payload.json": {
+   "pass": true,
+   "key_paths": {
+    "v9": 272,
+    "here": 284,
+    "added": 12
+   },
+   "missing": [],
+   "removed_documented": [],
+   "type_changed": [],
+   "type_changes_documented": [],
+   "added_subtrees": [
+    "v10"
+   ]
+  },
+  "lineage_payload_cash.json": {
+   "pass": true,
+   "key_paths": {
+    "v9": 272,
+    "here": 284,
+    "added": 12
+   },
+   "missing": [],
+   "removed_documented": [],
+   "type_changed": [],
+   "type_changes_documented": [],
+   "added_subtrees": [
+    "v10"
+   ]
+  },
+  "main_case_bands.csv": {
+   "columns_same_order": true,
+   "columns_added": [
+    "v10_price_scope"
+   ],
+   "columns_missing": [],
+   "rows": {
+    "v9": 308,
+    "here": 314,
+    "missing": [],
+    "added": [
+     "long_run_non_school_full|first_year_v10",
+     "long_run_non_school_full|first_year_v10_cash_set",
+     "long_run_non_school_full|where_used_prices_beside",
+     "long_run_non_school_full|where_used_prices_beside_cash_set",
+     "long_run_non_school_full|oct16_case",
+     "long_run_non_school_full|oct16_cash_set"
+    ],
+    "order_kept": true
+   },
+   "pass": true
+  },
+  "per_spec.csv": {
+   "columns_same_order": true,
+   "columns_added": [
+    "oct16_cost_bn",
+    "item_capital_rate_theta_bound_bn",
+    "item_k12_capital_where_enrolled_bn",
+    "items_v10_interaction_bn",
+    "post_engine_v10_total_bn",
+    "standalone_capital_rate_theta_bound_bn",
+    "standalone_k12_capital_where_enrolled_bn",
+    "where_used_prices_beside_bn",
+    "capital_case_rate_total_bn",
+    "capital_case_rate_k12_bn",
+    "capital_case_rate_college_bn",
+    "capital_case_rate_pos_sl_bn",
+    "capital_case_rate_pos_fed_bn",
+    "capital_case_rate_health_sl_bn",
+    "capital_case_rate_health_fed_bn",
+    "capital_case_rate_gps_sl_bn",
+    "capital_case_rate_gps_fed_bn",
+    "capital_case_rate_hwy_sl_bn",
+    "capital_case_rate_rec_sl_bn",
+    "capital_case_rate_hwy_fed_bn",
+    "capital_case_rate_air_fed_bn",
+    "capital_case_rate_rec_fed_bn",
+    "capital_case_rate_ent_housing_sl_bn",
+    "capital_case_rate_ent_transit_sl_bn",
+    "capital_case_rate_ent_airports_sl_bn",
+    "capital_case_rate_ent_ports_sl_bn",
+    "capital_case_rate_ent_power_sl_bn",
+    "capital_case_rate_ent_water_sl_bn",
+    "capital_case_rate_ent_sewer_sl_bn",
+    "capital_case_rate_ent_tolls_sl_bn",
+    "capital_case_rate_ent_power_fed_bn",
+    "capital_case_rate_ent_other_sl_bn",
+    "capital_case_rate_ent_other_fed_bn",
+    "capital_case_rate_k12_user_fees_bn",
+    "capital_case_rate_college_user_fees_bn",
+    "capital_case_rate_health_sl_user_fees_bn",
+    "capital_case_rate_health_fed_user_fees_bn",
+    "rate_state_local",
+    "rate_state_local_hwy",
+    "rate_state_local_k12",
+    "rate_state_local_water",
+    "rate_state_local_sewer",
+    "rate_state_local_power",
+    "rate_state_local_transit",
+    "rate_state_local_airports",
+    "rate_state_local_ports",
+    "rate_federal",
+    "v10_cost_per_member_usd"
+   ],
+   "columns_missing": [],
+   "rows": {
+    "v9": 128,
+    "here": 128,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   },
+   "pass": true
+  },
+  "sign_reversal.csv": {
+   "columns_same_order": true,
+   "columns_added": [
+    "oct24_low",
+    "oct24_high"
+   ],
+   "columns_missing": [],
+   "rows": {
+    "v9": 8,
+    "here": 8,
+    "missing": [],
+    "added": [],
+    "order_kept": true
+   },
+   "pass": true
+  },
+  "summary.json": {
+   "pass": true,
+   "key_paths": {
+    "v9": 18897,
+    "here": 20054,
+    "added": 1157
+   },
+   "missing": [],
+   "removed_documented": [],
+   "type_changed": [],
+   "type_changes_documented": [
+    "decision: string -> null: no v10 decision record exists yet"
+   ],
+   "added_subtrees": [
+    "v10"
+   ]
+  }
+ },
+ "pass": true,
+ "verdict": "PASS"
+}

@@ -1,0 +1,25 @@
+{
+ "rate_file": "infra/immigration-fiscal/public_capital_rate_2026_10_24/derived/rate_model.json",
+ "rate_sha256": "92c332e48bd6ab36ec43f7f3e4faa97bca16d3feaf86decb19075bc952f045d4",
+ "tolerance_bn": 1e-09,
+ "files": {
+  "per_spec.csv": {
+   "rows": 128,
+   "components": 28,
+   "max_abs_error_item22_bn": 1.7763568394002505e-15,
+   "max_abs_error_piece_total_bn": 1.4210854715202004e-14,
+   "max_abs_error_rate": 0.0,
+   "pass": true
+  },
+  "per_spec_cash.csv": {
+   "rows": 128,
+   "components": 28,
+   "max_abs_error_item22_bn": 1.7763568394002505e-15,
+   "max_abs_error_piece_total_bn": 1.4210854715202004e-14,
+   "max_abs_error_rate": 0.0,
+   "pass": true
+  }
+ },
+ "pass": true,
+ "failures": []
+}
