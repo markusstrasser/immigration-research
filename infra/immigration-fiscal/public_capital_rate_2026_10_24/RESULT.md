@@ -304,3 +304,27 @@ comment, MBV 2013 SOC weights detail (not needed for the arithmetic).
    theta_pairing.csv a5e3f4d7…. The θ anchor is Farhi & Gourio 2018 Table 12 baseline 2001–16, θ = 0.489
    (`reads/farhi_gourio_2018.md`). The federal enterprise fix moves the unpaired central from +2.86/+3.18 to
    +2.89/+3.22.
+
+## Revision, 2026-10-24 15:00 JST: the bound over θ, and highway grants
+
+A blind review found that §7 pairs only the high end: the low end keeps item 6 at 1, which under §7's own formula is
+θ = 1, while its rate leg used θ = 0.49. Farhi–Gourio measure the risk share of the wedge, not the share that scales
+under a removal, so θ is not settled. The operator adopted the bound over θ: **the low end at θ = 1** (item 6 at 1, the
+rate at r_i = GRR 7.52%) and **the high end at θ = 0** (item 6 at TP-5's 0.37, the rate at r_i = Baa 3.49%). Item 6 is
+unchanged at both ends; only each end's rate moves.
+
+The review also found that d_sl treated state and local highway capital as financed like K-12, ignoring federal-aid
+grants. The federal government funded 42.5% of highway capital spending in 2014 (FHWA, 23rd *Conditions and
+Performance Report*, Highlights). `hwy_sl` now takes d = 0.425·d_fed + 0.575·d_sl (0.197 central, against 0.099).
+
+| Reading | Set, $bn | Cash, $bn |
+|---|---|---|
+| **Bound: θ = 1 low, θ = 0 high (adopted)** | **380.9–440.4** | **297.3–356.8** |
+| θ = 0 at both ends | 371.4–440.4 | 287.8–356.8 |
+| Anchor θ = 0.489 at both rates, item 6 paired at the high end only (superseded) | 376.1–432.4 | 292.4–348.8 |
+| θ = 1 at both ends | 380.9–424.1 | 297.3–340.5 |
+
+Rates at the bound: state and local 2.62% low / 2.22% high, state and local highways 3.15% / 2.36%, federal 3.88% /
+2.55%. The highway change adds $1.8bn to the low end and $0.6bn to the high end. [CALCULATION: `derived/rate_model.json`
+`theta_pairing.bound`] The table in §7 and the verdict above keep the first pass's numbers as recorded. Rerun with both
+commands: IDENTICAL 16/16.

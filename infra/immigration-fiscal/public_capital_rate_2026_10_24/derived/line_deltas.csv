@@ -22,7 +22,7 @@ scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,health_sl,health,state_local,0.4788,0.020811,0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,health_sl_user_fees,health,state_local,-0.0159,0.020811,-0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,hwy_fed,roads,federal,0.0,0.020811,0.0
-"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,hwy_sl,roads,state_local,6.9766,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,hwy_sl,roads,state_local_hwy,6.9766,0.020811,0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,k12,schools,state_local,10.0563,0.020811,0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,k12_user_fees,schools,state_local,0.5534,0.020811,0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",low,pos_fed,police/safety,federal,0.3286,0.020811,0.0
@@ -52,7 +52,7 @@ scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,health_sl,health,state_local,0.4785,0.020811,0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,health_sl_user_fees,health,state_local,-0.0158,0.020811,-0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,hwy_fed,roads,federal,0.1171,0.020811,0.0
-"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,hwy_sl,roads,state_local,9.42,0.020811,0.0
+"low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,hwy_sl,roads,state_local_hwy,9.42,0.020811,0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,k12,schools,state_local,10.0507,0.020811,0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,k12_user_fees,schools,state_local,0.5531,0.020811,0.0
 "low (open economy, SPC=1; Lind 1990, A-4 2023 lower value)",high,pos_fed,police/safety,federal,0.3284,0.020811,0.0
@@ -82,7 +82,7 @@ scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
 "central (d central, r_i = Baa real 2024)",low,health_sl,health,state_local,0.4788,0.022215,0.0323
 "central (d central, r_i = Baa real 2024)",low,health_sl_user_fees,health,state_local,-0.0159,0.022215,-0.0011
 "central (d central, r_i = Baa real 2024)",low,hwy_fed,roads,federal,0.0,0.025471,0.0
-"central (d central, r_i = Baa real 2024)",low,hwy_sl,roads,state_local,6.9766,0.022215,0.4709
+"central (d central, r_i = Baa real 2024)",low,hwy_sl,roads,state_local_hwy,6.9766,0.023599,0.9347
 "central (d central, r_i = Baa real 2024)",low,k12,schools,state_local,10.0563,0.022215,0.6788
 "central (d central, r_i = Baa real 2024)",low,k12_user_fees,schools,state_local,0.5534,0.022215,0.0374
 "central (d central, r_i = Baa real 2024)",low,pos_fed,police/safety,federal,0.3286,0.025471,0.0736
@@ -112,7 +112,7 @@ scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
 "central (d central, r_i = Baa real 2024)",high,health_sl,health,state_local,0.4785,0.022215,0.0323
 "central (d central, r_i = Baa real 2024)",high,health_sl_user_fees,health,state_local,-0.0158,0.022215,-0.0011
 "central (d central, r_i = Baa real 2024)",high,hwy_fed,roads,federal,0.1171,0.025471,0.0262
-"central (d central, r_i = Baa real 2024)",high,hwy_sl,roads,state_local,9.42,0.022215,0.6358
+"central (d central, r_i = Baa real 2024)",high,hwy_sl,roads,state_local_hwy,9.42,0.023599,1.2621
 "central (d central, r_i = Baa real 2024)",high,k12,schools,state_local,10.0507,0.022215,0.6784
 "central (d central, r_i = Baa real 2024)",high,k12_user_fees,schools,state_local,0.5531,0.022215,0.0373
 "central (d central, r_i = Baa real 2024)",high,pos_fed,police/safety,federal,0.3284,0.025471,0.0735
@@ -142,7 +142,7 @@ scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
 "high (d high, r_i = GRR measured pre-tax 2024)",low,health_sl,health,state_local,0.4788,0.032967,0.2797
 "high (d high, r_i = GRR measured pre-tax 2024)",low,health_sl_user_fees,health,state_local,-0.0159,0.032967,-0.0093
 "high (d high, r_i = GRR measured pre-tax 2024)",low,hwy_fed,roads,federal,0.0,0.048005,0.0
-"high (d high, r_i = GRR measured pre-tax 2024)",low,hwy_sl,roads,state_local,6.9766,0.032967,4.0752
+"high (d high, r_i = GRR measured pre-tax 2024)",low,hwy_sl,roads,state_local_hwy,6.9766,0.039358,6.2179
 "high (d high, r_i = GRR measured pre-tax 2024)",low,k12,schools,state_local,10.0563,0.032967,5.8741
 "high (d high, r_i = GRR measured pre-tax 2024)",low,k12_user_fees,schools,state_local,0.5534,0.032967,0.3232
 "high (d high, r_i = GRR measured pre-tax 2024)",low,pos_fed,police/safety,federal,0.3286,0.048005,0.4294
@@ -172,7 +172,7 @@ scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
 "high (d high, r_i = GRR measured pre-tax 2024)",high,health_sl,health,state_local,0.4785,0.032967,0.2795
 "high (d high, r_i = GRR measured pre-tax 2024)",high,health_sl_user_fees,health,state_local,-0.0158,0.032967,-0.0093
 "high (d high, r_i = GRR measured pre-tax 2024)",high,hwy_fed,roads,federal,0.1171,0.048005,0.1531
-"high (d high, r_i = GRR measured pre-tax 2024)",high,hwy_sl,roads,state_local,9.42,0.032967,5.5025
+"high (d high, r_i = GRR measured pre-tax 2024)",high,hwy_sl,roads,state_local_hwy,9.42,0.039358,8.3956
 "high (d high, r_i = GRR measured pre-tax 2024)",high,k12,schools,state_local,10.0507,0.032967,5.8709
 "high (d high, r_i = GRR measured pre-tax 2024)",high,k12_user_fees,schools,state_local,0.5531,0.032967,0.3231
 "high (d high, r_i = GRR measured pre-tax 2024)",high,pos_fed,police/safety,federal,0.3284,0.048005,0.4291
@@ -202,7 +202,7 @@ scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
 "beside: d central, r_i = GRR measured (no risk adjustment)",low,health_sl,health,state_local,0.4788,0.026221,0.1245
 "beside: d central, r_i = GRR measured (no risk adjustment)",low,health_sl_user_fees,health,state_local,-0.0159,0.026221,-0.0041
 "beside: d central, r_i = GRR measured (no risk adjustment)",low,hwy_fed,roads,federal,0.0,0.038759,0.0
-"beside: d central, r_i = GRR measured (no risk adjustment)",low,hwy_sl,roads,state_local,6.9766,0.026221,1.8137
+"beside: d central, r_i = GRR measured (no risk adjustment)",low,hwy_sl,roads,state_local_hwy,6.9766,0.03155,3.6001
 "beside: d central, r_i = GRR measured (no risk adjustment)",low,k12,schools,state_local,10.0563,0.026221,2.6143
 "beside: d central, r_i = GRR measured (no risk adjustment)",low,k12_user_fees,schools,state_local,0.5534,0.026221,0.1439
 "beside: d central, r_i = GRR measured (no risk adjustment)",low,pos_fed,police/safety,federal,0.3286,0.038759,0.2834
@@ -232,7 +232,7 @@ scenario,end,line,group,level,return_at_2081_bn,rate,delta_bn
 "beside: d central, r_i = GRR measured (no risk adjustment)",high,health_sl,health,state_local,0.4785,0.026221,0.1244
 "beside: d central, r_i = GRR measured (no risk adjustment)",high,health_sl_user_fees,health,state_local,-0.0158,0.026221,-0.0041
 "beside: d central, r_i = GRR measured (no risk adjustment)",high,hwy_fed,roads,federal,0.1171,0.038759,0.101
-"beside: d central, r_i = GRR measured (no risk adjustment)",high,hwy_sl,roads,state_local,9.42,0.026221,2.4489
+"beside: d central, r_i = GRR measured (no risk adjustment)",high,hwy_sl,roads,state_local_hwy,9.42,0.03155,4.861
 "beside: d central, r_i = GRR measured (no risk adjustment)",high,k12,schools,state_local,10.0507,0.026221,2.6129
 "beside: d central, r_i = GRR measured (no risk adjustment)",high,k12_user_fees,schools,state_local,0.5531,0.026221,0.1438
 "beside: d central, r_i = GRR measured (no risk adjustment)",high,pos_fed,police/safety,federal,0.3284,0.038759,0.2832
@@ -262,7 +262,7 @@ beside: full displacement at 7% (A-94 1992 / A-4 2003),low,health_fed_user_fees,
 beside: full displacement at 7% (A-94 1992 / A-4 2003),low,health_sl,health,state_local,0.4788,0.07,1.1316
 beside: full displacement at 7% (A-94 1992 / A-4 2003),low,health_sl_user_fees,health,state_local,-0.0159,0.07,-0.0375
 beside: full displacement at 7% (A-94 1992 / A-4 2003),low,hwy_fed,roads,federal,0.0,0.07,0.0
-beside: full displacement at 7% (A-94 1992 / A-4 2003),low,hwy_sl,roads,state_local,6.9766,0.07,16.4903
+beside: full displacement at 7% (A-94 1992 / A-4 2003),low,hwy_sl,roads,state_local_hwy,6.9766,0.07,16.4903
 beside: full displacement at 7% (A-94 1992 / A-4 2003),low,k12,schools,state_local,10.0563,0.07,23.7697
 beside: full displacement at 7% (A-94 1992 / A-4 2003),low,k12_user_fees,schools,state_local,0.5534,0.07,1.308
 beside: full displacement at 7% (A-94 1992 / A-4 2003),low,pos_fed,police/safety,federal,0.3286,0.07,0.7766
@@ -292,7 +292,7 @@ beside: full displacement at 7% (A-94 1992 / A-4 2003),high,health_fed_user_fees
 beside: full displacement at 7% (A-94 1992 / A-4 2003),high,health_sl,health,state_local,0.4785,0.07,1.131
 beside: full displacement at 7% (A-94 1992 / A-4 2003),high,health_sl_user_fees,health,state_local,-0.0158,0.07,-0.0375
 beside: full displacement at 7% (A-94 1992 / A-4 2003),high,hwy_fed,roads,federal,0.1171,0.07,0.2769
-beside: full displacement at 7% (A-94 1992 / A-4 2003),high,hwy_sl,roads,state_local,9.42,0.07,22.2657
+beside: full displacement at 7% (A-94 1992 / A-4 2003),high,hwy_sl,roads,state_local_hwy,9.42,0.07,22.2657
 beside: full displacement at 7% (A-94 1992 / A-4 2003),high,k12,schools,state_local,10.0507,0.07,23.7564
 beside: full displacement at 7% (A-94 1992 / A-4 2003),high,k12_user_fees,schools,state_local,0.5531,0.07,1.3072
 beside: full displacement at 7% (A-94 1992 / A-4 2003),high,pos_fed,police/safety,federal,0.3284,0.07,0.7762
@@ -322,7 +322,7 @@ beside: full displacement at 7% (A-94 1992 / A-4 2003),high,rec_sl,parks,state_l
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,health_sl,health,state_local,0.4788,0.025471,0.1072
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,health_sl_user_fees,health,state_local,-0.0159,0.025471,-0.0036
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,hwy_fed,roads,federal,0.0,0.025471,0.0
-"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,hwy_sl,roads,state_local,6.9766,0.025471,1.5622
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,hwy_sl,roads,state_local_hwy,6.9766,0.025471,1.5622
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,k12,schools,state_local,10.0563,0.025471,2.2519
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,k12_user_fees,schools,state_local,0.5534,0.025471,0.1239
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",low,pos_fed,police/safety,federal,0.3286,0.025471,0.0736
@@ -352,7 +352,7 @@ beside: full displacement at 7% (A-94 1992 / A-4 2003),high,rec_sl,parks,state_l
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,health_sl,health,state_local,0.4785,0.025471,0.1071
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,health_sl_user_fees,health,state_local,-0.0158,0.025471,-0.0035
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,hwy_fed,roads,federal,0.1171,0.025471,0.0262
-"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,hwy_sl,roads,state_local,9.42,0.025471,2.1094
+"beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,hwy_sl,roads,state_local_hwy,9.42,0.025471,2.1094
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,k12,schools,state_local,10.0507,0.025471,2.2506
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,k12_user_fees,schools,state_local,0.5531,0.025471,0.1238
 "beside: Burgess-Zerbe margin, CBO weights, risk-consistent returns",high,pos_fed,police/safety,federal,0.3284,0.025471,0.0735
@@ -382,7 +382,7 @@ beside: full displacement at 7% (A-94 1992 / A-4 2003),high,rec_sl,parks,state_l
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,health_sl,health,state_local,0.4788,0.060996,0.9245
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,health_sl_user_fees,health,state_local,-0.0159,0.060996,-0.0306
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,hwy_fed,roads,federal,0.0,0.060996,0.0
-"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,hwy_sl,roads,state_local,6.9766,0.060996,13.4718
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,hwy_sl,roads,state_local_hwy,6.9766,0.060996,13.4718
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,k12,schools,state_local,10.0563,0.060996,19.4187
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,k12_user_fees,schools,state_local,0.5534,0.060996,1.0686
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",low,pos_fed,police/safety,federal,0.3286,0.060996,0.6345
@@ -412,7 +412,7 @@ beside: full displacement at 7% (A-94 1992 / A-4 2003),high,rec_sl,parks,state_l
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,health_sl,health,state_local,0.4785,0.060996,0.924
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,health_sl_user_fees,health,state_local,-0.0158,0.060996,-0.0306
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,hwy_fed,roads,federal,0.1171,0.060996,0.2262
-"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,hwy_sl,roads,state_local,9.42,0.060996,18.19
+"beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,hwy_sl,roads,state_local_hwy,9.42,0.060996,18.19
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,k12,schools,state_local,10.0507,0.060996,19.4079
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,k12_user_fees,schools,state_local,0.5531,0.060996,1.068
 "beside: Burgess-Zerbe SOC, CBO weights, measured GRR returns",high,pos_fed,police/safety,federal,0.3284,0.060996,0.6341

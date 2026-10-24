@@ -78,7 +78,10 @@ def group_of(k):
 
 def level_of(k):
     # federal enterprises (ent_other_fed, ent_power_fed) carry the federal margin too
-    return "federal" if k in FED or k.endswith("_fed") else "state_local"
+    if k in FED or k.endswith("_fed"):
+        return "federal"
+    # federal-aid grants finance part of state/local highway capital at the federal margin
+    return "state_local_hwy" if k == "hwy_sl" else "state_local"
 
 
 # Inputs (sources in reads/). Each tuple is (low, central, high).
@@ -90,6 +93,10 @@ DEBT_SHARE_SL = 0.21                 # school_capital_return_2026_09_26 RESULT s
 d_tax = (MPS[0] * DOMESTIC[0], MPS[1] * DOMESTIC[1], D_TAX_HIGH_OVERRIDE)
 d_sl = tuple((1 - DEBT_SHARE_SL) * t + DEBT_SHARE_SL * b for t, b in zip(d_tax, D_BOND))
 d_fed = (d_tax[0], D_BOND[1], D_BOND[2])  # federal margin: tax-financed (low) to CBO deficit-financed (central/high)
+# FHWA 23rd C&P Report, Highlights: the federal government funded 42.5% of highway capital spending in 2014
+HWY_FED_SHARE = 0.425
+d_hwy_sl = tuple(HWY_FED_SHARE * f + (1 - HWY_FED_SHARE) * s for f, s in zip(d_fed, d_sl))
+D_BY_LEVEL = {"state_local": d_sl, "state_local_hwy": d_hwy_sl, "federal": d_fed}
 # marginal pre-tax private return
 R_I = {
     "aaa_real_2024": 0.050442 - 0.022601,   # FRED AAA 2024 mean minus Cleveland Fed 10y expected inflation 2024 mean
@@ -121,7 +128,7 @@ def rate(level, scen):
         return ri
     if which == "soc":
         return sum(w * r for w, r in zip(CBO_W, ri))
-    d = (d_sl if level == "state_local" else d_fed)[which]
+    d = D_BY_LEVEL[level][which]
     return RC + d * (ri - RC)
 
 
@@ -153,7 +160,8 @@ out = {
     "capital_return_at_rc_bn": CAP,
     "check_7pct_arm_reproduced_bn": {e: CAP[e] * (0.07 / RC - 1) for e in CAP},
     "capital_return_by_group_at_rc_bn": {g: [round(x, 3) for x in v] for g, v in sorted(grp.items())},
-    "d_state_local": d_sl, "d_federal": d_fed, "d_tax": d_tax, "r_i_candidates": R_I,
+    "d_state_local": d_sl, "d_state_local_highways": d_hwy_sl, "hwy_federal_share": HWY_FED_SHARE,
+    "d_federal": d_fed, "d_tax": d_tax, "r_i_candidates": R_I,
     "state_local_rate": {n: rate("state_local", s) for n, s in SCEN.items()},
     "federal_rate": {n: rate("federal", s) for n, s in SCEN.items()},
     "headline_bn": {n: {"delta": [round(totals[(n, "low")], 3), round(totals[(n, "high")], 3)],
@@ -198,6 +206,21 @@ for name, e in TH["theta"].items():
 for i, end in enumerate(("low", "high")):
     assert abs(pairing["zero"]["d_central"]["set"]["rate_delta_bn"][i] - totals[("central (d central, r_i = Baa real 2024)", end)]) < 1e-9
     assert abs(pairing["one"]["d_high"]["set"]["rate_delta_bn"][i] - totals[("high (d high, r_i = GRR measured pre-tax 2024)", end)]) < 1e-9
+# The adopted reading (2026-10-24): item 6's ends are the bound over theta, so each end takes its own theta.
+# Low end: item 6 at 1 means everything scales (theta = 1); high end: TP-5's 0.37 means nothing above the
+# normal return scales (theta = 0). Item 6 is unchanged at both ends; only each end's rate moves.
+for name, i in (("one", 0), ("zero", 1)):
+    assert abs(TH["theta"][name]["set"][("low", "high")[i]]["total_bn"]) < 1e-12, "[BLOCKED] bound end moves item 6"
+pairing["bound"] = {
+    "rule": "low end theta = 1 (item 6 response 1), high end theta = 0 (item 6 response 0.37); d central",
+    "theta_by_end": [1.0, 0.0],
+    "rate_state_local_by_end": [pairing["one"]["d_central"]["rate_state_local"], pairing["zero"]["d_central"]["rate_state_local"]],
+    "rate_state_local_highways_by_end": [rate("state_local_hwy", (1, r_i_theta(1.0))), rate("state_local_hwy", (1, r_i_theta(0.0)))],
+    "rate_federal_by_end": [pairing["one"]["d_central"]["rate_federal"], pairing["zero"]["d_central"]["rate_federal"]],
+    **{which: {"band_bn": [pairing["one"]["d_central"][which]["band_bn"][0], pairing["zero"]["d_central"][which]["band_bn"][1]],
+               "rate_delta_bn": [pairing["one"]["d_central"][which]["rate_delta_bn"][0], pairing["zero"]["d_central"][which]["rate_delta_bn"][1]]}
+       for which in ("set", "cash")},
+}
 out["theta_pairing"] = pairing
 with open(OUT / "theta_pairing.csv", "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(theta_rows[0].keys()), lineterminator="\n")
