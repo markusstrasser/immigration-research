@@ -1,0 +1,546 @@
+{
+  "case_key": "oct16",
+  "central": {
+    "case_rate_bn": [
+      19.74092300525917,
+      23.6759319181076
+    ],
+    "national_value_bn": 9291.082131643807,
+    "paired_theta_bn": [
+      22.935813517875296,
+      27.52843180411699
+    ],
+    "paired_theta_high_d_bn": [
+      26.916540065762852,
+      32.30678729332136
+    ]
+  },
+  "checks": {
+    "fhwa_row_share_of_capital_outlay_2022": {
+      "note": "a purchase flow on mostly existing alignments; it cannot validate a stock ratio, since most street land was dedicated and land is not depreciated",
+      "row_share_of_all_capital_outlay": 0.044731161142199216,
+      "row_share_of_expansion_outlay": 0.18797112373747468,
+      "row_thousand_usd": 3997377.0,
+      "source": "FHWA Highway Statistics 2022 Table SF-12A, sheets 1-14 'Total' rows; columns ROW, New construction, Reconstruction added capacity, Major widening, New bridge"
+    },
+    "highway_land_to_structures": {
+      "central": 1.2692867897102815,
+      "comparator": "BEA publishes no highway land; see RESULT for the flow comparator",
+      "high": 1.701407058612829,
+      "low": 0.7645189318212635,
+      "structures_bn": 4944.753499999
+    },
+    "rural_park_farm_price_vs_timberland": {
+      "lane_rural_park_mean_usd_per_acre": 6180.209922850209,
+      "ncreif_timberland_1q2024_usd_per_acre": 2162.0,
+      "note": "NCREIF includes standing timber"
+    },
+    "urban_road_value_vs_guerra_duranton_ma": {
+      "acres_ratio_lane_to_gdm": 0.670902505190001,
+      "comparator": "Guerra, Duranton & Ma (2024) NBER w32824 pp.13-16: 58,000 km2 of roadway in 316 PMSAs, FHFA (Davis et al. 2021) as-is pooled cross-section, factor 1.0: $4.1tr, $287,000/acre",
+      "comparator_acres": 14332112.098,
+      "comparator_bn": 4100.0,
+      "comparator_per_acre": 287000.0,
+      "lane_atf_2015_per_acre": 410620.00813511264,
+      "lane_atf_2015_prices_bn": 3948.29612076469,
+      "lane_atf_2024_bn": 7705.113516369129,
+      "lane_central_2024_bn": 6106.471658552252,
+      "lane_urban_road_acres": 9615449.911212122,
+      "pass_rule": "lane ATF at the same 2015 price level within a factor 1.5 of GDM; scopes differ (HPMS urban areas nationally vs 316 PMSAs; design ROW widths vs measured roadway)",
+      "passes": true,
+      "value_ratio_lane_to_gdm": 0.9629990538450464
+    },
+    "value_per_centerline_mile_usd": {
+      "rural": 58073.82590351874,
+      "urban": 4910846.239203372
+    }
+  },
+  "coverage": {
+    "farm_level_rural_acres": {
+      "county": 45183995.6584431,
+      "national": 0.0,
+      "state": 4766547.887170894
+    },
+    "nearest_fhfa_max_miles_used": 1163.3719853980504,
+    "unpriced_acres": 12771.441716031444,
+    "unpriced_records": 201,
+    "urban_level_acres": {
+      "county": 1589711.07650072,
+      "missing": 43.65717231782447,
+      "nearest_county": 56893.96312454184,
+      "state_unknown_county": 484.1269696969697,
+      "tract": 3803365.0051381593,
+      "urban_tracts": 9132011.523636363
+    }
+  },
+  "frame": "beside the adopted case; imputed resource charge, no land depreciation; case coefficients averaged over the two methods as in public_land",
+  "high": {
+    "case_rate_bn": [
+      28.12689598814224,
+      33.453362968154934
+    ],
+    "national_value_bn": 12998.460572816794,
+    "paired_theta_bn": [
+      32.679306426714874,
+      38.89584555001434
+    ],
+    "paired_theta_high_d_bn": [
+      38.35111639792186,
+      45.64731910665638
+    ]
+  },
+  "low": {
+    "case_rate_bn": [
+      11.384388357129994,
+      13.742004863850013
+    ],
+    "national_value_bn": 5433.159578789722,
+    "paired_theta_bn": [
+      13.2267395006177,
+      15.979382540264467
+    ],
+    "paired_theta_high_d_bn": [
+      15.52236193786344,
+      18.753100265274682
+    ]
+  },
+  "moved_from_public_land_B": {
+    "records_with_rural_acres": {
+      "acres": 40424495.1002353,
+      "new_central_bn": [
+        0.4882747435577514,
+        0.5974864368996718
+      ],
+      "old_B_bn": [
+        12.730123818125197,
+        15.397687040306792
+      ]
+    },
+    "state_fallback_records": {
+      "acres": 9589858.211257841,
+      "new_central_bn": [
+        0.06222335965496463,
+        0.08009737908427286
+      ],
+      "old_B_bn": [
+        3.386883530795907,
+        4.398282947287238
+      ]
+    },
+    "urban_only_records": {
+      "acres": 14531427.371206373,
+      "new_central_bn": [
+        19.19042490204645,
+        22.998348102123654
+      ],
+      "old_B_bn": [
+        16.814667623486738,
+        19.81005009446143
+      ]
+    }
+  },
+  "old_arm_B_same_records_bn": [
+    32.93167497240785,
+    39.60602008205546
+  ],
+  "per_line_central_case_rate_bn": {
+    "college": [
+      0.3494268198033546,
+      0.3494268198033546
+    ],
+    "ent_airports_sl": [
+      1.0892010602689648,
+      1.0892010602689648
+    ],
+    "ent_housing_sl": [
+      0.0025071512302467956,
+      0.0025071512302467956
+    ],
+    "ent_ports_sl": [
+      0.0008151891092969842,
+      0.0008151891092969842
+    ],
+    "ent_power_sl": [
+      9.973026925793971e-05,
+      9.973026925793971e-05
+    ],
+    "ent_sewer_sl": [
+      2.1527407377373794e-05,
+      2.1527407377373794e-05
+    ],
+    "ent_tolls_sl": [
+      0.2201664632085985,
+      0.2201664632085985
+    ],
+    "ent_transit_sl": [
+      2.721059809238553e-05,
+      2.721059809238553e-05
+    ],
+    "ent_water_sl": [
+      3.23591898060883e-05,
+      3.23591898060883e-05
+    ],
+    "gps_sl": [
+      1.2471669974524714e-05,
+      1.7674593543030643e-05
+    ],
+    "health_fed": [
+      0.007649486403979769,
+      0.007649486403979769
+    ],
+    "health_sl": [
+      0.03617084737819699,
+      0.03617084737819699
+    ],
+    "hwy_fed": [
+      0.0,
+      0.056932481681907655
+    ],
+    "hwy_sl": [
+      10.346355422064011,
+      13.977818449171902
+    ],
+    "k12": [
+      2.851548971208861,
+      2.851548971208861
+    ],
+    "pos_sl": [
+      0.0002826645415345527,
+      0.0002826645415345527
+    ],
+    "rec_sl": [
+      4.836605630907613,
+      5.083213832042678
+    ]
+  },
+  "per_line_central_paired_bn": {
+    "college": [
+      0.4059276616090423,
+      0.4059276616090423
+    ],
+    "ent_airports_sl": [
+      1.2653202741160223,
+      1.2653202741160223
+    ],
+    "ent_housing_sl": [
+      0.002912547001306467,
+      0.002912547001306467
+    ],
+    "ent_ports_sl": [
+      0.0009470017472966341,
+      0.0009470017472966341
+    ],
+    "ent_power_sl": [
+      0.00011585623282808751,
+      0.00011585623282808751
+    ],
+    "ent_sewer_sl": [
+      2.500829828151245e-05,
+      2.500829828151245e-05
+    ],
+    "ent_tolls_sl": [
+      0.25576645097046347,
+      0.25576645097046347
+    ],
+    "ent_transit_sl": [
+      3.161043694597219e-05,
+      3.161043694597219e-05
+    ],
+    "ent_water_sl": [
+      3.759153420719332e-05,
+      3.759153420719332e-05
+    ],
+    "gps_sl": [
+      1.4488286365561683e-05,
+      2.053250071316887e-05
+    ],
+    "health_fed": [
+      0.011752966631872384,
+      0.011752966631872384
+    ],
+    "health_sl": [
+      0.04201952071942277,
+      0.04201952071942277
+    ],
+    "hwy_fed": [
+      0.0,
+      0.08747326580370454
+    ],
+    "hwy_sl": [
+      12.019317421078394,
+      16.237972690994937
+    ],
+    "k12": [
+      3.312632403253698,
+      3.312632403253698
+    ],
+    "pos_sl": [
+      0.0003283702047527019,
+      0.0003283702047527019
+    ],
+    "rec_sl": [
+      5.618664345754395,
+      5.905148052061497
+    ]
+  },
+  "per_line_range_case_rate_bn": {
+    "college": {
+      "high": [
+        0.537532281463738,
+        0.537532281463738
+      ],
+      "low": [
+        0.18815955193035452,
+        0.18815955193035452
+      ]
+    },
+    "ent_airports_sl": {
+      "high": [
+        1.668273599722432,
+        1.668273599722432
+      ],
+      "low": [
+        0.5933063423258443,
+        0.5933063423258443
+      ]
+    },
+    "ent_housing_sl": {
+      "high": [
+        0.0038566139979230776,
+        0.0038566139979230776
+      ],
+      "low": [
+        0.0013500091551075547,
+        0.0013500091551075547
+      ]
+    },
+    "ent_ports_sl": {
+      "high": [
+        0.0012535211766467743,
+        0.0012535211766467743
+      ],
+      "low": [
+        0.0004389479819291454,
+        0.0004389479819291454
+      ]
+    },
+    "ent_power_sl": {
+      "high": [
+        0.0001325213229357705,
+        0.0001325213229357705
+      ],
+      "low": [
+        5.379237237387522e-05,
+        5.379237237387522e-05
+      ]
+    },
+    "ent_sewer_sl": {
+      "high": [
+        3.266501676955444e-05,
+        3.266501676955444e-05
+      ],
+      "low": [
+        1.200861597761612e-05,
+        1.200861597761612e-05
+      ]
+    },
+    "ent_tolls_sl": {
+      "high": [
+        0.2556837801668752,
+        0.2556837801668752
+      ],
+      "low": [
+        0.14327325764137425,
+        0.14327325764137425
+      ]
+    },
+    "ent_transit_sl": {
+      "high": [
+        3.823448068857092e-05,
+        3.823448068857092e-05
+      ],
+      "low": [
+        1.4651860511284513e-05,
+        1.4651860511284513e-05
+      ]
+    },
+    "ent_water_sl": {
+      "high": [
+        4.690559075262899e-05,
+        4.690559075262899e-05
+      ],
+      "low": [
+        1.7425382048388737e-05,
+        1.7425382048388737e-05
+      ]
+    },
+    "gps_sl": {
+      "high": [
+        1.9187184576191866e-05,
+        2.7191682373893303e-05
+      ],
+      "low": [
+        6.715514601667153e-06,
+        9.517088830862654e-06
+      ]
+    },
+    "health_fed": {
+      "high": [
+        0.011768290310591116,
+        0.011768290310591116
+      ],
+      "low": [
+        0.004119092235204821,
+        0.004119092235204821
+      ]
+    },
+    "health_sl": {
+      "high": [
+        0.05563717966750065,
+        0.05563717966750065
+      ],
+      "low": [
+        0.019479897147716068,
+        0.019479897147716068
+      ]
+    },
+    "hwy_fed": {
+      "high": [
+        0.0,
+        0.07686581271960685
+      ],
+      "low": [
+        0.0,
+        0.03685165536654217
+      ]
+    },
+    "hwy_sl": {
+      "high": [
+        13.892275106045954,
+        18.76831902218981
+      ],
+      "low": [
+        6.2234559847388855,
+        8.407824236888494
+      ]
+    },
+    "k12": {
+      "high": [
+        4.37367317058315,
+        4.37367317058315
+      ],
+      "low": [
+        1.535523855813598,
+        1.535523855813598
+      ]
+    },
+    "pos_sl": {
+      "high": [
+        0.0004348685254377734,
+        0.0004348685254377734
+      ],
+      "low": [
+        0.0001522039839032207,
+        0.0001522039839032207
+      ]
+    },
+    "rec_sl": {
+      "high": [
+        7.326238062886266,
+        7.699787309537701
+      ],
+      "low": [
+        2.675024620430565,
+        2.8114184180602053
+      ]
+    }
+  },
+  "rates": {
+    "band": [
+      368.02973917888073,
+      436.56152715403437
+    ],
+    "case": 0.020810698764237804,
+    "paired_central": {
+      "federal": 0.031974362100282205,
+      "state_local": 0.024175700910912562
+    },
+    "paired_high": {
+      "federal": 0.0377253401824869,
+      "state_local": 0.028371543478195146
+    },
+    "theta": 0.48942042318307266
+  },
+  "road_charge_by_rule_central_high_bn": {
+    "rural_corridor_and_site": 0.3848984064306469,
+    "urban_arterial_corridor": 7.145449694158286,
+    "urban_subdivision_streets": 6.724569293473476
+  },
+  "road_value_by_rule_central_bn": {
+    "rural_corridor_and_site": 169.83863737015855,
+    "urban_arterial_corridor": 3137.565351178054,
+    "urban_subdivision_streets": 2968.906307374198
+  },
+  "screen": {
+    "data_quality": {
+      "fallback_share": 0.003936658419009106,
+      "passes": true,
+      "test": "share of charge on a fallback price (nearest-county urban price, state farmland) <= 5%"
+    },
+    "influence": {
+      "beside_note": "re-measuring the five counties' urban price moves the total by this much; the drop-five rule is the screen's",
+      "beside_top5_at_county_average_price_bn": [
+        19.17035031130313,
+        23.01095442516467
+      ],
+      "moved_share": [
+        0.3331531354788667,
+        0.32913843095703305
+      ],
+      "passes": false,
+      "test": "dropping the five counties with the largest charges moves the total by <= 25%",
+      "top5": [
+        "06037",
+        "36061",
+        "06059",
+        "06073",
+        "06085"
+      ],
+      "without_top5_bn": [
+        13.164172608810185,
+        15.883272835136127
+      ]
+    },
+    "note": "The script's precision and influence tests are written for scaling elasticities (hypotheses 1.0 vs 0.75); their land analogues are stated here.",
+    "passes": false,
+    "precision": {
+      "half_width_over_central": [
+        0.4240558464908627,
+        0.4162741760806777
+      ],
+      "high_bn": [
+        28.12689598814224,
+        33.453362968154934
+      ],
+      "low_bn": [
+        11.384388357129994,
+        13.742004863850013
+      ],
+      "passes": true,
+      "test": "cited-factor range excludes zero and its half-width is below the central (the item is distinguishable from no land)"
+    },
+    "stability": {
+      "passes": true,
+      "reason": "",
+      "test": "pre-specified constructions: max/min <= 1.5",
+      "variants_high_end_bn": {
+        "central": 23.6759319181076,
+        "county_avg_urban_price": 22.18797531990071,
+        "rural_parks_at_pasture": 23.54038797642614
+      }
+    },
+    "thresholds_source": "scripts/estimate_screen.py: stability() reused (max/min <= 1.5); influence 25%; data quality CV_SHARE_MAX"
+  },
+  "status": "not identified: influence",
+  "top5_counties_share_of_charge": 0.32913843095703305
+}

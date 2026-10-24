@@ -1,0 +1,54 @@
+{
+  "acquired": {
+    "census": {
+      "bytes": 309188711,
+      "path": "_cache/nass/qs.census2022.txt.gz",
+      "sha256": "eca0f82dea58e1b128b82ac15f54e8bfc70cfb097e3e87710b74e7e93877dbbd",
+      "url": "https://www.nass.usda.gov/datasets/qs.census2022.txt.gz"
+    },
+    "census2022_land.csv": {
+      "bytes": 2307875,
+      "path": "_cache/nass/census2022_land.csv",
+      "sha256": "b271c70ba70d71b32e9ef88c683290723f4abb6f4334a41aa37db703b412e0e3"
+    },
+    "economics": {
+      "bytes": 584407647,
+      "path": "_cache/nass/qs.economics_20261023.txt.gz",
+      "sha256": "fa8f9092bee84de3f006d16fe524bf9441c3f79ff7f6fbd6a171048667287dc3",
+      "url": "https://www.nass.usda.gov/datasets/qs.economics_20261023.txt.gz"
+    },
+    "fhwa_sf12a": {
+      "bytes": 158748,
+      "path": "_cache/fhwa/sf12a_2022.xlsx",
+      "sha256": "0f77679bca93a11fbe16159bde5d377959662788441b460c2d1a934a860e164d",
+      "url": "https://www.fhwa.dot.gov/policyinformation/statistics/2022/xls/sf12a.xlsx"
+    },
+    "gazetteer": {
+      "bytes": 141524,
+      "path": "_cache/geo/2020_Gaz_counties_national.zip",
+      "sha256": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_counties_national.zip"
+    },
+    "survey_land_values.csv": {
+      "bytes": 232070,
+      "path": "_cache/nass/survey_land_values.csv",
+      "sha256": "47530e048e8c89c3777cdefe97c8928a8ef876ee21696014df5dc49c6b5d99fa"
+    },
+    "uac": {
+      "bytes": 72646273,
+      "path": "_cache/geo/tl_2020_us_uac20.zip",
+      "sha256": "dbd0e57862580d32c1e76139edb4a641333f8a7c8a983c4e58ab4d5ada72a35b",
+      "url": "https://www2.census.gov/geo/tiger/TIGER2020/UAC/tl_2020_us_uac20.zip"
+    }
+  },
+  "read_only_inputs": {
+    "infra/immigration-fiscal/land_price_rule_2026_10_24/_cache/urban_status.parquet": "472b897df913c341060d87e5c944e23aef5b58f6a953afecffa54244c2db3c33",
+    "infra/immigration-fiscal/public_capital_rate_2026_10_24/derived/rate_model.json": "f96f695bd2f0949128fecd825fb778833761f25d304079c78cb769476fa74e03",
+    "infra/immigration-fiscal/public_land_2026_10_24/_cache/priced_sites.parquet": "0e0bad6ed0920a977ab7cae7a1d67deec098e6322794e22b5fa35c41b8ce851a",
+    "infra/immigration-fiscal/public_land_2026_10_24/derived/case_contract.json": "36fb1e9bd453aa9a17096d847f846ad1d3a521177d8df73bbd83a852efc54c4f",
+    "infra/immigration-fiscal/public_land_2026_10_24/derived/case_physical_lines.csv": "bcf86c3856f2c77823496d6216261d8790d4a2455d4a676a5336f81473eaa0fa",
+    "infra/immigration-fiscal/public_land_2026_10_24/derived/roads_county_acres.csv": "b0a7a73b7631300c952732dde5455cbad4598255f3b6874785b7f01d0920b0f6",
+    "infra/immigration-fiscal/school_land_2026_10_24/build.py": "ec436d341d5b9d301d81ea3f1ff92fa7789394b7b9a4f213b1ee0db19dfb2f5f",
+    "scripts/estimate_screen.py": "7acf6628d6d0f2979d620f9fdc99b591d2fae5e16298f0e66255da68a2b179e6"
+  }
+}
