@@ -1,0 +1,1166 @@
+{
+  "beside_central": {
+    "b_bound_residence_price_only": [
+      17.092648774940947,
+      16.40224455965865
+    ],
+    "b_englobo_const_020": [
+      9.48956773009458,
+      11.883306251582242
+    ],
+    "b_englobo_min_046": [
+      13.015272898004998,
+      15.620533540489252
+    ],
+    "b_growth_1pct": [
+      5.964443271159226,
+      7.270117400413861
+    ],
+    "b_national_keying": [
+      9.269021138412285,
+      11.227495304112995
+    ],
+    "b_no_dedication": [
+      16.258015733407902,
+      20.102669645127147
+    ],
+    "b_price_cap": [
+      8.956284168569583,
+      10.949324822826874
+    ],
+    "b_rate_bound": [
+      16.197658670808345,
+      15.550314714528593
+    ],
+    "b_rate_theta0": [
+      12.706056015709189,
+      15.550314714528593
+    ],
+    "b_rate_theta0489": [
+      14.41491766475496,
+      17.7208804937608
+    ],
+    "b_rate_theta1": [
+      16.197658670808345,
+      19.985286522847026
+    ],
+    "b_rent_2_5pct": [
+      13.792918018606315,
+      16.812320736527415
+    ],
+    "b_rent_3pct": [
+      16.551501622327578,
+      20.174784883832892
+    ],
+    "b_rent_4_5pct": [
+      24.82725243349137,
+      30.262177325749345
+    ],
+    "b_residence_price_only": [
+      12.122388537986218,
+      14.76459201343674
+    ],
+    "b_width_high": [
+      12.735990617934803,
+      15.688998532155553
+    ],
+    "b_width_low": [
+      10.174461287089878,
+      12.229497469963766
+    ]
+  },
+  "calibration": {
+    "county": "04013",
+    "finished_price_per_acre_2024": 888816.8632476169,
+    "hard_cost_per_gross_acre": 169232.7338210452,
+    "k12_value_A_vs_acres_times_price_max_rel_dev": 1.2358863324068992e-05,
+    "rule": "C = F_Maricopa \u00d7 (s(1 \u2212 m) \u2212 0.262): Maricopa's ratio reproduces Munneke et al.; development cost per gross acre carried at FHFA's 2024 Maricopa finished-lot price, so C/F is the study's"
+  },
+  "case_key": "oct16",
+  "central": {
+    "bound": [
+      16.197658670808345,
+      15.550314714528593
+    ],
+    "case": [
+      11.481610478601754,
+      13.995045695024826
+    ],
+    "national_value_bn": 4445.783283243748,
+    "theta0": [
+      12.706056015709189,
+      15.550314714528593
+    ],
+    "theta0489": [
+      14.41491766475496,
+      17.7208804937608
+    ],
+    "theta1": [
+      16.197658670808345,
+      19.985286522847026
+    ]
+  },
+  "changes_from_r1_case_rate_bn": [
+    {
+      "case_rate_high_bn": 23.6759319181076,
+      "case_rate_low_bn": 19.74092300525917,
+      "delta_high_bn": 0.0,
+      "delta_low_bn": 0.0,
+      "step": "0_r1"
+    },
+    {
+      "case_rate_high_bn": 23.156295684551626,
+      "case_rate_low_bn": 19.246496523060504,
+      "delta_high_bn": -0.5196362335559748,
+      "delta_low_bn": -0.4944264821986657,
+      "step": "1_water"
+    },
+    {
+      "case_rate_high_bn": 15.594180013142463,
+      "case_rate_low_bn": 12.69975625398008,
+      "delta_high_bn": -7.562115671409163,
+      "delta_low_bn": -6.5467402690804235,
+      "step": "2_englobo"
+    },
+    {
+      "case_rate_high_bn": 15.644873076716909,
+      "case_rate_low_bn": 12.748799913671714,
+      "delta_high_bn": 0.05069306357444603,
+      "delta_low_bn": 0.049043659691633934,
+      "step": "3_small_sites"
+    },
+    {
+      "case_rate_high_bn": 11.227495304112995,
+      "case_rate_low_bn": 9.269021138412285,
+      "delta_high_bn": -4.417377772603913,
+      "delta_low_bn": -3.4797787752594296,
+      "step": "4_dedication"
+    },
+    {
+      "case_rate_high_bn": 13.995045695024826,
+      "case_rate_low_bn": 11.481610478601754,
+      "delta_high_bn": 2.767550390911831,
+      "delta_low_bn": 2.212589340189469,
+      "step": "5_location"
+    },
+    {
+      "case_rate_high_bn": 13.995045695024826,
+      "case_rate_low_bn": 11.481610478601754,
+      "delta_high_bn": 0.0,
+      "delta_low_bn": 0.0,
+      "step": "6_rate_construct"
+    }
+  ],
+  "checks": {
+    "englobo_ratio_distribution_central_large_urban": {
+      "0.1": 0.1,
+      "0.5": 0.1,
+      "0.9": 0.3754466478923565
+    },
+    "land_to_structures": {
+      "all_lines": 0.2852434041120569,
+      "comparator": "FHFA national land share of single-family property value 0.356 (xs_nation.csv), land/structures 0.55; BEA publishes no government land",
+      "roads": 0.6471745856374459,
+      "structures_bn": 15585.9284356922
+    },
+    "manhattan_vs_barr_smith_kulkarni": {
+      "comparator": "Barr, Smith & Kulkarni, What's Manhattan Worth? (Oct 2015) p.15: 'the value of developable land in 2014 on Manhattan was about $1,740 billion'; pp.13-14: 0.6 of Manhattan's 14,528 acres developable; vacant-land sales, all uses",
+      "comparator_bn_2014": 1740.0,
+      "comparator_developable_acres": 8716.8,
+      "comparator_per_developable_acre_2014": 199614537.44493395,
+      "lane_as_is_price_per_acre_2024_acre_weighted": 105140739.52122843,
+      "note": "FHFA's residential as-is price is about half the all-use vacant-land price per developable acre: as-is is not inflated here"
+    },
+    "park_pieces_with_water": 20128,
+    "park_unclipped_tract_max_water_share": 0.02,
+    "park_water_acres_removed": 684117.3757080119,
+    "park_water_value_removed_bn_at_r1_rules": 188.46360478652005,
+    "park_water_vintage_2021_counties": [
+      "21091",
+      "24025",
+      "48063"
+    ],
+    "urban_road_value_vs_guerra_duranton_ma": {
+      "comparator": "Guerra, Duranton & Ma (2024) NBER w32824 pp.13-16: 58,000 km2 of roadway in 316 PMSAs at FHFA as-is prices, factor 1.0: $4.1tr",
+      "comparator_acres": 14332112.098,
+      "comparator_bn": 4100.0,
+      "comparator_per_acre": 287000.0,
+      "lane_atf_2015_per_acre": 410620.00813511264,
+      "lane_atf_2015_prices_bn": 3948.29612076469,
+      "lane_r2_central_2024_bn": 3030.2801600710045,
+      "lane_r2_no_dedication_2024_bn": 4552.827387546118,
+      "lane_urban_road_acres": 9615449.911212122,
+      "note": "GDM value land at full ATF regardless of who paid; the r2 central prices only budget-bought land, as raw land where it was subdivided",
+      "value_ratio": 0.9629990538450464
+    }
+  },
+  "frame": "beside the adopted case; budget-cost land charge r \u00d7 P on land a budget bought: as-is FHFA prices, raw land by the residual method for large sites and subdivision streets, dedicated land at zero, county farmland for rural acres, urban land weighted by the group's county of residence; case coefficients averaged over the two methods as in public_land",
+  "high": {
+    "bound": [
+      25.583333775568143,
+      24.656185028445282
+    ],
+    "case": [
+      18.04696540215329,
+      22.157010438003212
+    ],
+    "national_value_bn": 7152.682796091617,
+    "theta0": [
+      20.003661399466203,
+      24.656185028445282
+    ],
+    "theta0489": [
+      22.734467015000916,
+      28.144085047228558
+    ],
+    "theta1": [
+      25.583333775568143,
+      31.78277773599681
+    ]
+  },
+  "location": {
+    "acs_counties": 3144,
+    "charge_share_by_factor_level": {
+      "county": 0.9992607793140009,
+      "state": 0.0007392206859991508
+    },
+    "source": "ACS 2024 5-year B03001 (001E total, 004E Mexican), county; school_cost_where_enrolled_2026_09_24 cache",
+    "us_mexican_origin": 37921535.0,
+    "us_population": 334922499.0
+  },
+  "low": {
+    "bound": [
+      4.901336085116752,
+      4.072509382217028
+    ],
+    "case": [
+      2.6888638188585334,
+      3.333462384988604
+    ],
+    "national_value_bn": 1916.9616435572077,
+    "theta0": [
+      3.2632964119924717,
+      4.072509382217028
+    ],
+    "theta0489": [
+      4.0649864820036195,
+      5.103938737082057
+    ],
+    "theta1": [
+      4.901336085116752,
+      6.179959962552151
+    ]
+  },
+  "per_line_central_by_rate_bn": {
+    "college": {
+      "bound": [
+        0.3899658163910683,
+        0.33039506426629583
+      ],
+      "case": [
+        0.3095046168739537,
+        0.3095046168739537
+      ],
+      "theta0": [
+        0.33039506426629583,
+        0.33039506426629583
+      ],
+      "theta0489": [
+        0.3595502069805359,
+        0.3595502069805359
+      ],
+      "theta1": [
+        0.3899658163910683,
+        0.3899658163910683
+      ]
+    },
+    "ent_airports_sl": {
+      "bound": [
+        0.7550212960027859,
+        0.6396850675883392
+      ],
+      "case": [
+        0.5992386181784584,
+        0.5992386181784584
+      ],
+      "theta0": [
+        0.6396850675883392,
+        0.6396850675883392
+      ],
+      "theta0489": [
+        0.6961329733072772,
+        0.6961329733072772
+      ],
+      "theta1": [
+        0.7550212960027859,
+        0.7550212960027859
+      ]
+    },
+    "ent_housing_sl": {
+      "bound": [
+        0.0009840074795319199,
+        0.0008336915718592986
+      ],
+      "case": [
+        0.000780978345158889,
+        0.000780978345158889
+      ],
+      "theta0": [
+        0.0008336915718592986,
+        0.0008336915718592986
+      ],
+      "theta0489": [
+        0.0009072592470035806,
+        0.0009072592470035806
+      ],
+      "theta1": [
+        0.0009840074795319199,
+        0.0009840074795319199
+      ]
+    },
+    "ent_ports_sl": {
+      "bound": [
+        0.00021033791256932176,
+        0.00017820692281214845
+      ],
+      "case": [
+        0.00016693913237397838,
+        0.00016693913237397838
+      ],
+      "theta0": [
+        0.00017820692281214845,
+        0.00017820692281214845
+      ],
+      "theta0489": [
+        0.00019393248541639516,
+        0.00019393248541639516
+      ],
+      "theta1": [
+        0.00021033791256932176,
+        0.00021033791256932176
+      ]
+    },
+    "ent_power_sl": {
+      "bound": [
+        0.0002451579762646182,
+        0.00020770791161375945
+      ],
+      "case": [
+        0.00019457481227350056,
+        0.00019457481227350056
+      ],
+      "theta0": [
+        0.00020770791161375945,
+        0.00020770791161375945
+      ],
+      "theta0489": [
+        0.0002260367381034162,
+        0.0002260367381034162
+      ],
+      "theta1": [
+        0.0002451579762646182,
+        0.0002451579762646182
+      ]
+    },
+    "ent_sewer_sl": {
+      "bound": [
+        2.644796134649907e-06,
+        2.2407799662178816e-06
+      ],
+      "case": [
+        2.0990983823660125e-06,
+        2.0990983823660125e-06
+      ],
+      "theta0": [
+        2.2407799662178816e-06,
+        2.2407799662178816e-06
+      ],
+      "theta0489": [
+        2.438513730344687e-06,
+        2.438513730344687e-06
+      ],
+      "theta1": [
+        2.644796134649907e-06,
+        2.644796134649907e-06
+      ]
+    },
+    "ent_tolls_sl": {
+      "bound": [
+        0.1429503265562363,
+        0.12111339082621553
+      ],
+      "case": [
+        0.11345554967419401,
+        0.11345554967419401
+      ],
+      "theta0": [
+        0.12111339082621553,
+        0.12111339082621553
+      ],
+      "theta0489": [
+        0.13180083315222385,
+        0.13180083315222385
+      ],
+      "theta1": [
+        0.1429503265562363,
+        0.1429503265562363
+      ]
+    },
+    "ent_transit_sl": {
+      "bound": [
+        9.600245074286826e-06,
+        8.133722123762625e-06
+      ],
+      "case": [
+        7.619437521758277e-06,
+        7.619437521758277e-06
+      ],
+      "theta0": [
+        8.133722123762625e-06,
+        8.133722123762625e-06
+      ],
+      "theta0489": [
+        8.851468406815866e-06,
+        8.851468406815866e-06
+      ],
+      "theta1": [
+        9.600245074286826e-06,
+        9.600245074286826e-06
+      ]
+    },
+    "ent_water_sl": {
+      "bound": [
+        7.7108601967131e-06,
+        6.532957616178886e-06
+      ],
+      "case": [
+        6.119887258423217e-06,
+        6.119887258423217e-06
+      ],
+      "theta0": [
+        6.532957616178886e-06,
+        6.532957616178886e-06
+      ],
+      "theta0489": [
+        7.1094471956123754e-06,
+        7.1094471956123754e-06
+      ],
+      "theta1": [
+        7.7108601967131e-06,
+        7.7108601967131e-06
+      ]
+    },
+    "gps_sl": {
+      "bound": [
+        3.762607171478926e-07,
+        4.51773461542229e-07
+      ],
+      "case": [
+        2.986272750347787e-07,
+        4.2320841698697053e-07
+      ],
+      "theta0": [
+        3.1878354101246243e-07,
+        4.51773461542229e-07
+      ],
+      "theta0489": [
+        3.4691404488003275e-07,
+        4.916394316196568e-07
+      ],
+      "theta1": [
+        3.762607171478926e-07,
+        5.332289304786273e-07
+      ]
+    },
+    "health_fed": {
+      "bound": [
+        0.011772714514502838,
+        0.007736482112179102
+      ],
+      "case": [
+        0.006321044205882347,
+        0.006321044205882347
+      ],
+      "theta0": [
+        0.007736482112179102,
+        0.007736482112179102
+      ],
+      "theta0489": [
+        0.009711896682589616,
+        0.009711896682589616
+      ],
+      "theta1": [
+        0.011772714514502838,
+        0.011772714514502838
+      ]
+    },
+    "health_sl": {
+      "bound": [
+        0.031117798672656172,
+        0.02636427773958438
+      ],
+      "case": [
+        0.024697298971669203,
+        0.024697298971669203
+      ],
+      "theta0": [
+        0.02636427773958438,
+        0.02636427773958438
+      ],
+      "theta0489": [
+        0.02869074796625797,
+        0.02869074796625797
+      ],
+      "theta1": [
+        0.031117798672656172,
+        0.031117798672656172
+      ]
+    },
+    "hwy_fed": {
+      "bound": [
+        0.0,
+        0.029423281505723247
+      ],
+      "case": [
+        0.0,
+        0.024040107684991638
+      ],
+      "theta0": [
+        0.0,
+        0.029423281505723247
+      ],
+      "theta0489": [
+        0.0,
+        0.036936150811553596
+      ],
+      "theta1": [
+        0.0,
+        0.04477382461744804
+      ]
+    },
+    "hwy_sl": {
+      "bound": [
+        10.227164906817835,
+        10.334862569549779
+      ],
+      "case": [
+        6.746024463059589,
+        9.113808810127681
+      ],
+      "theta0": [
+        7.649846202508273,
+        10.334862569549779
+      ],
+      "theta0489": [
+        8.91123861344911,
+        12.038990583139409
+      ],
+      "theta1": [
+        10.227164906817835,
+        13.816793304083475
+      ]
+    },
+    "k12": {
+      "bound": [
+        1.6327885172200465,
+        1.383365526939409
+      ],
+      "case": [
+        1.2958971356391837,
+        1.2958971356391837
+      ],
+      "theta0": [
+        1.383365526939409,
+        1.383365526939409
+      ],
+      "theta0489": [
+        1.505438232394146,
+        1.505438232394146
+      ],
+      "theta1": [
+        1.6327885172200465,
+        1.6327885172200465
+      ]
+    },
+    "pos_sl": {
+      "bound": [
+        0.00028144576033407805,
+        0.00023845241342847096
+      ],
+      "case": [
+        0.00022337537948619165,
+        0.00022337537948619165
+      ],
+      "theta0": [
+        0.00023845241342847096,
+        0.00023845241342847096
+      ],
+      "theta0489": [
+        0.00025949423546506984,
+        0.00025949423546506984
+      ],
+      "theta1": [
+        0.00028144576033407805,
+        0.00028144576033407805
+      ]
+    },
+    "rec_sl": {
+      "bound": [
+        3.0051360133423928,
+        2.675893635948184
+      ],
+      "case": [
+        2.385089747279091,
+        2.5067003843679387
+      ],
+      "theta0": [
+        2.546074718665932,
+        2.675893635948184
+      ],
+      "theta0489": [
+        2.7707486917734547,
+        2.912023255552053
+      ],
+      "theta1": [
+        3.0051360133423928,
+        3.1583614865297727
+      ]
+    }
+  },
+  "per_line_central_case_rate_bn": {
+    "college": [
+      0.3095046168739537,
+      0.3095046168739537
+    ],
+    "ent_airports_sl": [
+      0.5992386181784584,
+      0.5992386181784584
+    ],
+    "ent_housing_sl": [
+      0.000780978345158889,
+      0.000780978345158889
+    ],
+    "ent_ports_sl": [
+      0.00016693913237397838,
+      0.00016693913237397838
+    ],
+    "ent_power_sl": [
+      0.00019457481227350056,
+      0.00019457481227350056
+    ],
+    "ent_sewer_sl": [
+      2.0990983823660125e-06,
+      2.0990983823660125e-06
+    ],
+    "ent_tolls_sl": [
+      0.11345554967419401,
+      0.11345554967419401
+    ],
+    "ent_transit_sl": [
+      7.619437521758277e-06,
+      7.619437521758277e-06
+    ],
+    "ent_water_sl": [
+      6.119887258423217e-06,
+      6.119887258423217e-06
+    ],
+    "gps_sl": [
+      2.986272750347787e-07,
+      4.2320841698697053e-07
+    ],
+    "health_fed": [
+      0.006321044205882347,
+      0.006321044205882347
+    ],
+    "health_sl": [
+      0.024697298971669203,
+      0.024697298971669203
+    ],
+    "hwy_fed": [
+      0.0,
+      0.024040107684991638
+    ],
+    "hwy_sl": [
+      6.746024463059589,
+      9.113808810127681
+    ],
+    "k12": [
+      1.2958971356391837,
+      1.2958971356391837
+    ],
+    "pos_sl": [
+      0.00022337537948619165,
+      0.00022337537948619165
+    ],
+    "rec_sl": [
+      2.385089747279091,
+      2.5067003843679387
+    ]
+  },
+  "per_line_range_case_rate_bn": {
+    "college": {
+      "high": [
+        0.40283840483757494,
+        0.40283840483757494
+      ],
+      "low": [
+        0.07127162245538574,
+        0.07127162245538574
+      ]
+    },
+    "ent_airports_sl": {
+      "high": [
+        0.9180972510869903,
+        0.9180972510869903
+      ],
+      "low": [
+        0.15940166297382613,
+        0.15940166297382613
+      ]
+    },
+    "ent_housing_sl": {
+      "high": [
+        0.0011368733096696094,
+        0.0011368733096696094
+      ],
+      "low": [
+        0.00014436591551528596,
+        0.00014436591551528596
+      ]
+    },
+    "ent_ports_sl": {
+      "high": [
+        0.00017691901235809888,
+        0.00017691901235809888
+      ],
+      "low": [
+        2.3789009403270364e-05,
+        2.3789009403270364e-05
+      ]
+    },
+    "ent_power_sl": {
+      "high": [
+        0.00020441917484394098,
+        0.00020441917484394098
+      ],
+      "low": [
+        5.740689865226578e-05,
+        5.740689865226578e-05
+      ]
+    },
+    "ent_sewer_sl": {
+      "high": [
+        4.9381322617908825e-06,
+        4.9381322617908825e-06
+      ],
+      "low": [
+        9.729743631045788e-07,
+        9.729743631045788e-07
+      ]
+    },
+    "ent_tolls_sl": {
+      "high": [
+        0.16743266242317545,
+        0.16743266242317545
+      ],
+      "low": [
+        0.03348375794907943,
+        0.03348375794907943
+      ]
+    },
+    "ent_transit_sl": {
+      "high": [
+        2.9399483148746116e-05,
+        2.9399483148746116e-05
+      ],
+      "low": [
+        2.723033113457743e-06,
+        2.723033113457743e-06
+      ]
+    },
+    "ent_water_sl": {
+      "high": [
+        8.78301678872194e-06,
+        8.78301678872194e-06
+      ],
+      "low": [
+        2.553078178614693e-06,
+        2.553078178614693e-06
+      ]
+    },
+    "gps_sl": {
+      "high": [
+        1.3736854651599818e-06,
+        1.9467587181400646e-06
+      ],
+      "low": [
+        1.5086929199325677e-07,
+        2.138088499417049e-07
+      ]
+    },
+    "health_fed": {
+      "high": [
+        0.007500427743526288,
+        0.007500427743526288
+      ],
+      "low": [
+        0.0014313047921582667,
+        0.0014313047921582667
+      ]
+    },
+    "health_sl": {
+      "high": [
+        0.031863181010142745,
+        0.031863181010142745
+      ],
+      "low": [
+        0.005486722816403102,
+        0.005486722816403102
+      ]
+    },
+    "hwy_fed": {
+      "high": [
+        0.0,
+        0.039887135681456576
+      ],
+      "low": [
+        0.0,
+        0.006697024228708305
+      ]
+    },
+    "hwy_sl": {
+      "high": [
+        11.091983313903814,
+        14.985153967585436
+      ],
+      "low": [
+        1.7552493265275253,
+        2.371323564519356
+      ]
+    },
+    "k12": {
+      "high": [
+        1.9541902581890935,
+        1.9541902581890935
+      ],
+      "low": [
+        0.23416216901211123,
+        0.23416216901211123
+      ]
+    },
+    "pos_sl": {
+      "high": [
+        0.000344424090594216,
+        0.000344424090594216
+      ],
+      "low": [
+        5.8324683607729275e-05,
+        5.8324683607729275e-05
+      ]
+    },
+    "rec_sl": {
+      "high": [
+        3.4711527730538405,
+        3.648139446467436
+      ],
+      "low": [
+        0.4280869658699188,
+        0.4499142068398918
+      ]
+    }
+  },
+  "r1_reproduced_case_rate_bn": [
+    19.74092300525917,
+    23.6759319181076
+  ],
+  "rates": {
+    "bound": {
+      "federal": [
+        0.03875916817203933,
+        0.025470728172039332
+      ],
+      "state_local": [
+        0.026220807997089195,
+        0.022215346010289194
+      ],
+      "state_local_hwy": [
+        0.031549611071443,
+        0.023598883429033
+      ],
+      "theta": [
+        1.0,
+        0.0
+      ]
+    },
+    "case": {
+      "federal": 0.020810698764237804,
+      "state_local": 0.020810698764237804,
+      "state_local_hwy": 0.020810698764237804,
+      "theta": null
+    },
+    "theta0": {
+      "federal": 0.025470728172039332,
+      "state_local": 0.022215346010289194,
+      "state_local_hwy": 0.023598883429033,
+      "theta": 0
+    },
+    "theta0489": {
+      "federal": 0.031974362100282205,
+      "state_local": 0.024175700910912562,
+      "state_local_hwy": 0.02749013191639466,
+      "theta": 0.48942042318307266
+    },
+    "theta1": {
+      "federal": 0.03875916817203933,
+      "state_local": 0.026220807997089195,
+      "state_local_hwy": 0.031549611071443,
+      "theta": 1
+    }
+  },
+  "screen": {
+    "data_quality": {
+      "fallback_share": 0.00539744232719829,
+      "passes": true,
+      "test": "share of charge on a fallback price <= 5%"
+    },
+    "influence": {
+      "beside_national_keying_drop5_moved_share": [
+        0.38041933704786807,
+        0.3774067943334001
+      ],
+      "beside_national_keying_top5": [
+        "36061",
+        "06037",
+        "06059",
+        "06073",
+        "06085"
+      ],
+      "beside_note": "decisions/2026-10-24-influence-test-for-sums.md repricing test, reopened the same day: reported, not the pass rule",
+      "beside_reprice_moved_share": [
+        0.05358914153517469,
+        0.054096589547938057
+      ],
+      "beside_reprice_top5_county_average_bn": [
+        15.329640047759947,
+        14.709095722075478
+      ],
+      "moved_share": [
+        0.5107342552713051,
+        0.5107604911856263
+      ],
+      "passes": false,
+      "test": "drop the five counties with the largest charges; moves <= 25% (the standing rule; the sum decision of 2026-10-24 is reopened)",
+      "top5": [
+        "06037",
+        "06059",
+        "06073",
+        "06085",
+        "06071"
+      ],
+      "top5_county_shares_high_end": {
+        "06037": 0.248254,
+        "06059": 0.107751,
+        "06071": 0.035167,
+        "06073": 0.070375,
+        "06085": 0.049213
+      },
+      "top5_share_of_charge": 0.5107604911856263,
+      "without_top5_bn": [
+        7.924959532434247,
+        7.607828332844896
+      ]
+    },
+    "passes": false,
+    "precision": {
+      "half_width_over_central": [
+        0.6384255314542708,
+        0.661841127465961
+      ],
+      "high_bn": [
+        25.583333775568143,
+        24.656185028445282
+      ],
+      "low_bn": [
+        4.901336085116752,
+        4.072509382217028
+      ],
+      "passes": true,
+      "test": "cited-factor range excludes zero and its half-width is below the central"
+    },
+    "rate": "bound",
+    "stability": {
+      "passes": true,
+      "reason": "",
+      "test": "pre-specified constructions: max/min <= 1.5",
+      "variants_high_end_bn": {
+        "central": 15.550314714528593,
+        "county_avg_urban_price": 14.270195621489341,
+        "national_keying": 12.459782657295397,
+        "rural_parks_at_pasture": 15.409448045810262
+      }
+    },
+    "thresholds_source": "scripts/estimate_screen.py: stability() reused (max/min <= 1.5); influence 25%; data quality CV_SHARE_MAX"
+  },
+  "screen_case_rate": {
+    "data_quality": {
+      "fallback_share": 0.005370286019880615,
+      "passes": true,
+      "test": "share of charge on a fallback price <= 5%"
+    },
+    "influence": {
+      "beside_national_keying_drop5_moved_share": [
+        0.3827109942862243,
+        0.3782093341676764
+      ],
+      "beside_national_keying_top5": [
+        "06037",
+        "36061",
+        "06059",
+        "06073",
+        "06085"
+      ],
+      "beside_note": "decisions/2026-10-24-influence-test-for-sums.md repricing test, reopened the same day: reported, not the pass rule",
+      "beside_reprice_moved_share": [
+        0.05370463807664689,
+        0.054166586972683
+      ],
+      "beside_reprice_top5_county_average_bn": [
+        10.86499474331141,
+        13.236981835198591
+      ],
+      "moved_share": [
+        0.5103343862143233,
+        0.5107102994600521
+      ],
+      "passes": false,
+      "test": "drop the five counties with the largest charges; moves <= 25% (the standing rule; the sum decision of 2026-10-24 is reopened)",
+      "top5": [
+        "06037",
+        "06059",
+        "06073",
+        "06085",
+        "06071"
+      ],
+      "top5_county_shares_high_end": {
+        "06037": 0.247623,
+        "06059": 0.107685,
+        "06071": 0.035106,
+        "06073": 0.071238,
+        "06085": 0.049058
+      },
+      "top5_share_of_charge": 0.5107102994600521,
+      "without_top5_bn": [
+        5.622149842252585,
+        6.847631717161585
+      ]
+    },
+    "passes": false,
+    "precision": {
+      "half_width_over_central": [
+        0.6688130385505417,
+        0.6725075595753964
+      ],
+      "high_bn": [
+        18.04696540215329,
+        22.157010438003212
+      ],
+      "low_bn": [
+        2.6888638188585334,
+        3.333462384988604
+      ],
+      "passes": true,
+      "test": "cited-factor range excludes zero and its half-width is below the central"
+    },
+    "rate": "case",
+    "stability": {
+      "passes": true,
+      "reason": "",
+      "test": "pre-specified constructions: max/min <= 1.5",
+      "variants_high_end_bn": {
+        "central": 13.995045695024826,
+        "county_avg_urban_price": 12.84414424719499,
+        "national_keying": 11.227495304112995,
+        "rural_parks_at_pasture": 13.863085841360558
+      }
+    },
+    "thresholds_source": "scripts/estimate_screen.py: stability() reused (max/min <= 1.5); influence 25%; data quality CV_SHARE_MAX"
+  },
+  "status": "not identified: influence",
+  "top_records_r1_vs_r2": [
+    {
+      "acres": 63846.69090909091,
+      "class_r2": "large",
+      "county": "06037",
+      "ded_group": "urban_local",
+      "line": "hwy_sl",
+      "record_id": "road:6985",
+      "std_ratio": 0.8254540657545174,
+      "urban_p24": 4674906.295795357,
+      "value_r1_bn": 194.010243242796,
+      "value_r2_central_bn": 12.422617924901326,
+      "value_r2_central_price_capped_bn": 10.06570446336483,
+      "value_r2_low_bn": 0.0,
+      "water_frac": 0.0
+    },
+    {
+      "acres": 3816.0518959978685,
+      "class_r2": "large",
+      "county": "06073",
+      "ded_group": "urban_park",
+      "line": "rec_sl",
+      "record_id": "park:padus:182879:06073007600",
+      "std_ratio": 0.31281896216576466,
+      "urban_p24": 40437615.261909366,
+      "value_r1_bn": 100.30282495339704,
+      "value_r2_central_bn": 19.690679235889725,
+      "value_r2_central_price_capped_bn": 6.033276833119714,
+      "value_r2_low_bn": 1.9632218241724997,
+      "water_frac": 0.5932978256461529
+    },
+    {
+      "acres": 19970.58181818182,
+      "class_r2": "large",
+      "county": "06059",
+      "ded_group": "urban_local",
+      "line": "hwy_sl",
+      "record_id": "road:7631",
+      "std_ratio": 0.7466783511732229,
+      "urban_p24": 7285064.994245711,
+      "value_r1_bn": 94.56654123693156,
+      "value_r2_central_bn": 6.2438636543816575,
+      "value_r2_central_price_capped_bn": 4.576543304742708,
+      "value_r2_low_bn": 0.0,
+      "water_frac": 0.0
+    },
+    {
+      "acres": 16325.09696969697,
+      "class_r2": "large",
+      "county": "06085",
+      "ded_group": "urban_local",
+      "line": "hwy_sl",
+      "record_id": "road:8959",
+      "std_ratio": 0.7141369887581466,
+      "urban_p24": 8817421.40422562,
+      "value_r1_bn": 93.56441864033215,
+      "value_r2_central_bn": 6.235809458359569,
+      "value_r2_central_price_capped_bn": 4.374245648909304,
+      "value_r2_low_bn": 0.0,
+      "water_frac": 0.0
+    },
+    {
+      "acres": 781.35,
+      "class_r2": "arterial",
+      "county": "36061",
+      "ded_group": "urban_arterial",
+      "line": "hwy_sl",
+      "record_id": "road:55715",
+      "std_ratio": 0.10857272724189043,
+      "urban_p24": 105140707.6654363,
+      "value_r1_bn": 82.15169193438865,
+      "value_r2_central_bn": 73.9365227409498,
+      "value_r2_central_price_capped_bn": 8.02748991676697,
+      "value_r2_low_bn": 5.351659944511314,
+      "water_frac": 0.0
+    }
+  ]
+}

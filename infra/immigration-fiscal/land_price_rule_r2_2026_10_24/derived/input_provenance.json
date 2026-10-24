@@ -1,0 +1,17 @@
+{
+  "areawater_counties": 1760,
+  "areawater_url_pattern": "https://www2.census.gov/geo/tiger/TIGER2020/AREAWATER/tl_2020_{c}_areawater.zip",
+  "read_only_inputs": {
+    "infra/immigration-fiscal/land_price_rule_2026_10_24/_cache/valued_records.parquet": "14ee55883e4e81297c09389f44d02a97c316286dd5bd264f865d04eebbc155aa",
+    "infra/immigration-fiscal/land_price_rule_2026_10_24/build.py": "4a192afe046015e619d698231c24488e97c271495c1f41ec3017216ff8d17e41",
+    "infra/immigration-fiscal/land_price_rule_r2_2026_10_24/_cache/park_water.parquet": "e1038ee7098abdfdd0d10fbbc2308420864068d27b7baeba59b94b0275dc0b31",
+    "infra/immigration-fiscal/public_capital_rate_2026_10_24/derived/rate_model.json": "261ef91cf059c21772cc3fae57ddeeefe3b2a4ce1561d3bbb69f90639a52de99",
+    "infra/immigration-fiscal/public_land_2026_10_24/_cache/priced_sites.parquet": "0e0bad6ed0920a977ab7cae7a1d67deec098e6322794e22b5fa35c41b8ce851a",
+    "infra/immigration-fiscal/public_land_2026_10_24/derived/case_contract.json": "36fb1e9bd453aa9a17096d847f846ad1d3a521177d8df73bbd83a852efc54c4f",
+    "infra/immigration-fiscal/public_land_2026_10_24/derived/case_physical_lines.csv": "bcf86c3856f2c77823496d6216261d8790d4a2455d4a676a5336f81473eaa0fa",
+    "infra/immigration-fiscal/public_land_2026_10_24/derived/roads_county_acres.csv": "b0a7a73b7631300c952732dde5455cbad4598255f3b6874785b7f01d0920b0f6",
+    "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/_cache/acs5_2024_B03001_county.json": "47676895c6c7ed8d6638a80ace2eecbc6070b7e398474e9780808328c7574553",
+    "infra/immigration-fiscal/school_land_2026_10_24/build.py": "ec436d341d5b9d301d81ea3f1ff92fa7789394b7b9a4f213b1ee0db19dfb2f5f",
+    "scripts/estimate_screen.py": "395dc77e73b3b893e4eb36cbf9b1e9308406ecbc636b4470404132f75cedccb0"
+  }
+}

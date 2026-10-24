@@ -1,0 +1,25 @@
+step,change,cumulative,case_rate_low_bn,case_rate_high_bn,delta_low_bn,delta_high_bn
+0_r1,r1 as published,True,19.7409230053,23.6759319181,0,0
+1_water,remove TIGER area water from park pieces,True,19.2464965231,23.1562956846,-0.494426482199,-0.519636233556
+2_englobo,"raw land by the residual method (streets 5-7, parks, sites > 2 acres incl. K-12) replaces the 0.65 acreage share",True,12.699756254,15.5941800131,-6.54674026908,-7.56211567141
+3_small_sites,serviced sites <= 2 acres at the as-is price × 1.0 (replaces 0.80),True,12.7487999137,15.6448730767,0.0490436596916,0.0506930635744
+4_dedication,land dedicated by subdividers carries no budget cost,True,9.26902113841,11.2274953041,-3.47977877526,-4.4173777726
+5_location,urban land weighted by the group's county of residence (K-12 keeps where-enrolled),True,11.4816104786,13.995045695,2.21258934019,2.76755039091
+6_rate_construct,r × P with expected real land gains at zero (OECD 2009 p.159): no change,True,11.4816104786,13.995045695,0,0
+b_price_cap,"price capped at the lot-size-neutral min(as-is, 4 × quarter-acre standardized) (beside the central, not cumulative)",False,8.95628416857,10.9493248228,-2.52532631003,-3.0457208722
+b_englobo_const_020,"englobo constant 0.20 (Phoenix ratio transported) (beside the central, not cumulative)",False,9.48956773009,11.8833062516,-1.99204274851,-2.11173944344
+b_englobo_min_046,"englobo at least 0.46 (equal-size controlled ratio) (beside the central, not cumulative)",False,13.015272898,15.6205335405,1.5336624194,1.62548784546
+b_no_dedication,"resource view: dedicated land charged like bought land (beside the central, not cumulative)",False,16.2580157334,20.1026696451,4.77640525481,6.1076239501
+b_national_keying,"every line keyed nationally (r1's keying) (beside the central, not cumulative)",False,9.26902113841,11.2274953041,-2.21258934019,-2.76755039091
+b_residence_price_only,"urban acres held at the national key per line, price at the group's counties (beside the central, not cumulative)",False,12.122388538,14.7645920134,0.640778059384,0.769546318412
+b_growth_1pct,"(r - g) × P with g = 1.0% real (beside the central, not cumulative)",False,5.96444327116,7.27011740041,-5.51716720744,-6.72492829461
+b_rent_3pct,"market land rent 3.0% of price (resource/rental view) (beside the central, not cumulative)",False,16.5515016223,20.1747848838,5.06989114373,6.17973918881
+b_rent_2_5pct,"market land rent 2.5% of price (beside the central, not cumulative)",False,13.7929180186,16.8123207365,2.31130754,2.8172750415
+b_rent_4_5pct,"market land rent 4.5% of price (beside the central, not cumulative)",False,24.8272524335,30.2621773257,13.3456419549,16.2671316307
+b_width_low,"public_land lower design widths (beside the central, not cumulative)",False,10.1744612871,12.22949747,-1.30714919151,-1.76554822506
+b_width_high,"public_land upper design widths (beside the central, not cumulative)",False,12.7359906179,15.6889985322,1.25438013933,1.69395283713
+b_rate_theta0,"θ = 0 rates (beside the central, not cumulative)",False,12.7060560157,15.5503147145,1.22444553711,1.5552690195
+b_rate_theta0489,"θ = 0.489 rates (anchor) (beside the central, not cumulative)",False,14.4149176648,17.7208804938,2.93330718615,3.72583479874
+b_rate_theta1,"θ = 1 rates (beside the central, not cumulative)",False,16.1976586708,19.9852865228,4.71604819221,5.99024082782
+b_rate_bound,"adopted bound rates: θ = 1 at the low end, θ = 0 at the high end (beside the central, not cumulative)",False,16.1976586708,15.5503147145,4.71604819221,1.5552690195
+b_bound_residence_price_only,"adopted bound rates, urban acres at the national key, price at the group's counties (beside the central, not cumulative)",False,17.0926487749,16.4022445597,5.61103829634,2.40719886463
