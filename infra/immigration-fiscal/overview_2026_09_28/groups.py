@@ -295,7 +295,7 @@ GROUPS = [
                       "natives about $4bn.",
                  why="High earners leave with the top tax rate, not with the Hispanic share."),
         ],
-        minor=[],
+        minor=[325],
     ),
     dict(
         id="work", part="whopays",
