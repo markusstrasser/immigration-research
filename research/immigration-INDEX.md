@@ -290,33 +290,35 @@ variant is not computed on v9.
 
 The [world ledger](../infra/immigration-fiscal/world_ledger_2026_09_27/RESULT.md) (ladder 250, 297) sets the main
 case against the group living in Mexico, on the matched-cash account ($284.4–352.9bn a year, benefits counted when
-paid) over the 44.90M-person lineage. Other US residents lose $340.6bn a year at the low end and $401.1bn at the
-high, the fiscal cost plus the costs outside the budget that the world scope carries (crime victims,
-property crime, unreimbursed care and congestion, at the pairing's v9 rows), and more once raising the taxes is costed. The line is the same in
+paid) over the 44.90M-person lineage. Other US residents lose $403.5bn a year at the low end and $462.6bn at the
+high, the fiscal cost plus the pairing's whole social stack (crime, PM2.5, roads, school disruption, and the scale
+and variety gains), and more once raising the taxes is costed. That is less than the winners count's −$509.2bn because
+the world ledger counts benefits when paid: the pension accrual is a transfer to the group, and nets out of a world sum. The line is the same in
 every reading by construction, because the readings vary only the group's side.
-Adding everyone's dollars at equal weight, the world gains $285.0bn at the low end and $284.3bn at the high in
+Adding everyone's dollars at equal weight, the world gains $222.1bn at the low end and $222.8bn at the high in
 reading R1 (urban Mexican pay at the 56th percentile of selection, US pay at state prices, household consumption
 prices, public goods at average cost): the group gains $646.7 / 648.0bn and Mexico's residents −$21.1 / +$37.4bn (printed so the parts add).
 Reading R2, which takes urban Mexican pay at the 70th percentile (CMP's p70), output service prices and public
-goods at the cost of extending them, gives $98.6 / 124.2bn [FRAMING-SENSITIVE]. That says whether the world is
+goods at the cost of extending them, gives $35.8 / 62.7bn [FRAMING-SENSITIVE]. That says whether the world is
 richer, not whether Americans are. Every reading holds US institutions and productivity fixed: a persistent fall in
-US output of about 1%, $293bn a year at BEA's 2024 GDP of $29.30tn, would offset R1, and no measured channel has
+US output of about 0.76%, $222bn a year at BEA's 2024 GDP of $29.30tn, would offset R1, and no measured channel has
 been shown to reach that; the channel from immigration politics to policy is unpriced (FAQ entry 21).
 Same-person pay is a parameter, not a reading: with MMP's same-person hourly
-gain of 2.0 for the first generation, R1 gives $170.9 / 178.1bn (R3). The transfer leaks in part: raising revenue
-costs payers 1.16–1.5 per dollar; at 1.16 R1 gives $220.7 / 218.3bn, and at 1.5 it gives $84.1 / 78.2bn while R2
-and R3 turn negative (−$97.7 / −78.0bn and −$49.0 / −43.1bn). Hendren's revealed welfare weights leave R1 at
-$284.2 / 288.2bn, so measured weights give no sign that the group's dollar is worth less than the payers'.
+gain of 2.0 for the first generation, R1 gives $108.1 / 116.6bn (R3). The transfer leaks in part: raising revenue
+costs payers 1.16–1.5 per dollar; at 1.16 R1 gives $157.8 / 156.8bn, and at 1.5 it gives $21.2 / 16.7bn while R2
+and R3 turn negative (−$160.5 / −139.6bn and −$111.9 / −104.6bn);
+R2 is already below zero at 1.16 (−$27.0 / −2.0bn). Hendren's revealed welfare weights leave R1 at
+$222.2 / 227.5bn, so measured weights give no sign that the group's dollar is worth less than the payers'.
 R1 is the best-anchored pay reading and R3 a low parameter: the 2024 stock's own measured ratio, 2.9 a year per
 person, is well above what MMP's 2.0 an hour implies. Every estimate of the cost of raising revenue exceeds 1, so
 the welfare-consistent R1 pairings are equal weights at 1.16 and Hendren's weights, and the defensible R1 range is
-about $220–290bn a year at the G3+ zero bound; charging Hendren's cost of funds at equal weights mixes two welfare
+about $160–230bn a year at the G3+ zero bound; charging Hendren's cost of funds at equal weights mixes two welfare
 metrics and is not a reading. That range keeps two conservative choices: G3+ at zero premium is a floor (its upper
-bound puts the world at $670.1 / 641.5bn), and the group's avoided victimization in Mexico is unpriced (homicide
+bound puts the world at $607.3 / 579.9bn), and the group's avoided victimization in Mexico is unpriced (homicide
 24.9 against 5.8 per 100,000). Public goods at average cost may run the other way; R2 changes three things at
 once, so that convention alone is not isolated on v9.
 Counting Mexico's residents, the world comes out behind only if the group's welfare counts for less than
-0.56 / 0.56 of others' under R1 (0.66 / 0.66 at λ 1.16, 0.87 / 0.88 at λ 1.5) and 0.78 / 0.74 under R2. The added
+0.66 / 0.66 of others' under R1 (0.76 / 0.76 at λ 1.16, 0.97 / 0.97 at λ 1.5) and 0.92 / 0.87 under R2. The added
 descendants' schooling is valued at zero, as every generation's is; over generations the sign turns on how fast
 descendants catch up, a rate this account does not measure (ladder 154). Mexico's pension funding is an all-public proxy [DEGRADED]. The national-cell,
 common-price, leak-share and second-generation-premium readings are not computed on v9 (lane). [CALCULATION:
@@ -953,6 +955,7 @@ its successor, the reason and its last commit are in [`notes/2026-10-20-deleted-
 
 ## Revisions
 
+- 2026-10-24 ([decision](../decisions/2026-10-24-world-social-stack.md)): the world ledger's other US residents now carry the pairing's whole social stack (PM2.5, road crashes, fear and security, business crime, school disruption, scale and variety gains), not only crime, care and congestion. Their line is −$403.5 / 462.6bn (was −$340.6 / 401.1bn); R1 at equal weights is +$222.1 / 222.8bn (was +$285.0 / 284.3bn), R2 +$35.8 / 62.7bn and R3 +$108.1 / 116.6bn; R2 turns negative at λ 1.16. Concept affected: the world gain.
 - 2026-10-21, world-gain review (Kimi K3, verified points only): the world paragraph states that other US residents' line is the same in every reading by construction, not robustness; names R1 the best-anchored reading and R3 a low parameter; gives the welfare-consistent R1 range, about $220–290bn a year (equal weights at 1.16, Hendren's weights), and drops equal weights at Hendren's cost of funds as a reading; and names G3+ at zero and the unpriced avoided victimization in Mexico as conservative, public goods at average cost as possibly running the other way. Concept affected: the world readings' interpretation.
 - 2026-10-21, governability, defensive-spending and speech lanes (ladder 322–324): the political-memo table adds the three lanes beside the attention lane. None yields a dollar cost; none is added. Concept affected: the unpriced political and social channels.
 - 2026-10-21, attention blind replication (ladder 321): the attention lane's row prints ranges covering the lane and a blind replication: private spending $11–13bn, the fight $1.2–2.6bn gross, news time 1.5–13bn hours with a net of about zero, the Mexican-origin share 2–45% by rule. Concept affected: the size of the political-attention channel.
