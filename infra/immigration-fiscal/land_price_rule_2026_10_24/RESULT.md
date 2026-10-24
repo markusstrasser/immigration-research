@@ -72,3 +72,10 @@ Agriculture, FHWA, source PDFs) are in the ignored `_cache/` (1.0 GB), with `_ca
   outputs, before the RESULT.
 - 2026-10-24 14:29 JST — parent fixed the input-provenance path (`relative_to(ROOT)`; the screen script sits outside
   `infra/immigration-fiscal`), reran the build, verified the reproduction and wrote this RESULT.
+
+## Screen revision (2026-10-24)
+
+The operator adopted the repricing influence test for sums
+([decision](../../../decisions/2026-10-24-influence-test-for-sums.md)). Under it the estimate moves 2.9% / 2.8% and
+passes every screen, so **$19.74 / 23.68bn at the case rate is identified** and enters candidate main case v10. The
+drop-five result above (33%) stays as recorded.

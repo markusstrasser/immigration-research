@@ -9,7 +9,10 @@ Four tests, applied to every (function, model, sample) row of a scaling table:
 2. Stability: the pre-specified windows (all / census / pre-2020) must not
    straddle the competing hypotheses, and max/min must be <= 1.5.
 3. Influence: dropping the five most influential observations must not move the
-   estimate across a competing hypothesis or by more than 25%.
+   estimate across a competing hypothesis or by more than 25%. For a sum of
+   measured unit values (no fitted parameter), reprice the five largest units
+   at the lane's next coarser price instead; fail if the sum moves > 25%
+   (decisions/2026-10-24-influence-test-for-sums.md).
 4. Data quality: no more than 5% of observations with CV > 10, and no
    year-to-year swing > 25% unexplained by population.
 
