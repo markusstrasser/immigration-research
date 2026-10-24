@@ -6,9 +6,9 @@ The matched-cash source account is **$284.397043 / 352.928831bn** at its fiscal 
 
 | Reading | Fiscal low end, $bn | Fiscal high end, $bn |
 |---|---:|---:|
-| R1 | 327.691732 | 272.950365 |
-| R2 | 141.387185 | 112.942631 |
-| R3 | 213.678751 | 166.803133 |
+| R1 | 222.104383 | 222.762501 |
+| R2 | 35.778989 | 62.719624 |
+| R3 | 108.091402 | 116.615270 |
 
 These hold the named reading and bound fixed; they are not a confidence interval. s=1 retains the declared P032 funding proxy. [CALCULATION: `inputs/pension_cash_cells_oct16.json.gz` results.cash.oracle_bn; `derived/g2_meta_oct16.json` population.complete_total; `derived/readings_cash_oct16.csv` world_total_bn, scope=A_completed, public_pension_share=1, weighting=equal, g3_bound=zero]
 

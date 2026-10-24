@@ -1,28 +1,28 @@
 **Verdict:** On the live main case v9 (`oct16`; the matched-cash account of $284.4–352.9bn a year over 44.90M
 people), the evidence still supports the first claim in part and does not support the second as a measured claim.
-At equal weights, complete scope A and the G3+ zero bound, the modeled annual world gain is $285.0bn / $284.3bn
-under R1 (fiscal low / high end), $98.6 / 124.2bn under R2 and $170.9 / 178.1bn under R3. The leak is real:
-charging the payers' cost at λ 1.16 lowers R1 to $220.7 / 218.3bn and at λ 1.5 to $84.1 / 78.2bn, and at λ 1.5
-the R2 and R3 totals turn negative (−$97.7 / −78.0bn and −$49.0 / −43.1bn). Hendren's revealed weights leave R1
-almost unchanged ($284.2 / 288.2bn), which gives no sign that the recipients' dollars are worth less. That claim
-survives only as a moral weight w on the group: counting Mexico's residents, the world total turns negative when w
-is below 0.56 / 0.56 under R1 (0.66 / 0.66 at λ 1.16, 0.87 / 0.88 at λ 1.5) and 0.78 / 0.74 under R2.
-Every reading holds US institutions and productivity fixed. A persistent fall in US output of about 1%, $293bn a
-year at BEA's 2024 GDP of $29.30tn, would offset R1; no measured channel has been shown to reach that, and the
-channel from immigration politics to policy is unpriced
+At equal weights, complete scope A and the G3+ zero bound, the modeled annual world gain is $222.1bn / $222.8bn
+under R1 (fiscal low / high end), $35.8 / 62.7bn under R2 and $108.1 / 116.6bn under R3. The leak is real:
+charging the payers' cost at λ 1.16 lowers R1 to $157.8 / 156.8bn and turns R2 negative (−$27.0 / −2.0bn); at
+λ 1.5 R1 is $21.2 / 16.7bn and R2 and R3 are negative (−$160.5 / −139.6bn and −$111.9 / −104.6bn). Hendren's
+revealed weights leave R1 almost unchanged ($222.2 / 227.5bn), which gives no sign that the recipients' dollars are
+worth less. That claim survives only as a moral weight w on the group: counting Mexico's residents, the world total
+turns negative when w is below 0.66 / 0.66 under R1 (0.76 / 0.76 at λ 1.16, 0.97 / 0.97 at λ 1.5) and 0.92 / 0.87
+under R2. Every reading holds US institutions and productivity fixed. A persistent fall in US output of about
+0.76%, $222bn a year at BEA's 2024 GDP of $29.30tn, would offset R1 [THRESHOLD]; no measured channel has been shown
+to reach that, and the channel from immigration politics to policy is unpriced
 ([FAQ entry 21](../../../research/immigration-objections-faq-2026-09-21.md#21-a-one-year-account-misses-the-long-run-damage-slower-productivity-divided-communities-weaker-institutions))
-[CALCULATION: `closed_budget_2026_10_06/derived/oct16/summary.json` `gdp_2024_bn` × 0.01].
+[CALCULATION: `closed_budget_2026_10_06/derived/oct16/summary.json` `gdp_2024_bn`; R1 equal ÷ GDP].
 [2026-10-21, after a cross-lab review of the world gain (Kimi K3, `.model-review/2026-10-21-world-gain-critique/`; only its verified points are
 taken): other US residents' line is the same in every reading by construction, because the readings vary only
 the group's side, so it is not a robustness result. R1 is the best-anchored pay counterfactual. R3 is a low
 parameter: MMP's same-person 2.0 an hour is below the 2024 stock's measured ratio, 3.2–4.9 an hour across the
 arrival and schooling cells and 2.9 a year per person on the latest run (3.6–5.2 and 3.21 in the October 7 table
 below, "Check: 2.0 does not describe the 2024 stock"). Every source on the cost of raising revenue puts it above
-1, so the welfare-consistent pairings are equal weights with λ 1.16 (R1 $220.7 / 218.3bn) and Hendren's weights
-with their own λ (R1 $284.2 / 288.2bn). Charging Hendren's λ while keeping equal weights (`equal_lambda_hendren_a`,
-R1 $169.9 / 166.2bn) mixes two welfare metrics and is not a reading to quote. The defensible R1 range is about
-$220–290bn a year at the G3+ zero bound. Two choices in it are conservative. G3+ at zero premium is a floor: the
-upper bound, G2's Mexico-to-US ratio carried to G3+, puts the world at $670.1 / 641.5bn (+$385.2 / 357.2bn, of
+1, so the welfare-consistent pairings are equal weights with λ 1.16 (R1 $157.8 / 156.8bn) and Hendren's weights
+with their own λ (R1 $222.2 / 227.5bn). Charging Hendren's λ while keeping equal weights (`equal_lambda_hendren_a`,
+R1 $107.0 / 104.7bn) mixes two welfare metrics and is not a reading to quote. The defensible R1 range is about
+$160–230bn a year at the G3+ zero bound. Two choices in it are conservative. G3+ at zero premium is a floor: the
+upper bound, G2's Mexico-to-US ratio carried to G3+, puts the world at $607.3 / 579.9bn (+$385.2 / 357.2bn, of
 which the group's own gain is +$244.0 / 244.0bn). The group's avoided victimization in Mexico is unpriced
 (homicide 24.9 against 5.8 per 100,000, 2023). One choice may run the other way: public goods at average cost. R2
 changes three things at once (pay at p70, output service prices, public goods at the cost of extending them), so
@@ -33,9 +33,11 @@ VC.IHR.PSRC.P5 in `world_ledger.py`]]
 Since 2026-10-21 the group's in-group victimization rows take the within-group lane's row A victims on the v9
 lineage at DOT's VSL (−$28.91 / −32.20bn) in place of the winners frame's −$20.11bn, lowering every reading by
 $8.80 / 12.09bn. Other US residents' crime, property-crime, unreimbursed-care and congestion rows take the v9
-pairing's rows at each end instead of the winners lane's September channels: their line is −$340.6 / 401.1bn
-(was −$306.5 / 424.2bn)
-([decision](../../../decisions/2026-10-21-business-crime-in-pairing.md); `world_ledger.py` `INGROUP_VICTIMS`).
+pairing's rows at each end instead of the winners lane's September channels ([decision](../../../decisions/2026-10-21-business-crime-in-pairing.md);
+`world_ledger.py` `INGROUP_VICTIMS`). Since 2026-10-24 the line also carries the rest of the winners lane's paired
+social stack (PM2.5, road crashes, fear and security, business crime, school disruption, and the scale and variety
+gains): it is −$403.5 / 462.6bn (was −$340.6 / 401.1bn)
+([decision](../../../decisions/2026-10-24-world-social-stack.md); `world_ledger.py` `SOCIAL_STACK_ROWS`).
 [FRAMING-SENSITIVE] These are modeled readings under the case's removal and donor conventions and the
 `[DEGRADED]` all-public P032 pension-funding proxy, not measured effects. [CALCULATION:
 derived/readings_cash_oct16.csv, scope A_completed, public_pension_share 1, g3_bound zero; README]
@@ -3974,3 +3976,37 @@ R1 +$285.0 / 284.3bn, R2 +$98.6 / 124.2bn and R3 +$170.9 / 178.1bn (were 318.9 /
 204.9 / 154.7). The rest of the pairing's social rows stay outside the world scope, as declared above. The source-cell
 artifact was recaptured after review showed that only its source hashes differed.
 [CALCULATION: `derived/readings_cash_oct16.csv`, scope A_completed, public_pension_share 1, g3_bound zero]
+
+## Oct16: other US residents carry the full paired social stack (2026-10-24)
+
+Operator, 2026-10-24: "ok add that" (the PM2.5 and scale rows the world scope left beside). Other US residents'
+line had carried only four of the winners lane's social rows (crime victims, property crime, unreimbursed care,
+congestion) plus the housing arrays and mobility, so it omitted PM2.5, which the winners count includes. For `oct16`,
+`build_rows` now adds the stack's other fourteen `p7_social_*` rows from the pinned winners `channels.csv`
+(`SOCIAL_STACK_ROWS`), each at the case's end (low at low, high at high), as `social_*` rows on `others_today`:
+
+| Row | Low end, $bn | High end, $bn |
+|---|---:|---:|
+| PM2.5: health and mortality | −80.75 | −80.75 |
+| PM2.5: public health spending | −9.65 | −10.26 |
+| PM2.5: respending | +12.42 | +15.73 |
+| Road crashes, external cost | −12.48 | −12.71 |
+| Fear and avoidance, private security, business crime, commercial security | −10.36 | −11.48 |
+| School disruption | +2.16 | +2.16 |
+| Restaurant variety, volunteering, consumer scale, trade, city size | +35.80 | +35.80 |
+| **Net** | **−62.86** | **−61.51** |
+
+Controlled rounding: road crashes at the low end (−12.474) and public health spending at the high end (−10.2547)
+print away from nearest so the parts add. The stack's victims, property-crime, care, congestion and housing rows are not repeated: the line already stands for
+them. Crime-keyed rows take the crime weight key, the rest the mean key. The line is −$403.5 / 462.6bn (was
+−$340.6 / 401.1bn). At equal weights, scope A, G3+ zero: R1 +$222.1 / 222.8bn, R2 +$35.8 / 62.7bn, R3 +$108.1 /
+116.6bn (were 285.0 / 284.3, 98.6 / 124.2, 170.9 / 178.1). R2 turns negative at λ 1.16.
+
+The line still differs from the winners lane's −$509.2bn central: the world ledger is on the matched-cash account,
+so it leaves out the $83.6bn pension accrual, and the winners count also allocates item 11's stayers and the wage
+transfer by skill. The group's own change in air quality (Mexico's PM2.5 is higher than its US metros') is unpriced
+on the group's side; counting it would raise the group's gain. [INFERENCE]
+
+243 lane tests pass; `rerun_lane.py … "sh {lane}/run_all.sh"`: IDENTICAL 294/294, exit 0.
+[CALCULATION: `derived/reading_rows_cash_oct16.csv` rows `social_*`; `derived/readings_cash_oct16.csv`, scope
+A_completed, public_pension_share 1, g3_bound zero]

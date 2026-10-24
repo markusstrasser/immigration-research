@@ -108,6 +108,25 @@ INGROUP_VICTIMS = dict(oct16="infra/immigration-fiscal/within_group_harm_2026_10
 SOCIAL_PAIRING = dict(oct16="infra/immigration-fiscal/sept24_propagation_2026_09_24/derived/oct16/real_costs_totals.json")
 SOCIAL_PAIRING_ROWS = dict(crime_victims="victims", property_crime="property_crime",
                            unreimbursed_care="unreimbursed_care", congestion="congestion")
+# The rest of the winners lane's paired social stack (its `p7_social_*` rows, signed from other residents' side), so
+# other residents' line carries the same social channels as the winners count (decision 2026-10-24-world-social-stack).
+# The four rows above and the housing arrays (renters, landlords) already stand for the stack's victims, property
+# crime, care, congestion and housing rows, so those are not repeated. Row id -> (label, weight key).
+SOCIAL_STACK_ROWS = dict(
+    pm25_consumption=("PM2.5: other residents' health and mortality", "others:mean"),
+    pm25_government_side=("PM2.5: public health spending", "others:mean"),
+    pm25_respending=("PM2.5: respending of the resources the harm displaces", "others:mean"),
+    road_crash_externality=("Road crashes, external cost", "others:mean"),
+    fear_avoidance=("Fear and avoidance of crime", "others:crime"),
+    private_security=("Private security spending", "others:crime"),
+    business_crime=("Business crime", "others:crime"),
+    commercial_security_member_victims=("Commercial security against member offenders", "others:crime"),
+    school_disruption=("School disruption", "others:mean"),
+    restaurant_variety_market_size=("Restaurant variety and market size", "others:mean"),
+    formal_volunteering_outside_group=("Formal volunteering outside the group", "others:mean"),
+    total_consumer_scale=("Consumer scale", "others:mean"),
+    total_trade_travel_fdi=("Trade, travel and FDI", "others:mean"),
+    scale_net_earnings=("City size and schooling mix, net earnings", "others:mean"))
 
 
 def pairing_social_channels(case, ch):
@@ -563,6 +582,7 @@ BASIS = (("premium_", "output: gross pay in both places, PPP"),
          ("ingroup_victims_", "harm, quantity"),
          ("crime_victims", "harm, quantity"), ("property_crime", "harm, quantity"),
          ("congestion", "harm, quantity"), ("unreimbursed_care", "resource cost, quantity"),
+         ("social_", "social, the winners lane's paired stack"),
          ("wages", "market, the account's channel"), ("renters", "market, the account's channel"),
          ("landlords", "market, the account's channel"), ("mobility", "market, the account's channel"))
 
@@ -733,6 +753,16 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
                  "residents here, not zero)", weight=wkey,
             tag="[DATA: v9 pairing current_social_rows]" if cid in SOCIAL_PAIRING_ROWS and I.get("case") in SOCIAL_PAIRING
             else "[DATA: winners channels]")
+    if I.get("case") in SOCIAL_PAIRING:
+        for key, (label, wkey) in SOCIAL_STACK_ROWS.items():
+            gate(f"social_stack_{key}_present", f"p7_social_{key}" in ch.index)
+            r = ch.loc[f"p7_social_{key}"]
+            vals = [float(r.bn_low), float(r.bn_central), float(r.bn_high)]
+            gate(f"social_stack_{key}_finite", np.isfinite(vals).all(), values=vals)
+            add(f"social_{key}", label, "others_today", "quantity", lh(min(vals), vals[1], max(vals)),
+                initial="with the group", alternative="without the group", window="2024",
+                comparator="measured (account's paired social stack)", weight=wkey,
+                tag="[DATA: winners channels p7_social rows, v9 pairing]")
     # The group's side of those channels.
     unc = ch.loc["unreimbursed_care"]
     pop = shares["pop"]
@@ -883,6 +913,9 @@ def build_rows(I, pg_convention="average_cost", short_run=False, mexico_taxes="w
         for cid in ("wages", "renters", "landlords", "crime_victims", "property_crime", "unreimbursed_care",
                     "congestion", "mobility"):
             direct[cid] = ch.loc[cid, f"bn_{e}"]
+        if I.get("case") in SOCIAL_PAIRING:
+            for key in SOCIAL_STACK_ROWS:
+                direct[f"social_{key}"] = ch.loc[f"p7_social_{key}", f"bn_{e}"]
         for rid, amount in direct.items():
             frame.loc[frame.row.eq(rid), ["low", "central", "high"]] = amount
         for gen in GENS:
