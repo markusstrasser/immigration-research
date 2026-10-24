@@ -44,3 +44,19 @@ orchestrate deepseek subagents to do that?"
 
 - A source turns out to derive from FHFA's land series.
 - The sources disagree with each other by more than they disagree with FHFA (then none is a check).
+
+## Revisions
+
+- 2026-10-24 20:02 JST, before any independent price was seen: the rule in point 3 was too weak. The five counties
+  carry 51% of the sum, so a 25% bar on the sum passes a uniform county price ratio anywhere in 0.51–1.49, and Los
+  Angeles alone (25%) anywhere in 0–2.0 (operator heads-up: "it would take a big gap to fail"). Points 3 and 4 are
+  replaced:
+  3'. For each source s, q_c = P_s,c ÷ the lane's FHFA price. s passes if it prices Los Angeles plus at least two
+      other counties, its charge-weighted geometric mean q over the counties it prices is in [0.80, 1.25], and Los
+      Angeles's own q is in [0.80, 1.25]. The tolerance is on the prices themselves, not the diluted sum.
+  4'. The land charge is identified if at least two of the three sources pass. Either way, every source with
+      coverage gives a repriced sum: priced counties at q_c, unpriced top-five counties at that source's
+      charge-weighted geometric mean q (not at FHFA's price). If identified, the reported central at each end is the
+      median of the FHFA sum and the passing sources' sums, and the range spans all of them, so a gap smaller than
+      the tolerance still moves the number. If not identified, land stays beside with the same range shown.
+  The revisit condition stands: if the sources disagree with each other more than with FHFA, none is a check.

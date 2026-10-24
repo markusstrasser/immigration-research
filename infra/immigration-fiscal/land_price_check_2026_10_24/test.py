@@ -1,10 +1,12 @@
 """Apply the pre-registered independent-price test (decisions/2026-10-24-land-independent-price-test.md).
 
-For each source s in A_assessor, B_transactions, C_acquisitions: q_c = P_s,c / the lane's FHFA urban price for county
-c (`derived/reference_top5.csv`), q_c = 1 where s has no price. Repriced sum = total - sum(charge_c) +
-sum(charge_c * q_c), at each end. s passes if the sum moves <= 25% at both ends and s prices Los Angeles plus at least
-two other counties. Land is identified if at least two sources pass. A source missing its prices.csv counts as not
-passing. Also reports the decision's revisit check: do the sources disagree with each other more than with FHFA?
+Rule as revised before any price was seen (the decision's Revisions, points 3' and 4'). For each source s in
+A_assessor, B_transactions, C_acquisitions: q_c = P_s,c / the lane's FHFA urban price for county c
+(`derived/reference_top5.csv`). s passes if it prices Los Angeles plus at least two other counties, its charge-weighted
+geometric mean q is in [0.80, 1.25], and Los Angeles's q is in [0.80, 1.25]. Land is identified if at least two sources
+pass. Each covered source's repriced sum takes unpriced top-five counties at its own mean q. If identified, the central
+is the median of the FHFA sum and the passing sources' sums, the range spans them. A source missing its prices.csv
+counts as not passing. Also reports the revisit check: do the sources disagree with each other more than with FHFA?
 
     uv run --no-project python3 infra/immigration-fiscal/land_price_check_2026_10_24/test.py
 """
@@ -17,7 +19,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SOURCES = ["A_assessor", "B_transactions", "C_acquisitions"]
-THRESHOLD = 0.25
+Q_LO, Q_HI = 0.80, 1.25
 LA = "06037"
 
 
@@ -42,16 +44,19 @@ def load_prices(src: str) -> dict[str, float] | None:
 
 def test_source(prices, ref, total):
     q = {c: prices[c] / float(ref[c]["fhfa_urban_p24_per_acre"]) for c in ref if c in prices}
+    w = {c: float(ref[c]["charge_high_bn"]) for c in q}
+    gmean = math.exp(sum(w[c] * math.log(q[c]) for c in q) / sum(w.values())) if q else None
     repriced, moved = [], []
     for i, end in enumerate(["low", "high"]):
         ch = {c: float(ref[c][f"charge_{end}_bn"]) for c in ref}
-        s = total[i] - sum(ch.values()) + sum(ch[c] * q.get(c, 1.0) for c in ref)
+        s = total[i] - sum(ch.values()) + sum(ch[c] * q.get(c, gmean if gmean else 1.0) for c in ref)
         repriced.append(s)
         moved.append(s / total[i] - 1)
     others = sum(1 for c in q if c != LA)
     coverage = LA in q and others >= 2
-    passes = coverage and all(abs(m) <= THRESHOLD for m in moved)
-    return dict(q=q, repriced_bn=repriced, moved=moved, coverage_ok=coverage, passes=passes)
+    in_band = lambda v: v is not None and Q_LO <= v <= Q_HI
+    passes = coverage and in_band(gmean) and in_band(q.get(LA))
+    return dict(q=q, gmean_q=gmean, repriced_bn=repriced, moved=moved, coverage_ok=coverage, passes=passes)
 
 
 def main() -> int:
@@ -75,17 +80,23 @@ def main() -> int:
     disagreement["sources_disagree_more_than_with_fhfa"] = (
         None if d["mean_abs_log_q_between_sources"] is None
         else d["mean_abs_log_q_between_sources"] > d["mean_abs_log_q_vs_fhfa"])
-    out = dict(total_bn=total, threshold=THRESHOLD, sources=results, n_pass=n_pass, identified=n_pass >= 2,
-               disagreement=disagreement)
+    sums = [total] + [r["repriced_bn"] for r in results.values() if r.get("coverage_ok")]
+    passing = [total] + [r["repriced_bn"] for r in results.values() if r.get("passes")]
+    med = lambda xs: sorted(xs)[len(xs) // 2] if len(xs) % 2 else sum(sorted(xs)[len(xs) // 2 - 1:len(xs) // 2 + 1]) / 2
+    estimate = dict(central_bn=[med([s[i] for s in passing]) for i in range(2)] if n_pass >= 2 else None,
+                    range_bn=[[min(s[i] for s in sums), max(s[i] for s in sums)] for i in range(2)])
+    out = dict(total_bn=total, q_band=[Q_LO, Q_HI], sources=results, n_pass=n_pass, identified=n_pass >= 2,
+               estimate=estimate, disagreement=disagreement)
     (HERE / "derived" / "test_result.json").write_text(json.dumps(out, indent=1, sort_keys=True) + "\n")
     for s, r in results.items():
         if r.get("missing"):
             print(f"  ✗ {s}: no prices.csv")
             continue
         qs = ", ".join(f"{c} {v:.2f}" for c, v in sorted(r["q"].items()))
-        print(f"  {'✓' if r['passes'] else '✗'} {s}: q [{qs}] sum {r['repriced_bn'][0]:.2f} / {r['repriced_bn'][1]:.2f}bn "
+        print(f"  {'✓' if r['passes'] else '✗'} {s}: q [{qs}] mean q {r['gmean_q']:.2f} sum {r['repriced_bn'][0]:.2f} / {r['repriced_bn'][1]:.2f}bn "
               f"moved {r['moved'][0]:+.1%} / {r['moved'][1]:+.1%} coverage {'ok' if r['coverage_ok'] else 'short'}")
-    print(f"passed {n_pass}/3 → {'identified' if n_pass >= 2 else 'not identified'}; disagreement {disagreement}")
+    print(f"passed {n_pass}/3 → {'identified' if n_pass >= 2 else 'not identified'}; estimate {estimate}")
+    print(f"disagreement {disagreement}")
     return 0
 
 
