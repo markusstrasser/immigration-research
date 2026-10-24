@@ -99,8 +99,14 @@ def test_bound_is_theta1_low_theta0_high():
     b = s["rates"]["bound"]
     assert b["state_local"] == rm["rate_state_local_by_end"] and b["federal"] == rm["rate_federal_by_end"]
     assert b["state_local_hwy"] == rm["rate_state_local_highways_by_end"]
-    for k in ["central", "low", "high"]:
-        assert abs(s[k]["bound"][0] - s[k]["theta1"][0]) < 1e-9 and abs(s[k]["bound"][1] - s[k]["theta0"][1]) < 1e-9
+    # the bound prices each line at its own financing level; per line, charge = case charge × line rate / case rate
+    rbl, lvl = rm["rate_by_level_by_end"], rm["level_by_component"]
+    assert b["by_line"] == {c: rbl[l] for c, l in lvl.items()}
+    rc = s["rates"]["case"]["state_local"]
+    for _, r in by.iterrows():
+        for i, end in enumerate(["low", "high"]):
+            want = r[f"charge_central_{end}_bn"] * b["by_line"][r.line][i] / rc
+            assert abs(r[f"bound_central_{end}_bn"] - want) < 1e-9, (r.line, end)
     hw = by.set_index("line").loc["hwy_sl"]
     ratio = hw.theta1_central_low_bn / hw.charge_central_low_bn
     assert abs(ratio - b["state_local_hwy"][0] / s["rates"]["case"]["state_local"]) < 1e-9

@@ -185,6 +185,9 @@ def rates():
         for lv in ["state_local", "state_local_hwy", "federal"]:
             if abs(out["bound"][lv][lo_hi] - out[nm][lv]) > 1e-12:
                 raise ValueError(f"[BLOCKED] bound {lv} end {lo_hi} does not equal the {nm} rate")
+    # since 1a18b174 the bound prices each line at its own financing level (enterprise, transit, airport, K-12 rates)
+    lvl, rbl = b["level_by_component"], b["rate_by_level_by_end"]
+    out["bound"]["by_line"] = {c: rbl[l] for c, l in lvl.items()}
     return out
 
 
@@ -295,10 +298,16 @@ def charges(d, cfg, rate):
     """Annual charge per record ($bn) at both ends for one rate dict {state_local, federal}."""
     _, _, gu, gr = values(d, cfg)
     lv = d.level.where(~d.line.eq("hwy_sl"), "state_local_hwy")
+    by_line = rate.get("by_line")
+    if by_line is not None and not set(d.line).issubset(by_line):
+        raise ValueError(f"[BLOCKED] rate model maps no level for {sorted(set(d.line) - set(by_line))}")
     out = {}
     for i, end in enumerate(["low", "high"]):
-        at = {k: (v[i] if isinstance(v, list) else v) for k, v in rate.items() if k != "theta"}
-        r = lv.map(at) - cfg["g"]
+        if by_line is not None:
+            r = d.line.map({k: v[i] for k, v in by_line.items()}) - cfg["g"]
+        else:
+            at = {k: (v[i] if isinstance(v, list) else v) for k, v in rate.items() if k not in ("theta", "by_line")}
+            r = lv.map(at) - cfg["g"]
         out[end] = (gu + gr) * d["coef_" + end] * r / 1e9
     return out
 

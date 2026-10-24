@@ -314,3 +314,13 @@ Build peak RSS is 1.6 GB, and `_cache/` is 0.8 GB.
 - 2026-10-24 15:22 JST — researchers back (research_rate.md, research_dedication_englobo.md). build.py rewritten around one evaluator with r1's configuration reproduced. Census's firewall returns an HTML rejection (status 200) for three 2020 AREAWATER files (21091, 24025, 48063); water.py now rejects non-zip downloads and takes TIGER 2021 for those three, recorded in the manifest. Water intersections running.
 - 2026-10-24 19:22 JST — resumed after the subscription session limit (stopped 17:52); continuing from build.py and derived/ on disk; rate inputs: theta_pairing.bound per end, hwy_sl by end.
 - 2026-10-24 19:31 JST — added the adopted bound rates (θ = 1 low, θ = 0 high; hwy_sl at the highway rate, checked against rate_model.json) and highway rates at each θ point; screen at the bound; national-keying drop-five and acres-at-national-key arm beside; RESULT written; rerun_lane IDENTICAL 12/12, exit 0.
+
+## Revision, 2026-10-24 20:56 JST: per-line financing rates
+
+The rate lane now measures financing by function (1a18b174) and publishes a rate level per line. The bound prices each
+land line at its own level: K-12, transit, airports, water, sewer, power and ports at their measured rates; other
+state/local lines at the 24.3% residual debt share. Land at the bound becomes **$16.48 / 15.63bn** (was $16.20 /
+15.55bn), range $5.03–26.02 / 4.11–24.78bn. Without the top five it is $8.08 / 7.65bn, so drop-five still moves the sum
+about 51%, and the verdict stays not identified. The independent-price check (`land_price_check_2026_10_24`) also
+fails: all three sources price the top five below FHFA. The θ point readings (θ = 0, 0.489, 1) keep per-level rates;
+only the bound reads by line. [CALCULATION: derived/summary.json central.bound, screen.influence.without_top5_bn]

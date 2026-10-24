@@ -18,8 +18,8 @@ b_rent_2_5pct,"market land rent 2.5% of price (beside the central, not cumulativ
 b_rent_4_5pct,"market land rent 4.5% of price (beside the central, not cumulative)",False,24.8272524335,30.2621773257,13.3456419549,16.2671316307
 b_width_low,"public_land lower design widths (beside the central, not cumulative)",False,10.1744612871,12.22949747,-1.30714919151,-1.76554822506
 b_width_high,"public_land upper design widths (beside the central, not cumulative)",False,12.7359906179,15.6889985322,1.25438013933,1.69395283713
-b_rate_theta0,"θ = 0 rates (beside the central, not cumulative)",False,12.7060560157,15.5503147145,1.22444553711,1.5552690195
-b_rate_theta0489,"θ = 0.489 rates (anchor) (beside the central, not cumulative)",False,14.4149176648,17.7208804938,2.93330718615,3.72583479874
-b_rate_theta1,"θ = 1 rates (beside the central, not cumulative)",False,16.1976586708,19.9852865228,4.71604819221,5.99024082782
-b_rate_bound,"adopted bound rates: θ = 1 at the low end, θ = 0 at the high end (beside the central, not cumulative)",False,16.1976586708,15.5503147145,4.71604819221,1.5552690195
-b_bound_residence_price_only,"adopted bound rates, urban acres at the national key, price at the group's counties (beside the central, not cumulative)",False,17.0926487749,16.4022445597,5.61103829634,2.40719886463
+b_rate_theta0,"θ = 0 rates (beside the central, not cumulative)",False,12.763150105,15.6172453785,1.28153962637,1.62219968347
+b_rate_theta0489,"θ = 0.489 rates (anchor) (beside the central, not cumulative)",False,14.551693452,17.8812209839,3.07008297344,3.88617528888
+b_rate_theta1,"θ = 1 rates (beside the central, not cumulative)",False,16.4175610416,20.2430752339,4.93595056296,6.24802953889
+b_rate_bound,"adopted bound rates: θ = 1 at the low end, θ = 0 at the high end (beside the central, not cumulative)",False,16.4780873515,15.6329600547,4.99647687293,1.63791435963
+b_bound_residence_price_only,"adopted bound rates, urban acres at the national key, price at the group's counties (beside the central, not cumulative)",False,17.3885227621,16.4894280221,5.90691228348,2.49438232703
